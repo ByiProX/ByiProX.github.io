@@ -301,6 +301,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -339,6 +361,7 @@
 <p>完成文章后,对编辑后的文章进行备份保存，即终端运行,为下面的部署做准备<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"add one article"</span></span><br><span class="line">$ git push origin master:Hexo-Blog</span><br></pre></td></tr></table></figure></p>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>运行一下命令进行仓库master分支静态文件部署<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
 <p>以上完成项目源文件以及静态文件的Git管理</p>
+<h2 id="参考文献及进阶"><a href="#参考文献及进阶" class="headerlink" title="参考文献及进阶"></a>参考文献及进阶</h2><p><a href="https://mrlrf.github.io/2017/05/05/Hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">Hexo+github搭建个人博客并实现多终端管理</a><br><a href="https://blog.zaihua.me/post/blog_github_backup.html" target="_blank" rel="noopener">如何在github上面备份Hexo</a><br><a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="noopener">Hexo的版本控制与持续集成</a><br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">使用hexo，如果换了电脑怎么更新博客</a></p>
 
           
         
@@ -555,7 +578,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
