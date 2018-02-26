@@ -2,8 +2,11 @@
 title: Github多分支管理Hexo-Blog项目
 date: 2018-02-27 00:23:41
 tags:
+  - Hexo
+  - Git
+categories:
+  - Hexo
 ---
-
 
 Hexo在部署之后在github的仓库中我们只能找到生成的静态文件。然而博客的源文件：主题、文章、配置等文件都还在本地，并没有备份。对于多台终端设备的用户不够友好，而且存在一定的风险，万一那天电脑坏了或者是出现一些其他问题，就得从头再来。为了解决上述问题，我们可以利用github的分支思想来备份我们的源文件。
 
@@ -61,3 +64,9 @@ $ hexo deploy
 ```
 
 以上完成项目源文件以及静态文件的Git管理
+
+## 参考文献及进阶
+[Hexo+github搭建个人博客并实现多终端管理](https://mrlrf.github.io/2017/05/05/Hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/)
+[如何在github上面备份Hexo](https://blog.zaihua.me/post/blog_github_backup.html)
+[Hexo的版本控制与持续集成](https://formulahendry.github.io/2016/12/04/hexo-ci/)
+[使用hexo，如果换了电脑怎么更新博客](https://www.zhihu.com/question/21193762)
