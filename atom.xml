@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-27T06:52:06.355Z</updated>
+  <updated>2018-02-27T07:17:44.364Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/02/27/%E4%B8%80%E7%A7%8DGit%E4%BF%9D%E7%95%99%E4%B8%A4%E4%B8%AArepo%E7%9A%84commit%E4%BF%A1%E6%81%AF%E8%BF%9B%E8%A1%8C%E5%90%88%E5%B9%B6%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2018/02/27/一种Git保留两个repo的commit信息进行合并的方法/</id>
     <published>2018-02-27T06:46:37.000Z</published>
-    <updated>2018-02-27T06:52:06.355Z</updated>
+    <updated>2018-02-27T07:17:44.364Z</updated>
     
-    <content type="html"><![CDATA[<p>以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下：</p><a id="more"></a><p>比如要将DownloadPicsBySeleniumAndPhantomJS这个项目合并到Web-Spider中，终端中执行：</p><p><img src="http://img.blog.csdn.net/20180213030000117" alt=""></p><p>接下来解决merge冲突即可（可以尝试使用mergetool），如有需要可以删除多余分支和远程连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mergetool <span class="comment"># 解决merge冲突</span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ git remote rm other <span class="comment"># 删除远程连接  </span></span><br><span class="line">$ git branch -d repo1 <span class="comment"># 删除分支操作</span></span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下：</p><a id="more"></a><p>比如要将DownloadPicsBySeleniumAndPhantomJS这个项目合并到Web-Spider中，终端中执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add other git@github.com:ByiProX/****.git</span><br><span class="line">$ git fetch other</span><br><span class="line">$ git checkout -b repo1 other/mster</span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge repo1 --allow-unrelated-histories</span><br></pre></td></tr></table></figure></p><p><img src="http://img.blog.csdn.net/20180213030000117" alt=""></p><p>接下来解决merge冲突即可（可以尝试使用mergetool），如有需要可以删除多余分支和远程连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mergetool <span class="comment"># 解决merge冲突</span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ git remote rm other <span class="comment"># 删除远程连接  </span></span><br><span class="line">$ git branch -d repo1 <span class="comment"># 删除分支操作</span></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -136,9 +136,9 @@
       <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
-      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
-    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     
   </entry>
   

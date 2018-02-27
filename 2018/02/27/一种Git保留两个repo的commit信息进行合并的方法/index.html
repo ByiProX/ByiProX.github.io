@@ -90,7 +90,7 @@
 <meta property="og:description" content="以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下：">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://img.blog.csdn.net/20180213030000117">
-<meta property="og:updated_time" content="2018-02-27T06:52:06.355Z">
+<meta property="og:updated_time" content="2018-02-27T07:17:44.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一种Git保留两个repo的commit信息进行合并的方法">
 <meta name="twitter:description" content="以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下：">
@@ -104,7 +104,7 @@
     root: '/',
     scheme: 'Gemini',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -358,7 +358,7 @@
       
         <p>以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下：</p>
 <a id="more"></a>
-<p>比如要将DownloadPicsBySeleniumAndPhantomJS这个项目合并到Web-Spider中，终端中执行：</p>
+<p>比如要将DownloadPicsBySeleniumAndPhantomJS这个项目合并到Web-Spider中，终端中执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add other git@github.com:ByiProX/****.git</span><br><span class="line">$ git fetch other</span><br><span class="line">$ git checkout -b repo1 other/mster</span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge repo1 --allow-unrelated-histories</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://img.blog.csdn.net/20180213030000117" alt=""></p>
 <p>接下来解决merge冲突即可（可以尝试使用mergetool），如有需要可以删除多余分支和远程连接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mergetool <span class="comment"># 解决merge冲突</span></span><br></pre></td></tr></table></figure>
@@ -605,6 +605,8 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
