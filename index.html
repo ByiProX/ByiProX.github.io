@@ -261,6 +261,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/一种Git保留两个repo的commit信息进行合并的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iProX">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/27/一种Git保留两个repo的commit信息进行合并的方法/" itemprop="url">一种Git保留两个repo的commit信息进行合并的方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-27T14:46:37+08:00">
+                2018-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/27/一种Git保留两个repo的commit信息进行合并的方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/Python3下使用Selenium-PhantomJS爬火影忍者漫画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -364,23 +510,15 @@
 
       
         
-          
-            <p>近期学习爬虫，发现懂的越多，不懂的知识点越多（所以当个傻子还是很幸福的）。好记性不如烂笔头，之前都是把看到的资料链接直接挂到一些平台，比如知乎、简书、Github等。今天有点时间，就好好码一下字，排排版，方便以后查阅。</p>
+          <p>近期学习爬虫，发现懂的越多，不懂的知识点越多（所以当个傻子还是很幸福的）。好记性不如烂笔头，之前都是把看到的资料链接直接挂到一些平台，比如知乎、简书、Github等。今天有点时间，就好好码一下字，排排版，方便以后查阅。</p>
 <p>Selenium用来模拟浏览器的行为，比如点击、最大化、滚动窗口等；PhantomJS是一种浏览器，不过这种浏览器没有UI界面，感觉就像是专门为爬虫设计，优点很明显，可以有效减小内存的使用。</p>
-<h2 id="爬虫使用到的模块"><a href="#爬虫使用到的模块" class="headerlink" title="爬虫使用到的模块"></a>爬虫使用到的模块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> myLogging <span class="keyword">import</span> MyLogging</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br></pre></td></tr></table></figure>
-<p>myLogging模块是自己配置的日志包，想要的可以点击<strong><em><a href="http://link.zhihu.com/?target=https%3A//github.com/ByiProX/DownloadPicsBySeleniumAndPhantomJS" target="_blank" rel="noopener">这里</a></em></strong>自己看</p>
-<p>爬虫很关键的一点就是能够看懂网页的源代码，记得当初刚刚真正开始接触编程的时候，有很长的一段时间在看HTML、CSS、JS的一些知识，虽然忘得很多，但是印象还是有的，对于后面看网页源代码很有帮助。学习爬虫，除了会基本的python知识以外，还要会网页的一些知识。</p>
-<h2 id="爬取图片思路："><a href="#爬取图片思路：" class="headerlink" title="爬取图片思路："></a>爬取图片思路：</h2><ul>
-<li>已知连接，分析网页的代码结构，看所需的数据是否需要切换frame，并定位所需数据的位于哪个标签之下</li>
-<li>采用不同的模块有不同的保存图片方式，如果采用request模块，保存图片方式是可以采用<strong>requests.get(comicUrl).content</strong>方法，使用该方法需要确定网页的地址。该项目中没有涉及request的使用，所以此后不再表述。对于selenium可以使用 <strong>get_screenshot_as_file()</strong> 方法，使用该方法强烈建议使用phantomjs，如果使用chrome浏览器，图片尺寸太大的话，会出现截图不完整，对比如下：<br><img src="http://upload-images.jianshu.io/upload_images/2952111-2323c462a546dcc3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="对比"></li>
-<li>找到下一张图片的连接位置并点击更新网页，一般来讲新网页与之前网页结构相同。</li>
-<li>在新网页的基础上保存图片，设置循环如此反复。</li>
-</ul>
-<p>爬取网页的URL为：<a href="http://link.zhihu.com/?target=http%3A//comic.kukudm.com/comiclist/3/3/1.htm" target="_blank" rel="noopener">爬取火影漫画第一话</a></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadPics</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, url)</span>:</span></span><br><span class="line">        self.url = url</span><br><span class="line">        self.log = MyLogging()</span><br><span class="line">        self.browser = self.get_browser()</span><br><span class="line">        self.save_pics(self.browser)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_browser</span><span class="params">(self)</span>:</span></span><br><span class="line">        browser = webdriver.PhantomJS()</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            browser.get(self.url)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            MyLogging.error(<span class="string">'open the url %s failed'</span> % self.url)</span><br><span class="line">        browser.implicitly_wait(<span class="number">20</span>)</span><br><span class="line">        <span class="keyword">return</span> browser</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_pics</span><span class="params">(self, browser)</span>:</span></span><br><span class="line">        pics_title = browser.title.split(<span class="string">'_'</span>)[<span class="number">0</span>]</span><br><span class="line">        self.create_dir(pics_title)</span><br><span class="line">        os.chdir(pics_title)</span><br><span class="line">        sum_page = self.find_total_page_num(browser)</span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; sum_page:</span><br><span class="line">            image_name = str(i) + <span class="string">'.png'</span></span><br><span class="line">            browser.get_screenshot_as_file(image_name)  </span><br><span class="line">            <span class="comment"># 使用PhantomJS避免了截图的不完整，可以与Chrome比较</span></span><br><span class="line">            self.log.info(<span class="string">'saving image %s'</span> % image_name)</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            css_selector = <span class="string">"a[href='/comiclist/3/3/%s.htm']"</span> % i  </span><br><span class="line">            <span class="comment"># 该方法感觉还不错呢，不过这个网站确实挺差劲的</span></span><br><span class="line">            next_page = browser.find_element_by_css_selector(css_selector)</span><br><span class="line">            next_page.click()</span><br><span class="line">            time.sleep(<span class="number">2</span>)</span><br><span class="line">            <span class="comment"># browser.implicitly_wait(20)</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find_total_page_num</span><span class="params">(self, browser)</span>:</span></span><br><span class="line">        page_element = browser.find_element_by_css_selector(<span class="string">"table[cellspacing='1']"</span>)</span><br><span class="line">        num = re.search(<span class="string">r'共\d+页'</span>, page_element.text).group()[<span class="number">1</span>:<span class="number">-1</span>]  </span><br><span class="line">        <span class="keyword">return</span> int(num)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create_dir</span><span class="params">(self, dir_name)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> os.path.exists(dir_name):</span><br><span class="line">            self.log.error(<span class="string">'create directory %s failed cause a same directory exists'</span> % dir_name)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                os.makedirs(dir_name)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                self.log.error(<span class="string">'create directory %s failed'</span> % dir_name)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.log.info(<span class="string">'create directory %s success'</span> % dir_name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    start_url = <span class="string">'http://comic.kukudm.com/comiclist/3/3/1.htm'</span></span><br><span class="line">    DL = DownloadPics(start_url)</span><br></pre></td></tr></table></figure>
-<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="http://upload-images.jianshu.io/upload_images/2952111-e7e2cf39116b5fea.gif?imageMogr2/auto-orient/strip" alt="gif"></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/27/Python3下使用Selenium-PhantomJS爬火影忍者漫画/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -519,63 +657,15 @@
 
       
         
-          
-            <p><img src="https://school.thoughtworks.cn/bbs/assets/uploads/files/1517985555955-fireshot-capture-8-cinema-http___127.0.0.1_8000_.png" alt="首页"></p>
-<p>本项目已经部署到服务器，可以通过该IP查看<br><a href="http://59.110.221.56/" target="_blank" rel="noopener">http://59.110.221.56/</a></p>
-<p><a href="https://github.com/ByiProX/ThoughtWorks-Cinema" target="_blank" rel="noopener">GitHub源代码</a></p>
-<h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><blockquote>
-<p>Bootstrap 3 + Django 2.0.1 + MySQL 5.7.17 + Nginx + locust</p>
-</blockquote>
-<h2 id="本地服务运行方法"><a href="#本地服务运行方法" class="headerlink" title="本地服务运行方法"></a>本地服务运行方法</h2><p>终端在venv文件夹路径下开启虚拟环境(根据自己的shell进行选择)：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source ../venv/bin/activate.fish</span><br><span class="line">source ../venv/bin/activate</span><br><span class="line">source ../venv/bin/activate.csh</span><br></pre></td></tr></table></figure>
-<p>然后执行：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 TWS_Cinema/manage.py runserver</span><br></pre></td></tr></table></figure></p>
-<p><strong>如果报错</strong>，终端进入requirements.txt所在目录，运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure></p>
-<p>然后执行：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 TWS_Cinema/manage.py runserver</span><br></pre></td></tr></table></figure></p>
-<h2 id="单元测试运行方法"><a href="#单元测试运行方法" class="headerlink" title="单元测试运行方法"></a>单元测试运行方法</h2><p>在manage.py路径下终端运行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py test</span><br></pre></td></tr></table></figure>
-<h2 id="网站功能描述"><a href="#网站功能描述" class="headerlink" title="网站功能描述"></a>网站功能描述</h2><ul>
-<li><p>实现导航栏搜索电影，支持按年份搜索和类型搜索<br>  – 显示分类列表<br>  – 点击分类显示符合分类要求的电影</p>
-</li>
-<li><p>实现搜索功能，支持按电影名称模糊搜索</p>
-</li>
-<li><p>实现电影详细信息查看功能<br>  – 显示电影详细信息<br>  – 显示豆瓣 Top 5 影评<br>  – 在电影详细页面显示相似电影推荐<br>  – 增加电影观看链接</p>
-</li>
-</ul>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul>
-<li><p>按电影id搜索 —— api/movie/id/        # 例如：api/movie/id/1291545</p>
-</li>
-<li><p>按电影名搜索 —— api/movie/title/     # 例如：api/movie/title/大鱼</p>
-</li>
-<li><p>按电影原始名搜索 —— api/movie/original_title/     # 例如：api/movie/original_title/Big Fish</p>
-</li>
-<li><p>按电影类型搜索 —— api/movie/genre/   # 例如：api/movie/genre/剧情</p>
-</li>
-<li><p>按电影年份搜索 —— api/movie/year/    # 例如：api/movie/year/2003</p>
-</li>
-</ul>
-<h2 id="网站性能测试结果"><a href="#网站性能测试结果" class="headerlink" title="网站性能测试结果"></a>网站性能测试结果</h2><p>在文件locustfile.py路径下运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locust --host=http://59.110.221.56</span><br></pre></td></tr></table></figure></p>
-<h3 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h3><ul>
-<li>采取的框架：<strong>locust</strong></li>
-<li>服务器性能：<ul>
-<li>CPU：1核</li>
-<li>内存：2 GB (I/O优化)</li>
-<li>带宽：1Mbps</li>
-</ul>
-</li>
-<li>测试结果：<ul>
-<li>500人：100%正确</li>
-<li>1000人：40%出错率</li>
-</ul>
-</li>
-<li>测试截图</li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/2952111-4c41c64c40130ebe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-08 at 16.15.49.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2952111-c2c542dbf0ce9e58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-08 at 16.14.10.png"></p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2952111-f5e4ace67f22ddac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-08 at 16.13.49.png"></p>
-<h2 id="电影网站的其他截图"><a href="#电影网站的其他截图" class="headerlink" title="电影网站的其他截图"></a>电影网站的其他截图</h2><p><img src="https://school.thoughtworks.cn/bbs/assets/uploads/files/1517985569003-fireshot-capture-9-%E9%A6%96%E9%A1%B5-http___127.0.0.1_8000_movie_display_.png" alt="list"><br><img src="https://school.thoughtworks.cn/bbs/assets/uploads/files/1517985586166-fireshot-capture-10-%E7%94%B5%E5%BD%B1%E8%AF%A6%E6%83%85-http___127.0.0.1_8000_movie_id_1291545_.png" alt="detail"></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://my.oschina.net/u/1447352/blog/1499428/" target="_blank" rel="noopener">Locust 简介以及使用</a></p>
-
-          
+          <p><img src="https://school.thoughtworks.cn/bbs/assets/uploads/files/1517985555955-fireshot-capture-8-cinema-http___127.0.0.1_8000_.png" alt="首页"></p>
+<p>本项目已经部署到服务器，可以通过该IP查看<br><a href="http://59.110.221.56/" target="_blank" rel="noopener">http://59.110.221.56/</a><br><a href="https://github.com/ByiProX/ThoughtWorks-Cinema" target="_blank" rel="noopener">GitHub源代码</a><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/27/Django2-0-1搭建电影网站/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -725,17 +815,14 @@
 
       
         
-          
-            <h2 id="封锁间隔时间破解"><a href="#封锁间隔时间破解" class="headerlink" title="封锁间隔时间破解"></a>封锁间隔时间破解</h2><p>Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip</p>
-<h2 id="封锁Cookies"><a href="#封锁Cookies" class="headerlink" title="封锁Cookies"></a>封锁Cookies</h2><p>众所周知，网站是通过Cookie来确定用户身份的，Scrapy在爬取数据时使用同一个Cookies发起请求。该做法和把DOWNLOAD_DELAY设为0.001没有本质区别。在scrapy中，直接社禁用Cookies就可以了。在settings.py中设置<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Disable cookies (enabled by default)</span></span><br><span class="line">COOKIES_ENABLED = <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="封锁user-agent和proxy破解"><a href="#封锁user-agent和proxy破解" class="headerlink" title="封锁user-agent和proxy破解"></a>封锁user-agent和proxy破解</h2><p>user-agent是浏览器的身份标识。网站通过UA来确定浏览器类型。很多浏览器拒绝不符合一定标准的UA请求网页。同一个UA高频率的访问网站会有被网站列入黑名单的危险。破解的方法很简单，可以准备一个<strong>UA池</strong>，每次请求时随机挑选一个进行请求。</p>
-<p>在middlewares.py同级目录下创建UAResource.py,文件内容如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">UserAgents = [</span><br><span class="line">  <span class="string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0; AOL 9.5; AOLBuild 4337.35; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 1.0.3705; .NET CLR 1.1.4322)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.2; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.04506.30)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN) AppleWebKit/523.15 (KHTML, like Gecko, Safari/419.3) Arora/0.3 (Change: 287 c9dfb30)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/20080705 Firefox/3.0 Kapiko/3.0"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (X11; Linux i686; U;) Gecko/20070322 Kazehakase/0.4.5"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20"</span>,</span><br><span class="line">  <span class="string">"Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52"</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Proxies = [</span><br><span class="line"><span class="string">'http://122.114.31.177:808'</span>,</span><br><span class="line"><span class="string">'http://1.2.3.4:80'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>修改middlewares.py，添加内容为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> .UAResource <span class="keyword">import</span> UserAgents</span><br><span class="line"><span class="keyword">from</span> .UAResource <span class="keyword">import</span> Proxies</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomProxy</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self, request, spider)</span>:</span></span><br><span class="line">        proxy = random.choice(Proxies)</span><br><span class="line">        request.meta[<span class="string">'proxy'</span>] = proxy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomUserAgent</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""docstring for RandomUerAgent."""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self, request, spider)</span>:</span></span><br><span class="line">        ua = random.choice(UserAgents)</span><br><span class="line">        request.headers.setdefault(<span class="string">'User-Agent'</span>, ua)</span><br></pre></td></tr></table></figure></p>
-<p>最后修改setting.py,将RandomUserAgent和RandomProxy添加到DOWNLOADER_MIDDLEWARES中，注意RandomProxy要放到RandomUserAgent之前，即将RandomProxy的值比RandomUserAgent后的值小<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DOWNLOADER_MIDDLEWARES = &#123;</span><br><span class="line">   <span class="comment"># 'meijutt.middlewares.MeijuttDownloaderMiddleware': 543,</span></span><br><span class="line">   <span class="string">'meijutt.middlewares.RandomProxy'</span>: <span class="number">10</span>,</span><br><span class="line">   <span class="string">'meijutt.middlewares.RandomUserAgent'</span>: <span class="number">30</span>,</span><br><span class="line"></span><br><span class="line">   <span class="comment"># 禁止内置的(在 DOWNLOADER_MIDDLEWARES_BASE 中设置并默认启用的)中间件</span></span><br><span class="line">   <span class="string">'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware'</span>: <span class="keyword">None</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>免费代理不够稳定，如果不想用proxy，设置RandomProxy为None,即禁止使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'meijutt.middlewares.RandomProxy'</span>: <span class="keyword">None</span>,</span><br></pre></td></tr></table></figure></p>
-
-          
+          <h2 id="封锁间隔时间破解"><a href="#封锁间隔时间破解" class="headerlink" title="封锁间隔时间破解"></a>封锁间隔时间破解</h2><p>Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/27/简谈爬虫攻与防/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -874,19 +961,14 @@
 
       
         
-          
-            <p>Hexo在部署之后在github的仓库中我们只能找到生成的静态文件。然而博客的源文件：主题、文章、配置等文件都还在本地，并没有备份。对于多台终端设备的用户不够友好，而且存在一定的风险，万一那天电脑坏了或者是出现一些其他问题，就得从头再来。为了解决上述问题，我们可以利用github的分支思想来备份我们的源文件。</p>
-<p>备份之前，需要了解博客根目录下面的文件以及文件夹作用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.deploy_git/        网站静态文件(git)</span><br><span class="line">node_modules/       插件</span><br><span class="line">public/             网站静态文件</span><br><span class="line">scaffolds/          文章模板</span><br><span class="line">source/             博文等</span><br><span class="line">themes/             主题</span><br><span class="line">_config.yml         网站配置文件</span><br><span class="line">package.json        Hexo信息</span><br><span class="line">db.json             数据文件</span><br></pre></td></tr></table></figure></p>
-<h2 id="备份的思路"><a href="#备份的思路" class="headerlink" title="备份的思路"></a>备份的思路</h2><p><code>master分支存放部署生成的静态文件，Hexo-Bog分支存放我们要备份项目源文件。</code>实际备份中，.deploy_git、public文件夹和我们的master分支内容重复，所以略过。因此，我们在根目录下面建一个<strong>.gitignore</strong>文件来建立“黑名单”，禁止备份。</p>
-<h2 id="编辑-gitignore过滤文件"><a href="#编辑-gitignore过滤文件" class="headerlink" title="编辑.gitignore过滤文件"></a>编辑<strong>.gitignore</strong>过滤文件</h2><p>文件内容如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure></p>
-<h2 id="关于备份"><a href="#关于备份" class="headerlink" title="关于备份"></a>关于备份</h2><p>终端中在项目的根目录下执行，对于作者自己的项目，命令执行的路径为ByiProX/下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git remote add origin git@github.com:username/username.github.io.git		</span><br><span class="line"><span class="comment"># username为博客项目的名称，也就是git的用户名</span></span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"ready for backup of the project"</span></span><br><span class="line">$ git push origin master:Hexo-Blog</span><br></pre></td></tr></table></figure></p>
-<p>执行完毕后会发现github博客仓库已经有了一个新分支Hexo-Blog，于是备份工作完成。<br>以后，开始写博文时，即终端运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
-<p>完成文章后,对编辑后的文章进行备份保存，即终端运行,为下面的部署做准备<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"add one article"</span></span><br><span class="line">$ git push origin master:Hexo-Blog</span><br></pre></td></tr></table></figure></p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>运行一下命令进行仓库master分支静态文件部署<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p>以上完成项目源文件以及静态文件的Git管理</p>
-<h2 id="参考文献及进阶"><a href="#参考文献及进阶" class="headerlink" title="参考文献及进阶"></a>参考文献及进阶</h2><p><a href="https://mrlrf.github.io/2017/05/05/Hexo-github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">Hexo+github搭建个人博客并实现多终端管理</a><br><a href="https://blog.zaihua.me/post/blog_github_backup.html" target="_blank" rel="noopener">如何在github上面备份Hexo</a><br><a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="noopener">Hexo的版本控制与持续集成</a><br><a href="https://www.zhihu.com/question/21193762" target="_blank" rel="noopener">使用hexo，如果换了电脑怎么更新博客</a></p>
-
-          
+          <p>Hexo在部署之后在github的仓库中我们只能找到生成的静态文件。然而博客的源文件：主题、文章、配置等文件都还在本地，并没有备份。对于多台终端设备的用户不够友好，而且存在一定的风险，万一那天电脑坏了或者是出现一些其他问题，就得从头再来。为了解决上述问题，我们可以利用github的分支思想来备份我们的源文件。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/27/Github多分支管理Hexo-Blog项目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1003,18 +1085,15 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>非常好的一篇markdown参考手册</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/26/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1098,7 +1177,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1109,7 +1188,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

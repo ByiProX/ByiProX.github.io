@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="封锁间隔时间破解Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip 封锁Cookies众所周知，网站是通过Cookie来确定用户身份的，Scrapy在爬取数据时使用同一个Cookies发">
+<meta name="description" content="封锁间隔时间破解Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。">
 <meta name="keywords" content="Spider,Scrapy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简谈爬虫攻与防">
 <meta property="og:url" content="http://yoursite.com/2018/02/27/简谈爬虫攻与防/index.html">
 <meta property="og:site_name" content="iProX">
-<meta property="og:description" content="封锁间隔时间破解Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip 封锁Cookies众所周知，网站是通过Cookie来确定用户身份的，Scrapy在爬取数据时使用同一个Cookies发">
+<meta property="og:description" content="封锁间隔时间破解Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-27T04:57:50.530Z">
+<meta property="og:updated_time" content="2018-02-27T06:40:35.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简谈爬虫攻与防">
-<meta name="twitter:description" content="封锁间隔时间破解Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip 封锁Cookies众所周知，网站是通过Cookie来确定用户身份的，Scrapy在爬取数据时使用同一个Cookies发">
+<meta name="twitter:description" content="封锁间隔时间破解Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。">
 
 
 
@@ -365,7 +365,8 @@
       
 
       
-        <h2 id="封锁间隔时间破解"><a href="#封锁间隔时间破解" class="headerlink" title="封锁间隔时间破解"></a>封锁间隔时间破解</h2><p>Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip</p>
+        <h2 id="封锁间隔时间破解"><a href="#封锁间隔时间破解" class="headerlink" title="封锁间隔时间破解"></a>封锁间隔时间破解</h2><p>Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。</p>
+<a id="more"></a>
 <h2 id="封锁Cookies"><a href="#封锁Cookies" class="headerlink" title="封锁Cookies"></a>封锁Cookies</h2><p>众所周知，网站是通过Cookie来确定用户身份的，Scrapy在爬取数据时使用同一个Cookies发起请求。该做法和把DOWNLOAD_DELAY设为0.001没有本质区别。在scrapy中，直接社禁用Cookies就可以了。在settings.py中设置<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Disable cookies (enabled by default)</span></span><br><span class="line">COOKIES_ENABLED = <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="封锁user-agent和proxy破解"><a href="#封锁user-agent和proxy破解" class="headerlink" title="封锁user-agent和proxy破解"></a>封锁user-agent和proxy破解</h2><p>user-agent是浏览器的身份标识。网站通过UA来确定浏览器类型。很多浏览器拒绝不符合一定标准的UA请求网页。同一个UA高频率的访问网站会有被网站列入黑名单的危险。破解的方法很简单，可以准备一个<strong>UA池</strong>，每次请求时随机挑选一个进行请求。</p>
 <p>在middlewares.py同级目录下创建UAResource.py,文件内容如下：</p>
@@ -498,7 +499,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -509,7 +510,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
