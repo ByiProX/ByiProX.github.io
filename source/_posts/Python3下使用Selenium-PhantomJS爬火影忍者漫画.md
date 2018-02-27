@@ -5,6 +5,7 @@ tags:
   - Spider
   - Selenium
   - PhantomJS
+  - Python3
 categories:
   - Spider
   - Selenium
