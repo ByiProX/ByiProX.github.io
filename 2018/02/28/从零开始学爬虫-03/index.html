@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python3,Spider,Urllib," />
 
 
 
@@ -81,17 +81,24 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 非常好的一">
+<meta name="description" content="urllib.errorurllib.error可以接收有urllib.request产生的异常。urllib.error有两个方法，URLError和HTTPError。如下图所示： URLError是OSError的一个子类，HTTPError是URLError的一个子类，服务器上HTTP的响应会返回一个状态码，根据这个HTTP状态码，我们可以知道我们的访问是否成功。例如第二个笔记中提到的20">
+<meta name="keywords" content="Python3,Spider,Urllib">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/02/26/hello-world/index.html">
+<meta property="og:title" content="从零开始学爬虫-03">
+<meta property="og:url" content="http://yoursite.com/2018/02/28/从零开始学爬虫-03/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 非常好的一">
+<meta property="og:description" content="urllib.errorurllib.error可以接收有urllib.request产生的异常。urllib.error有两个方法，URLError和HTTPError。如下图所示： URLError是OSError的一个子类，HTTPError是URLError的一个子类，服务器上HTTP的响应会返回一个状态码，根据这个HTTP状态码，我们可以知道我们的访问是否成功。例如第二个笔记中提到的20">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-27T06:43:43.774Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2952111-165a6b7bb4f6e5af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2952111-5e9dfdc6af1af203.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2952111-877b52f32e81d2cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2952111-81c31b50ef0e4f0d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2952111-9105667f71cd7051.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-02-27T17:04:43.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 非常好的一">
+<meta name="twitter:title" content="从零开始学爬虫-03">
+<meta name="twitter:description" content="urllib.errorurllib.error可以接收有urllib.request产生的异常。urllib.error有两个方法，URLError和HTTPError。如下图所示： URLError是OSError的一个子类，HTTPError是URLError的一个子类，服务器上HTTP的响应会返回一个状态码，根据这个HTTP状态码，我们可以知道我们的访问是否成功。例如第二个笔记中提到的20">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2952111-165a6b7bb4f6e5af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -121,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/26/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/28/从零开始学爬虫-03/"/>
 
 
 
 
 
-  <title>Hello World | Quentin's Blog</title>
+  <title>从零开始学爬虫-03 | Quentin's Blog</title>
   
 
 
@@ -288,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/从零开始学爬虫-03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -305,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">从零开始学爬虫-03</h1>
         
 
         <div class="post-meta">
@@ -317,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T02:47:57+08:00">
-                2018-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T00:57:01+08:00">
+                2018-02-28
               </time>
             
 
@@ -328,6 +335,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spider/" itemprop="url" rel="index">
+                    <span itemprop="name">Spider</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spider/Urllib/" itemprop="url" rel="index">
+                    <span itemprop="name">Urllib</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -336,9 +376,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/02/26/hello-world/#comments" itemprop="discussionUrl">
+                <a href="/2018/02/28/从零开始学爬虫-03/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/02/26/hello-world/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/02/28/从零开始学爬虫-03/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -346,7 +386,7 @@
 
           
           
-             <span id="/2018/02/26/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2018/02/28/从零开始学爬虫-03/" class="leancloud_visitors" data-flag-title="从零开始学爬虫-03">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,17 +417,19 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<p>非常好的一篇markdown参考手册</p>
-<a id="more"></a>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="urllib-error"><a href="#urllib-error" class="headerlink" title="urllib.error"></a>urllib.error</h2><p>urllib.error可以接收有urllib.request产生的异常。urllib.error有两个方法，URLError和HTTPError。如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/2952111-165a6b7bb4f6e5af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-12 at 14.39.09.png"></p>
+<p>URLError是OSError的一个子类，HTTPError是URLError的一个子类，服务器上HTTP的响应会返回一个状态码，根据这个HTTP状态码，我们可以知道我们的访问是否成功。例如第二个笔记中提到的200状态码，表示请求成功，再比如常见的404错误等。<br><a id="more"></a></p>
+<h3 id="1-URLError"><a href="#1-URLError" class="headerlink" title="(1).URLError"></a>(1).URLError</h3><p>让我们先看下URLError的异常，创建文件urllib_test05.py，编写如下代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#一个不存在的连接</span></span><br><span class="line">    url = <span class="string">"http://www.dskfclyfiydl.com/"</span></span><br><span class="line">    req = request.Request(url)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = request.urlopen(req)</span><br><span class="line">        html = response.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">        print(html)</span><br><span class="line">    <span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">        print(e.reason)</span><br></pre></td></tr></table></figure></p>
+<p>可以看到如下运行结果：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2952111-5e9dfdc6af1af203.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-12 at 14.35.56.png"></p>
+<h3 id="2-HTTPError"><a href="#2-HTTPError" class="headerlink" title="(2).HTTPError"></a>(2).HTTPError</h3><p>再看下HTTPError异常，创建文件urllib_test06.py，编写如下代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#一个不存在的连接</span></span><br><span class="line">    url = <span class="string">"http://www.douyu.com/wkx.html"</span></span><br><span class="line">    req = request.Request(url)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        responese = request.urlopen(req)</span><br><span class="line">        <span class="comment"># html = responese.read()</span></span><br><span class="line">    <span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">        print(e.code, <span class="string">'\n'</span> ,e.reason, <span class="string">'\n'</span>, e.headers)</span><br></pre></td></tr></table></figure></p>
+<p>运行之后，我们可以看到404，这说明请求的资源没有在服务器上找到，<a href="http://www.douyu.com" target="_blank" rel="noopener">www.douyu.com</a> 这个服务器是存在的，但是我们要查找的 Jack_Cui.html 资源是没有的，所以抛出404异常。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2952111-877b52f32e81d2cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-12 at 14.36.07.png"></p>
+<h3 id="3-URLError和HTTPError混合使用"><a href="#3-URLError和HTTPError混合使用" class="headerlink" title="(3).URLError和HTTPError混合使用"></a>(3).URLError和HTTPError混合使用</h3><p>最后值得注意的一点是，如果想用HTTPError和URLError一起捕获异常，那么需要将HTTPError放在URLError的前面，因为HTTPError是URLError的一个子类。如果URLError放在前面，出现HTTP异常会先响应URLError，这样HTTPError就捕获不到错误信息了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2952111-81c31b50ef0e4f0d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>如果不用上面的方法，也可以使用hasattr函数判断URLError含有的属性，如果含有reason属性表明是URLError，如果含有code属性表明是HTTPError。创建文件urllib_test07.py，编写代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#一个不存在的连接</span></span><br><span class="line">    url = <span class="string">"http://www.douyu.com/wkx.html"</span></span><br><span class="line">    req = request.Request(url)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        responese = request.urlopen(req)</span><br><span class="line">    <span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</span><br><span class="line">            print(<span class="string">"HTTPError"</span>)</span><br><span class="line">            print(e.code)</span><br><span class="line">        <span class="keyword">elif</span> hasattr(e, <span class="string">'reason'</span>):</span><br><span class="line">            print(<span class="string">"URLError"</span>)</span><br><span class="line">            print(e.reason)</span><br></pre></td></tr></table></figure></p>
+<p>运行结果如下：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2952111-9105667f71cd7051.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-12 at 14.37.39.png"></p>
 
       
     </div>
@@ -403,6 +445,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Python3/" rel="tag"># Python3</a>
+          
+            <a href="/tags/Spider/" rel="tag"># Spider</a>
+          
+            <a href="/tags/Urllib/" rel="tag"># Urllib</a>
+          
+        </div>
+      
 
       
       
@@ -412,14 +464,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/02/28/从零开始学爬虫-02/" rel="next" title="从零开始学爬虫-02">
+                <i class="fa fa-chevron-left"></i> 从零开始学爬虫-02
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/27/Github多分支管理Hexo-Blog项目/" rel="prev" title="Github多分支管理Hexo-Blog项目">
-                Github多分支管理Hexo-Blog项目 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/28/从零开始学爬虫-04/" rel="prev" title="从零开始学爬虫-04">
+                从零开始学爬虫-04 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -615,7 +671,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib-error"><span class="nav-number">1.</span> <span class="nav-text">urllib.error</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-URLError"><span class="nav-number">1.1.</span> <span class="nav-text">(1).URLError</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTTPError"><span class="nav-number">1.2.</span> <span class="nav-text">(2).HTTPError</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-URLError和HTTPError混合使用"><span class="nav-number">1.3.</span> <span class="nav-text">(3).URLError和HTTPError混合使用</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -809,9 +865,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/02/26/hello-world/';
-          this.page.identifier = '2018/02/26/hello-world/';
-          this.page.title = 'Hello World';
+          this.page.url = 'http://yoursite.com/2018/02/28/从零开始学爬虫-03/';
+          this.page.identifier = '2018/02/28/从零开始学爬虫-03/';
+          this.page.title = '从零开始学爬虫-03';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://ByiProX.disqus.com/embed.js';
