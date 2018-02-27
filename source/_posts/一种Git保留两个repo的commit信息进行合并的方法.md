@@ -13,6 +13,13 @@ categories:
 <!--more-->
 
 比如要将DownloadPicsBySeleniumAndPhantomJS这个项目合并到Web-Spider中，终端中执行：
+```Bash
+$ git remote add other git@github.com:ByiProX/****.git
+$ git fetch other
+$ git checkout -b repo1 other/mster
+$ git checkout master
+$ git merge repo1 --allow-unrelated-histories
+```
 
 ![](http://img.blog.csdn.net/20180213030000117)
 
