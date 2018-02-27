@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="iProX" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Quentin's Blog" type="application/atom+xml" />
 
 
 
@@ -86,7 +86,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python3下使用Selenium&amp;PhantomJS爬火影忍者漫画">
 <meta property="og:url" content="http://yoursite.com/2018/02/27/Python3下使用Selenium-PhantomJS爬火影忍者漫画/index.html">
-<meta property="og:site_name" content="iProX">
+<meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="近期学习爬虫，发现懂的越多，不懂的知识点越多（所以当个傻子还是很幸福的）。好记性不如烂笔头，之前都是把看到的资料链接直接挂到一些平台，比如知乎、简书、Github等。今天有点时间，就好好码一下字，排排版，方便以后查阅。 Selenium用来模拟浏览器的行为，比如点击、最大化、滚动窗口等；PhantomJS是一种浏览器，不过这种浏览器没有UI界面，感觉就像是专门为爬虫设计，优点很明显，可以有效减小内">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2952111-2323c462a546dcc3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -131,7 +131,7 @@
 
 
 
-  <title>Python3下使用Selenium&PhantomJS爬火影忍者漫画 | iProX</title>
+  <title>Python3下使用Selenium&PhantomJS爬火影忍者漫画 | Quentin's Blog</title>
   
 
 
@@ -161,12 +161,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">iProX</span>
+        <span class="site-title">Quentin's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">每天进步一点点</p>
       
   </div>
 
@@ -277,7 +277,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iProX">
+      <meta itemprop="name" content="Quentin's Blog">
     </span>
 
     
@@ -343,6 +343,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/27/Python3下使用Selenium-PhantomJS爬火影忍者漫画/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/27/Python3下使用Selenium-PhantomJS爬火影忍者漫画/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -457,6 +468,16 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -648,6 +669,15 @@
 
 
 
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65356816";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -778,6 +808,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/02/27/Python3下使用Selenium-PhantomJS爬火影忍者漫画/';
+          this.page.identifier = '2018/02/27/Python3下使用Selenium-PhantomJS爬火影忍者漫画/';
+          this.page.title = 'Python3下使用Selenium&PhantomJS爬火影忍者漫画';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -793,16 +843,34 @@
 
 
 
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'uFRd5vjRxY7Q9KJUU2PiR9C4-gzGzoHsz',
+        appKey: 'qWdC5moI22zIjjGtXCdXNdm9',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

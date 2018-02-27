@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="iProX" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Quentin's Blog" type="application/atom+xml" />
 
 
 
@@ -86,7 +86,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Github多分支管理Hexo-Blog项目">
 <meta property="og:url" content="http://yoursite.com/2018/02/27/Github多分支管理Hexo-Blog项目/index.html">
-<meta property="og:site_name" content="iProX">
+<meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="Hexo在部署之后在github的仓库中我们只能找到生成的静态文件。然而博客的源文件：主题、文章、配置等文件都还在本地，并没有备份。对于多台终端设备的用户不够友好，而且存在一定的风险，万一那天电脑坏了或者是出现一些其他问题，就得从头再来。为了解决上述问题，我们可以利用github的分支思想来备份我们的源文件。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-02-27T06:40:56.801Z">
@@ -128,7 +128,7 @@
 
 
 
-  <title>Github多分支管理Hexo-Blog项目 | iProX</title>
+  <title>Github多分支管理Hexo-Blog项目 | Quentin's Blog</title>
   
 
 
@@ -158,12 +158,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">iProX</span>
+        <span class="site-title">Quentin's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">每天进步一点点</p>
       
   </div>
 
@@ -274,7 +274,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iProX">
+      <meta itemprop="name" content="Quentin's Blog">
     </span>
 
     
@@ -329,6 +329,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/27/Github多分支管理Hexo-Blog项目/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/27/Github多分支管理Hexo-Blog项目/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -437,6 +448,16 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -628,6 +649,15 @@
 
 
 
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65356816";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -758,6 +788,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/02/27/Github多分支管理Hexo-Blog项目/';
+          this.page.identifier = '2018/02/27/Github多分支管理Hexo-Blog项目/';
+          this.page.title = 'Github多分支管理Hexo-Blog项目';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -773,16 +823,34 @@
 
 
 
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'uFRd5vjRxY7Q9KJUU2PiR9C4-gzGzoHsz',
+        appKey: 'qWdC5moI22zIjjGtXCdXNdm9',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

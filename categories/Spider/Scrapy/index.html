@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="iProX" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Quentin's Blog" type="application/atom+xml" />
 
 
 
@@ -82,12 +82,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="iProX">
+<meta property="og:title" content="Quentin&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/categories/Spider/Scrapy/index.html">
-<meta property="og:site_name" content="iProX">
+<meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iProX">
+<meta name="twitter:title" content="Quentin&#39;s Blog">
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-  <title>分类: Scrapy | iProX</title>
+  <title>分类: Scrapy | Quentin's Blog</title>
   
 
 
@@ -153,12 +153,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">iProX</span>
+        <span class="site-title">Quentin's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">每天进步一点点</p>
       
   </div>
 
@@ -464,6 +464,15 @@
 
 
 
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65356816";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -590,6 +599,14 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
+    
+
+    
+
+  
+
 
 
 
@@ -605,16 +622,34 @@
 
 
 
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'uFRd5vjRxY7Q9KJUU2PiR9C4-gzGzoHsz',
+        appKey: 'qWdC5moI22zIjjGtXCdXNdm9',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

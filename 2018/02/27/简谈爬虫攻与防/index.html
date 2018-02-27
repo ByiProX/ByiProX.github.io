@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="iProX" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Quentin's Blog" type="application/atom+xml" />
 
 
 
@@ -86,7 +86,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="简谈爬虫攻与防">
 <meta property="og:url" content="http://yoursite.com/2018/02/27/简谈爬虫攻与防/index.html">
-<meta property="og:site_name" content="iProX">
+<meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="封锁间隔时间破解Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-02-27T06:40:35.312Z">
@@ -128,7 +128,7 @@
 
 
 
-  <title>简谈爬虫攻与防 | iProX</title>
+  <title>简谈爬虫攻与防 | Quentin's Blog</title>
   
 
 
@@ -158,12 +158,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">iProX</span>
+        <span class="site-title">Quentin's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">每天进步一点点</p>
       
   </div>
 
@@ -274,7 +274,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iProX">
+      <meta itemprop="name" content="Quentin's Blog">
     </span>
 
     
@@ -340,6 +340,17 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/27/简谈爬虫攻与防/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/02/27/简谈爬虫攻与防/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -446,6 +457,16 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
 
   
 
@@ -637,6 +658,15 @@
 
 
 
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65356816";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
 
 
 
@@ -767,6 +797,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/02/27/简谈爬虫攻与防/';
+          this.page.identifier = '2018/02/27/简谈爬虫攻与防/';
+          this.page.title = '简谈爬虫攻与防';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -782,16 +832,34 @@
 
 
 
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'uFRd5vjRxY7Q9KJUU2PiR9C4-gzGzoHsz',
+        appKey: 'qWdC5moI22zIjjGtXCdXNdm9',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
