@@ -80,3 +80,13 @@ deploy:
   type: git
   repo: git@github.com:ByiProX/ByiProX.github.io.git
   branch: master
+
+###########################################
+# 添加本地搜索功能
+# local_search
+# Docs: http://theme-next.iissnan.com/third-party-services.html#local-search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
