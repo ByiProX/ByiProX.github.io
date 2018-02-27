@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[一种Git保留两个repo的commit信息进行合并的方法]]></title>
+    <url>%2F2018%2F02%2F27%2F%E4%B8%80%E7%A7%8DGit%E4%BF%9D%E7%95%99%E4%B8%A4%E4%B8%AArepo%E7%9A%84commit%E4%BF%A1%E6%81%AF%E8%BF%9B%E8%A1%8C%E5%90%88%E5%B9%B6%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下： 比如要将DownloadPicsBySeleniumAndPhantomJS这个项目合并到Web-Spider中，终端中执行：12345$ git remote add other git@github.com:ByiProX/****.git$ git fetch other$ git checkout -b repo1 other/mster$ git checkout master$ git merge repo1 --allow-unrelated-histories 接下来解决merge冲突即可（可以尝试使用mergetool），如有需要可以删除多余分支和远程连接 1$ git mergetool # 解决merge冲突 123$ git remote rm other # 删除远程连接 $ git branch -d repo1 # 删除分支操作]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python3下使用Selenium&PhantomJS爬火影忍者漫画]]></title>
+    <url>%2F2018%2F02%2F27%2FPython3%E4%B8%8B%E4%BD%BF%E7%94%A8Selenium-PhantomJS%E7%88%AC%E7%81%AB%E5%BD%B1%E5%BF%8D%E8%80%85%E6%BC%AB%E7%94%BB%2F</url>
+    <content type="text"><![CDATA[近期学习爬虫，发现懂的越多，不懂的知识点越多（所以当个傻子还是很幸福的）。好记性不如烂笔头，之前都是把看到的资料链接直接挂到一些平台，比如知乎、简书、Github等。今天有点时间，就好好码一下字，排排版，方便以后查阅。 Selenium用来模拟浏览器的行为，比如点击、最大化、滚动窗口等；PhantomJS是一种浏览器，不过这种浏览器没有UI界面，感觉就像是专门为爬虫设计，优点很明显，可以有效减小内存的使用。 爬虫使用到的模块12345from selenium import webdriverfrom myLogging import MyLoggingimport osimport timeimport re myLogging模块是自己配置的日志包，想要的可以点击这里自己看 爬虫很关键的一点就是能够看懂网页的源代码，记得当初刚刚真正开始接触编程的时候，有很长的一段时间在看HTML、CSS、JS的一些知识，虽然忘得很多，但是印象还是有的，对于后面看网页源代码很有帮助。学习爬虫，除了会基本的python知识以外，还要会网页的一些知识。 爬取图片思路： 已知连接，分析网页的代码结构，看所需的数据是否需要切换frame，并定位所需数据的位于哪个标签之下 采用不同的模块有不同的保存图片方式，如果采用request模块，保存图片方式是可以采用requests.get(comicUrl).content方法，使用该方法需要确定网页的地址。该项目中没有涉及request的使用，所以此后不再表述。对于selenium可以使用 get_screenshot_as_file() 方法，使用该方法强烈建议使用phantomjs，如果使用chrome浏览器，图片尺寸太大的话，会出现截图不完整，对比如下： 找到下一张图片的连接位置并点击更新网页，一般来讲新网页与之前网页结构相同。 在新网页的基础上保存图片，设置循环如此反复。 爬取网页的URL为：爬取火影漫画第一话 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455class DownloadPics(object): def __init__(self, url): self.url = url self.log = MyLogging() self.browser = self.get_browser() self.save_pics(self.browser) def get_browser(self): browser = webdriver.PhantomJS() try: browser.get(self.url) except: MyLogging.error('open the url %s failed' % self.url) browser.implicitly_wait(20) return browser def save_pics(self, browser): pics_title = browser.title.split('_')[0] self.create_dir(pics_title) os.chdir(pics_title) sum_page = self.find_total_page_num(browser) i = 1 while i &lt; sum_page: image_name = str(i) + '.png' browser.get_screenshot_as_file(image_name) # 使用PhantomJS避免了截图的不完整，可以与Chrome比较 self.log.info('saving image %s' % image_name) i += 1 css_selector = "a[href='/comiclist/3/3/%s.htm']" % i # 该方法感觉还不错呢，不过这个网站确实挺差劲的 next_page = browser.find_element_by_css_selector(css_selector) next_page.click() time.sleep(2) # browser.implicitly_wait(20) def find_total_page_num(self, browser): page_element = browser.find_element_by_css_selector("table[cellspacing='1']") num = re.search(r'共\d+页', page_element.text).group()[1:-1] return int(num) def create_dir(self, dir_name): if os.path.exists(dir_name): self.log.error('create directory %s failed cause a same directory exists' % dir_name) else: try: os.makedirs(dir_name) except: self.log.error('create directory %s failed' % dir_name) else: self.log.info('create directory %s success' % dir_name)if __name__ == '__main__': start_url = 'http://comic.kukudm.com/comiclist/3/3/1.htm' DL = DownloadPics(start_url) 运行结果]]></content>
+      <categories>
+        <category>Spider</category>
+        <category>Selenium</category>
+      </categories>
+      <tags>
+        <tag>Spider</tag>
+        <tag>Selenium</tag>
+        <tag>PhantomJS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Django2.0.1搭建电影网站]]></title>
+    <url>%2F2018%2F02%2F27%2FDjango2-0-1%E6%90%AD%E5%BB%BA%E7%94%B5%E5%BD%B1%E7%BD%91%E7%AB%99%2F</url>
+    <content type="text"><![CDATA[本项目已经部署到服务器，可以通过该IP查看http://59.110.221.56/GitHub源代码 技术栈 Bootstrap 3 + Django 2.0.1 + MySQL 5.7.17 + Nginx + locust 本地服务运行方法终端在venv文件夹路径下开启虚拟环境(根据自己的shell进行选择)： 123source ../venv/bin/activate.fishsource ../venv/bin/activatesource ../venv/bin/activate.csh 然后执行：1python3 TWS_Cinema/manage.py runserver 如果报错，终端进入requirements.txt所在目录，运行命令：1pip3 install -r requirements.txt 然后执行：1python3 TWS_Cinema/manage.py runserver 单元测试运行方法在manage.py路径下终端运行 1python3 manage.py test 网站功能描述 实现导航栏搜索电影，支持按年份搜索和类型搜索 – 显示分类列表 – 点击分类显示符合分类要求的电影 实现搜索功能，支持按电影名称模糊搜索 实现电影详细信息查看功能 – 显示电影详细信息 – 显示豆瓣 Top 5 影评 – 在电影详细页面显示相似电影推荐 – 增加电影观看链接 API 按电影id搜索 —— api/movie/id/ # 例如：api/movie/id/1291545 按电影名搜索 —— api/movie/title/ # 例如：api/movie/title/大鱼 按电影原始名搜索 —— api/movie/original_title/ # 例如：api/movie/original_title/Big Fish 按电影类型搜索 —— api/movie/genre/ # 例如：api/movie/genre/剧情 按电影年份搜索 —— api/movie/year/ # 例如：api/movie/year/2003 网站性能测试结果在文件locustfile.py路径下运行1locust --host=http://59.110.221.56 压力测试 采取的框架：locust 服务器性能： CPU：1核 内存：2 GB (I/O优化) 带宽：1Mbps 测试结果： 500人：100%正确 1000人：40%出错率 测试截图 电影网站的其他截图 ReferenceLocust 简介以及使用]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>Django</tag>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[简谈爬虫攻与防]]></title>
+    <url>%2F2018%2F02%2F27%2F%E7%AE%80%E8%B0%88%E7%88%AC%E8%99%AB%E6%94%BB%E4%B8%8E%E9%98%B2%2F</url>
+    <content type="text"><![CDATA[封锁间隔时间破解Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。 封锁Cookies众所周知，网站是通过Cookie来确定用户身份的，Scrapy在爬取数据时使用同一个Cookies发起请求。该做法和把DOWNLOAD_DELAY设为0.001没有本质区别。在scrapy中，直接社禁用Cookies就可以了。在settings.py中设置12# Disable cookies (enabled by default)COOKIES_ENABLED = False 封锁user-agent和proxy破解user-agent是浏览器的身份标识。网站通过UA来确定浏览器类型。很多浏览器拒绝不符合一定标准的UA请求网页。同一个UA高频率的访问网站会有被网站列入黑名单的危险。破解的方法很简单，可以准备一个UA池，每次请求时随机挑选一个进行请求。 在middlewares.py同级目录下创建UAResource.py,文件内容如下： 12345678910111213141516171819202122232425#-*- coding: utf-8 -*-UserAgents = [ "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)", "Mozilla/4.0 (compatible; MSIE 7.0; AOL 9.5; AOLBuild 4337.35; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)", "Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)", "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0)", "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 1.0.3705; .NET CLR 1.1.4322)", "Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.2; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.04506.30)", "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN) AppleWebKit/523.15 (KHTML, like Gecko, Safari/419.3) Arora/0.3 (Change: 287 c9dfb30)", "Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1", "Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/20080705 Firefox/3.0 Kapiko/3.0", "Mozilla/5.0 (X11; Linux i686; U;) Gecko/20070322 Kazehakase/0.4.5", "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20", "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52",]Proxies = ['http://122.114.31.177:808','http://1.2.3.4:80',] 修改middlewares.py，添加内容为1234567891011121314from .UAResource import UserAgentsfrom .UAResource import Proxiesimport randomclass RandomProxy(object): def process_request(self, request, spider): proxy = random.choice(Proxies) request.meta['proxy'] = proxyclass RandomUserAgent(object): """docstring for RandomUerAgent.""" def process_request(self, request, spider): ua = random.choice(UserAgents) request.headers.setdefault('User-Agent', ua) 最后修改setting.py,将RandomUserAgent和RandomProxy添加到DOWNLOADER_MIDDLEWARES中，注意RandomProxy要放到RandomUserAgent之前，即将RandomProxy的值比RandomUserAgent后的值小12345678DOWNLOADER_MIDDLEWARES = &#123; # 'meijutt.middlewares.MeijuttDownloaderMiddleware': 543, 'meijutt.middlewares.RandomProxy': 10, 'meijutt.middlewares.RandomUserAgent': 30, # 禁止内置的(在 DOWNLOADER_MIDDLEWARES_BASE 中设置并默认启用的)中间件 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,&#125; 免费代理不够稳定，如果不想用proxy，设置RandomProxy为None,即禁止使用1'meijutt.middlewares.RandomProxy': None,]]></content>
+      <categories>
+        <category>Spider</category>
+        <category>Scrapy</category>
+      </categories>
+      <tags>
+        <tag>Spider</tag>
+        <tag>Scrapy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Github多分支管理Hexo-Blog项目]]></title>
+    <url>%2F2018%2F02%2F27%2FGithub%E5%A4%9A%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86Hexo-Blog%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[Hexo在部署之后在github的仓库中我们只能找到生成的静态文件。然而博客的源文件：主题、文章、配置等文件都还在本地，并没有备份。对于多台终端设备的用户不够友好，而且存在一定的风险，万一那天电脑坏了或者是出现一些其他问题，就得从头再来。为了解决上述问题，我们可以利用github的分支思想来备份我们的源文件。 备份之前，需要了解博客根目录下面的文件以及文件夹作用：123456789.deploy_git/ 网站静态文件(git)node_modules/ 插件public/ 网站静态文件scaffolds/ 文章模板source/ 博文等themes/ 主题_config.yml 网站配置文件package.json Hexo信息db.json 数据文件 备份的思路master分支存放部署生成的静态文件，Hexo-Bog分支存放我们要备份项目源文件。实际备份中，.deploy_git、public文件夹和我们的master分支内容重复，所以略过。因此，我们在根目录下面建一个.gitignore文件来建立“黑名单”，禁止备份。 编辑.gitignore过滤文件文件内容如下：123.DS_Storepublic/.deploy*/ 关于备份终端中在项目的根目录下执行，对于作者自己的项目，命令执行的路径为ByiProX/下：123456$ git init$ git remote add origin git@github.com:username/username.github.io.git # username为博客项目的名称，也就是git的用户名$ git add .$ git commit -m "ready for backup of the project"$ git push origin master:Hexo-Blog 执行完毕后会发现github博客仓库已经有了一个新分支Hexo-Blog，于是备份工作完成。以后，开始写博文时，即终端运行1$ hexo new [layout] &lt;title&gt; 完成文章后,对编辑后的文章进行备份保存，即终端运行,为下面的部署做准备123$ git add .$ git commit -m "add one article"$ git push origin master:Hexo-Blog 部署运行一下命令进行仓库master分支静态文件部署123$ hexo clean$ hexo generate$ hexo deploy 以上完成项目源文件以及静态文件的Git管理 参考文献及进阶Hexo+github搭建个人博客并实现多终端管理如何在github上面备份HexoHexo的版本控制与持续集成使用hexo，如果换了电脑怎么更新博客]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F02%2F26%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. 非常好的一篇markdown参考手册 Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
