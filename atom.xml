@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-27T17:22:51.289Z</updated>
+  <updated>2018-02-28T06:29:24.312Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo部署的网站项目(.deploy_git)中添加README.md</title>
+    <link href="http://yoursite.com/2018/02/28/Hexo%E9%83%A8%E7%BD%B2%E7%9A%84%E7%BD%91%E7%AB%99%E9%A1%B9%E7%9B%AE-deploy-git-%E4%B8%AD%E6%B7%BB%E5%8A%A0README-md/"/>
+    <id>http://yoursite.com/2018/02/28/Hexo部署的网站项目-deploy-git-中添加README-md/</id>
+    <published>2018-02-28T06:05:20.000Z</published>
+    <updated>2018-02-28T06:29:24.312Z</updated>
+    
+    <content type="html"><![CDATA[<p>终端中执行hexo generate时，会将source文件夹中的.md文件渲染为.html文件到public文件夹中，所以我们可以将README.md文件放到source文件夹中，这样在执行hexo deploy时，生成的.deploy_git文件夹中就会有README文件。但此时并不是我们想要的README.md。<br><a id="more"></a><br>需要注意的是，我们要防止此.md文件被渲染为.html文件，因此，需要在站点配置文件_config.yml中设置skip_render: README.md，这样部署完成后我们就可以在配置的.deploy_git中看到README.md了。</p><p>配置截图如下：</p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-1ce4c1b9e78bee3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;终端中执行hexo generate时，会将source文件夹中的.md文件渲染为.html文件到public文件夹中，所以我们可以将README.md文件放到source文件夹中，这样在执行hexo deploy时，生成的.deploy_git文件夹中就会有README文件。但此时并不是我们想要的README.md。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>从零开始学爬虫-05</title>
