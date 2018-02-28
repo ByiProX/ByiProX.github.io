@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-28T06:29:24.312Z</updated>
+  <updated>2018-02-28T10:35:15.748Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo博客Next主题添加Fork me on GitHub标签</title>
+    <link href="http://yoursite.com/2018/02/28/Hexo%E5%8D%9A%E5%AE%A2Next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Fork-me-on-GitHub%E6%A0%87%E7%AD%BE/"/>
+    <id>http://yoursite.com/2018/02/28/Hexo博客Next主题添加Fork-me-on-GitHub标签/</id>
+    <published>2018-02-28T10:09:26.000Z</published>
+    <updated>2018-02-28T10:35:15.748Z</updated>
+    
+    <content type="html"><![CDATA[<p>给自己的个人博客添加Fork me on GitHub标签感觉很专业很逼格，添加的方法也很简单，介绍如下。</p><p>打开文件：<strong>hexo博客根目录/themes/next/layout/_layout.swig</strong> 找到如下代码块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;div class="&#123;&#123; container_class &#125;&#125; &#123;% block page_class %&#125;&#123;% endblock %&#125; "&gt;</span><br><span class="line">    &lt;div class="headband"&gt;&lt;/div&gt;</span><br><span class="line">    [样式代码]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>样式代码 <a href="https://link.jianshu.com/?t=https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener"><strong>看这里</strong></a> ，挑选自己喜欢的样式。</p><p>然后将样式代码添加到上述 <strong>_layout.swig</strong> 代码块后面，比如选择黑色经典款，即：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;div class="&#123;&#123; container_class &#125;&#125; &#123;% block page_class %&#125;&#123;% endblock %&#125; "&gt;</span><br><span class="line">    &lt;div class="headband"&gt;&lt;/div&gt;</span><br><span class="line">    <span class="comment"># [样式代码]</span></span><br><span class="line">    &lt;a href="https://github.com/you"&gt;&lt;img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p><p>重新部署一下就可以查看了，如果显示不出来，需要清理浏览器的cookie,多刷新几次就OK了。<br>大家看我的，感觉很搭( ⊙ o ⊙ )！<br><img src="http://upload-images.jianshu.io/upload_images/2952111-13a15afaa9450272.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="fork me on github"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给自己的个人博客添加Fork me on GitHub标签感觉很专业很逼格，添加的方法也很简单，介绍如下。&lt;/p&gt;
+&lt;p&gt;打开文件：&lt;strong&gt;hexo博客根目录/themes/next/layout/_layout.swig&lt;/strong&gt; 找到如下代码块&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;div class=&quot;&amp;#123;&amp;#123; container_class &amp;#125;&amp;#125; &amp;#123;% block page_class %&amp;#125;&amp;#123;% endblock %&amp;#125; &quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;div class=&quot;headband&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [样式代码]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo部署的网站项目(.deploy_git)中添加README.md</title>

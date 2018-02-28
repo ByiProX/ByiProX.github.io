@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo博客Next主题添加Fork me on GitHub标签]]></title>
+    <url>%2F2018%2F02%2F28%2FHexo%E5%8D%9A%E5%AE%A2Next%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Fork-me-on-GitHub%E6%A0%87%E7%AD%BE%2F</url>
+    <content type="text"><![CDATA[给自己的个人博客添加Fork me on GitHub标签感觉很专业很逼格，添加的方法也很简单，介绍如下。 打开文件：hexo博客根目录/themes/next/layout/_layout.swig 找到如下代码块12345...&lt;div class="&#123;&#123; container_class &#125;&#125; &#123;% block page_class %&#125;&#123;% endblock %&#125; "&gt; &lt;div class="headband"&gt;&lt;/div&gt; [样式代码]... 样式代码 看这里 ，挑选自己喜欢的样式。 然后将样式代码添加到上述 _layout.swig 代码块后面，比如选择黑色经典款，即：1234567...&lt;div class="&#123;&#123; container_class &#125;&#125; &#123;% block page_class %&#125;&#123;% endblock %&#125; "&gt; &lt;div class="headband"&gt;&lt;/div&gt; # [样式代码] &lt;a href="https://github.com/you"&gt;&lt;img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"&gt;&lt;/a&gt;... 重新部署一下就可以查看了，如果显示不出来，需要清理浏览器的cookie,多刷新几次就OK了。大家看我的，感觉很搭( ⊙ o ⊙ )！]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hexo部署的网站项目(.deploy_git)中添加README.md]]></title>
     <url>%2F2018%2F02%2F28%2FHexo%E9%83%A8%E7%BD%B2%E7%9A%84%E7%BD%91%E7%AB%99%E9%A1%B9%E7%9B%AE-deploy-git-%E4%B8%AD%E6%B7%BB%E5%8A%A0README-md%2F</url>
     <content type="text"><![CDATA[终端中执行hexo generate时，会将source文件夹中的.md文件渲染为.html文件到public文件夹中，所以我们可以将README.md文件放到source文件夹中，这样在执行hexo deploy时，生成的.deploy_git文件夹中就会有README文件。但此时并不是我们想要的README.md。需要注意的是，我们要防止此.md文件被渲染为.html文件，因此，需要在站点配置文件_config.yml中设置skip_render: README.md，这样部署完成后我们就可以在配置的.deploy_git中看到README.md了。 配置截图如下：]]></content>
