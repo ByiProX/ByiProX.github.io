@@ -343,8 +343,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-知识点/" itemprop="url" rel="index">
-                    <span itemprop="name">Python3 知识点</span>
+                  <a href="/categories/Python3-进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python3 进阶</span>
                   </a>
                 </span>
 
@@ -354,7 +354,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-知识点/类变量-和-实例变量/" itemprop="url" rel="index">
+                  <a href="/categories/Python3-进阶/类变量-和-实例变量/" itemprop="url" rel="index">
                     <span itemprop="name">类变量 和 实例变量</span>
                   </a>
                 </span>
@@ -403,14 +403,13 @@
 
       
         
-          <p><strong>类变量：</strong></p>
+          <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>首先来一张图<br><img src="http://upload-images.jianshu.io/upload_images/2952111-07f6d669392b20c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="classvariable.png"></p>
+<h3 id="类变量和实例变量"><a href="#类变量和实例变量" class="headerlink" title="类变量和实例变量"></a>类变量和实例变量</h3><p>在Python Tutorial中对于类变量和实例变量是这样描述的：</p>
 <blockquote>
-<p>​    是可在类的所有实例之间共享的值（也就是说，它们不是单独分配给每个实例的）。例如下例中，num_of_instance 就是类变量，用于跟踪存在着多少个Test 的实例。</p>
+<p>Generally speaking, instance variables are for data unique to each instance and class variables are for attributes and methods shared by all instances of the class:</p>
 </blockquote>
-<p><strong>实例变量：</strong></p>
-<blockquote>
-<p>实例化之后，每个实例单独拥有的变量。</p>
-</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    kind = <span class="string">'canine'</span>         <span class="comment"># class variable shared by all instances</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name    <span class="comment"># instance variable unique to each instance</span></span><br></pre></td></tr></table></figure>
+<p>类<code>Dog</code>中，类属性<code>kind</code>为所有实例所共享；实例属性<code>name</code>为每个<code>Dog</code>的实例独有。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/01/Python3-类变量和实例变量/#more" rel="contents">
@@ -518,8 +517,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-知识点/" itemprop="url" rel="index">
-                    <span itemprop="name">Python3 知识点</span>
+                  <a href="/categories/Python3-进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python3 进阶</span>
                   </a>
                 </span>
 
@@ -529,7 +528,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python3-知识点/Staticmethod-Classmethod/" itemprop="url" rel="index">
+                  <a href="/categories/Python3-进阶/Staticmethod-Classmethod/" itemprop="url" rel="index">
                     <span itemprop="name">Staticmethod & Classmethod</span>
                   </a>
                 </span>
@@ -2003,7 +2002,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
