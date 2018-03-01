@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-01T08:05:39.909Z</updated>
+  <updated>2018-03-01T09:58:21.963Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 自省</title>
+    <link href="http://yoursite.com/2018/03/01/Python-%E8%87%AA%E7%9C%81/"/>
+    <id>http://yoursite.com/2018/03/01/Python-自省/</id>
+    <published>2018-03-01T08:19:37.000Z</published>
+    <updated>2018-03-01T09:58:21.963Z</updated>
+    
+    <content type="html"><![CDATA[<p>自省是python彪悍的特性之一.</p><p>自省（introspection）是一种自我检查行为。在计算机编程中，自省是指这种能力：检查某些事物以确定它是什么、它知道什么以及它能做什么。自省向程序员提供了极大的灵活性和控制力.</p><a id="more"></a><p>自省就是面向对象的语言所写的程序在运行时,所能知道对象的类型.简单一句就是运行时能够获得对象的类型.比如type(),dir(),getattr(),hasattr(),isinstance().</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>,<span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line">c = <span class="keyword">True</span></span><br><span class="line"><span class="keyword">print</span> type(a),type(b),type(c) <span class="comment"># &lt;type 'list'&gt; &lt;type 'dict'&gt; &lt;type 'bool'&gt;</span></span><br><span class="line"><span class="keyword">print</span> isinstance(a,list)  <span class="comment"># True</span></span><br></pre></td></tr></table></figure><p>未完待续</p><p>参考：</p><ol><li><a href="http://python.jobbole.com/82110/" target="_blank" rel="noopener">http://python.jobbole.com/82110/</a></li><li><a href="http://blog.csdn.net/IAlexanderI/article/details/78768378" target="_blank" rel="noopener">http://blog.csdn.net/IAlexanderI/article/details/78768378</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自省是python彪悍的特性之一.&lt;/p&gt;
+&lt;p&gt;自省（introspection）是一种自我检查行为。在计算机编程中，自省是指这种能力：检查某些事物以确定它是什么、它知道什么以及它能做什么。自省向程序员提供了极大的灵活性和控制力.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python 自省" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python-%E8%87%AA%E7%9C%81/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 类变量和实例变量</title>
@@ -334,9 +359,9 @@
       <category term="Django" scheme="http://yoursite.com/categories/Django/"/>
     
     
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
       <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
   </entry>
   
@@ -384,9 +409,9 @@
       <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
       <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
   </entry>
   
