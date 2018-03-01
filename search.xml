@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[if __name__ == '__main__': ?]]></title>
+    <url>%2F2018%2F03%2F01%2Fif-name-main%2F</url>
+    <content type="text"><![CDATA[Every Python module has it’s __name__ defined and if this is &#39;__main__&#39;, it implies that the module is being run standalone by the user and we can do corresponding appropriate actions. 当Python解析器读取一个源文件时,它会执行所有的代码.在执行代码前,会定义一些特殊的变量.例如,如果解析器运行的模块(源文件)作为主程序,它将会把__name__变量设置成&quot;__main__&quot;.如果只是引入其他的模块,__name__变量将会设置成模块的名字. 这么做的原因是有时你想让你的模块既可以直接的执行,还可以被当做模块导入到其他模块中去.通过检查是不是主函数,可以让你的代码只在它作为主程序运行时执行,而当其他人调用你的模块中的函数的时候不必执行. 直接上一个栗子：1234567# Filename: using_name.pyprint(__name__)if __name__ == '__main__': print('This program is being run by itself')else: print('I am being imported from another module') 12345678910$ python using_name.py__main__This program is being run by itself$ python&gt;&gt;&gt; import using_nameusing_nameI am being imported from another module&gt;&gt;&gt;]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python中的单下划线和双下划线]]></title>
     <url>%2F2018%2F03%2F01%2FPython%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%8B%E5%88%92%E7%BA%BF%E5%92%8C%E5%8F%8C%E4%B8%8B%E5%88%92%E7%BA%BF%2F</url>
     <content type="text"><![CDATA[单下划线在解释器中在交互解释器中，_符号还是指交互解释器中最后一次执行语句的返回结果。这种用法最初出现在CPython解释器中，其他解释器后来也都跟进了。 作为名称使用这个跟上面有点类似。_用作被丢弃的名称。按照惯例，这样做可以让阅读你代码的人知道，这是个不会被使用的特定名称。举个例子，你可能无所谓一个循环计数的值：123n = 42for _ in range(n): do_something() i18n_还可以被用作函数名。这种情况，单下划线经常被用作国际化和本地化字符串翻译查询的函数名。举个例子，在 Django documentation for translation 中你可能会看到： 123456from django.utils.translation import ugettext as _from django.http import HttpResponsedef my_view(request): output = _("Welcome to my site.") return HttpResponse(output) 注意：第二种和第三种用法会引起冲突，所以在任意代码块中，如果使用了_作i18n翻译查询函数，就应该避免再用作被丢弃的变量名。 单下划线前缀的名称首先是单下划线开头，这个被常用于模块中，在一个模块中以单下划线开头的变量和函数被默认当作内部函数,用来指定私有变量。如果使用 from a_module import * 导入时，这部分变量和函数不会被导入。不过值得注意的是，如果使用 import a_module 这样导入模块，仍然可以用 a_module._some_var 这样的形式访问到这样的对象。 另外单下划线开头还有一种一般不会用到的情况在于使用一个 C 编写的扩展库有时会用下划线开头命名，然后使用一个去掉下划线的 Python 模块进行包装。如 struct 这个模块实际上是 C 模块 _struct 的一个 Python 包装。 单下划线后缀的名称在 Python 的官方推荐的代码样式中，还有一种单下划线结尾的样式，这在解析时并没有特别的含义，但通常用于和 Python 关键词区分开来，比如如果我们需要一个变量叫做 class，但 class 是 Python 的关键词，就可以以单下划线结尾写作 class_。 双下划线双下划线开头的命名形式在 Python 的类成员中使用表示名字改编 (Name Mangling)，即如果有一 Test 类里有一成员 __x，那么 dir(Test) 时会看到 _Test__x 而非 __x。这是为了避免该成员的名称与子类中的名称冲突。但要注意这要求该名称末尾最多有一个下划线 python document. 双下划线开头双下划线结尾的是一些 Python 的“魔术”对象，如类成员的 __init__、__del__、__add__、__getitem__ 等，以及全局的 __file__、__name__ 等。 Python 官方推荐永远不要将这样的命名方式应用于自己的变量或函数，而是按照文档说明来使用。 举个栗子1234567891011121314&gt;&gt;&gt; class MyClass():... def __init__(self):... self.__superprivate = "Hello"... self._semiprivate = ", world!"...&gt;&gt;&gt; mc = MyClass()&gt;&gt;&gt; print mc.__superprivateTraceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AttributeError: myClass instance has no attribute '__superprivate'&gt;&gt;&gt; print mc._semiprivate, world!&gt;&gt;&gt; print mc.__dict__&#123;'_MyClass__superprivate': 'Hello', '_semiprivate': ', world!'&#125; __foo__:一种约定,Python内部的名字,用来区别其他用户自定义的命名,以防冲突，就是例如__init__(),__del__(),__call__()这些特殊方法 _foo:一种约定,用来指定变量私有.程序员用来指定私有变量的一种方式.不能用from module import * 导入，其他方面和公有一样访问； __foo:这个有真正的意义:解析器用_classname__foo来代替这个名字,以区别和其他类相同的命名,它无法直接像公有成员一样随便访问,但是可以通过对象名 _类名__xxx 这样的方式可以访问. 参考详情见: http://stackoverflow.com/questions/1301346/the-meaning-of-a-single-and-a-double-underscore-before-an-object-name-in-python http://www.zhihu.com/question/19754941 https://segmentfault.com/a/1190000002611411 https://docs.python.org/3.4/tutorial/classes.html#tut-private]]></content>
@@ -199,8 +210,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Git</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
