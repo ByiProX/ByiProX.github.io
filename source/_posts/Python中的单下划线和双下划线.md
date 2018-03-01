@@ -20,6 +20,8 @@ n = 42
 for _ in range(n):
     do_something()
 ```
+
+<!-- more -->
 #### i18n
 `_`还可以被用作函数名。这种情况，单下划线经常被用作国际化和本地化字符串翻译查询的函数名。举个例子，在 [Django documentation for translation](https://docs.djangoproject.com/en/dev/topics/i18n/translation/) 中你可能会看到：
 
