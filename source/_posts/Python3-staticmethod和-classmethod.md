@@ -4,7 +4,7 @@ date: 2018-03-01 02:01:19
 tags:
   - Python3
 categories:
-  - Python3 知识点
+  - Python3 进阶
   - Staticmethod & Classmethod
 ---
 
