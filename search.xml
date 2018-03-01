@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python3 可迭代对象、迭代器和生成器]]></title>
+    <url>%2F2018%2F03%2F01%2Fpython3-%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%E3%80%81%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[前言迭代是数据处理的基石。扫描内存中放不下数据集时，我们要找到一种惰性获取数据项的方式，即按需一次获取一个数据项，这就是迭代器模式（iterator pattern）。所有的生成器都是迭代器，因为生成器完全实现了迭代器接口。在python社区中，大多数时候都把迭代器和生成器视作同一概念。 所有python程序员都知道，序列可迭代，下面说明具体原因。 序列可迭代的原因：iter函数解释器需要迭代对象x时，会自动调用iter(x)。内置的iter函数有以下作用。 检查对象是否实现了__iter__方法，如果实现了就调用它，获得一个迭代器。 如果没有实现__iter__方法，但是实现了__getitem__方法，python会创建一个迭代器，尝试按顺序（从索引0开始）获取元素。 如果尝试失败，python会抛出TypeError异常，通常会提示”C object is not iterable”,其中C是目标对象所属的类。 任何Python序列都可迭代的原因是它们实现了__getitem__方法。其实标准的序列也都实现了__iter__方法。之所以对__getitem__方法做特殊处理是为了向后兼容。 从Python3.4开始，检查x能否迭代，最准确的方法是调用iter(x)函数，如果不可迭代，再处理TypeError异常。这比使用isinstance(x, abc.Iterable)更准确，因为iter(x)函数会考虑到遗留的__getitem__方法，而abc.Iterable类则不考虑。 可迭代的对象与迭代器的对比可迭代对象使用iter内置函数可以获取迭代器的对象。 如果实现了能返回迭代器的__iter__方法，那么对象就是可迭代的。序列都可以迭代；实现了__getitem__方法，而且七参数是从零开始的索引，这种对象也是可迭代的。 我们要明确可迭代对象和迭代器之间的关系：Python从可迭代的对象中获取迭代器 标准的迭代器接口有两个方法，即： __next__:返回下一个可用元素，如果没有元素，抛出StopIteration异常 __iter__:返回self,以便在应该使用可迭代对象的地方使用迭代器，比如for循环中。 因为迭代器只需__next__和__iter__两个方法，所以除了调用next()方法，以及捕获StopIteration异常之外，没有办法检查是否还有遗留的元素。此外，也没有办法还原迭代器。如果想再次迭代，那就要调用iter(…)，传入之前构建迭代器的可迭代对象。 迭代器迭代器是这样的对象：实现了无参数的__next__方法，返回序列中的下一个元素；如果没有元素了，那么抛出StopIteration异常。Python迭代器还实现了__iter__方法，因此迭代器也可以迭代。 构建可迭代对象和迭代器时经常会出现错误，原因是混淆了两者。要知道，可迭代的对象有个__iter__方法，每次都实例化一个新的迭代器；而迭代器要实现__next__方法，返回单个元素，此外还要实现__iter__方法，返回迭代器本身。因此，迭代器可以迭代，但是可迭代的对象不是迭代器。 可迭代的对象一定不是自身的迭代器。也就是说，可迭代的对象必须实现__iter__方法，但不能实现__next__方法。另一方面，迭代器应该一直可以迭代，迭代器的__iter__方法应该返回自身。 123a = [1,2,3]'__iter__' in dir(a) # True'__iter__' in dir(iter(a)) # True 生成器函数只要Python函数的定义体中有yield关键字，该函数就是生成器函数。调用生成器函数时，会返回一个生成器对象。也就是说，生成器函数是生成器工厂。 普通的函数与生成器函数在句法上的唯一区别是，在后者的定义体中有yield关键字。有些人认为定义生成器函数应该使用一个新的关键字，例如gen，而不是def，但是Guido不同意。 生成器函数工作原理1234567891011121314151617181920212223242526def gen_123(): # 只要Python代码中包含yield，该函数就是生成器函数 yield 1 #生成器函数的定义体中通常都有循环，不过这不是必要条件；此处重复使用了3次yield yield 2 yield 3if __name__ == '__main__': print(gen_123) # 可以看出gen_123是函数对象 # &lt;function gen_123 at 0x10be199d8&gt; print(gen_123()) # 函数调用时返回的是一个生成器对象 # &lt;generator object gen_123 at 0x10be31ca8&gt; for i in gen_123(): # 生成器是迭代器，会生成传给yield关键字的表达式的值 print(i) # 1 # 2 # 3 g = gen_123() # 为了仔细检查，把生成器对象赋值给g print(next(g)) # 1 print(next(g)) # 2 print(next(g)) # 3 print(next(g)) # 生成器函数的定义体执行完毕后，生成器对象会抛出异常。# Traceback (most recent call last):# File "test.py", line 17, in &lt;module&gt;# print(next(g))# StopIteration 如上述代码所示： 只要Python代码中包含yield，该函数就是生成器函数 生成器函数的定义体中通常都有循环，不过这不是必要条件；此处重复使用了3次yield 可以看出gen_123是函数对象 函数调用时返回的是一个生成器对象 生成器是迭代器，会生成传给yield关键字的表达式的值 为了仔细检查，把生成器对象赋值给g 因为g是迭代器，所以调用nest(g)会获取yield生成的下一个元素 生成器函数的定义体执行完毕后，生成器对象会抛出异常。 使用准确的词语描述从生成器中获取结果的过程有助于理解生成器。注意，此处说的是产出或生成值。如果说生成器返回值，就会让人难以理解。 函数返回值; 调用生成器函数返回生成器; 生成器产出或生成值。生成器不会以常规方式返回值; 1234567891011121314151617In [66]: def gen_AB(): ...: print('start') ...: yield 'A' ...: print('continue') ...: yield 'B' ...: print('end.') ...:In [67]: for c in gen_AB(): ...: print('--&gt;', c) ...:start--&gt; Acontinue--&gt; Bend. 未完待续]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+        <category>Python3 迭代器和生成器</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[if __name__ == '__main__': ?]]></title>
     <url>%2F2018%2F03%2F01%2Fif-name-main%2F</url>
     <content type="text"><![CDATA[Every Python module has it’s __name__ defined and if this is &#39;__main__&#39;, it implies that the module is being run standalone by the user and we can do corresponding appropriate actions. 当Python解析器读取一个源文件时,它会执行所有的代码.在执行代码前,会定义一些特殊的变量.例如,如果解析器运行的模块(源文件)作为主程序,它将会把__name__变量设置成&quot;__main__&quot;.如果只是引入其他的模块,__name__变量将会设置成模块的名字. 这么做的原因是有时你想让你的模块既可以直接的执行,还可以被当做模块导入到其他模块中去.通过检查是不是主函数,可以让你的代码只在它作为主程序运行时执行,而当其他人调用你的模块中的函数的时候不必执行. 直接上一个栗子：1234567# Filename: using_name.pyprint(__name__)if __name__ == '__main__': print('This program is being run by itself')else: print('I am being imported from another module') 12345678910$ python using_name.py__main__This program is being run by itself$ python&gt;&gt;&gt; import using_nameusing_nameI am being imported from another module&gt;&gt;&gt;]]></content>
@@ -210,8 +222,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Git</tag>
         <tag>Hexo</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
