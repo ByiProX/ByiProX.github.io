@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-02T04:55:21.925Z</updated>
+  <updated>2018-03-02T17:08:27.821Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python3 如何用一个表达式合并两个字典</title>
+    <link href="http://yoursite.com/2018/03/03/python3-%E5%A6%82%E4%BD%95%E7%94%A8%E4%B8%80%E4%B8%AA%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E5%AD%97%E5%85%B8/"/>
+    <id>http://yoursite.com/2018/03/03/python3-如何用一个表达式合并两个字典/</id>
+    <published>2018-03-02T17:00:28.000Z</published>
+    <updated>2018-03-02T17:08:27.821Z</updated>
+    
+    <content type="html"><![CDATA[<p>有两个Python字典,写一个表达式来返回两个字典的合并。<code>update()</code>方法返回的是空值而不是返回合并后的对象.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = &#123;<span class="string">'b'</span>:<span class="number">10</span>, <span class="string">'c'</span>: <span class="number">11</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = x.update(y)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> z</span><br><span class="line"><span class="keyword">None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">10</span>, <span class="string">'c'</span>: <span class="number">11</span>&#125;</span><br></pre></td></tr></table></figure></p><p>如何才能让值保存在z而不是x?<br><a id="more"></a></p><p>对于python2可以用下面的方法:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z = dict(x.items() + y.items())</span><br></pre></td></tr></table></figure></p><p>最后就是你想要的最终结果保存在字典z中,而键<code>b</code>的值会被第二个字典的值覆盖.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = &#123;<span class="string">'b'</span>:<span class="number">10</span>, <span class="string">'c'</span>: <span class="number">11</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = dict(x.items() + y.items())</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z</span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">11</span>, <span class="string">'b'</span>: <span class="number">10</span>&#125;</span><br></pre></td></tr></table></figure></p><p>对于Python3：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = dict(list(x.items()) + list(y.items()))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z</span><br><span class="line">&#123;<span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">11</span>, <span class="string">'b'</span>: <span class="number">10</span>&#125;</span><br></pre></td></tr></table></figure></p><p>还可以这样:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">z = x.copy()</span><br><span class="line">z.update(y)</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有两个Python字典,写一个表达式来返回两个字典的合并。&lt;code&gt;update()&lt;/code&gt;方法返回的是空值而不是返回合并后的对象.&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;x = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;y = &amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;:&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;c&#39;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;z = x.update(y)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; z&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;x&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;c&#39;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;11&lt;/span&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如何才能让值保存在z而不是x?&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python3 数据结构" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>python3 可迭代对象、迭代器和生成器</title>
