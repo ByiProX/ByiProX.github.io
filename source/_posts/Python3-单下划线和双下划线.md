@@ -1,5 +1,5 @@
 ---
-title: Python中的单下划线和双下划线
+title: Python3 中的单下划线和双下划线
 date: 2018-03-01 18:01:50
 tags:
   - Python3
