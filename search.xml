@@ -48,8 +48,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python 自省]]></title>
-    <url>%2F2018%2F03%2F01%2FPython-%E8%87%AA%E7%9C%81%2F</url>
+    <title><![CDATA[Python3 自省]]></title>
+    <url>%2F2018%2F03%2F01%2FPython3-%E8%87%AA%E7%9C%81%2F</url>
     <content type="text"><![CDATA[自省是python彪悍的特性之一. 自省（introspection）是一种自我检查行为。在计算机编程中，自省是指这种能力：检查某些事物以确定它是什么、它知道什么以及它能做什么。自省向程序员提供了极大的灵活性和控制力. 自省就是面向对象的语言所写的程序在运行时,所能知道对象的类型.简单一句就是运行时能够获得对象的类型.比如type(),dir(),getattr(),hasattr(),isinstance(). 12345a = [1,2,3]b = &#123;'a':1,'b':2,'c':3&#125;c = Trueprint type(a),type(b),type(c) # &lt;type 'list'&gt; &lt;type 'dict'&gt; &lt;type 'bool'&gt;print isinstance(a,list) # True 未完待续 参考： http://python.jobbole.com/82110/ http://blog.csdn.net/IAlexanderI/article/details/78768378]]></content>
       <categories>
         <category>Python3 进阶</category>
