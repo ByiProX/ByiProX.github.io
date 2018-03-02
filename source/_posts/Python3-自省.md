@@ -5,7 +5,7 @@ tags:
   - Python3
 categories:
   - Python3 进阶
-  - Python 自省
+  - Python3 自省
 ---
 
 自省是python彪悍的特性之一.
