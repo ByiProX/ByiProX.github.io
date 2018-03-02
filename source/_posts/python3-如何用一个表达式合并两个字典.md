@@ -33,6 +33,7 @@ z = dict(x.items() + y.items())
 >>> z
 {'a': 1, 'c': 11, 'b': 10}
 ```
+
 对于Python3：
 ```python
 >>> z = dict(list(x.items()) + list(y.items()))
