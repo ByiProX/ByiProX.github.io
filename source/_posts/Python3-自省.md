@@ -1,5 +1,5 @@
 ---
-title: Python 自省
+title: Python3 自省
 date: 2018-03-01 16:19:37
 tags:
   - Python3
