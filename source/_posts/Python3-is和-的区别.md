@@ -7,7 +7,7 @@ categories:
   - Python3 进阶
 ---
 
-## python 三要素
+## Python 对象三要素
 要理解Python中is和==的区别，首先要理解Python对象的三个要素:
 
 
