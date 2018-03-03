@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-03T05:21:56.663Z</updated>
+  <updated>2018-03-03T05:32:07.110Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 使用virtualenv搭建虚拟环境</title>
+    <link href="http://yoursite.com/2018/03/03/Python3-%E4%BD%BF%E7%94%A8virtualenv%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
+    <id>http://yoursite.com/2018/03/03/Python3-使用virtualenv搭建虚拟环境/</id>
+    <published>2018-03-03T05:28:31.000Z</published>
+    <updated>2018-03-03T05:32:07.110Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用Python进行多个项目开发时，每个项目可能会需要安装不同的组件。把这些组件安装在同一台计算机下可能会导致组件之间的相互冲突，比如项目A使用Django 1.10，而项目B使用Django 1.8，那么同时安装两个版本可能在具体使用时产生冲突。使用虚拟环境可以有效避免这样的问题。</p><p>Python虚拟环境是一套由Ian Bicking编写的管理独立Python运行环境的系统。这样，开发者可以让每个项目运行在独立的虚拟环境中，从而避免了不同项目之间组件配置的冲突。</p><h4 id="1-虚拟环境安装"><a href="#1-虚拟环境安装" class="headerlink" title="1.虚拟环境安装"></a>1.虚拟环境安装</h4><p>在终端中执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenv</span><br></pre></td></tr></table></figure></p><h4 id="2-虚拟环境使用"><a href="#2-虚拟环境使用" class="headerlink" title="2.虚拟环境使用"></a>2.虚拟环境使用</h4><p>假定我们要开发一个新的项目，需要一套独立的Python运行环境，或者为已有的项目建立虚拟环境，终端执行如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span>   [项目所在目录]</span><br><span class="line">$ virtualenv venv</span><br></pre></td></tr></table></figure></p><p>该命令执行后，将在当前目录下建立一个venv目录，<strong>该目录拷贝一份完整的当前系统的Python环境</strong>；</p><p>我么也可以执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ virtualenv --no-site-packages venv</span><br></pre></td></tr></table></figure></p><p>这样，已经安装到系统Python环境中的所有第三方包都不会复制过来，这样，我们就得到了一个不带任何第三方包的“干净”的Python运行环境。新建的Python环境被放到当前目录下的venv目录。</p><p>有了venv这个Python环境，可以用source进入该环境（注意是在cd之后的目录）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> venv/bin/activate[.fish|.zsh]</span><br></pre></td></tr></table></figure></p><p>注意到命令提示符变了，有个(venv)前缀，表示当前环境是一个名为venv的Python环境。在venv环境下，用pip安装的包都被安装到venv/lib目录，而不会影响系统的Python环境。</p><p>退出当前的venv环境，使用deactivate命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ deactivate</span><br></pre></td></tr></table></figure></p><p>此时回到了正常的环境，现在pip或python均是在系统Python环境下执行。</p><h4 id="3-注意"><a href="#3-注意" class="headerlink" title="3.注意"></a>3.注意</h4><p>为保证项目之间的独立性，建议所有使用pip安装的组件都在项目虚拟环境中进行，避免不同版本的冲突。</p><p>最后附上<a href="https://virtualenv.pypa.io/en/stable/" target="_blank" rel="noopener">Virtualenv的官方文档</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在使用Python进行多个项目开发时，每个项目可能会需要安装不同的组件。把这些组件安装在同一台计算机下可能会导致组件之间的相互冲突，比如项目A使用Django 1.10，而项目B使用Django 1.8，那么同时安装两个版本可能在具体使用时产生冲突。使用虚拟环境可以有效避免
+      
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python3 virtualenv" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-virtualenv/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 真假值对照表</title>
@@ -533,35 +560,6 @@
 &lt;h2 id=&quot;一-、为何要设置User-Agent&quot;&gt;&lt;a href=&quot;#一-、为何要设置User-Agent&quot; class=&quot;headerlink&quot; title=&quot;(一)、为何要设置User Agent&quot;&gt;&lt;/a&gt;(一)、为何要设置User Agent&lt;/h2&gt;&lt;p&gt;有一些网站不喜欢被爬虫程序访问，所以会检测连接对象，如果是爬虫程序，也就是非人点击访问，它就会不让你继续访问，所以为了要让程序可以正常运行，需要隐藏自己的爬虫程序的身份。此时，我们就可以通过设置User Agent的来达到隐藏身份的目的，User Agent的中文名为用户代理，简称UA。&lt;/p&gt;
 &lt;p&gt;User Agent存放于Headers中，服务器就是通过查看Headers中的User Agent来判断是谁在访问。在Python中，如果不设置User Agent，程序将使用默认的参数，那么这个User Agent就会有Python的字样，如果服务器检查User Agent，那么没有设置User Agent的Python程序将无法正常访问网站。&lt;/p&gt;
 &lt;p&gt;Python允许我们修改这个User Agent来模拟浏览器访问，它的强大毋庸置疑。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Spider" scheme="http://yoursite.com/categories/Spider/"/>
-    
-      <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
-      <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零开始学爬虫-03</title>
-    <link href="http://yoursite.com/2018/02/28/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E7%88%AC%E8%99%AB-03/"/>
-    <id>http://yoursite.com/2018/02/28/从零开始学爬虫-03/</id>
-    <published>2018-02-27T16:57:01.000Z</published>
-    <updated>2018-02-27T17:04:43.829Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="urllib-error"><a href="#urllib-error" class="headerlink" title="urllib.error"></a>urllib.error</h2><p>urllib.error可以接收有urllib.request产生的异常。urllib.error有两个方法，URLError和HTTPError。如下图所示：<br><img src="http://upload-images.jianshu.io/upload_images/2952111-165a6b7bb4f6e5af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-12 at 14.39.09.png"></p><p>URLError是OSError的一个子类，HTTPError是URLError的一个子类，服务器上HTTP的响应会返回一个状态码，根据这个HTTP状态码，我们可以知道我们的访问是否成功。例如第二个笔记中提到的200状态码，表示请求成功，再比如常见的404错误等。<br><a id="more"></a></p><h3 id="1-URLError"><a href="#1-URLError" class="headerlink" title="(1).URLError"></a>(1).URLError</h3><p>让我们先看下URLError的异常，创建文件urllib_test05.py，编写如下代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#一个不存在的连接</span></span><br><span class="line">    url = <span class="string">"http://www.dskfclyfiydl.com/"</span></span><br><span class="line">    req = request.Request(url)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = request.urlopen(req)</span><br><span class="line">        html = response.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">        print(html)</span><br><span class="line">    <span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">        print(e.reason)</span><br></pre></td></tr></table></figure></p><p>可以看到如下运行结果：</p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-5e9dfdc6af1af203.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-12 at 14.35.56.png"></p><h3 id="2-HTTPError"><a href="#2-HTTPError" class="headerlink" title="(2).HTTPError"></a>(2).HTTPError</h3><p>再看下HTTPError异常，创建文件urllib_test06.py，编写如下代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#一个不存在的连接</span></span><br><span class="line">    url = <span class="string">"http://www.douyu.com/wkx.html"</span></span><br><span class="line">    req = request.Request(url)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        responese = request.urlopen(req)</span><br><span class="line">        <span class="comment"># html = responese.read()</span></span><br><span class="line">    <span class="keyword">except</span> error.HTTPError <span class="keyword">as</span> e:</span><br><span class="line">        print(e.code, <span class="string">'\n'</span> ,e.reason, <span class="string">'\n'</span>, e.headers)</span><br></pre></td></tr></table></figure></p><p>运行之后，我们可以看到404，这说明请求的资源没有在服务器上找到，<a href="http://www.douyu.com" target="_blank" rel="noopener">www.douyu.com</a> 这个服务器是存在的，但是我们要查找的 Jack_Cui.html 资源是没有的，所以抛出404异常。</p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-877b52f32e81d2cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-12 at 14.36.07.png"></p><h3 id="3-URLError和HTTPError混合使用"><a href="#3-URLError和HTTPError混合使用" class="headerlink" title="(3).URLError和HTTPError混合使用"></a>(3).URLError和HTTPError混合使用</h3><p>最后值得注意的一点是，如果想用HTTPError和URLError一起捕获异常，那么需要将HTTPError放在URLError的前面，因为HTTPError是URLError的一个子类。如果URLError放在前面，出现HTTP异常会先响应URLError，这样HTTPError就捕获不到错误信息了。</p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-81c31b50ef0e4f0d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><p>如果不用上面的方法，也可以使用hasattr函数判断URLError含有的属性，如果含有reason属性表明是URLError，如果含有code属性表明是HTTPError。创建文件urllib_test07.py，编写代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#一个不存在的连接</span></span><br><span class="line">    url = <span class="string">"http://www.douyu.com/wkx.html"</span></span><br><span class="line">    req = request.Request(url)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        responese = request.urlopen(req)</span><br><span class="line">    <span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</span><br><span class="line">            print(<span class="string">"HTTPError"</span>)</span><br><span class="line">            print(e.code)</span><br><span class="line">        <span class="keyword">elif</span> hasattr(e, <span class="string">'reason'</span>):</span><br><span class="line">            print(<span class="string">"URLError"</span>)</span><br><span class="line">            print(e.reason)</span><br></pre></td></tr></table></figure></p><p>运行结果如下：</p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-9105667f71cd7051.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-12 at 14.37.39.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;urllib-error&quot;&gt;&lt;a href=&quot;#urllib-error&quot; class=&quot;headerlink&quot; title=&quot;urllib.error&quot;&gt;&lt;/a&gt;urllib.error&lt;/h2&gt;&lt;p&gt;urllib.error可以接收有urllib.request产生的异常。urllib.error有两个方法，URLError和HTTPError。如下图所示：&lt;br&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2952111-165a6b7bb4f6e5af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Screen Shot 2018-02-12 at 14.39.09.png&quot;&gt;&lt;/p&gt;
-&lt;p&gt;URLError是OSError的一个子类，HTTPError是URLError的一个子类，服务器上HTTP的响应会返回一个状态码，根据这个HTTP状态码，我们可以知道我们的访问是否成功。例如第二个笔记中提到的200状态码，表示请求成功，再比如常见的404错误等。&lt;br&gt;
     
     </summary>
     
