@@ -9,25 +9,7 @@ categories:
 ---
 ## 函数重载的目的
 
-在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。
-
-在Java中实现函数重载：
-```python
-
-class Writer{
-    public static void write(StringIO output, String content){
-        output.write(content);
-        return null;
-    }
-
-    public static void write(File output, String content){
-        output.write(content);
-        return null;
-    }
-
-```
-
-而在动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。
+动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。
 
 在Python中实现函数重载：
 ```python
@@ -46,6 +28,24 @@ Writer.write(output, 'hello world')
 # file 类型
 output = open('out.txt', 'w')
 Writer.write(output, 'hello world')  
+
+```
+<!-- more -->
+在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。
+
+在Java中实现函数重载：
+```python
+
+class Writer{
+    public static void write(StringIO output, String content){
+        output.write(content);
+        return null;
+    }
+
+    public static void write(File output, String content){
+        output.write(content);
+        return null;
+    }
 
 ```
 
