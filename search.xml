@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python3 真假值对照表]]></title>
+    <url>%2F2018%2F03%2F03%2FPython3-%E7%9C%9F%E5%81%87%E5%80%BC%E5%AF%B9%E7%85%A7%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[类型 False True 布尔 False(与0等价) True(与1等价) 数值 0, &nbsp;&nbsp;0.0 非零的数值 字符串 ‘’,&nbsp;&nbsp;””(空字符串) 非空字符串 容器 [],&nbsp;&nbsp;(),&nbsp;&nbsp;{},&nbsp;&nbsp;set() 至少有一个元素的容器对象 None None 非None对象]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+        <category>Python3 True or False</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Markdown小技巧之空格输入]]></title>
     <url>%2F2018%2F03%2F03%2FMarkdown%E5%B0%8F%E6%8A%80%E5%B7%A7%E4%B9%8B%E7%A9%BA%E6%A0%BC%E8%BE%93%E5%85%A5%2F</url>
     <content type="text"><![CDATA[在使用Markdown的时候，有时候会与到这样的需求——为Markdown添加空格。跟word等其他编辑器不同，Markdown只能识别一个空格（在半角输入状态下）。通过搜寻资料找到了两个解决方案。 手动输入空格 （&amp;nbsp；）。注意！此时的分号为英文分号，但是不推荐使用此方法，太麻烦！ 使用全角空格。即：在全角输入状态下直接使用空格键就ok了]]></content>
