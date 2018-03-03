@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python3 is和==的区别]]></title>
+    <url>%2F2018%2F03%2F03%2FPython3-is%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[python 三要素要理解Python中is和==的区别，首先要理解Python对象的三个要素: 要素 说明 获取方式 id 身份标识，基本就是内存地址，用来唯一标识一个对象 id(obj) type 数据类型 type(obj) value 值 :—–: is和==区别 标识 名称 判断方法 is 同一性运算符 id == 比较运算符 value 程序举例例1： 12345a = &#123;"a":1, "b":2&#125;b = a.copy()a == b # True value一样a is b # False id不一样 例2： 1234567891011121314&gt;&gt;&gt; x = y = [4,5,6]&gt;&gt;&gt; z = [4,5,6]&gt;&gt;&gt; x == yTrue&gt;&gt;&gt; x == zTrue&gt;&gt;&gt; x is yTrue&gt;&gt;&gt; x is zFalse&gt;&gt;&gt;&gt;&gt;&gt; print id(x)&gt;&gt;&gt; print id(y)&gt;&gt;&gt; print id(z) 123456789101112131415161718192021222324252627282930313233343536&gt;&gt;&gt; a = 1 #a和b为数值类型&gt;&gt;&gt; b = 1&gt;&gt;&gt; a is bTrue&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = 'cheesezh' #a和b为字符串类型&gt;&gt;&gt; b = 'cheesezh'&gt;&gt;&gt; a is bTrue&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = (1,2,3) #a和b为元组类型&gt;&gt;&gt; b = (1,2,3)&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = [1,2,3] #a和b为list类型&gt;&gt;&gt; b = [1,2,3]&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = &#123;'cheese':1,'zh':2&#125; #a和b为dict类型&gt;&gt;&gt; b = &#123;'cheese':1,'zh':2&#125;&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = set([1,2,3])#a和b为set类型&gt;&gt;&gt; b = set([1,2,3])&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python3 拷贝对象(深拷贝deepcopy和浅拷贝copy)]]></title>
     <url>%2F2018%2F03%2F03%2FPython3-%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1-%E6%B7%B1%E6%8B%B7%E8%B4%9Ddeepcopy%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9Dcopy%2F</url>
     <content type="text"><![CDATA[copy.copy 浅拷贝 只拷贝父对象，不会拷贝对象的内部的子对象。 copy.deepcopy 深拷贝 拷贝对象及其子对象 1234567891011121314151617181920# -*-coding:utf-8 -*-import copya = [1, 2, 3, 4, ['a', 'b']] #原始对象b = a #赋值，传对象的引用c = copy.copy(a) #对象拷贝，浅拷贝d = copy.deepcopy(a) #对象拷贝，深拷贝a.append(5) #修改对象aa[4].append('c') #修改对象a中的['a', 'b']数组对象print 'a = ', aprint 'b = ', bprint 'c = ', cprint 'd = ', d输出结果：a = [1, 2, 3, 4, ['a', 'b', 'c'], 5]b = [1, 2, 3, 4, ['a', 'b', 'c'], 5]c = [1, 2, 3, 4, ['a', 'b', 'c']]d = [1, 2, 3, 4, ['a', 'b']]]]></content>

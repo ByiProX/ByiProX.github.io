@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-03T04:14:09.659Z</updated>
+  <updated>2018-03-03T04:19:30.638Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 is和==的区别</title>
+    <link href="http://yoursite.com/2018/03/03/Python3-is%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://yoursite.com/2018/03/03/Python3-is和-的区别/</id>
+    <published>2018-03-03T04:16:34.000Z</published>
+    <updated>2018-03-03T04:19:30.638Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="python-三要素"><a href="#python-三要素" class="headerlink" title="python 三要素"></a>python 三要素</h2><p>要理解Python中is和==的区别，首先要理解Python对象的三个要素:</p><table><thead><tr><th style="text-align:center">要素</th><th style="text-align:center">说明</th><th style="text-align:center">获取方式</th></tr></thead><tbody><tr><td style="text-align:center">id</td><td style="text-align:center">身份标识，基本就是内存地址，用来唯一标识一个对象</td><td style="text-align:center">id(obj)</td></tr><tr><td style="text-align:center">type</td><td style="text-align:center">数据类型</td><td style="text-align:center">type(obj)</td></tr><tr><td style="text-align:center">value</td><td style="text-align:center">值</td><td style="text-align:center">:—–:</td></tr></tbody></table><h2 id="is和-区别"><a href="#is和-区别" class="headerlink" title="is和==区别"></a>is和==区别</h2><table><thead><tr><th style="text-align:center">标识</th><th style="text-align:center">名称</th><th style="text-align:center">判断方法</th></tr></thead><tbody><tr><td style="text-align:center">is</td><td style="text-align:center">同一性运算符</td><td style="text-align:center">id</td></tr><tr><td style="text-align:center">==</td><td style="text-align:center">比较运算符</td><td style="text-align:center">value</td></tr></tbody></table><hr><h2 id="程序举例"><a href="#程序举例" class="headerlink" title="程序举例"></a>程序举例</h2><h3 id="例1："><a href="#例1：" class="headerlink" title="例1："></a>例1：</h3><p><img src="http://upload-images.jianshu.io/upload_images/2952111-ec5fa82d12a42a34.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕截图2.jpg"></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line">b = a.copy()</span><br><span class="line"></span><br><span class="line">a == b  <span class="comment"># True value一样</span></span><br><span class="line">a <span class="keyword">is</span> b  <span class="comment"># False id不一样</span></span><br></pre></td></tr></table></figure><hr><h3 id="例2："><a href="#例2：" class="headerlink" title="例2："></a>例2：</h3><p><img src="http://upload-images.jianshu.io/upload_images/2952111-21696bc9de2d0e56.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕截图.jpg"></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = y = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x == y</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x == z</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x <span class="keyword">is</span> y</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x <span class="keyword">is</span> z</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(x)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(y)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(z)</span><br></pre></td></tr></table></figure><hr><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1</span> <span class="comment">#a和b为数值类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">'cheesezh'</span> <span class="comment">#a和b为字符串类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">'cheesezh'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">#a和b为元组类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="comment">#a和b为list类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">'cheese'</span>:<span class="number">1</span>,<span class="string">'zh'</span>:<span class="number">2</span>&#125; <span class="comment">#a和b为dict类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = &#123;<span class="string">'cheese'</span>:<span class="number">1</span>,<span class="string">'zh'</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = set([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="comment">#a和b为set类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = set([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;python-三要素&quot;&gt;&lt;a href=&quot;#python-三要素&quot; class=&quot;headerlink&quot; title=&quot;python 三要素&quot;&gt;&lt;/a&gt;python 三要素&lt;/h2&gt;&lt;p&gt;要理解Python中is和==的区别，首先要理解Python对象的三个要素:
+      
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 拷贝对象(深拷贝deepcopy和浅拷贝copy)</title>
@@ -524,28 +549,6 @@
       <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一种Git保留两个repo的commit信息进行合并的方法</title>
-    <link href="http://yoursite.com/2018/02/27/%E4%B8%80%E7%A7%8DGit%E4%BF%9D%E7%95%99%E4%B8%A4%E4%B8%AArepo%E7%9A%84commit%E4%BF%A1%E6%81%AF%E8%BF%9B%E8%A1%8C%E5%90%88%E5%B9%B6%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2018/02/27/一种Git保留两个repo的commit信息进行合并的方法/</id>
-    <published>2018-02-27T06:46:37.000Z</published>
-    <updated>2018-02-27T07:19:42.036Z</updated>
-    
-    <content type="html"><![CDATA[<p>以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下：</p><a id="more"></a><p>比如要将DownloadPicsBySeleniumAndPhantomJS这个项目合并到Web-Spider中，终端中执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git remote add other git@github.com:ByiProX/****.git</span><br><span class="line">$ git fetch other</span><br><span class="line">$ git checkout -b repo1 other/mster</span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge repo1 --allow-unrelated-histories</span><br></pre></td></tr></table></figure></p><p><img src="http://img.blog.csdn.net/20180213030000117" alt=""></p><p>接下来解决merge冲突即可（可以尝试使用mergetool），如有需要可以删除多余分支和远程连接</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git mergetool <span class="comment"># 解决merge冲突</span></span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ git remote rm other <span class="comment"># 删除远程连接  </span></span><br><span class="line">$ git branch -d repo1 <span class="comment"># 删除分支操作</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;以往的合并时首先要删除repo的.git文件夹，然后重新add-commit-push。带来的问题是会丢失某一个仓库的提交信息，不利于时光倒退。经过摸索终于实现了保留两个仓库提交信息的合并方法。介绍如下：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Git" scheme="http://yoursite.com/categories/Git/"/>
-    
-    
-      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     
   </entry>
   

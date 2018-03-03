@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python3,Spider,Urllib," />
+  <meta name="keywords" content="Python3," />
 
 
 
@@ -81,28 +81,21 @@
 
 
 
-<meta name="description" content="为什么要使用CookieCookie，指某些网站为了辨别用户身份、进行session跟踪而储存在用户本地终端上的数据（通常经过加密)。比如说有些网站需要登录后才能访问某个页面，在登录之前，你想抓取某个页面内容，登陆前与登陆后是不同的，或者不允许的。使用Cookie和使用代理IP一样，也需要创建一个自己的opener。在HTTP包中，提供了cookiejar模块，用于提供对Cookie的支持。">
-<meta name="keywords" content="Python3,Spider,Urllib">
+<meta name="description" content="python 三要素要理解Python中is和==的区别，首先要理解Python对象的三个要素:    要素 说明 获取方式     id 身份标识，基本就是内存地址，用来唯一标识一个对象 id(obj)   type 数据类型 type(obj)   value 值 :—–:    is和==区别   标识 名称 判断方法     is 同一性运算符 id   == 比较运算符 value">
+<meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从零开始学爬虫-05">
-<meta property="og:url" content="http://yoursite.com/2018/02/28/从零开始学爬虫-05/index.html">
+<meta property="og:title" content="Python3 is和==的区别">
+<meta property="og:url" content="http://yoursite.com/2018/03/03/Python3-is和-的区别/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="为什么要使用CookieCookie，指某些网站为了辨别用户身份、进行session跟踪而储存在用户本地终端上的数据（通常经过加密)。比如说有些网站需要登录后才能访问某个页面，在登录之前，你想抓取某个页面内容，登陆前与登陆后是不同的，或者不允许的。使用Cookie和使用代理IP一样，也需要创建一个自己的opener。在HTTP包中，提供了cookiejar模块，用于提供对Cookie的支持。">
+<meta property="og:description" content="python 三要素要理解Python中is和==的区别，首先要理解Python对象的三个要素:    要素 说明 获取方式     id 身份标识，基本就是内存地址，用来唯一标识一个对象 id(obj)   type 数据类型 type(obj)   value 值 :—–:    is和==区别   标识 名称 判断方法     is 同一性运算符 id   == 比较运算符 value">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409144243654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409144753813?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409144912938?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409144955289?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409145106869?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409145240590?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409145403065?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409145652613?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20170409150252854?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-02-27T17:22:51.289Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2952111-ec5fa82d12a42a34.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2952111-21696bc9de2d0e56.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-03-03T04:19:30.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从零开始学爬虫-05">
-<meta name="twitter:description" content="为什么要使用CookieCookie，指某些网站为了辨别用户身份、进行session跟踪而储存在用户本地终端上的数据（通常经过加密)。比如说有些网站需要登录后才能访问某个页面，在登录之前，你想抓取某个页面内容，登陆前与登陆后是不同的，或者不允许的。使用Cookie和使用代理IP一样，也需要创建一个自己的opener。在HTTP包中，提供了cookiejar模块，用于提供对Cookie的支持。">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20170409144243654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta name="twitter:title" content="Python3 is和==的区别">
+<meta name="twitter:description" content="python 三要素要理解Python中is和==的区别，首先要理解Python对象的三个要素:    要素 说明 获取方式     id 身份标识，基本就是内存地址，用来唯一标识一个对象 id(obj)   type 数据类型 type(obj)   value 值 :—–:    is和==区别   标识 名称 判断方法     is 同一性运算符 id   == 比较运算符 value">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2952111-ec5fa82d12a42a34.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -132,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/02/28/从零开始学爬虫-05/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/03/Python3-is和-的区别/"/>
 
 
 
 
 
-  <title>从零开始学爬虫-05 | Quentin's Blog</title>
+  <title>Python3 is和==的区别 | Quentin's Blog</title>
   
 
 
@@ -303,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/28/从零开始学爬虫-05/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/03/Python3-is和-的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -320,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">从零开始学爬虫-05</h1>
+          <h1 class="post-title" itemprop="name headline">Python3 is和==的区别</h1>
         
 
         <div class="post-meta">
@@ -332,8 +325,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T01:17:37+08:00">
-                2018-02-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T12:16:34+08:00">
+                2018-03-03
               </time>
             
 
@@ -355,19 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spider/" itemprop="url" rel="index">
-                    <span itemprop="name">Spider</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spider/Urllib/" itemprop="url" rel="index">
-                    <span itemprop="name">Urllib</span>
+                  <a href="/categories/Python3-进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python3 进阶</span>
                   </a>
                 </span>
 
@@ -383,7 +365,7 @@
 
           
           
-             <span id="/2018/02/28/从零开始学爬虫-05/" class="leancloud_visitors" data-flag-title="从零开始学爬虫-05">
+             <span id="/2018/03/03/Python3-is和-的区别/" class="leancloud_visitors" data-flag-title="Python3 is和==的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -414,56 +396,62 @@
       
 
       
-        <h2 id="为什么要使用Cookie"><a href="#为什么要使用Cookie" class="headerlink" title="为什么要使用Cookie"></a>为什么要使用Cookie</h2><p>Cookie，指某些网站为了辨别用户身份、进行session跟踪而储存在用户本地终端上的数据（通常经过加密)。<br>比如说有些网站需要登录后才能访问某个页面，在登录之前，你想抓取某个页面内容，登陆前与登陆后是不同的，或者不允许的。<br>使用Cookie和使用代理IP一样，也需要创建一个自己的opener。在HTTP包中，提供了cookiejar模块，用于提供对Cookie的支持。</p>
-<p><img src="http://img.blog.csdn.net/20170409144243654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><a id="more"></a></p>
-<p>http.cookiejar功能强大，我们可以利用本模块的CookieJar类的对象来捕获cookie并在后续连接请求时重新发送，比如可以实现模拟登录功能。该模块主要的对象有CookieJar、FileCookieJar、MozillaCookieJar、LWPCookieJar。</p>
-<p><strong>它们的关系：</strong> CookieJar–派生–&gt;FileCookieJar–派生–&gt;MozillaCookieJar和LWPCookieJar</p>
-<p><strong>工作原理：</strong> 创建一个带有cookie的opener，在访问登录的URL时，将登录后的cookie保存下来，然后利用这个cookie来访问其他网址。查看登录之后才能看到的信息。</p>
-<p>同样，我们以实例进行讲解，爬取伯乐在线的面向对象的漂亮MM的邮箱联系方式。</p>
-<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><h3 id="1-背景介绍"><a href="#1-背景介绍" class="headerlink" title="(1).背景介绍"></a>(1).背景介绍</h3><p>在伯乐在线有这么一个有趣的模块，面向对象，它说白了就是提供了一个程序员(媛)网上相亲的平台。</p>
-<p><strong>URL:</strong> <a href="http://date.jobbole.com/" target="_blank" rel="noopener">http://date.jobbole.com/</a></p>
-<p>它的样子是这样的：</p>
-<p><img src="http://img.blog.csdn.net/20170409144753813?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>可以看到，这里有很多的相亲贴，随便点进去就会有网上相亲MM的详细信息，想获取MM的联系方式，需要积分，积分可以通过签到的方式获取。如果没有登陆账户，获取联系方式的地方是这个样子的：</p>
-<p><img src="http://img.blog.csdn.net/20170409144912938?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>如果登陆了账号，获取联系方式的地方是这个样子的：</p>
-<p><img src="http://img.blog.csdn.net/20170409144955289?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>想要爬取MM的联系邮箱，就需要用到我们本次讲到的知识，Cookie的使用。当然，首先你积分也得够。</p>
-<p>在讲解之前，推荐一款抓包工具–Fiddler，可以在Google Chrome的Google商店下载这个插件，它的样子是这样的：</p>
-<p><img src="http://img.blog.csdn.net/20170409145106869?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>可以看到，通过这个插件，我们可以很容易找到Post的Form Data等信息，很方便，当然也可以用之前讲得浏览器审查元素的方式查看这些信息。</p>
-<h3 id="2-过程分析"><a href="#2-过程分析" class="headerlink" title="(2).过程分析"></a>(2).过程分析</h3><p>在伯乐在线首页点击登陆的按钮，Fiddler的抓包内容如下：</p>
-<p><img src="http://img.blog.csdn.net/20170409145240590?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>从上图可以看出，真正请求的url是</p>
-<p> <a href="http://www.jobbole.com/wp-admin/admin-ajax.php" target="_blank" rel="noopener">http://www.jobbole.com/wp-admin/admin-ajax.php</a></p>
-<p>Form Data的内容记住，这些是我们编程需要用到的。user_login是用户名，user_pass是用户密码。</p>
-<p>在点击取得联系邮箱按钮的时候，Fiddler的抓包内容如下：</p>
-<p><img src="http://img.blog.csdn.net/20170409145403065?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>从上图可以看出，此刻真正请求的url是</p>
-<p> <a href="http://date.jobbole.com/wp-admin/admin-ajax.php" target="_blank" rel="noopener">http://date.jobbole.com/wp-admin/admin-ajax.php</a></p>
-<p>同样Form Data中内容要记下来。postId是每个帖子的id。例如，打开一个相亲贴，它的URL是<a href="http://date.jobbole.com/4128/" target="_blank" rel="noopener">http://date.jobbole.com/4128/</a>，那么它的这个postId就是4128。为了简化程序，这里就不讲解如何自动获取这个postId了，本实例直接指定postId。如果想要自动获取，可以使用beautifulsoup解析<a href="http://date.jobbole.com/" target="_blank" rel="noopener">http://date.jobbole.com/</a>返回的信息。beautifulsoup的使用。有机会的话，会在后面的爬虫笔记中进行讲解。</p>
-<h3 id="3-测试"><a href="#3-测试" class="headerlink" title="(3).测试"></a>(3).测试</h3><p><strong>1)将Cookie保存到变量中</strong></p>
-<p>首先，我们先利用CookieJar对象实现获取cookie的功能，存储到变量中，先来感受一下,执行文件cookie01.py：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> http <span class="keyword">import</span> cookiejar</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment">#声明一个CookieJar对象实例来保存cookie</span></span><br><span class="line">    cookie = cookiejar.CookieJar()</span><br><span class="line">    <span class="comment">#利用urllib.request库的HTTPCookieProcessor对象来创建cookie处理器,也就CookieHandler</span></span><br><span class="line">    handler=request.HTTPCookieProcessor(cookie)</span><br><span class="line">    <span class="comment">#通过CookieHandler创建opener</span></span><br><span class="line">    opener = request.build_opener(handler)</span><br><span class="line">    <span class="comment">#此处的open方法打开网页</span></span><br><span class="line">    response = opener.open(<span class="string">'http://www.baidu.com'</span>)</span><br><span class="line">    <span class="comment">#打印cookie信息</span></span><br><span class="line">    <span class="keyword">for</span> item <span class="keyword">in</span> cookie:</span><br><span class="line">        print(<span class="string">'Name = %s'</span> % item.name)</span><br><span class="line">        print(<span class="string">'Value = %s'</span> % item.value)</span><br></pre></td></tr></table></figure>
-<p>我们使用以上方法将cookie保存到变量中，然后打印出了cookie中的值，运行结果如下:</p>
-<p><img src="http://img.blog.csdn.net/20170409145652613?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p><strong>2)保存Cookie到文件</strong></p>
-<p>在上面的方法中，我们将cookie保存到了cookie这个变量中，如果我们想将cookie保存到文件中该怎么做呢？方便以后直接读取文件使用，这时，我们就要用到FileCookieJar这个对象了，在这里我们使用它的子类MozillaCookieJar来实现Cookie的保存，编写代码如下,文件为cookie02.py：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> http <span class="keyword">import</span> cookiejar</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    <span class="comment">#设置保存cookie的文件，同级目录下的cookie.txt</span></span><br><span class="line">    filename = <span class="string">'cookie.txt'</span></span><br><span class="line">    <span class="comment">#声明一个MozillaCookieJar对象实例来保存cookie，之后写入文件</span></span><br><span class="line">    cookie = cookiejar.MozillaCookieJar(filename)</span><br><span class="line">    <span class="comment">#利用urllib.request库的HTTPCookieProcessor对象来创建cookie处理器,也就CookieHandler</span></span><br><span class="line">    handler=request.HTTPCookieProcessor(cookie)</span><br><span class="line">    <span class="comment">#通过CookieHandler创建opener</span></span><br><span class="line">    opener = request.build_opener(handler)</span><br><span class="line">    <span class="comment">#此处的open方法打开网页</span></span><br><span class="line">    response = opener.open(<span class="string">'http://www.baidu.com'</span>)</span><br><span class="line">    <span class="comment">#保存cookie到文件</span></span><br><span class="line">    cookie.save(ignore_discard=<span class="keyword">True</span>, ignore_expires=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure></p>
-<p>cookie.save的参数说明：</p>
-<ul>
-<li><p>ignore_discard的意思是即使cookies将被丢弃也将它保存下来；</p>
-</li>
-<li><p>ignore_expires的意思是如果在该文件中cookies已经存在，则覆盖原文件写入。</p>
-</li>
-</ul>
-<p>在这里，我们将这两个全部设置为True。</p>
-<p>运行之后，cookies将被保存到cookie.txt文件中。我们可以查看自己查看下cookie.txt这个文件的内容。</p>
-<p><strong>3)从文件中获取Cookie并访问</strong></p>
-<p>我们已经做到把Cookie保存到文件中了，如果以后想使用，可以利用下面的方法来读取cookie并访问网站，感受一下cookie03.py：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> http <span class="keyword">import</span> cookiejar</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment">#设置保存cookie的文件的文件名,相对路径,也就是同级目录下</span></span><br><span class="line">    filename = <span class="string">'cookie.txt'</span></span><br><span class="line">    <span class="comment">#创建MozillaCookieJar实例对象</span></span><br><span class="line">    cookie = cookiejar.MozillaCookieJar()</span><br><span class="line">    <span class="comment">#从文件中读取cookie内容到变量</span></span><br><span class="line">    cookie.load(filename, ignore_discard=<span class="keyword">True</span>, ignore_expires=<span class="keyword">True</span>)</span><br><span class="line">    <span class="comment">#利用urllib.request库的HTTPCookieProcessor对象来创建cookie处理器,也就CookieHandler</span></span><br><span class="line">    handler=request.HTTPCookieProcessor(cookie)</span><br><span class="line">    <span class="comment">#通过CookieHandler创建opener</span></span><br><span class="line">    opener = request.build_opener(handler)</span><br><span class="line">    <span class="comment">#此用opener的open方法打开网页</span></span><br><span class="line">    response = opener.open(<span class="string">'http://www.baidu.com'</span>)</span><br><span class="line">    <span class="comment">#打印信息</span></span><br><span class="line">    print(response.read().decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure></p>
-<p>了解到以上内容，我们那就可以开始正式编写模拟登陆伯乐在线的程序了。同时，我们也可以获取相亲MM的联系方式。</p>
-<h3 id="4-编写代码"><a href="#4-编写代码" class="headerlink" title="(4).编写代码"></a>(4).编写代码</h3><p>我们利用CookieJar对象实现获取cookie的功能，存储到变量中。然后使用这个cookie变量创建opener，使用这个设置好cookie的opener即可模拟登陆，同笔记四中讲到的IP代理的使用方法类似。</p>
-<p>创建cookie_test.py文件，编写代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> error</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> http <span class="keyword">import</span> cookiejar</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment">#登陆地址</span></span><br><span class="line">    login_url = <span class="string">'http://www.jobbole.com/wp-admin/admin-ajax.php'</span>    </span><br><span class="line">    <span class="comment">#User-Agent信息                   </span></span><br><span class="line">    user_agent = <span class="string">r'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.94 Safari/537.36'</span></span><br><span class="line">    <span class="comment">#Headers信息</span></span><br><span class="line">    head = &#123;<span class="string">'User-Agnet'</span>: user_agent, <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>&#125;</span><br><span class="line">    <span class="comment">#登陆Form_Data信息</span></span><br><span class="line">    Login_Data = &#123;&#125;</span><br><span class="line">    Login_Data[<span class="string">'action'</span>] = <span class="string">'user_login'</span></span><br><span class="line">    Login_Data[<span class="string">'redirect_url'</span>] = <span class="string">'http://www.jobbole.com/'</span></span><br><span class="line">    Login_Data[<span class="string">'remember_me'</span>] = <span class="string">'0'</span>         <span class="comment">#是否一个月内自动登陆</span></span><br><span class="line">    Login_Data[<span class="string">'user_login'</span>] = <span class="string">'********'</span>       <span class="comment">#改成你自己的用户名</span></span><br><span class="line">    Login_Data[<span class="string">'user_pass'</span>] = <span class="string">'********'</span>        <span class="comment">#改成你自己的密码</span></span><br><span class="line">    <span class="comment">#使用urlencode方法转换标准格式</span></span><br><span class="line">    logingpostdata = parse.urlencode(Login_Data).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">    <span class="comment">#声明一个CookieJar对象实例来保存cookie</span></span><br><span class="line">    cookie = cookiejar.CookieJar()</span><br><span class="line">    <span class="comment">#利用urllib.request库的HTTPCookieProcessor对象来创建cookie处理器,也就CookieHandler</span></span><br><span class="line">    cookie_support = request.HTTPCookieProcessor(cookie)</span><br><span class="line">    <span class="comment">#通过CookieHandler创建opener</span></span><br><span class="line">    opener = request.build_opener(cookie_support)</span><br><span class="line">    <span class="comment">#创建Request对象</span></span><br><span class="line">    req1 = request.Request(url=login_url, data=logingpostdata, headers=head)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#面向对象地址</span></span><br><span class="line">    date_url = <span class="string">'http://date.jobbole.com/wp-admin/admin-ajax.php'</span></span><br><span class="line">    <span class="comment">#面向对象</span></span><br><span class="line">    Date_Data = &#123;&#125;</span><br><span class="line">    Date_Data[<span class="string">'action'</span>] = <span class="string">'get_date_contact'</span></span><br><span class="line">    Date_Data[<span class="string">'postId'</span>] = <span class="string">'4128'</span></span><br><span class="line">    <span class="comment">#使用urlencode方法转换标准格式</span></span><br><span class="line">    datepostdata = parse.urlencode(Date_Data).encode(<span class="string">'utf-8'</span>)</span><br><span class="line">    req2 = request.Request(url=date_url, data=datepostdata, headers=head)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment">#使用自己创建的opener的open方法</span></span><br><span class="line">        response1 = opener.open(req1)</span><br><span class="line">        response2 = opener.open(req2)</span><br><span class="line">        html = response2.read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">        index = html.find(<span class="string">'jb_contact_email'</span>)</span><br><span class="line">        <span class="comment">#打印查询结果</span></span><br><span class="line">        print(<span class="string">'联系邮箱:%s'</span> % html[index+<span class="number">19</span>:<span class="number">-2</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">except</span> error.URLError <span class="keyword">as</span> e:</span><br><span class="line">        <span class="keyword">if</span> hasattr(e, <span class="string">'code'</span>):</span><br><span class="line">            print(<span class="string">"HTTPError:%d"</span> % e.code)</span><br><span class="line">        <span class="keyword">elif</span> hasattr(e, <span class="string">'reason'</span>):</span><br><span class="line">            print(<span class="string">"URLError:%s"</span> % e.reason)</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-运行结果如下"><a href="#5-运行结果如下" class="headerlink" title="(5).运行结果如下"></a>(5).运行结果如下</h3><p><img src="http://img.blog.csdn.net/20170409150252854?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>。</p>
+        <h2 id="python-三要素"><a href="#python-三要素" class="headerlink" title="python 三要素"></a>python 三要素</h2><p>要理解Python中is和==的区别，首先要理解Python对象的三个要素:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">要素</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">获取方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id</td>
+<td style="text-align:center">身份标识，基本就是内存地址，用来唯一标识一个对象</td>
+<td style="text-align:center">id(obj)</td>
+</tr>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">数据类型</td>
+<td style="text-align:center">type(obj)</td>
+</tr>
+<tr>
+<td style="text-align:center">value</td>
+<td style="text-align:center">值</td>
+<td style="text-align:center">:—–:</td>
+</tr>
+</tbody>
+</table>
+<h2 id="is和-区别"><a href="#is和-区别" class="headerlink" title="is和==区别"></a>is和==区别</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">标识</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">判断方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">is</td>
+<td style="text-align:center">同一性运算符</td>
+<td style="text-align:center">id</td>
+</tr>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">比较运算符</td>
+<td style="text-align:center">value</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="程序举例"><a href="#程序举例" class="headerlink" title="程序举例"></a>程序举例</h2><h3 id="例1："><a href="#例1：" class="headerlink" title="例1："></a>例1：</h3><p><img src="http://upload-images.jianshu.io/upload_images/2952111-ec5fa82d12a42a34.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕截图2.jpg"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line">b = a.copy()</span><br><span class="line"></span><br><span class="line">a == b  <span class="comment"># True value一样</span></span><br><span class="line">a <span class="keyword">is</span> b  <span class="comment"># False id不一样</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="例2："><a href="#例2：" class="headerlink" title="例2："></a>例2：</h3><p><img src="http://upload-images.jianshu.io/upload_images/2952111-21696bc9de2d0e56.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕截图.jpg"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = y = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>z = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x == y</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x == z</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x <span class="keyword">is</span> y</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x <span class="keyword">is</span> z</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(x)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(y)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> id(z)</span><br></pre></td></tr></table></figure>
+<hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">1</span> <span class="comment">#a和b为数值类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">1</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">'cheesezh'</span> <span class="comment">#a和b为字符串类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="string">'cheesezh'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">#a和b为元组类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="comment">#a和b为list类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = &#123;<span class="string">'cheese'</span>:<span class="number">1</span>,<span class="string">'zh'</span>:<span class="number">2</span>&#125; <span class="comment">#a和b为dict类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = &#123;<span class="string">'cheese'</span>:<span class="number">1</span>,<span class="string">'zh'</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = set([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="comment">#a和b为set类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = set([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(a)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(b)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -483,10 +471,6 @@
           
             <a href="/tags/Python3/" rel="tag"># Python3</a>
           
-            <a href="/tags/Spider/" rel="tag"># Spider</a>
-          
-            <a href="/tags/Urllib/" rel="tag"># Urllib</a>
-          
         </div>
       
 
@@ -498,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/28/从零开始学爬虫-04/" rel="next" title="从零开始学爬虫-04">
-                <i class="fa fa-chevron-left"></i> 从零开始学爬虫-04
+              <a href="/2018/03/03/Python3-拷贝对象-深拷贝deepcopy和浅拷贝copy/" rel="next" title="Python3 拷贝对象(深拷贝deepcopy和浅拷贝copy)">
+                <i class="fa fa-chevron-left"></i> Python3 拷贝对象(深拷贝deepcopy和浅拷贝copy)
               </a>
             
           </div>
@@ -507,10 +491,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/02/28/Hexo部署的网站项目-deploy-git-中添加README-md/" rel="prev" title="Hexo部署的网站项目(.deploy_git)中添加README.md">
-                Hexo部署的网站项目(.deploy_git)中添加README.md <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -705,7 +685,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要使用Cookie"><span class="nav-number">1.</span> <span class="nav-text">为什么要使用Cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-number">2.</span> <span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-背景介绍"><span class="nav-number">2.1.</span> <span class="nav-text">(1).背景介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-过程分析"><span class="nav-number">2.2.</span> <span class="nav-text">(2).过程分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-测试"><span class="nav-number">2.3.</span> <span class="nav-text">(3).测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-编写代码"><span class="nav-number">2.4.</span> <span class="nav-text">(4).编写代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-运行结果如下"><span class="nav-number">2.5.</span> <span class="nav-text">(5).运行结果如下</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python-三要素"><span class="nav-number">1.</span> <span class="nav-text">python 三要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#is和-区别"><span class="nav-number">2.</span> <span class="nav-text">is和==区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序举例"><span class="nav-number">3.</span> <span class="nav-text">程序举例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例1："><span class="nav-number">3.1.</span> <span class="nav-text">例1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例2："><span class="nav-number">3.2.</span> <span class="nav-text">例2：</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -917,9 +897,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/02/28/从零开始学爬虫-05/';
-          this.page.identifier = '2018/02/28/从零开始学爬虫-05/';
-          this.page.title = '从零开始学爬虫-05';
+          this.page.url = 'http://yoursite.com/2018/03/03/Python3-is和-的区别/';
+          this.page.identifier = '2018/03/03/Python3-is和-的区别/';
+          this.page.title = 'Python3 is和==的区别';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://ByiProX.disqus.com/embed.js';
