@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-03T02:39:26.058Z</updated>
+  <updated>2018-03-03T03:28:39.305Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 函数重载</title>
+    <link href="http://yoursite.com/2018/03/03/Python3-%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/"/>
+    <id>http://yoursite.com/2018/03/03/Python3-函数重载/</id>
+    <published>2018-03-03T02:54:44.000Z</published>
+    <updated>2018-03-03T03:28:39.305Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="函数重载的目的"><a href="#函数重载的目的" class="headerlink" title="函数重载的目的"></a>函数重载的目的</h2><p>在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。</p><p>在Java中实现函数重载：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Writer</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(StringIO output, String content)</span></span>&#123;</span><br><span class="line">        output.write(content);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(File output, String content)</span></span>&#123;</span><br><span class="line">        output.write(content);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p><p>而在动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。</p><p>在Python中实现函数重载：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Writer</span>:</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(output, content)</span>:</span></span><br><span class="line">        <span class="comment"># output对象只要实现了write方法就行</span></span><br><span class="line">        output.write(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># stringIO类型</span></span><br><span class="line">output = StringIO()</span><br><span class="line">Writer.write(output, <span class="string">"hello world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># file 类型</span></span><br><span class="line">output = open(<span class="string">"out.txt"</span>, <span class="string">"w"</span>)</span><br><span class="line">Writer.write(output, <span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure></p><p>参考自知乎用户<code>刘志军</code>：<a href="https://www.zhihu.com/question/20053359" target="_blank" rel="noopener">https://www.zhihu.com/question/20053359</a></p><hr><h2 id="函数重载主要是为了解决两个问题"><a href="#函数重载主要是为了解决两个问题" class="headerlink" title="函数重载主要是为了解决两个问题"></a>函数重载主要是为了解决两个问题</h2><ol><li>可变参数类型。</li><li>可变参数个数。</li></ol><blockquote><p>另外，一个基本的设计原则是，仅仅当两个函数除了参数类型和参数个数不同以外，其功能是完全相同的，此时才使用函数重载，如果两个函数的功能其实不同，那么不应当使用重载，而应当使用一个名字不同的函数。</p></blockquote><p>好吧，那么对于情况 1 ，函数功能相同，但是参数类型不同，python 如何处理？答案是根本不需要处理，因为 python 可以接受任何类型的参数，如果函数的功能相同，那么不同的参数类型在 python 中很可能是相同的代码，没有必要做成两个不同函数。</p><p>那么对于情况 2 ，函数功能相同，但参数个数不同，python 如何处理？大家知道，答案就是<code>缺省参数</code>。对那些缺少的参数设定为缺省参数即可解决问题。因为你假设函数功能相同，那么那些缺少的参数终归是需要用的。好了，鉴于情况 1 跟 情况 2 都有了解决方案，python 自然就不需要函数重载了。</p><p>参考自知乎用户<code>pansz</code>：<a href="https://www.zhihu.com/question/20053359" target="_blank" rel="noopener">https://www.zhihu.com/question/20053359</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;函数重载的目的&quot;&gt;&lt;a href=&quot;#函数重载的目的&quot; class=&quot;headerlink&quot; title=&quot;函数重载的目的&quot;&gt;&lt;/a&gt;函数重载的目的&lt;/h2&gt;&lt;p&gt;在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具
+      
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python3 重载" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E9%87%8D%E8%BD%BD/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 子类的查看与类的对象判断</title>
@@ -319,9 +346,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
       <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -350,9 +377,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
       <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -379,9 +406,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
       <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -407,9 +434,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
       <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -436,9 +463,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
       <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -487,13 +514,13 @@
       <category term="Selenium" scheme="http://yoursite.com/categories/Spider/Selenium/"/>
     
     
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
       <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
     
       <category term="Selenium" scheme="http://yoursite.com/tags/Selenium/"/>
     
       <category term="PhantomJS" scheme="http://yoursite.com/tags/PhantomJS/"/>
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
   </entry>
   
@@ -516,35 +543,9 @@
       <category term="Django" scheme="http://yoursite.com/categories/Django/"/>
     
     
-      <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
-    
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
-  </entry>
-  
-  <entry>
-    <title>简谈爬虫攻与防</title>
-    <link href="http://yoursite.com/2018/02/27/%E7%AE%80%E8%B0%88%E7%88%AC%E8%99%AB%E6%94%BB%E4%B8%8E%E9%98%B2/"/>
-    <id>http://yoursite.com/2018/02/27/简谈爬虫攻与防/</id>
-    <published>2018-02-27T04:44:38.000Z</published>
-    <updated>2018-02-27T17:04:37.804Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="封锁间隔时间破解"><a href="#封锁间隔时间破解" class="headerlink" title="封锁间隔时间破解"></a>封锁间隔时间破解</h2><p>Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。</p><a id="more"></a><h2 id="封锁Cookies"><a href="#封锁Cookies" class="headerlink" title="封锁Cookies"></a>封锁Cookies</h2><p>众所周知，网站是通过Cookie来确定用户身份的，Scrapy在爬取数据时使用同一个Cookies发起请求。该做法和把DOWNLOAD_DELAY设为0.001没有本质区别。在scrapy中，直接社禁用Cookies就可以了。在settings.py中设置<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Disable cookies (enabled by default)</span></span><br><span class="line">COOKIES_ENABLED = <span class="keyword">False</span></span><br></pre></td></tr></table></figure></p><h2 id="封锁user-agent和proxy破解"><a href="#封锁user-agent和proxy破解" class="headerlink" title="封锁user-agent和proxy破解"></a>封锁user-agent和proxy破解</h2><p>user-agent是浏览器的身份标识。网站通过UA来确定浏览器类型。很多浏览器拒绝不符合一定标准的UA请求网页。同一个UA高频率的访问网站会有被网站列入黑名单的危险。破解的方法很简单，可以准备一个<strong>UA池</strong>，每次请求时随机挑选一个进行请求。</p><p>在middlewares.py同级目录下创建UAResource.py,文件内容如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#-*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">UserAgents = [</span><br><span class="line">  <span class="string">"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0; AOL 9.5; AOLBuild 4337.35; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows; U; MSIE 9.0; Windows NT 9.0; en-US)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727; Media Center PC 6.0)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 1.0.3705; .NET CLR 1.1.4322)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.2; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.04506.30)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN) AppleWebKit/523.15 (KHTML, like Gecko, Safari/419.3) Arora/0.3 (Change: 287 c9dfb30)"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (X11; U; Linux; en-US) AppleWebKit/527+ (KHTML, like Gecko, Safari/419.3) Arora/0.6"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.2pre) Gecko/20070215 K-Ninja/2.1.1"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/20080705 Firefox/3.0 Kapiko/3.0"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (X11; Linux i686; U;) Gecko/20070322 Kazehakase/0.4.5"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko Fedora/1.9.0.8-1.fc10 Kazehakase/0.5.6"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11"</span>,</span><br><span class="line">  <span class="string">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, like Gecko) Chrome/19.0.1036.7 Safari/535.20"</span>,</span><br><span class="line">  <span class="string">"Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; fr) Presto/2.9.168 Version/11.52"</span>,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Proxies = [</span><br><span class="line"><span class="string">'http://122.114.31.177:808'</span>,</span><br><span class="line"><span class="string">'http://1.2.3.4:80'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure><p>修改middlewares.py，添加内容为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> .UAResource <span class="keyword">import</span> UserAgents</span><br><span class="line"><span class="keyword">from</span> .UAResource <span class="keyword">import</span> Proxies</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomProxy</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self, request, spider)</span>:</span></span><br><span class="line">        proxy = random.choice(Proxies)</span><br><span class="line">        request.meta[<span class="string">'proxy'</span>] = proxy</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RandomUserAgent</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""docstring for RandomUerAgent."""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_request</span><span class="params">(self, request, spider)</span>:</span></span><br><span class="line">        ua = random.choice(UserAgents)</span><br><span class="line">        request.headers.setdefault(<span class="string">'User-Agent'</span>, ua)</span><br></pre></td></tr></table></figure></p><p>最后修改setting.py,将RandomUserAgent和RandomProxy添加到DOWNLOADER_MIDDLEWARES中，注意RandomProxy要放到RandomUserAgent之前，即将RandomProxy的值比RandomUserAgent后的值小<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DOWNLOADER_MIDDLEWARES = &#123;</span><br><span class="line">   <span class="comment"># 'meijutt.middlewares.MeijuttDownloaderMiddleware': 543,</span></span><br><span class="line">   <span class="string">'meijutt.middlewares.RandomProxy'</span>: <span class="number">10</span>,</span><br><span class="line">   <span class="string">'meijutt.middlewares.RandomUserAgent'</span>: <span class="number">30</span>,</span><br><span class="line"></span><br><span class="line">   <span class="comment"># 禁止内置的(在 DOWNLOADER_MIDDLEWARES_BASE 中设置并默认启用的)中间件</span></span><br><span class="line">   <span class="string">'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware'</span>: <span class="keyword">None</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>免费代理不够稳定，如果不想用proxy，设置RandomProxy为None,即禁止使用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'meijutt.middlewares.RandomProxy'</span>: <span class="keyword">None</span>,</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;封锁间隔时间破解&quot;&gt;&lt;a href=&quot;#封锁间隔时间破解&quot; class=&quot;headerlink&quot; title=&quot;封锁间隔时间破解&quot;&gt;&lt;/a&gt;封锁间隔时间破解&lt;/h2&gt;&lt;p&gt;Scrapy在两次请求之间的时间设置是DOWNLOAD_DELAY。如果不考虑反爬虫的因素，该值当然越小越好。如果DOWNLOAD_DELAY设为0.001，也就是每1毫秒请求一次网页，这简直非人类干的事情。有些网站会检测一个ip的访问时间，异常情况下会封锁该ip。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Spider" scheme="http://yoursite.com/categories/Spider/"/>
-    
-      <category term="Scrapy" scheme="http://yoursite.com/categories/Spider/Scrapy/"/>
-    
-    
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
-      <category term="Scrapy" scheme="http://yoursite.com/tags/Scrapy/"/>
+      <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
     
   </entry>
   
