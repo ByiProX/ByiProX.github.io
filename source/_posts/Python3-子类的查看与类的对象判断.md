@@ -9,6 +9,7 @@ categories:
 1. 如果想要查看一个类是不是另一个类的子类，可以使用內建的 `issubclass` 函数或者使用它的特殊特性`__base__`；
 
 2. 如果想要检查一个对象是不是一个类的实例，可以使用內建的 `isinstance` 函数或者使用它的特殊特性`__class__`;
+<!-- more -->
 
 ```python
 # -*- coding: utf-8 -*-  
