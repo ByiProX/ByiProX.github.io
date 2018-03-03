@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-03T04:21:46.276Z</updated>
+  <updated>2018-03-03T05:07:54.804Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown小技巧之空格输入</title>
+    <link href="http://yoursite.com/2018/03/03/Markdown%E5%B0%8F%E6%8A%80%E5%B7%A7%E4%B9%8B%E7%A9%BA%E6%A0%BC%E8%BE%93%E5%85%A5/"/>
+    <id>http://yoursite.com/2018/03/03/Markdown小技巧之空格输入/</id>
+    <published>2018-03-03T05:06:47.000Z</published>
+    <updated>2018-03-03T05:07:54.804Z</updated>
+    
+    <content type="html"><![CDATA[<p>在使用Markdown的时候，有时候会与到这样的需求——为Markdown添加空格。跟word等其他编辑器不同，Markdown只能识别一个空格（在半角输入状态下）。通过搜寻资料找到了两个解决方案。</p><ol><li><p>手动输入空格 （<strong>&amp;nbsp；</strong>）。<strong>注意！此时的分号为英文分号</strong>，但是不推荐使用此方法，太麻烦！</p></li><li><p>使用<strong>全角空格</strong>。即：在<strong>全角</strong>输入状态下直接使用空格键就ok了</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在使用Markdown的时候，有时候会与到这样的需求——为Markdown添加空格。跟word等其他编辑器不同，Markdown只能识别一个空格（在半角输入状态下）。通过搜寻资料找到了两个解决方案。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;手动输入空格 （&lt;strong&gt;&amp;amp;
+      
+    
+    </summary>
+    
+      <category term="Markdown" scheme="http://yoursite.com/categories/Markdown/"/>
+    
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 is和==的区别</title>
@@ -530,35 +557,6 @@
     <summary type="html">
     
       &lt;h3 id=&quot;一个疑问尚未解决疑问，小弟在此跪求大牛解答一下&quot;&gt;&lt;a href=&quot;#一个疑问尚未解决疑问，小弟在此跪求大牛解答一下&quot; class=&quot;headerlink&quot; title=&quot;一个疑问尚未解决疑问，小弟在此跪求大牛解答一下&quot;&gt;&lt;/a&gt;一个疑问尚未解决疑问，小弟在此跪求大牛解答一下&lt;/h3&gt;&lt;p&gt;为什么把url里的 “_o” 删掉后就可以正常爬取呢？&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Spider" scheme="http://yoursite.com/categories/Spider/"/>
-    
-      <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
-      <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零开始学爬虫-01</title>
-    <link href="http://yoursite.com/2018/02/28/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AD%A6%E7%88%AC%E8%99%AB-01/"/>
-    <id>http://yoursite.com/2018/02/28/从零开始学爬虫-01/</id>
-    <published>2018-02-27T16:37:37.000Z</published>
-    <updated>2018-02-27T17:04:40.535Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="本节关键字"><a href="#本节关键字" class="headerlink" title="本节关键字"></a>本节关键字</h3><p><em>urllib | chardet</em></p><h3 id="urllib-简介"><a href="#urllib-简介" class="headerlink" title="urllib 简介"></a>urllib 简介</h3><p>在Python3.x中，我们可以使用urlib这个组件抓取网页，urllib是一个URL处理包，这个包中集合了一些处理URL的模块，如下：<br><a id="more"></a></p><blockquote><p>1.urllib.request模块是用来打开和读取URLs的；</p></blockquote><blockquote><p>2.urllib.error模块包含一些有urllib.request产生的错误，可以使用try进行捕捉处理；</p></blockquote><blockquote><p>3.urllib.parse模块包含了一些解析URLs的方法；</p></blockquote><blockquote><p>4.urllib.robotparser模块用来解析robots.txt文本文件.它提供了一个单独的RobotFileParser类，通过该类提供的can_fetch()方法测试爬虫是否可以下载一个页面。</p></blockquote><p>使用urllib.request.urlopen()这个接口函数就可以访问一个网站，读取并打印信息。<br>urlopen有一些可选参数，具体信息可以查阅Python自带的documentation。</p><h3 id="urllib-测试"><a href="#urllib-测试" class="headerlink" title="urllib 测试"></a>urllib 测试</h3><p>了解到这些，我们就可以写一个最简单的程序，文件名为urllib_test01.py，感受一个urllib库的魅力：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    response = request.urlopen(<span class="string">"http://fanyi.baidu.com"</span>)</span><br><span class="line">    html = response.read()</span><br><span class="line">    print(html)</span><br></pre></td></tr></table></figure></p><p>urllib使用使用request.urlopen()访问和读取URLs信息，返回的对象response如同一个文本对象，我们可以调用read()，进行读取。再通过print()屏幕打印。</p><p>浏览器就是作为客户端从服务器端获取信息，然后将信息解析，再展示给我们的。但是显然他们都是二进制的乱码。</p><p>我们可以通过简单的decode()命令将网页的信息进行解码，并显示出来，我们新创建一个文件，命名为urllib_test02.py，编写如下代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    response = request.urlopen(<span class="string">"http://fanyi.baidu.com/"</span>)</span><br><span class="line">    html = response.read()</span><br><span class="line">    html = html.decode(<span class="string">"utf-8"</span>)</span><br><span class="line">    print(html)</span><br></pre></td></tr></table></figure><p>这样我们就可以得到这样的结果，显然解码后的信息看起来工整和舒服多了：</p><p>当然这个前提是我们已经知道了这个网页是使用utf-8编码的，怎么查看网页的编码方式呢？非常简单的方法是使用使用浏览器审查元素，只需要找到head标签开始位置的chareset，就知道网页是采用何种编码。</p><p>这样我们就知道了这个网站的编码方式，但是这需要我们每次都打开浏览器，并找下编码方式，显然有些费事，使用几行代码解决更加省事并且显得酷一些。</p><p>我们需要安装第三方库chardet，它是用来判断编码的模块。安装好后，我们就可以使用chardet.detect()方法，判断网页的编码方式了。至此，我们就可以编写一个小程序判断网页的编码方式了，新建文件名为chardet_test01.py：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">import</span> chardet</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    response = request.urlopen(<span class="string">"http://fanyi.baidu.com"</span>)</span><br><span class="line">    html = response.read()</span><br><span class="line">    charset = chardet.detect(html)</span><br><span class="line">    print(charset)</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;本节关键字&quot;&gt;&lt;a href=&quot;#本节关键字&quot; class=&quot;headerlink&quot; title=&quot;本节关键字&quot;&gt;&lt;/a&gt;本节关键字&lt;/h3&gt;&lt;p&gt;&lt;em&gt;urllib | chardet&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&quot;urllib-简介&quot;&gt;&lt;a href=&quot;#urllib-简介&quot; class=&quot;headerlink&quot; title=&quot;urllib 简介&quot;&gt;&lt;/a&gt;urllib 简介&lt;/h3&gt;&lt;p&gt;在Python3.x中，我们可以使用urlib这个组件抓取网页，urllib是一个URL处理包，这个包中集合了一些处理URL的模块，如下：&lt;br&gt;
     
     </summary>
     
