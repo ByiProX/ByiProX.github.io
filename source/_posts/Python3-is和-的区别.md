@@ -17,6 +17,7 @@ categories:
 |type      | 数据类型   | type(obj)  |
 |value      | 值   | :-----:   |
 
+<!-- more -->
 ## is和==区别
 
 | 标识       | 名称         |判断方法   |
