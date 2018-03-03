@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mac OS 命令之文件(夹)删除]]></title>
+    <url>%2F2018%2F03%2F03%2FMac-OS-%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%96%87%E4%BB%B6-%E5%A4%B9-%E5%88%A0%E9%99%A4%2F</url>
+    <content type="text"><![CDATA[rmdir删除空目录，不过一旦目录非空会提示Directiry not empty 使用rm既可以删除文件又可以删除文件夹删除文件夹（无论文件夹是否为空），使用 -rf 命令即可。即：1$ rm -rf 目录名字 -r 就是向下递归，不管有多少级目录，一并删除-f 就是直接强行删除，不作任何提示的意思删除文件夹实例：1$ rm -rf /User/Dhyana/desktop 将会删除 /User/Dhyana/desktop目录以及其下所有文件、文件夹 删除文件使用实例：1$ rm -f /User/Dhyana/desktop/test.py 将会强制删除/User/Dhyana/desktop/test.py这个文件 值得注意的是：使用这个rm -rf的时候一定要格外小心，linux没有回收站的，删除之后再想找回就很难了。有一个非常好笑的笑话就是命令行中输入12$ rm -rf /.*# 千万不要输入此命令，否则清空整个操作系统，后果自负]]></content>
+      <categories>
+        <category>Mac OS 命令行</category>
+      </categories>
+      <tags>
+        <tag>Mac OS 命令行</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python3 使用virtualenv搭建虚拟环境]]></title>
     <url>%2F2018%2F03%2F03%2FPython3-%E4%BD%BF%E7%94%A8virtualenv%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%2F</url>
     <content type="text"><![CDATA[在使用Python进行多个项目开发时，每个项目可能会需要安装不同的组件。把这些组件安装在同一台计算机下可能会导致组件之间的相互冲突，比如项目A使用Django 1.10，而项目B使用Django 1.8，那么同时安装两个版本可能在具体使用时产生冲突。使用虚拟环境可以有效避免这样的问题。 Python虚拟环境是一套由Ian Bicking编写的管理独立Python运行环境的系统。这样，开发者可以让每个项目运行在独立的虚拟环境中，从而避免了不同项目之间组件配置的冲突。 1.虚拟环境安装在终端中执行命令：1$ pip install virtualenv 2.虚拟环境使用假定我们要开发一个新的项目，需要一套独立的Python运行环境，或者为已有的项目建立虚拟环境，终端执行如下命令：12$ cd [项目所在目录]$ virtualenv venv 该命令执行后，将在当前目录下建立一个venv目录，该目录拷贝一份完整的当前系统的Python环境； 我么也可以执行1$ virtualenv --no-site-packages venv 这样，已经安装到系统Python环境中的所有第三方包都不会复制过来，这样，我们就得到了一个不带任何第三方包的“干净”的Python运行环境。新建的Python环境被放到当前目录下的venv目录。 有了venv这个Python环境，可以用source进入该环境（注意是在cd之后的目录）：1$ source venv/bin/activate[.fish|.zsh] 注意到命令提示符变了，有个(venv)前缀，表示当前环境是一个名为venv的Python环境。在venv环境下，用pip安装的包都被安装到venv/lib目录，而不会影响系统的Python环境。 退出当前的venv环境，使用deactivate命令：1$ deactivate 此时回到了正常的环境，现在pip或python均是在系统Python环境下执行。 3.注意为保证项目之间的独立性，建议所有使用pip安装的组件都在项目虚拟环境中进行，避免不同版本的冲突。 最后附上Virtualenv的官方文档]]></content>
@@ -94,8 +105,8 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[python3 鸭子类型]]></title>
-    <url>%2F2018%2F03%2F03%2Fpython3-%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B%2F</url>
+    <title><![CDATA[Python3 鸭子类型]]></title>
+    <url>%2F2018%2F03%2F03%2FPython3-%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[来源和解释Duck typing 这个概念来源于美国印第安纳州的诗人詹姆斯·惠特科姆·莱利（James Whitcomb Riley,1849-1916）的诗句： “ When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck.” 中文： “当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。” “鸭子类型”的语言是这么推断的：一只鸟走起来像鸭子、游起泳来像鸭子、叫起来也像鸭子，那它就可以被当做鸭子。也就是说，它不关注对象的类型，而是关注对象具有的行为(方法)。 鸭子类型是程序设计中的一种类型推断风格，这种风格适用于动态语言(比如PHP、Python、Ruby、Typescript、Perl、Objective-C、Lua、Julia、JavaScript、Java、Groovy、C#等)和某些静态语言(比如Golang,一般来说，静态类型语言在编译时便已确定了变量的类型，但是Golang的实现是：在编译时推断变量的类型)，支持”鸭子类型”的语言的解释器/编译器将会在解析(Parse)或编译时，推断对象的类型。 在鸭子类型中，关注的不是对象的类型本身，而是它是如何使用的。 例如，在不使用鸭子类型的语言中，我们可以编写一个函数，它接受一个类型为鸭的对象，并调用它的走和叫方法。在使用鸭子类型的语言中，这样的一个函数可以接受一个任意类型的对象，并调用它的走和叫方法。如果这些需要被调用的方法不存在，那么将引发一个运行时错误。任何拥有这样的正确的走和叫方法的对象都可被函数接受的这种行为引出了以上表述，这种决定类型的方式因此得名。 鸭子类型通常得益于不测试方法和函数中参数的类型，而是依赖文档、清晰的代码和测试来确保正确使用。从静态类型语言转向动态类型语言的用户通常试图添加一些静态的（在运行之前的）类型检查，从而影响了鸭子类型的益处和可伸缩性，并约束了语言的动态特性。 不足“鸭子类型”没有任何静态检查，如类型检查、属性检查、方法签名检查等。 “鸭子类型”语言的程序可能会在运行时因为不具备某种特定的方法而抛出异常：如果一只小狗(对象)想加入合唱团(以对象会不会嘎嘎嘎叫的方法为检验标准)，也学鸭子那么嘎嘎嘎叫，好吧，它加入了，可是加入之后，却不会像鸭子那样走路，那么，迟早要出问题的。 再举个例子：一只小老鼠被猫盯上了，情急之下，它学了狗叫，猫撤了之后，小老鼠的妈妈不无感叹的对它说：看吧，我让你学的这门儿外语多么重要啊。这虽然是个段子，但是，由于猫在思考时，使用了 “鸭子测试”，它以为会叫的就是狗，会对自己产生威胁，所以撤退了，也正是因为这个错误的判断，它误失了一次进食机会。 静态类型语言和动态类型语言的区别静态类型语言在编译时便已确定变量的类型，而动态类型语言的变量类型要到程序运行的时候，待变量被赋予某个值之后，才会具有某种类型。 静态类型语言的优点首先是在编译时就能发现类型不匹配的错误，编辑器可以帮助我们提前避免程序在运行期间有可能发生的一些错误。其次，如果在程序中明确地规定了数据类型，编译器还可以针对这些信息对程序进行一些优化工作，提高程序执行速度。 静态类型语言的缺点首先是迫使程序员依照强契约来编写程序，为每个变量规定数据类型，归根结底只是辅助我们编写可靠性高程序的一种手段，而不是编写程序的目的，毕竟大部分人编写程序的目的是为了完成需求交付生产。其次，类型的声明也会增加更多的代码，在程序编写过程中，这些细节会让程序员的精力从思考业务逻辑上分散开来。 动态类型语言的优点是编写的代码数量更少，看起来也更加简洁，程序员可以把精力更多地放在业务逻辑上面。虽然不区分类型在某些情况下会让程序变得难以理解，但整体而言，代码量越少，越专注于逻辑表达，对阅读程序是越有帮助的。动态类型语言的缺点是无法保证变量的类型，从而在程序的运行期有可能发生跟类型相关的错误。 动态类型语言对变量类型的宽容给实际编码带来了很大的灵活性。由于无需进行类型检测，我们可以尝试调用任何对象的任意方法，而无需去考虑它原本是否被设计为拥有该方法。 面向接口编程动态类型语言的面向对象设计中，鸭子类型的概念至关重要。利用鸭子类型的思想，我们不必借助超类型的帮助，就能轻松地在动态类型语言中实现一个原则：“面向接口编程，而不是面向实现编程”。例如, 一个对象若有push和pop方法，并且这些方法提供了正确的实现，它就可以被当作栈来使用。 一个对象如果有length属性，也可以依照下标来存取属性（最好还要拥有slice和splice等方法），这个对象就可以被当作数组来使用。 比如在python中，有很多file-like的东西，比如StringIO,GzipFile,socket。它们有很多相同的方法，我们把它们当作文件使用。 又比如list.extend()方法中,我们并不关心它的参数是不是list,只要它是可迭代的,所以它的参数可以是list/tuple/dict/字符串/生成器等. 鸭子类型在动态语言中经常使用，非常灵活，使得python不想java那样专门去弄一大堆的设计模式。 在静态类型语言中，要实现“面向接口编程”并不是一件容易的事情，往往要通过抽象类或者接口等将对象进行向上转型。当对象的真正类型被隐藏在它的超类型身后，这些对象才能在类型检查系统的“监视”之下互相被替换使用。只有当对象能够被互相替换使用，才能体现出对象多态性的价值。 Python中的多态Python中的鸭子类型允许我们使用任何提供所需方法的对象，而不需要迫使它成为一个子类。由于python属于动态语言，当你定义了一个基类和基类中的方法，并编写几个继承该基类的子类时，由于python在定义变量时不指定变量的类型，而是由解释器根据变量内容推断变量类型的（也就是说变量的类型取决于所关联的对象），这就使得python的多态不像是c++或java中那样—定义一个基类类型变量而隐藏了具体子类的细节。 请看下面的例子和说明：1234567891011121314151617181920212223242526272829303132333435class AudioFile: def __init__(self, filename): if not filename.endswith(self.ext): raise Exception("Invalid file format") self.filename = filenameclass MP3File(AudioFile): ext = "mp3" def play(self): print("Playing &#123;&#125; as mp3".format(self.filename))class WavFile(AudioFile): ext = "wav" def play(self): print("Playing &#123;&#125; as wav".format(self.filename))class OggFile(AudioFile): ext = "ogg" def play(self): print("Playing &#123;&#125; as ogg".format(self.filename))class FlacFile: """ Though FlacFile class doesn't inherit AudioFile class, it also has the same interface as three subclass of AudioFile. It is called duck typing. """ def __init__(self, filename): if not filename.endswith(".flac"): raise Exception("Invalid file format") self.filename = filename def play(self): print("Playing &#123;&#125; as flac".format(self.filename)) Though FlacFile class doesn’t inherit AudioFile class,it also has the same interface as three subclass of AudioFile.It is called duck typing. 上面的代码中，MP3File、WavFile、OggFile三个类型继承了AudioFile这一积累，而FlacFile没有扩展AudioFile，但是可以在python中使用完全相同的接口与之交互。 因为任何提供正确接口的对象都可以在python中交替使用，它减少了多态的一般超类的需求。继承仍然可以用来共享代码，但是如果所有被共享的都是公共接口，鸭子类型就是所有所需的。这减少了继承的需要，同时也减少了多重继承的需要；通常，当多重继承似乎是一个有效方案的时候，我们只需要使用鸭子类型去模拟多个超类之一（定义和那个超类一样的接口和实现）就可以了。 作者：JasonDing链接：https://www.jianshu.com/p/650485b78d11來源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 参考 https://baike.baidu.com/item/鸭子类型/10845665?fr=aladdin https://www.jianshu.com/p/650485b78d11]]></content>
       <categories>
         <category>Python3 进阶</category>
@@ -314,8 +325,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Django</tag>
         <tag>Python3</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
