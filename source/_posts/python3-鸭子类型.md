@@ -1,5 +1,5 @@
 ---
-title: python3 鸭子类型
+title: Python3 鸭子类型
 date: 2018-03-03 01:52:21
 tags:
   - Python3
