@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-03T03:46:12.845Z</updated>
+  <updated>2018-03-03T03:56:30.508Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 作用域</title>
+    <link href="http://yoursite.com/2018/03/03/Python3-%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>http://yoursite.com/2018/03/03/Python3-作用域/</id>
+    <published>2018-03-03T03:48:30.000Z</published>
+    <updated>2018-03-03T03:56:30.508Z</updated>
+    
+    <content type="html"><![CDATA[<p>Python 中，一个变量的作用域总是由在代码中被赋值的地方所决定的。</p><p>Python 获取变量中的值的搜索顺序为：</p><p>本地作用域（Local）→ 当前作用域被嵌入的本地作用域（Enclosing locals）→ 全局/模块作用域（Global）→内置作用域（Built-in）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Python 中，一个变量的作用域总是由在代码中被赋值的地方所决定的。&lt;/p&gt;
+&lt;p&gt;Python 获取变量中的值的搜索顺序为：&lt;/p&gt;
+&lt;p&gt;本地作用域（Local）→ 当前作用域被嵌入的本地作用域（Enclosing locals）→ 全局/模块作用域（Global）→
+      
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python3 作用域" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 函数重载</title>
@@ -344,9 +373,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -375,9 +404,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -404,9 +433,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -432,9 +461,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -461,9 +490,9 @@
       <category term="Urllib" scheme="http://yoursite.com/categories/Spider/Urllib/"/>
     
     
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
     
       <category term="Urllib" scheme="http://yoursite.com/tags/Urllib/"/>
     
@@ -512,38 +541,13 @@
       <category term="Selenium" scheme="http://yoursite.com/categories/Spider/Selenium/"/>
     
     
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
       <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
     
       <category term="Selenium" scheme="http://yoursite.com/tags/Selenium/"/>
     
       <category term="PhantomJS" scheme="http://yoursite.com/tags/PhantomJS/"/>
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django2.0.1搭建电影网站</title>
-    <link href="http://yoursite.com/2018/02/27/Django2-0-1%E6%90%AD%E5%BB%BA%E7%94%B5%E5%BD%B1%E7%BD%91%E7%AB%99/"/>
-    <id>http://yoursite.com/2018/02/27/Django2-0-1搭建电影网站/</id>
-    <published>2018-02-27T05:48:44.000Z</published>
-    <updated>2018-02-27T06:41:59.694Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://school.thoughtworks.cn/bbs/assets/uploads/files/1517985555955-fireshot-capture-8-cinema-http___127.0.0.1_8000_.png" alt="首页"></p><p>本项目已经部署到服务器，可以通过该IP查看<br><a href="http://59.110.221.56/" target="_blank" rel="noopener">http://59.110.221.56/</a><br><a href="https://github.com/ByiProX/ThoughtWorks-Cinema" target="_blank" rel="noopener">GitHub源代码</a><br><a id="more"></a></p><h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><blockquote><p>Bootstrap 3 + Django 2.0.1 + MySQL 5.7.17 + Nginx + locust</p></blockquote><h2 id="本地服务运行方法"><a href="#本地服务运行方法" class="headerlink" title="本地服务运行方法"></a>本地服务运行方法</h2><p>终端在venv文件夹路径下开启虚拟环境(根据自己的shell进行选择)：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source ../venv/bin/activate.fish</span><br><span class="line">source ../venv/bin/activate</span><br><span class="line">source ../venv/bin/activate.csh</span><br></pre></td></tr></table></figure><p>然后执行：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 TWS_Cinema/manage.py runserver</span><br></pre></td></tr></table></figure></p><p><strong>如果报错</strong>，终端进入requirements.txt所在目录，运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install -r requirements.txt</span><br></pre></td></tr></table></figure></p><p>然后执行：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 TWS_Cinema/manage.py runserver</span><br></pre></td></tr></table></figure></p><h2 id="单元测试运行方法"><a href="#单元测试运行方法" class="headerlink" title="单元测试运行方法"></a>单元测试运行方法</h2><p>在manage.py路径下终端运行</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py test</span><br></pre></td></tr></table></figure><h2 id="网站功能描述"><a href="#网站功能描述" class="headerlink" title="网站功能描述"></a>网站功能描述</h2><ul><li><p>实现导航栏搜索电影，支持按年份搜索和类型搜索<br>  – 显示分类列表<br>  – 点击分类显示符合分类要求的电影</p></li><li><p>实现搜索功能，支持按电影名称模糊搜索</p></li><li><p>实现电影详细信息查看功能<br>  – 显示电影详细信息<br>  – 显示豆瓣 Top 5 影评<br>  – 在电影详细页面显示相似电影推荐<br>  – 增加电影观看链接</p></li></ul><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul><li><p>按电影id搜索 —— api/movie/id/        # 例如：api/movie/id/1291545</p></li><li><p>按电影名搜索 —— api/movie/title/     # 例如：api/movie/title/大鱼</p></li><li><p>按电影原始名搜索 —— api/movie/original_title/     # 例如：api/movie/original_title/Big Fish</p></li><li><p>按电影类型搜索 —— api/movie/genre/   # 例如：api/movie/genre/剧情</p></li><li><p>按电影年份搜索 —— api/movie/year/    # 例如：api/movie/year/2003</p></li></ul><h2 id="网站性能测试结果"><a href="#网站性能测试结果" class="headerlink" title="网站性能测试结果"></a>网站性能测试结果</h2><p>在文件locustfile.py路径下运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locust --host=http://59.110.221.56</span><br></pre></td></tr></table></figure></p><h3 id="压力测试"><a href="#压力测试" class="headerlink" title="压力测试"></a>压力测试</h3><ul><li>采取的框架：<strong>locust</strong></li><li>服务器性能：<ul><li>CPU：1核</li><li>内存：2 GB (I/O优化)</li><li>带宽：1Mbps</li></ul></li><li>测试结果：<ul><li>500人：100%正确</li><li>1000人：40%出错率</li></ul></li><li>测试截图</li></ul><p><img src="http://upload-images.jianshu.io/upload_images/2952111-4c41c64c40130ebe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-08 at 16.15.49.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-c2c542dbf0ce9e58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-08 at 16.14.10.png"></p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-f5e4ace67f22ddac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-02-08 at 16.13.49.png"></p><h2 id="电影网站的其他截图"><a href="#电影网站的其他截图" class="headerlink" title="电影网站的其他截图"></a>电影网站的其他截图</h2><p><img src="https://school.thoughtworks.cn/bbs/assets/uploads/files/1517985569003-fireshot-capture-9-%E9%A6%96%E9%A1%B5-http___127.0.0.1_8000_movie_display_.png" alt="list"><br><img src="https://school.thoughtworks.cn/bbs/assets/uploads/files/1517985586166-fireshot-capture-10-%E7%94%B5%E5%BD%B1%E8%AF%A6%E6%83%85-http___127.0.0.1_8000_movie_id_1291545_.png" alt="detail"></p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://my.oschina.net/u/1447352/blog/1499428/" target="_blank" rel="noopener">Locust 简介以及使用</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://school.thoughtworks.cn/bbs/assets/uploads/files/1517985555955-fireshot-capture-8-cinema-http___127.0.0.1_8000_.png&quot; alt=&quot;首页&quot;&gt;&lt;/p&gt;
-&lt;p&gt;本项目已经部署到服务器，可以通过该IP查看&lt;br&gt;&lt;a href=&quot;http://59.110.221.56/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://59.110.221.56/&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/ByiProX/ThoughtWorks-Cinema&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub源代码&lt;/a&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Django" scheme="http://yoursite.com/categories/Django/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-      <category term="Django" scheme="http://yoursite.com/tags/Django/"/>
     
   </entry>
   
