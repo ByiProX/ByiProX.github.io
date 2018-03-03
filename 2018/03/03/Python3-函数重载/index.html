@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="函数重载的目的在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。 在Java中实现函数重载：1234567891011class Writer&amp;#123;    public static void write(StringIO output, String content)&amp;#123;">
+<meta name="description" content="函数重载的目的动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。 在Python中实现函数重载：123456789101112131415from io import StringIOclass">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python3 函数重载">
 <meta property="og:url" content="http://yoursite.com/2018/03/03/Python3-函数重载/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="函数重载的目的在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。 在Java中实现函数重载：1234567891011class Writer&amp;#123;    public static void write(StringIO output, String content)&amp;#123;">
+<meta property="og:description" content="函数重载的目的动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。 在Python中实现函数重载：123456789101112131415from io import StringIOclass">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T03:34:31.194Z">
+<meta property="og:updated_time" content="2018-03-03T03:46:12.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3 函数重载">
-<meta name="twitter:description" content="函数重载的目的在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。 在Java中实现函数重载：1234567891011class Writer&amp;#123;    public static void write(StringIO output, String content)&amp;#123;">
+<meta name="twitter:description" content="函数重载的目的动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。 在Python中实现函数重载：123456789101112131415from io import StringIOclass">
 
 
 
@@ -404,10 +404,11 @@
       
 
       
-        <h2 id="函数重载的目的"><a href="#函数重载的目的" class="headerlink" title="函数重载的目的"></a>函数重载的目的</h2><p>在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。</p>
-<p>在Java中实现函数重载：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Writer&#123;</span><br><span class="line">    public static void write(StringIO output, String content)&#123;</span><br><span class="line">        output.write(content);</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void write(File output, String content)&#123;</span><br><span class="line">        output.write(content);</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>而在动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。</p>
+        <h2 id="函数重载的目的"><a href="#函数重载的目的" class="headerlink" title="函数重载的目的"></a>函数重载的目的</h2><p>动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。</p>
 <p>在Python中实现函数重载：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Writer</span>:</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(output, content)</span>:</span></span><br><span class="line">        <span class="comment"># output对象只要实现了write方法就行</span></span><br><span class="line">        output.write(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># stringIO类型</span></span><br><span class="line">output = StringIO()</span><br><span class="line">Writer.write(output, <span class="string">'hello world'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># file 类型</span></span><br><span class="line">output = open(<span class="string">'out.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">Writer.write(output, <span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。</p>
+<p>在Java中实现函数重载：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Writer&#123;</span><br><span class="line">    public static void write(StringIO output, String content)&#123;</span><br><span class="line">        output.write(content);</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void write(File output, String content)&#123;</span><br><span class="line">        output.write(content);</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <p>参考自知乎用户刘志军：<a href="https://www.zhihu.com/question/20053359" target="_blank" rel="noopener">https://www.zhihu.com/question/20053359</a></p>
 <hr>
 <h2 id="函数重载主要是为了解决两个问题"><a href="#函数重载主要是为了解决两个问题" class="headerlink" title="函数重载主要是为了解决两个问题"></a>函数重载主要是为了解决两个问题</h2><ol>
