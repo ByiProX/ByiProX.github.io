@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="在使用Python进行多个项目开发时，每个项目可能会需要安装不同的组件。把这些组件安装在同一台计算机下可能会导致组件之间的相互冲突，比如项目A使用Django 1.10，而项目B使用Django 1.8，那么同时安装两个版本可能在具体使用时产生冲突。使用虚拟环境可以有效避免这样的问题。 Python虚拟环境是一套由Ian Bicking编写的管理独立Python运行环境的系统。这样，开发者可以让每">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-03T05:32:07.110Z">
+<meta property="og:updated_time" content="2018-03-03T05:32:43.613Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3 使用virtualenv搭建虚拟环境">
 <meta name="twitter:description" content="在使用Python进行多个项目开发时，每个项目可能会需要安装不同的组件。把这些组件安装在同一台计算机下可能会导致组件之间的相互冲突，比如项目A使用Django 1.10，而项目B使用Django 1.8，那么同时安装两个版本可能在具体使用时产生冲突。使用虚拟环境可以有效避免这样的问题。 Python虚拟环境是一套由Ian Bicking编写的管理独立Python运行环境的系统。这样，开发者可以让每">
@@ -405,7 +405,7 @@
 
       
         <p>在使用Python进行多个项目开发时，每个项目可能会需要安装不同的组件。把这些组件安装在同一台计算机下可能会导致组件之间的相互冲突，比如项目A使用Django 1.10，而项目B使用Django 1.8，那么同时安装两个版本可能在具体使用时产生冲突。使用虚拟环境可以有效避免这样的问题。</p>
-<p>Python虚拟环境是一套由Ian Bicking编写的管理独立Python运行环境的系统。这样，开发者可以让每个项目运行在独立的虚拟环境中，从而避免了不同项目之间组件配置的冲突。</p>
+<p>Python虚拟环境是一套由Ian Bicking编写的管理独立Python运行环境的系统。这样，开发者可以让每个项目运行在独立的虚拟环境中，从而避免了不同项目之间组件配置的冲突。<br><a id="more"></a></p>
 <h4 id="1-虚拟环境安装"><a href="#1-虚拟环境安装" class="headerlink" title="1.虚拟环境安装"></a>1.虚拟环境安装</h4><p>在终端中执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenv</span><br></pre></td></tr></table></figure></p>
 <h4 id="2-虚拟环境使用"><a href="#2-虚拟环境使用" class="headerlink" title="2.虚拟环境使用"></a>2.虚拟环境使用</h4><p>假定我们要开发一个新的项目，需要一套独立的Python运行环境，或者为已有的项目建立虚拟环境，终端执行如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span>   [项目所在目录]</span><br><span class="line">$ virtualenv venv</span><br></pre></td></tr></table></figure></p>
 <p>该命令执行后，将在当前目录下建立一个venv目录，<strong>该目录拷贝一份完整的当前系统的Python环境</strong>；</p>
