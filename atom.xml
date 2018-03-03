@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-03T03:56:30.508Z</updated>
+  <updated>2018-03-03T04:14:09.659Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 拷贝对象(深拷贝deepcopy和浅拷贝copy)</title>
+    <link href="http://yoursite.com/2018/03/03/Python3-%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1-%E6%B7%B1%E6%8B%B7%E8%B4%9Ddeepcopy%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9Dcopy/"/>
+    <id>http://yoursite.com/2018/03/03/Python3-拷贝对象-深拷贝deepcopy和浅拷贝copy/</id>
+    <published>2018-03-03T04:10:54.000Z</published>
+    <updated>2018-03-03T04:14:09.659Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>copy.copy 浅拷贝 <code>只拷贝父对象</code>，不会拷贝对象的内部的子对象。</li><li>copy.deepcopy 深拷贝 <code>拷贝对象及其子对象</code></li></ol><hr><p><img src="http://upload-images.jianshu.io/upload_images/2952111-17e1f4233f95285d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕截图3.jpg"></p><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*-coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]] <span class="comment">#原始对象</span></span><br><span class="line"></span><br><span class="line">b = a <span class="comment">#赋值，传对象的引用</span></span><br><span class="line">c = copy.copy(a) <span class="comment">#对象拷贝，浅拷贝</span></span><br><span class="line">d = copy.deepcopy(a) <span class="comment">#对象拷贝，深拷贝</span></span><br><span class="line"></span><br><span class="line">a.append(<span class="number">5</span>) <span class="comment">#修改对象a</span></span><br><span class="line">a[<span class="number">4</span>].append(<span class="string">'c'</span>) <span class="comment">#修改对象a中的['a', 'b']数组对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'a = '</span>, a</span><br><span class="line"><span class="keyword">print</span> <span class="string">'b = '</span>, b</span><br><span class="line"><span class="keyword">print</span> <span class="string">'c = '</span>, c</span><br><span class="line"><span class="keyword">print</span> <span class="string">'d = '</span>, d</span><br><span class="line">输出结果：</span><br><span class="line">a =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line">b =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line">c =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]]</span><br><span class="line">d =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;copy.copy 浅拷贝 &lt;code&gt;只拷贝父对象&lt;/code&gt;，不会拷贝对象的内部的子对象。&lt;/li&gt;
+&lt;li&gt;copy.deepcopy 深拷贝 &lt;code&gt;拷贝对象及其子对象&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2952111-17e1f4233f95285d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;屏幕截图3.jpg&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python3 拷贝对象" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 作用域</title>
@@ -517,37 +546,6 @@
     
     
       <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 使用Selenium&amp;PhantomJS爬火影忍者漫画</title>
-    <link href="http://yoursite.com/2018/02/27/Python3-%E4%BD%BF%E7%94%A8Selenium-PhantomJS%E7%88%AC%E7%81%AB%E5%BD%B1%E5%BF%8D%E8%80%85%E6%BC%AB%E7%94%BB/"/>
-    <id>http://yoursite.com/2018/02/27/Python3-使用Selenium-PhantomJS爬火影忍者漫画/</id>
-    <published>2018-02-27T06:16:38.000Z</published>
-    <updated>2018-03-02T18:25:45.955Z</updated>
-    
-    <content type="html"><![CDATA[<p>近期学习爬虫，发现懂的越多，不懂的知识点越多（所以当个傻子还是很幸福的）。好记性不如烂笔头，之前都是把看到的资料链接直接挂到一些平台，比如知乎、简书、Github等。今天有点时间，就好好码一下字，排排版，方便以后查阅。</p><p>Selenium用来模拟浏览器的行为，比如点击、最大化、滚动窗口等；PhantomJS是一种浏览器，不过这种浏览器没有UI界面，感觉就像是专门为爬虫设计，优点很明显，可以有效减小内存的使用。</p><a id="more"></a><h2 id="爬虫使用到的模块"><a href="#爬虫使用到的模块" class="headerlink" title="爬虫使用到的模块"></a>爬虫使用到的模块</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> myLogging <span class="keyword">import</span> MyLogging</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br></pre></td></tr></table></figure><p>myLogging模块是自己配置的日志包，想要的可以点击<strong><em><a href="http://link.zhihu.com/?target=https%3A//github.com/ByiProX/DownloadPicsBySeleniumAndPhantomJS" target="_blank" rel="noopener">这里</a></em></strong>自己看</p><p>爬虫很关键的一点就是能够看懂网页的源代码，记得当初刚刚真正开始接触编程的时候，有很长的一段时间在看HTML、CSS、JS的一些知识，虽然忘得很多，但是印象还是有的，对于后面看网页源代码很有帮助。学习爬虫，除了会基本的python知识以外，还要会网页的一些知识。</p><h2 id="爬取图片思路："><a href="#爬取图片思路：" class="headerlink" title="爬取图片思路："></a>爬取图片思路：</h2><ul><li>已知连接，分析网页的代码结构，看所需的数据是否需要切换frame，并定位所需数据的位于哪个标签之下</li><li>采用不同的模块有不同的保存图片方式，如果采用request模块，保存图片方式是可以采用<strong>requests.get(comicUrl).content</strong>方法，使用该方法需要确定网页的地址。该项目中没有涉及request的使用，所以此后不再表述。对于selenium可以使用 <strong>get_screenshot_as_file()</strong> 方法，使用该方法强烈建议使用phantomjs，如果使用chrome浏览器，图片尺寸太大的话，会出现截图不完整，对比如下：<br><img src="http://upload-images.jianshu.io/upload_images/2952111-2323c462a546dcc3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="对比"></li><li>找到下一张图片的连接位置并点击更新网页，一般来讲新网页与之前网页结构相同。</li><li>在新网页的基础上保存图片，设置循环如此反复。</li></ul><p>爬取网页的URL为：<a href="http://link.zhihu.com/?target=http%3A//comic.kukudm.com/comiclist/3/3/1.htm" target="_blank" rel="noopener">爬取火影漫画第一话</a></p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DownloadPics</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, url)</span>:</span></span><br><span class="line">        self.url = url</span><br><span class="line">        self.log = MyLogging()</span><br><span class="line">        self.browser = self.get_browser()</span><br><span class="line">        self.save_pics(self.browser)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_browser</span><span class="params">(self)</span>:</span></span><br><span class="line">        browser = webdriver.PhantomJS()</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            browser.get(self.url)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            MyLogging.error(<span class="string">'open the url %s failed'</span> % self.url)</span><br><span class="line">        browser.implicitly_wait(<span class="number">20</span>)</span><br><span class="line">        <span class="keyword">return</span> browser</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_pics</span><span class="params">(self, browser)</span>:</span></span><br><span class="line">        pics_title = browser.title.split(<span class="string">'_'</span>)[<span class="number">0</span>]</span><br><span class="line">        self.create_dir(pics_title)</span><br><span class="line">        os.chdir(pics_title)</span><br><span class="line">        sum_page = self.find_total_page_num(browser)</span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; sum_page:</span><br><span class="line">            image_name = str(i) + <span class="string">'.png'</span></span><br><span class="line">            browser.get_screenshot_as_file(image_name)  </span><br><span class="line">            <span class="comment"># 使用PhantomJS避免了截图的不完整，可以与Chrome比较</span></span><br><span class="line">            self.log.info(<span class="string">'saving image %s'</span> % image_name)</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">            css_selector = <span class="string">"a[href='/comiclist/3/3/%s.htm']"</span> % i  </span><br><span class="line">            <span class="comment"># 该方法感觉还不错呢，不过这个网站确实挺差劲的</span></span><br><span class="line">            next_page = browser.find_element_by_css_selector(css_selector)</span><br><span class="line">            next_page.click()</span><br><span class="line">            time.sleep(<span class="number">2</span>)</span><br><span class="line">            <span class="comment"># browser.implicitly_wait(20)</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find_total_page_num</span><span class="params">(self, browser)</span>:</span></span><br><span class="line">        page_element = browser.find_element_by_css_selector(<span class="string">"table[cellspacing='1']"</span>)</span><br><span class="line">        num = re.search(<span class="string">r'共\d+页'</span>, page_element.text).group()[<span class="number">1</span>:<span class="number">-1</span>]  </span><br><span class="line">        <span class="keyword">return</span> int(num)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">create_dir</span><span class="params">(self, dir_name)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> os.path.exists(dir_name):</span><br><span class="line">            self.log.error(<span class="string">'create directory %s failed cause a same directory exists'</span> % dir_name)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                os.makedirs(dir_name)</span><br><span class="line">            <span class="keyword">except</span>:</span><br><span class="line">                self.log.error(<span class="string">'create directory %s failed'</span> % dir_name)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.log.info(<span class="string">'create directory %s success'</span> % dir_name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    start_url = <span class="string">'http://comic.kukudm.com/comiclist/3/3/1.htm'</span></span><br><span class="line">    DL = DownloadPics(start_url)</span><br></pre></td></tr></table></figure><h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="http://upload-images.jianshu.io/upload_images/2952111-e7e2cf39116b5fea.gif?imageMogr2/auto-orient/strip" alt="gif"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;近期学习爬虫，发现懂的越多，不懂的知识点越多（所以当个傻子还是很幸福的）。好记性不如烂笔头，之前都是把看到的资料链接直接挂到一些平台，比如知乎、简书、Github等。今天有点时间，就好好码一下字，排排版，方便以后查阅。&lt;/p&gt;
-&lt;p&gt;Selenium用来模拟浏览器的行为，比如点击、最大化、滚动窗口等；PhantomJS是一种浏览器，不过这种浏览器没有UI界面，感觉就像是专门为爬虫设计，优点很明显，可以有效减小内存的使用。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Spider" scheme="http://yoursite.com/categories/Spider/"/>
-    
-      <category term="Selenium" scheme="http://yoursite.com/categories/Spider/Selenium/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-      <category term="Spider" scheme="http://yoursite.com/tags/Spider/"/>
-    
-      <category term="Selenium" scheme="http://yoursite.com/tags/Selenium/"/>
-    
-      <category term="PhantomJS" scheme="http://yoursite.com/tags/PhantomJS/"/>
     
   </entry>
   

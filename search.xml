@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python3 拷贝对象(深拷贝deepcopy和浅拷贝copy)]]></title>
+    <url>%2F2018%2F03%2F03%2FPython3-%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1-%E6%B7%B1%E6%8B%B7%E8%B4%9Ddeepcopy%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9Dcopy%2F</url>
+    <content type="text"><![CDATA[copy.copy 浅拷贝 只拷贝父对象，不会拷贝对象的内部的子对象。 copy.deepcopy 深拷贝 拷贝对象及其子对象 1234567891011121314151617181920# -*-coding:utf-8 -*-import copya = [1, 2, 3, 4, ['a', 'b']] #原始对象b = a #赋值，传对象的引用c = copy.copy(a) #对象拷贝，浅拷贝d = copy.deepcopy(a) #对象拷贝，深拷贝a.append(5) #修改对象aa[4].append('c') #修改对象a中的['a', 'b']数组对象print 'a = ', aprint 'b = ', bprint 'c = ', cprint 'd = ', d输出结果：a = [1, 2, 3, 4, ['a', 'b', 'c'], 5]b = [1, 2, 3, 4, ['a', 'b', 'c'], 5]c = [1, 2, 3, 4, ['a', 'b', 'c']]d = [1, 2, 3, 4, ['a', 'b']]]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+        <category>Python3 拷贝对象</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python3 作用域]]></title>
     <url>%2F2018%2F03%2F03%2FPython3-%E4%BD%9C%E7%94%A8%E5%9F%9F%2F</url>
     <content type="text"><![CDATA[Python 中，一个变量的作用域总是由在代码中被赋值的地方所决定的。 Python 获取变量中的值的搜索顺序为： 本地作用域（Local）→ 当前作用域被嵌入的本地作用域（Enclosing locals）→ 全局/模块作用域（Global）→内置作用域（Built-in）]]></content>
