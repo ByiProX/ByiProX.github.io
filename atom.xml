@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-03T05:16:30.572Z</updated>
+  <updated>2018-03-03T05:21:56.663Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/03/03/Python3-%E7%9C%9F%E5%81%87%E5%80%BC%E5%AF%B9%E7%85%A7%E8%A1%A8/"/>
     <id>http://yoursite.com/2018/03/03/Python3-真假值对照表/</id>
     <published>2018-03-03T05:14:45.000Z</published>
-    <updated>2018-03-03T05:16:30.572Z</updated>
+    <updated>2018-03-03T05:21:56.663Z</updated>
     
     <content type="html"><![CDATA[<table><thead><tr><th style="text-align:center">类型</th><th style="text-align:center">False</th><th style="text-align:center">True</th></tr></thead><tbody><tr><td style="text-align:center">布尔</td><td style="text-align:center">False(与0等价)</td><td style="text-align:center">True(与1等价)</td></tr><tr><td style="text-align:center">数值</td><td style="text-align:center">0, &nbsp;&nbsp;0.0</td><td style="text-align:center">非零的数值</td></tr><tr><td style="text-align:center">字符串</td><td style="text-align:center">‘’,&nbsp;&nbsp;””(空字符串)</td><td style="text-align:center">非空字符串</td></tr><tr><td style="text-align:center">容器</td><td style="text-align:center">[],&nbsp;&nbsp;(),&nbsp;&nbsp;{},&nbsp;&nbsp;set()</td><td style="text-align:center">至少有一个元素的容器对象</td></tr><tr><td style="text-align:center">None</td><td style="text-align:center">None</td><td style="text-align:center">非None对象</td></tr></tbody></table>]]></content>
     
