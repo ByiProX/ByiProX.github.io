@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-05T16:51:20.605Z</updated>
+  <updated>2018-03-05T17:13:25.069Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python2.x与Python3.x差异</title>
+    <link href="http://yoursite.com/2018/03/06/Python2-x%E4%B8%8EPython3-x%E5%B7%AE%E5%BC%82/"/>
+    <id>http://yoursite.com/2018/03/06/Python2-x与Python3-x差异/</id>
+    <published>2018-03-05T17:08:15.000Z</published>
+    <updated>2018-03-05T17:13:25.069Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Contents</strong></p><ol><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#__future__%E6%A8%A1%E5%9D%97" target="_blank" rel="noopener"><code>__future__模块</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#print%E5%87%BD%E6%95%B0" target="_blank" rel="noopener"><code>print函数</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E6%95%B4%E9%99%A4" target="_blank" rel="noopener"><code>整除</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#Unicode" target="_blank" rel="noopener"><code>Unicode</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#xrange%E6%A8%A1%E5%9D%97" target="_blank" rel="noopener"><code>xrange模块</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#Python3%E4%B8%AD%E7%9A%84range%E5%AF%B9%E8%B1%A1%E7%9A%84__contains__%E6%96%B9%E6%B3%95" target="_blank" rel="noopener"><code>Python3中的range对象的__contains__方法</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#Raising_exceptions" target="_blank" rel="noopener"><code>Raising exceptions</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#Handling_exceptions" target="_blank" rel="noopener"><code>Handling exceptions</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#next(" target="_blank" rel="noopener"><code>next()函数 and .next()方法</code></a>%E5%87%BD%E6%95%B0_and_-next()%E6%96%B9%E6%B3%95)</li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#For%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%A8%E5%B1%80%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E6%B3%84%E6%BC%8F" target="_blank" rel="noopener"><code>For循环变量和全局命名空间泄漏</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E6%AF%94%E8%BE%83%E4%B8%8D%E5%8F%AF%E6%8E%92%E5%BA%8F%E7%B1%BB%E5%9E%8B" target="_blank" rel="noopener"><code>比较不可排序类型</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E9%80%9A%E8%BF%87input(" target="_blank" rel="noopener"><code>通过input()解析用户的输入</code></a>%E8%A7%A3%E6%9E%90%E7%94%A8%E6%88%B7%E7%9A%84%E8%BE%93%E5%85%A5)</li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E8%BF%94%E5%9B%9E%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E5%88%97%E8%A1%A8" target="_blank" rel="noopener"><code>返回可迭代对象，而不是列表</code></a></li><li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E6%9B%B4%E5%A4%9A%E7%9A%84%E5%85%B3%E4%BA%8E_Python_2_%E5%92%8C_Python_3_%E7%9A%84%E6%96%87%E7%AB%A0" target="_blank" rel="noopener"><code>更多的关于 Python 2 和 Python 3 的文章</code></a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#_
+      
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 垃圾回收机制</title>
@@ -539,31 +566,6 @@
       <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
     
       <category term="类变量 和 实例变量" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/%E7%B1%BB%E5%8F%98%E9%87%8F-%E5%92%8C-%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 @staticmethod和@classmethod</title>
-    <link href="http://yoursite.com/2018/03/01/Python3-staticmethod%E5%92%8C-classmethod/"/>
-    <id>http://yoursite.com/2018/03/01/Python3-staticmethod和-classmethod/</id>
-    <published>2018-02-28T18:01:19.000Z</published>
-    <updated>2018-03-01T06:36:20.315Z</updated>
-    
-    <content type="html"><![CDATA[<p>Python其实有3个方法,即静态方法(staticmethod),类方法(classmethod)和实例方法,如下:</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"executing foo(%s)"</span>%(x)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self,x)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"executing foo(%s,%s)"</span>%(self,x)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">class_foo</span><span class="params">(cls,x)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"executing class_foo(%s,%s)"</span>%(cls,x)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">static_foo</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"executing static_foo(%s)"</span>%x</span><br><span class="line"></span><br><span class="line">a=A()</span><br></pre></td></tr></table></figure><a id="more"></a><p>这里先理解下函数参数里面的self和cls。这个self和cls是对类或者实例的绑定,对于一般的函数来说我们可以这么调用<code>foo(x)</code>,这个函数就是最常用的,它的工作跟任何东西(类,实例)无关。<br>对于实例方法,我们知道在类里每次定义方法的时候都需要绑定这个实例,就是<code>foo(self, x)</code>,为什么要这么做呢?因为实例方法的调用离不开实例,我们需要把实例自己传给函数,调用的时候是这样的<code>a.foo(x)</code>(其实是<code>foo(a, x)</code>)。<br>类方法一样,只不过它传递的是<code>类</code>而不是实例,<code>A.class_foo(x)</code>。注意这里的self和cls可以替换别的参数,但是python的约定是这俩,还是不要改的好。</p><p>对于静态方法其实和普通的方法一样,不需要对谁进行绑定,唯一的区别是调用的时候需要使用<code>a.static_foo(x)</code>或者<code>A.static_foo(x)</code>来调用.</p><table><thead><tr><th style="text-align:left">\</th><th style="text-align:left">实例方法</th><th style="text-align:left">类方法</th><th style="text-align:left">静态方法</th></tr></thead><tbody><tr><td style="text-align:left">a = A()</td><td style="text-align:left">a.foo(x)</td><td style="text-align:left">a.class_foo(x)</td><td style="text-align:left">a.static_foo(x)</td></tr><tr><td style="text-align:left">A</td><td style="text-align:left">不可用</td><td style="text-align:left">A.class_foo(x)</td><td style="text-align:left">A.static_foo(x)</td></tr></tbody></table><p>更多关于这个问题:</p><ol><li><a href="http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python" target="_blank" rel="noopener">http://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python</a></li><li><a href="https://realpython.com/blog/python/instance-class-and-static-methods-demystified/" target="_blank" rel="noopener">https://realpython.com/blog/python/instance-class-and-static-methods-demystified/</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Python其实有3个方法,即静态方法(staticmethod),类方法(classmethod)和实例方法,如下:&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(x)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;executing foo(%s)&quot;&lt;/span&gt;%(x)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(object)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self,x)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;executing foo(%s,%s)&quot;&lt;/span&gt;%(self,x)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;    @classmethod&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;class_foo&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(cls,x)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;executing class_foo(%s,%s)&quot;&lt;/span&gt;%(cls,x)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;    @staticmethod&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;static_foo&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(x)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;executing static_foo(%s)&quot;&lt;/span&gt;%x&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;a=A()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="Staticmethod &amp; Classmethod" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Staticmethod-Classmethod/"/>
     
     
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
