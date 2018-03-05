@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="IO密集型任务 VS 计算密集型任务 所谓IO密集型任务，是指磁盘IO、网络IO占主要的任务，计算量很小。比如请求网页、读写文件等。当然我们在Python中可以利用sleep达到IO密集型任务的目的。    所谓计算密集型任务，是指CPU计算占主要的任务，CPU一直处于满负荷状态。比如在一个很大的列表中查找元素（当然这不合理），复杂的加减乘除等。   计算密集型任务的特点是要进行大量的计算，消耗C">
+<meta name="description" content="IO密集型任务 vs 计算密集型任务 所谓IO密集型任务，是指磁盘IO、网络IO占主要的任务，计算量很小。比如请求网页、读写文件等。当然我们在Python中可以利用sleep达到IO密集型任务的目的。    所谓计算密集型任务，是指CPU计算占主要的任务，CPU一直处于满负荷状态。比如在一个很大的列表中查找元素（当然这不合理），复杂的加减乘除等。">
 <meta name="keywords" content="操作系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IO密集型任务、计算密集型任务，以及多线程、多进程">
 <meta property="og:url" content="http://yoursite.com/2018/03/05/IO密集型任务、计算密集型任务，以及多线程、多进程/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="IO密集型任务 VS 计算密集型任务 所谓IO密集型任务，是指磁盘IO、网络IO占主要的任务，计算量很小。比如请求网页、读写文件等。当然我们在Python中可以利用sleep达到IO密集型任务的目的。    所谓计算密集型任务，是指CPU计算占主要的任务，CPU一直处于满负荷状态。比如在一个很大的列表中查找元素（当然这不合理），复杂的加减乘除等。   计算密集型任务的特点是要进行大量的计算，消耗C">
+<meta property="og:description" content="IO密集型任务 vs 计算密集型任务 所谓IO密集型任务，是指磁盘IO、网络IO占主要的任务，计算量很小。比如请求网页、读写文件等。当然我们在Python中可以利用sleep达到IO密集型任务的目的。    所谓计算密集型任务，是指CPU计算占主要的任务，CPU一直处于满负荷状态。比如在一个很大的列表中查找元素（当然这不合理），复杂的加减乘除等。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://pic2.zhimg.com/80/v2-dfad6468a9ddd7edd2494971296a00d0_hd.jpg">
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-f1cdf422f5aef9a23f714a399e8e7016_hd.jpg">
-<meta property="og:updated_time" content="2018-03-05T10:07:47.423Z">
+<meta property="og:updated_time" content="2018-03-05T15:54:17.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IO密集型任务、计算密集型任务，以及多线程、多进程">
-<meta name="twitter:description" content="IO密集型任务 VS 计算密集型任务 所谓IO密集型任务，是指磁盘IO、网络IO占主要的任务，计算量很小。比如请求网页、读写文件等。当然我们在Python中可以利用sleep达到IO密集型任务的目的。    所谓计算密集型任务，是指CPU计算占主要的任务，CPU一直处于满负荷状态。比如在一个很大的列表中查找元素（当然这不合理），复杂的加减乘除等。   计算密集型任务的特点是要进行大量的计算，消耗C">
+<meta name="twitter:description" content="IO密集型任务 vs 计算密集型任务 所谓IO密集型任务，是指磁盘IO、网络IO占主要的任务，计算量很小。比如请求网页、读写文件等。当然我们在Python中可以利用sleep达到IO密集型任务的目的。    所谓计算密集型任务，是指CPU计算占主要的任务，CPU一直处于满负荷状态。比如在一个很大的列表中查找元素（当然这不合理），复杂的加减乘除等。">
 <meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-dfad6468a9ddd7edd2494971296a00d0_hd.jpg">
 
 
@@ -407,12 +407,13 @@
       
 
       
-        <h2 id="IO密集型任务-VS-计算密集型任务"><a href="#IO密集型任务-VS-计算密集型任务" class="headerlink" title="IO密集型任务 VS 计算密集型任务"></a>IO密集型任务 VS 计算密集型任务</h2><ul>
+        <h2 id="IO密集型任务-vs-计算密集型任务"><a href="#IO密集型任务-vs-计算密集型任务" class="headerlink" title="IO密集型任务 vs 计算密集型任务"></a>IO密集型任务 vs 计算密集型任务</h2><ul>
 <li><p>所谓IO密集型任务，是指磁盘IO、网络IO占主要的任务，计算量很小。比如请求网页、读写文件等。当然我们在Python中可以利用sleep达到IO密集型任务的目的。  </p>
 </li>
 <li><p>所谓计算密集型任务，是指CPU计算占主要的任务，CPU一直处于满负荷状态。比如在一个很大的列表中查找元素（当然这不合理），复杂的加减乘除等。</p>
 </li>
 </ul>
+<a id="more"></a>
 <p>计算密集型任务的特点是要进行大量的计算，消耗CPU资源，比如计算圆周率、对视频进行高清解码等等，全靠CPU的运算能力。这种计算密集型任务虽然也可以用多任务完成，但是任务越多，花在任务切换的时间就越多，CPU执行任务的效率就越低，所以，要最高效地利用CPU，计算密集型任务同时进行的数量应当等于CPU的核心数。</p>
 <p>计算密集型任务由于主要消耗CPU资源，因此，代码运行效率至关重要。Python这样的脚本语言运行效率很低，完全不适合计算密集型任务。对于计算密集型任务，最好用C语言编写。</p>
 <p>第二种任务的类型是IO密集型，涉及到网络、磁盘IO的任务都是IO密集型任务，这类任务的特点是CPU消耗很少，任务的大部分时间都在等待IO操作完成（因为IO的速度远远低于CPU和内存的速度）。对于IO密集型任务，任务越多，CPU效率越高，但也有一个限度。常见的大部分任务都是IO密集型任务，比如Web应用。</p>
@@ -491,6 +492,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/05/Python3-垃圾回收机制/" rel="prev" title="Python3 垃圾回收机制">
+                Python3 垃圾回收机制 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -581,7 +586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">33</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -685,7 +690,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO密集型任务-VS-计算密集型任务"><span class="nav-number">1.</span> <span class="nav-text">IO密集型任务 VS 计算密集型任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程-VS-多进程"><span class="nav-number">2.</span> <span class="nav-text">多线程 VS 多进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程"><span class="nav-number">2.1.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程"><span class="nav-number">2.2.</span> <span class="nav-text">多进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">3.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO密集型任务-vs-计算密集型任务"><span class="nav-number">1.</span> <span class="nav-text">IO密集型任务 vs 计算密集型任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程-VS-多进程"><span class="nav-number">2.</span> <span class="nav-text">多线程 VS 多进程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程"><span class="nav-number">2.1.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程"><span class="nav-number">2.2.</span> <span class="nav-text">多进程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">3.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
