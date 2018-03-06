@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python3 让字典保持有序]]></title>
+    <url>%2F2018%2F03%2F06%2FPython3-%E8%AE%A9%E5%AD%97%E5%85%B8%E4%BF%9D%E6%8C%81%E6%9C%89%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[背景想创建一个字典，同时当对字典做迭代或序列化操作时，也能控制其中元素的顺序。 解决方案要控制字典中元素的顺序，可以使用collections模块中的OrderDict类。当对字典做迭代时，他会严格按照元素初始添加的顺序执行。例如：12345678910111213141516from collections import OrderedDictd = OrderedDict()d['foo'] = 1d['bar'] = 2d['spam'] = 3d['qrok'] = 4for key in d: print(key, d[key])# output:# foo 1# bar 2# spam 3# qrok 4 当想创建一个映射结构以便稍后对其做序列化或编码成另一种格式时，OrderedDict就显得特别有用。例如，如果想在进行json编码时精确控制各个字段的顺序，那么只要首先在OrderedDict中构建数据就可以了。 1234&gt;&gt;&gt; import json&gt;&gt;&gt; json.dumps(d)'&#123;"foo":1,"bar":2,"spam":3,"qrok":4&#125;'&gt;&gt;&gt; 讨论OrderedDict内部维护了一个双向链表，他会根据元素加入的顺序来排列键的位置。第一个加入的元素被放置的链表的末尾。接下来对已存在的键做重新赋值不会改变键的顺序。 注意OrderedDict的大小是普通字典的两倍多，这是由于它额外创建的链表所致。因此，如果打算构建一个涉及大量OrderedDict实例的数据结构（例如从CSV文件中读取100000行内容到OrderedDict列表中），那么需要认真对应用做需求分析，从而判断使用OrderedDict所带来的好处是否能够超越额外的内存开销带来的缺点。 a]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+        <category>Python3 字典</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python2.x与Python3.x差异]]></title>
     <url>%2F2018%2F03%2F06%2FPython2-x%E4%B8%8EPython3-x%E5%B7%AE%E5%BC%82%2F</url>
     <content type="text"><![CDATA[Contents __future__模块 print函数 整除 Unicode xrange模块 Python3中的range对象的__contains__方法 Raising exceptions Handling exceptions next()函数 and .next()方法 For循环变量和全局命名空间泄漏 比较不可排序类型 通过input()解析用户的输入 返回可迭代对象，而不是列表 更多的关于 Python 2 和 Python 3 的文章 参考： Python2.x与Python3.x差异]]></content>
