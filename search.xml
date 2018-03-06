@@ -37,9 +37,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python2.x与Python3.x差异]]></title>
-    <url>%2F2018%2F03%2F06%2FPython2-x%E4%B8%8EPython3-x%E5%B7%AE%E5%BC%82%2F</url>
-    <content type="text"><![CDATA[Contents __future__模块 print函数 整除 Unicode xrange模块 Python3中的range对象的__contains__方法 Raising exceptions Handling exceptions next()函数 and .next()方法 For循环变量和全局命名空间泄漏 比较不可排序类型 通过input()解析用户的输入 返回可迭代对象，而不是列表 更多的关于 Python 2 和 Python 3 的文章 参考： Python2.x与Python3.x差异]]></content>
+    <title><![CDATA[Python2.7.x与Python3.x差异]]></title>
+    <url>%2F2018%2F03%2F06%2FPython2-7-x%E4%B8%8EPython3-x%E5%B7%AE%E5%BC%82%2F</url>
+    <content type="text"><![CDATA[Contents __future__模块 print函数 整除 Unicode xrange模块 Python3中的range对象的__contains__方法 Raising exceptions Handling exceptions next()函数 and .next()方法 For循环变量和全局命名空间泄漏 比较不可排序类型 通过input()解析用户的输入 返回可迭代对象，而不是列表 更多的关于 Python 2 和 Python 3 的文章 参考： Python2.x与Python3.x差异 Key differences between Python 2.7.x and Python 3.x]]></content>
       <categories>
         <category>Python3 进阶</category>
       </categories>
