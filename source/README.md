@@ -13,9 +13,9 @@
 
 - 编辑完成后，可以先备份再部署，也可以先部署再备份
 
-- 部署操作即按照hexo clean --- hexo generate --- hexo deploy的步骤进行，此时应处于master分支下
+- 部署操作即按照`hexo clean` ---> `hexo generate` ---> `hexo deploy`的步骤进行，此时应处于master分支下
 
-- 备份时也要在master分支下，按照git add . --- git commit -m 'blablabla' --- git push origin master:Hexo-Blog
+- 备份时也要在master分支下，按照`git add .` ---> `git commit -m 'blablabla'` ---> `git push origin master:Hexo-Blog`
 
 
-git push origin master:Hexo-Blog含义为将本地的master分支上传到远程的Hexo-Blog分支
+`git push origin master:Hexo-Blog`含义为将本地的master分支上传到远程的Hexo-Blog分支
