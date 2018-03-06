@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-06T04:55:57.785Z</updated>
+  <updated>2018-03-06T06:56:44.733Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 闭包</title>
+    <link href="http://yoursite.com/2018/03/06/Python3-%E9%97%AD%E5%8C%85/"/>
+    <id>http://yoursite.com/2018/03/06/Python3-闭包/</id>
+    <published>2018-03-06T06:04:56.000Z</published>
+    <updated>2018-03-06T06:56:44.733Z</updated>
+    
+    <content type="html"><![CDATA[<p>闭包是指延伸了作用域的函数，其中包含函数定义体中引用、但是不在定义体中定义的非全局变量。<br>闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。</p><p>当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,创建一个闭包必须满足以下几点:</p><ol><li>必须有一个内嵌函数</li><li>内嵌函数必须引用外部函数中的变量</li><li>外部函数的返回值必须是内嵌函数</li></ol><p>闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。<br><a id="more"></a></p><p>闭包的概念难以掌握，最好通过示例理解。</p><p>假如有个名为avg的函数，他的作用是计算不断增加的系列值得平均数。起初，avg是这样使用的：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">10</span>)</span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">11</span>)</span><br><span class="line"><span class="number">10.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">12</span>)</span><br><span class="line"><span class="number">11.0</span></span><br></pre></td></tr></table></figure></p><p>初学者可能会用类来实现，如示例1<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Averager</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""docstring for Average."""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.series = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, new_value)</span>:</span></span><br><span class="line">        self.series.append(new_value)</span><br><span class="line">        total = sum(self.series)</span><br><span class="line">        <span class="keyword">return</span> total/len(self.series)</span><br></pre></td></tr></table></figure></p><p>Average的实例是可调用对象：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg = Averager()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">10</span>)</span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">11</span>)</span><br><span class="line"><span class="number">10.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">12</span>)</span><br><span class="line"><span class="number">11.0</span></span><br></pre></td></tr></table></figure></p><p>下面使用函数式实现，如示例2：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_averager</span><span class="params">()</span>:</span></span><br><span class="line">    series = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">averager</span><span class="params">(new_value)</span>:</span></span><br><span class="line">        series.append(new_value)</span><br><span class="line">        total = sum(series)</span><br><span class="line">        <span class="keyword">return</span> total/len(series)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> averager</span><br></pre></td></tr></table></figure></p><p>调用make_averager时，返回一个averager函数对象。每次调用averager时，他会把参数添加到系列值中，然后计算当前平均值，如下所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg = make_averager()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">10</span>)</span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">11</span>)</span><br><span class="line"><span class="number">10.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">12</span>)</span><br><span class="line"><span class="number">11.0</span></span><br></pre></td></tr></table></figure></p><p>注意，以上两个示例有共通之处：调用Averager()或make_averager()得到一个可调用对象avg，他会更新历史值，然后计算当前均值。示例1中，avg是Averager的实例；实例2中是内部函数averager。不管怎样，我们都只需要调用avg(n),把n放入系列值中，然后重新计算均值。</p><p>Averager()类的实例avg在哪里存储历史值很明显：self.series实例属性；但是第二个示例中的avg函数在哪里寻找series呢？</p><p>注意，series是make_averager函数的局部变量，因为那个函数的定义体中初始化了series：series = []。可是，调用avg(10)时，make_averager函数已经返回了，而他的本地作用域也一去不复返了。</p><p>在averager函数中，series是自由变量。这是一个技术术语，指未在本地作用域中绑定的变量，如图：</p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-039ebc44d7803bbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="闭包"></p><p><strong>averager的闭包延伸到那个函数的作用域之外，包含自由变量series的绑定</strong></p><p>我们可以审查返回的averager对象，发现Python在<code>__code__</code>属性（表示编译后的函数定义体）中保存局部变量和自由变量的名称，如下所示</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 审查make_averager创建的函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_varnames</span><br><span class="line">(<span class="string">'new_value'</span>, <span class="string">'total'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_freevars</span><br><span class="line">(<span class="string">'series'</span>,)</span><br></pre></td></tr></table></figure><p>series绑定在返回的avg函数的<code>__closure__</code>属性中。<code>avg.__closure__</code>中各个元素对应于<code>avg.__code__.co_freevars</code>中的一个名称。这些元素是cell对象，有个<code>cell_content</code>属性，保存着真正的值。这些属性的值如示例所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_freevars</span><br><span class="line">(<span class="string">'series'</span>,)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__closure__</span><br><span class="line">(&lt;cell at <span class="number">0x108b89828</span>: list object at <span class="number">0x108ae96c8</span>&gt;,)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__closure__[<span class="number">0</span>].cell_contents</span><br><span class="line">[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]</span><br></pre></td></tr></table></figure></p><p>综上，闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。</p><p>注意，只有嵌套在其他函数中的函数才可能需要处理不在全局作用域中的外部变量。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;闭包是指延伸了作用域的函数，其中包含函数定义体中引用、但是不在定义体中定义的非全局变量。&lt;br&gt;闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。&lt;/p&gt;
+&lt;p&gt;当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,创建一个闭包必须满足以下几点:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;必须有一个内嵌函数&lt;/li&gt;
+&lt;li&gt;内嵌函数必须引用外部函数中的变量&lt;/li&gt;
+&lt;li&gt;外部函数的返回值必须是内嵌函数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python3 闭包" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E9%97%AD%E5%8C%85/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 让字典保持有序</title>
@@ -536,31 +567,6 @@
       <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
     
       <category term="Python3 下划线" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E4%B8%8B%E5%88%92%E7%BA%BF/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 自省</title>
-    <link href="http://yoursite.com/2018/03/01/Python3-%E8%87%AA%E7%9C%81/"/>
-    <id>http://yoursite.com/2018/03/01/Python3-自省/</id>
-    <published>2018-03-01T08:19:37.000Z</published>
-    <updated>2018-03-02T17:23:56.828Z</updated>
-    
-    <content type="html"><![CDATA[<p>自省是python彪悍的特性之一.</p><p>自省（introspection）是一种自我检查行为。在计算机编程中，自省是指这种能力：检查某些事物以确定它是什么、它知道什么以及它能做什么。自省向程序员提供了极大的灵活性和控制力.</p><a id="more"></a><p>自省就是面向对象的语言所写的程序在运行时,所能知道对象的类型.简单一句就是运行时能够获得对象的类型.比如type(),dir(),getattr(),hasattr(),isinstance().</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>,<span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line">c = <span class="keyword">True</span></span><br><span class="line"><span class="keyword">print</span> type(a),type(b),type(c) <span class="comment"># &lt;type 'list'&gt; &lt;type 'dict'&gt; &lt;type 'bool'&gt;</span></span><br><span class="line"><span class="keyword">print</span> isinstance(a,list)  <span class="comment"># True</span></span><br></pre></td></tr></table></figure><p>未完待续</p><p>参考：</p><ol><li><a href="http://python.jobbole.com/82110/" target="_blank" rel="noopener">http://python.jobbole.com/82110/</a></li><li><a href="http://blog.csdn.net/IAlexanderI/article/details/78768378" target="_blank" rel="noopener">http://blog.csdn.net/IAlexanderI/article/details/78768378</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自省是python彪悍的特性之一.&lt;/p&gt;
-&lt;p&gt;自省（introspection）是一种自我检查行为。在计算机编程中，自省是指这种能力：检查某些事物以确定它是什么、它知道什么以及它能做什么。自省向程序员提供了极大的灵活性和控制力.&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="Python3 自省" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E8%87%AA%E7%9C%81/"/>
     
     
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
