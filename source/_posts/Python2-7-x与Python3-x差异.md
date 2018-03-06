@@ -1,5 +1,5 @@
 ---
-title: Python2.x与Python3.x差异
+title: Python2.7.x与Python3.x差异
 date: 2018-03-06 01:08:15
 tags:
   - Python3
@@ -25,3 +25,5 @@ categories:
 
  **参考：**
  1. [Python2.x与Python3.x差异](http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/)
+
+ 2. [Key differences between Python 2.7.x and Python 3.x](http://nbviewer.jupyter.org/github/rasbt/python_reference/blob/master/tutorials/key_differences_between_python_2_and_3.ipynb?create=1)
