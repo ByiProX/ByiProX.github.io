@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-06T18:34:41.187Z</updated>
+  <updated>2018-03-06T19:08:03.944Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/03/07/%E6%B5%85%E8%B0%88TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8/"/>
     <id>http://yoursite.com/2018/03/07/浅谈TCP和UDP的区别以及应用/</id>
     <published>2018-03-06T18:28:32.000Z</published>
-    <updated>2018-03-06T18:34:41.187Z</updated>
+    <updated>2018-03-06T19:08:03.944Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="TCP和UDP区别"><a href="#TCP和UDP区别" class="headerlink" title="TCP和UDP区别"></a>TCP和UDP区别</h2><p>TCP(<code>Transmission Control Protocol</code>)—传输控制协议,提供的是面向连接、可靠的字节流服务。当客户和服务器彼此交换数据前，必须先在双方之间建立一个TCP连接，之后才能传输数据。TCP提供超时重发，丢弃重复数据，检验数据，流量控制等功能，保证数据能从一端传到另一端。<br>UDP(<code>User Datagram Protocol</code>)—用户数据报协议，是一个简单的面向数据报的运输层协议。在网络中它与TCP协议一样用于处理数据包，是一种无连接的协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快。</p><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol><li><p>HTTP协议在运输层采用的就是<code>TCP协议</code>，在浏览器中输入IP地址后，与服务器建立连接，采用的就是TCP协议，是一种面向连接、可靠的字节流服务。</p></li><li><p>当强调传输性能而不是传输的完整性时，如：音频、多媒体应用和视频会议时，<code>UDP</code>是最好的选择。另外，腾讯QQ采用也是UDP协议。</p></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="TCP和UDP区别"><a href="#TCP和UDP区别" class="headerlink" title="TCP和UDP区别"></a>TCP和UDP区别</h2><p>TCP(<code>Transmission Control Protocol</code>)—<code>传输控制协议</code>,<code>提供的是面向连接、可靠的字节流服务</code>。当客户和服务器彼此交换数据前，必须先在双方之间建立一个TCP连接，之后才能传输数据。TCP提供超时重发，丢弃重复数据，检验数据，流量控制等功能，保证数据能从一端传到另一端。<br>UDP(<code>User Datagram Protocol</code>)—<code>用户数据报协议</code>，<code>是一个简单的面向数据报的运输层协议</code>。在网络中它与TCP协议一样用于处理数据包，是一种无连接的协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快。</p><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol><li><p>HTTP协议在运输层采用的就是<code>TCP协议</code>，在浏览器中输入IP地址后，与服务器建立连接，采用的就是TCP协议，是一种面向连接、可靠的字节流服务。</p></li><li><p>当强调传输性能而不是传输的完整性时，如：音频、多媒体应用和视频会议时，<code>UDP</code>是最好的选择。另外，腾讯QQ采用也是UDP协议。</p></li></ol>]]></content>
     
     <summary type="html">
     
