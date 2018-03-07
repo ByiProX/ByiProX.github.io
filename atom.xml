@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-07T15:49:17.891Z</updated>
+  <updated>2018-03-07T18:05:08.274Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>用户密码保存的方式有哪些</title>
+    <link href="http://yoursite.com/2018/03/08/%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%BF%9D%E5%AD%98%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B/"/>
+    <id>http://yoursite.com/2018/03/08/用户密码保存的方式有哪些/</id>
+    <published>2018-03-07T18:03:43.000Z</published>
+    <updated>2018-03-07T18:05:08.274Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>明文保存</li><li>明文hash后保存,如md5</li><li>MD5+Salt方式,这个salt可以随机</li><li>知乎使用了Bcrypy(好像)加密</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;明文保存&lt;/li&gt;
+&lt;li&gt;明文hash后保存,如md5&lt;/li&gt;
+&lt;li&gt;MD5+Salt方式,这个salt可以随机&lt;/li&gt;
+&lt;li&gt;知乎使用了Bcrypy(好像)加密&lt;/li&gt;
+&lt;/ol&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="加密" scheme="http://yoursite.com/tags/%E5%8A%A0%E5%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>进程间的通信方式(IPC)</title>
@@ -564,35 +593,6 @@
       <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
     
       <category term="Python3 拷贝对象" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 作用域</title>
-    <link href="http://yoursite.com/2018/03/03/Python3-%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
-    <id>http://yoursite.com/2018/03/03/Python3-作用域/</id>
-    <published>2018-03-03T03:48:30.000Z</published>
-    <updated>2018-03-03T03:56:30.508Z</updated>
-    
-    <content type="html"><![CDATA[<p>Python 中，一个变量的作用域总是由在代码中被赋值的地方所决定的。</p><p>Python 获取变量中的值的搜索顺序为：</p><p>本地作用域（Local）→ 当前作用域被嵌入的本地作用域（Enclosing locals）→ 全局/模块作用域（Global）→内置作用域（Built-in）</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Python 中，一个变量的作用域总是由在代码中被赋值的地方所决定的。&lt;/p&gt;
-&lt;p&gt;Python 获取变量中的值的搜索顺序为：&lt;/p&gt;
-&lt;p&gt;本地作用域（Local）→ 当前作用域被嵌入的本地作用域（Enclosing locals）→ 全局/模块作用域（Global）→
-      
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="Python3 作用域" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     
     
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
