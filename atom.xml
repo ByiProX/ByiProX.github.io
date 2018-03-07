@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-07T12:09:44.924Z</updated>
+  <updated>2018-03-07T15:49:17.891Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>进程间的通信方式(IPC)</title>
+    <link href="http://yoursite.com/2018/03/07/%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F-IPC/"/>
+    <id>http://yoursite.com/2018/03/07/进程间的通信方式-IPC/</id>
+    <published>2018-03-07T15:47:10.000Z</published>
+    <updated>2018-03-07T15:49:17.891Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><code>管道</code>（Pipe）：管道可用于具有亲缘关系进程间的通信，允许一个进程和另一个与它有共同祖先的进程之间进行通信。</li><li><code>命名管道</code>（named pipe）：命名管道克服了管道没有名字的限制，因此，除具有管道所具有的功能外，它还允许无亲缘关系进程间的通信。命名管道在文件系统中有对应的文件名。命名管道通过命令mkfifo或系统调用mkfifo来创建。</li><li><code>信号</code>（Signal）：信号是比较复杂的通信方式，用于通知接受进程有某种事件发生，除了用于进程间通信外，进程还可以发送信号给进程本身；linux除了支持Unix早期信号语义函数sigal外，还支持语义符合Posix.1标准的信号函数sigaction（实际上，该函数是基于BSD的，BSD为了实现可靠信号机制，又能够统一对外接口，用sigaction函数重新实现了signal函数）。</li><li><code>消息（Message）队列</code>：消息队列是消息的链接表，包括Posix消息队列system V消息队列。有足够权限的进程可以向队列中添加消息，被赋予读权限的进程则可以读走队列中的消息。消息队列克服了信号承载信息量少，管道只能承载无格式字节流以及缓冲区大小受限等缺</li><li><code>共享内存</code>：使得多个进程可以访问同一块内存空间，是最快的可用IPC形式。是针对其他通信机制运行效率较低而设计的。往往与其它通信机制，如信号量结合使用，来达到进程间的同步及互斥。</li><li><code>内存映射</code>（mapped memory）：内存映射允许任何多个进程间通信，每一个使用该机制的进程通过把一个共享的文件映射到自己的进程地址空间来实现它。</li><li><code>信号量</code>（semaphore）：主要作为进程间以及同一进程不同线程之间的同步手段。</li><li><code>套接口</code>（Socket）：更为一般的进程间通信机制，可用于不同机器之间的进程间通信。起初是由Unix系统的BSD分支开发出来的，但现在一般可以移植到其它类Unix系统上：Linux和System V的变种都支持套接字。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;code&gt;管道&lt;/code&gt;（Pipe）：管道可用于具有亲缘关系进程间的通信，允许一个进程和另一个与它有共同祖先的进程之间进行通信。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;命名管道&lt;/code&gt;（named pipe）：命名管道克服了管道没有名字的限制，因此，除具有管
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>Django运行方式以及处理流程简介(转载)</title>
@@ -566,31 +593,6 @@
       <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
     
       <category term="Python3 作用域" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 函数重载</title>
-    <link href="http://yoursite.com/2018/03/03/Python3-%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD/"/>
-    <id>http://yoursite.com/2018/03/03/Python3-函数重载/</id>
-    <published>2018-03-03T02:54:44.000Z</published>
-    <updated>2018-03-03T03:46:12.845Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="函数重载的目的"><a href="#函数重载的目的" class="headerlink" title="函数重载的目的"></a>函数重载的目的</h2><p>动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。</p><p>在Python中实现函数重载：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> StringIO</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Writer</span>:</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write</span><span class="params">(output, content)</span>:</span></span><br><span class="line">        <span class="comment"># output对象只要实现了write方法就行</span></span><br><span class="line">        output.write(content)</span><br><span class="line"></span><br><span class="line"><span class="comment"># stringIO类型</span></span><br><span class="line">output = StringIO()</span><br><span class="line">Writer.write(output, <span class="string">'hello world'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># file 类型</span></span><br><span class="line">output = open(<span class="string">'out.txt'</span>, <span class="string">'w'</span>)</span><br><span class="line">Writer.write(output, <span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>在静态语言中，方法重载是希望类可以以统一的方式处理不同类型的数据提供了可能。多个同名函数同时存在，具有不同的参数个数/类型，重载是一个类中多态性的一种表现。</p><p>在Java中实现函数重载：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Writer&#123;</span><br><span class="line">    public static void write(StringIO output, String content)&#123;</span><br><span class="line">        output.write(content);</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void write(File output, String content)&#123;</span><br><span class="line">        output.write(content);</span><br><span class="line">        <span class="keyword">return</span> null;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p><p>参考自知乎用户刘志军：<a href="https://www.zhihu.com/question/20053359" target="_blank" rel="noopener">https://www.zhihu.com/question/20053359</a></p><hr><h2 id="函数重载主要是为了解决两个问题"><a href="#函数重载主要是为了解决两个问题" class="headerlink" title="函数重载主要是为了解决两个问题"></a>函数重载主要是为了解决两个问题</h2><ol><li>可变参数类型。</li><li>可变参数个数。</li></ol><blockquote><p>另外，一个基本的设计原则是，仅仅当两个函数除了参数类型和参数个数不同以外，其功能是完全相同的，此时才使用函数重载，如果两个函数的功能其实不同，那么不应当使用重载，而应当使用一个名字不同的函数。</p></blockquote><p>那么对于情况 1 ，函数功能相同，但是参数类型不同，python 如何处理？答案是根本不需要处理，因为 python 可以接受任何类型的参数，如果函数的功能相同，那么不同的参数类型在 python 中很可能是相同的代码，没有必要做成两个不同函数。</p><p>那么对于情况 2 ，函数功能相同，但参数个数不同，python 如何处理？大家知道，答案就是<code>缺省参数</code>。对那些缺少的参数设定为缺省参数即可解决问题。因为你假设函数功能相同，那么那些缺少的参数终归是需要用的。好了，鉴于情况 1 跟 情况 2 都有了解决方案，python 自然就不需要函数重载了。</p><p>参考自知乎用户<code>pansz</code>：<a href="https://www.zhihu.com/question/20053359" target="_blank" rel="noopener">https://www.zhihu.com/question/20053359</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;函数重载的目的&quot;&gt;&lt;a href=&quot;#函数重载的目的&quot; class=&quot;headerlink&quot; title=&quot;函数重载的目的&quot;&gt;&lt;/a&gt;函数重载的目的&lt;/h2&gt;&lt;p&gt;动态语言中，有鸭子类型，如果走起路来像鸭子，叫起来也像鸭子，那么它就是鸭子。一个对象的特征不是由它的类型决定，而是通过对象中的方法决定，所以函数重载在动态语言中就显得没有意义了，因为函数可以通过鸭子类型来处理不同类型的对象，鸭子类型也是多态性的一种表现。&lt;/p&gt;
-&lt;p&gt;在Python中实现函数重载：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; io &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; StringIO&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Writer&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;    @staticmethod&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(output, content)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;# output对象只要实现了write方法就行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        output.write(content)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# stringIO类型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output = StringIO()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Writer.write(output, &lt;span class=&quot;string&quot;&gt;&#39;hello world&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# file 类型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output = open(&lt;span class=&quot;string&quot;&gt;&#39;out.txt&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Writer.write(output, &lt;span class=&quot;string&quot;&gt;&#39;hello world&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="Python3 重载" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E9%87%8D%E8%BD%BD/"/>
     
     
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
