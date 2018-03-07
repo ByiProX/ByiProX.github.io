@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-07T18:05:08.274Z</updated>
+  <updated>2018-03-07T18:17:55.035Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Apache和Nginx的对比</title>
+    <link href="http://yoursite.com/2018/03/08/Apache%E5%92%8CNginx%E7%9A%84%E5%AF%B9%E6%AF%94/"/>
+    <id>http://yoursite.com/2018/03/08/Apache和Nginx的对比/</id>
+    <published>2018-03-07T18:11:57.000Z</published>
+    <updated>2018-03-07T18:17:55.035Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><ol><li><p>apache 的 rewrite 比 nginx 强大，在 rewrite 频繁的情况下，用 apache</p></li><li><p>apache 发展到现在，模块超多，基本想到的都可以找到</p></li><li><p>apache 更为成熟，少 bug ，nginx 的 bug 相对较多</p></li><li><p>apache 超稳定</p></li><li><p>apache 对 PHP 支持比较简单，nginx 需要配合其他后端用</p></li><li><p>apache 在处理动态请求有优势，nginx 在这方面是鸡肋，一般动态请求要 apache 去做，nginx 适合静态和反向。</p></li><li><p>apache 仍然是目前的主流，拥有丰富的特性，成熟的技术和开发社区</p></li></ol><h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><ol><li><p>轻量级，采用 C 进行编写，同样的 web 服务，会占用更少的内存及资源</p></li><li><p>抗并发，nginx 以 epoll and kqueue 作为开发模型，处理请求是异步非阻塞的，负载能力比 apache 高很多，而 apache 则是阻塞型的。在高并发下 nginx 能保持低资源低消耗高性能 ，而 apache 在 PHP 处理慢或者前端压力很大的情况下，很容易出现进程数飙升，从而拒绝服务的现象。</p></li><li><p>nginx 处理静态文件好，静态处理性能比 apache 高三倍以上</p></li><li><p>nginx 的设计高度模块化，编写模块相对简单</p></li><li><p>nginx 配置简洁，正则配置让很多事情变得简单，而且改完配置能使用 -t 测试配置有没有问题，apache 配置复杂 ，重启的时候发现配置出错了，会很崩溃</p></li><li><p>nginx 作为负载均衡服务器，支持 7 层负载均衡</p></li><li><p>nginx 本身就是一个反向代理服务器，而且可以作为非常优秀的邮件代理服务器</p></li><li><p>启动特别容易, 并且几乎可以做到 7*24 不间断运行，即使运行数个月也不需要重新启动，还能够不间断服务的情况下进行软件版本的升级</p></li><li><p>社区活跃，各种高性能模块出品迅速</p></li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>nginx 相对 apache 的优点：</p><ul><li>轻量级，同样起web 服务，比apache 占用更少的内存及资源</li><li>抗并发，<code>nginx 处理请求是异步非阻塞的</code>，支持更多的并发连接，而<code>apache 则是阻塞型的</code>，在高并发下nginx 能保持低资源低消耗高性能</li><li>配置简洁</li><li>高度模块化的设计，编写模块相对简单</li><li>社区活跃</li></ul><p>apache 相对nginx 的优点：</p><ul><li>rewrite ，比nginx 的rewrite 强大</li><li>模块超多，基本想到的都可以找到</li><li>少bug ，nginx 的bug 相对较多</li><li>超稳定</li></ul><p>两者最核心的区别在于 <code>apache 是同步多进程模型，一个连接对应一个进程</code>，而 <code>nginx 是异步的，多个连接（万级别）可以对应一个进程</code></p><p>一般来说，需要性能的 web 服务，用 nginx 。如果不需要性能只求稳定，更考虑 apache ，后者的各种功能模块实现得比前者，例如 ssl 的模块就比前者好，可配置项多。epoll(freebsd 上是 kqueue ) 网络 IO 模型是 nginx 处理性能高的根本理由，但并不是所有的情况下都是 epoll 大获全胜的，如果本身提供静态服务的就只有寥寥几个文件，apache 的 select 模型或许比 epoll 更高性能。当然，这只是根据网络 IO 模型的原理作的一个假设，真正的应用还是需要实测了再说的。</p><p>更为通用的方案是，前端 nginx 抗并发，后端 apache 集群，配合起来会更好。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Apache&quot;&gt;&lt;a href=&quot;#Apache&quot; class=&quot;headerlink&quot; title=&quot;Apache&quot;&gt;&lt;/a&gt;Apache&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;apache 的 rewrite 比 nginx 强大，在 rewrite 频繁的情况下，
+      
+    
+    </summary>
+    
+    
+      <category term="Web服务器" scheme="http://yoursite.com/tags/Web%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>用户密码保存的方式有哪些</title>
@@ -564,35 +588,6 @@
     </summary>
     
       <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 拷贝对象(深拷贝deepcopy和浅拷贝copy)</title>
-    <link href="http://yoursite.com/2018/03/03/Python3-%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1-%E6%B7%B1%E6%8B%B7%E8%B4%9Ddeepcopy%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9Dcopy/"/>
-    <id>http://yoursite.com/2018/03/03/Python3-拷贝对象-深拷贝deepcopy和浅拷贝copy/</id>
-    <published>2018-03-03T04:10:54.000Z</published>
-    <updated>2018-03-03T04:14:09.659Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>copy.copy 浅拷贝 <code>只拷贝父对象</code>，不会拷贝对象的内部的子对象。</li><li>copy.deepcopy 深拷贝 <code>拷贝对象及其子对象</code></li></ol><hr><p><img src="http://upload-images.jianshu.io/upload_images/2952111-17e1f4233f95285d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="屏幕截图3.jpg"></p><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*-coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]] <span class="comment">#原始对象</span></span><br><span class="line"></span><br><span class="line">b = a <span class="comment">#赋值，传对象的引用</span></span><br><span class="line">c = copy.copy(a) <span class="comment">#对象拷贝，浅拷贝</span></span><br><span class="line">d = copy.deepcopy(a) <span class="comment">#对象拷贝，深拷贝</span></span><br><span class="line"></span><br><span class="line">a.append(<span class="number">5</span>) <span class="comment">#修改对象a</span></span><br><span class="line">a[<span class="number">4</span>].append(<span class="string">'c'</span>) <span class="comment">#修改对象a中的['a', 'b']数组对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">'a = '</span>, a</span><br><span class="line"><span class="keyword">print</span> <span class="string">'b = '</span>, b</span><br><span class="line"><span class="keyword">print</span> <span class="string">'c = '</span>, c</span><br><span class="line"><span class="keyword">print</span> <span class="string">'d = '</span>, d</span><br><span class="line">输出结果：</span><br><span class="line">a =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line">b =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], <span class="number">5</span>]</span><br><span class="line">c =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]]</span><br><span class="line">d =  [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, [<span class="string">'a'</span>, <span class="string">'b'</span>]]</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;copy.copy 浅拷贝 &lt;code&gt;只拷贝父对象&lt;/code&gt;，不会拷贝对象的内部的子对象。&lt;/li&gt;
-&lt;li&gt;copy.deepcopy 深拷贝 &lt;code&gt;拷贝对象及其子对象&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2952111-17e1f4233f95285d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;屏幕截图3.jpg&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="Python3 拷贝对象" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E6%8B%B7%E8%B4%9D%E5%AF%B9%E8%B1%A1/"/>
     
     
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
