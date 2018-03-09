@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-09T07:26:37.282Z</updated>
+  <updated>2018-03-09T19:19:41.702Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 实现常见的各种排序方法</title>
+    <link href="http://yoursite.com/2018/03/09/Python3-%E5%AE%9E%E7%8E%B0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2018/03/09/Python3-实现常见的各种排序方法/</id>
+    <published>2018-03-09T07:56:09.000Z</published>
+    <updated>2018-03-09T19:19:41.702Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序的思路：</p><ol><li>先从数列中取出一个数作为基准数。</li><li>分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边(假定从小到大排序)。</li><li>再对左右区间重复第二步，直到各区间只有一个数</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quicksort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="string">"""快速排序"""</span></span><br><span class="line">    <span class="keyword">if</span> len(array) &lt; <span class="number">2</span>:  <span class="comment"># 基线条件：为空或者只有一个元素的数组是有序的</span></span><br><span class="line">        <span class="keyword">return</span> array</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        pivot = array[<span class="number">0</span>]  <span class="comment"># 递归条件,基准值</span></span><br><span class="line">        less = [i <span class="keyword">for</span> i <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> i &lt;= pivot]  <span class="comment"># 所有小于基准值的元素组成的子数组</span></span><br><span class="line">        greater = [i <span class="keyword">for</span> i <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> i &gt; pivot]  <span class="comment"># 所有大于基准值的元素组成的子数组</span></span><br><span class="line">        <span class="keyword">return</span> quicksort(less) + [pivot] + quicksort(greater)</span><br><span class="line"></span><br><span class="line">print(quicksort([<span class="number">1</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">3</span>]))</span><br></pre></td></tr></table></figure><a id="more"></a><p><img src="http://upload-images.jianshu.io/upload_images/2952111-d52e0c914f7272a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="快速排序"></p><p><img src="http://upload-images.jianshu.io/upload_images/2952111-03cf1024e51c6dee.gif?imageMogr2/auto-orient/strip" alt="20170801013540271.gif"></p><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序原理即：从数组下标为0的位置开始，比较下标位置为0和1的数据，如果0号位置的大，则交换位置，如果1号位置大，则什么也不做，然后右移一个位置，比较1号和2号的数据，和刚才的一样，如果1号的大，则交换位置，以此类推直至最后一个位置结束，到此数组中最大的元素就被排到了最后，之后再根据之前的步骤开始排前面的数据，直至全部数据都排序完成。</p><p>就是传说中的大的沉到底原则，适用于小量数据</p><p>冒泡排序思路: 每一趟只能将一个数归位, 如果有n个数进行排序,只需将n-1个数归位, 也就是说要进行n-1趟操作(已经归位的数不用再比较)</p><p>缺点: 冒泡排序解决了桶排序浪费空间的问题, 但是冒泡排序的效率特别低<br><img src="http://upload-images.jianshu.io/upload_images/2952111-020fcd7b86279da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="冒泡排序"></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubbleSort</span><span class="params">(relist)</span>:</span></span><br><span class="line">    <span class="string">"""冒泡排序"""</span></span><br><span class="line">    len_ = len(relist)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len_ - <span class="number">1</span>):  <span class="comment"># 这个循环负责设置冒泡排序进行的次数</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,len_-i<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> relist[j] &gt; relist[j+<span class="number">1</span>]:</span><br><span class="line">                relist[j+<span class="number">1</span>], relist[j] = relist[j], relist[j+<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> relist</span><br><span class="line"></span><br><span class="line">print(bubbleSort([<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">3</span>]))</span><br></pre></td></tr></table></figure><p><img src="http://upload-images.jianshu.io/upload_images/2952111-e421e0f31170cb93.gif?imageMogr2/auto-orient/strip" alt="冒泡排序"></p><p>由上图看出最大的数一直沉到底部</p><p>0000000000000</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h2&gt;&lt;p&gt;快速排序的思路：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先从数列中取出一个数作为基准数。&lt;/li&gt;
+&lt;li&gt;分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边(假定从小到大排序)。&lt;/li&gt;
+&lt;li&gt;再对左右区间重复第二步，直到各区间只有一个数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;quicksort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(array)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;&quot;&quot;快速排序&quot;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; len(array) &amp;lt; &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;:  &lt;span class=&quot;comment&quot;&gt;# 基线条件：为空或者只有一个元素的数组是有序的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; array&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        pivot = array[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]  &lt;span class=&quot;comment&quot;&gt;# 递归条件,基准值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        less = [i &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; array[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:] &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; i &amp;lt;= pivot]  &lt;span class=&quot;comment&quot;&gt;# 所有小于基准值的元素组成的子数组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        greater = [i &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; array[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:] &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; i &amp;gt; pivot]  &lt;span class=&quot;comment&quot;&gt;# 所有大于基准值的元素组成的子数组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; quicksort(less) + [pivot] + quicksort(greater)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(quicksort([&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;]))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+      <category term="Data Structures" scheme="http://yoursite.com/tags/Data-Structures/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 实现二分查找</title>
@@ -535,39 +567,6 @@
       <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
     
       <category term="Python3 virtualenv" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-virtualenv/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 真假值对照表</title>
-    <link href="http://yoursite.com/2018/03/03/Python3-%E7%9C%9F%E5%81%87%E5%80%BC%E5%AF%B9%E7%85%A7%E8%A1%A8/"/>
-    <id>http://yoursite.com/2018/03/03/Python3-真假值对照表/</id>
-    <published>2018-03-03T05:14:45.000Z</published>
-    <updated>2018-03-03T05:21:56.663Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th style="text-align:center">类型</th><th style="text-align:center">False</th><th style="text-align:center">True</th></tr></thead><tbody><tr><td style="text-align:center">布尔</td><td style="text-align:center">False(与0等价)</td><td style="text-align:center">True(与1等价)</td></tr><tr><td style="text-align:center">数值</td><td style="text-align:center">0, &nbsp;&nbsp;0.0</td><td style="text-align:center">非零的数值</td></tr><tr><td style="text-align:center">字符串</td><td style="text-align:center">‘’,&nbsp;&nbsp;””(空字符串)</td><td style="text-align:center">非空字符串</td></tr><tr><td style="text-align:center">容器</td><td style="text-align:center">[],&nbsp;&nbsp;(),&nbsp;&nbsp;{},&nbsp;&nbsp;set()</td><td style="text-align:center">至少有一个元素的容器对象</td></tr><tr><td style="text-align:center">None</td><td style="text-align:center">None</td><td style="text-align:center">非None对象</td></tr></tbody></table>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;类型&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;False&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;True&lt;/th&gt;
-
-      
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="Python3 True or False" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-True-or-False/"/>
     
     
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>

@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python3 实现常见的各种排序方法]]></title>
+    <url>%2F2018%2F03%2F09%2FPython3-%E5%AE%9E%E7%8E%B0%E5%B8%B8%E8%A7%81%E7%9A%84%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[快速排序快速排序的思路： 先从数列中取出一个数作为基准数。 分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边(假定从小到大排序)。 再对左右区间重复第二步，直到各区间只有一个数 1234567891011def quicksort(array): """快速排序""" if len(array) &lt; 2: # 基线条件：为空或者只有一个元素的数组是有序的 return array else: pivot = array[0] # 递归条件,基准值 less = [i for i in array[1:] if i &lt;= pivot] # 所有小于基准值的元素组成的子数组 greater = [i for i in array[1:] if i &gt; pivot] # 所有大于基准值的元素组成的子数组 return quicksort(less) + [pivot] + quicksort(greater)print(quicksort([1,2,7,4,2,9,3])) 冒泡排序冒泡排序原理即：从数组下标为0的位置开始，比较下标位置为0和1的数据，如果0号位置的大，则交换位置，如果1号位置大，则什么也不做，然后右移一个位置，比较1号和2号的数据，和刚才的一样，如果1号的大，则交换位置，以此类推直至最后一个位置结束，到此数组中最大的元素就被排到了最后，之后再根据之前的步骤开始排前面的数据，直至全部数据都排序完成。 就是传说中的大的沉到底原则，适用于小量数据 冒泡排序思路: 每一趟只能将一个数归位, 如果有n个数进行排序,只需将n-1个数归位, 也就是说要进行n-1趟操作(已经归位的数不用再比较) 缺点: 冒泡排序解决了桶排序浪费空间的问题, 但是冒泡排序的效率特别低 12345678910def bubbleSort(relist): """冒泡排序""" len_ = len(relist) for i in range(len_ - 1): # 这个循环负责设置冒泡排序进行的次数 for j in range(0,len_-i-1): if relist[j] &gt; relist[j+1]: relist[j+1], relist[j] = relist[j], relist[j+1] return relistprint(bubbleSort([1,5,2,6,9,3])) 由上图看出最大的数一直沉到底部 0000000000000]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+        <tag>Algorithm</tag>
+        <tag>Data Structures</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python3 实现二分查找]]></title>
     <url>%2F2018%2F03%2F09%2FPython3-%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%2F</url>
     <content type="text"><![CDATA[二分查找,给出一个已经排好序的列表,注意是已经排好序的,查找指定元素在列表中的位置123456789101112131415161718192021import mathdef binary_search(my_list, item): """从list中查找item""" low = 0 high = len(my_list) - 1 while low &lt;= high: mid = math.floor((low + high)/2) guess = my_list[mid] if guess &gt; item: high = mid - 1 elif guess &lt; item: low = mid + 1 else: return mid return Nonemy_list = [1,3,5,7,9]item = 1print(binary_search(my_list, item))]]></content>
