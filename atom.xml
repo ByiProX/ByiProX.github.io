@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-10T15:42:56.031Z</updated>
+  <updated>2018-03-11T17:59:27.116Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 将两个排好序的列表合并成一个有序列表</title>
+    <link href="http://yoursite.com/2018/03/12/Python3-%E5%B0%86%E4%B8%A4%E4%B8%AA%E6%8E%92%E5%A5%BD%E5%BA%8F%E7%9A%84%E5%88%97%E8%A1%A8%E5%90%88%E5%B9%B6%E6%88%90%E4%B8%80%E4%B8%AA%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8/"/>
+    <id>http://yoursite.com/2018/03/12/Python3-将两个排好序的列表合并成一个有序列表/</id>
+    <published>2018-03-11T16:11:27.000Z</published>
+    <updated>2018-03-11T17:59:27.116Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_list</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> a:</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> b:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    a_index = b_index = <span class="number">0</span></span><br><span class="line">    ret = []</span><br><span class="line">    <span class="keyword">while</span> a_index &lt; len(a) <span class="keyword">and</span> b_index &lt; len(b):</span><br><span class="line">        <span class="keyword">if</span> a[a_index] &lt;= b[b_index]:</span><br><span class="line">            ret.append(a[a_index])</span><br><span class="line">            a_index += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            ret.append(b[b_index])</span><br><span class="line">            b_index += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> a_index &lt; len(a):</span><br><span class="line">        ret.extend(a[a_index:])</span><br><span class="line">    <span class="keyword">if</span> b_index &lt; len(b):</span><br><span class="line">        ret.extend(b[b_index:])</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line">    b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>]</span><br><span class="line">    print(merge_list(a, b))</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas
+      
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/categories/Algorithm/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 实现常见的各种排序方法</title>
@@ -545,31 +572,6 @@
     
     
       <category term="Mac OS 命令行" scheme="http://yoursite.com/tags/Mac-OS-%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 使用virtualenv搭建虚拟环境</title>
-    <link href="http://yoursite.com/2018/03/03/Python3-%E4%BD%BF%E7%94%A8virtualenv%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
-    <id>http://yoursite.com/2018/03/03/Python3-使用virtualenv搭建虚拟环境/</id>
-    <published>2018-03-03T05:28:31.000Z</published>
-    <updated>2018-03-03T05:32:43.613Z</updated>
-    
-    <content type="html"><![CDATA[<p>在使用Python进行多个项目开发时，每个项目可能会需要安装不同的组件。把这些组件安装在同一台计算机下可能会导致组件之间的相互冲突，比如项目A使用Django 1.10，而项目B使用Django 1.8，那么同时安装两个版本可能在具体使用时产生冲突。使用虚拟环境可以有效避免这样的问题。</p><p>Python虚拟环境是一套由Ian Bicking编写的管理独立Python运行环境的系统。这样，开发者可以让每个项目运行在独立的虚拟环境中，从而避免了不同项目之间组件配置的冲突。<br><a id="more"></a></p><h4 id="1-虚拟环境安装"><a href="#1-虚拟环境安装" class="headerlink" title="1.虚拟环境安装"></a>1.虚拟环境安装</h4><p>在终端中执行命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenv</span><br></pre></td></tr></table></figure></p><h4 id="2-虚拟环境使用"><a href="#2-虚拟环境使用" class="headerlink" title="2.虚拟环境使用"></a>2.虚拟环境使用</h4><p>假定我们要开发一个新的项目，需要一套独立的Python运行环境，或者为已有的项目建立虚拟环境，终端执行如下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span>   [项目所在目录]</span><br><span class="line">$ virtualenv venv</span><br></pre></td></tr></table></figure></p><p>该命令执行后，将在当前目录下建立一个venv目录，<strong>该目录拷贝一份完整的当前系统的Python环境</strong>；</p><p>我么也可以执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ virtualenv --no-site-packages venv</span><br></pre></td></tr></table></figure></p><p>这样，已经安装到系统Python环境中的所有第三方包都不会复制过来，这样，我们就得到了一个不带任何第三方包的“干净”的Python运行环境。新建的Python环境被放到当前目录下的venv目录。</p><p>有了venv这个Python环境，可以用source进入该环境（注意是在cd之后的目录）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">source</span> venv/bin/activate[.fish|.zsh]</span><br></pre></td></tr></table></figure></p><p>注意到命令提示符变了，有个(venv)前缀，表示当前环境是一个名为venv的Python环境。在venv环境下，用pip安装的包都被安装到venv/lib目录，而不会影响系统的Python环境。</p><p>退出当前的venv环境，使用deactivate命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ deactivate</span><br></pre></td></tr></table></figure></p><p>此时回到了正常的环境，现在pip或python均是在系统Python环境下执行。</p><h4 id="3-注意"><a href="#3-注意" class="headerlink" title="3.注意"></a>3.注意</h4><p>为保证项目之间的独立性，建议所有使用pip安装的组件都在项目虚拟环境中进行，避免不同版本的冲突。</p><p>最后附上<a href="https://virtualenv.pypa.io/en/stable/" target="_blank" rel="noopener">Virtualenv的官方文档</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在使用Python进行多个项目开发时，每个项目可能会需要安装不同的组件。把这些组件安装在同一台计算机下可能会导致组件之间的相互冲突，比如项目A使用Django 1.10，而项目B使用Django 1.8，那么同时安装两个版本可能在具体使用时产生冲突。使用虚拟环境可以有效避免这样的问题。&lt;/p&gt;
-&lt;p&gt;Python虚拟环境是一套由Ian Bicking编写的管理独立Python运行环境的系统。这样，开发者可以让每个项目运行在独立的虚拟环境中，从而避免了不同项目之间组件配置的冲突。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="Python3 virtualenv" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-virtualenv/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
   </entry>
   
