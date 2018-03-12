@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Python3 实现遍历目录与子目录，并抓取.py文件]]></title>
     <url>%2F2018%2F03%2F12%2FPython3-%E5%AE%9E%E7%8E%B0%E9%81%8D%E5%8E%86%E7%9B%AE%E5%BD%95%E4%B8%8E%E5%AD%90%E7%9B%AE%E5%BD%95%EF%BC%8C%E5%B9%B6%E6%8A%93%E5%8F%96-py%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[tree test:123456789.├── subtest1│ ├── subsubdir│ │ └── sub.py│ └── test1.py├── subtest2│ └── test2.py└── subtest3 └── test3.py 12345678910111213141516171819202122232425262728# -*- coding: utf-8 -*- # vim: tabstop=4 shiftwidth=4 softtabstop=4 # 1. for-in dir/subdir to get the filesname # 2. splitext filename to filter import os def getFiles(dir, suffix): res = [] for root, directory, files in os.walk(dir): for filename in files: name, suf = os.path.splitext(filename) if suf == suffix: res.append(os.path.join(root, filename)) return res for file in getFiles("./", '.py'): print(file)# output:# ./walkdir.py# ./subtest2/test2.py# ./subtest3/test3.py# ./subtest1/test1.py# ./subtest1/subsubdir/sub.py]]></content>
+    <content type="text"><![CDATA[12345678910tree test.├── subtest1│ ├── subsubdir│ │ └── sub.py│ └── test1.py├── subtest2│ └── test2.py└── subtest3 └── test3.py 1234567891011121314151617181920212223# 1. for-in dir/subdir to get the filesname # 2. splitext filename to filter import os def getFiles(dir, suffix): res = [] for root, directory, files in os.walk(dir): for filename in files: name, suf = os.path.splitext(filename) if suf == suffix: res.append(os.path.join(root, filename)) return res for file in getFiles("./", '.py'): print(file)# output:# ./walkdir.py# ./subtest2/test2.py# ./subtest3/test3.py# ./subtest1/test1.py# ./subtest1/subsubdir/sub.py]]></content>
       <categories>
         <category>Python3 进阶</category>
       </categories>

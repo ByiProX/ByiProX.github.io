@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="tree test:123456789.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 12345678910111213141516171819202122232425262728# -*- coding:">
+<meta name="description" content="12345678910tree test.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 1234567891011121314151617181920212223# 1. for-in dir/subdir">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python3 实现遍历目录与子目录，并抓取.py文件">
 <meta property="og:url" content="http://yoursite.com/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="tree test:123456789.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 12345678910111213141516171819202122232425262728# -*- coding:">
+<meta property="og:description" content="12345678910tree test.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 1234567891011121314151617181920212223# 1. for-in dir/subdir">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T09:01:19.973Z">
+<meta property="og:updated_time" content="2018-03-12T09:04:15.759Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3 实现遍历目录与子目录，并抓取.py文件">
-<meta name="twitter:description" content="tree test:123456789.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 12345678910111213141516171819202122232425262728# -*- coding:">
+<meta name="twitter:description" content="12345678910tree test.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 1234567891011121314151617181920212223# 1. for-in dir/subdir">
 
 
 
@@ -393,8 +393,8 @@
       
 
       
-        <h1 id="tree-test"><a href="#tree-test" class="headerlink" title="tree test:"></a>tree test:</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── subtest1</span><br><span class="line">│   ├── subsubdir</span><br><span class="line">│   │   └── sub.py</span><br><span class="line">│   └── test1.py</span><br><span class="line">├── subtest2</span><br><span class="line">│   └── test2.py</span><br><span class="line">└── subtest3</span><br><span class="line">    └── test3.py</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-  </span></span><br><span class="line"><span class="comment"># vim: tabstop=4 shiftwidth=4 softtabstop=4  </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. for-in dir/subdir to get the filesname  </span></span><br><span class="line"><span class="comment"># 2. splitext filename to filter  </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getFiles</span><span class="params">(dir, suffix)</span>:</span>  </span><br><span class="line"></span><br><span class="line">    res = []  </span><br><span class="line">    <span class="keyword">for</span> root, directory, files <span class="keyword">in</span> os.walk(dir):  </span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> files:  </span><br><span class="line">            name, suf = os.path.splitext(filename)  </span><br><span class="line">            <span class="keyword">if</span> suf == suffix:  </span><br><span class="line">                res.append(os.path.join(root, filename))  </span><br><span class="line">    <span class="keyword">return</span> res  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> getFiles(<span class="string">"./"</span>, <span class="string">'.py'</span>):  </span><br><span class="line">    print(file)</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># ./walkdir.py</span></span><br><span class="line"><span class="comment"># ./subtest2/test2.py</span></span><br><span class="line"><span class="comment"># ./subtest3/test3.py</span></span><br><span class="line"><span class="comment"># ./subtest1/test1.py</span></span><br><span class="line"><span class="comment"># ./subtest1/subsubdir/sub.py</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tree <span class="built_in">test</span></span><br><span class="line">.</span><br><span class="line">├── subtest1</span><br><span class="line">│   ├── subsubdir</span><br><span class="line">│   │   └── sub.py</span><br><span class="line">│   └── test1.py</span><br><span class="line">├── subtest2</span><br><span class="line">│   └── test2.py</span><br><span class="line">└── subtest3</span><br><span class="line">    └── test3.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. for-in dir/subdir to get the filesname  </span></span><br><span class="line"><span class="comment"># 2. splitext filename to filter  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getFiles</span><span class="params">(dir, suffix)</span>:</span>  </span><br><span class="line"></span><br><span class="line">    res = []  </span><br><span class="line">    <span class="keyword">for</span> root, directory, files <span class="keyword">in</span> os.walk(dir):  </span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> files:  </span><br><span class="line">            name, suf = os.path.splitext(filename)  </span><br><span class="line">            <span class="keyword">if</span> suf == suffix:  </span><br><span class="line">                res.append(os.path.join(root, filename))  </span><br><span class="line">    <span class="keyword">return</span> res  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> getFiles(<span class="string">"./"</span>, <span class="string">'.py'</span>):  </span><br><span class="line">    print(file)</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># ./walkdir.py</span></span><br><span class="line"><span class="comment"># ./subtest2/test2.py</span></span><br><span class="line"><span class="comment"># ./subtest3/test3.py</span></span><br><span class="line"><span class="comment"># ./subtest1/test1.py</span></span><br><span class="line"><span class="comment"># ./subtest1/subsubdir/sub.py</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -495,17 +495,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -618,22 +609,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tree-test"><span class="nav-number">1.</span> <span class="nav-text">tree test:</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
