@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="Running Tesseract with command-lineTesseract is a command-line program, so first open a terminal or command prompt. The command is used like this:1tesseract imagename outputbase [-l lang] [-psm pagese">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T04:57:36.401Z">
+<meta property="og:updated_time" content="2018-03-12T06:34:34.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tesseract的使用">
 <meta name="twitter:description" content="Running Tesseract with command-lineTesseract is a command-line program, so first open a terminal or command prompt. The command is used like this:1tesseract imagename outputbase [-l lang] [-psm pagese">
@@ -397,6 +397,7 @@
 <p>So basic usage to do OCR on an image called ‘myscan.png’ and save the result to ‘out.txt’ would be:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out</span><br></pre></td></tr></table></figure></p>
 <p>Or to do the same with German:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out -l deu</span><br></pre></td></tr></table></figure></p>
 <p>It can even be used with multiple languages traineddata at a time eg. English and German:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out -l eng+deu</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>Tesseract also includes a hOCR mode, which produces a special HTML file with the coordinates of each word. This can be used to create a searchable pdf, using a tool such as <a href="https://exactcode.com/opensource/exactimage/" target="_blank" rel="noopener">Hocr2PDF</a>. To use it, use the ‘hocr’ config option, like this:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out hocr</span><br></pre></td></tr></table></figure></p>
 <p>You can also create a searchable pdf directly from tesseract ( versions &gt;=3.03):<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out pdf</span><br></pre></td></tr></table></figure></p>
 <p>More information about the various options is available in the <a href="https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc" target="_blank" rel="noopener">Tesseract manpage</a>.</p>
