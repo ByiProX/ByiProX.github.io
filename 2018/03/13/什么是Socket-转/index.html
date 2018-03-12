@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="网络," />
 
 
 
@@ -81,13 +81,24 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quentin&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/Python3-进阶/page/3/index.html">
+<meta name="description" content="对TCP/IP、UDP、Socket编程这些词你不会很陌生吧？随着网络技术的发展，这些词充斥着我们的耳朵。那么我想问：  什么是TCP/IP、UDP？ Socket在哪里呢？ Socket是什么呢？ 你会使用它们吗？  什么是TCP/IP、UDPTCP/IP（Transmission Control Protocol/Internet Protocol）即传输控制协议/网间协议，是一个工业标准的协">
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是Socket(转)">
+<meta property="og:url" content="http://yoursite.com/2018/03/13/什么是Socket-转/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
+<meta property="og:description" content="对TCP/IP、UDP、Socket编程这些词你不会很陌生吧？随着网络技术的发展，这些词充斥着我们的耳朵。那么我想问：  什么是TCP/IP、UDP？ Socket在哪里呢？ Socket是什么呢？ 你会使用它们吗？  什么是TCP/IP、UDPTCP/IP（Transmission Control Protocol/Internet Protocol）即传输控制协议/网间协议，是一个工业标准的协">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-571c60b933d42028.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-1dd2ce6b61d08816.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-99ebc49204f5b380.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-36073682cf397e4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-61b92a5dbbb8bf69.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-03-12T17:03:47.890Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quentin&#39;s Blog">
+<meta name="twitter:title" content="什么是Socket(转)">
+<meta name="twitter:description" content="对TCP/IP、UDP、Socket编程这些词你不会很陌生吧？随着网络技术的发展，这些词充斥着我们的耳朵。那么我想问：  什么是TCP/IP、UDP？ Socket在哪里呢？ Socket是什么呢？ 你会使用它们吗？  什么是TCP/IP、UDPTCP/IP（Transmission Control Protocol/Internet Protocol）即传输控制协议/网间协议，是一个工业标准的协">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2952111-571c60b933d42028.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -117,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/Python3-进阶/page/3/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/13/什么是Socket-转/"/>
 
 
 
 
 
-  <title>分类: Python3 进阶 | Quentin's Blog</title>
+  <title>什么是Socket(转) | Quentin's Blog</title>
   
 
 
@@ -142,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <!-- fork me on github -->
     <!-- red Logo -->
@@ -274,115 +285,203 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Python3 进阶<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/什么是Socket-转/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/03/01/Python3-自省/" itemprop="url">
-              
-                <span itemprop="name">Python3 自省</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">什么是Socket(转)</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T16:19:37+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T00:49:26+08:00">
+                2018-03-13
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/13/什么是Socket-转/" class="leancloud_visitors" data-flag-title="什么是Socket(转)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/01/Python3-类变量和实例变量/" itemprop="url">
-              
-                <span itemprop="name">Python3 类变量和实例变量</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T13:21:38+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/01/Python3-staticmethod和-classmethod/" itemprop="url">
-              
-                <span itemprop="name">Python3 @staticmethod和@classmethod</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T02:01:19+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>对TCP/IP、UDP、Socket编程这些词你不会很陌生吧？随着网络技术的发展，这些词充斥着我们的耳朵。那么我想问：</p>
+<ol>
+<li>什么是TCP/IP、UDP？</li>
+<li>Socket在哪里呢？</li>
+<li>Socket是什么呢？</li>
+<li>你会使用它们吗？</li>
+</ol>
+<h2 id="什么是TCP-IP、UDP"><a href="#什么是TCP-IP、UDP" class="headerlink" title="什么是TCP/IP、UDP"></a>什么是TCP/IP、UDP</h2><p>TCP/IP（Transmission Control Protocol/Internet Protocol）即传输控制协议/网间协议，是一个工业标准的协议集，它是为广域网（WANs）设计的。<br>UDP（User Data Protocol，用户数据报协议）是与TCP相对应的协议。它是属于TCP/IP协议族中的一种。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2952111-571c60b933d42028.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.jpg"></p>
+<a id="more"></a>
+<p>TCP/IP协议族包括运输层、网络层、链路层。由上图可以知道TCP/IP与UDP的关系。</p>
+<h2 id="Socket在哪里"><a href="#Socket在哪里" class="headerlink" title="Socket在哪里"></a>Socket在哪里</h2><p><img src="https://upload-images.jianshu.io/upload_images/2952111-1dd2ce6b61d08816.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.jpg"></p>
+<h2 id="Socket是什么"><a href="#Socket是什么" class="headerlink" title="Socket是什么"></a>Socket是什么</h2><p>Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。在设计模式中，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。</p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>前人已经给我们做了好多的事了，网络间的通信也就简单了许多，但毕竟还是有挺多工作要做的。以前听到Socket编程，觉得它是比较高深的编程知识，但是只要弄清Socket编程的工作原理，神秘的面纱也就揭开了。<br>一个生活中的场景。你要打电话给一个朋友，先拨号，朋友听到电话铃声后提起电话，这时你和你的朋友就建立起了连接，就可以讲话了。等交流结束，挂断电话结束此次交谈。<br>生活中的场景就解释了这工作原理，也许TCP/IP协议族就是诞生于生活中，这也不一定。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2952111-99ebc49204f5b380.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.jpg"></p>
+<p>先从服务器端说起。服务器端先初始化Socket，然后与端口绑定(bind)，对端口进行监听(listen)，调用accept阻塞，等待客户端连接。在这时如果有个客户端初始化一个Socket，然后连接服务器(connect)，如果连接成功，这时客户端与服务器端的连接就建立了。客户端发送数据请求，服务器端接收请求并处理请求，然后把回应数据发送给客户端，客户端读取数据，最后关闭连接，一次交互结束。</p>
+<p>在这里我就举个简单的例子，我们走的是TCP协议这条路（见图2）。例子用MFC编写，运行的界面如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2952111-36073682cf397e4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.jpg"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2952111-61b92a5dbbb8bf69.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.jpg"></p>
+<p>在客户端输入服务器端的IP地址和发送的数据，然后按发送按钮，服务器端接收到数据，然后回应客户端。客户端读取回应的数据，显示在界面上。</p>
+<p>客户端就一个函数完成了一次通信。在这里IP地址为何用127.0.0.1呢？使用这个IP地址，服务器端和客户端就能运行在同一台机器上，这样调试方便多了。当然你可以在你朋友的机器上运行Server程序(本人在局域网中测试过)，在自己的机器上运行Client程序，当然输入的IP地址就该是你朋友机器的IP地址了。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml</a></li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络/" rel="tag"># 网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/" rel="next" title="Python3 实现遍历目录与子目录，并抓取.py文件">
+                <i class="fa fa-chevron-left"></i> Python3 实现遍历目录与子目录，并抓取.py文件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/Python3-进阶/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/categories/Python3-进阶/">1</a><a class="page-number" href="/categories/Python3-进阶/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -390,6 +489,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -410,8 +523,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -524,6 +646,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是TCP-IP、UDP"><span class="nav-number">1.</span> <span class="nav-text">什么是TCP/IP、UDP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket在哪里"><span class="nav-number">2.</span> <span class="nav-text">Socket在哪里</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket是什么"><span class="nav-number">3.</span> <span class="nav-text">Socket是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用"><span class="nav-number">4.</span> <span class="nav-text">如何使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -708,6 +846,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -723,6 +865,18 @@
 
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/03/13/什么是Socket-转/';
+          this.page.identifier = '2018/03/13/什么是Socket-转/';
+          this.page.title = '什么是Socket(转)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
