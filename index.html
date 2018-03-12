@@ -289,6 +289,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/Tesseract的使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/Tesseract的使用/" itemprop="url">Tesseract的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T12:35:36+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tesseract/" itemprop="url" rel="index">
+                    <span itemprop="name">Tesseract</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/12/Tesseract的使用/" class="leancloud_visitors" data-flag-title="Tesseract的使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Running-Tesseract-with-command-line"><a href="#Running-Tesseract-with-command-line" class="headerlink" title="Running Tesseract with command-line"></a>Running Tesseract with command-line</h2><p>Tesseract is a command-line program, so first open a terminal or command prompt. The command is used like this:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract imagename outputbase [-l lang] [-psm pagesegmode] [configfile...]</span><br></pre></td></tr></table></figure></p>
+<p>So basic usage to do OCR on an image called ‘myscan.png’ and save the result to ‘out.txt’ would be:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out</span><br></pre></td></tr></table></figure></p>
+<p>Or to do the same with German:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out -l deu</span><br></pre></td></tr></table></figure></p>
+<p>It can even be used with multiple languages traineddata at a time eg. English and German:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out -l eng+deu</span><br></pre></td></tr></table></figure></p>
+<p>Tesseract also includes a hOCR mode, which produces a special HTML file with the coordinates of each word. This can be used to create a searchable pdf, using a tool such as <a href="https://exactcode.com/opensource/exactimage/" target="_blank" rel="noopener">Hocr2PDF</a>. To use it, use the ‘hocr’ config option, like this:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out hocr</span><br></pre></td></tr></table></figure></p>
+<p>You can also create a searchable pdf directly from tesseract ( versions &gt;=3.03):<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tesseract myscan.png out pdf</span><br></pre></td></tr></table></figure></p>
+<p>More information about the various options is available in the <a href="https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc" target="_blank" rel="noopener">Tesseract manpage</a>.</p>
+<h3 id="Other-Languages"><a href="#Other-Languages" class="headerlink" title="Other Languages"></a>Other Languages</h3><p>Tesseract has been trained for <a href="https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc#languages" target="_blank" rel="noopener">many languages</a>, check for your language in the <a href="https://github.com/tesseract-ocr/tessdata" target="_blank" rel="noopener">Tessdata repository</a>.</p>
+<p>For example, if we want Tesseract support Chinese language, just put <code>chi_sim.traineddata</code> into the path <code>/usr/local/Cellar/tesseract/3.05.01/share/tessdata/</code>。</p>
+<p>It can also be trained to support other languages and scripts; for more details see <a href="https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract" target="_blank" rel="noopener">TrainingTesseract</a>.</p>
+<h2 id="Running-Tesseract-with-Python"><a href="#Running-Tesseract-with-Python" class="headerlink" title="Running Tesseract with Python"></a>Running Tesseract with Python</h2><p>Python-tesseract is an optical character recognition (OCR) tool for python. That is, it will recognize and “read” the text embedded in images.</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><p><strong> Quick start </strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">except</span> ImportError:</span><br><span class="line">    <span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"></span><br><span class="line">pytesseract.pytesseract.tesseract_cmd = <span class="string">'&lt;full_path_to_your_tesseract_executable&gt;'</span></span><br><span class="line"><span class="comment"># Include the above line, if you don't have tesseract executable in your PATH</span></span><br><span class="line"><span class="comment"># Example tesseract_cmd: 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Simple image to string</span></span><br><span class="line">print(pytesseract.image_to_string(Image.open(<span class="string">'test.png'</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># French text image to string</span></span><br><span class="line">print(pytesseract.image_to_string(Image.open(<span class="string">'test-european.jpg'</span>), lang=<span class="string">'fra'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get bounding box estimates</span></span><br><span class="line">print(pytesseract.image_to_boxes(Image.open(<span class="string">'test.png'</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get verbose data including boxes, confidences, line and page numbers</span></span><br><span class="line">print(pytesseract.image_to_data(Image.open(<span class="string">'test.png'</span>)))</span><br></pre></td></tr></table></figure></p>
+<p>Support for OpenCV image/NumPy array objects<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">'/**path_to_image**/digits.png'</span>)</span><br><span class="line">print(pytesseract.image_to_string(img))</span><br><span class="line"><span class="comment"># OR explicit beforehand converting</span></span><br><span class="line">print(pytesseract.image_to_string(Image.fromarray(img))</span><br></pre></td></tr></table></figure></p>
+<p>Add the following config, if you have tessdata error like: “Error opening data file…”<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tessdata_dir_config = <span class="string">'--tessdata-dir "&lt;replace_with_your_tessdata_dir_path&gt;"'</span></span><br><span class="line"><span class="comment"># Example config: '--tessdata-dir "C:\\Program Files (x86)\\Tesseract-OCR\\tessdata"'</span></span><br><span class="line"><span class="comment"># It's important to add double quotes around the dir path.</span></span><br><span class="line"></span><br><span class="line">pytesseract.image_to_string(image, lang=<span class="string">'chi_sim'</span>, config=tessdata_dir_config)</span><br></pre></td></tr></table></figure></p>
+<p><strong>Functions</strong></p>
+<ul>
+<li><strong>image_to_string</strong> Returns the result of a Tesseract OCR run on the image to string</li>
+<li><strong>image_to_boxes</strong> Returns result containing recognized characters and their box boundaries</li>
+<li><strong>image_to_data</strong> Returns result containing box boundaries, confidences, and other information. Requires Tesseract 3.05+. For more information, please check the <a href="https://github.com/tesseract-ocr/tesseract/wiki/Command-Line-Usage#tsv-output-currently-available-in-305-dev-in-master-branch-on-github" target="_blank" rel="noopener">Tesseract TSV documentation</a></li>
+</ul>
+<p><strong>Parameters</strong></p>
+<p><code>image_to_data(image, lang=None, config=&#39;&#39;, nice=0, output_type=Output.STRING)</code></p>
+<ul>
+<li><strong>image</strong> Object, PIL Image/NumPy array of the image to be processed by Tesseract</li>
+<li><strong>lang</strong> String, Tesseract language code string</li>
+<li><strong>config</strong> String, Any additional configurations as a string, ex: <code>config=&#39;--psm 6&#39;</code></li>
+<li><strong>nice</strong> Integer, modifies the processor priority for the Tesseract run. Not supported on Windows. Nice adjusts the niceness of unix-like processes.</li>
+<li><strong>output_type</strong> Class attribute, specifies the type of the output, defaults to <code>string</code>. For the full list of all supported types, please check the definition of <a href="https://github.com/madmaze/pytesseract/blob/master/src/pytesseract.py" target="_blank" rel="noopener">pytesseract.Output</a> class.</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/Python3-将两个排好序的列表合并成一个有序列表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1676,165 +1857,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/07/浅谈TCP和UDP的区别以及应用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByiProX">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/07/浅谈TCP和UDP的区别以及应用/" itemprop="url">浅谈TCP和UDP的区别以及应用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T02:28:32+08:00">
-                2018-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/03/07/浅谈TCP和UDP的区别以及应用/" class="leancloud_visitors" data-flag-title="浅谈TCP和UDP的区别以及应用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="TCP和UDP区别"><a href="#TCP和UDP区别" class="headerlink" title="TCP和UDP区别"></a>TCP和UDP区别</h2><p>TCP(<code>Transmission Control Protocol</code>)—<code>传输控制协议</code>,<code>提供的是面向连接、可靠的字节流服务</code>。当客户和服务器彼此交换数据前，必须先在双方之间建立一个TCP连接，之后才能传输数据。TCP提供超时重发，丢弃重复数据，检验数据，流量控制等功能，保证数据能从一端传到另一端。<br>UDP(<code>User Data Protocol</code>)—<code>用户数据报协议</code>，<code>是一个简单的面向数据报的运输层协议</code>。在网络中它与TCP协议一样用于处理数据包，是一种无连接的协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快。</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol>
-<li><p>HTTP协议在运输层采用的就是<code>TCP协议</code>，在浏览器中输入IP地址后，与服务器建立连接，采用的就是TCP协议，是一种面向连接、可靠的字节流服务。</p>
-</li>
-<li><p>当强调传输性能而不是传输的完整性时，如：音频、多媒体应用和视频会议时，<code>UDP</code>是最好的选择。另外，腾讯QQ采用也是UDP协议。</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1889,7 +1911,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1900,7 +1922,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1911,7 +1933,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
