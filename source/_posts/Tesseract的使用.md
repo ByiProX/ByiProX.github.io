@@ -25,6 +25,7 @@ It can even be used with multiple languages traineddata at a time eg. English an
 ```bash
      tesseract myscan.png out -l eng+deu
 ```
+<!-- more -->
 Tesseract also includes a hOCR mode, which produces a special HTML file with the coordinates of each word. This can be used to create a searchable pdf, using a tool such as [Hocr2PDF](https://exactcode.com/opensource/exactimage/). To use it, use the 'hocr' config option, like this:
 ```bash    
 tesseract myscan.png out hocr
