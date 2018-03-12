@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-12T06:34:34.885Z</updated>
+  <updated>2018-03-12T08:49:03.868Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 os和sys模块的作用，以及常用的模块方法</title>
+    <link href="http://yoursite.com/2018/03/12/Python3-os%E5%92%8Csys%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E6%A8%A1%E5%9D%97%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2018/03/12/Python3-os和sys模块的作用，以及常用的模块方法/</id>
+    <published>2018-03-12T08:43:03.000Z</published>
+    <updated>2018-03-12T08:49:03.868Z</updated>
+    
+    <content type="html"><![CDATA[<p>官方解释：</p><blockquote><p>os： This module provides a portable way of using operating system dependent functionality.</p></blockquote><p>翻译：提供一种方便的使用<code>操作系统函数</code>的方法。</p><blockquote><p>sys：This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.</p></blockquote><p>翻译：提供访问由<code>解释器</code>使用或维护的变量和在与<code>解释器交互</code>使用到的函数。</p><a id="more"></a><h2 id="os-常用方法"><a href="#os-常用方法" class="headerlink" title="os 常用方法"></a>os 常用方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">os.remove()  <span class="comment"># 删除文件  </span></span><br><span class="line">os.rename()  <span class="comment"># 重命名文件  </span></span><br><span class="line">os.walk()  <span class="comment"># 生成目录树下的所有文件名  </span></span><br><span class="line">os.chdir()  <span class="comment"># 改变目录  </span></span><br><span class="line">os.mkdir/makedirs  <span class="comment"># 创建目录/多层目录  </span></span><br><span class="line">os.rmdir/removedirs  <span class="comment"># 删除目录/多层目录  </span></span><br><span class="line">os.listdir()  <span class="comment"># 列出指定目录的文件  </span></span><br><span class="line">os.getcwd()  <span class="comment"># 取得当前工作目录  </span></span><br><span class="line">os.chmod()  <span class="comment"># 改变目录权限  </span></span><br><span class="line">os.path.basename()  <span class="comment"># 去掉目录路径，返回文件名  </span></span><br><span class="line">os.path.dirname()  <span class="comment"># 去掉文件名，返回目录路径  </span></span><br><span class="line">os.path.join()  <span class="comment"># 将分离的各部分组合成一个路径名  </span></span><br><span class="line">os.path.split()  <span class="comment"># 返回（dirname(),basename())元组  </span></span><br><span class="line">os.path.splitext()  <span class="comment"># 返回(filename,extension)元组  </span></span><br><span class="line">os.path.getatime|ctime|mtime   <span class="comment"># 分别返回最近访问、创建、修改时间  </span></span><br><span class="line">os.path.getsize()  <span class="comment"># 返回文件大小  </span></span><br><span class="line">os.path.exists()  <span class="comment"># 是否存在  </span></span><br><span class="line">os.path.isabs()  <span class="comment"># 是否为绝对路径  </span></span><br><span class="line">os.path.isdir()  <span class="comment"># 是否为目录  </span></span><br><span class="line">os.path.isfile()  <span class="comment"># 是否为文件</span></span><br></pre></td></tr></table></figure><h2 id="sys-常用方法"><a href="#sys-常用方法" class="headerlink" title="sys 常用方法"></a>sys 常用方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sys.argv           <span class="comment"># 命令行参数List，第一个元素是程序本身路径    </span></span><br><span class="line">sys.modules.keys() <span class="comment"># 返回所有已经导入的模块列表    </span></span><br><span class="line">sys.exc_info()     <span class="comment"># 获取当前正在处理的异常类,exc_type、exc_value、exc_traceback当前处理的异常详细信息    </span></span><br><span class="line">sys.exit(n)        <span class="comment"># 退出程序，正常退出时exit(0)    </span></span><br><span class="line">sys.hexversion     <span class="comment"># 获取Python解释程序的版本值，16进制格式如：0x020403F0    </span></span><br><span class="line">sys.version        <span class="comment"># 获取Python解释程序的版本信息    </span></span><br><span class="line">sys.maxint         <span class="comment"># 最大的Int值    </span></span><br><span class="line">sys.maxunicode     <span class="comment"># 最大的Unicode值    </span></span><br><span class="line">sys.modules        <span class="comment"># 返回系统导入的模块字段，key是模块名，value是模块    </span></span><br><span class="line">sys.path           <span class="comment"># 返回模块的搜索路径，初始化时使用PYTHONPATH环境变量的值    </span></span><br><span class="line">sys.platform       <span class="comment"># 返回操作系统平台名称    </span></span><br><span class="line">sys.stdout         <span class="comment"># 标准输出   </span></span><br><span class="line">sys.stdin          <span class="comment"># 标准输入   </span></span><br><span class="line">sys.stderr         <span class="comment"># 错误输出   </span></span><br><span class="line">sys.exc_clear()    <span class="comment"># 用来清除当前线程所出现的当前的或最近的错误信息   </span></span><br><span class="line">sys.exec_prefix    <span class="comment"># 返回平台独立的python文件安装的位置   </span></span><br><span class="line">sys.byteorder      <span class="comment"># 本地字节规则的指示器，big-endian平台的值是'big',little-endian平台的值是'little'   </span></span><br><span class="line">sys.copyright      <span class="comment"># 记录python版权相关的东西   </span></span><br><span class="line">sys.api_version    <span class="comment"># 解释器的C的API版本   </span></span><br><span class="line">sys.version_info</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;官方解释：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;os： This module provides a portable way of using operating system dependent functionality.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;翻译：提供一种方便的使用&lt;code&gt;操作系统函数&lt;/code&gt;的方法。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;sys：This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;翻译：提供访问由&lt;code&gt;解释器&lt;/code&gt;使用或维护的变量和在与&lt;code&gt;解释器交互&lt;/code&gt;使用到的函数。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+    
+      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Tesseract的使用</title>
@@ -538,32 +568,6 @@
 &lt;li&gt;&lt;p&gt;所谓计算密集型任务，是指CPU计算占主要的任务，CPU一直处于满负荷状态。比如在一个很大的列表中查找元素（当然这不合理），复杂的加减乘除等。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-    
-    </summary>
-    
-      <category term="操作系统" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-      <category term="多任务处理" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%A4%84%E7%90%86/"/>
-    
-    
-      <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>进程、线程、协程</title>
-    <link href="http://yoursite.com/2018/03/04/%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E3%80%81%E5%8D%8F%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/03/04/进程、线程、协程/</id>
-    <published>2018-03-03T17:20:18.000Z</published>
-    <updated>2018-03-07T06:32:41.417Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>电脑里运行的应用程序，都是进程，假设我们用的电脑是单核的，CPU同时只能执行一个进程。当程序处于I/O阻塞的时候，CPU如果和程序一起等待，那就太浪费了，CPU会去执行其他的程序，此时就涉及到切换，切换前要保存上一个程序运行的状态，才能恢复，所以就需要有个东西来记录这个东西，就可以引出进程的概念了。</p><p>进程就是<code>一个程序在一个数据集上的一次动态执行过程</code>。进程是一个动态概念，是竟争计算机系统资源的基本单位。进程由<code>程序</code>，<code>数据集</code>，<code>进程控制块</code>三部分组成。<code>程序</code>用来描述进程哪些功能以及如何完成；<code>数据集</code>是程序执行过程中所使用的资源；<code>进程控制块</code>用来保存程序运行的状态.</p><p><code>进程是系统进行资源分配和调度的一个独立单位</code>。每个进程都有自己的独立内存空间，不同进程通过进程间通信来通信。由于进程比较重量，占据独立的内存，所以上下文进程间的切换开销（栈、寄存器、虚拟内存、文件句柄等）比较大，但相对比较稳定安全。</p><a id="more"></a><h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>在网络或多用户环境下，一个服务器通常需要接收大量且不确定数量用户的并发请求，为每一个请求都创建一个进程显然是行不通的，——无论是从系统资源开销方面或是响应用户请求的效率方面来看。因此，操作系统中<code>线程</code>的概念便被引进了。线程，是进程的一部分，<code>一个没有线程的进程可以被看作是单线程的</code>。线程有时又被称为<code>轻权进程</code>或<code>轻量级进程</code>，是一个基本的cpu执行单元，也是程序执行过程中的最小单元。一个进程最少也会有一个主线程，在主线程中通过threading模块，再开子线程。</p><p>线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。线程间通信主要通过共享内存，上下文切换很快，资源开销较少，但相比进程不够稳定容易丢失数据。</p><p><strong>进程拥有一个完整的虚拟地址空间，不依赖于线程而独立存在；反之，线程是进程的一部分，没有自己的地址空间，与进程内的其他线程一起共享分配给该进程的所有资源。</strong></p><p><strong>进程的状态有就绪，运行，等待三个状态；线程的状态有新建-就绪-（阻塞）-运行–死亡四个基本状态</strong></p><p>线程全局锁GIL(Global Interpreter Lock),即Python为了保证线程安全而采取的<code>独立线程运行的限制</code>,说白了就是一个核只能在同一时间运行一个线程.对于io密集型任务，python的多线程起到作用，但对于cpu密集型任务，python的多线程几乎占不到任何优势，还有可能因为争夺资源而变慢。</p><h2 id="进程、线程的关系"><a href="#进程、线程的关系" class="headerlink" title="进程、线程的关系"></a>进程、线程的关系</h2><ol><li>一个线程只能属于一个进程，而一个进程可以有多个线程，但至少有一个线程</li><li>资源分配给进程，进程是程序的主体，同一进程的所有线程共享该进程的所有资源</li><li>CPU分配给线程，即真正在CPU上运行的是线程</li><li>线程是最小的执行单元，进程是最小的资源管理单元</li></ol><h2 id="协程Coroutine"><a href="#协程Coroutine" class="headerlink" title="协程Coroutine"></a>协程Coroutine</h2><p>协程是一种用户态的轻量级线程，协程的调度完全由用户控制。协程拥有自己的寄存器上下文和栈。协程调度切换时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈，直接操作栈则基本没有内核切换的开销，可以不加锁的访问全局变量，所以上下文的切换非常快。</p><p><code>进程</code>拥有自己独立的堆和栈，既不共享堆，亦不共享栈，<code>进程由操作系统调度</code>。<br><code>线程</code>拥有自己独立的栈和共享的堆，共享堆，不共享栈，线程亦由操作系统调度(标准线程是的)。<br>协程和线程一样共享堆，不共享栈，协程由程序员在协程的代码里显示调度。<br>进程和其他两个的区别还是很明显的。<br><code>协程和线程的区别是</code>：协程避免了无意义的调度，由此可以提高性能，但也因此，程序员必须自己承担调度的责任，同时，<code>协程也失去了标准线程使用多CPU的能力。</code></p><p>举个例子：<br>假设有一个操作系统，是单核的，系统上没有其他的程序需要运行，有两个线程 A 和 B ，A 和 B 在单独运行时都需要 10 秒来完成自己的任务，而且任务都是运算操作，A B 之间也没有竞争和共享数据的问题。现在 A B 两个线程并行，操作系统会不停的在 A B 两个线程之间切换，达到一种伪并行的效果，假设切换的频率是每秒一次，切换的成本是 0.1 秒(主要是栈切换)，总共需要 20 + 19 <em> 0.1 = 21.9 秒。如果使用协程的方式，可以先运行协程 A ，A 结束的时候让位给协程 B ，只发生一次切换，总时间是 20 + 1 </em> 0.1 = 20.1 秒。如果系统是双核的，而且线程是标准线程，那么 A B 两个线程就可以真并行，总时间只需要 10 秒，而协程的方案仍然需要 20.1 秒。</p><p>人们通常将协程和子程序（函数）比较着理解。<br>子程序调用总是一个入口，一次返回，一旦退出即完成了子程序的执行。<br>协程的起始处是第一个入口点，在协程里，返回点之后是接下来的入口点。在python中，协程可以通过yield来调用其它协程。通过yield方式转移执行权的协程之间不是调用者与被调用者的关系，而是彼此对称、平等的，通过相互协作共同完成任务。其运行的大致流程如下：</p><ol><li>第一步，协程A开始执行。</li><li>第二步，协程A执行到一半，进入暂停，通过yield命令将执行权转移到协程B。</li><li>第三步，（一段时间后）协程B交还执行权。</li><li>第四步，协程A恢复执行。</li></ol><p>协程的特点在于是<code>一个线程执行</code>，与多线程相比，其优势体现在：</p><p>协程的执行效率非常高。因为子程序切换不是线程切换，而是由程序自身控制，因此，<code>没有线程切换的开销</code>，和多线程比，线程数量越多，协程的性能优势就越明显。<br>协程不需要多线程的锁机制。在协程中控制共享资源不加锁，只需要判断状态就好了。<br>Tips:利用多核CPU最简单的方法是多进程+协程，既充分利用多核，又充分发挥协程的高效率，可获得极高的性能。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="进程与线程比较"><a href="#进程与线程比较" class="headerlink" title="进程与线程比较"></a>进程与线程比较</h3><p>线程是指进程内的一个执行单元,也是进程内的可调度实体。线程与进程的区别:</p><ol><li>地址空间:线程是进程内的一个执行单元，进程内至少有一个线程，它们共享进程的地址空间，而进程有自己独立的地址空间</li><li>资源拥有:进程是资源分配和拥有的单位,同一个进程内的线程共享进程的资源</li><li>线程是处理器调度的基本单位,但进程不是</li><li><p>二者均可并发执行</p></li><li><p>每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口，但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制</p></li></ol><h3 id="协程与线程进行比较"><a href="#协程与线程进行比较" class="headerlink" title="协程与线程进行比较"></a>协程与线程进行比较</h3><ol><li>一个线程可以多个协程，一个进程也可以单独拥有多个协程，这样python中则能使用多核CPU。</li><li>线程进程都是同步机制，而协程则是异步</li><li>协程能保留上一次调用时的状态，每次过程重入时，就相当于进入上一次调用的状态</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;进程&quot;&gt;&lt;a href=&quot;#进程&quot; class=&quot;headerlink&quot; title=&quot;进程&quot;&gt;&lt;/a&gt;进程&lt;/h2&gt;&lt;p&gt;电脑里运行的应用程序，都是进程，假设我们用的电脑是单核的，CPU同时只能执行一个进程。当程序处于I/O阻塞的时候，CPU如果和程序一起等待，那就太浪费了，CPU会去执行其他的程序，此时就涉及到切换，切换前要保存上一个程序运行的状态，才能恢复，所以就需要有个东西来记录这个东西，就可以引出进程的概念了。&lt;/p&gt;
-&lt;p&gt;进程就是&lt;code&gt;一个程序在一个数据集上的一次动态执行过程&lt;/code&gt;。进程是一个动态概念，是竟争计算机系统资源的基本单位。进程由&lt;code&gt;程序&lt;/code&gt;，&lt;code&gt;数据集&lt;/code&gt;，&lt;code&gt;进程控制块&lt;/code&gt;三部分组成。&lt;code&gt;程序&lt;/code&gt;用来描述进程哪些功能以及如何完成；&lt;code&gt;数据集&lt;/code&gt;是程序执行过程中所使用的资源；&lt;code&gt;进程控制块&lt;/code&gt;用来保存程序运行的状态.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;进程是系统进行资源分配和调度的一个独立单位&lt;/code&gt;。每个进程都有自己的独立内存空间，不同进程通过进程间通信来通信。由于进程比较重量，占据独立的内存，所以上下文进程间的切换开销（栈、寄存器、虚拟内存、文件句柄等）比较大，但相对比较稳定安全。&lt;/p&gt;
     
     </summary>
     
