@@ -191,6 +191,20 @@ if __name__ == '__main__':
 ```
 ![堆排序.gif](https://upload-images.jianshu.io/upload_images/2952111-d80509464c38434d.gif?imageMogr2/auto-orient/strip)
 
+## 复杂度
+
+
+| 排序法 | 最差时间 | 平均时间复杂度 |稳定度|空间复杂度|
+| :--- | :------- | :------ |:------ |:------ |
+| 冒泡排序 | O(n^2) | O(n^2) |稳定|O(1)|
+| 快速排序 | O(n^2) | O(n*log n) |不稳定|O(log2n)~O(n)|
+| 选择排序 | O(n^2) | O(n^2) |不稳定|O(1)|
+| 二叉树排序 | O(n^2) | O(n*log n) |不一定|O(n)|
+| 插入排序 | O(n^2) | O(n^2) |稳定|O(1)|
+| 堆排序 | O(n*log n) | O(n*log n) |不稳定|O(1)|
+| 希尔排序 | O      | O           |不稳定|O(1)|
+| 归并排序 | O(n*log n)| O(n*log n) |稳定|?|
+
 ## 参考
 1. http://blog.csdn.net/mrlevo520/article/details/77829204
 2. http://blog.csdn.net/minxihou/article/details/51850001
