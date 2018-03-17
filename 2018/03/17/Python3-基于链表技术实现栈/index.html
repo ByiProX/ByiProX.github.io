@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python3,Algorithm," />
+  <meta name="keywords" content="Python3,Algorithm,Data Structures," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="二分查找,给出一个已经排好序的列表,注意是已经排好序的,查找指定元素在列表中的位置123456789101112131415161718192021import mathdef binary_search(my_list, item):    &quot;&quot;&quot;从list中查找item&quot;&quot;&quot;    low = 0    high = len(my_list) - 1    while low &amp;lt;= hi">
-<meta name="keywords" content="Python3,Algorithm">
+<meta name="description" content="定义异常类实现栈结构之前，先考虑为操作失败的处理定义一个异常类。在这里通过继承已有的异常类定义自己的异常类。由于栈操作(如空栈弹出)时不满足需要可以看做参数值错误，采用下面的定义12class StackUnderflow(ValueError):  # 栈下溢，空栈访问    pass 定义一个表结点类1234class LNode:    def __init__(self, elem, ne">
+<meta name="keywords" content="Python3,Algorithm,Data Structures">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python3 实现二分查找">
-<meta property="og:url" content="http://yoursite.com/2018/03/09/Python3-实现二分查找/index.html">
+<meta property="og:title" content="Python3 基于链表技术实现栈">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/Python3-基于链表技术实现栈/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="二分查找,给出一个已经排好序的列表,注意是已经排好序的,查找指定元素在列表中的位置123456789101112131415161718192021import mathdef binary_search(my_list, item):    &quot;&quot;&quot;从list中查找item&quot;&quot;&quot;    low = 0    high = len(my_list) - 1    while low &amp;lt;= hi">
+<meta property="og:description" content="定义异常类实现栈结构之前，先考虑为操作失败的处理定义一个异常类。在这里通过继承已有的异常类定义自己的异常类。由于栈操作(如空栈弹出)时不满足需要可以看做参数值错误，采用下面的定义12class StackUnderflow(ValueError):  # 栈下溢，空栈访问    pass 定义一个表结点类1234class LNode:    def __init__(self, elem, ne">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-09T07:26:37.282Z">
+<meta property="og:updated_time" content="2018-03-17T08:08:51.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python3 实现二分查找">
-<meta name="twitter:description" content="二分查找,给出一个已经排好序的列表,注意是已经排好序的,查找指定元素在列表中的位置123456789101112131415161718192021import mathdef binary_search(my_list, item):    &quot;&quot;&quot;从list中查找item&quot;&quot;&quot;    low = 0    high = len(my_list) - 1    while low &amp;lt;= hi">
+<meta name="twitter:title" content="Python3 基于链表技术实现栈">
+<meta name="twitter:description" content="定义异常类实现栈结构之前，先考虑为操作失败的处理定义一个异常类。在这里通过继承已有的异常类定义自己的异常类。由于栈操作(如空栈弹出)时不满足需要可以看做参数值错误，采用下面的定义12class StackUnderflow(ValueError):  # 栈下溢，空栈访问    pass 定义一个表结点类1234class LNode:    def __init__(self, elem, ne">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/09/Python3-实现二分查找/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/17/Python3-基于链表技术实现栈/"/>
 
 
 
 
 
-  <title>Python3 实现二分查找 | Quentin's Blog</title>
+  <title>Python3 基于链表技术实现栈 | Quentin's Blog</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/Python3-实现二分查找/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/Python3-基于链表技术实现栈/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python3 实现二分查找</h1>
+          <h1 class="post-title" itemprop="name headline">Python3 基于链表技术实现栈</h1>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T14:32:16+08:00">
-                2018-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T15:40:12+08:00">
+                2018-03-17
               </time>
             
 
@@ -345,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
+                  <a href="/categories/Data-Structures/" itemprop="url" rel="index">
+                    <span itemprop="name">Data Structures</span>
                   </a>
                 </span>
 
@@ -362,7 +362,7 @@
 
           
           
-             <span id="/2018/03/09/Python3-实现二分查找/" class="leancloud_visitors" data-flag-title="Python3 实现二分查找">
+             <span id="/2018/03/17/Python3-基于链表技术实现栈/" class="leancloud_visitors" data-flag-title="Python3 基于链表技术实现栈">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,7 +393,14 @@
       
 
       
-        <p>二分查找,给出一个已经排好序的列表,<code>注意是已经排好序的</code>,查找指定元素在列表中的位置<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span><span class="params">(my_list, item)</span>:</span></span><br><span class="line">    <span class="string">"""从list中查找item"""</span></span><br><span class="line">    low = <span class="number">0</span></span><br><span class="line">    high = len(my_list) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> low &lt;= high:</span><br><span class="line">        mid = math.floor((low + high)/<span class="number">2</span>)</span><br><span class="line">        guess = my_list[mid]</span><br><span class="line">        <span class="keyword">if</span> guess &gt; item:</span><br><span class="line">            high = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> guess &lt; item:</span><br><span class="line">            low = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">my_list = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>]</span><br><span class="line">item = <span class="number">1</span></span><br><span class="line">print(binary_search(my_list, item))</span><br></pre></td></tr></table></figure></p>
+        <h2 id="定义异常类"><a href="#定义异常类" class="headerlink" title="定义异常类"></a>定义异常类</h2><p>实现栈结构之前，先考虑为操作失败的处理定义一个异常类。在这里通过继承已有的异常类定义自己的异常类。由于栈操作(如空栈弹出)时不满足需要可以看做参数值错误，采用下面的定义<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StackUnderflow</span><span class="params">(ValueError)</span>:</span>  <span class="comment"># 栈下溢，空栈访问</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="定义一个表结点类"><a href="#定义一个表结点类" class="headerlink" title="定义一个表结点类"></a>定义一个表结点类</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, elem, next_=None)</span>:</span></span><br><span class="line">        self.elem = elem</span><br><span class="line">        self.next = next_</span><br></pre></td></tr></table></figure>
+<p>方法的第二个参数用名字<code>next_</code>，是为了避免与Python<code>标准函数next</code>重名</p>
+<a id="more"></a>
+<h2 id="栈的链接表实现"><a href="#栈的链接表实现" class="headerlink" title="栈的链接表实现"></a>栈的链接表实现</h2><p>由于所有栈的操作都在线性表的一端进行，采用链接表技术，自然应该用表头一端作为栈顶，表尾作为栈底，是操作实现方便，效率也高。按照这种安排，容易定义出一个链接栈类。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._top = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._top <span class="keyword">is</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._top <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">raise</span> StackUnderflow(<span class="string">'in LStack.top()'</span>)</span><br><span class="line">        <span class="keyword">return</span> self._top.elem</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, elem)</span>:</span></span><br><span class="line">        self._top = LNode(elem, self._top)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._top <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">raise</span> StackUnderflow(<span class="string">'in LStack.pop()'</span>)</span><br><span class="line">        p = self._top</span><br><span class="line">        self._top = p.next</span><br><span class="line">        <span class="keyword">return</span> p.elem</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li>《数据结构与算法Python语言描述》 — 裘宗燕</li>
+</ol>
 
       
     </div>
@@ -415,6 +422,8 @@
           
             <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
+            <a href="/tags/Data-Structures/" rel="tag"># Data Structures</a>
+          
         </div>
       
 
@@ -426,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/09/Python3-向上取整ceil-向下取整floor-四舍五入round/" rel="next" title="Python3 向上取整ceil|向下取整floor|四舍五入round">
-                <i class="fa fa-chevron-left"></i> Python3 向上取整ceil|向下取整floor|四舍五入round
+              <a href="/2018/03/17/Python3-基于顺序表技术实现栈类/" rel="next" title="Python3 基于顺序表技术实现栈类">
+                <i class="fa fa-chevron-left"></i> Python3 基于顺序表技术实现栈类
               </a>
             
           </div>
@@ -435,10 +444,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/09/Python3-实现常见的各种排序方法/" rel="prev" title="Python3 实现常见的各种排序方法">
-                Python3 实现常见的各种排序方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -500,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -614,6 +628,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义异常类"><span class="nav-number">1.</span> <span class="nav-text">定义异常类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义一个表结点类"><span class="nav-number">2.</span> <span class="nav-text">定义一个表结点类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈的链接表实现"><span class="nav-number">3.</span> <span class="nav-text">栈的链接表实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -820,9 +850,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/03/09/Python3-实现二分查找/';
-          this.page.identifier = '2018/03/09/Python3-实现二分查找/';
-          this.page.title = 'Python3 实现二分查找';
+          this.page.url = 'http://yoursite.com/2018/03/17/Python3-基于链表技术实现栈/';
+          this.page.identifier = '2018/03/17/Python3-基于链表技术实现栈/';
+          this.page.title = 'Python3 基于链表技术实现栈';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://ByiProX.disqus.com/embed.js';
