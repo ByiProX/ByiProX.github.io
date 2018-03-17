@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python3 基于顺序表技术实现栈类]]></title>
+    <url>%2F2018%2F03%2F17%2FPython3-%E5%9F%BA%E4%BA%8E%E9%A1%BA%E5%BA%8F%E8%A1%A8%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E6%A0%88%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[定义异常类实现栈结构之前，先考虑为操作失败的处理定义一个异常类。在这里通过继承已有的异常类定义自己的异常类。由于栈操作(如空栈弹出)时不满足需要可以看做参数值错误，采用下面的定义12class StackUnderflow(ValueError): # 栈下溢，空栈访问 pass 上面把异常StackUnderflow定义为ValueError子类，只简单定义了一个类名，类体部分只有一个pass语句，未定义任何新属性，因为不准备提供ValueError之外的新功能，只是想与其他ValueError异常有所区分，程序出错时能产生不同的错误信息。必要时可以定义专门的异常处理操作。自定义异常与python内置异常类似，同样通过except进行捕捉和处理，但只能通过raise语句引发。 栈类定义把list当做栈使用时，完全可以满足应用需要。但是，这样建立的对象实际上还是list，提供了list类型的所有操作。特别是提供了一大批栈结构原本不应该支持的操作，威胁栈的使用安全性(例如，栈要求未经弹出的元素应该存在，但表运行任意删除)。另外，这样的“栈”不是一个独立的类型，因此没有独立类型的所有重要性质。 为了概念更清晰，实现更安全，操作名也更容易理解，，可以考虑使用顺序表定义一个栈类，使之成为一个独立的类型，把Python的list隐藏在类内部，作为其实现基础。 123456789101112131415161718192021222324"""基于顺序表实现栈类用list对象 _elems存储栈中的元素所有的栈操作都映射到list操作"""class SStack(object): def __init__(self): self._elems = [] def is_empty(self): return self._elems == [] def top(self): if self._elems == []: raise StackUnderflow('in SStack.top()') return self._elems[-1] def push(self, elem): self._elems.append(elem) def pop(self): if self._elems == []: raise StackUnderflow('in SStack.pop()') return self._elems.pop() 参考 《数据结构与算法Python语言描述》 — 裘宗燕]]></content>
+      <categories>
+        <category>Data Structures</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+        <tag>Algorithm</tag>
+        <tag>Data Structures</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python3 实现二叉树前、中、后序遍历及按层遍历]]></title>
     <url>%2F2018%2F03%2F15%2FPython3-%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%8D%E3%80%81%E4%B8%AD%E3%80%81%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%8F%8A%E6%8C%89%E5%B1%82%E9%81%8D%E5%8E%86%2F</url>
     <content type="text"></content>
