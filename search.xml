@@ -29,7 +29,7 @@
   <entry>
     <title><![CDATA[Python3 实现二叉树前、中、后序遍历及按层遍历]]></title>
     <url>%2F2018%2F03%2F15%2FPython3-%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%8D%E3%80%81%E4%B8%AD%E3%80%81%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%8F%8A%E6%8C%89%E5%B1%82%E9%81%8D%E5%8E%86%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[12345678class Node(object): def __init__(self, value=None, left=None, right=None): self.value = value self.left = left self.right = rightif __name__ == "__main__": tree = Node(1, Node(2, Node(4), Node(5, Node(8), Node(9, left=Node(11)))), Node(3, Node(6), Node(7, left=Node(10))))]]></content>
       <categories>
         <category>Data Structures</category>
       </categories>

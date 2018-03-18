@@ -76,9 +76,16 @@
     <link href="http://yoursite.com/2018/03/15/Python3-%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%8D%E3%80%81%E4%B8%AD%E3%80%81%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%8F%8A%E6%8C%89%E5%B1%82%E9%81%8D%E5%8E%86/"/>
     <id>http://yoursite.com/2018/03/15/Python3-实现二叉树前、中、后序遍历及按层遍历/</id>
     <published>2018-03-15T15:57:26.000Z</published>
-    <updated>2018-03-16T15:03:41.305Z</updated>
+    <updated>2018-03-18T15:50:00.925Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value=None, left=None, right=None)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    tree = Node(<span class="number">1</span>, Node(<span class="number">2</span>, Node(<span class="number">4</span>), Node(<span class="number">5</span>, Node(<span class="number">8</span>), Node(<span class="number">9</span>, left=Node(<span class="number">11</span>)))), Node(<span class="number">3</span>, Node(<span class="number">6</span>), Node(<span class="number">7</span>, left=Node(<span class="number">10</span>))))</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas
+      
     
     </summary>
     
