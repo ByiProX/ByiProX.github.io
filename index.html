@@ -709,10 +709,16 @@
 
       
         
-          
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value=None, left=None, right=None)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    tree = Node(<span class="number">1</span>, Node(<span class="number">2</span>, Node(<span class="number">4</span>), Node(<span class="number">5</span>, Node(<span class="number">8</span>), Node(<span class="number">9</span>, left=Node(<span class="number">11</span>)))), Node(<span class="number">3</span>, Node(<span class="number">6</span>), Node(<span class="number">7</span>, left=Node(<span class="number">10</span>))))</span><br></pre></td></tr></table></figure>
-
-          
+          <p>假设有这么一个二叉树如下：<br><img src="https://upload-images.jianshu.io/upload_images/2952111-707a1e95da262138.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="二叉树.png"></p>
+<p>前序遍历结果：1, 2, 4, 5, 8, 9, 11, 3, 6, 7, 10<br>中序遍历结果：4, 2, 8, 5, 11, 9, 1, 6, 3, 10, 7<br>后序遍历结果：4, 8, 11, 9, 5, 2, 6, 10, 7, 3, 1</p>
+<h2 id="二叉树的类实现"><a href="#二叉树的类实现" class="headerlink" title="二叉树的类实现"></a>二叉树的类实现</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value=None, left=None, right=None)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    tree = Node(<span class="number">1</span>, Node(<span class="number">2</span>, Node(<span class="number">4</span>),</span><br><span class="line">                           Node(<span class="number">5</span>, Node(<span class="number">8</span>),</span><br><span class="line">                                   Node(<span class="number">9</span>, left=Node(<span class="number">11</span>)))),</span><br><span class="line">                   Node(<span class="number">3</span>, Node(<span class="number">6</span>),</span><br><span class="line">                           Node(<span class="number">7</span>, left=Node(<span class="number">10</span>))))</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/15/Python3-实现二叉树前、中、后序遍历及按层遍历/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
