@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-19T16:01:53.251Z</updated>
+  <updated>2018-03-19T18:00:53.753Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一次完整的HTTP请求流程</title>
+    <link href="http://yoursite.com/2018/03/20/%E4%B8%80%E6%AC%A1%E5%AE%8C%E6%95%B4%E7%9A%84HTTP%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B/"/>
+    <id>http://yoursite.com/2018/03/20/一次完整的HTTP请求流程/</id>
+    <published>2018-03-19T17:34:08.000Z</published>
+    <updated>2018-03-19T18:00:53.753Z</updated>
+    
+    <content type="html"><![CDATA[<p>HTTP通信机制是在一次完整的HTTP通信过程中，Web浏览器与Web服务器之间将完成下列7个步骤：</p><h2 id="1-建立TCP连接："><a href="#1-建立TCP连接：" class="headerlink" title="1. 建立TCP连接："></a>1. 建立TCP连接：</h2><p>在HTTP工作开始之前，Web浏览器首先要通过网络与Web服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，</p><p>即著名的TCP/IP协议族，因此Internet又被称作是TCP/IP网络。HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能进行更高层协议的连接，</p><p>因此，首先要建立TCP连接，一般TCP连接的端口号是80。</p><h2 id="2-Web浏览器向Web服务器发送请求命令："><a href="#2-Web浏览器向Web服务器发送请求命令：" class="headerlink" title="2. Web浏览器向Web服务器发送请求命令："></a>2. Web浏览器向Web服务器发送请求命令：</h2><p>一旦建立了TCP连接，Web浏览器就会向Web服务器发送请求命令。例如：GET/sample/hello.jsp HTTP/1.1。</p><h2 id="3-Web浏览器发送请求头信息-："><a href="#3-Web浏览器发送请求头信息-：" class="headerlink" title="3. Web浏览器发送请求头信息 ："></a>3. Web浏览器发送请求头信息 ：</h2><p>浏览器发送其请求命令之后，还要以头信息的形式向Web服务器发送一些别的信息，之后浏览器发送了一空白行来通知服务器，它已经结束了该头信息的发送。</p><h2 id="4-Web服务器应答-："><a href="#4-Web服务器应答-：" class="headerlink" title="4. Web服务器应答 ："></a>4. Web服务器应答 ：</h2><p>客户机向服务器发出请求后，服务器会客户机回送应答， HTTP/1.1 200 OK ，应答的第一部分是协议的版本号和应答状态码。</p><h2 id="5-Web服务器发送应答头信息："><a href="#5-Web服务器发送应答头信息：" class="headerlink" title="5. Web服务器发送应答头信息："></a>5. Web服务器发送应答头信息：</h2><p>正如客户端会随同请求发送关于自身的信息一样，服务器也会随同应答向用户发送关于它自己的数据及被请求的文档。</p><h2 id="6-Web服务器向浏览器发送数据："><a href="#6-Web服务器向浏览器发送数据：" class="headerlink" title="6. Web服务器向浏览器发送数据："></a>6. Web服务器向浏览器发送数据：</h2><p>Web服务器向浏览器发送头信息后，它会发送一个空白行来表示头信息的发送到此为结束，接着，它就以Content-Type应答头信息所描述的格式发送用户所请求的实际数据。</p><h2 id="7-Web服务器关闭TCP连接-："><a href="#7-Web服务器关闭TCP连接-：" class="headerlink" title="7. Web服务器关闭TCP连接 ："></a>7. Web服务器关闭TCP连接 ：</h2><p>一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接，然后如果浏览器或者服务器在其头信息加入了这行代码：Connection:keep-alive；</p><p>TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。</p><a id="more"></a><p><img src="https://upload-images.jianshu.io/upload_images/2952111-d8db37f9da639c61.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="http请求.jpg"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;HTTP通信机制是在一次完整的HTTP通信过程中，Web浏览器与Web服务器之间将完成下列7个步骤：&lt;/p&gt;
+&lt;h2 id=&quot;1-建立TCP连接：&quot;&gt;&lt;a href=&quot;#1-建立TCP连接：&quot; class=&quot;headerlink&quot; title=&quot;1. 建立TCP连接：&quot;&gt;&lt;/a&gt;1. 建立TCP连接：&lt;/h2&gt;&lt;p&gt;在HTTP工作开始之前，Web浏览器首先要通过网络与Web服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，&lt;/p&gt;
+&lt;p&gt;即著名的TCP/IP协议族，因此Internet又被称作是TCP/IP网络。HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能进行更高层协议的连接，&lt;/p&gt;
+&lt;p&gt;因此，首先要建立TCP连接，一般TCP连接的端口号是80。&lt;/p&gt;
+&lt;h2 id=&quot;2-Web浏览器向Web服务器发送请求命令：&quot;&gt;&lt;a href=&quot;#2-Web浏览器向Web服务器发送请求命令：&quot; class=&quot;headerlink&quot; title=&quot;2. Web浏览器向Web服务器发送请求命令：&quot;&gt;&lt;/a&gt;2. Web浏览器向Web服务器发送请求命令：&lt;/h2&gt;&lt;p&gt;一旦建立了TCP连接，Web浏览器就会向Web服务器发送请求命令。例如：GET/sample/hello.jsp HTTP/1.1。&lt;/p&gt;
+&lt;h2 id=&quot;3-Web浏览器发送请求头信息-：&quot;&gt;&lt;a href=&quot;#3-Web浏览器发送请求头信息-：&quot; class=&quot;headerlink&quot; title=&quot;3. Web浏览器发送请求头信息 ：&quot;&gt;&lt;/a&gt;3. Web浏览器发送请求头信息 ：&lt;/h2&gt;&lt;p&gt;浏览器发送其请求命令之后，还要以头信息的形式向Web服务器发送一些别的信息，之后浏览器发送了一空白行来通知服务器，它已经结束了该头信息的发送。&lt;/p&gt;
+&lt;h2 id=&quot;4-Web服务器应答-：&quot;&gt;&lt;a href=&quot;#4-Web服务器应答-：&quot; class=&quot;headerlink&quot; title=&quot;4. Web服务器应答 ：&quot;&gt;&lt;/a&gt;4. Web服务器应答 ：&lt;/h2&gt;&lt;p&gt;客户机向服务器发出请求后，服务器会客户机回送应答， HTTP/1.1 200 OK ，应答的第一部分是协议的版本号和应答状态码。&lt;/p&gt;
+&lt;h2 id=&quot;5-Web服务器发送应答头信息：&quot;&gt;&lt;a href=&quot;#5-Web服务器发送应答头信息：&quot; class=&quot;headerlink&quot; title=&quot;5. Web服务器发送应答头信息：&quot;&gt;&lt;/a&gt;5. Web服务器发送应答头信息：&lt;/h2&gt;&lt;p&gt;正如客户端会随同请求发送关于自身的信息一样，服务器也会随同应答向用户发送关于它自己的数据及被请求的文档。&lt;/p&gt;
+&lt;h2 id=&quot;6-Web服务器向浏览器发送数据：&quot;&gt;&lt;a href=&quot;#6-Web服务器向浏览器发送数据：&quot; class=&quot;headerlink&quot; title=&quot;6. Web服务器向浏览器发送数据：&quot;&gt;&lt;/a&gt;6. Web服务器向浏览器发送数据：&lt;/h2&gt;&lt;p&gt;Web服务器向浏览器发送头信息后，它会发送一个空白行来表示头信息的发送到此为结束，接着，它就以Content-Type应答头信息所描述的格式发送用户所请求的实际数据。&lt;/p&gt;
+&lt;h2 id=&quot;7-Web服务器关闭TCP连接-：&quot;&gt;&lt;a href=&quot;#7-Web服务器关闭TCP连接-：&quot; class=&quot;headerlink&quot; title=&quot;7. Web服务器关闭TCP连接 ：&quot;&gt;&lt;/a&gt;7. Web服务器关闭TCP连接 ：&lt;/h2&gt;&lt;p&gt;一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接，然后如果浏览器或者服务器在其头信息加入了这行代码：Connection:keep-alive；&lt;/p&gt;
+&lt;p&gt;TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>三次握手 | 四次挥手</title>
@@ -536,31 +568,6 @@
     
     
       <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅谈TCP和UDP的区别以及应用</title>
-    <link href="http://yoursite.com/2018/03/07/%E6%B5%85%E8%B0%88TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB%E4%BB%A5%E5%8F%8A%E5%BA%94%E7%94%A8/"/>
-    <id>http://yoursite.com/2018/03/07/浅谈TCP和UDP的区别以及应用/</id>
-    <published>2018-03-06T18:28:32.000Z</published>
-    <updated>2018-03-07T04:10:12.333Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="TCP和UDP区别"><a href="#TCP和UDP区别" class="headerlink" title="TCP和UDP区别"></a>TCP和UDP区别</h2><p>TCP(<code>Transmission Control Protocol</code>)—<code>传输控制协议</code>,<code>提供的是面向连接、可靠的字节流服务</code>。当客户和服务器彼此交换数据前，必须先在双方之间建立一个TCP连接，之后才能传输数据。TCP提供超时重发，丢弃重复数据，检验数据，流量控制等功能，保证数据能从一端传到另一端。<br>UDP(<code>User Data Protocol</code>)—<code>用户数据报协议</code>，<code>是一个简单的面向数据报的运输层协议</code>。在网络中它与TCP协议一样用于处理数据包，是一种无连接的协议。UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快。</p><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><ol><li><p>HTTP协议在运输层采用的就是<code>TCP协议</code>，在浏览器中输入IP地址后，与服务器建立连接，采用的就是TCP协议，是一种面向连接、可靠的字节流服务。</p></li><li><p>当强调传输性能而不是传输的完整性时，如：音频、多媒体应用和视频会议时，<code>UDP</code>是最好的选择。另外，腾讯QQ采用也是UDP协议。</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;TCP和UDP区别&quot;&gt;&lt;a href=&quot;#TCP和UDP区别&quot; class=&quot;headerlink&quot; title=&quot;TCP和UDP区别&quot;&gt;&lt;/a&gt;TCP和UDP区别&lt;/h2&gt;&lt;p&gt;TCP(&lt;code&gt;Transmission Control Protocol&lt;/c
-      
-    
-    </summary>
-    
-      <category term="网络" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
