@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[三次握手 | 四次挥手]]></title>
+    <url>%2F2018%2F03%2F19%2F%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%20%7C%20%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%2F</url>
+    <content type="text"><![CDATA[三次握手第一次握手 建立连接时，客户端发送syn包（syn=j）到服务器，并进入SYN_SENT状态，等待服务器确认；SYN即同步序列编号(synchronize sequence numbers)。 第二次握手 服务器收到syn包，必须确认客户的SYN（ack = j+1）,同时自己也发送一个SYN包（syn=k），即发送SYN和ACK包，此时服务器进入SYN_RECV状态。 第三次握手 客户端收到服务器的SYN+ACK包，向服务器发送确认包ACK（ack=k+1），此包发送完毕，客户端和服务器进入ESTABLISHED状态，TCP连接成功，完成三次握手。 完成上述三次握手后，客户端和服务器开始传送数据。 四次挥手对于一个已经建立的连接，TCP使用改进的三次握手来释放连接（使用一个带有FIN附加标记的字段）。TCP关闭连接的步骤如下 当主机A的应用程序通知TCP数据已经发送完毕时，TCP向主机B发送一个带有FIN附加标记的报文段（FIN=finish） 当主机B收到这个FIN报文段之后，并不立即用FIN报文回复主机A，而是想主机A发送一个确认序号ACK，同时通知自己的应用程序：对方要求关闭连接。【先发送ACK的目的是为了防止在这段时间内，对方重传FIN报文】 主机B的应用程序告诉TCP：我要彻底关闭连接，TCP向主机A发送一个FIN报文段。 主机A收到这个FIN报文段后，向主机B发送一个ACK表示连接彻底释放。]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python3 回文字符串的判断]]></title>
     <url>%2F2018%2F03%2F19%2FPython3-%E5%9B%9E%E6%96%87%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%88%A4%E6%96%AD%2F</url>
     <content type="text"><![CDATA[1234567def isPalindrome(str_): if len(str_) &lt; 2: return True if str_[0] != str_[-1]: return False return isPalindrome(str_[1:-1])]]></content>
