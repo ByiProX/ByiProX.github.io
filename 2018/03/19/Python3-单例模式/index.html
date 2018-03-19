@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Python3,设计模式," />
 
 
 
@@ -81,13 +81,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quentin&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/categories/Python3-进阶/Python3-迭代器和生成器/index.html">
+<meta name="description" content="单例模式（Singleton Pattern）是最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。 注意：  1、单例类只能有一个实例。 2、单例类必须自己创建自己的唯一实例。 3、单例类必须给所有其他对">
+<meta name="keywords" content="Python3,设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python3 单例模式">
+<meta property="og:url" content="http://yoursite.com/2018/03/19/Python3-单例模式/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
+<meta property="og:description" content="单例模式（Singleton Pattern）是最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。 注意：  1、单例类只能有一个实例。 2、单例类必须自己创建自己的唯一实例。 3、单例类必须给所有其他对">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-19T09:13:44.103Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quentin&#39;s Blog">
+<meta name="twitter:title" content="Python3 单例模式">
+<meta name="twitter:description" content="单例模式（Singleton Pattern）是最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。 注意：  1、单例类只能有一个实例。 2、单例类必须自己创建自己的唯一实例。 3、单例类必须给所有其他对">
 
 
 
@@ -117,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/Python3-进阶/Python3-迭代器和生成器/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/19/Python3-单例模式/"/>
 
 
 
 
 
-  <title>分类: Python3 迭代器和生成器 | Quentin's Blog</title>
+  <title>Python3 单例模式 | Quentin's Blog</title>
   
 
 
@@ -142,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <!-- fork me on github -->
     <!-- red Logo -->
@@ -274,55 +279,226 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Python3 迭代器和生成器<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/19/Python3-单例模式/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/03/01/python3-可迭代对象、迭代器和生成器/" itemprop="url">
-              
-                <span itemprop="name">python3 可迭代对象、迭代器和生成器</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Python3 单例模式</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T20:17:53+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-19T13:44:05+08:00">
+                2018-03-19
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python3-进阶/" itemprop="url" rel="index">
+                    <span itemprop="name">Python3 进阶</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/19/Python3-单例模式/" class="leancloud_visitors" data-flag-title="Python3 单例模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>单例模式（Singleton Pattern）是最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。<br>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>1、单例类只能有一个实例。</li>
+<li>2、单例类必须自己创建自己的唯一实例。</li>
+<li>3、单例类必须给所有其他对象提供这一实例。<a id="more"></a>
+<h2 id="单例模式介绍"><a href="#单例模式介绍" class="headerlink" title="单例模式介绍"></a>单例模式介绍</h2><strong>意图：</strong> 保证一个类仅有一个实例，并提供一个访问它的全局访问点。</li>
+</ul>
+<p><strong>主要解决：</strong> 一个全局使用的类频繁地创建与销毁。</p>
+<p><strong>何时使用：</strong> 当您想控制实例数目，节省系统资源的时候。</p>
+<p><strong>如何解决：</strong> 判断系统是否已经有这个单例，如果有则返回，如果没有则创建。</p>
+<p><strong>关键代码：</strong> 构造函数是私有的。</p>
+<p><strong>应用实例：</strong> 1、一个党只能有一个主席。 2、Windows 是多进程多线程的，在操作一个文件的时候，就不可避免地出现多个进程或线程同时操作一个文件的现象，所以所有文件的处理必须通过唯一的实例来进行。 3、一些设备管理器常常设计为单例模式，比如一个电脑有两台打印机，在输出的时候就要处理不能两台打印机打印同一个文件。</p>
+<p><strong>优点：</strong> 1、在内存里只有一个实例，减少了内存的开销，尤其是频繁的创建和销毁实例（比如管理学院首页页面缓存）。 2、避免对资源的多重占用（比如写文件操作）。</p>
+<p><strong>缺点：</strong> 没有接口，不能继承，与单一职责原则冲突，一个类应该只关心内部逻辑，而不关心外面怎么样来实例化。</p>
+<p><strong>使用场景：</strong> 1、要求生产唯一序列号。 2、WEB 中的计数器，不用每次刷新都在数据库里加一次，用单例先缓存起来。 3、创建的一个对象需要消耗的资源过多，比如 I/O 与数据库的连接等。</p>
+<p><strong>注意事项：</strong> getInstance() 方法中需要使用同步锁 synchronized (Singleton.class) 防止多线程同时进入造成 instance 被多次实例化。</p>
+<h2 id="单例模式的实现"><a href="#单例模式的实现" class="headerlink" title="单例模式的实现"></a>单例模式的实现</h2><p>在 Python 中，我们可以用多种方法来实现单例模式：</p>
+<ul>
+<li>使用基类 <code>__new__</code></li>
+<li>使用模块</li>
+<li>使用装饰器（decorator）</li>
+<li>使用元类（metaclass）</li>
+</ul>
+<h3 id="使用基类-new"><a href="#使用基类-new" class="headerlink" title="使用基类 __new__"></a>使用基类 <code>__new__</code></h3><p><code>__new__</code> 是真正创建实例对象的方法，所以重写基类的<code>__new__</code>方法，以此来保证创建对象的时候只生成一个实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(cls, <span class="string">'_instance'</span>):</span><br><span class="line">            cls._instance = super(Singleton, cls).__new__(cls, *args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> cls._instance  </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span><span class="params">(Singleton)</span>:</span>  </span><br><span class="line">    a = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，我们将类的实例和一个类变量 <code>_instance</code> 关联起来，如果 <code>cls._instance</code> 为 None 则创建实例，否则直接返回 <code>cls._instance</code>。执行结果如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>one = MyClass()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>two = MyClass()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>one == two</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>one <span class="keyword">is</span> two</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(one), id(two)</span><br><span class="line">(<span class="number">4303862608</span>, <span class="number">4303862608</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用元类"><a href="#使用元类" class="headerlink" title="使用元类"></a>使用元类</h3><p>元类（参考：<a href="http://blog.jobbole.com/21351/" target="_blank" rel="noopener">深刻理解Python中的元类</a>）是用于创建类对象的类，类对象创建实例对象时一定会调用<code>__call__</code>方法，因此在调用<code>__call__</code>时候保证始终只创建一个实例即可，<code>type</code>是python中的一个元类。</p>
+<p>元类（metaclass）可以控制类的创建过程，它主要做三件事：</p>
+<ul>
+<li>拦截类的创建</li>
+<li>修改类的定义</li>
+<li>返回修改后的类</li>
+</ul>
+<p>使用元类实现单例模式的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span><span class="params">(type)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> hasattr(cls, <span class="string">'_instance'</span>):</span><br><span class="line">            cls._instance = super(Singleton, cls).__call__(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> cls._instance</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span><span class="params">(metaclass=Singleton)</span>:</span>  </span><br><span class="line">    a = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 执行结果如下</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>one = MyClass()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>two = MyClass()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>one == two</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>one <span class="keyword">is</span> two</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>id(one), id(two)</span><br><span class="line">(<span class="number">4303862608</span>, <span class="number">4303862608</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="使用装饰器"><a href="#使用装饰器" class="headerlink" title="使用装饰器"></a>使用装饰器</h3><p>装饰器（decorator）可以动态地修改一个类或函数的功能。这里，我们也可以使用装饰器来装饰某个类，使其只能生成一个实例，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">singleton</span><span class="params">(cls)</span>:</span></span><br><span class="line">    instances = &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> cls <span class="keyword">not</span> <span class="keyword">in</span> instances:</span><br><span class="line">            instances[cls] = cls(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> instances[cls]</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@singleton</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>在上面，我们定义了一个装饰器 singleton，它返回了一个内部函数 <code>warpper</code>，该函数会判断某个类是否在字典 instances 中，如果不存在，则会将 cls 作为 key，<code>cls(*args, **kw)</code> 作为 value 存到 instances 中，否则，直接返回 instances[cls]</p>
+<h3 id="使用模块"><a href="#使用模块" class="headerlink" title="使用模块"></a>使用模块</h3><p>Python 的模块就是天然的单例模式，因为模块在第一次导入时，会生成 .pyc 文件，当第二次导入时，就会直接加载 .pyc 文件，而不会再次执行模块代码。因此，我们只需把相关的函数和数据定义在一个模块中，就可以获得一个单例对象了。如果我们真的想要一个单例类，可以考虑这样做：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mysingleton.py</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">My_Singleton</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">my_singleton = My_Singleton()</span><br></pre></td></tr></table></figure></p>
+<p>将上面的代码保存在文件 mysingleton.py 中，然后这样使用:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mysingleton <span class="keyword">import</span> my_singleton</span><br><span class="line"></span><br><span class="line">my_singleton.foo()</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://python.jobbole.com/87294/" target="_blank" rel="noopener">http://python.jobbole.com/87294/</a></li>
+<li><a href="http://python.jobbole.com/87791/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts" target="_blank" rel="noopener">http://python.jobbole.com/87791/?utm_source=blog.jobbole.com&amp;utm_medium=relatedPosts</a></li>
+</ol>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python3/" rel="tag"># Python3</a>
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/17/Python3-基于链表技术实现栈/" rel="next" title="Python3 基于链表技术实现栈">
+                <i class="fa fa-chevron-left"></i> Python3 基于链表技术实现栈
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -330,6 +506,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -350,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -464,6 +663,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式介绍"><span class="nav-number">1.</span> <span class="nav-text">单例模式介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式的实现"><span class="nav-number">2.</span> <span class="nav-text">单例模式的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用基类-new"><span class="nav-number">2.1.</span> <span class="nav-text">使用基类 __new__</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用元类"><span class="nav-number">2.2.</span> <span class="nav-text">使用元类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用装饰器"><span class="nav-number">2.3.</span> <span class="nav-text">使用装饰器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用模块"><span class="nav-number">2.4.</span> <span class="nav-text">使用模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -648,6 +863,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -663,6 +882,18 @@
 
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/03/19/Python3-单例模式/';
+          this.page.identifier = '2018/03/19/Python3-单例模式/';
+          this.page.title = 'Python3 单例模式';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
