@@ -122,6 +122,23 @@ class Foo(object):
     pass
 ```
 
+**将装饰器写成类形式**
+```python
+class single03(object):  
+        def __init__(self, cls):  
+            self._cls = cls  
+            self._instances = None;  
+        def __call__(self, *args):  
+            if not self._instances:  
+                self._instances = self._cls(*args)  
+            return self._instances  
+
+@single03  
+class A(object):  
+    def __init__(self, name):  
+        self.name = name
+```
+
 在上面，我们定义了一个装饰器 singleton，它返回了一个内部函数 `warpper`，该函数会判断某个类是否在字典 instances 中，如果不存在，则会将 cls 作为 key，`cls(*args, **kw)` 作为 value 存到 instances 中，否则，直接返回 instances[cls]
 
 ### 使用模块
