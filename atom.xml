@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-23T15:25:23.476Z</updated>
+  <updated>2018-03-25T15:34:03.120Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>烦~~~</title>
+    <link href="http://yoursite.com/2018/03/25/%E7%83%A6/"/>
+    <id>http://yoursite.com/2018/03/25/烦/</id>
+    <published>2018-03-25T15:18:53.000Z</published>
+    <updated>2018-03-25T15:34:03.120Z</updated>
+    
+    <content type="html"><![CDATA[<p>想到前几天某公司面试的情形。讲真，面试体验超级差，感觉不被尊重。我估计这帮人在体制内呆久了都这副嘴脸吧，真他妈恶心。</p><p>想到自己的转行过程，太他妈坎坷了。算了一下，2017年几乎就是在出差中度过的，哪有那么多时间看书写代码。好歹拼了命的把毕业做完了，毕业答辩的那一天，很痛苦，答辩完的那一刻，我一点也高兴不起来。唯一能让我心里舒服一点的就是我可以有专门的时间来做自己想做的事情。</p><p>心里有一万个字想去写，但是我不能在浪费这个时间。还是好好学习，天天向上吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;想到前几天某公司面试的情形。讲真，面试体验超级差，感觉不被尊重。我估计这帮人在体制内呆久了都这副嘴脸吧，真他妈恶心。&lt;/p&gt;
+&lt;p&gt;想到自己的转行过程，太他妈坎坷了。算了一下，2017年几乎就是在出差中度过的，哪有那么多时间看书写代码。好歹拼了命的把毕业做完了，毕业答辩的那
+      
+    
+    </summary>
+    
+    
+      <category term="成长日记" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>今天买了个腾讯云服务器，✧(≖ ◡ ≖✿)嘿嘿</title>
     <link href="http://yoursite.com/2018/03/23/%E4%BB%8A%E5%A4%A9%E4%B9%B0%E4%BA%86%E4%B8%AA%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E2%9C%A7-%E2%89%96-%E2%97%A1-%E2%89%96%E2%9C%BF-%E5%98%BF%E5%98%BF/"/>
     <id>http://yoursite.com/2018/03/23/今天买了个腾讯云服务器，✧-≖-◡-≖✿-嘿嘿/</id>
     <published>2018-03-23T15:18:34.000Z</published>
-    <updated>2018-03-23T15:25:23.476Z</updated>
+    <updated>2018-03-23T16:05:19.148Z</updated>
     
     <content type="html"><![CDATA[<p>有点后悔读书的时候没有购买相关的学生优惠的云服务产品，你看，现在毕业了，买个最低配置的云服务器，都感觉心在滴血呢。毕业了，日子确实难过了，前几天面试还被一个美国人鄙视一番，唉，现在有钱人放个屁都是真理，可惜，我不吃那一套的。最近没有工作，一直在努力的转行中，手头确实紧。不过还好，女朋友也没有嫌弃我，还挺支持我，我也要加油了。</p><p>不说了，去折腾服务器了，一天差不多一块钱呢，逃~~~</p>]]></content>
     
@@ -533,33 +557,6 @@
     
     
       <category term="加密" scheme="http://yoursite.com/tags/%E5%8A%A0%E5%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>进程间的通信方式(IPC)</title>
-    <link href="http://yoursite.com/2018/03/07/%E8%BF%9B%E7%A8%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F-IPC/"/>
-    <id>http://yoursite.com/2018/03/07/进程间的通信方式-IPC/</id>
-    <published>2018-03-07T15:47:10.000Z</published>
-    <updated>2018-03-07T15:49:17.891Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li><code>管道</code>（Pipe）：管道可用于具有亲缘关系进程间的通信，允许一个进程和另一个与它有共同祖先的进程之间进行通信。</li><li><code>命名管道</code>（named pipe）：命名管道克服了管道没有名字的限制，因此，除具有管道所具有的功能外，它还允许无亲缘关系进程间的通信。命名管道在文件系统中有对应的文件名。命名管道通过命令mkfifo或系统调用mkfifo来创建。</li><li><code>信号</code>（Signal）：信号是比较复杂的通信方式，用于通知接受进程有某种事件发生，除了用于进程间通信外，进程还可以发送信号给进程本身；linux除了支持Unix早期信号语义函数sigal外，还支持语义符合Posix.1标准的信号函数sigaction（实际上，该函数是基于BSD的，BSD为了实现可靠信号机制，又能够统一对外接口，用sigaction函数重新实现了signal函数）。</li><li><code>消息（Message）队列</code>：消息队列是消息的链接表，包括Posix消息队列system V消息队列。有足够权限的进程可以向队列中添加消息，被赋予读权限的进程则可以读走队列中的消息。消息队列克服了信号承载信息量少，管道只能承载无格式字节流以及缓冲区大小受限等缺</li><li><code>共享内存</code>：使得多个进程可以访问同一块内存空间，是最快的可用IPC形式。是针对其他通信机制运行效率较低而设计的。往往与其它通信机制，如信号量结合使用，来达到进程间的同步及互斥。</li><li><code>内存映射</code>（mapped memory）：内存映射允许任何多个进程间通信，每一个使用该机制的进程通过把一个共享的文件映射到自己的进程地址空间来实现它。</li><li><code>信号量</code>（semaphore）：主要作为进程间以及同一进程不同线程之间的同步手段。</li><li><code>套接口</code>（Socket）：更为一般的进程间通信机制，可用于不同机器之间的进程间通信。起初是由Unix系统的BSD分支开发出来的，但现在一般可以移植到其它类Unix系统上：Linux和System V的变种都支持套接字。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;管道&lt;/code&gt;（Pipe）：管道可用于具有亲缘关系进程间的通信，允许一个进程和另一个与它有共同祖先的进程之间进行通信。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;命名管道&lt;/code&gt;（named pipe）：命名管道克服了管道没有名字的限制，因此，除具有管
-      
-    
-    </summary>
-    
-      <category term="操作系统" scheme="http://yoursite.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="操作系统" scheme="http://yoursite.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
