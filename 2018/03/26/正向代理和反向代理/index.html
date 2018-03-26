@@ -90,7 +90,7 @@
 <meta property="og:description" content="正向代理（forward proxy）代理客户端，隐藏真实客户端，反向代理（reverse proxy）代理服务器，隐藏真实服务端。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-a57a95d1c15ae0de.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-03-26T08:23:17.141Z">
+<meta property="og:updated_time" content="2018-03-26T08:26:56.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正向代理和反向代理">
 <meta name="twitter:description" content="正向代理（forward proxy）代理客户端，隐藏真实客户端，反向代理（reverse proxy）代理服务器，隐藏真实服务端。">
@@ -401,7 +401,7 @@
 <p>结论：对于客户端而言它就像是原始服务器，并且客户端不需要进行任何特别的设置。客户端向反向代理的命名空间(name-space)中的内容发送普通请求，接着反向代理将判断向何处(原始服务器)转交请求，并将获得的内容返回给客户端，就像这些内容原本就是它自己的一样。</p>
 <p>在计算机世界里，由于单个服务器的处理客户端（用户）请求能力有一个极限，当用户的接入请求蜂拥而入时，会造成服务器忙不过来的局面，可以使用多个服务器来共同分担成千上万的用户请求，这些服务器提供相同的服务，对于用户来说，根本感觉不到任何差别。</p>
 <h3 id="反向代理用途"><a href="#反向代理用途" class="headerlink" title="反向代理用途"></a>反向代理用途</h3><ol>
-<li>保证内网的安全，可以使用反向代理提供WAF功能，阻止web攻击。大型网站，通常将反向代理作为公网访问地址，Web服务器是内网。</li>
+<li>保证内网的安全，隐藏和保护原始服务器。可以使用反向代理提供WAF功能，阻止web攻击。大型网站，通常将反向代理作为公网访问地址，Web服务器是内网。</li>
 <li>负载均衡，通过反向代理服务器来优化网站的负载</li>
 </ol>
 <h3 id="反向代理的实现"><a href="#反向代理的实现" class="headerlink" title="反向代理的实现"></a>反向代理的实现</h3><ol>
