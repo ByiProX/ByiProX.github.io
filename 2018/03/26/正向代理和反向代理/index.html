@@ -90,7 +90,7 @@
 <meta property="og:description" content="正向代理（forward proxy）代理客户端，隐藏真实客户端，反向代理（reverse proxy）代理服务器，隐藏真实服务端。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-a57a95d1c15ae0de.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-03-26T08:20:35.944Z">
+<meta property="og:updated_time" content="2018-03-26T08:23:17.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正向代理和反向代理">
 <meta name="twitter:description" content="正向代理（forward proxy）代理客户端，隐藏真实客户端，反向代理（reverse proxy）代理服务器，隐藏真实服务端。">
@@ -400,6 +400,10 @@
 <h2 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h2><p>举例:用户想访问：”<a href="http://ooxx.me/readme&quot;，但ooxx.me上并不存在readme页面，他是偷偷从另外一台服务器上取回来,然后作为自己的内容吐给用户，但用户并不知情，这很正常,用户一般都很笨。这里所提到的ooxx.me" target="_blank" rel="noopener">http://ooxx.me/readme&quot;，但ooxx.me上并不存在readme页面，他是偷偷从另外一台服务器上取回来,然后作为自己的内容吐给用户，但用户并不知情，这很正常,用户一般都很笨。这里所提到的ooxx.me</a> 这个域名对应的服务器就设置了反向代理功能。</p>
 <p>结论：对于客户端而言它就像是原始服务器，并且客户端不需要进行任何特别的设置。客户端向反向代理的命名空间(name-space)中的内容发送普通请求，接着反向代理将判断向何处(原始服务器)转交请求，并将获得的内容返回给客户端，就像这些内容原本就是它自己的一样。</p>
 <p>在计算机世界里，由于单个服务器的处理客户端（用户）请求能力有一个极限，当用户的接入请求蜂拥而入时，会造成服务器忙不过来的局面，可以使用多个服务器来共同分担成千上万的用户请求，这些服务器提供相同的服务，对于用户来说，根本感觉不到任何差别。</p>
+<h3 id="反向代理用途"><a href="#反向代理用途" class="headerlink" title="反向代理用途"></a>反向代理用途</h3><ol>
+<li>保证内网的安全，可以使用反向代理提供WAF功能，阻止web攻击。大型网站，通常将反向代理作为公网访问地址，Web服务器是内网。</li>
+<li>负载均衡，通过反向代理服务器来优化网站的负载</li>
+</ol>
 <h3 id="反向代理的实现"><a href="#反向代理的实现" class="headerlink" title="反向代理的实现"></a>反向代理的实现</h3><ol>
 <li>需要有一个负载均衡设备来分发用户请求，将用户请求分发到空闲的服务器上</li>
 <li>服务器返回自己的服务到负载均衡设备</li>
@@ -408,8 +412,7 @@
 <p>以上的潜台词是：用户和负载均衡设备直接通信，也意味着<code>用户做服务器域名解析时，解析得到的IP其实是负载均衡的IP，而不是服务器的IP</code>，这样有一个好处是，当新加入/移走服务器时，仅仅需要修改负载均衡的服务器列表，而不会影响现有的服务。</p>
 <h2 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h2><p>正向代理,也就是传说中的代理,他的工作原理就像一个跳板,简单的说,我是一个用户,我访问不了某网站,但是我能访问一个代理服务器，这个代理服务器呢,他能访问那个我不能访问的网站，于是我先连上代理服务器,告诉他我需要那个无法访问网站的内容，代理服务器去取回来,然后返回给我。从网站的角度,只在代理服务器来取内容的时候有一次记录，有时候并不知道是用户的请求,也隐藏了用户的资料,这取决于代理告不告诉网站。</p>
 <p>正向代理是一个位于客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。客户端必须要进行一些特别的设置才能使用正向代理。</p>
-<p>正向代理的用途：</p>
-<ol>
+<h3 id="正向代理的用途"><a href="#正向代理的用途" class="headerlink" title="正向代理的用途"></a>正向代理的用途</h3><ol>
 <li>访问原来无法访问的资源，如google</li>
 <li>可以做缓存，加速访问资源</li>
 <li>对客户端访问授权，上网进行认证</li>
@@ -657,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#反向代理"><span class="nav-number">1.</span> <span class="nav-text">反向代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理的实现"><span class="nav-number">1.1.</span> <span class="nav-text">反向代理的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正向代理"><span class="nav-number">2.</span> <span class="nav-text">正向代理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正向代理和反向代理的区别"><span class="nav-number">3.</span> <span class="nav-text">正向代理和反向代理的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#反向代理"><span class="nav-number">1.</span> <span class="nav-text">反向代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理用途"><span class="nav-number">1.1.</span> <span class="nav-text">反向代理用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理的实现"><span class="nav-number">1.2.</span> <span class="nav-text">反向代理的实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正向代理"><span class="nav-number">2.</span> <span class="nav-text">正向代理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正向代理的用途"><span class="nav-number">2.1.</span> <span class="nav-text">正向代理的用途</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正向代理和反向代理的区别"><span class="nav-number">3.</span> <span class="nav-text">正向代理和反向代理的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
