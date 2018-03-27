@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-26T08:26:56.270Z</updated>
+  <updated>2018-03-27T11:14:49.925Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>原码、反码、补码</title>
+    <link href="http://yoursite.com/2018/03/27/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81/"/>
+    <id>http://yoursite.com/2018/03/27/原码、反码、补码/</id>
+    <published>2018-03-27T08:10:24.000Z</published>
+    <updated>2018-03-27T11:14:49.925Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="机器数和真值"><a href="#机器数和真值" class="headerlink" title="机器数和真值"></a>机器数和真值</h2><p>在学习原码, 反码和补码之前, 需要先了解机器数和真值的概念</p><h3 id="机器数"><a href="#机器数" class="headerlink" title="机器数"></a>机器数</h3><p>一个数在计算机中的二进制表示形式, 叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.</p><blockquote><p>比如，十进制中的数 +3 ，假设计算机字长为8位，转换成二进制就是 <code>00000011</code>。如果是 -3 ，就是 <code>10000011</code> 。那么，这里的 &gt;<code>00000011</code> 和 <code>10000011</code> 就是机器数。</p></blockquote><h3 id="真值"><a href="#真值" class="headerlink" title="真值"></a>真值</h3><p>因为第一位是符号位，所以机器数的形式值就不等于真正的数值。例如上面的有符号数 <code>10000011</code>，其最高位 1 代表负，其真正数值是 -3 而不是形式值131（<code>10000011</code> 转换成十进制等于 131）。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。</p><blockquote><p>例：0000 0001 的真值 = +000 0001 = +1，1000 0001 的真值 = –000 0001 = –1</p></blockquote><p>在探求为何机器要使用补码之前, 让我们先了解原码, 反码和补码的概念<br><a id="more"></a></p><h2 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h2><p>原码就是符号位加上真值的绝对值, 即用第一位表示符号, 其余位表示值. 比如如果是 8 位二进制:</p><blockquote><p>[+1]原 = 0000 0001</p></blockquote><blockquote><p>[-1]原 = 1000 0001</p></blockquote><p>因为第一位是符号位, 所以 8 位二进制数的取值范围就是:</p><blockquote><p>[1111 1111 , 0111 1111] 即 [-127 , 127]</p></blockquote><p>原码是人脑最容易理解和计算的表示方式.</p><h2 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h2><p>反码的表示方法是:  <strong>正数的反码是其本身，负数的反码是在其原码的基础上, 符号位不变，其余各个位取反。</strong></p><blockquote><p>[+1] = [00000001]原 = [00000001]反</p></blockquote><blockquote><p>[-1] = [10000001]原 = [11111110]反</p></blockquote><p>可见如果一个反码表示的是负数, 人脑无法直观的看出来它的数值. 通常要将其转换成原码再计算.</p><h2 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h2><p>补码的表示方法是:  <strong>正数的补码就是其本身, 负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后 +1. <code>(即在反码的基础上 +1)</code></strong></p><blockquote><p>[+1] = [00000001]原 = [00000001]反 = [00000001]补</p></blockquote><blockquote><p>[-1] = [10000001]原 = [11111110]反 = [11111111]补</p></blockquote><p>对于负数, 补码表示方式也是人脑无法直观看出其数值的. 通常也需要转换成原码在计算其数值.</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://www.jianshu.com/p/279d9eba0985" target="_blank" rel="noopener">https://www.jianshu.com/p/279d9eba0985</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;机器数和真值&quot;&gt;&lt;a href=&quot;#机器数和真值&quot; class=&quot;headerlink&quot; title=&quot;机器数和真值&quot;&gt;&lt;/a&gt;机器数和真值&lt;/h2&gt;&lt;p&gt;在学习原码, 反码和补码之前, 需要先了解机器数和真值的概念&lt;/p&gt;
+&lt;h3 id=&quot;机器数&quot;&gt;&lt;a href=&quot;#机器数&quot; class=&quot;headerlink&quot; title=&quot;机器数&quot;&gt;&lt;/a&gt;机器数&lt;/h3&gt;&lt;p&gt;一个数在计算机中的二进制表示形式, 叫做这个数的机器数。机器数是带符号的，在计算机用一个数的最高位存放符号, 正数为0, 负数为1.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比如，十进制中的数 +3 ，假设计算机字长为8位，转换成二进制就是 &lt;code&gt;00000011&lt;/code&gt;。如果是 -3 ，就是 &lt;code&gt;10000011&lt;/code&gt; 。那么，这里的 &amp;gt;&lt;code&gt;00000011&lt;/code&gt; 和 &lt;code&gt;10000011&lt;/code&gt; 就是机器数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;真值&quot;&gt;&lt;a href=&quot;#真值&quot; class=&quot;headerlink&quot; title=&quot;真值&quot;&gt;&lt;/a&gt;真值&lt;/h3&gt;&lt;p&gt;因为第一位是符号位，所以机器数的形式值就不等于真正的数值。例如上面的有符号数 &lt;code&gt;10000011&lt;/code&gt;，其最高位 1 代表负，其真正数值是 -3 而不是形式值131（&lt;code&gt;10000011&lt;/code&gt; 转换成十进制等于 131）。所以，为区别起见，将带符号位的机器数对应的真正数值称为机器数的真值。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例：0000 0001 的真值 = +000 0001 = +1，1000 0001 的真值 = –000 0001 = –1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在探求为何机器要使用补码之前, 让我们先了解原码, 反码和补码的概念&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="计算机基础" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>正向代理和反向代理</title>
@@ -522,34 +551,6 @@
     
     
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Apache和Nginx的对比</title>
-    <link href="http://yoursite.com/2018/03/08/Apache%E5%92%8CNginx%E7%9A%84%E5%AF%B9%E6%AF%94/"/>
-    <id>http://yoursite.com/2018/03/08/Apache和Nginx的对比/</id>
-    <published>2018-03-07T18:11:57.000Z</published>
-    <updated>2018-03-07T18:31:50.268Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h2><ol><li>apache 的 rewrite 比 nginx 强大，在 rewrite 频繁的情况下，用 apache</li><li>apache 发展到现在，模块超多，基本想到的都可以找到</li><li>apache 更为成熟，少 bug ，nginx 的 bug 相对较多</li><li>apache 超稳定</li><li>apache 对 PHP 支持比较简单，nginx 需要配合其他后端用</li><li>apache 在处理动态请求有优势，nginx 在这方面是鸡肋，一般动态请求要 apache 去做，nginx 适合静态和反向。</li><li>apache 仍然是目前的主流，拥有丰富的特性，成熟的技术和开发社区</li></ol><a id="more"></a><h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><ol><li>轻量级，采用 C 进行编写，同样的 web 服务，会占用更少的内存及资源</li><li>抗并发，nginx 以 epoll and kqueue 作为开发模型，处理请求是异步非阻塞的，负载能力比 apache 高很多，而 apache 则是阻塞型的。在高并发下 nginx 能保持低资源低消耗高性能 ，而 apache 在 PHP 处理慢或者前端压力很大的情况下，很容易出现进程数飙升，从而拒绝服务的现象。</li><li>nginx 处理静态文件好，静态处理性能比 apache 高三倍以上</li><li>nginx 的设计高度模块化，编写模块相对简单</li><li>nginx 配置简洁，正则配置让很多事情变得简单，而且改完配置能使用 -t 测试配置有没有问题，apache 配置复杂 ，重启的时候发现配置出错了，会很崩溃</li><li>nginx 作为负载均衡服务器，支持 7 层负载均衡</li><li>nginx 本身就是一个反向代理服务器，而且可以作为非常优秀的邮件代理服务器</li><li>启动特别容易, 并且几乎可以做到 7*24 不间断运行，即使运行数个月也不需要重新启动，还能够不间断服务的情况下进行软件版本的升级</li><li>社区活跃，各种高性能模块出品迅速</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>nginx 相对 apache 的优点：</p><ul><li>轻量级，同样起web 服务，比apache 占用更少的内存及资源</li><li>抗并发，<code>nginx 处理请求是异步非阻塞的</code>，支持更多的并发连接，而<code>apache 则是阻塞型的</code>，在高并发下nginx 能保持低资源低消耗高性能</li><li>配置简洁</li><li>高度模块化的设计，编写模块相对简单</li><li>社区活跃</li></ul><p>apache 相对nginx 的优点：</p><ul><li>rewrite ，比nginx 的rewrite 强大</li><li>模块超多，基本想到的都可以找到</li><li>少bug ，nginx 的bug 相对较多</li><li>超稳定</li></ul><p>两者最核心的区别在于 <code>apache 是同步多进程模型，一个连接对应一个进程</code>，而 <code>nginx 是异步的，多个连接（万级别）可以对应一个进程</code></p><p>一般来说，需要性能的 web 服务，用 nginx 。如果不需要性能只求稳定，更考虑 apache ，后者的各种功能模块实现得比前者，例如 ssl 的模块就比前者好，可配置项多。epoll(freebsd 上是 kqueue ) 网络 IO 模型是 nginx 处理性能高的根本理由，但并不是所有的情况下都是 epoll 大获全胜的，如果本身提供静态服务的就只有寥寥几个文件，apache 的 select 模型或许比 epoll 更高性能。当然，这只是根据网络 IO 模型的原理作的一个假设，真正的应用还是需要实测了再说的。</p><p>更为通用的方案是，前端 nginx 抗并发，后端 apache 集群，配合起来会更好。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Apache&quot;&gt;&lt;a href=&quot;#Apache&quot; class=&quot;headerlink&quot; title=&quot;Apache&quot;&gt;&lt;/a&gt;Apache&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;apache 的 rewrite 比 nginx 强大，在 rewrite 频繁的情况下，用 apache&lt;/li&gt;
-&lt;li&gt;apache 发展到现在，模块超多，基本想到的都可以找到&lt;/li&gt;
-&lt;li&gt;apache 更为成熟，少 bug ，nginx 的 bug 相对较多&lt;/li&gt;
-&lt;li&gt;apache 超稳定&lt;/li&gt;
-&lt;li&gt;apache 对 PHP 支持比较简单，nginx 需要配合其他后端用&lt;/li&gt;
-&lt;li&gt;apache 在处理动态请求有优势，nginx 在这方面是鸡肋，一般动态请求要 apache 去做，nginx 适合静态和反向。&lt;/li&gt;
-&lt;li&gt;apache 仍然是目前的主流，拥有丰富的特性，成熟的技术和开发社区&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="Web服务器" scheme="http://yoursite.com/tags/Web%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
