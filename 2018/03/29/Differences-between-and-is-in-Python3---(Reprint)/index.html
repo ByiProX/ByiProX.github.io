@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="Source QuestionMy Google-fu has failed me. In Python, are the following two tests for equality equivalent? 12345678n = 5# Test one.if n == 5:    print &apos;Yay!&apos;# Test two.if n is 5:    print &apos;Yay!&apos; Does">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-28T19:02:08.474Z">
+<meta property="og:updated_time" content="2018-03-28T19:07:01.226Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Differences between `==` and `is` in Python3?---(Reprint)">
 <meta name="twitter:description" content="Source QuestionMy Google-fu has failed me. In Python, are the following two tests for equality equivalent? 12345678n = 5# Test one.if n == 5:    print &apos;Yay!&apos;# Test two.if n is 5:    print &apos;Yay!&apos; Does">
@@ -408,6 +408,20 @@
 <p>The same holds true for <code>string literals</code>:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"a"</span> <span class="keyword">is</span> <span class="string">"a"</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"aa"</span> <span class="keyword">is</span> <span class="string">"a"</span> * <span class="number">2</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="string">"a"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"aa"</span> <span class="keyword">is</span> x * <span class="number">2</span></span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">"aa"</span> <span class="keyword">is</span> intern(x*<span class="number">2</span>)</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 <p>Please see <a href="https://stackoverflow.com/questions/26595/is-there-any-difference-between-foo-is-none-and-foo-none" target="_blank" rel="noopener">this question</a> as well.</p>
+<h2 id="Answers-2"><a href="#Answers-2" class="headerlink" title="Answers 2"></a>Answers 2</h2><p>There is a simple rule of thumb to tell you when to use <code>==</code> or <code>is</code>.</p>
+<ul>
+<li><code>==</code> is for <em>value equality</em>. Use it when you would like to know if two objects have the same value.</li>
+<li><code>is</code> is for <em>reference equality</em>. Use it when you would like to know if two references refer to the same object.</li>
+</ul>
+<p>In general, when you are comparing something to a simple type, you are usually checking for <em>value equality</em>, so you should use <code>==</code>. For example, the intention of your example is probably to check whether x has a value equal to 2 (<code>==</code>), not whether <code>x</code> is literally referring to the same object as 2.</p>
+<hr>
+<p>Something else to note: because of the way the CPython reference implementation works, you’ll get unexpected and inconsistent results if you mistakenly use <code>is</code> to compare for reference equality on integers:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">500</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">500</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<p>That’s pretty much what we expected: <code>a</code> and <code>b</code> have the same value, but are distinct entities. But what about this?</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>c = <span class="number">200</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = <span class="number">200</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c == d</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>c <span class="keyword">is</span> d</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<p>This is inconsistent with the earlier result. What’s going on here? It turns out the reference implementation of Python caches integer objects in the range -5..256 as singleton instances for performance reasons. Here’s an example demonstrating this:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">250</span>, <span class="number">260</span>): a = i; <span class="keyword">print</span> <span class="string">"%i: %s"</span> % (i, a <span class="keyword">is</span> int(str(i)));</span><br><span class="line">...</span><br><span class="line"><span class="number">250</span>: <span class="keyword">True</span></span><br><span class="line"><span class="number">251</span>: <span class="keyword">True</span></span><br><span class="line"><span class="number">252</span>: <span class="keyword">True</span></span><br><span class="line"><span class="number">253</span>: <span class="keyword">True</span></span><br><span class="line"><span class="number">254</span>: <span class="keyword">True</span></span><br><span class="line"><span class="number">255</span>: <span class="keyword">True</span></span><br><span class="line"><span class="number">256</span>: <span class="keyword">True</span></span><br><span class="line"><span class="number">257</span>: <span class="keyword">False</span></span><br><span class="line"><span class="number">258</span>: <span class="keyword">False</span></span><br><span class="line"><span class="number">259</span>: <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<p>This is another obvious reason not to use <code>is</code>: the behavior is left up to implementations when you’re erroneously using it for value equality.</p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ol>
 <li><a href="https://stackoverflow.com/questions/132988/is-there-a-difference-between-and-is-in-python/134659#134659" target="_blank" rel="noopener">Is there a difference between <code>==</code> and <code>is</code> in Python?
 </a></li>
@@ -451,6 +465,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/29/What-is-the-difference-between-“-is-None-”-and-“-None-”-Reprint/" rel="prev" title="What is the difference between “ is None ” and “ ==None ” --- Reprint">
+                What is the difference between “ is None ” and “ ==None ” --- Reprint <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -541,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -645,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-Question"><span class="nav-number">1.</span> <span class="nav-text">Source Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answers-1"><span class="nav-number">2.</span> <span class="nav-text">Answers 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">3.</span> <span class="nav-text">References</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Source-Question"><span class="nav-number">1.</span> <span class="nav-text">Source Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answers-1"><span class="nav-number">2.</span> <span class="nav-text">Answers 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Answers-2"><span class="nav-number">3.</span> <span class="nav-text">Answers 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">4.</span> <span class="nav-text">References</span></a></li></ol></div>
             
 
           </div>
