@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="Source QuestionMy Google-fu has failed me. In Python, are the following two tests for equality equivalent? 12345678n = 5# Test one.if n == 5:    print &apos;Yay!&apos;# Test two.if n is 5:    print &apos;Yay!&apos; Does">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-28T19:07:01.226Z">
+<meta property="og:updated_time" content="2018-03-28T19:25:46.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Differences between `==` and `is` in Python3?---(Reprint)">
 <meta name="twitter:description" content="Source QuestionMy Google-fu has failed me. In Python, are the following two tests for equality equivalent? 12345678n = 5# Test one.if n == 5:    print &apos;Yay!&apos;# Test two.if n is 5:    print &apos;Yay!&apos; Does">
@@ -414,7 +414,6 @@
 <li><code>is</code> is for <em>reference equality</em>. Use it when you would like to know if two references refer to the same object.</li>
 </ul>
 <p>In general, when you are comparing something to a simple type, you are usually checking for <em>value equality</em>, so you should use <code>==</code>. For example, the intention of your example is probably to check whether x has a value equal to 2 (<code>==</code>), not whether <code>x</code> is literally referring to the same object as 2.</p>
-<hr>
 <p>Something else to note: because of the way the CPython reference implementation works, you’ll get unexpected and inconsistent results if you mistakenly use <code>is</code> to compare for reference equality on integers:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">500</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">500</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a == b</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a <span class="keyword">is</span> b</span><br><span class="line"><span class="keyword">False</span></span><br></pre></td></tr></table></figure>
 <p>That’s pretty much what we expected: <code>a</code> and <code>b</code> have the same value, but are distinct entities. But what about this?</p>
