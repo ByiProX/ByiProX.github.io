@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Contents  __future__模块 print函数 整除 Unicode xrange模块 Python3中的range对象的__contains__方法 Raising exceptions Handling exceptions next()函数 and .next()方法 For循环变量和全局命名空间泄漏 比较不可排序类型 通过input()解析用户的输入 返回可迭代对象，而不是列">
+<meta name="description" content="假设有如下代码：12345for i in range(10):    if i == 5:        print &apos;found it! i = %s&apos; % ielse:    print &apos;not found it ...&apos; 我们期望的结果是，当找到5时打印出：1found it! i = 5 实际上打印出来的结果为：12found it! i = 5not found it ... 显然这">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python2.7.x与Python3.x差异">
-<meta property="og:url" content="http://yoursite.com/2018/03/06/Python2-7-x与Python3-x差异/index.html">
+<meta property="og:title" content="Python3 for ... else ...陷阱">
+<meta property="og:url" content="http://yoursite.com/2018/03/29/Python3-for-else-陷阱/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="Contents  __future__模块 print函数 整除 Unicode xrange模块 Python3中的range对象的__contains__方法 Raising exceptions Handling exceptions next()函数 and .next()方法 For循环变量和全局命名空间泄漏 比较不可排序类型 通过input()解析用户的输入 返回可迭代对象，而不是列">
+<meta property="og:description" content="假设有如下代码：12345for i in range(10):    if i == 5:        print &apos;found it! i = %s&apos; % ielse:    print &apos;not found it ...&apos; 我们期望的结果是，当找到5时打印出：1found it! i = 5 实际上打印出来的结果为：12found it! i = 5not found it ... 显然这">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-06T17:20:06.242Z">
+<meta property="og:updated_time" content="2018-03-29T10:00:17.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python2.7.x与Python3.x差异">
-<meta name="twitter:description" content="Contents  __future__模块 print函数 整除 Unicode xrange模块 Python3中的range对象的__contains__方法 Raising exceptions Handling exceptions next()函数 and .next()方法 For循环变量和全局命名空间泄漏 比较不可排序类型 通过input()解析用户的输入 返回可迭代对象，而不是列">
+<meta name="twitter:title" content="Python3 for ... else ...陷阱">
+<meta name="twitter:description" content="假设有如下代码：12345for i in range(10):    if i == 5:        print &apos;found it! i = %s&apos; % ielse:    print &apos;not found it ...&apos; 我们期望的结果是，当找到5时打印出：1found it! i = 5 实际上打印出来的结果为：12found it! i = 5not found it ... 显然这">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/06/Python2-7-x与Python3-x差异/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/29/Python3-for-else-陷阱/"/>
 
 
 
 
 
-  <title>Python2.7.x与Python3.x差异 | Quentin's Blog</title>
+  <title>Python3 for ... else ...陷阱 | Quentin's Blog</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/06/Python2-7-x与Python3-x差异/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/29/Python3-for-else-陷阱/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python2.7.x与Python3.x差异</h1>
+          <h1 class="post-title" itemprop="name headline">Python3 for ... else ...陷阱</h1>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T01:08:15+08:00">
-                2018-03-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T17:49:49+08:00">
+                2018-03-29
               </time>
             
 
@@ -362,7 +362,7 @@
 
           
           
-             <span id="/2018/03/06/Python2-7-x与Python3-x差异/" class="leancloud_visitors" data-flag-title="Python2.7.x与Python3.x差异">
+             <span id="/2018/03/29/Python3-for-else-陷阱/" class="leancloud_visitors" data-flag-title="Python3 for ... else ...陷阱">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,30 +393,28 @@
       
 
       
-        <p><strong>Contents</strong></p>
+        <p>假设有如下代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'found it! i = %s'</span> % i</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'not found it ...'</span></span><br></pre></td></tr></table></figure></p>
+<p>我们期望的结果是，当找到5时打印出：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">found it! i = <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<p>实际上打印出来的结果为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">found it! i = <span class="number">5</span></span><br><span class="line"><span class="keyword">not</span> found it ...</span><br></pre></td></tr></table></figure></p>
+<p>显然这不是我们期望的结果。<br><a id="more"></a></p>
+<p>根据官方文档说法：</p>
+<blockquote>
+<p>When the items are exhausted (which is immediately when the sequence is empty), the suite in the else clause, if present, is executed, and the loop terminates.</p>
+</blockquote>
+<blockquote>
+<p>A break statement executed in the first suite terminates the loop without executing the else clause’s suite. A continue statement executed in the first suite skips the rest of the suite and continues with the next item, or with the else clause if there was no next item.</p>
+</blockquote>
+<blockquote>
+<p><a href="https://docs.python.org/2/reference/compound_stmts.html#the-for-statement" target="_blank" rel="noopener">https://docs.python.org/2/reference/compound_stmts.html#the-for-statement</a></p>
+</blockquote>
+<p>大意是说<code>当迭代的对象迭代完并为空时，位于else的子句将执行</code>，<code>而如果在for循环中含有break时则直接终止循环，并不会执行else子句</code>。</p>
+<p>所以正确的写法应该为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'found it! i = %s'</span> % i</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'not found it ...'</span></span><br></pre></td></tr></table></figure></p>
+<p>当使用pylint检测代码时会提示:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Else clause on loop without a <span class="keyword">break</span> statement (useless-<span class="keyword">else</span>-on-loop)</span><br></pre></td></tr></table></figure></p>
+<p>所以养成使用pylint检测代码的习惯还是很有必要的，像这种逻辑错误不注意点还是很难发现的。</p>
+<p><strong>同样的原理适用于<code>while ... else</code>循环</strong></p>
+<p><strong>参考</strong></p>
 <ol>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#__future__%E6%A8%A1%E5%9D%97" target="_blank" rel="noopener"><code>__future__模块</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#print%E5%87%BD%E6%95%B0" target="_blank" rel="noopener"><code>print函数</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E6%95%B4%E9%99%A4" target="_blank" rel="noopener"><code>整除</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#Unicode" target="_blank" rel="noopener"><code>Unicode</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#xrange%E6%A8%A1%E5%9D%97" target="_blank" rel="noopener"><code>xrange模块</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#Python3%E4%B8%AD%E7%9A%84range%E5%AF%B9%E8%B1%A1%E7%9A%84__contains__%E6%96%B9%E6%B3%95" target="_blank" rel="noopener"><code>Python3中的range对象的__contains__方法</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#Raising_exceptions" target="_blank" rel="noopener"><code>Raising exceptions</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#Handling_exceptions" target="_blank" rel="noopener"><code>Handling exceptions</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#next(" target="_blank" rel="noopener"><code>next()函数 and .next()方法</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#For%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%A8%E5%B1%80%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E6%B3%84%E6%BC%8F" target="_blank" rel="noopener"><code>For循环变量和全局命名空间泄漏</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E6%AF%94%E8%BE%83%E4%B8%8D%E5%8F%AF%E6%8E%92%E5%BA%8F%E7%B1%BB%E5%9E%8B" target="_blank" rel="noopener"><code>比较不可排序类型</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E9%80%9A%E8%BF%87input(" target="_blank" rel="noopener"><code>通过input()解析用户的输入</code></a></li>
-<li><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E8%BF%94%E5%9B%9E%E5%8F%AF%E8%BF%AD%E4%BB%A3%E5%AF%B9%E8%B1%A1%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E5%88%97%E8%A1%A8" target="_blank" rel="noopener"><code>返回可迭代对象，而不是列表</code></a></li>
-<li><p><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/#%E6%9B%B4%E5%A4%9A%E7%9A%84%E5%85%B3%E4%BA%8E_Python_2_%E5%92%8C_Python_3_%E7%9A%84%E6%96%87%E7%AB%A0" target="_blank" rel="noopener"><code>更多的关于 Python 2 和 Python 3 的文章</code></a></p>
-<p><strong>参考：</strong></p>
-<ol>
-<li><p><a href="http://chenqx.github.io/2014/11/10/Key-differences-between-Python-2-7-x-and-Python-3-x/" target="_blank" rel="noopener">Python2.x与Python3.x差异</a></p>
-</li>
-<li><p><a href="http://nbviewer.jupyter.org/github/rasbt/python_reference/blob/master/tutorials/key_differences_between_python_2_and_3.ipynb?create=1" target="_blank" rel="noopener">Key differences between Python 2.7.x and Python 3.x</a></p>
-</li>
-</ol>
-</li>
+<li><a href="https://www.cnblogs.com/dspace/p/6622799.html" target="_blank" rel="noopener">https://www.cnblogs.com/dspace/p/6622799.html</a></li>
 </ol>
 
       
@@ -448,8 +446,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/05/Python3-垃圾回收机制/" rel="next" title="Python3 垃圾回收机制">
-                <i class="fa fa-chevron-left"></i> Python3 垃圾回收机制
+              <a href="/2018/03/29/What-is-the-difference-between-“-is-None-”-and-“-None-”-Reprint/" rel="next" title="What is the difference between “ is None ” and “ ==None ” --- Reprint">
+                <i class="fa fa-chevron-left"></i> What is the difference between “ is None ” and “ ==None ” --- Reprint
               </a>
             
           </div>
@@ -457,10 +455,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/06/Python3-让字典保持有序/" rel="prev" title="Python3 让字典保持有序">
-                Python3 让字典保持有序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -842,9 +836,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/03/06/Python2-7-x与Python3-x差异/';
-          this.page.identifier = '2018/03/06/Python2-7-x与Python3-x差异/';
-          this.page.title = 'Python2.7.x与Python3.x差异';
+          this.page.url = 'http://yoursite.com/2018/03/29/Python3-for-else-陷阱/';
+          this.page.identifier = '2018/03/29/Python3-for-else-陷阱/';
+          this.page.title = 'Python3 for ... else ...陷阱';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://ByiProX.disqus.com/embed.js';

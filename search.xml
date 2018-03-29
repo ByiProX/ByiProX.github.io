@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python3 for ... else ...陷阱]]></title>
+    <url>%2F2018%2F03%2F29%2FPython3-for-else-%E9%99%B7%E9%98%B1%2F</url>
+    <content type="text"><![CDATA[假设有如下代码：12345for i in range(10): if i == 5: print 'found it! i = %s' % ielse: print 'not found it ...' 我们期望的结果是，当找到5时打印出：1found it! i = 5 实际上打印出来的结果为：12found it! i = 5not found it ... 显然这不是我们期望的结果。 根据官方文档说法： When the items are exhausted (which is immediately when the sequence is empty), the suite in the else clause, if present, is executed, and the loop terminates. A break statement executed in the first suite terminates the loop without executing the else clause’s suite. A continue statement executed in the first suite skips the rest of the suite and continues with the next item, or with the else clause if there was no next item. https://docs.python.org/2/reference/compound_stmts.html#the-for-statement 大意是说当迭代的对象迭代完并为空时，位于else的子句将执行，而如果在for循环中含有break时则直接终止循环，并不会执行else子句。 所以正确的写法应该为：123456for i in range(10): if i == 5: print 'found it! i = %s' % i breakelse: print 'not found it ...' 当使用pylint检测代码时会提示:1Else clause on loop without a break statement (useless-else-on-loop) 所以养成使用pylint检测代码的习惯还是很有必要的，像这种逻辑错误不注意点还是很难发现的。 同样的原理适用于while ... else循环 参考 https://www.cnblogs.com/dspace/p/6622799.html]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[What is the difference between “ is None ” and “ ==None ” --- Reprint]]></title>
     <url>%2F2018%2F03%2F29%2FWhat-is-the-difference-between-%E2%80%9C-is-None-%E2%80%9D-and-%E2%80%9C-None-%E2%80%9D-Reprint%2F</url>
     <content type="text"><![CDATA[Answer 1The answer is explained here. To quote: A class is free to implement comparison any way it chooses, and it can choose to make comparison against None mean something (which actually makes sense; if someone told you to implement the None object from scratch, how else would you get it to compare True against itself?). Practically-speaking, there is not much difference since custom comparison operators are rare. But you should use is None as a general rule. is None is a bit (~50%) faster than == None :) – Nas Banov Answer 2is always returns True if it compares the same object instance Whereas == is ultimately determined by the __eq__() method i.e. 12345678910class Foo: def __eq__(self,other): return Truefoo=Foo()print(foo==None)# Trueprint(foo is None)# False Answer 3In this case, they are the same. None is a singleton object (there only ever exists one None). is checks to see if the object is the same object, while == just checks if they are equivalent. For example:1234p = [1]q = [1]p is q # False because they are not the same actual objectp == q # True because they are equivalent But since there is only one None, they will always be the same, and is will return True. 123p = Noneq = Nonep is q # True because they are both pointing to the same "None" Answer 4(ob1 is ob2) equal to (id(ob1) == id(ob2)) … but (ob is ob2) is a LOT faster. Timeit says “(a is b)” is 0.0365 usec per loop and “(id(a)==id(b))” is 0.153 usec per loop. 4.2x faster! – AKX {} is {} is false and id({}) == id({}) can be (and is in CPython) true. Reference What is the difference between “ is None ” and “ ==None ” Is there any difference between “foo is None” and “foo == None”?]]></content>
