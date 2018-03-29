@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-29T12:09:23.923Z</updated>
+  <updated>2018-03-29T12:11:59.404Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,16 +21,114 @@
     <link href="http://yoursite.com/2018/03/29/Python3-%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2018/03/29/Python3-对象操作的时间复杂度总结/</id>
     <published>2018-03-29T11:27:04.000Z</published>
-    <updated>2018-03-29T12:09:23.923Z</updated>
+    <updated>2018-03-29T12:11:59.404Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 list</h2><p>列表是以数组（Array）实现的。最大的开销发生在超过当前分配大小的增长，这种情况下所有元素都需要移动；或者是在起始位置附近插入或者删除元素，这种情况下所有在该位置后面的元素都需要移动，这种情况可以考虑使用双向队列来解决。</p><table><thead><tr><th>Operation</th><th>Average Case</th><th><a href="http://en.wikipedia.org/wiki/Amortized_analysis" target="_blank" rel="noopener">Amortized Worst Case</a></th></tr></thead><tbody><tr><td>Copy</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Append[1]</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Pop last</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Pop intermediate</td><td>O(k)</td><td>O(k)</td></tr><tr><td>Insert</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Get Item</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Set Item</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Delete Item</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Iteration</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Get Slice</td><td>O(k)</td><td>O(k)</td></tr><tr><td>Del Slice</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Set Slice</td><td>O(k+n)</td><td>O(k+n)</td></tr><tr><td>Extend[1]</td><td>O(k)</td><td>O(k)</td></tr><tr><td><a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt" target="_blank" rel="noopener">Sort</a></td><td>O(n log n)</td><td>O(n log n)</td></tr><tr><td>Multiply</td><td>O(nk)</td><td>O(nk)</td></tr><tr><td>x in s</td><td>O(n)</td><td></td></tr><tr><td>min(s), max(s)</td><td>O(n)</td><td></td></tr><tr><td>Get Length</td><td>O(1)</td><td>O(1)</td></tr></tbody></table><h2 id="双向队列-collections-deque"><a href="#双向队列-collections-deque" class="headerlink" title="双向队列 collections.deque"></a>双向队列 collections.deque</h2><p>deque是以双向链表的形式实现的。双向队列的两端都是可达的，但从查找队列中间的元素较为缓慢，增删元素就更慢了。</p><table><thead><tr><th style="text-align:center"><strong>操作</strong></th><th style="text-align:center"><strong>平均情况</strong></th><th style="text-align:center"><strong>最坏情况</strong></th></tr></thead><tbody><tr><td style="text-align:center">复制</td><td style="text-align:center">O(n)</td><td style="text-align:center">O(n)</td></tr><tr><td style="text-align:center">append</td><td style="text-align:center">O(1)</td><td style="text-align:center">O(1)</td></tr><tr><td style="text-align:center">appendleft</td><td style="text-align:center">O(1)</td><td style="text-align:center">O(1)</td></tr><tr><td style="text-align:center">pop</td><td style="text-align:center">O(1)</td><td style="text-align:center">O(1)</td></tr><tr><td style="text-align:center">popleft</td><td style="text-align:center">O(1)</td><td style="text-align:center">O(1)</td></tr><tr><td style="text-align:center">extend</td><td style="text-align:center">O(k)</td><td style="text-align:center">O(k)</td></tr><tr><td style="text-align:center">extendleft</td><td style="text-align:center">O(k)</td><td style="text-align:center">O(k)</td></tr><tr><td style="text-align:center">rotate</td><td style="text-align:center">O(k)</td><td style="text-align:center">O(k)</td></tr><tr><td style="text-align:center">remove</td><td style="text-align:center">O(n)</td><td style="text-align:center">O(n)</td></tr></tbody></table><h2 id="集合-set"><a href="#集合-set" class="headerlink" title="集合 set"></a>集合 set</h2><table><thead><tr><th><strong>Operation</strong></th><th><strong>Average case</strong></th><th><strong>Worst Case</strong></th><th><strong>notes</strong></th></tr></thead><tbody><tr><td>x in s</td><td>O(1)</td><td>O(n)</td><td></td></tr><tr><td>Union s\</td><td>t</td><td><a href="https://wiki.python.org/moin/TimeComplexity_%28SetCode%29" target="_blank" rel="noopener">O(len(s)+len(t))</a></td><td></td><td></td></tr><tr><td>Intersection s&amp;t</td><td>O(min(len(s), len(t))</td><td>O(len(s) * len(t))</td><td>replace “min” with “max” if t is not a set</td></tr><tr><td>Multiple intersection s1&amp;s2&amp;..&amp;sn</td><td></td><td>(n-1)*O(l) where l is max(len(s1),..,len(sn))</td><td></td></tr><tr><td>Difference s-t</td><td>O(len(s))</td><td></td><td></td></tr><tr><td>s.difference_update(t)</td><td>O(len(t))</td><td></td><td></td></tr><tr><td>Symmetric Difference s^t</td><td>O(len(s))</td><td>O(len(s) * len(t))</td><td></td></tr><tr><td>s.symmetric_difference_update(t)</td><td>O(len(t))</td><td>O(len(t) * len(s))</td></tr></tbody></table><h2 id="字典-dict"><a href="#字典-dict" class="headerlink" title="字典 dict"></a>字典 dict</h2><p>字典的平均情况基于以下假设：</p><ol><li>对象的散列函数足够撸棒（robust），不会发生冲突。</li><li>字典的键是从所有可能的键的集合中随机选择的。</li></ol><table><thead><tr><th><strong>Operation</strong></th><th><strong>Average Case</strong></th><th><strong>Amortized Worst Case</strong></th></tr></thead><tbody><tr><td>Copy[2]</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Get Item</td><td>O(1)</td><td>O(n)</td></tr><tr><td>Set Item[1]</td><td>O(1)</td><td>O(n)</td></tr><tr><td>Delete Item</td><td>O(1)</td><td>O(n)</td></tr><tr><td>Iteration[2]</td><td>O(n)</td><td>O(n)</td></tr></tbody></table><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://wiki.python.org/moin/TimeComplexity" target="_blank" rel="noopener">https://wiki.python.org/moin/TimeComplexity</a></li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="列表-list"><a href="#列表-list" class="headerlink" title="列表 list"></a>列表 list</h2><p>列表是以数组（Array）实现的。最大的开销发生在超过当前分配大小的增长，这种情况下所有元素都需要移动；或者是在起始位置附近插入或者删除元素，这种情况下所有在该位置后面的元素都需要移动，这种情况可以考虑使用双向队列来解决。</p><table><thead><tr><th>Operation</th><th>Average Case</th><th><a href="http://en.wikipedia.org/wiki/Amortized_analysis" target="_blank" rel="noopener">Amortized Worst Case</a></th></tr></thead><tbody><tr><td>Copy</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Append[1]</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Pop last</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Pop intermediate</td><td>O(k)</td><td>O(k)</td></tr><tr><td>Insert</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Get Item</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Set Item</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Delete Item</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Iteration</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Get Slice</td><td>O(k)</td><td>O(k)</td></tr><tr><td>Del Slice</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Set Slice</td><td>O(k+n)</td><td>O(k+n)</td></tr><tr><td>Extend[1]</td><td>O(k)</td><td>O(k)</td></tr><tr><td><a href="http://svn.python.org/projects/python/trunk/Objects/listsort.txt" target="_blank" rel="noopener">Sort</a></td><td>O(n log n)</td><td>O(n log n)</td></tr><tr><td>Multiply</td><td>O(nk)</td><td>O(nk)</td></tr><tr><td>x in s</td><td>O(n)</td><td></td></tr><tr><td>min(s), max(s)</td><td>O(n)</td><td></td></tr><tr><td>Get Length</td><td>O(1)</td><td>O(1)</td></tr></tbody></table><a id="more"></a><h2 id="双向队列-collections-deque"><a href="#双向队列-collections-deque" class="headerlink" title="双向队列 collections.deque"></a>双向队列 collections.deque</h2><p>deque是以双向链表的形式实现的。双向队列的两端都是可达的，但从查找队列中间的元素较为缓慢，增删元素就更慢了。</p><table><thead><tr><th style="text-align:center"><strong>操作</strong></th><th style="text-align:center"><strong>平均情况</strong></th><th style="text-align:center"><strong>最坏情况</strong></th></tr></thead><tbody><tr><td style="text-align:center">复制</td><td style="text-align:center">O(n)</td><td style="text-align:center">O(n)</td></tr><tr><td style="text-align:center">append</td><td style="text-align:center">O(1)</td><td style="text-align:center">O(1)</td></tr><tr><td style="text-align:center">appendleft</td><td style="text-align:center">O(1)</td><td style="text-align:center">O(1)</td></tr><tr><td style="text-align:center">pop</td><td style="text-align:center">O(1)</td><td style="text-align:center">O(1)</td></tr><tr><td style="text-align:center">popleft</td><td style="text-align:center">O(1)</td><td style="text-align:center">O(1)</td></tr><tr><td style="text-align:center">extend</td><td style="text-align:center">O(k)</td><td style="text-align:center">O(k)</td></tr><tr><td style="text-align:center">extendleft</td><td style="text-align:center">O(k)</td><td style="text-align:center">O(k)</td></tr><tr><td style="text-align:center">rotate</td><td style="text-align:center">O(k)</td><td style="text-align:center">O(k)</td></tr><tr><td style="text-align:center">remove</td><td style="text-align:center">O(n)</td><td style="text-align:center">O(n)</td></tr></tbody></table><h2 id="集合-set"><a href="#集合-set" class="headerlink" title="集合 set"></a>集合 set</h2><table><thead><tr><th><strong>Operation</strong></th><th><strong>Average case</strong></th><th><strong>Worst Case</strong></th><th><strong>notes</strong></th></tr></thead><tbody><tr><td>x in s</td><td>O(1)</td><td>O(n)</td><td></td></tr><tr><td>Union s\</td><td>t</td><td><a href="https://wiki.python.org/moin/TimeComplexity_%28SetCode%29" target="_blank" rel="noopener">O(len(s)+len(t))</a></td><td></td><td></td></tr><tr><td>Intersection s&amp;t</td><td>O(min(len(s), len(t))</td><td>O(len(s) * len(t))</td><td>replace “min” with “max” if t is not a set</td></tr><tr><td>Multiple intersection s1&amp;s2&amp;..&amp;sn</td><td></td><td>(n-1)*O(l) where l is max(len(s1),..,len(sn))</td><td></td></tr><tr><td>Difference s-t</td><td>O(len(s))</td><td></td><td></td></tr><tr><td>s.difference_update(t)</td><td>O(len(t))</td><td></td><td></td></tr><tr><td>Symmetric Difference s^t</td><td>O(len(s))</td><td>O(len(s) * len(t))</td><td></td></tr><tr><td>s.symmetric_difference_update(t)</td><td>O(len(t))</td><td>O(len(t) * len(s))</td></tr></tbody></table><h2 id="字典-dict"><a href="#字典-dict" class="headerlink" title="字典 dict"></a>字典 dict</h2><p>字典的平均情况基于以下假设：</p><ol><li>对象的散列函数足够撸棒（robust），不会发生冲突。</li><li>字典的键是从所有可能的键的集合中随机选择的。</li></ol><table><thead><tr><th><strong>Operation</strong></th><th><strong>Average Case</strong></th><th><strong>Amortized Worst Case</strong></th></tr></thead><tbody><tr><td>Copy[2]</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Get Item</td><td>O(1)</td><td>O(n)</td></tr><tr><td>Set Item[1]</td><td>O(1)</td><td>O(n)</td></tr><tr><td>Delete Item</td><td>O(1)</td><td>O(n)</td></tr><tr><td>Iteration[2]</td><td>O(n)</td><td>O(n)</td></tr></tbody></table><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://wiki.python.org/moin/TimeComplexity" target="_blank" rel="noopener">https://wiki.python.org/moin/TimeComplexity</a></li></ol>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;列表-list&quot;&gt;&lt;a href=&quot;#列表-list&quot; class=&quot;headerlink&quot; title=&quot;列表 list&quot;&gt;&lt;/a&gt;列表 list&lt;/h2&gt;&lt;p&gt;列表是以数组（Array）实现的。最大的开销发生在超过当前分配大小的增长，这种情况下所有元素都需要移
-      
+      &lt;h2 id=&quot;列表-list&quot;&gt;&lt;a href=&quot;#列表-list&quot; class=&quot;headerlink&quot; title=&quot;列表 list&quot;&gt;&lt;/a&gt;列表 list&lt;/h2&gt;&lt;p&gt;列表是以数组（Array）实现的。最大的开销发生在超过当前分配大小的增长，这种情况下所有元素都需要移动；或者是在起始位置附近插入或者删除元素，这种情况下所有在该位置后面的元素都需要移动，这种情况可以考虑使用双向队列来解决。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Operation&lt;/th&gt;
+&lt;th&gt;Average Case&lt;/th&gt;
+&lt;th&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Amortized_analysis&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Amortized Worst Case&lt;/a&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Copy&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Append[1]&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pop last&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pop intermediate&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Insert&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get Item&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Set Item&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Delete Item&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Iteration&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get Slice&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Del Slice&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Set Slice&lt;/td&gt;
+&lt;td&gt;O(k+n)&lt;/td&gt;
+&lt;td&gt;O(k+n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Extend[1]&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;td&gt;O(k)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;http://svn.python.org/projects/python/trunk/Objects/listsort.txt&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Sort&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;O(n log n)&lt;/td&gt;
+&lt;td&gt;O(n log n)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Multiply&lt;/td&gt;
+&lt;td&gt;O(nk)&lt;/td&gt;
+&lt;td&gt;O(nk)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;x in s&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;min(s), max(s)&lt;/td&gt;
+&lt;td&gt;O(n)&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get Length&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;td&gt;O(1)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
     
     </summary>
     
