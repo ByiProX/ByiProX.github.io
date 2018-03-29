@@ -31,6 +31,7 @@ categories:
 | min(s), max(s)                                               | O(n)         |                                                              |
 | Get Length                                                   | O(1)         | O(1)                                                         |
 
+<!-- more -->
 ## 双向队列 collections.deque
 
 deque是以双向链表的形式实现的。双向队列的两端都是可达的，但从查找队列中间的元素较为缓慢，增删元素就更慢了。
