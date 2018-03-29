@@ -95,7 +95,6 @@ There is a simple rule of thumb to tell you when to use `==` or `is`.
 
 In general, when you are comparing something to a simple type, you are usually checking for _value equality_, so you should use `==`. For example, the intention of your example is probably to check whether x has a value equal to 2 (`==`), not whether `x` is literally referring to the same object as 2.
 
-* * *
 
 Something else to note: because of the way the CPython reference implementation works, you'll get unexpected and inconsistent results if you mistakenly use `is` to compare for reference equality on integers:
 
