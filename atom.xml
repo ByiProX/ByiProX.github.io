@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-30T15:39:48.408Z</updated>
+  <updated>2018-04-06T15:31:01.963Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python3 解包</title>
+    <link href="http://yoursite.com/2018/04/06/Python3-%E8%A7%A3%E5%8C%85/"/>
+    <id>http://yoursite.com/2018/04/06/Python3-解包/</id>
+    <published>2018-04-06T15:31:01.000Z</published>
+    <updated>2018-04-06T15:31:01.963Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>北京落户要看专业？？？</title>
@@ -612,36 +626,6 @@
       
         &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=
       
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 os和sys模块的作用，以及常用的模块方法</title>
-    <link href="http://yoursite.com/2018/03/12/Python3-os%E5%92%8Csys%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E6%A8%A1%E5%9D%97%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2018/03/12/Python3-os和sys模块的作用，以及常用的模块方法/</id>
-    <published>2018-03-12T08:43:03.000Z</published>
-    <updated>2018-03-12T08:49:03.868Z</updated>
-    
-    <content type="html"><![CDATA[<p>官方解释：</p><blockquote><p>os： This module provides a portable way of using operating system dependent functionality.</p></blockquote><p>翻译：提供一种方便的使用<code>操作系统函数</code>的方法。</p><blockquote><p>sys：This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.</p></blockquote><p>翻译：提供访问由<code>解释器</code>使用或维护的变量和在与<code>解释器交互</code>使用到的函数。</p><a id="more"></a><h2 id="os-常用方法"><a href="#os-常用方法" class="headerlink" title="os 常用方法"></a>os 常用方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">os.remove()  <span class="comment"># 删除文件  </span></span><br><span class="line">os.rename()  <span class="comment"># 重命名文件  </span></span><br><span class="line">os.walk()  <span class="comment"># 生成目录树下的所有文件名  </span></span><br><span class="line">os.chdir()  <span class="comment"># 改变目录  </span></span><br><span class="line">os.mkdir/makedirs  <span class="comment"># 创建目录/多层目录  </span></span><br><span class="line">os.rmdir/removedirs  <span class="comment"># 删除目录/多层目录  </span></span><br><span class="line">os.listdir()  <span class="comment"># 列出指定目录的文件  </span></span><br><span class="line">os.getcwd()  <span class="comment"># 取得当前工作目录  </span></span><br><span class="line">os.chmod()  <span class="comment"># 改变目录权限  </span></span><br><span class="line">os.path.basename()  <span class="comment"># 去掉目录路径，返回文件名  </span></span><br><span class="line">os.path.dirname()  <span class="comment"># 去掉文件名，返回目录路径  </span></span><br><span class="line">os.path.join()  <span class="comment"># 将分离的各部分组合成一个路径名  </span></span><br><span class="line">os.path.split()  <span class="comment"># 返回（dirname(),basename())元组  </span></span><br><span class="line">os.path.splitext()  <span class="comment"># 返回(filename,extension)元组  </span></span><br><span class="line">os.path.getatime|ctime|mtime   <span class="comment"># 分别返回最近访问、创建、修改时间  </span></span><br><span class="line">os.path.getsize()  <span class="comment"># 返回文件大小  </span></span><br><span class="line">os.path.exists()  <span class="comment"># 是否存在  </span></span><br><span class="line">os.path.isabs()  <span class="comment"># 是否为绝对路径  </span></span><br><span class="line">os.path.isdir()  <span class="comment"># 是否为目录  </span></span><br><span class="line">os.path.isfile()  <span class="comment"># 是否为文件</span></span><br></pre></td></tr></table></figure><h2 id="sys-常用方法"><a href="#sys-常用方法" class="headerlink" title="sys 常用方法"></a>sys 常用方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sys.argv           <span class="comment"># 命令行参数List，第一个元素是程序本身路径    </span></span><br><span class="line">sys.modules.keys() <span class="comment"># 返回所有已经导入的模块列表    </span></span><br><span class="line">sys.exc_info()     <span class="comment"># 获取当前正在处理的异常类,exc_type、exc_value、exc_traceback当前处理的异常详细信息    </span></span><br><span class="line">sys.exit(n)        <span class="comment"># 退出程序，正常退出时exit(0)    </span></span><br><span class="line">sys.hexversion     <span class="comment"># 获取Python解释程序的版本值，16进制格式如：0x020403F0    </span></span><br><span class="line">sys.version        <span class="comment"># 获取Python解释程序的版本信息    </span></span><br><span class="line">sys.maxint         <span class="comment"># 最大的Int值    </span></span><br><span class="line">sys.maxunicode     <span class="comment"># 最大的Unicode值    </span></span><br><span class="line">sys.modules        <span class="comment"># 返回系统导入的模块字段，key是模块名，value是模块    </span></span><br><span class="line">sys.path           <span class="comment"># 返回模块的搜索路径，初始化时使用PYTHONPATH环境变量的值    </span></span><br><span class="line">sys.platform       <span class="comment"># 返回操作系统平台名称    </span></span><br><span class="line">sys.stdout         <span class="comment"># 标准输出   </span></span><br><span class="line">sys.stdin          <span class="comment"># 标准输入   </span></span><br><span class="line">sys.stderr         <span class="comment"># 错误输出   </span></span><br><span class="line">sys.exc_clear()    <span class="comment"># 用来清除当前线程所出现的当前的或最近的错误信息   </span></span><br><span class="line">sys.exec_prefix    <span class="comment"># 返回平台独立的python文件安装的位置   </span></span><br><span class="line">sys.byteorder      <span class="comment"># 本地字节规则的指示器，big-endian平台的值是'big',little-endian平台的值是'little'   </span></span><br><span class="line">sys.copyright      <span class="comment"># 记录python版权相关的东西   </span></span><br><span class="line">sys.api_version    <span class="comment"># 解释器的C的API版本   </span></span><br><span class="line">sys.version_info</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;官方解释：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;os： This module provides a portable way of using operating system dependent functionality.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;翻译：提供一种方便的使用&lt;code&gt;操作系统函数&lt;/code&gt;的方法。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;sys：This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;翻译：提供访问由&lt;code&gt;解释器&lt;/code&gt;使用或维护的变量和在与&lt;code&gt;解释器交互&lt;/code&gt;使用到的函数。&lt;/p&gt;
     
     </summary>
     
