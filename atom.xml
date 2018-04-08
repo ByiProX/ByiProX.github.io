@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-06T17:14:14.402Z</updated>
+  <updated>2018-04-08T15:41:39.469Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>明天新的一天</title>
+    <link href="http://yoursite.com/2018/04/08/%E6%98%8E%E5%A4%A9%E6%96%B0%E7%9A%84%E4%B8%80%E5%A4%A9/"/>
+    <id>http://yoursite.com/2018/04/08/明天新的一天/</id>
+    <published>2018-04-08T15:24:11.000Z</published>
+    <updated>2018-04-08T15:41:39.469Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天早上跟HR提交了辞职，然后就是跟HR聊工作以及去向的问题。我明确提出了离职的原因——工资太低。然后就是HR说可以申请提高薪水。我也没有那么傻，既然都提出离职了，我留下来工作怎么做，简直就是给自己挖坑呀。</p><p>对了，我还在好奇为什么富海那边给的工资那么少，至少得调查一下当前北京应届毕业生的薪资水平吧。讲真，这个工资实习生差不多都可以拿到吧。今天HR跟高总讲了我离职的事情，我也听到了高总在那边碎碎念，说什么龚老师的学生又要走了。我为什么走您不好好考虑一下？说真的，我不觉得高总是一个好老板，面试了这么多公司，富海的体验不是很好，面试过程很令人尴尬。</p><p>明天就可以去新公司上班了，虽然是实习，但内心也是开心的，年轻人多，交流成本比较低。最重要的是做自己喜欢做的工作。准备睡觉，明天去独到科技学习新知识喽，逃~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天早上跟HR提交了辞职，然后就是跟HR聊工作以及去向的问题。我明确提出了离职的原因——工资太低。然后就是HR说可以申请提高薪水。我也没有那么傻，既然都提出离职了，我留下来工作怎么做，简直就是给自己挖坑呀。&lt;/p&gt;
+&lt;p&gt;对了，我还在好奇为什么富海那边给的工资那么少，至少得
+      
+    
+    </summary>
+    
+    
+      <category term="成长日记" scheme="http://yoursite.com/tags/%E6%88%90%E9%95%BF%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Python3 解包和压包</title>
@@ -617,31 +641,6 @@
     
     
       <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 实现遍历目录与子目录，并抓取.py文件</title>
-    <link href="http://yoursite.com/2018/03/12/Python3-%E5%AE%9E%E7%8E%B0%E9%81%8D%E5%8E%86%E7%9B%AE%E5%BD%95%E4%B8%8E%E5%AD%90%E7%9B%AE%E5%BD%95%EF%BC%8C%E5%B9%B6%E6%8A%93%E5%8F%96-py%E6%96%87%E4%BB%B6/"/>
-    <id>http://yoursite.com/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/</id>
-    <published>2018-03-12T08:54:54.000Z</published>
-    <updated>2018-03-12T09:04:15.759Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tree <span class="built_in">test</span></span><br><span class="line">.</span><br><span class="line">├── subtest1</span><br><span class="line">│   ├── subsubdir</span><br><span class="line">│   │   └── sub.py</span><br><span class="line">│   └── test1.py</span><br><span class="line">├── subtest2</span><br><span class="line">│   └── test2.py</span><br><span class="line">└── subtest3</span><br><span class="line">    └── test3.py</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. for-in dir/subdir to get the filesname  </span></span><br><span class="line"><span class="comment"># 2. splitext filename to filter  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getFiles</span><span class="params">(dir, suffix)</span>:</span>  </span><br><span class="line"></span><br><span class="line">    res = []  </span><br><span class="line">    <span class="keyword">for</span> root, directory, files <span class="keyword">in</span> os.walk(dir):  </span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> files:  </span><br><span class="line">            name, suf = os.path.splitext(filename)  </span><br><span class="line">            <span class="keyword">if</span> suf == suffix:  </span><br><span class="line">                res.append(os.path.join(root, filename))  </span><br><span class="line">    <span class="keyword">return</span> res  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> getFiles(<span class="string">"./"</span>, <span class="string">'.py'</span>):  </span><br><span class="line">    print(file)</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># ./walkdir.py</span></span><br><span class="line"><span class="comment"># ./subtest2/test2.py</span></span><br><span class="line"><span class="comment"># ./subtest3/test3.py</span></span><br><span class="line"><span class="comment"># ./subtest1/test1.py</span></span><br><span class="line"><span class="comment"># ./subtest1/subsubdir/sub.py</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=
-      
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
   </entry>
   
