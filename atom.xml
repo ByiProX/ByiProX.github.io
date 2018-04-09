@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-08T15:42:38.014Z</updated>
+  <updated>2018-04-09T14:42:46.611Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML里引入CSS的四种方式</title>
+    <link href="http://yoursite.com/2018/04/09/HTML%E9%87%8C%E5%BC%95%E5%85%A5CSS%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>http://yoursite.com/2018/04/09/HTML里引入CSS的四种方式/</id>
+    <published>2018-04-09T14:42:46.000Z</published>
+    <updated>2018-04-09T14:42:46.611Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>明天新的一天</title>
@@ -611,36 +625,6 @@
       <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
     
       <category term="Data Structures" scheme="http://yoursite.com/tags/Data-Structures/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>什么是Socket(转)</title>
-    <link href="http://yoursite.com/2018/03/13/%E4%BB%80%E4%B9%88%E6%98%AFSocket-%E8%BD%AC/"/>
-    <id>http://yoursite.com/2018/03/13/什么是Socket-转/</id>
-    <published>2018-03-12T16:49:26.000Z</published>
-    <updated>2018-03-12T17:03:47.890Z</updated>
-    
-    <content type="html"><![CDATA[<p>对TCP/IP、UDP、Socket编程这些词你不会很陌生吧？随着网络技术的发展，这些词充斥着我们的耳朵。那么我想问：</p><ol><li>什么是TCP/IP、UDP？</li><li>Socket在哪里呢？</li><li>Socket是什么呢？</li><li>你会使用它们吗？</li></ol><h2 id="什么是TCP-IP、UDP"><a href="#什么是TCP-IP、UDP" class="headerlink" title="什么是TCP/IP、UDP"></a>什么是TCP/IP、UDP</h2><p>TCP/IP（Transmission Control Protocol/Internet Protocol）即传输控制协议/网间协议，是一个工业标准的协议集，它是为广域网（WANs）设计的。<br>UDP（User Data Protocol，用户数据报协议）是与TCP相对应的协议。它是属于TCP/IP协议族中的一种。</p><p><img src="https://upload-images.jianshu.io/upload_images/2952111-571c60b933d42028.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1.jpg"></p><a id="more"></a><p>TCP/IP协议族包括运输层、网络层、链路层。由上图可以知道TCP/IP与UDP的关系。</p><h2 id="Socket在哪里"><a href="#Socket在哪里" class="headerlink" title="Socket在哪里"></a>Socket在哪里</h2><p><img src="https://upload-images.jianshu.io/upload_images/2952111-1dd2ce6b61d08816.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2.jpg"></p><h2 id="Socket是什么"><a href="#Socket是什么" class="headerlink" title="Socket是什么"></a>Socket是什么</h2><p>Socket是应用层与TCP/IP协议族通信的中间软件抽象层，它是一组接口。在设计模式中，Socket其实就是一个门面模式，它把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。</p><h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>前人已经给我们做了好多的事了，网络间的通信也就简单了许多，但毕竟还是有挺多工作要做的。以前听到Socket编程，觉得它是比较高深的编程知识，但是只要弄清Socket编程的工作原理，神秘的面纱也就揭开了。<br>一个生活中的场景。你要打电话给一个朋友，先拨号，朋友听到电话铃声后提起电话，这时你和你的朋友就建立起了连接，就可以讲话了。等交流结束，挂断电话结束此次交谈。<br>生活中的场景就解释了这工作原理，也许TCP/IP协议族就是诞生于生活中，这也不一定。</p><p><img src="https://upload-images.jianshu.io/upload_images/2952111-99ebc49204f5b380.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="3.jpg"></p><p>先从服务器端说起。服务器端先初始化Socket，然后与端口绑定(bind)，对端口进行监听(listen)，调用accept阻塞，等待客户端连接。在这时如果有个客户端初始化一个Socket，然后连接服务器(connect)，如果连接成功，这时客户端与服务器端的连接就建立了。客户端发送数据请求，服务器端接收请求并处理请求，然后把回应数据发送给客户端，客户端读取数据，最后关闭连接，一次交互结束。</p><p>在这里我就举个简单的例子，我们走的是TCP协议这条路（见图2）。例子用MFC编写，运行的界面如下：</p><p><img src="https://upload-images.jianshu.io/upload_images/2952111-36073682cf397e4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="4.jpg"></p><p><img src="https://upload-images.jianshu.io/upload_images/2952111-61b92a5dbbb8bf69.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5.jpg"></p><p>在客户端输入服务器端的IP地址和发送的数据，然后按发送按钮，服务器端接收到数据，然后回应客户端。客户端读取回应的数据，显示在界面上。</p><p>客户端就一个函数完成了一次通信。在这里IP地址为何用127.0.0.1呢？使用这个IP地址，服务器端和客户端就能运行在同一台机器上，这样调试方便多了。当然你可以在你朋友的机器上运行Server程序(本人在局域网中测试过)，在自己的机器上运行Client程序，当然输入的IP地址就该是你朋友机器的IP地址了。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;对TCP/IP、UDP、Socket编程这些词你不会很陌生吧？随着网络技术的发展，这些词充斥着我们的耳朵。那么我想问：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;什么是TCP/IP、UDP？&lt;/li&gt;
-&lt;li&gt;Socket在哪里呢？&lt;/li&gt;
-&lt;li&gt;Socket是什么呢？&lt;/li&gt;
-&lt;li&gt;你会使用它们吗？&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;什么是TCP-IP、UDP&quot;&gt;&lt;a href=&quot;#什么是TCP-IP、UDP&quot; class=&quot;headerlink&quot; title=&quot;什么是TCP/IP、UDP&quot;&gt;&lt;/a&gt;什么是TCP/IP、UDP&lt;/h2&gt;&lt;p&gt;TCP/IP（Transmission Control Protocol/Internet Protocol）即传输控制协议/网间协议，是一个工业标准的协议集，它是为广域网（WANs）设计的。&lt;br&gt;UDP（User Data Protocol，用户数据报协议）是与TCP相对应的协议。它是属于TCP/IP协议族中的一种。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2952111-571c60b933d42028.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;1.jpg&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="网络" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
