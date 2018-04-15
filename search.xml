@@ -6,14 +6,6 @@
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[明天新的一天]]></title>
-    <url>%2F2018%2F04%2F08%2F%E6%98%8E%E5%A4%A9%E6%96%B0%E7%9A%84%E4%B8%80%E5%A4%A9%2F</url>
-    <content type="text"><![CDATA[今天早上跟HR提交了辞职，然后就是跟HR聊工作以及去向的问题。我明确提出了离职的原因——工资太低。然后就是HR说可以申请提高薪水。我也没有那么傻，既然都提出离职了，我留下来工作怎么做，简直就是给自己挖坑呀。 对了，我还在好奇为什么富海那边给的工资那么少，至少得调查一下当前北京应届毕业生的薪资水平吧。讲真，这个工资实习生差不多都可以拿到吧。今天HR跟高总讲了我离职的事情，我也听到了高总在那边碎碎念，说什么龚老师的学生又要走了。我为什么走您不好好考虑一下？说真的，我不觉得高总是一个好老板，面试了这么多公司，富海的体验不是很好，面试过程很令人尴尬。 明天就可以去新公司上班了，虽然是实习，但内心也是开心的，年轻人多，交流成本比较低。最重要的是做自己喜欢做的工作。准备睡觉，明天去独到科技学习新知识喽，逃~ 明天起是我正式转行的第一天，Mark一下！！！]]></content>
-      <tags>
-        <tag>成长日记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Python3 解包和压包]]></title>
     <url>%2F2018%2F04%2F06%2FPython3-%E8%A7%A3%E5%8C%85%E5%92%8C%E5%8E%8B%E5%8C%85%2F</url>
     <content type="text"><![CDATA[Python中的解包可以这样理解：一个可迭代对象是一个整体，想把可迭代对象中每个元素当成一个个个体剥离出来，这个过程就是解包。下面将举例说明。 可迭代对象每个元素赋值给一个变量12345678910111213141516171819202122232425262728293031323334353637383940# 列表&gt;&gt;&gt; name, age, date = ['Bob', 20, '2018-1-1']&gt;&gt;&gt; name'Bob'&gt;&gt;&gt; age20&gt;&gt;&gt; date'2018-1-1'&gt;&gt;&gt; a, b, c = enumerate(['a', 'b', 'c'])&gt;&gt;&gt; a(0, 'a')# 元组&gt;&gt;&gt; a, b, c = ('a', 'b', 'c')&gt;&gt;&gt; a'a'# 字典&gt;&gt;&gt; a, b, c = &#123;'a':1, 'b':2, 'c':3&#125;&gt;&gt;&gt; a'a'&gt;&gt;&gt; a, b, c = &#123;'a':1, 'b':2, 'c':3&#125;.items()&gt;&gt;&gt; a('a', 1)&gt;&gt;&gt; a, b, c = &#123;'a':1, 'b':2, 'c':3&#125;.values()&gt;&gt;&gt; a1# 字符串&gt;&gt;&gt; a, b, c = 'abc'&gt;&gt;&gt; a'a'# 生成器&gt;&gt;&gt; a, b, c = (x + 1 for x in range(3))&gt;&gt;&gt; b2 星号”*”的使用—解包比如我们要计算平均分，去除最高分和最低分，除了用切片，还可以用解包的方式获得中间的数值123&gt;&gt;&gt; small, *new, big = sorted([93,12,33,55,99])&gt;&gt;&gt; new[33, 55, 93] 压包与解包123456789a = ['a', 'b', 'c']b = [1, 2, 3]for i, j in zip(a, b): print(i+j)# 输出135 分析以上代码： zip函数将a, b压包程一个可迭代对象 对可迭代对象的每一个元素（(‘a’, 1)）进行解包（i, j = (‘a’, 1)） 接下来可以分别调用i, j变量进行计算 再举一个例子：1234567891011l = [ ('Bob', '1991', '60'), ('Bill', '1992', '65'), ('Mike', '1993', '70')]for name, *args in l: print(name, args)Bob ['1991', '60']Bill ['1992', '65']Mike ['1993', '70'] “_”的用法当一些变量不用时，用_表示是更好的写法，可以让读代码的人知道这个元素是不要的123456&gt;&gt;&gt; p = ('Bob', 20, 50, (11,20,2000))&gt;&gt;&gt; name, *_, (*_, year) = p&gt;&gt;&gt; name'Bob'&gt;&gt;&gt; year2000 多变量同时赋值1234&gt;&gt;&gt; a, b = 1, 2&gt;&gt;&gt; a = 1, 2&gt;&gt;&gt; a(1, 2) 下面用法都会报错12*a = 1, 3a,b,c = 1,2 但是这种写法是可以的123&gt;&gt;&gt; *a, = 1,2&gt;&gt;&gt; a[1,2] “*”之可变参数函数定义时，我们使用*的可变参数，其实也是压包解包过程12345def func(*args): print(args)&gt;&gt;&gt; func(1,2,3,4)(1, 2, 3, 4) 参数用num表示，num变量就可以当成元组调用了。其实这个过程相当于num, = 1,2,5,6 “*”之关键字参数12345def func(**kw): print(kw)&gt;&gt;&gt; func(name = 'Bob', age = 10, weight = 60)&#123;'name' = 'Bob', 'age' = 10, 'weight' = 60&#125; 键值对传入**kw，kw就可以表示相应字典。 **的用法只在函数定义中使用，不能这样使用1a, **b = &#123;'name' = 'Bob', 'age' = 10, 'weight' = 60&#125; 可变参数与关键字参数的细节问题函数传入实参时，可变参数*之前的参数不能指定参数名123456789101112def func(a, *b): print(a) print(b)&gt;&gt;&gt; func(a=1, 2,3,4)File "&lt;ipython-input-17-978eea76866e&gt;", line 1 func(a=1, 2,3,4) ^SyntaxError: positional argument follows keyword argumentfunc(1,2,3,4)1(2,3,4) 函数传入实参时，可变参数*之后的参数必须指定参数名，否则就会被归到可变参数之中1234567891011121314def func(a, *b, c = None): print(a) print(b) print(c)&gt;&gt;&gt; func(1,2,3,4)1(2,3,4)None&gt;&gt;&gt; func(1,2,3,c=4)1(2,3)4 如果一个函数想要使用时必须明确指定参数名，可以将所有参数都放在可变参数之后，而可变参数不用管它就可以，也不用命名，如下:1234567def func(*, a, b): print(a) print(b)&gt;&gt;&gt; func(a = 1, b = 2)12 可变参数的这两条特性，可以用于将 只需要按照位置赋值的参数 和 需要明确指定参数名的参数区分开来 关键字参数都只能作为最后一个参数，前面的参数按照位置赋值还是名称赋值都可以1234567891011def func(a, *b, c, **d): print(a) print(b) print(c) print(d)&gt;&gt;&gt; func(1,2,3,c=4,m=5,n=6)1(2,3)4&#123;'m': 5, 'n':6&#125; 可变参数与关键词参数共同使用以表示任意参数下面是这一点在装饰器当中的使用 123456789101112131415def mydecorator(func): def wrapper(*args, **kw): print('i am using a decorator') return func(*args, **kw) return wrapper@mydecoratordef myfun(a, b): print(a) print(b)&gt;&gt;&gt; myfun(1, b = 2)i am using a decorator12 wrapper函数使用*args, **kw作为参数，则被修饰的myfun函数需要的参数无论是什么样的，传入wrapper都不会报错，这保证了装饰器可以修饰各种各样函数的灵活性。毕竟我们一般在函数中传入参数时，要么所有参数名都写，要么前面几个不写，后面的会写，这样使用*args, **kw完全没有问题。 解包作为参数传入函数中首先定义一个函数12def myfun(a, b): print(a + b) 列表|元组的解包123&gt;&gt;&gt; n = [1,2]&gt;&gt;&gt; myfun(*n)3 字典的解包12345&gt;&gt;&gt; mydict = &#123;'a':1, 'b':2&#125;&gt;&gt;&gt; myfun(**mydict)3&gt;&gt;&gt; myfun(*mydict)'ab' 一个简单的应用123&gt;&gt;&gt; Bob = &#123;'name': 'Bob', 'age':20&#125;&gt;&gt;&gt; "&#123;name&#125;'s age is &#123;age&#125;".format(**Bob)"Bob's age is 20" 多返回值函数下面过程也涉及到了解包12345678def myfun(a, b): print a+1, b+1&gt;&gt;&gt; m,n = myfun(1,2)&gt;&gt;&gt; m2&gt;&gt;&gt; n3 其本身是一个元组123&gt;&gt;&gt; p = myfun(1, 2)&gt;&gt;&gt; p(2, 3)]]></content>
@@ -22,14 +14,6 @@
       </categories>
       <tags>
         <tag>Python3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[北京落户要看专业？？？]]></title>
-    <url>%2F2018%2F03%2F30%2F%E5%8C%97%E4%BA%AC%E8%90%BD%E6%88%B7%E8%A6%81%E7%9C%8B%E4%B8%93%E4%B8%9A%EF%BC%9F%EF%BC%9F%EF%BC%9F%2F</url>
-    <content type="text"><![CDATA[本来想转行去互联网公司（进了终面了），顺便可以那个户口，一举两得多美好啊。然鹅，HR告诉我说（出于好意），北京落户需要看专业，如果不是计算机专业的话落户有点悬。 我本科、硕士都干了些啥啊！！！ 突然无比讨厌我这个专业。。。无fuck说！]]></content>
-      <tags>
-        <tag>成长日记</tag>
       </tags>
   </entry>
   <entry>
@@ -94,30 +78,6 @@
       </categories>
       <tags>
         <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[烦~~~]]></title>
-    <url>%2F2018%2F03%2F25%2F%E7%83%A6%2F</url>
-    <content type="text"><![CDATA[想到前几天某公司面试的情形。讲真，面试体验超级差，感觉不被尊重。我估计这帮人在体制内呆久了都这副嘴脸吧，真他妈恶心。 想到自己的转行过程，太他妈坎坷了。算了一下，2017年几乎就是在出差中度过的，哪有那么多时间看书写代码。好歹拼了命的把毕业做完了，毕业答辩的那一天，很痛苦，答辩完的那一刻，我一点也高兴不起来。唯一能让我心里舒服一点的就是我可以有专门的时间来做自己想做的事情。 心里有一万个字想去写，但是我不能在浪费这个时间。还是好好学习，天天向上吧！]]></content>
-      <tags>
-        <tag>成长日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[今天买了个腾讯云服务器，✧(≖ ◡ ≖✿)嘿嘿]]></title>
-    <url>%2F2018%2F03%2F23%2F%E4%BB%8A%E5%A4%A9%E4%B9%B0%E4%BA%86%E4%B8%AA%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%8C%E2%9C%A7-%E2%89%96-%E2%97%A1-%E2%89%96%E2%9C%BF-%E5%98%BF%E5%98%BF%2F</url>
-    <content type="text"><![CDATA[有点后悔读书的时候没有购买相关的学生优惠的云服务产品，你看，现在毕业了，买个最低配置的云服务器，都感觉心在滴血呢。毕业了，日子确实难过了，前几天面试还被一个美国人鄙视一番，唉，现在有钱人放个屁都是真理，可惜，我不吃那一套的。最近没有工作，一直在努力的转行中，手头确实紧。不过还好，女朋友也没有嫌弃我，还挺支持我，我也要加油了。 不说了，去折腾服务器了，一天差不多一块钱呢，逃~~~]]></content>
-      <tags>
-        <tag>成长日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[今天被无情的鄙视了。。。]]></title>
-    <url>%2F2018%2F03%2F22%2F%E4%BB%8A%E5%A4%A9%E8%A2%AB%E6%97%A0%E6%83%85%E7%9A%84%E9%84%99%E8%A7%86%E4%BA%86%E3%80%82%E3%80%82%E3%80%82%2F</url>
-    <content type="text"><![CDATA[他是一个移民美国的人中老年人，面试谈话过程感觉超级不舒服，哎~~~ 算了，刚毕业初入社会，真他妈的见识到了，什么人都有啊。]]></content>
-      <tags>
-        <tag>成长日记</tag>
       </tags>
   </entry>
   <entry>
