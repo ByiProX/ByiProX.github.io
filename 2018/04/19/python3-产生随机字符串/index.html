@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="12345678910tree test.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 1234567891011121314151617181920212223# 1. for-in dir/subdir">
+<meta name="description" content="123456import randomimport string# 长度为16的随机字符串rand_str = &apos;&apos;.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))">
 <meta name="keywords" content="Python3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python3 实现遍历目录与子目录，并抓取.py文件">
-<meta property="og:url" content="http://yoursite.com/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/index.html">
+<meta property="og:title" content="python3 产生随机字符串">
+<meta property="og:url" content="http://yoursite.com/2018/04/19/python3-产生随机字符串/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="12345678910tree test.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 1234567891011121314151617181920212223# 1. for-in dir/subdir">
+<meta property="og:description" content="123456import randomimport string# 长度为16的随机字符串rand_str = &apos;&apos;.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T09:04:15.759Z">
+<meta property="og:updated_time" content="2018-04-19T08:28:16.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python3 实现遍历目录与子目录，并抓取.py文件">
-<meta name="twitter:description" content="12345678910tree test.├── subtest1│   ├── subsubdir│   │   └── sub.py│   └── test1.py├── subtest2│   └── test2.py└── subtest3    └── test3.py 1234567891011121314151617181920212223# 1. for-in dir/subdir">
+<meta name="twitter:title" content="python3 产生随机字符串">
+<meta name="twitter:description" content="123456import randomimport string# 长度为16的随机字符串rand_str = &apos;&apos;.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/19/python3-产生随机字符串/"/>
 
 
 
 
 
-  <title>Python3 实现遍历目录与子目录，并抓取.py文件 | Quentin's Blog</title>
+  <title>python3 产生随机字符串 | Quentin's Blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/19/python3-产生随机字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python3 实现遍历目录与子目录，并抓取.py文件</h1>
+          <h1 class="post-title" itemprop="name headline">python3 产生随机字符串</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T16:54:54+08:00">
-                2018-03-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-19T16:26:53+08:00">
+                2018-04-19
               </time>
             
 
@@ -352,7 +352,7 @@
 
           
           
-             <span id="/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/" class="leancloud_visitors" data-flag-title="Python3 实现遍历目录与子目录，并抓取.py文件">
+             <span id="/2018/04/19/python3-产生随机字符串/" class="leancloud_visitors" data-flag-title="python3 产生随机字符串">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -383,8 +383,7 @@
       
 
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tree <span class="built_in">test</span></span><br><span class="line">.</span><br><span class="line">├── subtest1</span><br><span class="line">│   ├── subsubdir</span><br><span class="line">│   │   └── sub.py</span><br><span class="line">│   └── test1.py</span><br><span class="line">├── subtest2</span><br><span class="line">│   └── test2.py</span><br><span class="line">└── subtest3</span><br><span class="line">    └── test3.py</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. for-in dir/subdir to get the filesname  </span></span><br><span class="line"><span class="comment"># 2. splitext filename to filter  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getFiles</span><span class="params">(dir, suffix)</span>:</span>  </span><br><span class="line"></span><br><span class="line">    res = []  </span><br><span class="line">    <span class="keyword">for</span> root, directory, files <span class="keyword">in</span> os.walk(dir):  </span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> files:  </span><br><span class="line">            name, suf = os.path.splitext(filename)  </span><br><span class="line">            <span class="keyword">if</span> suf == suffix:  </span><br><span class="line">                res.append(os.path.join(root, filename))  </span><br><span class="line">    <span class="keyword">return</span> res  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> getFiles(<span class="string">"./"</span>, <span class="string">'.py'</span>):  </span><br><span class="line">    print(file)</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># ./walkdir.py</span></span><br><span class="line"><span class="comment"># ./subtest2/test2.py</span></span><br><span class="line"><span class="comment"># ./subtest3/test3.py</span></span><br><span class="line"><span class="comment"># ./subtest1/test1.py</span></span><br><span class="line"><span class="comment"># ./subtest1/subsubdir/sub.py</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 长度为16的随机字符串</span></span><br><span class="line">rand_str = <span class="string">''</span>.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">16</span>))</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -415,8 +414,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/12/Python3-os和sys模块的作用，以及常用的模块方法/" rel="next" title="Python3 os和sys模块的作用，以及常用的模块方法">
-                <i class="fa fa-chevron-left"></i> Python3 os和sys模块的作用，以及常用的模块方法
+              <a href="/2018/04/09/HTML里引入CSS的四种方式/" rel="next" title="HTML里引入CSS的四种方式">
+                <i class="fa fa-chevron-left"></i> HTML里引入CSS的四种方式
               </a>
             
           </div>
@@ -424,10 +423,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/13/什么是Socket-转/" rel="prev" title="什么是Socket(转)">
-                什么是Socket(转) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -796,9 +791,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/';
-          this.page.identifier = '2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/';
-          this.page.title = 'Python3 实现遍历目录与子目录，并抓取.py文件';
+          this.page.url = 'http://yoursite.com/2018/04/19/python3-产生随机字符串/';
+          this.page.identifier = '2018/04/19/python3-产生随机字符串/';
+          this.page.title = 'python3 产生随机字符串';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://ByiProX.disqus.com/embed.js';

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python3 产生随机字符串]]></title>
+    <url>%2F2018%2F04%2F19%2Fpython3-%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[123456import randomimport string# 长度为16的随机字符串rand_str = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[HTML里引入CSS的四种方式]]></title>
     <url>%2F2018%2F04%2F09%2FHTML%E9%87%8C%E5%BC%95%E5%85%A5CSS%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F%2F</url>
     <content type="text"></content>
