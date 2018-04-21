@@ -14,7 +14,13 @@
   <entry>
     <title><![CDATA[HTML里引入CSS的四种方式]]></title>
     <url>%2F2018%2F04%2F09%2FHTML%E9%87%8C%E5%BC%95%E5%85%A5CSS%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[行内式：也称内联式，在标记的style属性中设定CSS样式。这种方式没有体现出CSS的优势； 嵌入式：将CSS样式集中写在网页的标签对的标签对中； 链接式：跟第4个的导入式都称外部式或者外联式，使用link引用外部CSS文件； 导入式：使用@import引用外部CSS文件；]]></content>
+      <categories>
+        <category>Frontend</category>
+      </categories>
+      <tags>
+        <tag>Frontend</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Python3 解包和压包]]></title>
@@ -484,7 +490,7 @@
   <entry>
     <title><![CDATA[Python3 is和==的区别]]></title>
     <url>%2F2018%2F03%2F03%2FPython3-is%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[Python 对象三要素要理解Python中is和==的区别，首先要理解Python对象的三个要素: 要素 说明 获取方式 id 身份标识，基本就是内存地址，用来唯一标识一个对象 id(obj) type 数据类型 type(obj) value 值 :—–: is和==区别 标识 名称 判断方法 is 同一性运算符 id == 比较运算符 value 程序举例例1： 12345a = &#123;"a":1, "b":2&#125;b = a.copy()a == b # True value一样a is b # False id不一样 例2： 1234567891011121314&gt;&gt;&gt; x = y = [4,5,6]&gt;&gt;&gt; z = [4,5,6]&gt;&gt;&gt; x == yTrue&gt;&gt;&gt; x == zTrue&gt;&gt;&gt; x is yTrue&gt;&gt;&gt; x is zFalse&gt;&gt;&gt;&gt;&gt;&gt; print id(x)&gt;&gt;&gt; print id(y)&gt;&gt;&gt; print id(z) 123456789101112131415161718192021222324252627282930313233343536&gt;&gt;&gt; a = 1 #a和b为数值类型&gt;&gt;&gt; b = 1&gt;&gt;&gt; a is bTrue&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = 'cheesezh' #a和b为字符串类型&gt;&gt;&gt; b = 'cheesezh'&gt;&gt;&gt; a is bTrue&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = (1,2,3) #a和b为元组类型&gt;&gt;&gt; b = (1,2,3)&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = [1,2,3] #a和b为list类型&gt;&gt;&gt; b = [1,2,3]&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = &#123;'cheese':1,'zh':2&#125; #a和b为dict类型&gt;&gt;&gt; b = &#123;'cheese':1,'zh':2&#125;&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = set([1,2,3])#a和b为set类型&gt;&gt;&gt; b = set([1,2,3])&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)]]></content>
+    <content type="text"><![CDATA[Python 对象三要素要理解Python中is和==的区别，首先要理解Python对象的三个要素: 要素 说明 获取方式 id 身份标识，基本就是内存地址，用来唯一标识一个对象 id(obj) type 数据类型 type(obj) value 值 :—–: is和==区别 标识 名称 判断方法 is 同一性运算符 id == 比较运算符 value 程序举例例1： 123456a = &#123;"a":1, "b":2&#125;b = a.copy()a == b # True value一样a is b # False id不一样 例2： 1234567891011121314&gt;&gt;&gt; x = y = [4,5,6]&gt;&gt;&gt; z = [4,5,6]&gt;&gt;&gt; x == yTrue&gt;&gt;&gt; x == zTrue&gt;&gt;&gt; x is yTrue&gt;&gt;&gt; x is zFalse&gt;&gt;&gt;&gt;&gt;&gt; print id(x)&gt;&gt;&gt; print id(y)&gt;&gt;&gt; print id(z) 123456789101112131415161718192021222324252627282930313233343536&gt;&gt;&gt; a = 1 #a和b为数值类型&gt;&gt;&gt; b = 1&gt;&gt;&gt; a is bTrue&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = 'cheesezh' #a和b为字符串类型&gt;&gt;&gt; b = 'cheesezh'&gt;&gt;&gt; a is bTrue&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = (1,2,3) #a和b为元组类型&gt;&gt;&gt; b = (1,2,3)&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = [1,2,3] #a和b为list类型&gt;&gt;&gt; b = [1,2,3]&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = &#123;'cheese':1,'zh':2&#125; #a和b为dict类型&gt;&gt;&gt; b = &#123;'cheese':1,'zh':2&#125;&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)&gt;&gt;&gt; a = set([1,2,3])#a和b为set类型&gt;&gt;&gt; b = set([1,2,3])&gt;&gt;&gt; a is bFalse&gt;&gt;&gt; id(a)&gt;&gt;&gt; id(b)]]></content>
       <categories>
         <category>Python3 进阶</category>
       </categories>

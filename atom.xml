@@ -46,12 +46,27 @@
     <link href="http://yoursite.com/2018/04/09/HTML%E9%87%8C%E5%BC%95%E5%85%A5CSS%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
     <id>http://yoursite.com/2018/04/09/HTML里引入CSS的四种方式/</id>
     <published>2018-04-09T14:42:46.000Z</published>
-    <updated>2018-04-09T14:42:46.611Z</updated>
+    <updated>2018-04-21T03:34:43.171Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>行内式：也称内联式，在标记的style属性中设定CSS样式。这种方式没有体现出CSS的优势；</p></li><li><p>嵌入式：将CSS样式集中写在网页的<head></head>标签对的<style></style>标签对中；</p></li><li><p>链接式：跟第4个的导入式都称外部式或者外联式，使用link引用外部CSS文件；</p></li><li><p>导入式：使用@import引用外部CSS文件；</p></li></ol>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;行内式：也称内联式，在标记的style属性中设定CSS样式。这种方式没有体现出CSS的优势；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;嵌入式：将CSS样式集中写在网页的&lt;head&gt;&lt;/head&gt;标签对的&lt;style&gt;&lt;/style&gt;标签对中；&lt;/p&gt;
+&lt;/li&gt;
+      
+    
     </summary>
     
+      <category term="Frontend" scheme="http://yoursite.com/categories/Frontend/"/>
+    
+    
+      <category term="Frontend" scheme="http://yoursite.com/tags/Frontend/"/>
     
   </entry>
   
