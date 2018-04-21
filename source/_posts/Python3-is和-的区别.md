@@ -35,6 +35,7 @@ categories:
 a = {"a":1, "b":2}
 b = a.copy()
 
+
 a == b  # True value一样
 a is b  # False id不一样
 ```
