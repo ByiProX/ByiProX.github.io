@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[终端格式化打印json数据的方法]]></title>
     <url>%2F2018%2F04%2F25%2F%E7%BB%88%E7%AB%AF%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0json%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：12echo '&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;' | python -m json.tool 即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!]]></content>
+    <content type="text"><![CDATA[命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：1echo '&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;' | python -m json.tool 即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!]]></content>
       <tags>
         <tag>Mac OS 命令行</tag>
       </tags>

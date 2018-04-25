@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Quentin's Blog" type="application/atom+xml" />
 
@@ -81,18 +83,18 @@
 
 
 
-<meta name="description" content="命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：12echo &apos;&amp;#123;&quot;status&quot;:200,&quot;data&quot;:[&amp;#123;&quot;id&quot;:1000,&quot;name&quot;:&quot;John&quot;&amp;#125;,&amp;#123;&quot;id&quot;:1004,&quot;name&quot;:&quot;Tom&quot;&amp;#125;]&amp;#125;&apos; | python -m json.tool 即终端打印的json数据通过管">
+<meta name="description" content="命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：1echo &apos;&amp;#123;&quot;status&quot;:200,&quot;data&quot;:[&amp;#123;&quot;id&quot;:1000,&quot;name&quot;:&quot;John&quot;&amp;#125;,&amp;#123;&quot;id&quot;:1004,&quot;name&quot;:&quot;Tom&quot;&amp;#125;]&amp;#125;&apos; | python -m json.tool 即终端打印的json数据通过管道">
 <meta name="keywords" content="Mac OS 命令行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="终端格式化打印json数据的方法">
 <meta property="og:url" content="http://yoursite.com/2018/04/25/终端格式化打印json数据的方法/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：12echo &apos;&amp;#123;&quot;status&quot;:200,&quot;data&quot;:[&amp;#123;&quot;id&quot;:1000,&quot;name&quot;:&quot;John&quot;&amp;#125;,&amp;#123;&quot;id&quot;:1004,&quot;name&quot;:&quot;Tom&quot;&amp;#125;]&amp;#125;&apos; | python -m json.tool 即终端打印的json数据通过管">
+<meta property="og:description" content="命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：1echo &apos;&amp;#123;&quot;status&quot;:200,&quot;data&quot;:[&amp;#123;&quot;id&quot;:1000,&quot;name&quot;:&quot;John&quot;&amp;#125;,&amp;#123;&quot;id&quot;:1004,&quot;name&quot;:&quot;Tom&quot;&amp;#125;]&amp;#125;&apos; | python -m json.tool 即终端打印的json数据通过管道">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-25T03:31:12.118Z">
+<meta property="og:updated_time" content="2018-04-25T03:53:08.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="终端格式化打印json数据的方法">
-<meta name="twitter:description" content="命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：12echo &apos;&amp;#123;&quot;status&quot;:200,&quot;data&quot;:[&amp;#123;&quot;id&quot;:1000,&quot;name&quot;:&quot;John&quot;&amp;#125;,&amp;#123;&quot;id&quot;:1004,&quot;name&quot;:&quot;Tom&quot;&amp;#125;]&amp;#125;&apos; | python -m json.tool 即终端打印的json数据通过管">
+<meta name="twitter:description" content="命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：1echo &apos;&amp;#123;&quot;status&quot;:200,&quot;data&quot;:[&amp;#123;&quot;id&quot;:1000,&quot;name&quot;:&quot;John&quot;&amp;#125;,&amp;#123;&quot;id&quot;:1004,&quot;name&quot;:&quot;Tom&quot;&amp;#125;]&amp;#125;&apos; | python -m json.tool 即终端打印的json数据通过管道">
 
 
 
@@ -361,7 +363,7 @@
       
 
       
-        <p>命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;'</span> | python -m json.tool</span><br></pre></td></tr></table></figure></p>
+        <p>命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;'</span> | python -m json.tool</span><br></pre></td></tr></table></figure></p>
 <p>即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!</p>
 
       

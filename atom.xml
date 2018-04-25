@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-25T03:31:12.118Z</updated>
+  <updated>2018-04-25T03:53:08.755Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/04/25/%E7%BB%88%E7%AB%AF%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0json%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2018/04/25/终端格式化打印json数据的方法/</id>
     <published>2018-04-25T03:26:54.000Z</published>
-    <updated>2018-04-25T03:31:12.118Z</updated>
+    <updated>2018-04-25T03:53:08.755Z</updated>
     
-    <content type="html"><![CDATA[<p>命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;'</span> | python -m json.tool</span><br></pre></td></tr></table></figure></p><p>即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!</p>]]></content>
+    <content type="html"><![CDATA[<p>命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;'</span> | python -m json.tool</span><br></pre></td></tr></table></figure></p><p>即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!</p>]]></content>
     
     <summary type="html">
     
