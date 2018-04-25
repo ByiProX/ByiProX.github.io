@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[终端格式化打印json数据的方法]]></title>
+    <url>%2F2018%2F04%2F25%2F%E7%BB%88%E7%AB%AF%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0json%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：12echo '&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;' | python -m json.tool 即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!]]></content>
+      <tags>
+        <tag>Mac OS 命令行</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[python3 产生随机字符串]]></title>
     <url>%2F2018%2F04%2F19%2Fpython3-%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
     <content type="text"><![CDATA[123456import randomimport string# 长度为16的随机字符串rand_str = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(16))]]></content>
@@ -309,8 +317,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -766,8 +774,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
