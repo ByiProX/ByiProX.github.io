@@ -5,7 +5,6 @@ tags: Mac OS 命令行
 ---
 命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：
 ```bash
-
 echo '{"status":200,"data":[{"id":1000,"name":"John"},{"id":1004,"name":"Tom"}]}' | python -m json.tool
 ```
 
