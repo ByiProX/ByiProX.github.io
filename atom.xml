@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-05T15:24:12.874Z</updated>
+  <updated>2018-05-05T15:30:56.377Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,23 @@
     <link href="http://yoursite.com/2018/05/05/Linux%E4%B9%8Bcrontab%E5%91%BD%E4%BB%A4/"/>
     <id>http://yoursite.com/2018/05/05/Linux之crontab命令/</id>
     <published>2018-05-05T15:24:12.000Z</published>
-    <updated>2018-05-05T15:24:12.874Z</updated>
+    <updated>2018-05-05T15:30:56.377Z</updated>
+    
+    <content type="html"><![CDATA[<p>Schedule cron jobs to run on a time interval for the current user.<br>Job definition format: “(min) (hour) (day_of_month) (month) (day_of_week) command_to_execute”.</p><ul><li><p>Edit the crontab file for the current user:<br>  crontab -e</p></li><li><p>View a list of existing cron jobs for current user:<br>  crontab -l</p></li><li><p>Remove all cron jobs for the current user:<br>  crontab -r</p></li><li><p>Sample job which runs at 10:00 every day. <em> means any value:<br>  0 10 </em> <em> </em> path/to/script.sh</p></li><li><p>Sample job which runs every minute on the 3rd of April:</p><ul><li><ul><li>3 Apr * path/to/script.sh</li></ul></li></ul></li><li><p>Sample job which runs at 02:30 every Friday:<br>  30 2 <em> </em> Fri path/to/script.sh</p></li></ul>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;Schedule cron jobs to run on a time interval for the current user.&lt;br&gt;Job definition format: “(min) (hour) (day_of_month) (month) (day_of
+      
+    
     </summary>
     
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
+    
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
     
   </entry>
   
@@ -35,7 +46,7 @@
     <link href="http://yoursite.com/2018/04/25/%E7%BB%88%E7%AB%AF%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0json%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2018/04/25/终端格式化打印json数据的方法/</id>
     <published>2018-04-25T03:26:54.000Z</published>
-    <updated>2018-04-25T03:53:08.755Z</updated>
+    <updated>2018-05-05T15:30:58.502Z</updated>
     
     <content type="html"><![CDATA[<p>命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;'</span> | python -m json.tool</span><br></pre></td></tr></table></figure></p><p>即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!</p>]]></content>
     
@@ -48,8 +59,10 @@
     
     </summary>
     
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
     
-      <category term="Mac OS 命令行" scheme="http://yoursite.com/tags/Mac-OS-%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
     
   </entry>
   

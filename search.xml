@@ -3,14 +3,23 @@
   <entry>
     <title><![CDATA[Linux之crontab命令]]></title>
     <url>%2F2018%2F05%2F05%2FLinux%E4%B9%8Bcrontab%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[Schedule cron jobs to run on a time interval for the current user.Job definition format: “(min) (hour) (day_of_month) (month) (day_of_week) command_to_execute”. Edit the crontab file for the current user: crontab -e View a list of existing cron jobs for current user: crontab -l Remove all cron jobs for the current user: crontab -r Sample job which runs at 10:00 every day. means any value: 0 10 path/to/script.sh Sample job which runs every minute on the 3rd of April: 3 Apr * path/to/script.sh Sample job which runs at 02:30 every Friday: 30 2 Fri path/to/script.sh]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[终端格式化打印json数据的方法]]></title>
     <url>%2F2018%2F04%2F25%2F%E7%BB%88%E7%AB%AF%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0json%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：1echo '&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;' | python -m json.tool 即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
       <tags>
-        <tag>Mac OS 命令行</tag>
+        <tag>Linux/Mac OS</tag>
       </tags>
   </entry>
   <entry>
@@ -459,10 +468,10 @@
     <url>%2F2018%2F03%2F03%2FMac-OS-%E5%91%BD%E4%BB%A4%E4%B9%8B%E6%96%87%E4%BB%B6-%E5%A4%B9-%E5%88%A0%E9%99%A4%2F</url>
     <content type="text"><![CDATA[rmdir删除空目录，不过一旦目录非空会提示Directiry not empty 使用rm既可以删除文件又可以删除文件夹删除文件夹（无论文件夹是否为空），使用 -rf 命令即可。即：1$ rm -rf 目录名字 -r 就是向下递归，不管有多少级目录，一并删除-f 就是直接强行删除，不作任何提示的意思删除文件夹实例：1$ rm -rf /User/Dhyana/desktop 将会删除 /User/Dhyana/desktop目录以及其下所有文件、文件夹 删除文件使用实例：1$ rm -f /User/Dhyana/desktop/test.py 将会强制删除/User/Dhyana/desktop/test.py这个文件 值得注意的是：使用这个rm -rf的时候一定要格外小心，linux没有回收站的，删除之后再想找回就很难了。有一个非常好笑的笑话就是命令行中输入12$ rm -rf /.*# 千万不要输入此命令，否则清空整个操作系统，后果自负]]></content>
       <categories>
-        <category>Mac OS 命令行</category>
+        <category>Linux/Mac OS</category>
       </categories>
       <tags>
-        <tag>Mac OS 命令行</tag>
+        <tag>Linux/Mac OS</tag>
       </tags>
   </entry>
   <entry>
