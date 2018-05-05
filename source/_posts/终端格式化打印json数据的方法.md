@@ -1,7 +1,10 @@
 ---
 title: 终端格式化打印json数据的方法
 date: 2018-04-25 11:26:54
-tags: Mac OS 命令行
+tags:
+  - Linux/Mac OS
+categories:
+  - Linux/Mac OS
 ---
 命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：
 ```bash

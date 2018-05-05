@@ -2,9 +2,9 @@
 title: Mac OS 命令之文件(夹)删除
 date: 2018-03-03 13:40:34
 tags:
-  - Mac OS 命令行
+  - Linux/Mac OS
 categories:
-  - Mac OS 命令行
+  - Linux/Mac OS
 ---
 `rmdir`删除空目录，不过一旦目录非空会提示
 Directiry not empty
