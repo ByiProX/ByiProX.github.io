@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-08T10:14:10.479Z</updated>
+  <updated>2018-05-08T10:55:10.551Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac下profile文件</title>
+    <link href="http://yoursite.com/2018/05/08/Mac%E4%B8%8Bprofile%E6%96%87%E4%BB%B6/"/>
+    <id>http://yoursite.com/2018/05/08/Mac下profile文件/</id>
+    <published>2018-05-08T10:50:47.000Z</published>
+    <updated>2018-05-08T10:55:10.551Z</updated>
+    
+    <content type="html"><![CDATA[<p>当你的home下面有<code>.bash_profile</code>或者<code>.bash_login</code>的时候,会忽略调<code>.profile</code>.   </p><p><code>.profile</code>主要有一下几种方式<br>/etc/profile<br>~/.bash_profile<br>~/.bash_login<br>~/.profile<br>~/.bashrc<br>~/.bash_logout   </p><p>/etc/profile<br><code>登录的时候</code>读入,默认的设定文件.<br>~/.bash_profile<br><code>登录之后</code>在/etc/profile载入之后载入,十分重要的配置文件<br>~/.bash_login<br><code>登录之后</code>如果~/.bash_profile不存在的话,载入这个文件<br>~/.profile<br>登录之后~/.bash_login不存在的话,才载入这个文件<br>~/.bashrc<br>bash shell打开的时候载入</p><p><code>etc下的配置是针对系统,~下的主要是针对用户</code></p><p>参考：<a href="https://blog.csdn.net/xdonx/article/details/8312938" target="_blank" rel="noopener">https://blog.csdn.net/xdonx/article/details/8312938</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;当你的home下面有&lt;code&gt;.bash_profile&lt;/code&gt;或者&lt;code&gt;.bash_login&lt;/code&gt;的时候,会忽略调&lt;code&gt;.profile&lt;/code&gt;.   &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.profile&lt;/code&gt;主要有一下几种方式&lt;br&gt;
+      
+    
+    </summary>
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
+    
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux之crontab命令</title>
@@ -621,31 +647,6 @@
     
     
       <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 实现遍历目录与子目录，并抓取.py文件</title>
-    <link href="http://yoursite.com/2018/03/12/Python3-%E5%AE%9E%E7%8E%B0%E9%81%8D%E5%8E%86%E7%9B%AE%E5%BD%95%E4%B8%8E%E5%AD%90%E7%9B%AE%E5%BD%95%EF%BC%8C%E5%B9%B6%E6%8A%93%E5%8F%96-py%E6%96%87%E4%BB%B6/"/>
-    <id>http://yoursite.com/2018/03/12/Python3-实现遍历目录与子目录，并抓取-py文件/</id>
-    <published>2018-03-12T08:54:54.000Z</published>
-    <updated>2018-03-12T09:04:15.759Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tree <span class="built_in">test</span></span><br><span class="line">.</span><br><span class="line">├── subtest1</span><br><span class="line">│   ├── subsubdir</span><br><span class="line">│   │   └── sub.py</span><br><span class="line">│   └── test1.py</span><br><span class="line">├── subtest2</span><br><span class="line">│   └── test2.py</span><br><span class="line">└── subtest3</span><br><span class="line">    └── test3.py</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. for-in dir/subdir to get the filesname  </span></span><br><span class="line"><span class="comment"># 2. splitext filename to filter  </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getFiles</span><span class="params">(dir, suffix)</span>:</span>  </span><br><span class="line"></span><br><span class="line">    res = []  </span><br><span class="line">    <span class="keyword">for</span> root, directory, files <span class="keyword">in</span> os.walk(dir):  </span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> files:  </span><br><span class="line">            name, suf = os.path.splitext(filename)  </span><br><span class="line">            <span class="keyword">if</span> suf == suffix:  </span><br><span class="line">                res.append(os.path.join(root, filename))  </span><br><span class="line">    <span class="keyword">return</span> res  </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> getFiles(<span class="string">"./"</span>, <span class="string">'.py'</span>):  </span><br><span class="line">    print(file)</span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># ./walkdir.py</span></span><br><span class="line"><span class="comment"># ./subtest2/test2.py</span></span><br><span class="line"><span class="comment"># ./subtest3/test3.py</span></span><br><span class="line"><span class="comment"># ./subtest1/test1.py</span></span><br><span class="line"><span class="comment"># ./subtest1/subsubdir/sub.py</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=
-      
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
   </entry>
   
