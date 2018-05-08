@@ -382,30 +382,14 @@
 
       
         
-          
-            <p>Schedule cron jobs to run on a time interval for the current user.<br>Job definition format: “(min) (hour) (day_of_month) (month) (day_of_week) command_to_execute”.</p>
-<ul>
-<li><p>Edit the crontab file for the current user:<br>  crontab -e</p>
-</li>
-<li><p>View a list of existing cron jobs for current user:<br>  crontab -l</p>
-</li>
-<li><p>Remove all cron jobs for the current user:<br>  crontab -r</p>
-</li>
-<li><p>Sample job which runs at 10:00 every day. <em> means any value:<br>  0 10 </em> <em> </em> path/to/script.sh</p>
-</li>
-<li><p>Sample job which runs every minute on the 3rd of April:</p>
-<ul>
-<li><ul>
-<li>3 Apr * path/to/script.sh</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Sample job which runs at 02:30 every Friday:<br>  30 2 <em> </em> Fri path/to/script.sh</p>
-</li>
-</ul>
-
-          
+          <h2 id="tldr-基本用法"><a href="#tldr-基本用法" class="headerlink" title="tldr 基本用法"></a>tldr 基本用法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Schedule cron <span class="built_in">jobs</span> to run on a time interval <span class="keyword">for</span> the current user.</span><br><span class="line">Job definition format: <span class="string">"(min) (hour) (day_of_month) (month) (day_of_week) command_to_execute"</span>.</span><br><span class="line"></span><br><span class="line">- Edit the crontab file <span class="keyword">for</span> the current user:</span><br><span class="line">    crontab -e</span><br><span class="line"></span><br><span class="line">- View a list of existing cron <span class="built_in">jobs</span> <span class="keyword">for</span> current user:</span><br><span class="line">    crontab -l</span><br><span class="line"></span><br><span class="line">- Remove all cron <span class="built_in">jobs</span> <span class="keyword">for</span> the current user:</span><br><span class="line">    crontab -r</span><br><span class="line"></span><br><span class="line">- Sample job <span class="built_in">which</span> runs at 10:00 every day. * means any value:</span><br><span class="line">    0 10 * * * path/to/script.sh</span><br><span class="line"></span><br><span class="line">- Sample job <span class="built_in">which</span> runs every minute on the 3rd of April:</span><br><span class="line">    * * 3 Apr * path/to/script.sh</span><br><span class="line"></span><br><span class="line">- Sample job <span class="built_in">which</span> runs at 02:30 every Friday:</span><br><span class="line">    30 2 * * Fri path/to/script.sh</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/05/Linux之crontab命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
