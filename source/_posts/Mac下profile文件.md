@@ -28,6 +28,7 @@ categories:
 ~/.bashrc   
 bash shell打开的时候载入
 
+<!-- more -->
 `etc下的配置是针对系统,~下的主要是针对用户`
 
 参考：https://blog.csdn.net/xdonx/article/details/8312938
