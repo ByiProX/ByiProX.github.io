@@ -44,17 +44,15 @@
     <link href="http://yoursite.com/2018/05/08/Mac%E4%B8%8Bprofile%E6%96%87%E4%BB%B6/"/>
     <id>http://yoursite.com/2018/05/08/Mac下profile文件/</id>
     <published>2018-05-08T10:50:47.000Z</published>
-    <updated>2018-05-08T10:55:10.551Z</updated>
+    <updated>2018-05-11T06:11:47.289Z</updated>
     
-    <content type="html"><![CDATA[<p>当你的home下面有<code>.bash_profile</code>或者<code>.bash_login</code>的时候,会忽略调<code>.profile</code>.   </p><p><code>.profile</code>主要有一下几种方式<br>/etc/profile<br>~/.bash_profile<br>~/.bash_login<br>~/.profile<br>~/.bashrc<br>~/.bash_logout   </p><p>/etc/profile<br><code>登录的时候</code>读入,默认的设定文件.<br>~/.bash_profile<br><code>登录之后</code>在/etc/profile载入之后载入,十分重要的配置文件<br>~/.bash_login<br><code>登录之后</code>如果~/.bash_profile不存在的话,载入这个文件<br>~/.profile<br>登录之后~/.bash_login不存在的话,才载入这个文件<br>~/.bashrc<br>bash shell打开的时候载入</p><p><code>etc下的配置是针对系统,~下的主要是针对用户</code></p><p>参考：<a href="https://blog.csdn.net/xdonx/article/details/8312938" target="_blank" rel="noopener">https://blog.csdn.net/xdonx/article/details/8312938</a></p>]]></content>
+    <content type="html"><![CDATA[<p>当你的home下面有<code>.bash_profile</code>或者<code>.bash_login</code>的时候,会忽略调<code>.profile</code>.   </p><p><code>.profile</code>主要有一下几种方式<br>/etc/profile<br>~/.bash_profile<br>~/.bash_login<br>~/.profile<br>~/.bashrc<br>~/.bash_logout   </p><p>/etc/profile<br><code>登录的时候</code>读入,默认的设定文件.<br>~/.bash_profile<br><code>登录之后</code>在/etc/profile载入之后载入,十分重要的配置文件<br>~/.bash_login<br><code>登录之后</code>如果~/.bash_profile不存在的话,载入这个文件<br>~/.profile<br>登录之后~/.bash_login不存在的话,才载入这个文件<br>~/.bashrc<br>bash shell打开的时候载入</p><a id="more"></a><p><code>etc下的配置是针对系统,~下的主要是针对用户</code></p><p>参考：<a href="https://blog.csdn.net/xdonx/article/details/8312938" target="_blank" rel="noopener">https://blog.csdn.net/xdonx/article/details/8312938</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;当你的home下面有&lt;code&gt;.bash_profile&lt;/code&gt;或者&lt;code&gt;.bash_login&lt;/code&gt;的时候,会忽略调&lt;code&gt;.profile&lt;/code&gt;.   &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;.profile&lt;/code&gt;主要有一下几种方式&lt;br&gt;
-      
+      &lt;p&gt;当你的home下面有&lt;code&gt;.bash_profile&lt;/code&gt;或者&lt;code&gt;.bash_login&lt;/code&gt;的时候,会忽略调&lt;code&gt;.profile&lt;/code&gt;.   &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.profile&lt;/code&gt;主要有一下几种方式&lt;br&gt;/etc/profile&lt;br&gt;~/.bash_profile&lt;br&gt;~/.bash_login&lt;br&gt;~/.profile&lt;br&gt;~/.bashrc&lt;br&gt;~/.bash_logout   &lt;/p&gt;
+&lt;p&gt;/etc/profile&lt;br&gt;&lt;code&gt;登录的时候&lt;/code&gt;读入,默认的设定文件.&lt;br&gt;~/.bash_profile&lt;br&gt;&lt;code&gt;登录之后&lt;/code&gt;在/etc/profile载入之后载入,十分重要的配置文件&lt;br&gt;~/.bash_login&lt;br&gt;&lt;code&gt;登录之后&lt;/code&gt;如果~/.bash_profile不存在的话,载入这个文件&lt;br&gt;~/.profile&lt;br&gt;登录之后~/.bash_login不存在的话,才载入这个文件&lt;br&gt;~/.bashrc&lt;br&gt;bash shell打开的时候载入&lt;/p&gt;
     
     </summary>
     
