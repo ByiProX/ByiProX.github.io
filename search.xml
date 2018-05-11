@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mac下打开swf文件]]></title>
+    <url>%2F2018%2F05%2F11%2FMac%E4%B8%8B%E6%89%93%E5%BC%80swf%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[编辑一个HTML文件，写入如下代码：12345&lt;html&gt; &lt;body&gt; &lt;embed src="your-file-name-of-swf.swf" width="500" height="500"&gt;&lt;/embed&gt; &lt;/body&gt;&lt;/html&gt; 然后使用chrome打开即可，在chrome下使用打印功能，可以将swf文件保存为pdf格式。]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac下profile文件]]></title>
     <url>%2F2018%2F05%2F08%2FMac%E4%B8%8Bprofile%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[当你的home下面有.bash_profile或者.bash_login的时候,会忽略调.profile. .profile主要有一下几种方式/etc/profile~/.bash_profile~/.bash_login~/.profile~/.bashrc~/.bash_logout /etc/profile登录的时候读入,默认的设定文件.~/.bash_profile登录之后在/etc/profile载入之后载入,十分重要的配置文件~/.bash_login登录之后如果~/.bash_profile不存在的话,载入这个文件~/.profile登录之后~/.bash_login不存在的话,才载入这个文件~/.bashrcbash shell打开的时候载入 etc下的配置是针对系统,~下的主要是针对用户 参考：https://blog.csdn.net/xdonx/article/details/8312938]]></content>
@@ -342,8 +353,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -799,8 +810,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
