@@ -81,20 +81,17 @@
 
 
 
-<meta name="description" content="UDPClient.py12345678910111213141516from socket import *# serverName = &apos;140.143.38.125&apos;serverName = &apos;server.kunxiang.wang&apos;serverPort = 12000clientSocket = socket(AF_INET, SOCK_DGRAM)msg = input(&apos;please">
 <meta name="keywords" content="网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UDP 套接字编程">
 <meta property="og:url" content="http://yoursite.com/2018/07/25/UDP-套接字编程/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="UDPClient.py12345678910111213141516from socket import *# serverName = &apos;140.143.38.125&apos;serverName = &apos;server.kunxiang.wang&apos;serverPort = 12000clientSocket = socket(AF_INET, SOCK_DGRAM)msg = input(&apos;please">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-0d1e97d91078ff77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-016af56091643bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-25T12:16:27.317Z">
+<meta property="og:updated_time" content="2018-07-25T12:50:32.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UDP 套接字编程">
-<meta name="twitter:description" content="UDPClient.py12345678910111213141516from socket import *# serverName = &apos;140.143.38.125&apos;serverName = &apos;server.kunxiang.wang&apos;serverPort = 12000clientSocket = socket(AF_INET, SOCK_DGRAM)msg = input(&apos;please">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2952111-0d1e97d91078ff77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -386,9 +383,9 @@
       
 
       
-        <h2 id="UDPClient-py"><a href="#UDPClient-py" class="headerlink" title="UDPClient.py"></a>UDPClient.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># serverName = '140.143.38.125'</span></span><br><span class="line">serverName = <span class="string">'server.kunxiang.wang'</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line"></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line">msg = input(<span class="string">'please input lowercase sentence: '</span>).encode()</span><br><span class="line">clientSocket.sendto(msg, (serverName, serverPort))</span><br><span class="line"></span><br><span class="line">modifiedMsg, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line"></span><br><span class="line">print(modifiedMsg, serverAddress, end=<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">clientSocket.close()</span><br></pre></td></tr></table></figure>
+        <p><img src="https://upload-images.jianshu.io/upload_images/2952111-0d1e97d91078ff77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-07-25 at 19.54.43.png"></p>
 <a id="more"></a>
-<p><img src="https://upload-images.jianshu.io/upload_images/2952111-0d1e97d91078ff77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-07-25 at 19.54.43.png"></p>
+<h2 id="UDPClient-py"><a href="#UDPClient-py" class="headerlink" title="UDPClient.py"></a>UDPClient.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># serverName = '140.143.38.125'</span></span><br><span class="line">serverName = <span class="string">'server.kunxiang.wang'</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line"></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"></span><br><span class="line">msg = input(<span class="string">'please input lowercase sentence: '</span>).encode()</span><br><span class="line">clientSocket.sendto(msg, (serverName, serverPort))</span><br><span class="line"></span><br><span class="line">modifiedMsg, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line"></span><br><span class="line">print(modifiedMsg, serverAddress, end=<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">clientSocket.close()</span><br></pre></td></tr></table></figure>
 <h2 id="UDPServer-py"><a href="#UDPServer-py" class="headerlink" title="UDPServer.py"></a>UDPServer.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line">serverSocket.bind((<span class="string">''</span>, serverPort))</span><br><span class="line">print(<span class="string">'The server is ready to receive'</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    message, clientAddress = serverSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">    print(message)</span><br><span class="line">    print(clientAddress)</span><br><span class="line">    modifiedMessage = message.upper()</span><br><span class="line">    serverSocket.sendto(modifiedMessage, clientAddress)</span><br></pre></td></tr></table></figure>
 <p><img src="https://upload-images.jianshu.io/upload_images/2952111-016af56091643bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-07-25 at 19.55.29.png"></p>
 
@@ -430,6 +427,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/25/TCP-套接字编程/" rel="prev" title="TCP 套接字编程">
+                TCP 套接字编程 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -520,7 +521,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
