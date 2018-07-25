@@ -1,5 +1,5 @@
 rm backup_source_files.tar.gz
-tar zcvf backup_source_files.tar.gz ./source/
+tar zcvf backup_source_files.tar.gz ./source/ ./themes
 
 git add .
 git commit -m 'backup source files'
