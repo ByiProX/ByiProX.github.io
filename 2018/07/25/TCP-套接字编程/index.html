@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-016af56091643bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-25T12:51:48.221Z">
+<meta property="og:updated_time" content="2018-07-25T16:29:08.172Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP 套接字编程">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2952111-016af56091643bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -384,6 +384,8 @@
       
         <p><img src="https://upload-images.jianshu.io/upload_images/2952111-016af56091643bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-07-25 at 19.55.29.png"></p>
 <a id="more"></a>
+<h2 id="TCPClient-py"><a href="#TCPClient-py" class="headerlink" title="TCPClient.py"></a>TCPClient.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">serverName = <span class="string">'server.kunxiang.wang'</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line"></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">clientSocket.connect((serverName, serverPort))</span><br><span class="line"></span><br><span class="line">msg = input(<span class="string">'please input lowercase sentence: '</span>).encode()</span><br><span class="line"></span><br><span class="line">clientSocket.send(msg)</span><br><span class="line"></span><br><span class="line">modifiedMsg = clientSocket.recv(<span class="number">2048</span>)</span><br><span class="line"></span><br><span class="line">print(modifiedMsg)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">clientSocket.close()</span><br></pre></td></tr></table></figure>
+<h2 id="TCPServer-py"><a href="#TCPServer-py" class="headerlink" title="TCPServer.py"></a>TCPServer.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line"></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_STREAM)</span><br><span class="line">serverSocket.bind((<span class="string">''</span>, serverPort))</span><br><span class="line">serverSocket.listen(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'the server is ready to receive'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    connectionSocket, clientAddress = serverSocket.accept()</span><br><span class="line">    print(connectionSocket, clientAddress)</span><br><span class="line"></span><br><span class="line">    msg = connectionSocket.recv(<span class="number">1024</span>)</span><br><span class="line">    print(msg)</span><br><span class="line"></span><br><span class="line">    modifiedMsg = msg.upper()</span><br><span class="line">    connectionSocket.send(modifiedMsg)</span><br><span class="line">    connectionSocket.close()</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -483,8 +485,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -597,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCPClient-py"><span class="nav-number">1.</span> <span class="nav-text">TCPClient.py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCPServer-py"><span class="nav-number">2.</span> <span class="nav-text">TCPServer.py</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
