@@ -3,6 +3,6 @@ tar zcvf backup_source_files.tar.gz ./source/
 
 git add .
 git commit -m 'backup source files'
-git push
+git push origin master:Hexo-Blog
 
 echo "backup finished !"
