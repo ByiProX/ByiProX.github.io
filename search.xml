@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[UDP 套接字编程]]></title>
+    <url>%2F2018%2F07%2F25%2FUDP-%E5%A5%97%E6%8E%A5%E5%AD%97%E7%BC%96%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[UDPClient.py12345678910111213141516from socket import *# serverName = '140.143.38.125'serverName = 'server.kunxiang.wang'serverPort = 12000clientSocket = socket(AF_INET, SOCK_DGRAM)msg = input('please input lowercase sentence: ').encode()clientSocket.sendto(msg, (serverName, serverPort))modifiedMsg, serverAddress = clientSocket.recvfrom(2048)print(modifiedMsg, serverAddress, end='\n')clientSocket.close() UDPServer.py1234567891011from socket import *serverPort = 12000serverSocket = socket(AF_INET, SOCK_DGRAM)serverSocket.bind(('', serverPort))print('The server is ready to receive')while True: message, clientAddress = serverSocket.recvfrom(2048) print(message) print(clientAddress) modifiedMessage = message.upper() serverSocket.sendto(modifiedMessage, clientAddress)]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac下打开swf文件]]></title>
     <url>%2F2018%2F05%2F11%2FMac%E4%B8%8B%E6%89%93%E5%BC%80swf%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[编辑一个HTML文件，写入如下代码：12345&lt;html&gt; &lt;body&gt; &lt;embed src="your-file-name-of-swf.swf" width="500" height="500"&gt;&lt;/embed&gt; &lt;/body&gt;&lt;/html&gt; 然后使用chrome打开即可，在chrome下使用打印功能，可以将swf文件保存为pdf格式。]]></content>
