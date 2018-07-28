@@ -21,6 +21,10 @@ serverName = 'server.kunxiang.wang'
 serverPort = 12000
 
 clientSocket = socket(AF_INET, SOCK_STREAM)
+
+# 如果不绑定客户端进程端口，则自动选择端口
+clientSocket.bind(('', 34567))
+
 clientSocket.connect((serverName, serverPort))
 
 msg = input('please input lowercase sentence: ').encode()
