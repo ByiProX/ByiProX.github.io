@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux根目录下目录介绍及各项缩写全称]]></title>
+    <url>%2F2018%2F08%2F22%2FLinux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%90%84%E9%A1%B9%E7%BC%A9%E5%86%99%E5%85%A8%E7%A7%B0%2F</url>
+    <content type="text"><![CDATA[bin （binary） : 常见linux命令、系统所有用户命令目录文件 sbin （superuser binary） : root用户命令文件 dev （device） : 设备驱动存储目录文件 proc （process）: 进程信息文件 usr （UNIX Software Resource）: 与软件安装/执行相关 var （variable）: 变量文件目录，与系统运作过程有关 etc （etcetera）: 所有程序所需要的配置文件 lib （library）: 系统默认库路径文件 mnt （mount）: 挂载目录 tmp （temporary）: 临时文件目录 opt （option）: 可选目录（可以选择安装应用程序的目录） boot : 引导程序文件 home : 家目录（用户目录） root : root根目录 media : 多媒体及挂载目录]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[TCP 套接字编程]]></title>
     <url>%2F2018%2F07%2F25%2FTCP-%E5%A5%97%E6%8E%A5%E5%AD%97%E7%BC%96%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[TCPClient.py12345678910111213141516171819202122from socket import *serverName = 'server.kunxiang.wang'serverPort = 12000clientSocket = socket(AF_INET, SOCK_STREAM)# 如果不绑定客户端进程端口，则自动选择端口clientSocket.bind(('', 34567))clientSocket.connect((serverName, serverPort))msg = input('please input lowercase sentence: ').encode()clientSocket.send(msg)modifiedMsg = clientSocket.recv(2048)print(modifiedMsg)clientSocket.close() TCPServer.py1234567891011121314151617181920from socket import *serverPort = 12000serverSocket = socket(AF_INET, SOCK_STREAM)serverSocket.bind(('', serverPort))serverSocket.listen(1)print('the server is ready to receive')while True: connectionSocket, clientAddress = serverSocket.accept() print(connectionSocket, clientAddress) msg = connectionSocket.recv(1024) print(msg) modifiedMsg = msg.upper() connectionSocket.send(modifiedMsg) connectionSocket.close()]]></content>

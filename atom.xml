@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-28T06:47:41.361Z</updated>
+  <updated>2018-08-22T12:55:23.670Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux根目录下目录介绍及各项缩写全称</title>
+    <link href="http://yoursite.com/2018/08/22/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%90%84%E9%A1%B9%E7%BC%A9%E5%86%99%E5%85%A8%E7%A7%B0/"/>
+    <id>http://yoursite.com/2018/08/22/Linux根目录下目录介绍及各项缩写全称/</id>
+    <published>2018-08-22T12:43:53.000Z</published>
+    <updated>2018-08-22T12:55:23.670Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>bin  （binary） : 常见linux命令、系统所有用户命令目录文件</li><li>sbin （superuser binary） : root用户命令文件</li><li>dev  （device） : 设备驱动存储目录文件</li><li>proc （process）: 进程信息文件</li><li>usr  （UNIX Software Resource）: 与软件安装/执行相关</li><li>var  （variable）: 变量文件目录，与系统运作过程有关</li><li>etc  （etcetera）: 所有程序所需要的配置文件</li><li>lib  （library）: 系统默认库路径文件</li><li>mnt  （mount）: 挂载目录</li><li>tmp  （temporary）: 临时文件目录</li><li>opt  （option）: 可选目录（可以选择安装应用程序的目录）</li><li>boot  : 引导程序文件</li><li>home  : 家目录（用户目录）</li><li>root  : root根目录</li><li>media : 多媒体及挂载目录</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;bin  （binary） : 常见linux命令、系统所有用户命令目录文件&lt;/li&gt;
+&lt;li&gt;sbin （superuser binary） : root用户命令文件&lt;/li&gt;
+&lt;li&gt;dev  （device） : 设备驱动存储目录文件&lt;/li&gt;
+&lt;li&gt;p
+      
+    
+    </summary>
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
+    
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
+    
+  </entry>
   
   <entry>
     <title>TCP 套接字编程</title>
@@ -599,34 +628,6 @@
       <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
       <category term="设计模式" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python3 基于链表技术实现栈</title>
-    <link href="http://yoursite.com/2018/03/17/Python3-%E5%9F%BA%E4%BA%8E%E9%93%BE%E8%A1%A8%E6%8A%80%E6%9C%AF%E5%AE%9E%E7%8E%B0%E6%A0%88/"/>
-    <id>http://yoursite.com/2018/03/17/Python3-基于链表技术实现栈/</id>
-    <published>2018-03-17T07:40:12.000Z</published>
-    <updated>2018-03-18T20:13:11.735Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="定义异常类"><a href="#定义异常类" class="headerlink" title="定义异常类"></a>定义异常类</h2><p>实现栈结构之前，先考虑为操作失败的处理定义一个异常类。在这里通过继承已有的异常类定义自己的异常类。由于栈操作(如空栈弹出)时不满足需要可以看做参数值错误，采用下面的定义<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StackUnderflow</span><span class="params">(ValueError)</span>:</span>  <span class="comment"># 栈下溢，空栈访问</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p><h2 id="定义一个表结点类"><a href="#定义一个表结点类" class="headerlink" title="定义一个表结点类"></a>定义一个表结点类</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, elem, next_=None)</span>:</span></span><br><span class="line">        self.elem = elem</span><br><span class="line">        self.next = next_</span><br></pre></td></tr></table></figure><p>方法的第二个参数用名字<code>next_</code>，是为了避免与Python<code>标准函数next</code>重名</p><a id="more"></a><h2 id="栈的链接表实现"><a href="#栈的链接表实现" class="headerlink" title="栈的链接表实现"></a>栈的链接表实现</h2><p>由于所有栈的操作都在线性表的一端进行，采用链接表技术，自然应该用表头一端作为栈顶，表尾作为栈底，是操作实现方便，效率也高。按照这种安排，容易定义出一个链接栈类。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self._top = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self._top <span class="keyword">is</span> <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._top <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">raise</span> StackUnderflow(<span class="string">'in LStack.top()'</span>)</span><br><span class="line">        <span class="keyword">return</span> self._top.elem</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, elem)</span>:</span></span><br><span class="line">        self._top = LNode(elem, self._top)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._top <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">raise</span> StackUnderflow(<span class="string">'in LStack.pop()'</span>)</span><br><span class="line">        p = self._top</span><br><span class="line">        self._top = p.next</span><br><span class="line">        <span class="keyword">return</span> p.elem</span><br></pre></td></tr></table></figure></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li>《数据结构与算法Python语言描述》 — 裘宗燕</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;定义异常类&quot;&gt;&lt;a href=&quot;#定义异常类&quot; class=&quot;headerlink&quot; title=&quot;定义异常类&quot;&gt;&lt;/a&gt;定义异常类&lt;/h2&gt;&lt;p&gt;实现栈结构之前，先考虑为操作失败的处理定义一个异常类。在这里通过继承已有的异常类定义自己的异常类。由于栈操作(如空栈弹出)时不满足需要可以看做参数值错误，采用下面的定义&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;StackUnderflow&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(ValueError)&lt;/span&gt;:&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# 栈下溢，空栈访问&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;pass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&quot;定义一个表结点类&quot;&gt;&lt;a href=&quot;#定义一个表结点类&quot; class=&quot;headerlink&quot; title=&quot;定义一个表结点类&quot;&gt;&lt;/a&gt;定义一个表结点类&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LNode&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(self, elem, next_=None)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        self.elem = elem&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        self.next = next_&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;方法的第二个参数用名字&lt;code&gt;next_&lt;/code&gt;，是为了避免与Python&lt;code&gt;标准函数next&lt;/code&gt;重名&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Data Structures" scheme="http://yoursite.com/categories/Data-Structures/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
-    
-      <category term="Data Structures" scheme="http://yoursite.com/tags/Data-Structures/"/>
     
   </entry>
   
