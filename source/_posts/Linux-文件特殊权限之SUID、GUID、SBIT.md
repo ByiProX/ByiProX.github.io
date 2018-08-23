@@ -1,5 +1,5 @@
 ---
-title: Linxu 文件特殊权限之SUID、GUID、SBIT
+title: Linux 文件特殊权限之SUID、GUID、SBIT
 date: 2018-08-23 10:48:57
 tags:
   - Linux/Mac OS
