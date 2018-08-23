@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linxu 文件特殊权限之SUID、GUID、SBIT]]></title>
+    <url>%2F2018%2F08%2F23%2FLinxu-%E6%96%87%E4%BB%B6%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90%E4%B9%8BSUID%E3%80%81GUID%E3%80%81SBIT%2F</url>
+    <content type="text"><![CDATA[文件具有SUID的特殊权限时，代表当用户执行此二进制程序时，在执行过程中该用户会暂时具有程序所有者的权限。比如用户修改自己的用户密码 目录具有SGID的特殊权限时，代表用户在这个目录下面新建的文件用户组都会与该目录的用户组名相同 目录就有SBIT的特殊权限时，代表在该目录下用户创建的文件只有自己和root能够删除]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux根目录下目录介绍及各项缩写全称]]></title>
     <url>%2F2018%2F08%2F22%2FLinux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%90%84%E9%A1%B9%E7%BC%A9%E5%86%99%E5%85%A8%E7%A7%B0%2F</url>
     <content type="text"><![CDATA[bin （binary） : 常见linux命令、系统所有用户命令目录文件 sbin （superuser binary） : root用户命令文件 dev （device） : 设备驱动存储目录文件 proc （process）: 进程信息文件 usr （UNIX Software Resource）: 与软件安装/执行相关 var （variable）: 变量文件目录，与系统运作过程有关 etc （etcetera）: 所有程序所需要的配置文件 lib （library）: 系统默认库路径文件 mnt （mount）: 挂载目录 tmp （temporary）: 临时文件目录 opt （option）: 可选目录（可以选择安装应用程序的目录） boot : 引导程序文件 home : 家目录（用户目录） root : root根目录 media : 多媒体及挂载目录]]></content>
@@ -386,8 +397,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -843,8 +854,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
