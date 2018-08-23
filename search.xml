@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Linxu 文件特殊权限之SUID、GUID、SBIT]]></title>
-    <url>%2F2018%2F08%2F23%2FLinxu-%E6%96%87%E4%BB%B6%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90%E4%B9%8BSUID%E3%80%81GUID%E3%80%81SBIT%2F</url>
+    <title><![CDATA[Linux 文件特殊权限之SUID、GUID、SBIT]]></title>
+    <url>%2F2018%2F08%2F23%2FLinux-%E6%96%87%E4%BB%B6%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90%E4%B9%8BSUID%E3%80%81GUID%E3%80%81SBIT%2F</url>
     <content type="text"><![CDATA[文件具有SUID的特殊权限时，代表当用户执行此二进制程序时，在执行过程中该用户会暂时具有程序所有者的权限。比如用户修改自己的用户密码 目录具有SGID的特殊权限时，代表用户在这个目录下面新建的文件用户组都会与该目录的用户组名相同 目录就有SBIT的特殊权限时，代表在该目录下用户创建的文件只有自己和root能够删除]]></content>
       <categories>
         <category>Linux/Mac OS</category>

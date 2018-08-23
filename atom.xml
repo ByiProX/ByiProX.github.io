@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-23T03:00:38.430Z</updated>
+  <updated>2018-08-23T06:15:54.976Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Linxu 文件特殊权限之SUID、GUID、SBIT</title>
-    <link href="http://yoursite.com/2018/08/23/Linxu-%E6%96%87%E4%BB%B6%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90%E4%B9%8BSUID%E3%80%81GUID%E3%80%81SBIT/"/>
-    <id>http://yoursite.com/2018/08/23/Linxu-文件特殊权限之SUID、GUID、SBIT/</id>
+    <title>Linux 文件特殊权限之SUID、GUID、SBIT</title>
+    <link href="http://yoursite.com/2018/08/23/Linux-%E6%96%87%E4%BB%B6%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90%E4%B9%8BSUID%E3%80%81GUID%E3%80%81SBIT/"/>
+    <id>http://yoursite.com/2018/08/23/Linux-文件特殊权限之SUID、GUID、SBIT/</id>
     <published>2018-08-23T02:48:57.000Z</published>
-    <updated>2018-08-23T03:00:38.430Z</updated>
+    <updated>2018-08-23T06:15:54.976Z</updated>
     
     <content type="html"><![CDATA[<ul><li>文件具有SUID的特殊权限时，代表当用户执行此二进制程序时，在执行过程中该用户会暂时具有程序所有者的权限。比如用户修改自己的用户密码</li><li>目录具有SGID的特殊权限时，代表用户在这个目录下面新建的文件用户组都会与该目录的用户组名相同</li><li>目录就有SBIT的特殊权限时，代表在该目录下用户创建的文件只有自己和root能够删除</li></ul>]]></content>
     
