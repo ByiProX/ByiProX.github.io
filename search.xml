@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux 使用useradd命令时发生了什么]]></title>
+    <url>%2F2018%2F08%2F24%2FLinux-%E4%BD%BF%E7%94%A8useradd%E5%91%BD%E4%BB%A4%E6%97%B6%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%2F</url>
+    <content type="text"><![CDATA[使用useradd命令创建用户时首先会参考 /etc/default/useradd /etc/login.defs /etc/skel/* 命令执行后，接下来就会创建 /etc/passwd /etc/shadow /etc/group /etc/gshadow 主文件目录（如果配置有的话） 所以，如果我们自己了解整个系统运行的状态，也是可以自己手动直接修改相关文件。]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux 文件特殊权限之SUID、GUID、SBIT]]></title>
     <url>%2F2018%2F08%2F23%2FLinux-%E6%96%87%E4%BB%B6%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90%E4%B9%8BSUID%E3%80%81GUID%E3%80%81SBIT%2F</url>
     <content type="text"><![CDATA[文件具有SUID的特殊权限时，代表当用户执行此二进制程序时，在执行过程中该用户会暂时具有程序所有者的权限。比如用户修改自己的用户密码 目录具有SGID的特殊权限时，代表用户在这个目录下面新建的文件用户组都会与该目录的用户组名相同 目录就有SBIT的特殊权限时，代表在该目录下用户创建的文件只有自己和root能够删除]]></content>
