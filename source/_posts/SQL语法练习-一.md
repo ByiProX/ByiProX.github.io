@@ -57,6 +57,7 @@ WHERE student.s_id NOT IN (
 			WHERE course.c_id = score.c_id AND teacher.t_id = course.t_id AND teacher.t_name = 'alex'
 			)
 ```
+
 6. 查询学过'python'并且也学过编号'java'课程的同学的姓名
 ```SQL
 SELECT s_name FROM
@@ -68,7 +69,16 @@ GROUP BY s_name
 HAVING COUNT(s_name) > 1;
 ```
 
-
+7. 查询学过“alex”老师所教的全部课程的同学的姓名
+```SQL
+SELECT s_name FROM
+		(SELECT score.s_id as sid, score.c_id as cid
+		 FROM score, course, teacher
+		 WHERE score.c_id = course.c_id AND teacher.t_id = course.t_id AND teacher.t_name = 'alex') as B
+LEFT JOIN student ON B.sid = student.s_id
+GROUP BY s_name
+HAVING COUNT(s_name) > 1;
+```
 
 
 
