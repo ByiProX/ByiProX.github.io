@@ -79,8 +79,16 @@ LEFT JOIN student ON B.sid = student.s_id
 GROUP BY s_name
 HAVING COUNT(s_name) > 1;
 ```
-
-
+8. 查询挂科超过两门(包括两门)的学生姓名;
+```SQL
+SELECT s_name FROM
+		(SELECT score.s_id as sid, score.c_id as cid
+		 FROM score, course
+		 WHERE score.c_id = course.c_id  AND (score.num < 60 OR score.num ISNULL)) as B
+     LEFT JOIN student ON B.sid = student.s_id
+GROUP BY s_name
+HAVING COUNT(s_name) > 1;
+```
 
 -- ——————————————————————————————————————————————————————————————
 -- INSERT INTO student VALUES (1, '鲁班', 12, '男');
