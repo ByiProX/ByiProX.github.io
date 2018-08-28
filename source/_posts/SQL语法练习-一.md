@@ -131,6 +131,25 @@ WHERE student.s_id = score.s_id AND student.s_name != '貂蝉' AND score.c_id IN
 GROUP BY s_name;
 ```
 
+12. 查询学过'貂蝉'同学全部课程的其他同学姓名；
+```SQL
+SELECT s_name FROM
+		(SELECT score.s_id as sid, score.c_id as cid
+		 FROM score, course, student
+		 WHERE
+		     score.c_id = course.c_id AND
+				 student.s_id = score.s_id AND
+				 student.s_name != '貂蝉' AND
+				 score.c_id in (SELECT c_id FROM score, student WHERE student.s_name = '貂蝉' AND student.s_id = score.s_id)
+		) as B
+LEFT JOIN student ON B.sid = student.s_id
+GROUP BY s_name
+HAVING COUNT(s_name) >= (SELECT COUNT(score.c_id) FROM score, student WHERE student.s_name = '貂蝉' AND student.s_id = score.s_id);
+```
+
+
+
+
 
 -- ——————————————————————————————————————————————————————————————
 -- INSERT INTO student VALUES (1, '鲁班', 12, '男');
