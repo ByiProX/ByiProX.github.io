@@ -114,6 +114,17 @@ GROUP BY s_name
 HAVING COUNT(s_name) = (SELECT COUNT(*) FROM course);
 ```
 
+11. 查询至少有一门课程与“貂蝉”同学所学课程相同的同学姓名；
+```SQL
+SELECT s_name
+FROM student, score
+WHERE student.s_id = score.s_id AND student.s_name != '貂蝉' AND score.c_id IN (SELECT c_id FROM score, student
+																									 WHERE score.s_id = student.s_id AND student.s_name = '貂蝉')
+
+GROUP BY s_name;
+```
+
+
 -- ——————————————————————————————————————————————————————————————
 -- INSERT INTO student VALUES (1, '鲁班', 12, '男');
 -- INSERT INTO student VALUES (2, '貂蝉', 20, '女');
