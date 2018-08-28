@@ -75,9 +75,12 @@ SELECT s_name FROM
 		(SELECT score.s_id as sid, score.c_id as cid
 		 FROM score, course, teacher
 		 WHERE score.c_id = course.c_id AND teacher.t_id = course.t_id AND teacher.t_name = 'alex') as B
-LEFT JOIN student ON B.sid = student.s_id
+    LEFT JOIN student ON B.sid = student.s_id
 GROUP BY s_name
-HAVING COUNT(s_name) > 1;
+HAVING COUNT(s_name) = (SELECT COUNT(course.c_id) FROM
+												course, teacher
+												WHERE
+												teacher.t_id = course.t_id AND teacher.t_name='alex');
 ```
 8. 查询挂科超过两门(包括两门)的学生姓名;
 ```SQL
@@ -88,6 +91,27 @@ SELECT s_name FROM
      LEFT JOIN student ON B.sid = student.s_id
 GROUP BY s_name
 HAVING COUNT(s_name) > 1;
+```
+
+9. 查询有课程成绩小于60分的同学的姓名;
+```SQL
+SELECT s_name FROM
+		(SELECT score.s_id as sid, score.c_id as cid
+		 FROM score, course
+		 WHERE score.c_id = course.c_id  AND score.num < 60) as B
+     LEFT JOIN student ON B.sid = student.s_id
+GROUP BY s_name;
+```
+
+10. 查询选修了全部课程的学生姓名;
+```SQL
+SELECT s_name FROM
+		(SELECT score.s_id as sid, score.c_id as cid
+		 FROM score, course
+		 WHERE score.c_id = course.c_id) as B
+     LEFT JOIN student ON B.sid = student.s_id
+GROUP BY s_name
+HAVING COUNT(s_name) = (SELECT COUNT(*) FROM course);
 ```
 
 -- ——————————————————————————————————————————————————————————————
