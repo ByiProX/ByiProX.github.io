@@ -112,6 +112,13 @@ SELECT s_name FROM
      LEFT JOIN student ON B.sid = student.s_id
 GROUP BY s_name
 HAVING COUNT(s_name) = (SELECT COUNT(*) FROM course);
+
+
+SELECT s_name FROM
+student
+LEFT JOIN score ON student.s_id = score.s_id
+GROUP BY s_name
+HAVING COUNT(s_name) = (SELECT COUNT(*) FROM course)
 ```
 
 11. 查询至少有一门课程与“貂蝉”同学所学课程相同的同学姓名；
