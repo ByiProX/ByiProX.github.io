@@ -411,7 +411,7 @@
 <p>session技术是要使用到cookie的，之所以出现session技术，主要是为了安全。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/07/浅谈Session和Cookie的区别与联系/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/07/浅谈Session和Cookie的区别与联系/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -584,7 +584,7 @@
 <p>异步，执行完函数或方法后，不必阻塞性地等待返回值或消息，只需要向系统委托一个异步过程，那么当系统接收到返回值或消息时，系统会自动触发委托的异步过程，从而完成一个完整的流程。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/07/如何理解操作系统中的同步和异步、阻塞和非阻塞/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/07/如何理解操作系统中的同步和异步、阻塞和非阻塞/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -753,7 +753,7 @@
 <p>以上实现make_averager函数的方法效率不高。在如下示例中,我们把所有值存储在历史数列中，然后在每次调用averager时使用sum求和。更好的实现方式是，只存储目前的总和以及元素个数，然后使用这两个值计算平均数。以下是实现方式，这种实现方式存在缺陷，只是为了引出<code>nonlocal声明</code>。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/06/Python3-nonlocal声明/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/06/Python3-nonlocal声明/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -928,7 +928,7 @@
 <p>闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/06/Python3-闭包/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/06/Python3-闭包/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1097,7 +1097,7 @@
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>要控制字典中元素的顺序，可以使用<code>collections模块</code>中的<code>OrderDict类</code>。当对字典做迭代时，他会严格按照元素初始添加的顺序执行。例如：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"></span><br><span class="line">d = OrderedDict()</span><br><span class="line">d[<span class="string">'foo'</span>] = <span class="number">1</span></span><br><span class="line">d[<span class="string">'bar'</span>] = <span class="number">2</span></span><br><span class="line">d[<span class="string">'spam'</span>] = <span class="number">3</span></span><br><span class="line">d[<span class="string">'qrok'</span>] = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> d:</span><br><span class="line">    print(key, d[key])</span><br><span class="line"></span><br><span class="line"><span class="comment"># output:</span></span><br><span class="line"><span class="comment"># foo 1</span></span><br><span class="line"><span class="comment"># bar 2</span></span><br><span class="line"><span class="comment"># spam 3</span></span><br><span class="line"><span class="comment"># qrok 4</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/06/Python3-让字典保持有序/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/06/Python3-让字典保持有序/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1431,7 +1431,7 @@
           <p>Python中的垃圾回收GC(Garbage collection)是以引用计数为主，分代收集为辅。引用计数的缺陷是循环引用的问题。<br>分代收集在一定程度上解决了循环引用的问题（可能描述不准确）。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/05/Python3-垃圾回收机制/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/05/Python3-垃圾回收机制/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1604,7 +1604,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/05/IO密集型任务、计算密集型任务，以及多线程、多进程/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/05/IO密集型任务、计算密集型任务，以及多线程、多进程/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1774,7 +1774,7 @@
 <p><code>进程是系统进行资源分配和调度的一个独立单位</code>。每个进程都有自己的独立内存空间，不同进程通过进程间通信来通信。由于进程比较重量，占据独立的内存，所以上下文进程间的切换开销（栈、寄存器、虚拟内存、文件句柄等）比较大，但相对比较稳定安全。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/04/进程、线程、协程/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/04/进程、线程、协程/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1933,7 +1933,7 @@
 <p><code>-r</code> 就是向下递归，不管有多少级目录，一并删除<br><code>-f</code> 就是直接强行删除，不作任何提示的意思<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/03/Mac-OS-命令之文件-夹-删除/#espandi" rel="contents">
+            <a class="btn" href="/2018/03/03/Mac-OS-命令之文件-夹-删除/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
