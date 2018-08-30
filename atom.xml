@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-28T08:52:37.974Z</updated>
+  <updated>2018-08-30T02:00:07.702Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux命令英文缩写</title>
+    <link href="http://yoursite.com/2018/08/30/Linux%E5%91%BD%E4%BB%A4%E8%8B%B1%E6%96%87%E7%BC%A9%E5%86%99/"/>
+    <id>http://yoursite.com/2018/08/30/Linux命令英文缩写/</id>
+    <published>2018-08-30T01:35:47.000Z</published>
+    <updated>2018-08-30T02:00:07.702Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="命令缩写"><a href="#命令缩写" class="headerlink" title="命令缩写"></a>命令缩写</h2><ul><li>ls: list(列出目录内容)</li><li>cd: Change Directory（改变目录）</li><li>su: switch user 切换用户</li><li>rpm: redhat package manager 红帽子打包管理器</li><li>pwd: print work directory 打印当前目录 显示出当前工作目录的绝对路径</li><li>ps:  process status(进程状态，类似于windows的任务管理器) 常用参数: －auxf <code>ps auxf</code> 显示进程状态</li><li>df:  disk free 其功能是显示磁盘可用空间数目信息及空间结点信息。换句话说，就是报告在任何安装的设备或目录中，还剩多少自由的空间。</li><li>rpm:  即RedHat Package Management，是RedHat的发明之一</li><li>rmdir: Remove Directory（删除目录）</li><li>rm: Remove（删除目录或文件）</li><li>cat:  concatenate连锁 <code>cat file1 file2 &gt;&gt; file3</code>把文件1和文件2的内容联合起来放到file3中</li><li>insmod:  install module,载入模块</li><li>ln -s :  link -soft 创建一个软链接，相当于创建一个快捷方式</li><li>mkdir: Make Directory</li><li>ps: Process Status</li><li>uname: Unix name</li><li>grep: General Regular Expression Print</li></ul><h2 id="目录名"><a href="#目录名" class="headerlink" title="目录名"></a>目录名</h2><ul><li>/boot: 顾名思义</li><li>/root : 同上</li><li>/lost+found: 同上</li><li>/run: 同上</li><li>/home: 同上</li><li>/etc: ETCetera</li><li>/bin: BINaries</li><li>/dev: DEVices</li><li>/lib: LIBraries</li><li>/mnt: MouNT</li><li>/proc: PROCesses</li><li>/tmp: TeMPorary</li><li>/var: VARiable</li><li>/srv: SeRVices</li><li>/opt: OPTion</li><li>/sbin: Super BINaries（又作Superuser BINaries）</li><li>/sys: SYStem</li><li>/usr: 一鼓而作Unix System Resources，再而作Unix Software Resources,三而作Unix Shared Resources（这个很重要，很多人会认为这个是user）</li></ul><h2 id="软件及软件包管理："><a href="#软件及软件包管理：" class="headerlink" title="软件及软件包管理："></a>软件及软件包管理：</h2><ul><li>man – MANual</li><li>apt – Advanced Packaging Tool</li><li>dpkg – Debian PacKaGe</li><li>yum – Yellow dog Updater, Modified</li><li>rpm – RPM Package Manager（又作Redhat Package Manager，不过我比较喜欢前者，因为魔性）</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;命令缩写&quot;&gt;&lt;a href=&quot;#命令缩写&quot; class=&quot;headerlink&quot; title=&quot;命令缩写&quot;&gt;&lt;/a&gt;命令缩写&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;ls: list(列出目录内容)&lt;/li&gt;
+&lt;li&gt;cd: Change Directory（改变目录）&lt;/li
+      
+    
+    </summary>
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
+    
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL语法练习(一)</title>
@@ -596,38 +623,6 @@
     <summary type="html">
     
       &lt;p&gt;正向代理（forward proxy）代理客户端，隐藏真实客户端，&lt;br&gt;反向代理（reverse proxy）代理服务器，隐藏真实服务端。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="网络" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一次完整的HTTP请求流程</title>
-    <link href="http://yoursite.com/2018/03/20/%E4%B8%80%E6%AC%A1%E5%AE%8C%E6%95%B4%E7%9A%84HTTP%E8%AF%B7%E6%B1%82%E6%B5%81%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/03/20/一次完整的HTTP请求流程/</id>
-    <published>2018-03-19T17:34:08.000Z</published>
-    <updated>2018-03-19T18:00:53.753Z</updated>
-    
-    <content type="html"><![CDATA[<p>HTTP通信机制是在一次完整的HTTP通信过程中，Web浏览器与Web服务器之间将完成下列7个步骤：</p><h2 id="1-建立TCP连接："><a href="#1-建立TCP连接：" class="headerlink" title="1. 建立TCP连接："></a>1. 建立TCP连接：</h2><p>在HTTP工作开始之前，Web浏览器首先要通过网络与Web服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，</p><p>即著名的TCP/IP协议族，因此Internet又被称作是TCP/IP网络。HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能进行更高层协议的连接，</p><p>因此，首先要建立TCP连接，一般TCP连接的端口号是80。</p><h2 id="2-Web浏览器向Web服务器发送请求命令："><a href="#2-Web浏览器向Web服务器发送请求命令：" class="headerlink" title="2. Web浏览器向Web服务器发送请求命令："></a>2. Web浏览器向Web服务器发送请求命令：</h2><p>一旦建立了TCP连接，Web浏览器就会向Web服务器发送请求命令。例如：GET/sample/hello.jsp HTTP/1.1。</p><h2 id="3-Web浏览器发送请求头信息-："><a href="#3-Web浏览器发送请求头信息-：" class="headerlink" title="3. Web浏览器发送请求头信息 ："></a>3. Web浏览器发送请求头信息 ：</h2><p>浏览器发送其请求命令之后，还要以头信息的形式向Web服务器发送一些别的信息，之后浏览器发送了一空白行来通知服务器，它已经结束了该头信息的发送。</p><h2 id="4-Web服务器应答-："><a href="#4-Web服务器应答-：" class="headerlink" title="4. Web服务器应答 ："></a>4. Web服务器应答 ：</h2><p>客户机向服务器发出请求后，服务器会客户机回送应答， HTTP/1.1 200 OK ，应答的第一部分是协议的版本号和应答状态码。</p><h2 id="5-Web服务器发送应答头信息："><a href="#5-Web服务器发送应答头信息：" class="headerlink" title="5. Web服务器发送应答头信息："></a>5. Web服务器发送应答头信息：</h2><p>正如客户端会随同请求发送关于自身的信息一样，服务器也会随同应答向用户发送关于它自己的数据及被请求的文档。</p><h2 id="6-Web服务器向浏览器发送数据："><a href="#6-Web服务器向浏览器发送数据：" class="headerlink" title="6. Web服务器向浏览器发送数据："></a>6. Web服务器向浏览器发送数据：</h2><p>Web服务器向浏览器发送头信息后，它会发送一个空白行来表示头信息的发送到此为结束，接着，它就以Content-Type应答头信息所描述的格式发送用户所请求的实际数据。</p><h2 id="7-Web服务器关闭TCP连接-："><a href="#7-Web服务器关闭TCP连接-：" class="headerlink" title="7. Web服务器关闭TCP连接 ："></a>7. Web服务器关闭TCP连接 ：</h2><p>一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接，然后如果浏览器或者服务器在其头信息加入了这行代码：Connection:keep-alive；</p><p>TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。</p><a id="more"></a><p><img src="https://upload-images.jianshu.io/upload_images/2952111-d8db37f9da639c61.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="http请求.jpg"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;HTTP通信机制是在一次完整的HTTP通信过程中，Web浏览器与Web服务器之间将完成下列7个步骤：&lt;/p&gt;
-&lt;h2 id=&quot;1-建立TCP连接：&quot;&gt;&lt;a href=&quot;#1-建立TCP连接：&quot; class=&quot;headerlink&quot; title=&quot;1. 建立TCP连接：&quot;&gt;&lt;/a&gt;1. 建立TCP连接：&lt;/h2&gt;&lt;p&gt;在HTTP工作开始之前，Web浏览器首先要通过网络与Web服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，&lt;/p&gt;
-&lt;p&gt;即著名的TCP/IP协议族，因此Internet又被称作是TCP/IP网络。HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能进行更高层协议的连接，&lt;/p&gt;
-&lt;p&gt;因此，首先要建立TCP连接，一般TCP连接的端口号是80。&lt;/p&gt;
-&lt;h2 id=&quot;2-Web浏览器向Web服务器发送请求命令：&quot;&gt;&lt;a href=&quot;#2-Web浏览器向Web服务器发送请求命令：&quot; class=&quot;headerlink&quot; title=&quot;2. Web浏览器向Web服务器发送请求命令：&quot;&gt;&lt;/a&gt;2. Web浏览器向Web服务器发送请求命令：&lt;/h2&gt;&lt;p&gt;一旦建立了TCP连接，Web浏览器就会向Web服务器发送请求命令。例如：GET/sample/hello.jsp HTTP/1.1。&lt;/p&gt;
-&lt;h2 id=&quot;3-Web浏览器发送请求头信息-：&quot;&gt;&lt;a href=&quot;#3-Web浏览器发送请求头信息-：&quot; class=&quot;headerlink&quot; title=&quot;3. Web浏览器发送请求头信息 ：&quot;&gt;&lt;/a&gt;3. Web浏览器发送请求头信息 ：&lt;/h2&gt;&lt;p&gt;浏览器发送其请求命令之后，还要以头信息的形式向Web服务器发送一些别的信息，之后浏览器发送了一空白行来通知服务器，它已经结束了该头信息的发送。&lt;/p&gt;
-&lt;h2 id=&quot;4-Web服务器应答-：&quot;&gt;&lt;a href=&quot;#4-Web服务器应答-：&quot; class=&quot;headerlink&quot; title=&quot;4. Web服务器应答 ：&quot;&gt;&lt;/a&gt;4. Web服务器应答 ：&lt;/h2&gt;&lt;p&gt;客户机向服务器发出请求后，服务器会客户机回送应答， HTTP/1.1 200 OK ，应答的第一部分是协议的版本号和应答状态码。&lt;/p&gt;
-&lt;h2 id=&quot;5-Web服务器发送应答头信息：&quot;&gt;&lt;a href=&quot;#5-Web服务器发送应答头信息：&quot; class=&quot;headerlink&quot; title=&quot;5. Web服务器发送应答头信息：&quot;&gt;&lt;/a&gt;5. Web服务器发送应答头信息：&lt;/h2&gt;&lt;p&gt;正如客户端会随同请求发送关于自身的信息一样，服务器也会随同应答向用户发送关于它自己的数据及被请求的文档。&lt;/p&gt;
-&lt;h2 id=&quot;6-Web服务器向浏览器发送数据：&quot;&gt;&lt;a href=&quot;#6-Web服务器向浏览器发送数据：&quot; class=&quot;headerlink&quot; title=&quot;6. Web服务器向浏览器发送数据：&quot;&gt;&lt;/a&gt;6. Web服务器向浏览器发送数据：&lt;/h2&gt;&lt;p&gt;Web服务器向浏览器发送头信息后，它会发送一个空白行来表示头信息的发送到此为结束，接着，它就以Content-Type应答头信息所描述的格式发送用户所请求的实际数据。&lt;/p&gt;
-&lt;h2 id=&quot;7-Web服务器关闭TCP连接-：&quot;&gt;&lt;a href=&quot;#7-Web服务器关闭TCP连接-：&quot; class=&quot;headerlink&quot; title=&quot;7. Web服务器关闭TCP连接 ：&quot;&gt;&lt;/a&gt;7. Web服务器关闭TCP连接 ：&lt;/h2&gt;&lt;p&gt;一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接，然后如果浏览器或者服务器在其头信息加入了这行代码：Connection:keep-alive；&lt;/p&gt;
-&lt;p&gt;TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。&lt;/p&gt;
     
     </summary>
     
