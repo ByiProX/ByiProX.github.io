@@ -48,9 +48,12 @@ categories:
 - /sys: SYStem
 - /usr: 一鼓而作Unix System Resources，再而作Unix Software Resources,三而作Unix Shared Resources（这个很重要，很多人会认为这个是user）
 
-## 软件及软件包管理：
+## 软件及软件包管理
 - man -- MANual
 - apt -- Advanced Packaging Tool
 - dpkg -- Debian PacKaGe
 - yum -- Yellow dog Updater, Modified
 - rpm -- RPM Package Manager（又作Redhat Package Manager，不过我比较喜欢前者，因为魔性）
+
+## 其他
+- SELinux -- Security Enhanced Linux, 安全强化的Linux
