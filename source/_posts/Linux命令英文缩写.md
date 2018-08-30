@@ -23,7 +23,10 @@ categories:
 - mkdir: Make Directory
 - ps: Process Status
 - uname: Unix name
+- tar: Tape Archive
 - grep: General Regular Expression Print
+
+<!-- more -->
 
 ## 目录名
 - /boot: 顾名思义
