@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[计算机网络之子网(掩码)]]></title>
     <url>%2F2018%2F08%2F31%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B9%8B%E5%AD%90%E7%BD%91-%E6%8E%A9%E7%A0%81%2F</url>
-    <content type="text"><![CDATA[互联三个主机接口和一个路由器接口的网络形成一个子网（subnet），在因特网文献里，子网也成为IP网络或者直接成为网络。 假设IP编址为某个子网分配一个地位：223.1.1.0/24,其中的/24计法，成为子网掩码（newwork mask），指示了32位比特中的最左侧24比特定义了子网地址。]]></content>
+    <content type="text"><![CDATA[互联三个主机接口和一个路由器接口的网络形成一个子网（subnet），在因特网文献里，子网也成为IP网络或者直接成为网络。 假设IP编址为某个子网分配一个地位：223.1.1.0/24,其中的/24计法，成为子网掩码（network mask），指示了32位比特中的最左侧24比特定义了子网地址。]]></content>
       <categories>
         <category>网络</category>
       </categories>
