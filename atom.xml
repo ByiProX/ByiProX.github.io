@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-02T04:41:53.399Z</updated>
+  <updated>2018-09-02T15:57:32.343Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java入门小知识</title>
+    <link href="http://yoursite.com/2018/09/02/java%E5%85%A5%E9%97%A8%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
+    <id>http://yoursite.com/2018/09/02/java入门小知识/</id>
+    <published>2018-09-02T15:38:12.000Z</published>
+    <updated>2018-09-02T15:57:32.343Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li>关键字<code>public</code>称为<code>访问修饰符(access modifier)</code>,这些修饰符用于控制程序的其他部分对这段代码的访问级别。</li><li>Java的命名规范为<code>大驼峰</code>命名。</li><li>源代码的文件名必须与公共类的名字相同，并用<code>.java</code>作为扩展名。</li><li>根据Java语言规范，<code>main方法必须声明为public</code>,java的main方法必须有一个外壳类。</li><li>在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。</li></ol><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;关键字&lt;code&gt;public&lt;/code&gt;称为&lt;code&gt;访问修饰符(access modifier)&lt;/code&gt;,这些修饰符用于控制程序的其他部分对这段代码的访问级别。&lt;/li&gt;
+&lt;li&gt;Java的命名规范为&lt;code&gt;大驼峰&lt;/code&gt;命名。&lt;/li&gt;
+&lt;li&gt;源代码的文件名必须与公共类的名字相同，并用&lt;code&gt;.java&lt;/code&gt;作为扩展名。&lt;/li&gt;
+&lt;li&gt;根据Java语言规范，&lt;code&gt;main方法必须声明为public&lt;/code&gt;,java的main方法必须有一个外壳类。&lt;/li&gt;
+&lt;li&gt;在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Jet Brains(IDE)常用快捷键</title>
@@ -620,34 +648,6 @@
 &lt;p&gt;我们期望的结果是，当找到5时打印出：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;found it! i = &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;实际上打印出来的结果为：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;found it! i = &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; found it ...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;显然这不是我们期望的结果。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>What is the difference between “ is None ” and “ ==None ” --- Reprint</title>
-    <link href="http://yoursite.com/2018/03/29/What-is-the-difference-between-%E2%80%9C-is-None-%E2%80%9D-and-%E2%80%9C-None-%E2%80%9D-Reprint/"/>
-    <id>http://yoursite.com/2018/03/29/What-is-the-difference-between-“-is-None-”-and-“-None-”-Reprint/</id>
-    <published>2018-03-28T19:08:51.000Z</published>
-    <updated>2018-03-28T19:23:18.970Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer 1"></a>Answer 1</h2><p>The answer is explained <a href="http://jaredgrubb.blogspot.com/2009/04/python-is-none-vs-none.html" target="_blank" rel="noopener">here</a>.</p><p>To quote:</p><blockquote><p>A class is free to implement comparison any way it chooses, and it can choose to make comparison against None mean something (which actually makes sense; if someone told you to implement the None object from scratch, how else would you get it to compare True against itself?).</p></blockquote><p>Practically-speaking, there is not much difference since custom comparison operators are rare. But you should use <code>is None</code> as a general rule.</p><p><code>is None</code> is a bit (~50%) faster than <code>== None</code> :) – <a href="https://stackoverflow.com/users/226086/nas-banov" target="_blank" rel="noopener">Nas Banov</a></p><a id="more"></a><h2 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer 2"></a>Answer 2</h2><p><code>is</code> always returns <code>True</code> if it compares the same object instance</p><p>Whereas <code>==</code> is ultimately determined by the <code>__eq__()</code> method</p><p>i.e.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__eq__</span><span class="params">(self,other)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">foo=Foo()</span><br><span class="line"></span><br><span class="line">print(foo==<span class="keyword">None</span>)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">print(foo <span class="keyword">is</span> <span class="keyword">None</span>)</span><br><span class="line"><span class="comment"># False</span></span><br></pre></td></tr></table></figure><h2 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer 3"></a>Answer 3</h2><p>In this case, they are the same. <code>None</code> is a singleton object (there only ever exists one <code>None</code>).</p><p><code>is</code> checks to see if the object is the same object, while == just checks if they are equivalent.</p><p>For example:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p = [<span class="number">1</span>]</span><br><span class="line">q = [<span class="number">1</span>]</span><br><span class="line">p <span class="keyword">is</span> q <span class="comment"># False because they are not the same actual object</span></span><br><span class="line">p == q <span class="comment"># True because they are equivalent</span></span><br></pre></td></tr></table></figure></p><p>But since there is only one <code>None</code>, they will always be the same, and <code>is</code> will return True.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = <span class="keyword">None</span></span><br><span class="line">q = <span class="keyword">None</span></span><br><span class="line">p <span class="keyword">is</span> q <span class="comment"># True because they are both pointing to the same "None"</span></span><br></pre></td></tr></table></figure><h2 id="Answer-4"><a href="#Answer-4" class="headerlink" title="Answer 4"></a>Answer 4</h2><p><code>(ob1 is ob2)</code> equal to <code>(id(ob1) == id(ob2))</code></p><p>… but (ob is ob2) is a LOT faster. Timeit says “(a is b)” is 0.0365 usec per loop and “(id(a)==id(b))” is 0.153 usec per loop. 4.2x faster! – <a href="https://stackoverflow.com/users/51685/akx" target="_blank" rel="noopener">AKX</a></p><p><code>{} is {}</code> is false and <code>id({}) == id({})</code> can be (and <strong>is</strong> in CPython) true.</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol><li><a href="https://stackoverflow.com/questions/3257919/what-is-the-difference-between-is-none-and-none" target="_blank" rel="noopener">What is the difference between “ is None ” and “ ==None ”</a></li><li><a href="https://stackoverflow.com/questions/26595/is-there-any-difference-between-foo-is-none-and-foo-none" target="_blank" rel="noopener">Is there any difference between “foo is None” and “foo == None”?</a></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Answer-1&quot;&gt;&lt;a href=&quot;#Answer-1&quot; class=&quot;headerlink&quot; title=&quot;Answer 1&quot;&gt;&lt;/a&gt;Answer 1&lt;/h2&gt;&lt;p&gt;The answer is explained &lt;a href=&quot;http://jaredgrubb.blogspot.com/2009/04/python-is-none-vs-none.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;To quote:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;A class is free to implement comparison any way it chooses, and it can choose to make comparison against None mean something (which actually makes sense; if someone told you to implement the None object from scratch, how else would you get it to compare True against itself?).&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Practically-speaking, there is not much difference since custom comparison operators are rare. But you should use &lt;code&gt;is None&lt;/code&gt; as a general rule.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;is None&lt;/code&gt; is a bit (~50%) faster than &lt;code&gt;== None&lt;/code&gt; :) – &lt;a href=&quot;https://stackoverflow.com/users/226086/nas-banov&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Nas Banov&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
