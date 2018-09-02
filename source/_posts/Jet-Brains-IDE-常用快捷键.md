@@ -27,6 +27,7 @@ categories:
 - ⇤ 左制表符（Shift+Tab）
 - ⎋ Escape (Esc)
 
+<!-- more -->
 
 #### Editing（编辑）
 
