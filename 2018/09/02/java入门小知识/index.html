@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="关键字public称为访问修饰符(access modifier),这些修饰符用于控制程序的其他部分对这段代码的访问级别。 Java的命名规范为大驼峰命名。 源代码的文件名必须与公共类的名字相同，并用.java作为扩展名。 根据Java语言规范，main方法必须声明为public,java的main方法必须有一个外壳类。 在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。 构造器与类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-03T02:57:34.095Z">
+<meta property="og:updated_time" content="2018-09-03T08:25:25.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java入门小知识">
 <meta name="twitter:description" content="关键字public称为访问修饰符(access modifier),这些修饰符用于控制程序的其他部分对这段代码的访问级别。 Java的命名规范为大驼峰命名。 源代码的文件名必须与公共类的名字相同，并用.java作为扩展名。 根据Java语言规范，main方法必须声明为public,java的main方法必须有一个外壳类。 在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。 构造器与类">
@@ -401,6 +401,7 @@
 <a id="more"></a>
 <ol>
 <li>main方法不对任何对象进行操作。事实上，在启动程序时还没有任何一个对象。静态的main方法将执行并创建程序所需的对象。</li>
+<li>如果在构造器中没有显式的给域赋初始值，那么就会被自动地赋为默认值：<code>数值为0，布尔值为false，对象引用为null</code>。然而，只有缺少程序设计经验的人才会这样做。</li>
 </ol>
 
       
