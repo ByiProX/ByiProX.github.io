@@ -57,3 +57,4 @@ categories:
 
 ## 其他
 - SELinux -- Security Enhanced Linux, 安全强化的Linux
+- daemon -- Disk And Execution MONitor
