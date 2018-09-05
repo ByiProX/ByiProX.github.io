@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-05T07:12:41.791Z</updated>
+  <updated>2018-09-05T10:31:12.495Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux切割命令split</title>
+    <link href="http://yoursite.com/2018/09/05/Linux%E5%88%87%E5%89%B2%E5%91%BD%E4%BB%A4split/"/>
+    <id>http://yoursite.com/2018/09/05/Linux切割命令split/</id>
+    <published>2018-09-05T10:06:09.000Z</published>
+    <updated>2018-09-05T10:31:12.495Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果文件太大，导致一些携带设备无法复制问题。利用<code>split</code>就可以了。它可以帮助我们将一个大文件依据文件大小或者行数来切割成小文件，快速而有效。</p><a id="more"></a><p>具体使用方法可以通过<code>man split</code>查看。</p><p>范例1：一部复仇者联盟的电影，大小为1.7G,现将他们分割为每一份512M。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">split -b 512m Avengers.mp4 AvengerSplit</span><br><span class="line"></span><br><span class="line">ll</span><br><span class="line">-rw-r--r--  1 Dhyana  staff   512M Sep  5 18:19 AvengerSplitaa</span><br><span class="line">-rw-r--r--  1 Dhyana  staff   512M Sep  5 18:19 AvengerSplitab</span><br><span class="line">-rw-r--r--  1 Dhyana  staff   512M Sep  5 18:19 AvengerSplitac</span><br><span class="line">-rw-r--r--  1 Dhyana  staff   171M Sep  5 18:19 AvengerSplitad</span><br></pre></td></tr></table></figure></p><p>如果需要将文件合并，使用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat AvengerSplit* &gt;&gt; AvengerBack.mp4</span><br></pre></td></tr></table></figure></p><p>即可。</p><p>范例2：使用<code>ls -al /</code>输出的信息中，每10行记录成一个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls -al / | split -l 10 - lsroot</span><br><span class="line"></span><br><span class="line">wc -l lsroot*</span><br><span class="line">10 lsrootaa</span><br><span class="line">10 lsrootab</span><br><span class="line"> 7 lsrootac</span><br><span class="line">27 total</span><br></pre></td></tr></table></figure></p><p>重点在那个<code>-</code>。一般来讲，如果需要stdin/stdout,但是没有相应的文件，此时<code>-</code>就代表了stdin/stdout。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果文件太大，导致一些携带设备无法复制问题。利用&lt;code&gt;split&lt;/code&gt;就可以了。它可以帮助我们将一个大文件依据文件大小或者行数来切割成小文件，快速而有效。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
+    
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux 命令回传码与 &amp;&amp; 或 ||</title>
@@ -557,31 +579,6 @@
     
     
       <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python3 产生随机字符串</title>
-    <link href="http://yoursite.com/2018/04/19/python3-%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    <id>http://yoursite.com/2018/04/19/python3-产生随机字符串/</id>
-    <published>2018-04-19T08:26:53.000Z</published>
-    <updated>2018-04-19T08:28:16.623Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 长度为16的随机字符串</span></span><br><span class="line">rand_str = <span class="string">''</span>.join(random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">16</span>))</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas
-      
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://yoursite.com/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-    
-      <category term="Python3" scheme="http://yoursite.com/tags/Python3/"/>
     
   </entry>
   

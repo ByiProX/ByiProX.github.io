@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux切割命令split]]></title>
+    <url>%2F2018%2F09%2F05%2FLinux%E5%88%87%E5%89%B2%E5%91%BD%E4%BB%A4split%2F</url>
+    <content type="text"><![CDATA[如果文件太大，导致一些携带设备无法复制问题。利用split就可以了。它可以帮助我们将一个大文件依据文件大小或者行数来切割成小文件，快速而有效。 具体使用方法可以通过man split查看。 范例1：一部复仇者联盟的电影，大小为1.7G,现将他们分割为每一份512M。1234567split -b 512m Avengers.mp4 AvengerSplitll-rw-r--r-- 1 Dhyana staff 512M Sep 5 18:19 AvengerSplitaa-rw-r--r-- 1 Dhyana staff 512M Sep 5 18:19 AvengerSplitab-rw-r--r-- 1 Dhyana staff 512M Sep 5 18:19 AvengerSplitac-rw-r--r-- 1 Dhyana staff 171M Sep 5 18:19 AvengerSplitad 如果需要将文件合并，使用命令1cat AvengerSplit* &gt;&gt; AvengerBack.mp4 即可。 范例2：使用ls -al /输出的信息中，每10行记录成一个文件1234567ls -al / | split -l 10 - lsrootwc -l lsroot*10 lsrootaa10 lsrootab 7 lsrootac27 total 重点在那个-。一般来讲，如果需要stdin/stdout,但是没有相应的文件，此时-就代表了stdin/stdout。]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux 命令回传码与 && 或 ||]]></title>
     <url>%2F2018%2F09%2F05%2FLinux-%E5%91%BD%E4%BB%A4%E5%9B%9E%E4%BC%A0%E7%A0%81%E4%B8%8E-%E6%88%96%2F</url>
     <content type="text"><![CDATA[Linux中，若前一个命令执行的结果是正确的，那么在Linux中会回传一个$?=0,即 echo $? 显示为0。 命令执行情况 说明 cmd1 &amp;&amp; cmd2 若cmd1执行完毕且正确执行（$?=0）,则执行cmd2; 若cmd1执行完毕且为错误（$?≠0）,则cmd2不被执行 cmd1 11 cmd2 若cmd1执行完毕且正确执行（$?=0）,则cmd2不被执行; 若cmd1执行完毕且为错误（$?≠0）,则执行cmd2 示例：以ls测试/tmp/wkx执行后，若存在则显示”exits”,若不存在，则显示”not exits”。 错误答案1ls /tmp/vvv || echo "not exits" &amp;&amp; echo "exits" 以上答案执行后的结果同时出现not exits和exits。具体问题可以尝试分析。 正确答案1ls /tmp/vvv &amp;&amp; echo "exits" || echo "not exits" 通过该练习，了解到由于命令时一个接着一个去执行的，因此，如果真要使用判断，那么这个&amp;&amp;和||的顺序就不能搞错。一般来说，假设判断公式有三个，也就是：1cmd1 &amp;&amp; cmd2 || cmd3 而且顺序通常不会变。因为一般来讲，cmd2和cmd3会放置肯定可以执行成功的命令，因此依据上面的逻辑分析，我们就可以知道为什么要如此放置，这是很有用的，而且考试也很常考。]]></content>
