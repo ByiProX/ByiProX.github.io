@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：  标准输入（stdin）">
+<meta name="description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：">
 <meta name="keywords" content="Linux&#x2F;Mac OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux数据流重定向">
 <meta property="og:url" content="http://yoursite.com/2018/09/05/Linux数据流重定向/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：  标准输入（stdin）">
+<meta property="og:description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T05:42:39.728Z">
+<meta property="og:updated_time" content="2018-09-05T06:12:55.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux数据流重定向">
-<meta name="twitter:description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：  标准输入（stdin）">
+<meta name="twitter:description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：">
 
 
 
@@ -384,24 +384,28 @@
 
       
         <p><code>标准输出(standard output)</code>指的是命令执行所回传的正确的信息，而<code>标准错误输出(standard error output)</code>可以理解为命令执行失败后，所回传的错误信息。<br>一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：</p>
+<a id="more"></a>
 <ol>
 <li>标准输入（stdin）：代码为<code>0</code>，使用<code>&lt;</code>或者<code>&lt;&lt;</code></li>
 <li>标准输出（stdout）：代码为<code>1</code>，使用<code>&gt;</code>或者<code>&gt;&gt;</code></li>
 <li>标准错误输出（stderr）：代码为<code>2</code>，使用<code>&gt;</code>或者<code>&gt;&gt;</code></li>
 </ol>
-<a id="more"></a>
-<p>如果仅存在<code>&gt;</code>，则代表默认代码为1。</p>
+<h4 id="标准输出和标准错误输出"><a href="#标准输出和标准错误输出" class="headerlink" title="标准输出和标准错误输出"></a>标准输出和标准错误输出</h4><p>如果仅存在<code>&gt;</code>，则代表默认代码为1。</p>
 <ul>
 <li><code>1&gt;</code>:以<code>覆盖</code>的方法将<code>正确</code>的数据输出到指定的文件或者设备上</li>
 <li><code>1&gt;&gt;</code>:以<code>累加</code>的方法将<code>正确</code>的数据输出到指定的文件或者设备上</li>
 <li><code>2&gt;</code>:以<code>覆盖</code>的方法将<code>错误</code>的数据输出到指定的文件或者设备上</li>
 <li><code>2&gt;&gt;</code>:以<code>累加</code>的方法将<code>错误</code>的数据输出到指定的文件或者设备上</li>
 </ul>
-<p>示例1：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc &gt; list_right 2&gt; list_error</span><br></pre></td></tr></table></figure></p>
-<p>以上就可以将stdout和stderr分别存到不同的文件中去。</p>
-<p>示例2：<br>将错误的数据丢弃，屏幕上显示正确的数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc 2&gt; /dev/null</span><br></pre></td></tr></table></figure></p>
+<p>示例1：将stdout和stderr分别存到不同的文件中去。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc &gt; list_right 2&gt; list_error</span><br></pre></td></tr></table></figure></p>
+<p>示例2：将错误的数据丢弃，屏幕上显示正确的数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc 2&gt; /dev/null</span><br></pre></td></tr></table></figure></p>
 <p>/dev/null垃圾黑洞设备</p>
-<p>示例3：<br>将正确和错误的数据全部写入一个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc &gt;list 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">find /home -name .bashrc &amp;&gt; list</span><br></pre></td></tr></table></figure></p>
+<p>示例3：将正确和错误的数据全部写入一个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc &gt;list 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">find /home -name .bashrc &amp;&gt; list</span><br></pre></td></tr></table></figure></p>
+<h4 id="标准输入"><a href="#标准输入" class="headerlink" title="标准输入"></a>标准输入</h4><p><code>&lt;</code>意味着将原本需要由键盘输入的数据改由文件内容来替代。</p>
+<p>示例1：利用<code>cat</code>命令来创建一个文件的简单流程，了解一下什么是<code>键盘输入</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; catfile</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">&lt;==此处按下ctrl+c或者ctrl+d来离开</span><br></pre></td></tr></table></figure></p>
+<p>示例2：利用<code>stdin</code>替代键盘的输入来创建新文件的流程<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; catfile &lt; ~/.bashrc</span><br><span class="line">--------------------------</span><br><span class="line">ll catfile ~/.bashrc</span><br><span class="line">-rw-r--r--  1 root root 176 Sep  5 14:10 catfile</span><br><span class="line">-rw-r--r--. 1 root root 176 Dec 29  2013 /root/.bashrc</span><br><span class="line"><span class="comment"># 注意到两个文件大小几一模一样，几乎是使用cp命令复制一份</span></span><br></pre></td></tr></table></figure></p>
+<p>理解了<code>&lt;</code>后，再来看<code>&lt;&lt;</code></p>
+<hr>
 
       
     </div>
@@ -506,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -620,6 +633,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#标准输出和标准错误输出"><span class="nav-number">1.</span> <span class="nav-text">标准输出和标准错误输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准输入"><span class="nav-number">2.</span> <span class="nav-text">标准输入</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
