@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux 命令回传码与 && 或 ||]]></title>
+    <url>%2F2018%2F09%2F05%2FLinux-%E5%91%BD%E4%BB%A4%E5%9B%9E%E4%BC%A0%E7%A0%81%E4%B8%8E-%E6%88%96%2F</url>
+    <content type="text"><![CDATA[Linux中，若前一个命令执行的结果是正确的，那么在Linux中会回传一个$?=0,即 echo $? 显示为0。 命令执行情况 说明 cmd1 &amp;&amp; cmd2 若cmd1执行完毕且正确执行（$?=0）,则执行cmd2 cmd1 /&amp;#124/;/&amp;#124/; cmd2 输入结束（EOF）,例如邮件结束的时候]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux Bash 默认的组合键汇总]]></title>
     <url>%2F2018%2F09%2F05%2FLinux-Bash-%E9%BB%98%E8%AE%A4%E7%9A%84%E7%BB%84%E5%90%88%E9%94%AE%E6%B1%87%E6%80%BB%2F</url>
     <content type="text"><![CDATA[案件组合 执行结果 Ctrl + C 终止目前命令 Ctrl + D 输入结束（EOF）,例如邮件结束的时候 Ctrl + M 就是Enter Ctrl + S 暂停屏幕的输出 Ctrl + Q 恢复屏幕输出 Ctrl + U 在提示符下，将整行命令删除 Ctrl + Z 暂停目前的命令]]></content>
