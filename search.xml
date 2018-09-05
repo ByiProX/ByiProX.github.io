@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux数据流重定向]]></title>
+    <url>%2F2018%2F09%2F05%2FLinux%E6%95%B0%E6%8D%AE%E6%B5%81%E9%87%8D%E5%AE%9A%E5%90%91%2F</url>
+    <content type="text"><![CDATA[标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[java平台结构]]></title>
     <url>%2F2018%2F09%2F04%2Fjava%E5%B9%B3%E5%8F%B0%E7%BB%93%E6%9E%84%2F</url>
     <content type="text"><![CDATA[]]></content>
