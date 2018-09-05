@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="Linux中，若前一个命令执行的结果是正确的，那么在Linux中会回传一个$?=0,即 echo $? 显示为0。    命令执行情况 说明     cmd1 &amp;amp;&amp;amp; cmd2 若cmd1执行完毕且正确执行（$?=0）,则执行cmd2;  若cmd1执行完毕且为错误（$?≠0）,则cmd2不被执行   cmd1 11 cmd2 若cmd1执行完毕且正确执行（$?=0）,则cmd2不被">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T07:00:23.161Z">
+<meta property="og:updated_time" content="2018-09-05T07:05:23.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 命令回传码与 &amp;&amp; 或 ||">
 <meta name="twitter:description" content="Linux中，若前一个命令执行的结果是正确的，那么在Linux中会回传一个$?=0,即 echo $? 显示为0。    命令执行情况 说明     cmd1 &amp;amp;&amp;amp; cmd2 若cmd1执行完毕且正确执行（$?=0）,则执行cmd2;  若cmd1执行完毕且为错误（$?≠0）,则cmd2不被执行   cmd1 11 cmd2 若cmd1执行完毕且正确执行（$?=0）,则cmd2不被">
@@ -402,6 +402,9 @@
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
+<p>示例：以ls测试<code>/tmp/wkx</code>执行后，若存在则显示”exits”,若不存在，则显示”not exits”。</p>
+<h4 id="错误答案"><a href="#错误答案" class="headerlink" title="错误答案"></a>错误答案</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /tmp/vvv || <span class="built_in">echo</span> <span class="string">"not exits"</span> &amp;&amp; <span class="built_in">echo</span> <span class="string">"exits"</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -502,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -616,6 +628,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#错误答案"><span class="nav-number">1.</span> <span class="nav-text">错误答案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
