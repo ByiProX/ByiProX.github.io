@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="操作系统," />
+  <meta name="keywords" content="Linux/Mac OS," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="进程电脑里运行的应用程序，都是进程，假设我们用的电脑是单核的，CPU同时只能执行一个进程。当程序处于I/O阻塞的时候，CPU如果和程序一起等待，那就太浪费了，CPU会去执行其他的程序，此时就涉及到切换，切换前要保存上一个程序运行的状态，才能恢复，所以就需要有个东西来记录这个东西，就可以引出进程的概念了。 进程就是一个程序在一个数据集上的一次动态执行过程。进程是一个动态概念，是竟争计算机系统资源的基">
-<meta name="keywords" content="操作系统">
+<meta name="description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。">
+<meta name="keywords" content="Linux&#x2F;Mac OS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="进程、线程、协程">
-<meta property="og:url" content="http://yoursite.com/2018/03/04/进程、线程、协程/index.html">
+<meta property="og:title" content="Linux文件名查找">
+<meta property="og:url" content="http://yoursite.com/2018/09/05/Linux文件名查找/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="进程电脑里运行的应用程序，都是进程，假设我们用的电脑是单核的，CPU同时只能执行一个进程。当程序处于I/O阻塞的时候，CPU如果和程序一起等待，那就太浪费了，CPU会去执行其他的程序，此时就涉及到切换，切换前要保存上一个程序运行的状态，才能恢复，所以就需要有个东西来记录这个东西，就可以引出进程的概念了。 进程就是一个程序在一个数据集上的一次动态执行过程。进程是一个动态概念，是竟争计算机系统资源的基">
+<meta property="og:description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T06:32:41.417Z">
+<meta property="og:updated_time" content="2018-09-05T11:45:25.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="进程、线程、协程">
-<meta name="twitter:description" content="进程电脑里运行的应用程序，都是进程，假设我们用的电脑是单核的，CPU同时只能执行一个进程。当程序处于I/O阻塞的时候，CPU如果和程序一起等待，那就太浪费了，CPU会去执行其他的程序，此时就涉及到切换，切换前要保存上一个程序运行的状态，才能恢复，所以就需要有个东西来记录这个东西，就可以引出进程的概念了。 进程就是一个程序在一个数据集上的一次动态执行过程。进程是一个动态概念，是竟争计算机系统资源的基">
+<meta name="twitter:title" content="Linux文件名查找">
+<meta name="twitter:description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/04/进程、线程、协程/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/05/Linux文件名查找/"/>
 
 
 
 
 
-  <title>进程、线程、协程 | Quentin's Blog</title>
+  <title>Linux文件名查找 | Quentin's Blog</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/04/进程、线程、协程/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/05/Linux文件名查找/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">进程、线程、协程</h1>
+          <h1 class="post-title" itemprop="name headline">Linux文件名查找</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T01:20:18+08:00">
-                2018-03-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T19:43:59+08:00">
+                2018-09-05
               </time>
             
 
@@ -335,19 +335,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/多任务处理/" itemprop="url" rel="index">
-                    <span itemprop="name">多任务处理</span>
+                  <a href="/categories/Linux-Mac-OS/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux/Mac OS</span>
                   </a>
                 </span>
 
@@ -363,7 +352,7 @@
 
           
           
-             <span id="/2018/03/04/进程、线程、协程/" class="leancloud_visitors" data-flag-title="进程、线程、协程">
+             <span id="/2018/09/05/Linux文件名查找/" class="leancloud_visitors" data-flag-title="Linux文件名查找">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,48 +383,7 @@
       
 
       
-        <h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>电脑里运行的应用程序，都是进程，假设我们用的电脑是单核的，CPU同时只能执行一个进程。当程序处于I/O阻塞的时候，CPU如果和程序一起等待，那就太浪费了，CPU会去执行其他的程序，此时就涉及到切换，切换前要保存上一个程序运行的状态，才能恢复，所以就需要有个东西来记录这个东西，就可以引出进程的概念了。</p>
-<p>进程就是<code>一个程序在一个数据集上的一次动态执行过程</code>。进程是一个动态概念，是竟争计算机系统资源的基本单位。进程由<code>程序</code>，<code>数据集</code>，<code>进程控制块</code>三部分组成。<code>程序</code>用来描述进程哪些功能以及如何完成；<code>数据集</code>是程序执行过程中所使用的资源；<code>进程控制块</code>用来保存程序运行的状态.</p>
-<p><code>进程是系统进行资源分配和调度的一个独立单位</code>。每个进程都有自己的独立内存空间，不同进程通过进程间通信来通信。由于进程比较重量，占据独立的内存，所以上下文进程间的切换开销（栈、寄存器、虚拟内存、文件句柄等）比较大，但相对比较稳定安全。</p>
-<a id="more"></a>
-<h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>在网络或多用户环境下，一个服务器通常需要接收大量且不确定数量用户的并发请求，为每一个请求都创建一个进程显然是行不通的，——无论是从系统资源开销方面或是响应用户请求的效率方面来看。因此，操作系统中<code>线程</code>的概念便被引进了。线程，是进程的一部分，<code>一个没有线程的进程可以被看作是单线程的</code>。线程有时又被称为<code>轻权进程</code>或<code>轻量级进程</code>，是一个基本的cpu执行单元，也是程序执行过程中的最小单元。一个进程最少也会有一个主线程，在主线程中通过threading模块，再开子线程。</p>
-<p>线程自己基本上不拥有系统资源,只拥有一点在运行中必不可少的资源(如程序计数器,一组寄存器和栈),但是它可与同属一个进程的其他的线程共享进程所拥有的全部资源。线程间通信主要通过共享内存，上下文切换很快，资源开销较少，但相比进程不够稳定容易丢失数据。</p>
-<p><strong>进程拥有一个完整的虚拟地址空间，不依赖于线程而独立存在；反之，线程是进程的一部分，没有自己的地址空间，与进程内的其他线程一起共享分配给该进程的所有资源。</strong></p>
-<p><strong>进程的状态有就绪，运行，等待三个状态；线程的状态有新建-就绪-（阻塞）-运行–死亡四个基本状态</strong></p>
-<p>线程全局锁GIL(Global Interpreter Lock),即Python为了保证线程安全而采取的<code>独立线程运行的限制</code>,说白了就是一个核只能在同一时间运行一个线程.对于io密集型任务，python的多线程起到作用，但对于cpu密集型任务，python的多线程几乎占不到任何优势，还有可能因为争夺资源而变慢。</p>
-<h2 id="进程、线程的关系"><a href="#进程、线程的关系" class="headerlink" title="进程、线程的关系"></a>进程、线程的关系</h2><ol>
-<li>一个线程只能属于一个进程，而一个进程可以有多个线程，但至少有一个线程</li>
-<li>资源分配给进程，进程是程序的主体，同一进程的所有线程共享该进程的所有资源</li>
-<li>CPU分配给线程，即真正在CPU上运行的是线程</li>
-<li>线程是最小的执行单元，进程是最小的资源管理单元</li>
-</ol>
-<h2 id="协程Coroutine"><a href="#协程Coroutine" class="headerlink" title="协程Coroutine"></a>协程Coroutine</h2><p>协程是一种用户态的轻量级线程，协程的调度完全由用户控制。协程拥有自己的寄存器上下文和栈。协程调度切换时，将寄存器上下文和栈保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈，直接操作栈则基本没有内核切换的开销，可以不加锁的访问全局变量，所以上下文的切换非常快。</p>
-<p><code>进程</code>拥有自己独立的堆和栈，既不共享堆，亦不共享栈，<code>进程由操作系统调度</code>。<br><code>线程</code>拥有自己独立的栈和共享的堆，共享堆，不共享栈，线程亦由操作系统调度(标准线程是的)。<br>协程和线程一样共享堆，不共享栈，协程由程序员在协程的代码里显示调度。<br>进程和其他两个的区别还是很明显的。<br><code>协程和线程的区别是</code>：协程避免了无意义的调度，由此可以提高性能，但也因此，程序员必须自己承担调度的责任，同时，<code>协程也失去了标准线程使用多CPU的能力。</code></p>
-<p>举个例子：<br>假设有一个操作系统，是单核的，系统上没有其他的程序需要运行，有两个线程 A 和 B ，A 和 B 在单独运行时都需要 10 秒来完成自己的任务，而且任务都是运算操作，A B 之间也没有竞争和共享数据的问题。现在 A B 两个线程并行，操作系统会不停的在 A B 两个线程之间切换，达到一种伪并行的效果，假设切换的频率是每秒一次，切换的成本是 0.1 秒(主要是栈切换)，总共需要 20 + 19 <em> 0.1 = 21.9 秒。如果使用协程的方式，可以先运行协程 A ，A 结束的时候让位给协程 B ，只发生一次切换，总时间是 20 + 1 </em> 0.1 = 20.1 秒。如果系统是双核的，而且线程是标准线程，那么 A B 两个线程就可以真并行，总时间只需要 10 秒，而协程的方案仍然需要 20.1 秒。</p>
-<p>人们通常将协程和子程序（函数）比较着理解。<br>子程序调用总是一个入口，一次返回，一旦退出即完成了子程序的执行。<br>协程的起始处是第一个入口点，在协程里，返回点之后是接下来的入口点。在python中，协程可以通过yield来调用其它协程。通过yield方式转移执行权的协程之间不是调用者与被调用者的关系，而是彼此对称、平等的，通过相互协作共同完成任务。其运行的大致流程如下：</p>
-<ol>
-<li>第一步，协程A开始执行。</li>
-<li>第二步，协程A执行到一半，进入暂停，通过yield命令将执行权转移到协程B。</li>
-<li>第三步，（一段时间后）协程B交还执行权。</li>
-<li>第四步，协程A恢复执行。</li>
-</ol>
-<p>协程的特点在于是<code>一个线程执行</code>，与多线程相比，其优势体现在：</p>
-<p>协程的执行效率非常高。因为子程序切换不是线程切换，而是由程序自身控制，因此，<code>没有线程切换的开销</code>，和多线程比，线程数量越多，协程的性能优势就越明显。<br>协程不需要多线程的锁机制。在协程中控制共享资源不加锁，只需要判断状态就好了。<br>Tips:利用多核CPU最简单的方法是多进程+协程，既充分利用多核，又充分发挥协程的高效率，可获得极高的性能。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="进程与线程比较"><a href="#进程与线程比较" class="headerlink" title="进程与线程比较"></a>进程与线程比较</h3><p>线程是指进程内的一个执行单元,也是进程内的可调度实体。线程与进程的区别:</p>
-<ol>
-<li>地址空间:线程是进程内的一个执行单元，进程内至少有一个线程，它们共享进程的地址空间，而进程有自己独立的地址空间</li>
-<li>资源拥有:进程是资源分配和拥有的单位,同一个进程内的线程共享进程的资源</li>
-<li>线程是处理器调度的基本单位,但进程不是</li>
-<li><p>二者均可并发执行</p>
-</li>
-<li><p>每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口，但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制</p>
-</li>
-</ol>
-<h3 id="协程与线程进行比较"><a href="#协程与线程进行比较" class="headerlink" title="协程与线程进行比较"></a>协程与线程进行比较</h3><ol>
-<li>一个线程可以多个协程，一个进程也可以单独拥有多个协程，这样python中则能使用多核CPU。</li>
-<li>线程进程都是同步机制，而协程则是异步</li>
-<li>协程能保留上一次调用时的状态，每次过程重入时，就相当于进入上一次调用的状态</li>
-</ol>
+        <p>通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。</p>
 
       
     </div>
@@ -453,7 +401,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/操作系统/" rel="tag"># 操作系统</a>
+            <a href="/tags/Linux-Mac-OS/" rel="tag"># Linux/Mac OS</a>
           
         </div>
       
@@ -466,8 +414,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/03/Mac-OS-命令之文件-夹-删除/" rel="next" title="Mac OS 命令之文件(夹)删除">
-                <i class="fa fa-chevron-left"></i> Mac OS 命令之文件(夹)删除
+              <a href="/2018/09/05/Linux切割命令split/" rel="next" title="Linux切割命令split">
+                <i class="fa fa-chevron-left"></i> Linux切割命令split
               </a>
             
           </div>
@@ -475,10 +423,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/05/IO密集型任务、计算密集型任务，以及多线程、多进程/" rel="prev" title="IO密集型任务、计算密集型任务，以及多线程、多进程">
-                IO密集型任务、计算密集型任务，以及多线程、多进程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -540,17 +484,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -663,22 +598,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程"><span class="nav-number">1.</span> <span class="nav-text">进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程"><span class="nav-number">2.</span> <span class="nav-text">线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程、线程的关系"><span class="nav-number">3.</span> <span class="nav-text">进程、线程的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协程Coroutine"><span class="nav-number">4.</span> <span class="nav-text">协程Coroutine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程与线程比较"><span class="nav-number">5.1.</span> <span class="nav-text">进程与线程比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协程与线程进行比较"><span class="nav-number">5.2.</span> <span class="nav-text">协程与线程进行比较</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -872,9 +791,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/03/04/进程、线程、协程/';
-          this.page.identifier = '2018/03/04/进程、线程、协程/';
-          this.page.title = '进程、线程、协程';
+          this.page.url = 'http://yoursite.com/2018/09/05/Linux文件名查找/';
+          this.page.identifier = '2018/09/05/Linux文件名查找/';
+          this.page.title = 'Linux文件名查找';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://ByiProX.disqus.com/embed.js';

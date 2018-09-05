@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-05T10:31:12.495Z</updated>
+  <updated>2018-09-05T11:45:25.548Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux文件名查找</title>
+    <link href="http://yoursite.com/2018/09/05/Linux%E6%96%87%E4%BB%B6%E5%90%8D%E6%9F%A5%E6%89%BE/"/>
+    <id>http://yoursite.com/2018/09/05/Linux文件名查找/</id>
+    <published>2018-09-05T11:43:59.000Z</published>
+    <updated>2018-09-05T11:45:25.548Z</updated>
+    
+    <content type="html"><![CDATA[<p>通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
+    
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux切割命令split</title>
@@ -547,31 +573,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;tldr-基本用法&quot;&gt;&lt;a href=&quot;#tldr-基本用法&quot; class=&quot;headerlink&quot; title=&quot;tldr 基本用法&quot;&gt;&lt;/a&gt;tldr 基本用法&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Schedule cron &lt;span class=&quot;built_in&quot;&gt;jobs&lt;/span&gt; to run on a time interval &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; the current user.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Job definition format: &lt;span class=&quot;string&quot;&gt;&quot;(min) (hour) (day_of_month) (month) (day_of_week) command_to_execute&quot;&lt;/span&gt;.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- Edit the crontab file &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; the current user:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    crontab -e&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- View a list of existing cron &lt;span class=&quot;built_in&quot;&gt;jobs&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; current user:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    crontab -l&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- Remove all cron &lt;span class=&quot;built_in&quot;&gt;jobs&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; the current user:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    crontab -r&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- Sample job &lt;span class=&quot;built_in&quot;&gt;which&lt;/span&gt; runs at 10:00 every day. * means any value:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    0 10 * * * path/to/script.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- Sample job &lt;span class=&quot;built_in&quot;&gt;which&lt;/span&gt; runs every minute on the 3rd of April:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    * * 3 Apr * path/to/script.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- Sample job &lt;span class=&quot;built_in&quot;&gt;which&lt;/span&gt; runs at 02:30 every Friday:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    30 2 * * Fri path/to/script.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
-    
-    
-      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>终端格式化打印json数据的方法</title>
-    <link href="http://yoursite.com/2018/04/25/%E7%BB%88%E7%AB%AF%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0json%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2018/04/25/终端格式化打印json数据的方法/</id>
-    <published>2018-04-25T03:26:54.000Z</published>
-    <updated>2018-05-05T15:30:58.502Z</updated>
-    
-    <content type="html"><![CDATA[<p>命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'&#123;"status":200,"data":[&#123;"id":1000,"name":"John"&#125;,&#123;"id":1004,"name":"Tom"&#125;]&#125;'</span> | python -m json.tool</span><br></pre></td></tr></table></figure></p><p>即终端打印的json数据通过管道符号经过python json工具格式化输出，搞定!</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;命令行调试API很方便，对于返回数据是JSON格式的，打印出来的内容超级痛苦。有一种解决方法如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;
-      
     
     </summary>
     

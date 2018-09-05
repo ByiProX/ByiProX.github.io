@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Linux文件名查找]]></title>
+    <url>%2F2018%2F09%2F05%2FLinux%E6%96%87%E4%BB%B6%E5%90%8D%E6%9F%A5%E6%89%BE%2F</url>
+    <content type="text"><![CDATA[通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Linux切割命令split]]></title>
     <url>%2F2018%2F09%2F05%2FLinux%E5%88%87%E5%89%B2%E5%91%BD%E4%BB%A4split%2F</url>
     <content type="text"><![CDATA[如果文件太大，导致一些携带设备无法复制问题。利用split就可以了。它可以帮助我们将一个大文件依据文件大小或者行数来切割成小文件，快速而有效。 具体使用方法可以通过man split查看。 范例1：一部复仇者联盟的电影，大小为1.7G,现将他们分割为每一份512M。1234567split -b 512m Avengers.mp4 AvengerSplitll-rw-r--r-- 1 Dhyana staff 512M Sep 5 18:19 AvengerSplitaa-rw-r--r-- 1 Dhyana staff 512M Sep 5 18:19 AvengerSplitab-rw-r--r-- 1 Dhyana staff 512M Sep 5 18:19 AvengerSplitac-rw-r--r-- 1 Dhyana staff 171M Sep 5 18:19 AvengerSplitad 如果需要将文件合并，使用命令1cat AvengerSplit* &gt;&gt; AvengerBack.mp4 即可。 范例2：使用ls -al /输出的信息中，每10行记录成一个文件1234567ls -al / | split -l 10 - lsrootwc -l lsroot*10 lsrootaa10 lsrootab 7 lsrootac27 total 重点在那个-。一般来讲，如果需要stdin/stdout,但是没有相应的文件，此时-就代表了stdin/stdout。]]></content>
