@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：  标准输入（stdin）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T04:07:49.590Z">
+<meta property="og:updated_time" content="2018-09-05T04:11:37.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux数据流重定向">
 <meta name="twitter:description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：  标准输入（stdin）">
@@ -390,6 +390,13 @@
 <li>标准错误输出（stderr）：代码为<code>2</code>，使用<code>&gt;</code>或者<code>&gt;&gt;</code></li>
 </ol>
 <a id="more"></a>
+<p>如果仅存在<code>&gt;</code>，则代表默认代码为1。</p>
+<ul>
+<li><code>1&gt;</code>:以<code>覆盖</code>的方法将<code>正确</code>的数据输出到指定的文件或者设备上</li>
+<li><code>1&gt;&gt;</code>:以<code>累加</code>的方法将<code>正确</code>的数据输出到指定的文件或者设备上</li>
+<li><code>2&gt;</code>:以<code>覆盖</code>的方法将<code>错误</code>的数据输出到指定的文件或者设备上</li>
+<li><code>2&gt;&gt;</code>:以<code>累加</code>的方法将<code>错误</code>的数据输出到指定的文件或者设备上</li>
+</ul>
 
       
     </div>
