@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。因为whereis与locate是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;find直接打查找硬盘，所以查询速度要慢。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T12:53:08.938Z">
+<meta property="og:updated_time" content="2018-09-05T12:57:05.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux文件名查找">
 <meta name="twitter:description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。因为whereis与locate是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;find直接打查找硬盘，所以查询速度要慢。">
@@ -402,7 +402,12 @@
 <p>示例4：查找系统中不属于任何人的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -nouser</span><br></pre></td></tr></table></figure></p>
 <p>示例5：找出文件名为passwd的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name passwd</span><br></pre></td></tr></table></figure></p>
 <p>示例6：找出/var目录下文件类型为socket的文件名有哪些<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /var -<span class="built_in">type</span> s</span><br></pre></td></tr></table></figure></p>
-<p>示例7：找出含有SGID或者SUID或者SBIT的属性文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -perm +7000</span><br></pre></td></tr></table></figure></p>
+<p>示例7：找出含有SGID或者SUID或者SBIT的属性文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find / -perm +7000</span><br><span class="line"><span class="comment"># 文件权限只要含有s或者t就列出</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>-perm  mode: 文件权限刚好等于mode的文件</li>
+<li>-perm -mode: 文件权限<code>全部包括mode</code>的文件</li>
+<li>-perm +mode: 文件权限<code>包含任意mode</code>的文件</li>
+</ul>
 <hr>
 
       
