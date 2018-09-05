@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Linux 命令回传码与 && 或 ||]]></title>
     <url>%2F2018%2F09%2F05%2FLinux-%E5%91%BD%E4%BB%A4%E5%9B%9E%E4%BC%A0%E7%A0%81%E4%B8%8E-%E6%88%96%2F</url>
-    <content type="text"><![CDATA[Linux中，若前一个命令执行的结果是正确的，那么在Linux中会回传一个$?=0,即 echo $? 显示为0。 命令执行情况 说明 cmd1 &amp;&amp; cmd2 若cmd1执行完毕且正确执行（$?=0）,则执行cmd2; 若cmd1执行完毕且为错误（$?≠0）,则cmd2不被执行 cmd1 11 cmd2 若cmd1执行完毕且正确执行（$?=0）,则cmd2不被执行; 若cmd1执行完毕且为错误（$?≠0）,则执行cmd2 示例：以ls测试/tmp/wkx执行后，若存在则显示”exits”,若不存在，则显示”not exits”。 错误答案1ls /tmp/vvv || echo "not exits" &amp;&amp; echo "exits"]]></content>
+    <content type="text"><![CDATA[Linux中，若前一个命令执行的结果是正确的，那么在Linux中会回传一个$?=0,即 echo $? 显示为0。 命令执行情况 说明 cmd1 &amp;&amp; cmd2 若cmd1执行完毕且正确执行（$?=0）,则执行cmd2; 若cmd1执行完毕且为错误（$?≠0）,则cmd2不被执行 cmd1 11 cmd2 若cmd1执行完毕且正确执行（$?=0）,则cmd2不被执行; 若cmd1执行完毕且为错误（$?≠0）,则执行cmd2 示例：以ls测试/tmp/wkx执行后，若存在则显示”exits”,若不存在，则显示”not exits”。 错误答案1ls /tmp/vvv || echo "not exits" &amp;&amp; echo "exits" 以上答案执行后的结果同时出现not exits和exits。具体问题可以尝试分析。 正确答案1ls /tmp/vvv &amp;&amp; echo "not exits" || echo "exits"]]></content>
       <categories>
         <category>Linux/Mac OS</category>
       </categories>
