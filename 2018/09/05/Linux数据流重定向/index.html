@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：  标准输入（stdin）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T04:18:14.239Z">
+<meta property="og:updated_time" content="2018-09-05T05:42:39.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux数据流重定向">
 <meta name="twitter:description" content="标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示：  标准输入（stdin）">
@@ -397,8 +397,11 @@
 <li><code>2&gt;</code>:以<code>覆盖</code>的方法将<code>错误</code>的数据输出到指定的文件或者设备上</li>
 <li><code>2&gt;&gt;</code>:以<code>累加</code>的方法将<code>错误</code>的数据输出到指定的文件或者设备上</li>
 </ul>
-<p>示例：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc &gt; list_right 2&gt; list_error</span><br></pre></td></tr></table></figure></p>
+<p>示例1：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc &gt; list_right 2&gt; list_error</span><br></pre></td></tr></table></figure></p>
 <p>以上就可以将stdout和stderr分别存到不同的文件中去。</p>
+<p>示例2：<br>将错误的数据丢弃，屏幕上显示正确的数据<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc 2&gt; /dev/null</span><br></pre></td></tr></table></figure></p>
+<p>/dev/null垃圾黑洞设备</p>
+<p>示例3：<br>将正确和错误的数据全部写入一个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">find /home -name .bashrc &gt;list 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">find /home -name .bashrc &amp;&gt; list</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
