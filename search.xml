@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Linux文件名查找]]></title>
     <url>%2F2018%2F09%2F05%2FLinux%E6%96%87%E4%BB%B6%E5%90%8D%E6%9F%A5%E6%89%BE%2F</url>
-    <content type="text"><![CDATA[通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。]]></content>
+    <content type="text"><![CDATA[通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。因为whereis与locate是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;find直接打查找硬盘，所以查询速度要慢。 whereis whereis [-bmsu] 文件或者目录名 Linux系统会将系统内的所有文件都记录在一个数据库文件里面，而当使用whereis或者下面的locate命令时，都会以此数据库文件内容为准。因此有时候还会发现使用这两个命令查找文件时，会找到已经删掉的文件。而且有可能找不到最新刚刚创建的文件。 locate locate [-ir] keyword locate使用更简单，直接在后面输入文件的部分名称后就能得到结果。被搜索的数据库默认是每天执行一次，该数据库的位置为/var/lib/mlocate/。我们可以选择手动更新数据库，直接命令行输入updatedb 即可。 find find [path] [option] [option]]]></content>
       <categories>
         <category>Linux/Mac OS</category>
       </categories>

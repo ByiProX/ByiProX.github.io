@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。">
+<meta name="description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。因为whereis与locate是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;find直接打查找硬盘，所以查询速度要慢。">
 <meta name="keywords" content="Linux&#x2F;Mac OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux文件名查找">
 <meta property="og:url" content="http://yoursite.com/2018/09/05/Linux文件名查找/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。">
+<meta property="og:description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。因为whereis与locate是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;find直接打查找硬盘，所以查询速度要慢。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T11:45:25.548Z">
+<meta property="og:updated_time" content="2018-09-05T12:03:37.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux文件名查找">
-<meta name="twitter:description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。">
+<meta name="twitter:description" content="通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。因为whereis与locate是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;find直接打查找硬盘，所以查询速度要慢。">
 
 
 
@@ -383,7 +383,20 @@
       
 
       
-        <p>通常情况下find不是很常用，因为速度较慢。一般都是先使用whereis或者是locate来检查，如果真找不到，才使用find来查找。</p>
+        <p>通常情况下<code>find</code>不是很常用，因为速度较慢。一般都是先使用<code>whereis</code>或者是<code>locate</code>来检查，如果真找不到，才使用<code>find</code>来查找。因为<code>whereis</code>与<code>locate</code>是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;<code>find</code>直接打查找硬盘，所以查询速度要慢。</p>
+<a id="more"></a>
+<h4 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h4><blockquote>
+<p>whereis [-bmsu] 文件或者目录名</p>
+</blockquote>
+<p>Linux系统会将系统内的所有文件都记录在一个数据库文件里面，而当使用<code>whereis</code>或者下面的<code>locate</code>命令时，都会以此数据库文件内容为准。因此有时候还会发现使用这两个命令查找文件时，会找到已经删掉的文件。而且有可能找不到最新刚刚创建的文件。</p>
+<h4 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h4><blockquote>
+<p>locate [-ir] keyword</p>
+</blockquote>
+<p>locate使用更简单，直接在后面输入<code>文件的部分名称</code>后就能得到结果。被搜索的数据库默认是每天执行一次，该数据库的位置为<code>/var/lib/mlocate/</code>。我们可以选择手动更新数据库，直接命令行输入<code>updatedb</code> 即可。</p>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><blockquote>
+<p>find [path] [option] [option]</p>
+</blockquote>
+<hr>
 
       
     </div>
@@ -484,8 +497,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -598,6 +620,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#whereis"><span class="nav-number">1.</span> <span class="nav-text">whereis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#locate"><span class="nav-number">2.</span> <span class="nav-text">locate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find"><span class="nav-number">3.</span> <span class="nav-text">find</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
