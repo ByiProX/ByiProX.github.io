@@ -22,8 +22,26 @@ categories:
 - `2>>`:以`累加`的方法将`错误`的数据输出到指定的文件或者设备上
 
 
-示例：
+示例1：
 ```bash
 find /home -name .bashrc > list_right 2> list_error
 ```
 以上就可以将stdout和stderr分别存到不同的文件中去。
+
+示例2：
+将错误的数据丢弃，屏幕上显示正确的数据
+```bash
+find /home -name .bashrc 2> /dev/null
+```
+/dev/null垃圾黑洞设备
+
+示例3：
+将正确和错误的数据全部写入一个文件
+```bash
+find /home -name .bashrc >list 2>&1
+
+或者
+
+find /home -name .bashrc &> list
+
+```
