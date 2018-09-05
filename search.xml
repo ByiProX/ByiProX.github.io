@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Linux数据流重定向]]></title>
     <url>%2F2018%2F09%2F05%2FLinux%E6%95%B0%E6%8D%AE%E6%B5%81%E9%87%8D%E5%AE%9A%E5%90%91%2F</url>
-    <content type="text"><![CDATA[标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示： 标准输入（stdin）：代码为0，使用&lt;或者&lt;&lt; 标准输出（stdout）：代码为1，使用&gt;或者&gt;&gt; 标准错误输出（stderr）：代码为2，使用&gt;或者&gt;&gt; 如果仅存在&gt;，则代表默认代码为1。 1&gt;:以覆盖的方法将正确的数据输出到指定的文件或者设备上 1&gt;&gt;:以累加的方法将正确的数据输出到指定的文件或者设备上 2&gt;:以覆盖的方法将错误的数据输出到指定的文件或者设备上 2&gt;&gt;:以累加的方法将错误的数据输出到指定的文件或者设备上]]></content>
+    <content type="text"><![CDATA[标准输出(standard output)指的是命令执行所回传的正确的信息，而标准错误输出(standard error output)可以理解为命令执行失败后，所回传的错误信息。一般情况下，不管正确还是错误信息数据默认的是输出到屏幕上，所以屏幕上是很混乱的。可以通过数据流重定向将stdout和stderr分别传送到其他的文件或者设备去，而分别传送所用的特殊字符如下所示： 标准输入（stdin）：代码为0，使用&lt;或者&lt;&lt; 标准输出（stdout）：代码为1，使用&gt;或者&gt;&gt; 标准错误输出（stderr）：代码为2，使用&gt;或者&gt;&gt; 如果仅存在&gt;，则代表默认代码为1。 1&gt;:以覆盖的方法将正确的数据输出到指定的文件或者设备上 1&gt;&gt;:以累加的方法将正确的数据输出到指定的文件或者设备上 2&gt;:以覆盖的方法将错误的数据输出到指定的文件或者设备上 2&gt;&gt;:以累加的方法将错误的数据输出到指定的文件或者设备上 示例：1find /home -name .bashrc &gt; list_right 2&gt; list_error 以上就可以将stdout和stderr分别存到不同的文件中去。]]></content>
       <categories>
         <category>Linux/Mac OS</category>
       </categories>
