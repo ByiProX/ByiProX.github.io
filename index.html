@@ -394,11 +394,11 @@
 <tbody>
 <tr>
 <td style="text-align:center"><code>cmd1 &amp;&amp; cmd2</code></td>
-<td style="text-align:center">若<code>cmd1</code>执行完毕且正确执行（<code>$?=0</code>）,则执行<code>cmd2</code></td>
+<td style="text-align:center">若<code>cmd1</code>执行完毕且正确执行（<code>$?=0</code>）,则执行<code>cmd2</code>;  若<code>cmd1</code>执行完毕且为错误（<code>$?≠0</code>）,则<code>cmd2</code>不被执行</td>
 </tr>
 <tr>
-<td style="text-align:center">cmd1 /&amp;#124/;/&amp;#124/; cmd2</td>
-<td style="text-align:center">输入结束（EOF）,例如邮件结束的时候</td>
+<td style="text-align:center"><code>cmd1 11 cmd2</code></td>
+<td style="text-align:center">若<code>cmd1</code>执行完毕且正确执行（<code>$?=0</code>）,则<code>cmd2</code>不被执行;  若<code>cmd1</code>执行完毕且为错误（<code>$?≠0</code>）,则执行<code>cmd2</code></td>
 </tr>
 </tbody>
 </table>
