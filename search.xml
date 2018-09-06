@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[Linux 使用su和su -切换用户的区别]]></title>
     <url>%2F2018%2F09%2F06%2FLinux-%E4%BD%BF%E7%94%A8su%E5%92%8Csu-%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[假设原来我们以root身份登录在终端，那么环境变量包含/usr/sbin。 若使用su -切换到普通用户后，环境变量不包含/usr/sbin。 若使用su切换到普通用户，环境变量包含/usr/sbin。]]></content>
+      <categories>
+        <category>Linux/Mac OS</category>
+      </categories>
+      <tags>
+        <tag>Linux/Mac OS</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Java类属性和方法的可见性]]></title>

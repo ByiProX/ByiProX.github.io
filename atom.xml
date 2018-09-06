@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-06T14:37:27.236Z</updated>
+  <updated>2018-09-06T14:43:45.726Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,12 +21,25 @@
     <link href="http://yoursite.com/2018/09/06/Linux-%E4%BD%BF%E7%94%A8su%E5%92%8Csu-%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://yoursite.com/2018/09/06/Linux-使用su和su-切换用户的区别/</id>
     <published>2018-09-06T14:37:27.000Z</published>
-    <updated>2018-09-06T14:37:27.236Z</updated>
+    <updated>2018-09-06T14:43:45.726Z</updated>
+    
+    <content type="html"><![CDATA[<p>假设原来我们以<code>root</code>身份登录在终端，那么环境变量包含<code>/usr/sbin</code>。</p><ul><li>若使用<code>su -</code>切换到普通用户后，环境变量<strong>不包含</strong><code>/usr/sbin</code>。</li><li>若使用<code>su</code>切换到普通用户，环境变量<strong>包含</strong><code>/usr/sbin</code>。</li></ul>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;p&gt;假设原来我们以&lt;code&gt;root&lt;/code&gt;身份登录在终端，那么环境变量包含&lt;code&gt;/usr/sbin&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若使用&lt;code&gt;su -&lt;/code&gt;切换到普通用户后，环境变量&lt;strong&gt;不包含&lt;/strong&gt;&lt;code&gt;/
+      
+    
     </summary>
     
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
+    
+    
+      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
     
   </entry>
   
