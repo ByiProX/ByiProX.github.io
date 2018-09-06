@@ -388,6 +388,11 @@
 <li>若使用<code>su -</code>切换到普通用户后，环境变量<strong>不包含</strong><code>/usr/sbin</code>。</li>
 <li>若使用<code>su</code>切换到普通用户，环境变量<strong>包含</strong><code>/usr/sbin</code>。</li>
 </ul>
+<p>简单总结为，</p>
+<ul>
+<li><code>su -</code>相当于重新登录，环境变量随用户的身份变为登录后用户的环境变量。登陆后的位置为用户home目录下。</li>
+<li><code>su</code>环境变量不随切换后的用户的环境变量而变化。而且登陆后所在位置与登录前一致，对于从root切换而言，当前目录为<code>/root</code>。</li>
+</ul>
 
           
         
