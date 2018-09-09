@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java 方法设置默认参数]]></title>
+    <url>%2F2018%2F09%2F09%2FJava-%E6%96%B9%E6%B3%95%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%2F</url>
+    <content type="text"><![CDATA[Java本身不支持设置默认值，需要用重载间接实现。 因为“默认参数”和“方法重载”同时支持的话有二义性的问题，Java可能为了简单就不要“默认参数”了。使用“方法重载”可以间接实现”默认参数“的效果，而且避免了代码过于hack（乱）。 1234567public class A&#123; public void doA(int a)&#123; &#125; public void doA()&#123; this.doA(0);//这里默认传入0，可以近似与通过这个方法重载，实现了默认值 &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java 关键字this和super]]></title>
     <url>%2F2018%2F09%2F07%2FJava-%E5%85%B3%E9%94%AE%E5%AD%97this%E5%92%8Csuper%2F</url>
     <content type="text"><![CDATA[关键字this有两个用途： 引用隐式参数 调用该类其他的构造器 关键字super也有两个用途： 调用超类的方法 调用超类的构造器]]></content>

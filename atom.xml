@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-07T02:40:51.608Z</updated>
+  <updated>2018-09-09T11:01:22.550Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java 方法设置默认参数</title>
+    <link href="http://yoursite.com/2018/09/09/Java-%E6%96%B9%E6%B3%95%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0/"/>
+    <id>http://yoursite.com/2018/09/09/Java-方法设置默认参数/</id>
+    <published>2018-09-09T10:59:52.000Z</published>
+    <updated>2018-09-09T11:01:22.550Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java本身不支持设置默认值，需要用重载间接实现。</p><p>因为“默认参数”和“方法重载”同时支持的话有二义性的问题，Java可能为了简单就不要“默认参数”了。使用“方法重载”可以间接实现”默认参数“的效果，而且避免了代码过于hack（乱）。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doA</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doA</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.doA(<span class="number">0</span>);<span class="comment">//这里默认传入0，可以近似与通过这个方法重载，实现了默认值</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Java本身不支持设置默认值，需要用重载间接实现。&lt;/p&gt;
+&lt;p&gt;因为“默认参数”和“方法重载”同时支持的话有二义性的问题，Java可能为了简单就不要“默认参数”了。使用“方法重载”可以间接实现”默认参数“的效果，而且避免了代码过于hack（乱）。&lt;/p&gt;
+&lt;figure 
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 关键字this和super</title>
@@ -565,28 +592,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2952111-016af56091643bbc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Screen Shot 2018-07-25 at 19.55.29.png&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="网络" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>UDP 套接字编程</title>
-    <link href="http://yoursite.com/2018/07/25/UDP-%E5%A5%97%E6%8E%A5%E5%AD%97%E7%BC%96%E7%A8%8B/"/>
-    <id>http://yoursite.com/2018/07/25/UDP-套接字编程/</id>
-    <published>2018-07-25T11:31:29.000Z</published>
-    <updated>2018-07-28T06:49:20.474Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/2952111-0d1e97d91078ff77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-07-25 at 19.54.43.png"></p><a id="more"></a><h2 id="UDPClient-py"><a href="#UDPClient-py" class="headerlink" title="UDPClient.py"></a>UDPClient.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># serverName = '140.143.38.125'</span></span><br><span class="line">serverName = <span class="string">'server.kunxiang.wang'</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果不绑定客户端进程端口，则自动选择端口</span></span><br><span class="line">clientSocket.bind((<span class="string">''</span>, <span class="number">34567</span>))</span><br><span class="line"></span><br><span class="line">msg = input(<span class="string">'please input lowercase sentence: '</span>).encode()</span><br><span class="line">clientSocket.sendto(msg, (serverName, serverPort))</span><br><span class="line"></span><br><span class="line">modifiedMsg, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line"></span><br><span class="line">print(modifiedMsg, serverAddress, end=<span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line">clientSocket.close()</span><br></pre></td></tr></table></figure><h2 id="UDPServer-py"><a href="#UDPServer-py" class="headerlink" title="UDPServer.py"></a>UDPServer.py</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line">serverSocket.bind((<span class="string">''</span>, serverPort))</span><br><span class="line">print(<span class="string">'The server is ready to receive'</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    message, clientAddress = serverSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">    print(message)</span><br><span class="line">    print(clientAddress)</span><br><span class="line">    modifiedMessage = message.upper()</span><br><span class="line">    serverSocket.sendto(modifiedMessage, clientAddress)</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2952111-0d1e97d91078ff77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;Screen Shot 2018-07-25 at 19.54.43.png&quot;&gt;&lt;/p&gt;
     
     </summary>
     
