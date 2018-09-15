@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[王海霞想写博客]]></title>
+    <url>%2F2018%2F09%2F16%2F%E7%8E%8B%E6%B5%B7%E9%9C%9E%E6%83%B3%E5%86%99%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[王海霞竟然想写博客？？？希望不是三分钟热度！！！！@王海霞]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Java 方法设置默认参数]]></title>
     <url>%2F2018%2F09%2F09%2FJava-%E6%96%B9%E6%B3%95%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%2F</url>
     <content type="text"><![CDATA[Java本身不支持设置默认值，需要用重载间接实现。 因为“默认参数”和“方法重载”同时支持的话有二义性的问题，Java可能为了简单就不要“默认参数”了。使用“方法重载”可以间接实现”默认参数“的效果，而且避免了代码过于hack（乱）。 1234567public class A&#123; public void doA(int a)&#123; &#125; public void doA()&#123; this.doA(0);//这里默认传入0，可以近似与通过这个方法重载，实现了默认值 &#125;&#125;]]></content>
