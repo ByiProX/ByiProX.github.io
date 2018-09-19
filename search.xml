@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[maven约定目录配置]]></title>
+    <url>%2F2018%2F09%2F19%2Fmaven%E7%BA%A6%E5%AE%9A%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[Maven 提倡使用一个共同的标准目录结构，Maven 使用约定优于配置的原则，大家尽可能的遵守这样的目录结构。 目录 目的 ${basedir} 存放pom.xml和所有的子目录 ${basedir}/src/main/java 项目的java源代码 ${basedir}/src/main/resources 项目的资源，比如说property文件，springmvc.xml ${basedir}/src/test/java 项目的测试类，比如说Junit代码 ${basedir}/src/test/resources 测试用用的资源 ${basedir}/src/main/webapp/WEB-INF web应用文件目录，web项目的信息，比如存放web.xml、本地图片、jsp视图页面 ${basedir}/target 打包输出目录 ${basedir}/target/classes 编译输出目录 ${basedir}/target/test-classes 测试编译输出目录 Test.java Maven只会自动运行符合该命名规则的测试类 ~/.m2/repository Maven默认的本地仓库目录位置]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Mac Dock栏分组]]></title>
     <url>%2F2018%2F09%2F18%2FMac-Dock%E6%A0%8F%E5%88%86%E7%BB%84%2F</url>
     <content type="text"><![CDATA[终端下输入如下命令123~ defaults write com.apple.dock persistent-apps -array-add '&#123; "tile-type" = "spacer-tile"; &#125;'~ killall Dock 实际上在docker中添加了空白的icon，如需删除只需右键移除即可。]]></content>
@@ -595,8 +600,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -1052,8 +1057,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>

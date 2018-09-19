@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-18T05:46:12.077Z</updated>
+  <updated>2018-09-19T05:43:06.435Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>maven约定目录配置</title>
+    <link href="http://yoursite.com/2018/09/19/maven%E7%BA%A6%E5%AE%9A%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE/"/>
+    <id>http://yoursite.com/2018/09/19/maven约定目录配置/</id>
+    <published>2018-09-19T05:36:26.000Z</published>
+    <updated>2018-09-19T05:43:06.435Z</updated>
+    
+    <content type="html"><![CDATA[<p>Maven 提倡使用一个共同的标准目录结构，Maven 使用约定优于配置的原则，大家尽可能的遵守这样的目录结构。</p><table><thead><tr><th>目录</th><th>目的</th></tr></thead><tbody><tr><td>${basedir}</td><td>存放pom.xml和所有的子目录</td></tr><tr><td>${basedir}/src/main/java</td><td>项目的java源代码</td></tr><tr><td>${basedir}/src/main/resources</td><td>项目的资源，比如说property文件，springmvc.xml</td></tr><tr><td>${basedir}/src/test/java</td><td>项目的测试类，比如说Junit代码</td></tr><tr><td>${basedir}/src/test/resources</td><td>测试用用的资源</td></tr><tr><td>${basedir}/src/main/webapp/WEB-INF</td><td>web应用文件目录，web项目的信息，比如存放web.xml、本地图片、jsp视图页面</td></tr><tr><td>${basedir}/target</td><td>打包输出目录</td></tr><tr><td>${basedir}/target/classes</td><td>编译输出目录</td></tr><tr><td>${basedir}/target/test-classes</td><td>测试编译输出目录</td></tr><tr><td>Test.java</td><td>Maven只会自动运行符合该命名规则的测试类</td></tr><tr><td>~/.m2/repository</td><td>Maven默认的本地仓库目录位置</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Maven 提倡使用一个共同的标准目录结构，Maven 使用约定优于配置的原则，大家尽可能的遵守这样的目录结构。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;目录&lt;/th&gt;
+&lt;th&gt;目的&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Mac Dock栏分组</title>
@@ -565,35 +596,6 @@
 &lt;li&gt;文件具有SUID的特殊权限时，代表当用户执行此二进制程序时，在执行过程中该用户会暂时具有程序所有者的权限。比如用户修改自己的用户密码&lt;/li&gt;
 &lt;li&gt;目录具有SGID的特殊权限时，代表用户在这个目录下面新建的文件用户组都会与该目录的用户组名相同&lt;/li&gt;
 &lt;l
-      
-    
-    </summary>
-    
-      <category term="Linux/Mac OS" scheme="http://yoursite.com/categories/Linux-Mac-OS/"/>
-    
-    
-      <category term="Linux/Mac OS" scheme="http://yoursite.com/tags/Linux-Mac-OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux根目录下目录介绍及各项缩写全称</title>
-    <link href="http://yoursite.com/2018/08/22/Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%90%84%E9%A1%B9%E7%BC%A9%E5%86%99%E5%85%A8%E7%A7%B0/"/>
-    <id>http://yoursite.com/2018/08/22/Linux根目录下目录介绍及各项缩写全称/</id>
-    <published>2018-08-22T12:43:53.000Z</published>
-    <updated>2018-08-22T12:55:23.670Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>bin  （binary） : 常见linux命令、系统所有用户命令目录文件</li><li>sbin （superuser binary） : root用户命令文件</li><li>dev  （device） : 设备驱动存储目录文件</li><li>proc （process）: 进程信息文件</li><li>usr  （UNIX Software Resource）: 与软件安装/执行相关</li><li>var  （variable）: 变量文件目录，与系统运作过程有关</li><li>etc  （etcetera）: 所有程序所需要的配置文件</li><li>lib  （library）: 系统默认库路径文件</li><li>mnt  （mount）: 挂载目录</li><li>tmp  （temporary）: 临时文件目录</li><li>opt  （option）: 可选目录（可以选择安装应用程序的目录）</li><li>boot  : 引导程序文件</li><li>home  : 家目录（用户目录）</li><li>root  : root根目录</li><li>media : 多媒体及挂载目录</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;ul&gt;
-&lt;li&gt;bin  （binary） : 常见linux命令、系统所有用户命令目录文件&lt;/li&gt;
-&lt;li&gt;sbin （superuser binary） : root用户命令文件&lt;/li&gt;
-&lt;li&gt;dev  （device） : 设备驱动存储目录文件&lt;/li&gt;
-&lt;li&gt;p
       
     
     </summary>
