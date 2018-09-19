@@ -164,9 +164,9 @@
     <link href="http://yoursite.com/2018/09/06/Java%E7%B1%BB%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7/"/>
     <id>http://yoursite.com/2018/09/06/Java类属性和方法的可见性/</id>
     <published>2018-09-06T02:33:20.000Z</published>
-    <updated>2018-09-19T12:07:23.760Z</updated>
+    <updated>2018-09-19T12:11:57.334Z</updated>
     
-    <content type="html"><![CDATA[<table><thead><tr><th>作用域</th><th>当前类</th><th>同一package</th><th>子孙类</th><th>其他package</th></tr></thead><tbody><tr><td>public</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr><tr><td>protected</td><td>Y</td><td>Y</td><td>Y</td><td>N</td></tr><tr><td>friendly</td><td>Y</td><td>Y</td><td>N</td><td>N</td></tr><tr><td>private</td><td>Y</td><td>N</td><td>N</td><td>N</td></tr></tbody></table><p>不写时默认为<code>friendly</code></p>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th>作用域</th><th>当前类</th><th>同一package</th><th>子孙类</th><th>其他package</th></tr></thead><tbody><tr><td>public</td><td>Y</td><td>Y</td><td>Y</td><td>Y</td></tr><tr><td>protected</td><td>Y</td><td>Y</td><td>Y</td><td>N</td></tr><tr><td>friendly(default)</td><td>Y</td><td>Y</td><td>N</td><td>N</td></tr><tr><td>private</td><td>Y</td><td>N</td><td>N</td><td>N</td></tr></tbody></table><p>不写时默认为<code>friendly</code></p>]]></content>
     
     <summary type="html">
     
