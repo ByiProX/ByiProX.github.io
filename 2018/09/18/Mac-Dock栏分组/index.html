@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="终端下输入如下命令123~ defaults write com.apple.dock persistent-apps -array-add &apos;&amp;#123; &quot;tile-type&quot; = &quot;spacer-tile&quot;; &amp;#125;&apos;~ killall Dock 实际上在docker中添加了空白的icon，如需删除只需右键移除即可。">
+<meta name="description" content="方法1终端下输入如下命令123~ defaults write com.apple.dock persistent-apps -array-add &apos;&amp;#123; &quot;tile-type&quot; = &quot;spacer-tile&quot;; &amp;#125;&apos;~ killall Dock 实际上在docker中添加了空白的icon，如需删除只需右键移除即可。">
 <meta name="keywords" content="玩转苹果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac Dock栏分组">
 <meta property="og:url" content="http://yoursite.com/2018/09/18/Mac-Dock栏分组/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="终端下输入如下命令123~ defaults write com.apple.dock persistent-apps -array-add &apos;&amp;#123; &quot;tile-type&quot; = &quot;spacer-tile&quot;; &amp;#125;&apos;~ killall Dock 实际上在docker中添加了空白的icon，如需删除只需右键移除即可。">
+<meta property="og:description" content="方法1终端下输入如下命令123~ defaults write com.apple.dock persistent-apps -array-add &apos;&amp;#123; &quot;tile-type&quot; = &quot;spacer-tile&quot;; &amp;#125;&apos;~ killall Dock 实际上在docker中添加了空白的icon，如需删除只需右键移除即可。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-18T05:46:12.077Z">
+<meta property="og:updated_time" content="2018-09-19T08:46:40.235Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac Dock栏分组">
-<meta name="twitter:description" content="终端下输入如下命令123~ defaults write com.apple.dock persistent-apps -array-add &apos;&amp;#123; &quot;tile-type&quot; = &quot;spacer-tile&quot;; &amp;#125;&apos;~ killall Dock 实际上在docker中添加了空白的icon，如需删除只需右键移除即可。">
+<meta name="twitter:description" content="方法1终端下输入如下命令123~ defaults write com.apple.dock persistent-apps -array-add &apos;&amp;#123; &quot;tile-type&quot; = &quot;spacer-tile&quot;; &amp;#125;&apos;~ killall Dock 实际上在docker中添加了空白的icon，如需删除只需右键移除即可。">
 
 
 
@@ -383,8 +383,11 @@
       
 
       
-        <p>终端下输入如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~ defaults write com.apple.dock persistent-apps -array-add <span class="string">'&#123; "tile-type" = "spacer-tile"; &#125;'</span></span><br><span class="line"></span><br><span class="line">~ killall Dock</span><br></pre></td></tr></table></figure></p>
+        <h4 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h4><p>终端下输入如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~ defaults write com.apple.dock persistent-apps -array-add <span class="string">'&#123; "tile-type" = "spacer-tile"; &#125;'</span></span><br><span class="line"></span><br><span class="line">~ killall Dock</span><br></pre></td></tr></table></figure></p>
 <p>实际上在docker中添加了空白的icon，如需删除只需右键移除即可。</p>
+<a id="more"></a>
+<h4 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h4><p><a href="https://github.com/DeromirNeves/VerticalBar" target="_blank" rel="noopener">https://github.com/DeromirNeves/VerticalBar</a></p>
+<p><a href="https://github.com/DeromirNeves/VerticalBar.git" target="_blank" rel="noopener">https://github.com/DeromirNeves/VerticalBar.git</a></p>
 
       
     </div>
@@ -489,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -603,6 +615,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法1"><span class="nav-number">1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法2"><span class="nav-number">2.</span> <span class="nav-text">方法2</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
