@@ -14,7 +14,7 @@ categories:
 | ------------| -----------|---------- |----------|----------|
 | public      | Y          |Y          |Y         |Y           |
 | protected   | Y          |        Y  | Y         |  N         |
-| friendly    | Y          | Y         | N         | N          |
+| friendly(default)    | Y          | Y         | N         | N          |
 | private     | Y         |N         | N         |   N         |
 
 
