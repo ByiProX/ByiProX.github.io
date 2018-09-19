@@ -7,4 +7,15 @@ categories:
   - Java
 ---
 
-![Screen Shot 2018-09-06 at 10.31.39.png](https://upload-images.jianshu.io/upload_images/2952111-2df8d57552a82ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+| 作用域       | 当前类      |同一package |子孙类     |其他package |
+| ------------| -----------|---------- |----------|----------|
+| public      | Y          |Y          |Y         |Y           |
+| protected   | Y          |        Y  | Y         |  N         |
+| friendly    | Y          | Y         | N         | N          |
+| private     | Y         |N         | N         |   N         |
+
+
+不写时默认为`friendly`
