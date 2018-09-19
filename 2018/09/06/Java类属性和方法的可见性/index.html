@@ -81,17 +81,18 @@
 
 
 
+<meta name="description" content="作用域 当前类 同一package 子孙类 其他package     public Y Y Y Y   protected Y Y Y N   friendly Y Y N N   private Y N N N    不写时默认为friendly">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java类属性和方法的可见性">
 <meta property="og:url" content="http://yoursite.com/2018/09/06/Java类属性和方法的可见性/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
+<meta property="og:description" content="作用域 当前类 同一package 子孙类 其他package     public Y Y Y Y   protected Y Y Y N   friendly Y Y N N   private Y N N N    不写时默认为friendly">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-2df8d57552a82ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-09-06T02:35:39.824Z">
+<meta property="og:updated_time" content="2018-09-19T12:07:23.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java类属性和方法的可见性">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2952111-2df8d57552a82ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:description" content="作用域 当前类 同一package 子孙类 其他package     public Y Y Y Y   protected Y Y Y N   friendly Y Y N N   private Y N N N    不写时默认为friendly">
 
 
 
@@ -382,7 +383,48 @@
       
 
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/2952111-2df8d57552a82ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-09-06 at 10.31.39.png"></p>
+        <table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>当前类</th>
+<th>同一package</th>
+<th>子孙类</th>
+<th>其他package</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>friendly</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>不写时默认为<code>friendly</code></p>
 
       
     </div>

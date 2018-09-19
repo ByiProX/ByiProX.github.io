@@ -1205,7 +1205,48 @@
       
         
           
-            <p><img src="https://upload-images.jianshu.io/upload_images/2952111-2df8d57552a82ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2018-09-06 at 10.31.39.png"></p>
+            <table>
+<thead>
+<tr>
+<th>作用域</th>
+<th>当前类</th>
+<th>同一package</th>
+<th>子孙类</th>
+<th>其他package</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>friendly</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>不写时默认为<code>friendly</code></p>
 
           
         
