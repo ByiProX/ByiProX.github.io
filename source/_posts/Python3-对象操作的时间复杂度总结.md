@@ -59,7 +59,7 @@ deque是以双向链表的形式实现的。双向队列的两端都是可达的
 | Difference s-t                    | O(len(s))                                                    |                                               |                                            |
 | s.difference_update(t)            | O(len(t))                                                    |                                               |                                            |
 | Symmetric Difference s^t          | O(len(s))                                                    | O(len(s) * len(t))                            |                                            |
-| s.symmetric_difference_update(t)  | O(len(t))                                                    | O(len(t) * len(s))                            |                                            |
+| s.symmetric_difference_update(t)  | O(len(t))                                                    | O(len(t) * len(s))                            |                                            ||
 
 ## 字典 dict
 字典的平均情况基于以下假设：

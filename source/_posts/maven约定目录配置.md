@@ -2,6 +2,9 @@
 title: maven约定目录配置
 date: 2018-09-19 13:36:26
 tags:
+  - Java
+categories:
+  - Java
 ---
 Maven 提倡使用一个共同的标准目录结构，Maven 使用约定优于配置的原则，大家尽可能的遵守这样的目录结构。
 
