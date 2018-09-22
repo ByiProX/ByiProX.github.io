@@ -49,7 +49,7 @@
     <link href="http://yoursite.com/2018/09/19/maven%E7%BA%A6%E5%AE%9A%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE/"/>
     <id>http://yoursite.com/2018/09/19/maven约定目录配置/</id>
     <published>2018-09-19T05:36:26.000Z</published>
-    <updated>2018-09-19T05:43:06.435Z</updated>
+    <updated>2018-09-22T08:15:16.195Z</updated>
     
     <content type="html"><![CDATA[<p>Maven 提倡使用一个共同的标准目录结构，Maven 使用约定优于配置的原则，大家尽可能的遵守这样的目录结构。</p><table><thead><tr><th>目录</th><th>目的</th></tr></thead><tbody><tr><td>${basedir}</td><td>存放pom.xml和所有的子目录</td></tr><tr><td>${basedir}/src/main/java</td><td>项目的java源代码</td></tr><tr><td>${basedir}/src/main/resources</td><td>项目的资源，比如说property文件，springmvc.xml</td></tr><tr><td>${basedir}/src/test/java</td><td>项目的测试类，比如说Junit代码</td></tr><tr><td>${basedir}/src/test/resources</td><td>测试用用的资源</td></tr><tr><td>${basedir}/src/main/webapp/WEB-INF</td><td>web应用文件目录，web项目的信息，比如存放web.xml、本地图片、jsp视图页面</td></tr><tr><td>${basedir}/target</td><td>打包输出目录</td></tr><tr><td>${basedir}/target/classes</td><td>编译输出目录</td></tr><tr><td>${basedir}/target/test-classes</td><td>测试编译输出目录</td></tr><tr><td>Test.java</td><td>Maven只会自动运行符合该命名规则的测试类</td></tr><tr><td>~/.m2/repository</td><td>Maven默认的本地仓库目录位置</td></tr></tbody></table>]]></content>
     
@@ -72,6 +72,10 @@
     
     </summary>
     
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
     
   </entry>
   
