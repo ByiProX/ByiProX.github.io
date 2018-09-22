@@ -194,6 +194,7 @@
 }
 .fa-heart:before {
   content: "\f004";
+  color: "#ff0000";
 }
 .fa-star:before {
   content: "\f005";
