@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，BOOTY协议(Bootstrap Protocol)被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的动态主机配置协议DHCP(Dynamic Host Configuration Protocol)取代。 DHCP用的端号是UDP67和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-25T03:20:06.357Z">
+<meta property="og:updated_time" content="2018-09-25T03:29:19.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DHCP续租过程">
 <meta name="twitter:description" content="计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，BOOTY协议(Bootstrap Protocol)被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的动态主机配置协议DHCP(Dynamic Host Configuration Protocol)取代。 DHCP用的端号是UDP67和">
@@ -477,7 +477,7 @@
 
       
         <p>计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，<code>BOOTY协议(Bootstrap Protocol)</code>被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的<code>动态主机配置协议DHCP(Dynamic Host Configuration Protocol)</code>取代。</p>
-<p>DHCP用的端号是UDP67和UDP68，这两个端口是正常的DHCP服务端口，你可以理解为一个发送，一个接收。客户端向68端口（bootps）广播请求配置，服务器向67端口（bootpc）广播回应请求。</p>
+<p>DHCP用的端号是<code>UDP67</code>和<code>UDP68</code>，这两个端口是正常的DHCP服务端口，你可以理解为一个发送，一个接收。<code>客户端向68端口（bootps）广播请求配置，服务器向67端口（bootpc）广播回应请求</code>。</p>
 <h4 id="DHCP续租过程"><a href="#DHCP续租过程" class="headerlink" title="DHCP续租过程"></a>DHCP续租过程</h4><table>
 <thead>
 <tr>
@@ -510,7 +510,7 @@
 </tbody>
 </table>
 <a id="more"></a>
-<h5 id="1-发现数据包"><a href="#1-发现数据包" class="headerlink" title="1.发现数据包"></a>1.发现数据包</h5><p>第一个数据包从0.0.0.0的68端口发往255.255.255.255的67端口。客户端使用0.0.0.0，是因为目前还没有IP地址。数据包发往255.255.255.255，是因为这是一个独立于网络的广播地址，从而能够确保这个数据包会被发往网络上的每一台设备。因为这台设备并不知道DHCP服务器的地址，所有它的第一个数据包是为了寻找正在监听的DHCP服务器。</p>
+<h5 id="1-发现数据包"><a href="#1-发现数据包" class="headerlink" title="1.发现数据包"></a>1.发现数据包</h5><p>第一个数据包从<code>0.0.0.0</code>的<code>68端口</code>发往<code>255.255.255.255</code>的<code>67端口</code>。客户端使用0.0.0.0，是因为目前还没有IP地址。数据包发往255.255.255.255，是因为这是一个独立于网络的广播地址，从而能够确保这个数据包会被发往网络上的每一台设备。因为这台设备并不知道DHCP服务器的地址，所有它的第一个数据包是为了寻找正在监听的DHCP服务器。</p>
 <p>DHCP客户端对请求响应速度要求很高。由于DHCP有其内置的保证可靠性的方法，也就意味着UDP是最合适的协议。</p>
 <p>数据包中包括了所请求的IP地址，表示客户端希望得到的IP的地址，通常是之前用过的IP地址。</p>
 <h5 id="2-提供数据包"><a href="#2-提供数据包" class="headerlink" title="2.提供数据包"></a>2.提供数据包</h5><p>这个数据包包含了和前一个数据包相同的事务ID，该ID告诉我们这个响应与原先的请求相对应。该数据包由DHCP服务器发出，用于向客户端提供服务。它提供的信息，包括自己的IP，以及给客户端提供的地址等。</p>
