@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-09-25T06:50:17.578Z</updated>
+  <updated>2018-09-25T16:02:56.553Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>面试总结之数据库篇(持续更新)</title>
+    <link href="http://kunxiang.wang/2018/09/26/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AF%87-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
+    <id>http://kunxiang.wang/2018/09/26/面试总结之数据库篇-持续更新/</id>
+    <published>2018-09-25T16:01:30.000Z</published>
+    <updated>2018-09-25T16:02:56.553Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>SQL语言包含4个部分：</p><p>DDL：DROP、CREATE、ALTER等语句。<br>DML：INSERT、UPDATE、DELETE语句。<br>DQL：SELECT语句。<br>DCL：GRANT、REVOKE、COMMIT、ROLLBACK等语句。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;SQL语言包含4个部分：&lt;/p&gt;
+&lt;p&gt;DDL：DROP、CREATE、ALTER等语句。&lt;br&gt;DML：INSERT、UPDATE、DELETE语句。&lt;br&gt;DQL：SELECT语句。&lt;br&gt;DCL：GRANT、REVOKE、COMMIT、ROLLBAC
+      
+    
+    </summary>
+    
+      <category term="Linux/Mac OS" scheme="http://kunxiang.wang/categories/Linux-Mac-OS/"/>
+    
+    
+      <category term="面试 数据库" scheme="http://kunxiang.wang/tags/%E9%9D%A2%E8%AF%95-%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>URL、URI和URN三者之间的区别</title>
     <link href="http://kunxiang.wang/2018/09/25/URL%E3%80%81URI%E5%92%8CURN%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://kunxiang.wang/2018/09/25/URL、URI和URN三者之间的区别/</id>
     <published>2018-09-25T06:37:38.000Z</published>
-    <updated>2018-09-25T06:50:17.578Z</updated>
+    <updated>2018-09-25T12:14:14.430Z</updated>
     
     <content type="html"><![CDATA[<p>URL – Uniform Resource Locator，统一资源定位符。即URL可以用来标识一个资源，而且还指明了如何locate这个资源。</p><p>URN – Uniform Resource Name，统一资源命名。即通过名字来表示资源的。</p><p>URI – Uniform Resource Identifier，即统一资源标志符，用来唯一的标识一个资源。</p><p>URL和URN都是URI的子集。</p><p>一个用于理解这三者的例子。</p><p>关于URL：</p><blockquote><p>URL是URI的一种，不仅标识了Web 资源，还指定了操作或者获取方式，同时指出了主要访问机制和网络位置。</p></blockquote><p>关于URN：</p><blockquote><p>URN是URI的一种，用特定命名空间的名字标识资源。使用URN可以在不知道其网络位置及访问方式的情况下<code>讨论</code>资源。</p></blockquote><hr><a id="more"></a><p>下面展示一个例子，非常简单清楚地告诉你在互联网中URI 、URL和URN之间的不同。</p><p>这是一个<code>URI</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://bitpoetry.io/posts/hello.html<span class="comment">#intro</span></span><br></pre></td></tr></table></figure></p><p>其中：</p><ul><li><p><code>http://</code>:是定义如何访问资源的<strong>方式</strong>。</p></li><li><p><code>bitpoetry.io/posts/hello.html</code>是资源存放的<strong>位置</strong>。</p></li><li><p><code>#intro</code>是资源。</p></li></ul><p>URL是URI的一个子集，告诉我们访问网络位置的方式。在我们的例子中，<code>URL</code>应该如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://bitpoetry.io/posts/hello.html</span><br></pre></td></tr></table></figure></p><p><code>URN</code>是URI的子集，包括名字（给定的命名空间内），但是不包括访问方式，如下所示：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bitpoetry.io/posts/hello.html<span class="comment">#intro</span></span><br></pre></td></tr></table></figure><p>至少要记住一件事：URI可以被分为URL、URN或两者的组合。如果你一直使用URI这个术语，绝对不会出错错。</p><hr>]]></content>
     
@@ -617,33 +644,6 @@
     
       &lt;p&gt;子网掩码的作用是什么?掩码用于说明子网域在一个IP地址中的位置。子网掩码主要用于说明如何进行子网的划分。掩码是由32位组成的，很像IP地址。对于三类IP地址来说，有一些自然的或缺省的固定掩码。下面详细来看看吧。&lt;/p&gt;
 &lt;p&gt;IP地址和网络掩码为了简便起见，通常会被写成&lt;code&gt;无类型域间选路(Classless-Inter-Domain-Routing, CIDR)&lt;/code&gt;。在这种形势下，一个完整的IP地址后面会有一个左斜杠&lt;code&gt;/&lt;/code&gt;，以及一个用来表示IP地址中&lt;code&gt;网路部分位数&lt;/code&gt;的数字。举例说明，IP地址&lt;code&gt;10.10.1.22&lt;/code&gt;和网络掩码&lt;code&gt;255.255.0.0&lt;/code&gt;，在CIDR表示法下就会被写成&lt;code&gt;10.10.1.22/16&lt;/code&gt;的形式。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="网络" scheme="http://kunxiang.wang/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="网络" scheme="http://kunxiang.wang/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络之子网(掩码)</title>
-    <link href="http://kunxiang.wang/2018/08/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%B9%8B%E5%AD%90%E7%BD%91-%E6%8E%A9%E7%A0%81/"/>
-    <id>http://kunxiang.wang/2018/08/31/计算机网络之子网-掩码/</id>
-    <published>2018-08-31T03:31:28.000Z</published>
-    <updated>2018-08-31T16:37:28.307Z</updated>
-    
-    <content type="html"><![CDATA[<p>子网掩码是用来判断任意两台计算机的IP地址是否属于同一子网络的根据。</p><p>最为简单的理解就是两台计算机各自的IP地址与子网掩码进行AND运算后，如果得出的结果是相同的，则说明这两台计算机是处于同一个子网络上的，可以进行直接的通讯。</p><p>假设IP编址为某个子网分配一个地位：<code>223.1.1.0/24</code>,其中的<code>/24</code>计法，成为子网掩码（network mask），指示了<code>32位比特中的最左侧24比特定义了子网地址</code>。</p><p>子网掩码通常有以下2种格式的表示方法：</p><ol><li>通过与IP地址格式相同的点分十进制表示<br>如：255.0.0.0 或255.255.255.128</li><li>在IP地址后加上”/“符号以及1-32的数字，其中1-32的数字表示子网掩码中网络标识位的长度<br>如：192.168.1.1/24 的子网掩码也可以表示为255.255.255.0<br>子网掩码一般为255.255.255.0</li></ol><p>子网掩码——屏蔽一个IP地址的网络部分的“全1”比特模式。对于A类地址来说，默认的子网掩码是255.0.0.0；对于B类地址来说默认的子网掩码是255.255.0.0；对于C类地址来说默认的子网掩码是255.255.255.0。</p><p>子网掩码的设定必须遵循一定的规则。与二进制IP地址相同，子网掩码由1和0组成，且1和0分别连续。子网掩码的长度也是32位，左边是网络位，用二进制数字“1”表示，1的数目等于网络位的长度；右边是主机位，用二进制数字“0”表示，0的数目等于主机位的长度。这样做的目的是为了让掩码与ip地址做按位与运算时用0遮住原主机数，而不改变原网络段数字，而且很容易通过0的位数确定子网的主机数（主机号全为1时表示该网络广播地址，全为0时表示该网络的网络号，这是两个特殊地址）。只有通过子网掩码，才能表明一台主机所在的子网与其他子网的关系，使网络正常工作。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;子网掩码是用来判断任意两台计算机的IP地址是否属于同一子网络的根据。&lt;/p&gt;
-&lt;p&gt;最为简单的理解就是两台计算机各自的IP地址与子网掩码进行AND运算后，如果得出的结果是相同的，则说明这两台计算机是处于同一个子网络上的，可以进行直接的通讯。&lt;/p&gt;
-&lt;p&gt;假设IP编址为某个
-      
     
     </summary>
     
