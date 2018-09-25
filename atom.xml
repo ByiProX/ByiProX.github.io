@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-09-25T06:38:26.560Z</updated>
+  <updated>2018-09-25T06:50:17.578Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -21,17 +21,26 @@
     <link href="http://kunxiang.wang/2018/09/25/URL%E3%80%81URI%E5%92%8CURN%E4%B8%89%E8%80%85%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://kunxiang.wang/2018/09/25/URL、URI和URN三者之间的区别/</id>
     <published>2018-09-25T06:37:38.000Z</published>
-    <updated>2018-09-25T06:38:26.560Z</updated>
+    <updated>2018-09-25T06:50:17.578Z</updated>
     
-    <content type="html"><![CDATA[<p>URL和URN都是URI的子集。</p>]]></content>
+    <content type="html"><![CDATA[<p>URL – Uniform Resource Locator，统一资源定位符。即URL可以用来标识一个资源，而且还指明了如何locate这个资源。</p><p>URN – Uniform Resource Name，统一资源命名。即通过名字来表示资源的。</p><p>URI – Uniform Resource Identifier，即统一资源标志符，用来唯一的标识一个资源。</p><p>URL和URN都是URI的子集。</p><p>一个用于理解这三者的例子。</p><p>关于URL：</p><blockquote><p>URL是URI的一种，不仅标识了Web 资源，还指定了操作或者获取方式，同时指出了主要访问机制和网络位置。</p></blockquote><p>关于URN：</p><blockquote><p>URN是URI的一种，用特定命名空间的名字标识资源。使用URN可以在不知道其网络位置及访问方式的情况下<code>讨论</code>资源。</p></blockquote><hr><a id="more"></a><p>下面展示一个例子，非常简单清楚地告诉你在互联网中URI 、URL和URN之间的不同。</p><p>这是一个<code>URI</code>:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://bitpoetry.io/posts/hello.html<span class="comment">#intro</span></span><br></pre></td></tr></table></figure></p><p>其中：</p><ul><li><p><code>http://</code>:是定义如何访问资源的<strong>方式</strong>。</p></li><li><p><code>bitpoetry.io/posts/hello.html</code>是资源存放的<strong>位置</strong>。</p></li><li><p><code>#intro</code>是资源。</p></li></ul><p>URL是URI的一个子集，告诉我们访问网络位置的方式。在我们的例子中，<code>URL</code>应该如下所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://bitpoetry.io/posts/hello.html</span><br></pre></td></tr></table></figure></p><p><code>URN</code>是URI的子集，包括名字（给定的命名空间内），但是不包括访问方式，如下所示：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bitpoetry.io/posts/hello.html<span class="comment">#intro</span></span><br></pre></td></tr></table></figure><p>至少要记住一件事：URI可以被分为URL、URN或两者的组合。如果你一直使用URI这个术语，绝对不会出错错。</p><hr>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;URL和URN都是URI的子集。&lt;/p&gt;
-
-      
+      &lt;p&gt;URL – Uniform Resource Locator，统一资源定位符。即URL可以用来标识一个资源，而且还指明了如何locate这个资源。&lt;/p&gt;
+&lt;p&gt;URN – Uniform Resource Name，统一资源命名。即通过名字来表示资源的。&lt;/p&gt;
+&lt;p&gt;URI – Uniform Resource Identifier，即统一资源标志符，用来唯一的标识一个资源。&lt;/p&gt;
+&lt;p&gt;URL和URN都是URI的子集。&lt;/p&gt;
+&lt;p&gt;一个用于理解这三者的例子。&lt;/p&gt;
+&lt;p&gt;关于URL：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;URL是URI的一种，不仅标识了Web 资源，还指定了操作或者获取方式，同时指出了主要访问机制和网络位置。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;关于URN：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;URN是URI的一种，用特定命名空间的名字标识资源。使用URN可以在不知道其网络位置及访问方式的情况下&lt;code&gt;讨论&lt;/code&gt;资源。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
     
     </summary>
     
@@ -47,21 +56,36 @@
     <link href="http://kunxiang.wang/2018/09/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%B8%B8%E7%94%A8%E5%8D%8F%E8%AE%AE%E7%AB%AF%E5%8F%A3%E5%BD%92%E7%BA%B3/"/>
     <id>http://kunxiang.wang/2018/09/25/计算机网络常用协议端口归纳/</id>
     <published>2018-09-25T03:43:05.000Z</published>
-    <updated>2018-09-25T03:45:08.249Z</updated>
+    <updated>2018-09-25T06:41:03.655Z</updated>
     
-    <content type="html"><![CDATA[<ul><li><p>HTTP协议代理服务器常用端口号：80/8080/3128/8081/9098</p></li><li><p>SOCKS代理协议服务器常用端口号：1080</p></li><li><p>FTP（文件传输）协议代理服务器常用端口号：20（控制端口）/tcp、21（数据传输端口）/tcp</p></li><li><p>Telnet（远程登录）协议代理服务器常用端口号：23/tcp</p></li><li><p>DNS（域名解析服务）默认端口号：53/udp</p></li><li><p>HTTP服务器，默认端口号：80/tcp</p></li><li><p>POP3 （邮局协议版本3）使用的端口号：110/tcp</p></li><li><p>HTTPS（securely transferring web pages）服务器，默认端口号：443/tcp</p></li><li><p>TFTP（Trivial File Transfer Protocol），默认端口号：69/udp</p></li><li><p>SSH（安全登录）、SCP（文件传输）、端口号重定向，默认的端口号：22/tcp</p></li><li><p>SMTP （Simple Mail Transfer Protocol），默认端口号：25/tcp</p></li><li><p>POP3 Post Office Protocol（E-mail），默认端口号：110/tcp</p></li><li><p>Webshpere应用程序默认端口号：9080</p></li><li><p>webshpere管理工具，默认端口号：9090</p></li><li><p>JBOSS，默认端口号：8080</p></li><li><p>TOMCAT，默认端口号：8080</p></li><li><p>WIN2003远程登录，默认端口号：3389</p></li><li><p>Symantec AV/Filter for MSE,默认端口号：8081</p></li><li><p>Oracle 数据库默认的端口号：1521/tcp</p></li><li><p>Oracle XDB（XML 数据库），默认的端口号为8080</p></li><li><p>Oracle XDB FTP服务，默认的端口号为2100</p></li><li><p>MS SQL*SERVER数据库server，默认的端口号为1433/tcp</p></li><li><p>MS SQL*SERVER数据库monitor，默认的端口号为1434/tcp</p></li><li><p>Microsoft RDP 微软远程桌面使用的端口号：1863/tcp</p></li><li><p>Symantec pcAnywhere 远程控制数据传输时使用的端口号：5631/tcp</p></li><li><p>Symantec pcAnywhere 主控端扫描被控端时使用的端口号：5632/udp</p></li><li><p>MS SQL Server使用的端口号：5000/tcp</p></li><li><p>腾讯QQ端口号：8000/udp</p></li></ul><hr>]]></content>
+    <content type="html"><![CDATA[<ul><li><p>HTTP协议代理服务器常用端口号：80/8080/3128/8081/9098</p></li><li><p>SOCKS代理协议服务器常用端口号：1080</p></li><li><p>FTP（文件传输）协议代理服务器常用端口号：20（控制端口）/tcp、21（数据传输端口）/tcp</p></li><li><p>Telnet（远程登录）协议代理服务器常用端口号：23/tcp</p></li><li><p>DNS（域名解析服务）默认端口号：53/udp</p></li><li><p>SSH（安全登录）、SCP（文件传输）、端口号重定向，默认的端口号：22/tcp</p></li><li><p>HTTP服务器，默认端口号：80/tcp</p></li><li><p>POP3 （邮局协议版本3）使用的端口号：110/tcp</p></li><li><p>HTTPS（securely transferring web pages）服务器，默认端口号：443/tcp</p></li><li><p>TFTP（Trivial File Transfer Protocol），默认端口号：69/udp</p></li><li><p>SMTP （Simple Mail Transfer Protocol），默认端口号：25/tcp</p></li><li><p>POP3 Post Office Protocol（E-mail），默认端口号：110/tcp</p><a id="more"></a></li><li><p>Webshpere应用程序默认端口号：9080</p></li><li><p>webshpere管理工具，默认端口号：9090</p></li><li><p>JBOSS，默认端口号：8080</p></li><li><p>TOMCAT，默认端口号：8080</p></li><li><p>WIN2003远程登录，默认端口号：3389</p></li><li><p>Symantec AV/Filter for MSE,默认端口号：8081</p></li><li><p>Oracle 数据库默认的端口号：1521/tcp</p></li><li><p>Oracle XDB（XML 数据库），默认的端口号为8080</p></li><li><p>Oracle XDB FTP服务，默认的端口号为2100</p></li><li><p>MS SQL*SERVER数据库server，默认的端口号为1433/tcp</p></li><li><p>MS SQL*SERVER数据库monitor，默认的端口号为1434/tcp</p></li><li><p>Microsoft RDP 微软远程桌面使用的端口号：1863/tcp</p></li><li><p>Symantec pcAnywhere 远程控制数据传输时使用的端口号：5631/tcp</p></li><li><p>Symantec pcAnywhere 主控端扫描被控端时使用的端口号：5632/udp</p></li><li><p>MS SQL Server使用的端口号：5000/tcp</p></li><li><p>腾讯QQ端口号：8000/udp</p></li></ul><hr>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;ul&gt;
+      &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;HTTP协议代理服务器常用端口号：80/8080/3128/8081/9098&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;SOCKS代理协议服务器常用端口号：1080&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;FTP（文件传输）协议代理服务器常用端口号：20（控制端口）/
-      
+&lt;li&gt;&lt;p&gt;FTP（文件传输）协议代理服务器常用端口号：20（控制端口）/tcp、21（数据传输端口）/tcp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Telnet（远程登录）协议代理服务器常用端口号：23/tcp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DNS（域名解析服务）默认端口号：53/udp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;SSH（安全登录）、SCP（文件传输）、端口号重定向，默认的端口号：22/tcp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;HTTP服务器，默认端口号：80/tcp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;POP3 （邮局协议版本3）使用的端口号：110/tcp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;HTTPS（securely transferring web pages）服务器，默认端口号：443/tcp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;TFTP（Trivial File Transfer Protocol），默认端口号：69/udp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;SMTP （Simple Mail Transfer Protocol），默认端口号：25/tcp&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;POP3 Post Office Protocol（E-mail），默认端口号：110/tcp&lt;/p&gt;
     
     </summary>
     
