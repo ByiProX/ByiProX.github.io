@@ -116,18 +116,18 @@
 
 
 
-  <meta name="description" content="计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，BOOTY协议(Bootstrap Protocol)被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的动态主机配置协议DHCP(Dynamic Host Configuration Protocol)取代。">
+  <meta name="description" content="计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，BOOTY协议(Bootstrap Protocol)被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的动态主机配置协议DHCP(Dynamic Host Configuration Protocol)取代。 DHCP续租过程   DHCP">
 <meta name="keywords" content="网络">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DHCP续租过程">
 <meta property="og:url" content="http://kunxiang.wang/2018/09/25/DHCP续租过程/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，BOOTY协议(Bootstrap Protocol)被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的动态主机配置协议DHCP(Dynamic Host Configuration Protocol)取代。">
+<meta property="og:description" content="计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，BOOTY协议(Bootstrap Protocol)被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的动态主机配置协议DHCP(Dynamic Host Configuration Protocol)取代。 DHCP续租过程   DHCP">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-25T02:32:01.614Z">
+<meta property="og:updated_time" content="2018-09-25T02:39:17.893Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DHCP续租过程">
-<meta name="twitter:description" content="计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，BOOTY协议(Bootstrap Protocol)被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的动态主机配置协议DHCP(Dynamic Host Configuration Protocol)取代。">
+<meta name="twitter:description" content="计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，BOOTY协议(Bootstrap Protocol)被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的动态主机配置协议DHCP(Dynamic Host Configuration Protocol)取代。 DHCP续租过程   DHCP">
 
 
 
@@ -477,6 +477,37 @@
 
       
         <p>计算机网络发展的早些时候，当一台设备想要在网络上通信的时候，它需要被手动分配一个地址。随着网络的发展，手动方式变得烦琐，为了解决这个问题，<code>BOOTY协议(Bootstrap Protocol)</code>被创建出来给链接到网络的设备自动分配地址。BOOTY协议后来被更加复杂的<code>动态主机配置协议DHCP(Dynamic Host Configuration Protocol)</code>取代。</p>
+<h4 id="DHCP续租过程"><a href="#DHCP续租过程" class="headerlink" title="DHCP续租过程"></a>DHCP续租过程</h4><table>
+<thead>
+<tr>
+<th>DHCP客户端</th>
+<th>DORA过程</th>
+<th>DHCP服务器</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>→</td>
+<td>发现Discover  →</td>
+<td>→</td>
+</tr>
+<tr>
+<td>←</td>
+<td>提供Offer    ←</td>
+<td>←</td>
+</tr>
+<tr>
+<td>→</td>
+<td>请求Request   →</td>
+<td>→</td>
+</tr>
+<tr>
+<td>←</td>
+<td>确认Acknowledgement  ←</td>
+<td>←</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -593,8 +624,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -834,6 +874,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#DHCP续租过程"><span class="nav-number">1.</span> <span class="nav-text">DHCP续租过程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
