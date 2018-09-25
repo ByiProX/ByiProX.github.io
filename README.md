@@ -15,7 +15,7 @@
 
 - 部署操作即按照`hexo clean` ---> `hexo generate` ---> `hexo deploy`的步骤进行，此时应处于master分支下
 
-- 备份时也要在master分支下，按照`git add .` ---> `git commit -m 'blablabla'` ---> `git push origin master:Hexo-Blog`
+- 备份时也要在master分支下，按照`git add .` ---> `git commit -m 'blablabla'` ---> `git push origin master:Hexo-Blog-Backup`
 
 
 `git push origin master:Hexo-Blog`含义为将本地的master分支上传到远程的Hexo-Blog分支
