@@ -1023,7 +1023,7 @@
 <h2 id="可迭代对象每个元素赋值给一个变量"><a href="#可迭代对象每个元素赋值给一个变量" class="headerlink" title="可迭代对象每个元素赋值给一个变量"></a><strong>可迭代对象每个元素赋值给一个变量</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列表</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name, age, date = [<span class="string">'Bob'</span>, <span class="number">20</span>, <span class="string">'2018-1-1'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>name</span><br><span class="line"><span class="string">'Bob'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>age</span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>date</span><br><span class="line"><span class="string">'2018-1-1'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = enumerate([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">(<span class="number">0</span>, <span class="string">'a'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 元组</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = (<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="string">'a'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="string">'a'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;.items()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line">(<span class="string">'a'</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>, <span class="string">'c'</span>:<span class="number">3</span>&#125;.values()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = <span class="string">'abc'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a</span><br><span class="line"><span class="string">'a'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成器</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a, b, c = (x + <span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">3</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/04/06/Python3-解包和压包/#more" rel="contents">
+            <a class="btn" href="/2018/04/06/Python3-解包和压包/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1305,7 +1305,7 @@
 </table>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/29/Python3-对象操作的时间复杂度总结/#more" rel="contents">
+            <a class="btn" href="/2018/03/29/Python3-对象操作的时间复杂度总结/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1489,7 +1489,7 @@
 <p>显然这不是我们期望的结果。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/29/Python3-for-else-陷阱/#more" rel="contents">
+            <a class="btn" href="/2018/03/29/Python3-for-else-陷阱/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1676,7 +1676,7 @@
 <p><code>is None</code> is a bit (~50%) faster than <code>== None</code> :) – <a href="https://stackoverflow.com/users/226086/nas-banov" target="_blank" rel="noopener">Nas Banov</a></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/29/What-is-the-difference-between-“-is-None-”-and-“-None-”-Reprint/#more" rel="contents">
+            <a class="btn" href="/2018/03/29/What-is-the-difference-between-“-is-None-”-and-“-None-”-Reprint/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1863,7 +1863,7 @@
 <p>So <code>==</code> tests value where <code>is</code> tests to see if they are the same object?</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/29/Differences-between-and-is-in-Python3---(Reprint)/#more" rel="contents">
+            <a class="btn" href="/2018/03/29/Differences-between-and-is-in-Python3---(Reprint)/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2035,7 +2035,7 @@
 <p>在探求为何机器要使用补码之前, 让我们先了解原码, 反码和补码的概念<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/27/原码、反码、补码/#more" rel="contents">
+            <a class="btn" href="/2018/03/27/原码、反码、补码/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2216,7 +2216,7 @@
           <p>正向代理（forward proxy）代理客户端，隐藏真实客户端，<br>反向代理（reverse proxy）代理服务器，隐藏真实服务端。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/26/正向代理和反向代理/#more" rel="contents">
+            <a class="btn" href="/2018/03/26/正向代理和反向代理/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

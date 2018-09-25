@@ -489,7 +489,7 @@
 <p>如何才能让值保存在z而不是x?<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/03/python3-如何用一个表达式合并两个字典/#more" rel="contents">
+            <a class="btn" href="/2018/03/03/python3-如何用一个表达式合并两个字典/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -678,7 +678,7 @@
 <p>所有python程序员都知道，序列可迭代，下面说明具体原因。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/01/python3-可迭代对象、迭代器和生成器/#more" rel="contents">
+            <a class="btn" href="/2018/03/01/python3-可迭代对象、迭代器和生成器/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -862,7 +862,7 @@
 <p>当Python解析器读取一个源文件时,它会执行所有的代码.在执行代码前,会定义一些特殊的变量.例如,如果解析器运行的模块(源文件)作为主程序,它将会把<code>__name__</code>变量设置成<code>&quot;__main__&quot;</code>.如果只是引入其他的模块,<code>__name__</code>变量将会设置成模块的名字.<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/01/if-name-main/#more" rel="contents">
+            <a class="btn" href="/2018/03/01/if-name-main/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1051,7 +1051,7 @@
 <h4 id="作为名称使用"><a href="#作为名称使用" class="headerlink" title="作为名称使用"></a>作为名称使用</h4><p>这个跟上面有点类似。<code>_</code>用作被丢弃的名称。按照惯例，这样做可以让阅读你代码的人知道，这是个不会被使用的特定名称。举个例子，你可能无所谓一个循环计数的值：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">42</span></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(n):</span><br><span class="line">    do_something()</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/01/Python3-单下划线和双下划线/#more" rel="contents">
+            <a class="btn" href="/2018/03/01/Python3-单下划线和双下划线/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1240,7 +1240,7 @@
 <p>自省（introspection）是一种自我检查行为。在计算机编程中，自省是指这种能力：检查某些事物以确定它是什么、它知道什么以及它能做什么。自省向程序员提供了极大的灵活性和控制力.</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/01/Python3-自省/#more" rel="contents">
+            <a class="btn" href="/2018/03/01/Python3-自省/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1434,7 +1434,7 @@
 <p>类<code>Dog</code>中，类属性<code>kind</code>为所有实例所共享；实例属性<code>name</code>为每个<code>Dog</code>的实例独有。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/01/Python3-类变量和实例变量/#more" rel="contents">
+            <a class="btn" href="/2018/03/01/Python3-类变量和实例变量/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1623,7 +1623,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"executing foo(%s)"</span>%(x)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(self,x)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"executing foo(%s,%s)"</span>%(self,x)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">class_foo</span><span class="params">(cls,x)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"executing class_foo(%s,%s)"</span>%(cls,x)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">static_foo</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"executing static_foo(%s)"</span>%x</span><br><span class="line"></span><br><span class="line">a=A()</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/01/Python3-staticmethod和-classmethod/#more" rel="contents">
+            <a class="btn" href="/2018/03/01/Python3-staticmethod和-classmethod/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1805,7 +1805,7 @@
 <p>打开文件：<strong>hexo博客根目录/themes/next/layout/_layout.swig</strong> 找到如下代码块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;div class="&#123;&#123; container_class &#125;&#125; &#123;% block page_class %&#125;&#123;% endblock %&#125; "&gt;</span><br><span class="line">    &lt;div class="headband"&gt;&lt;/div&gt;</span><br><span class="line">    [样式代码]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/28/Hexo博客Next主题添加Fork-me-on-GitHub标签/#more" rel="contents">
+            <a class="btn" href="/2018/02/28/Hexo博客Next主题添加Fork-me-on-GitHub标签/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1986,7 +1986,7 @@
           <p>终端中执行hexo generate时，会将source文件夹中的.md文件渲染为.html文件到public文件夹中，所以我们可以将README.md文件放到source文件夹中，这样在执行hexo deploy时，生成的.deploy_git文件夹中就会有README文件。但此时并不是我们想要的README.md。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/28/Hexo部署的网站项目-deploy-git-中添加README-md/#more" rel="contents">
+            <a class="btn" href="/2018/02/28/Hexo部署的网站项目-deploy-git-中添加README-md/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2175,7 +2175,7 @@
 <p><img src="http://img.blog.csdn.net/20170409144243654?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYzQwNjQ5NTc2Mg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/02/28/从零开始学爬虫-05/#more" rel="contents">
+            <a class="btn" href="/2018/02/28/从零开始学爬虫-05/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
