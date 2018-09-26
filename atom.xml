@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-09-26T04:02:01.531Z</updated>
+  <updated>2018-09-26T05:23:46.491Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DELETE和TRUNCATE区别</title>
+    <link href="http://kunxiang.wang/2018/09/26/DELETE%E5%92%8CTRUNCATE%E5%8C%BA%E5%88%AB/"/>
+    <id>http://kunxiang.wang/2018/09/26/DELETE和TRUNCATE区别/</id>
+    <published>2018-09-26T05:20:40.000Z</published>
+    <updated>2018-09-26T05:23:46.491Z</updated>
+    
+    <content type="html"><![CDATA[<table><thead><tr><th style="text-align:center"></th><th style="text-align:center">DELETE</th><th style="text-align:center">TRUNCATE</th></tr></thead><tbody><tr><td style="text-align:center">执行速度</td><td style="text-align:center">慢</td><td style="text-align:center">快</td></tr><tr><td style="text-align:center">可执行条件</td><td style="text-align:center">可以</td><td style="text-align:center">不可以</td></tr><tr><td style="text-align:center">语句分类</td><td style="text-align:center">DML</td><td style="text-align:center">DDL</td></tr><tr><td style="text-align:center">可以回滚事务</td><td style="text-align:center">可以</td><td style="text-align:center">不可以</td></tr><tr><td style="text-align:center">删除操作记录日志</td><td style="text-align:center">记录</td><td style="text-align:center">不记录</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;DELETE&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;TRUNCATE&lt;/t
+      
+    
+    </summary>
+    
+      <category term="面试" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="数据库" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="面试" scheme="http://kunxiang.wang/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="数据库" scheme="http://kunxiang.wang/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>PostgreSQL数据查询操作Demo</title>
@@ -74,9 +108,9 @@
     <link href="http://kunxiang.wang/2018/09/26/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AF%87-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
     <id>http://kunxiang.wang/2018/09/26/面试总结之数据库篇-持续更新/</id>
     <published>2018-09-25T16:01:30.000Z</published>
-    <updated>2018-09-26T01:23:59.514Z</updated>
+    <updated>2018-09-26T05:27:41.288Z</updated>
     
-    <content type="html"><![CDATA[<ol><li><p>SQL语言包含4个部分：</p><p><code>DDL(Data Define Language)</code>:数据<strong>定义</strong>语言。其语句包括动词CREATE和DROP。在数据库中创建新表或删除表（CREAT TABLE 或 DROP TABLE）；为表加入索引等。DDL包括许多与人数据库目录中获得数据有关的保留字。它也是动作查询的一部分。ALTER TABLE 语句用于在已有的表中添加、修改或删除列。</p><p><code>DML(Data Manipulation Language)</code>:数据<strong>操作</strong>语言。其语句包括动词INSERT，UPDATE和DELETE。它们分别用于添加，修改和删除表中的行。也称为动作查询语言。</p><p><code>DQL(Data Query Language)</code>:数据<strong>查询</strong>语言。也称为“数据检索语句”，用以从表中获得数据，确定数据怎样在应用程序给出。保留字<code>SELECT</code>是DQL（也是所有SQL）用得最多的动词，其他DQL常用的保留字有WHERE，ORDER BY，GROUP BY和HAVING。这些DQL保留字常与其他类型的SQL语句一起使用。</p><p><code>DCL(Data Manipulation Language)</code>:数据<strong>控制</strong>语言。它的语句通过GRANT或REVOKE获得许可，确定单个用户和用户组对数据库对象的访问。某些RDBMS可用GRANT或REVOKE控制对表单个列的访问,COMMIT、ROLLBACK来提交和回滚。</p></li></ol><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<ol><li><p>SQL语言包含4个部分：</p><p><code>DDL(Data Define Language)</code>:数据<strong>定义</strong>语言。其语句包括动词CREATE和DROP。在数据库中创建新表或删除表（CREAT TABLE 或 DROP TABLE）；为表加入索引等。DDL包括许多与人数据库目录中获得数据有关的保留字。它也是动作查询的一部分。ALTER TABLE 语句用于在已有的表中添加、修改或删除列。</p><p><code>DML(Data Manipulation Language)</code>:数据<strong>操作</strong>语言。其语句包括动词INSERT，UPDATE和DELETE。它们分别用于添加，修改和删除表中的行。也称为动作查询语言。</p><p><code>DQL(Data Query Language)</code>:数据<strong>查询</strong>语言。也称为“数据检索语句”，用以从表中获得数据，确定数据怎样在应用程序给出。保留字<code>SELECT</code>是DQL（也是所有SQL）用得最多的动词，其他DQL常用的保留字有WHERE，ORDER BY，GROUP BY和HAVING。这些DQL保留字常与其他类型的SQL语句一起使用。</p><p><code>DCL(Data Manipulation Language)</code>:数据<strong>控制</strong>语言。它的语句通过GRANT或REVOKE获得许可，确定单个用户和用户组对数据库对象的访问。某些RDBMS可用GRANT或REVOKE控制对表单个列的访问,COMMIT、ROLLBACK来提交和回滚。</p></li></ol><a id="more"></a><ol><li>DELETE和TRUNCATE区别</li></ol><table><thead><tr><th style="text-align:center"></th><th style="text-align:center">DELETE</th><th style="text-align:center">TRUNCATE</th></tr></thead><tbody><tr><td style="text-align:center">执行速度</td><td style="text-align:center">慢</td><td style="text-align:center">快</td></tr><tr><td style="text-align:center">可执行条件</td><td style="text-align:center">可以</td><td style="text-align:center">不可以</td></tr><tr><td style="text-align:center">语句分类</td><td style="text-align:center">DML</td><td style="text-align:center">DDL</td></tr><tr><td style="text-align:center">可以回滚事务</td><td style="text-align:center">可以</td><td style="text-align:center">不可以</td></tr><tr><td style="text-align:center">删除操作记录日志</td><td style="text-align:center">记录</td><td style="text-align:center">不记录</td></tr></tbody></table><ol><li><p>主键和外键的作用</p><p>主键约束作用：</p><ul><li>唯一标识一条记录</li><li>提高数据的检索效率</li></ul><p>外键约束作用：</p><ul><li>保证数据的完整性</li><li>提高数据的检索效率</li></ul></li></ol><hr>]]></content>
     
     <summary type="html">
     
@@ -603,42 +637,6 @@
       
         &lt;p&gt;&lt;img src=&quot;https://upload-images.jianshu.io/upload_images/2952111-f55b3fb6121e758c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot;
       
-    
-    </summary>
-    
-      <category term="Java" scheme="http://kunxiang.wang/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://kunxiang.wang/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java入门小知识</title>
-    <link href="http://kunxiang.wang/2018/09/02/java%E5%85%A5%E9%97%A8%E5%B0%8F%E7%9F%A5%E8%AF%86/"/>
-    <id>http://kunxiang.wang/2018/09/02/java入门小知识/</id>
-    <published>2018-09-02T15:38:12.000Z</published>
-    <updated>2018-09-03T16:26:33.272Z</updated>
-    
-    <content type="html"><![CDATA[<ol><li>关键字<code>public</code>称为<code>访问修饰符(access modifier)</code>,这些修饰符用于控制程序的其他部分对这段代码的访问级别。</li><li>Java的命名规范为<code>大驼峰</code>命名。</li><li>源代码的文件名必须与公共类的名字相同，并用<code>.java</code>作为扩展名。</li><li>根据Java语言规范，<code>main方法必须声明为public</code>,java的main方法必须有一个外壳类。</li><li>在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。</li><li>构造器与类同名，在构造类对象时，构造器会运行，以便将实例域初始化为所需要的状态。构造器与一般的对象方法不同，构造器总是伴随着new操作符的执行被调用，而不能对一个已经存在的对象调用构造器来达到重新设置实例域的目的。<ul><li>构造器与类同名</li><li>每个类可以有一个以上的构造器</li><li>构造器可以有0个或多个参数</li><li>构造器没有返回值</li><li>构造器总是伴随着new使用</li></ul></li></ol><a id="more"></a><ol><li>main方法不对任何对象进行操作。事实上，在启动程序时还没有任何一个对象。静态的main方法将执行并创建程序所需的对象。</li><li>如果在构造器中没有显式的给域赋初始值，那么就会被自动地赋为默认值：<code>数值为0，布尔值为false，对象引用为null</code>。然而，只有缺少程序设计经验的人才会这样做。</li><li>对于<code>访问修饰符public和private</code>，标记为public的部分可以被任意的类使用，标记为private的部分只能被定义它们的类使用。如果没有指定public或者private，那么这个部分(类、方法、变量)可以被同一个包中的所有方法访问。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;关键字&lt;code&gt;public&lt;/code&gt;称为&lt;code&gt;访问修饰符(access modifier)&lt;/code&gt;,这些修饰符用于控制程序的其他部分对这段代码的访问级别。&lt;/li&gt;
-&lt;li&gt;Java的命名规范为&lt;code&gt;大驼峰&lt;/code&gt;命名。&lt;/li&gt;
-&lt;li&gt;源代码的文件名必须与公共类的名字相同，并用&lt;code&gt;.java&lt;/code&gt;作为扩展名。&lt;/li&gt;
-&lt;li&gt;根据Java语言规范，&lt;code&gt;main方法必须声明为public&lt;/code&gt;,java的main方法必须有一个外壳类。&lt;/li&gt;
-&lt;li&gt;在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。&lt;/li&gt;
-&lt;li&gt;构造器与类同名，在构造类对象时，构造器会运行，以便将实例域初始化为所需要的状态。构造器与一般的对象方法不同，构造器总是伴随着new操作符的执行被调用，而不能对一个已经存在的对象调用构造器来达到重新设置实例域的目的。&lt;ul&gt;
-&lt;li&gt;构造器与类同名&lt;/li&gt;
-&lt;li&gt;每个类可以有一个以上的构造器&lt;/li&gt;
-&lt;li&gt;构造器可以有0个或多个参数&lt;/li&gt;
-&lt;li&gt;构造器没有返回值&lt;/li&gt;
-&lt;li&gt;构造器总是伴随着new使用&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
     
     </summary>
     

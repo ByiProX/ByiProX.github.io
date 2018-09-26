@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="SQL语言包含4个部分： DDL(Data Define Language):数据定义语言。其语句包括动词CREATE和DROP。在数据库中创建新表或删除表（CREAT TABLE 或 DROP TABLE）；为表加入索引等。DDL包括许多与人数据库目录中获得数据有关的保留字。它也是动作查询的一部分。ALTER TABLE 语句用于在已有的表中添加、修改或删除列。 DML(Data Manipu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-26T01:23:59.514Z">
+<meta property="og:updated_time" content="2018-09-26T05:27:41.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结之数据库篇(持续更新)">
 <meta name="twitter:description" content="SQL语言包含4个部分： DDL(Data Define Language):数据定义语言。其语句包括动词CREATE和DROP。在数据库中创建新表或删除表（CREAT TABLE 或 DROP TABLE）；为表加入索引等。DDL包括许多与人数据库目录中获得数据有关的保留字。它也是动作查询的一部分。ALTER TABLE 语句用于在已有的表中添加、修改或删除列。 DML(Data Manipu">
@@ -492,6 +492,60 @@
 </li>
 </ol>
 <a id="more"></a>
+<ol>
+<li>DELETE和TRUNCATE区别</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">DELETE</th>
+<th style="text-align:center">TRUNCATE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">执行速度</td>
+<td style="text-align:center">慢</td>
+<td style="text-align:center">快</td>
+</tr>
+<tr>
+<td style="text-align:center">可执行条件</td>
+<td style="text-align:center">可以</td>
+<td style="text-align:center">不可以</td>
+</tr>
+<tr>
+<td style="text-align:center">语句分类</td>
+<td style="text-align:center">DML</td>
+<td style="text-align:center">DDL</td>
+</tr>
+<tr>
+<td style="text-align:center">可以回滚事务</td>
+<td style="text-align:center">可以</td>
+<td style="text-align:center">不可以</td>
+</tr>
+<tr>
+<td style="text-align:center">删除操作记录日志</td>
+<td style="text-align:center">记录</td>
+<td style="text-align:center">不记录</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><p>主键和外键的作用</p>
+<p>主键约束作用：</p>
+<ul>
+<li>唯一标识一条记录</li>
+<li>提高数据的检索效率</li>
+</ul>
+<p>外键约束作用：</p>
+<ul>
+<li>保证数据的完整性</li>
+<li>提高数据的检索效率</li>
+</ul>
+</li>
+</ol>
+<hr>
 
       
     </div>
@@ -634,7 +688,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
