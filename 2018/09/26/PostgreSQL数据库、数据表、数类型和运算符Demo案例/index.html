@@ -116,16 +116,18 @@
 
 
 
-  <meta name="description" content="每天进步一点点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quentin&#39;s Blog">
-<meta property="og:url" content="http://kunxiang.wang/tags/数据库/index.html">
+  <meta name="description" content="数据库对象操作1234567891011121314--最简单创建数据库示例（使用默认参数）CREATE DATABASE db_jikexueyuan1;--带参数创建数据库示例（指定数据库OWNER和字符集）CREATE DATABASE db_jikexueyuan2 WITH OWNER = postgres ENCODING = &apos;UTF8&apos;;--修改数据库名称ALTER DATABAS">
+<meta name="keywords" content="面试,数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PostgreSQL数据库、数据表、数类型和运算符Demo案例">
+<meta property="og:url" content="http://kunxiang.wang/2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="每天进步一点点">
+<meta property="og:description" content="数据库对象操作1234567891011121314--最简单创建数据库示例（使用默认参数）CREATE DATABASE db_jikexueyuan1;--带参数创建数据库示例（指定数据库OWNER和字符集）CREATE DATABASE db_jikexueyuan2 WITH OWNER = postgres ENCODING = &apos;UTF8&apos;;--修改数据库名称ALTER DATABAS">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-26T02:38:18.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quentin&#39;s Blog">
-<meta name="twitter:description" content="每天进步一点点">
+<meta name="twitter:title" content="PostgreSQL数据库、数据表、数类型和运算符Demo案例">
+<meta name="twitter:description" content="数据库对象操作1234567891011121314--最简单创建数据库示例（使用默认参数）CREATE DATABASE db_jikexueyuan1;--带参数创建数据库示例（指定数据库OWNER和字符集）CREATE DATABASE db_jikexueyuan2 WITH OWNER = postgres ENCODING = &apos;UTF8&apos;;--修改数据库名称ALTER DATABAS">
 
 
 
@@ -134,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/tags/数据库/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/"/>
 
 
 
@@ -144,7 +146,7 @@
   };
 </script>
 
-  <title>标签: 数据库 | Quentin's Blog</title>
+  <title>PostgreSQL数据库、数据表、数类型和运算符Demo案例 | Quentin's Blog</title>
   
 
 
@@ -191,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,7 +238,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -335,112 +337,255 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>数据库<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/" itemprop="url">
-              
-                <span itemprop="name">PostgreSQL数据库、数据表、数类型和运算符Demo案例</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">PostgreSQL数据库、数据表、数类型和运算符Demo案例
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T10:19:05+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-26 10:19:05" itemprop="dateCreated datePublished" datetime="2018-09-26T10:19:05+08:00">2018-09-26</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/" class="leancloud_visitors" data-flag-title="PostgreSQL数据库、数据表、数类型和运算符Demo案例">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/26/面试总结之数据库篇-持续更新/" itemprop="url">
-              
-                <span itemprop="name">面试总结之数据库篇(持续更新)</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T00:01:30+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <h4 id="数据库对象操作"><a href="#数据库对象操作" class="headerlink" title="数据库对象操作"></a>数据库对象操作</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--最简单创建数据库示例（使用默认参数）</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_jikexueyuan1;</span><br><span class="line"></span><br><span class="line"><span class="comment">--带参数创建数据库示例（指定数据库OWNER和字符集）</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> db_jikexueyuan2 <span class="keyword">WITH</span> OWNER = postgres <span class="keyword">ENCODING</span> = <span class="string">'UTF8'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--修改数据库名称</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> db_jikexueyuan2 <span class="keyword">RENAME</span> <span class="keyword">TO</span> db_jikexueyuan3;</span><br><span class="line"></span><br><span class="line"><span class="comment">--修改数据库连接数</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> db_jikexueyuan2 <span class="keyword">CONNECTION</span> <span class="keyword">LIMIT</span> = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--删除数据库</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> db_jikexueyuan2;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="数据表对象操作"><a href="#数据表对象操作" class="headerlink" title="数据表对象操作"></a>数据表对象操作</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建student数据表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> studnet (</span><br><span class="line">   <span class="keyword">id</span> <span class="built_in">INT</span>,                   <span class="comment">--学生编号</span></span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">30</span>),         <span class="comment">--学生姓名</span></span><br><span class="line">   birthday <span class="built_in">DATE</span>,            <span class="comment">--出生日期</span></span><br><span class="line">   score <span class="built_in">NUMERIC</span>(<span class="number">5</span>, <span class="number">2</span>)       <span class="comment">--学分</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">--修改数据表名称</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studnet <span class="keyword">RENAME</span> <span class="keyword">TO</span> studnet1;</span><br><span class="line"></span><br><span class="line"><span class="comment">--修改数据表字段长度</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studnet1 <span class="keyword">ALTER</span> <span class="keyword">COLUMN</span> <span class="keyword">name</span> <span class="keyword">TYPE</span> <span class="built_in">VARCHAR</span>(<span class="number">40</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--修改数据表字段名称</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studnet1 <span class="keyword">RENAME</span> <span class="keyword">id</span> <span class="keyword">TO</span> bh;</span><br><span class="line"></span><br><span class="line"><span class="comment">--在数据表中新增字段</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> studnet1 <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> address <span class="built_in">VARCHAR</span>(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--删除数据表中字段</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> student <span class="keyword">DROP</span> <span class="keyword">COLUMN</span> <span class="keyword">name</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--删除数据表对象</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> studnet1;</span><br><span class="line"></span><br><span class="line"><span class="comment">--删除数据表之前先做判断</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> studnet1;</span><br></pre></td></tr></table></figure>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--数值类型</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> temp (x <span class="built_in">SMALLINT</span>, y <span class="built_in">INT</span>, z <span class="built_in">NUMERIC</span>(<span class="number">5</span>, <span class="number">2</span>));</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="number">100</span>, <span class="number">3.58</span>);</span><br><span class="line"><span class="comment">--INSERT INTO temp VALUES (1, 100, 1000.58);--（出现错误，超过存储范围）</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="number">100</span>, <span class="number">100.58</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="number">100</span>, <span class="number">100.588</span>);<span class="comment">--（合法，会进行四舍五入）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--日期/时间类型</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> temp1 (t <span class="keyword">TIME</span>, d <span class="built_in">DATE</span>, ts <span class="keyword">TIMESTAMP</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp1 <span class="keyword">VALUES</span> (<span class="string">'02:02:02'</span>, <span class="string">'1996-01-01'</span>, <span class="string">'1996-01-01 02:02:02'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp1 <span class="keyword">VALUES</span> (<span class="string">'101112'</span>, <span class="string">'96-01-01'</span>, <span class="string">'1996-01-01 02:02:02'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--字符串类型</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> temp2 (ch <span class="built_in">CHAR</span>(<span class="number">4</span>), vch <span class="built_in">VARCHAR</span>(<span class="number">30</span>), t <span class="built_in">TEXT</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> temp2 <span class="keyword">VALUES</span> (<span class="string">'abcd'</span>, <span class="string">'极客学院'</span>, <span class="string">'极客学院极客学院极客学院'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--比较char类型与varchar类型之间的区别</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="keyword">CONCAT</span>(<span class="string">'('</span>, ch, <span class="string">')'</span>),</span><br><span class="line">	<span class="keyword">CONCAT</span>(<span class="string">'('</span>, vch, <span class="string">')'</span>),</span><br><span class="line">    <span class="keyword">CONCAT</span>(<span class="string">'('</span>, t, <span class="string">')'</span>)</span><br><span class="line"><span class="keyword">FROM</span> temp2;</span><br></pre></td></tr></table></figure>
+<h4 id="运算符介绍"><a href="#运算符介绍" class="headerlink" title="运算符介绍"></a>运算符介绍</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--算术运算符</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">3</span>+<span class="number">2</span>, <span class="number">3</span><span class="number">-2</span>, <span class="number">3</span>*<span class="number">2</span>, <span class="number">3</span>/<span class="number">2</span>, <span class="number">3</span>%<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--比较运算符</span></span><br><span class="line"><span class="comment">--比较运算符（一）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">1</span> = <span class="number">0</span>, <span class="string">'2'</span> = <span class="number">2</span>, <span class="string">'2'</span> &lt;&gt; <span class="number">2</span>, <span class="number">2</span> = <span class="number">2</span>, <span class="literal">NULL</span> = <span class="literal">NULL</span>, <span class="literal">NULL</span> != <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--比较运算符（二）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">1</span> &gt;= <span class="number">2</span>, <span class="number">4</span> &gt;= <span class="number">4</span>, <span class="number">2</span> &gt; <span class="number">1</span>, <span class="string">'good'</span> &gt;= <span class="string">'god'</span>, <span class="string">'good'</span> &gt; <span class="string">'god'</span>, <span class="literal">NULL</span> &gt;= <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--比较运算符（三）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">4</span> <span class="keyword">BETWEEN</span> <span class="number">2</span> <span class="keyword">AND</span> <span class="number">5</span>, <span class="number">12</span> <span class="keyword">BETWEEN</span> <span class="number">10</span> <span class="keyword">AND</span> <span class="number">12</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--比较运算符（四）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">2</span> <span class="keyword">IN</span> (<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>), <span class="number">3</span> <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">9</span>), <span class="string">'a'</span> <span class="keyword">IN</span> (<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>), <span class="literal">NULL</span> <span class="keyword">IN</span> (<span class="number">1</span>,<span class="number">3</span>,<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--比较运算符（五）</span></span><br><span class="line"><span class="comment">-- % 表示任意0个或多个字符</span></span><br><span class="line"><span class="comment">-- _ 表示任意单个字符</span></span><br><span class="line"><span class="comment">-- [ ] 表示括号内所列字符中的一个（类似与正则表达式）</span></span><br><span class="line"><span class="comment">-- [^ ] 表示不在括号所列之内的单个字符</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">'abc'</span> <span class="keyword">LIKE</span> <span class="string">'abc'</span>, <span class="string">'abc'</span> <span class="keyword">LIKE</span> <span class="string">'ab_'</span>, <span class="string">'abc'</span> <span class="keyword">LIKE</span> <span class="string">'%c'</span>, <span class="string">'abc'</span> <span class="keyword">LIKE</span> <span class="string">'t___'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--逻辑运算符</span></span><br><span class="line"><span class="comment">--逻辑运算符（一）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">NOT</span> <span class="string">'1'</span>, <span class="keyword">NOT</span> <span class="string">'y'</span>, <span class="keyword">NOT</span> <span class="string">'0'</span>, <span class="keyword">NOT</span> <span class="literal">NULL</span>, <span class="keyword">NOT</span> <span class="string">'n'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--逻辑运算符（二）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">'1'</span> <span class="keyword">AND</span> <span class="string">'y'</span>, <span class="string">'1'</span> <span class="keyword">AND</span> <span class="string">'0'</span>, <span class="string">'1'</span> <span class="keyword">AND</span> <span class="literal">NULL</span>, <span class="string">'0'</span> <span class="keyword">AND</span> <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--逻辑运算符（三）</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">'1'</span> <span class="keyword">OR</span> <span class="string">'t'</span>, <span class="string">'1'</span> <span class="keyword">OR</span> <span class="string">'y'</span>, <span class="string">'1'</span> <span class="keyword">OR</span> <span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/26/面试总结之数据库篇-持续更新/" rel="next" title="面试总结之数据库篇(持续更新)">
+                <i class="fa fa-chevron-left"></i> 面试总结之数据库篇(持续更新)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -461,8 +606,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -711,6 +865,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库对象操作"><span class="nav-number">1.</span> <span class="nav-text">数据库对象操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据表对象操作"><span class="nav-number">2.</span> <span class="nav-text">数据表对象操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符介绍"><span class="nav-number">4.</span> <span class="nav-text">运算符介绍</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -892,6 +1062,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -906,6 +1080,23 @@
     <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://kunxiang.wang/2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/';
+        this.page.identifier = '2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/';
+        this.page.title = 'PostgreSQL数据库、数据表、数类型和运算符Demo案例';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
@@ -1250,43 +1441,35 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1306,9 +1489,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
@@ -1380,7 +1561,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 

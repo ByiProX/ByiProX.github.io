@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[PostgreSQL数据库、数据表、数类型和运算符Demo案例]]></title>
+    <url>%2F2018%2F09%2F26%2FPostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81%E6%95%B0%E6%8D%AE%E8%A1%A8%E3%80%81%E6%95%B0%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6Demo%E6%A1%88%E4%BE%8B%2F</url>
+    <content type="text"><![CDATA[数据库对象操作1234567891011121314--最简单创建数据库示例（使用默认参数）CREATE DATABASE db_jikexueyuan1;--带参数创建数据库示例（指定数据库OWNER和字符集）CREATE DATABASE db_jikexueyuan2 WITH OWNER = postgres ENCODING = 'UTF8';--修改数据库名称ALTER DATABASE db_jikexueyuan2 RENAME TO db_jikexueyuan3;--修改数据库连接数ALTER DATABASE db_jikexueyuan2 CONNECTION LIMIT = 20;--删除数据库DROP DATABASE db_jikexueyuan2; 数据表对象操作12345678910111213141516171819202122232425262728--创建student数据表CREATE TABLE studnet ( id INT, --学生编号 name VARCHAR(30), --学生姓名 birthday DATE, --出生日期 score NUMERIC(5, 2) --学分);--修改数据表名称ALTER TABLE studnet RENAME TO studnet1;--修改数据表字段长度ALTER TABLE studnet1 ALTER COLUMN name TYPE VARCHAR(40);--修改数据表字段名称ALTER TABLE studnet1 RENAME id TO bh;--在数据表中新增字段ALTER TABLE studnet1 ADD COLUMN address VARCHAR(100);--删除数据表中字段ALTER TABLE student DROP COLUMN name;--删除数据表对象DROP TABLE studnet1;--删除数据表之前先做判断DROP TABLE IF EXISTS studnet1; 数据类型12345678910111213141516171819202122--数值类型CREATE TABLE temp (x SMALLINT, y INT, z NUMERIC(5, 2));INSERT INTO temp VALUES (1, 100, 3.58);--INSERT INTO temp VALUES (1, 100, 1000.58);--（出现错误，超过存储范围）INSERT INTO temp VALUES (1, 100, 100.58);INSERT INTO temp VALUES (1, 100, 100.588);--（合法，会进行四舍五入）--日期/时间类型CREATE TABLE temp1 (t TIME, d DATE, ts TIMESTAMP);INSERT INTO temp1 VALUES ('02:02:02', '1996-01-01', '1996-01-01 02:02:02');INSERT INTO temp1 VALUES ('101112', '96-01-01', '1996-01-01 02:02:02');--字符串类型CREATE TABLE temp2 (ch CHAR(4), vch VARCHAR(30), t TEXT);INSERT INTO temp2 VALUES ('abcd', '极客学院', '极客学院极客学院极客学院');--比较char类型与varchar类型之间的区别SELECT CONCAT('(', ch, ')'), CONCAT('(', vch, ')'), CONCAT('(', t, ')')FROM temp2; 运算符介绍1234567891011121314151617181920212223242526272829303132--算术运算符SELECT 3+2, 3-2, 3*2, 3/2, 3%2;--比较运算符--比较运算符（一）SELECT 1 = 0, '2' = 2, '2' &lt;&gt; 2, 2 = 2, NULL = NULL, NULL != NULL;--比较运算符（二）SELECT 1 &gt;= 2, 4 &gt;= 4, 2 &gt; 1, 'good' &gt;= 'god', 'good' &gt; 'god', NULL &gt;= NULL;--比较运算符（三）SELECT 4 BETWEEN 2 AND 5, 12 BETWEEN 10 AND 12;--比较运算符（四）SELECT 2 IN (2,3,4), 3 NOT IN (1,2,5,9), 'a' IN ('a','b','c','d'), NULL IN (1,3,NULL);--比较运算符（五）-- % 表示任意0个或多个字符-- _ 表示任意单个字符-- [ ] 表示括号内所列字符中的一个（类似与正则表达式）-- [^ ] 表示不在括号所列之内的单个字符SELECT 'abc' LIKE 'abc', 'abc' LIKE 'ab_', 'abc' LIKE '%c', 'abc' LIKE 't___';--逻辑运算符--逻辑运算符（一）SELECT NOT '1', NOT 'y', NOT '0', NOT NULL, NOT 'n';--逻辑运算符（二）SELECT '1' AND 'y', '1' AND '0', '1' AND NULL, '0' AND NULL;--逻辑运算符（三）SELECT '1' OR 't', '1' OR 'y', '1' OR NULL;]]></content>
+      <categories>
+        <category>面试</category>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[面试总结之数据库篇(持续更新)]]></title>
     <url>%2F2018%2F09%2F26%2F%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AF%87-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%2F</url>
     <content type="text"><![CDATA[SQL语言包含4个部分： DDL(Data Define Language):数据定义语言。其语句包括动词CREATE和DROP。在数据库中创建新表或删除表（CREAT TABLE 或 DROP TABLE）；为表加入索引等。DDL包括许多与人数据库目录中获得数据有关的保留字。它也是动作查询的一部分。ALTER TABLE 语句用于在已有的表中添加、修改或删除列。 DML(Data Manipulation Language):数据操作语言。其语句包括动词INSERT，UPDATE和DELETE。它们分别用于添加，修改和删除表中的行。也称为动作查询语言。 DQL(Data Query Language):数据查询语言。也称为“数据检索语句”，用以从表中获得数据，确定数据怎样在应用程序给出。保留字SELECT是DQL（也是所有SQL）用得最多的动词，其他DQL常用的保留字有WHERE，ORDER BY，GROUP BY和HAVING。这些DQL保留字常与其他类型的SQL语句一起使用。 DCL(Data Manipulation Language):数据控制语言。它的语句通过GRANT或REVOKE获得许可，确定单个用户和用户组对数据库对象的访问。某些RDBMS可用GRANT或REVOKE控制对表单个列的访问,COMMIT、ROLLBACK来提交和回滚。]]></content>
