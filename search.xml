@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[DELETE和TRUNCATE区别]]></title>
     <url>%2F2018%2F09%2F26%2FDELETE%E5%92%8CTRUNCATE%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"><![CDATA[DELETE TRUNCATE 执行速度 慢 快 可执行条件 可以 不可以 语句分类 DML DDL 可以回滚事务 可以 不可以 删除操作记录日志 记录 不记录]]></content>
+    <content type="text"><![CDATA[Diffs DELETE TRUNCATE 执行速度 慢 快 可执行条件 可以 不可以 语句分类 DML DDL 可以回滚事务 可以 不可以 删除操作记录日志 记录 不记录]]></content>
       <categories>
         <category>面试</category>
         <category>数据库</category>
