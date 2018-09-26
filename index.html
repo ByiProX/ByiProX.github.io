@@ -544,7 +544,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/26/DELETE和TRUNCATE区别/">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/26/DROP、DELETE和TRUNCATE区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -563,8 +563,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/26/DELETE和TRUNCATE区别/" itemprop="url">
-                  DELETE和TRUNCATE区别
+                <a class="post-title-link" href="/2018/09/26/DROP、DELETE和TRUNCATE区别/" itemprop="url">
+                  DROP、DELETE和TRUNCATE区别
                 </a>
               
             
@@ -630,10 +630,10 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/26/DELETE和TRUNCATE区别/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/26/DROP、DELETE和TRUNCATE区别/#comments" itemprop="discussionUrl">
                 
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/26/DELETE和TRUNCATE区别/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/26/DROP、DELETE和TRUNCATE区别/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -641,7 +641,7 @@
 
           
           
-             <span id="/2018/09/26/DELETE和TRUNCATE区别/" class="leancloud_visitors" data-flag-title="DELETE和TRUNCATE区别">
+             <span id="/2018/09/26/DROP、DELETE和TRUNCATE区别/" class="leancloud_visitors" data-flag-title="DROP、DELETE和TRUNCATE区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -715,9 +715,15 @@
 </tr>
 </tbody>
 </table>
+<ul>
+<li>drop：drop table 表名<br>删除内容和定义，并释放空间。执行drop语句，将使此表的结构一起删除。</li>
+<li>truncate (清空表中的数据)：truncate table 表名<br>删除内容、释放空间但不删除定义(也就是保留表的数据结构)。与drop不同的是,只是清空表数据而已。<br>truncate不能删除行数据，虽然只删除数据，但是比delete彻底，它只删除表数据。</li>
+<li>delete：delete from 表名 （where 列名 = 值）<br>与truncate类似，delete也只删除内容、释放空间但不删除定义；但是delete即可以对行数据进行删除，也可以对整表数据进行删除。</li>
+</ul>
+<hr>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/09/26/DELETE和TRUNCATE区别/" rel="contents">
+            <a class="btn" href="/2018/09/26/DROP、DELETE和TRUNCATE区别/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>

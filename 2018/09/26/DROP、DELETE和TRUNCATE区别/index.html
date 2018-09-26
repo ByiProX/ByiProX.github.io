@@ -116,18 +116,18 @@
 
 
 
-  <meta name="description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录">
+  <meta name="description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录     drop：drop table 表名删除内容和定义，并释放空间。执行drop语句，将使此表的结构一起删除。 truncate (清空表中的数">
 <meta name="keywords" content="面试,数据库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DELETE和TRUNCATE区别">
-<meta property="og:url" content="http://kunxiang.wang/2018/09/26/DELETE和TRUNCATE区别/index.html">
+<meta property="og:title" content="DROP、DELETE和TRUNCATE区别">
+<meta property="og:url" content="http://kunxiang.wang/2018/09/26/DROP、DELETE和TRUNCATE区别/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录">
+<meta property="og:description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录     drop：drop table 表名删除内容和定义，并释放空间。执行drop语句，将使此表的结构一起删除。 truncate (清空表中的数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-26T06:46:31.841Z">
+<meta property="og:updated_time" content="2018-09-26T06:56:51.388Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DELETE和TRUNCATE区别">
-<meta name="twitter:description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录">
+<meta name="twitter:title" content="DROP、DELETE和TRUNCATE区别">
+<meta name="twitter:description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录     drop：drop table 表名删除内容和定义，并释放空间。执行drop语句，将使此表的结构一起删除。 truncate (清空表中的数">
 
 
 
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/2018/09/26/DELETE和TRUNCATE区别/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2018/09/26/DROP、DELETE和TRUNCATE区别/"/>
 
 
 
@@ -146,7 +146,7 @@
   };
 </script>
 
-  <title>DELETE和TRUNCATE区别 | Quentin's Blog</title>
+  <title>DROP、DELETE和TRUNCATE区别 | Quentin's Blog</title>
   
 
 
@@ -359,7 +359,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/26/DELETE和TRUNCATE区别/">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/26/DROP、DELETE和TRUNCATE区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -376,7 +376,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">DELETE和TRUNCATE区别
+          <h2 class="post-title" itemprop="name headline">DROP、DELETE和TRUNCATE区别
               
             
           </h2>
@@ -441,10 +441,10 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/26/DELETE和TRUNCATE区别/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/26/DROP、DELETE和TRUNCATE区别/#comments" itemprop="discussionUrl">
                 
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/26/DELETE和TRUNCATE区别/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/26/DROP、DELETE和TRUNCATE区别/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -452,7 +452,7 @@
 
           
           
-             <span id="/2018/09/26/DELETE和TRUNCATE区别/" class="leancloud_visitors" data-flag-title="DELETE和TRUNCATE区别">
+             <span id="/2018/09/26/DROP、DELETE和TRUNCATE区别/" class="leancloud_visitors" data-flag-title="DROP、DELETE和TRUNCATE区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -525,6 +525,12 @@
 </tr>
 </tbody>
 </table>
+<ul>
+<li>drop：drop table 表名<br>删除内容和定义，并释放空间。执行drop语句，将使此表的结构一起删除。</li>
+<li>truncate (清空表中的数据)：truncate table 表名<br>删除内容、释放空间但不删除定义(也就是保留表的数据结构)。与drop不同的是,只是清空表数据而已。<br>truncate不能删除行数据，虽然只删除数据，但是比delete彻底，它只删除表数据。</li>
+<li>delete：delete from 表名 （where 列名 = 值）<br>与truncate类似，delete也只删除内容、释放空间但不删除定义；但是delete即可以对行数据进行删除，也可以对整表数据进行删除。</li>
+</ul>
+<hr>
 <a id="more"></a>
 <h4 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h4><ul>
 <li>truncate 和不带 where 子句的 delete，以及 drop 都会删除表内的数据</li>
@@ -1156,9 +1162,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://kunxiang.wang/2018/09/26/DELETE和TRUNCATE区别/';
-        this.page.identifier = '2018/09/26/DELETE和TRUNCATE区别/';
-        this.page.title = 'DELETE和TRUNCATE区别';
+        this.page.url = 'http://kunxiang.wang/2018/09/26/DROP、DELETE和TRUNCATE区别/';
+        this.page.identifier = '2018/09/26/DROP、DELETE和TRUNCATE区别/';
+        this.page.title = 'DROP、DELETE和TRUNCATE区别';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');
