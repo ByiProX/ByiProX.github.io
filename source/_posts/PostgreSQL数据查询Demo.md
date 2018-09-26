@@ -1,5 +1,5 @@
 ---
-title: PostgreSQL数据查询操作Demo
+title: PostgreSQL数据查询Demo
 date: 2018-09-26 10:58:30
 tags:
   - 面试
@@ -150,6 +150,7 @@ select * from employee WHERE dept_no not in (select d_no from dept WHERE d_name 
 
 --标量子查询
 SELECT e.e_no, e.e_name, (SELECT d_name || ' ' || d_location FROM dept d WHERE d.d_no = e.dept_no) AS address FROM employee e;
+SELECT e.e_no, e.e_name, (SELECT concat(d_name, '---', d_location) FROM dept d WHERE d.d_no = e.dept_no) AS address FROM employee e;
 
 --合并查询结果
 --使用UNION ALL合并结果
