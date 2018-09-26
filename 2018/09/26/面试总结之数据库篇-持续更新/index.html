@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="1. SQL语言包含4个部分：   DDL(Data Define Language):数据定义语言。其语句包括动词CREATE和DROP。在数据库中创建新表或删除表（CREAT TABLE 或 DROP TABLE）；为表加入索引等。DDL包括许多与人数据库目录中获得数据有关的保留字。它也是动作查询的一部分。ALTER TABLE 语句用于在已有的表中添加、修改或删除列。    DML(Data">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-26T13:52:30.146Z">
+<meta property="og:updated_time" content="2018-09-26T14:50:59.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试总结之数据库篇(持续更新)">
 <meta name="twitter:description" content="1. SQL语言包含4个部分：   DDL(Data Define Language):数据定义语言。其语句包括动词CREATE和DROP。在数据库中创建新表或删除表（CREAT TABLE 或 DROP TABLE）；为表加入索引等。DDL包括许多与人数据库目录中获得数据有关的保留字。它也是动作查询的一部分。ALTER TABLE 语句用于在已有的表中添加、修改或删除列。    DML(Data">
@@ -582,7 +582,16 @@
 <li>安全性</li>
 <li>逻辑数据独立性</li>
 </ul>
-<h4 id="7-事务四个特性及四个隔离级别"><a href="#7-事务四个特性及四个隔离级别" class="headerlink" title="7. 事务四个特性及四个隔离级别"></a>7. 事务四个特性及四个隔离级别</h4><hr>
+<h4 id="7-事务四个特性及四个隔离级别"><a href="#7-事务四个特性及四个隔离级别" class="headerlink" title="7. 事务四个特性及四个隔离级别"></a>7. 事务四个特性及四个隔离级别</h4><h4 id="8-数据库范式"><a href="#8-数据库范式" class="headerlink" title="8. 数据库范式"></a>8. 数据库范式</h4><ul>
+<li>第一范式（1NF）<br><code>所谓第一范式（1NF）是指在关系模型中，对域添加的一个规范要求，所有的域都应该是原子性的，即数据库表的每一列都是不可分割的原子数据项</code>，而不能是集合，数组，记录等非原子数据项。即实体中的某个属性有多个值时，必须拆分为不同的属性。在符合第一范式（1NF）表中的每个域值只能是实体的一个属性或一个属性的一部分。<code>简而言之，第一范式就是无重复的域。</code></li>
+</ul>
+<ul>
+<li><p>第二范式（2NF）<br>第二范式（2NF）是在第一范式（1NF）的基础上建立起来的，即满足第二范式（2NF）必须先满足第一范式（1NF）。<code>第二范式（2NF）要求数据库表中的每个实例或记录必须可以被唯一地区分</code>。选取一个能区分每个实体的属性或属性组，作为实体的唯一标识。<code>第二范式（2NF）要求实体的属性完全依赖于主关键字。所谓完全依赖是指不能存在仅依赖主关键字一部分的属性</code>，如果存在，那么这个属性和主关键字的这一部分应该分离出来形成一个新的实体，新实体与原实体之间是一对多的关系。<code>简而言之，第二范式就是在第一范式的基础上属性完全依赖于主键。</code></p>
+</li>
+<li><p>第三范式（3NF）<br>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）<br>第三范式（3NF）是第二范式（2NF）的一个子集，即满足第三范式（3NF）必须满足第二范式（2NF）。<code>简而言之，第三范式（3NF）要求一个关系中不包含已在其它关系已包含的非主关键字信息。可以理解为消除冗余。</code>例如，存在一个部门信息表，其中每个部门有部门编号（dept_id）、部门名称、部门简介等信息。那么在员工信息表中列出部门编号后就不能再将部门名称、部门简介等与部门有关的信息再加入员工信息表中。如果不存在部门信息表，则根据第三范式（3NF）也应该构建它，否则就会有大量的数据冗余。</p>
+</li>
+</ul>
+<hr>
 <hr>
 
       
@@ -735,7 +744,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">108</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -974,7 +983,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-SQL语言包含4个部分："><span class="nav-number">1.</span> <span class="nav-text">1. SQL语言包含4个部分：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-DROP、DELETE和TRUNCATE区别"><span class="nav-number">2.</span> <span class="nav-text">2. DROP、DELETE和TRUNCATE区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-主键和外键的作用"><span class="nav-number">3.</span> <span class="nav-text">3. 主键和外键的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-UNIQUE和PRIMARY区别"><span class="nav-number">4.</span> <span class="nav-text">4. UNIQUE和PRIMARY区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-索引分类以及使用索引的优缺点"><span class="nav-number">5.</span> <span class="nav-text">5. 索引分类以及使用索引的优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-视图的作用"><span class="nav-number">6.</span> <span class="nav-text">6. 视图的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-事务四个特性及四个隔离级别"><span class="nav-number">7.</span> <span class="nav-text">7. 事务四个特性及四个隔离级别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-SQL语言包含4个部分："><span class="nav-number">1.</span> <span class="nav-text">1. SQL语言包含4个部分：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-DROP、DELETE和TRUNCATE区别"><span class="nav-number">2.</span> <span class="nav-text">2. DROP、DELETE和TRUNCATE区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-主键和外键的作用"><span class="nav-number">3.</span> <span class="nav-text">3. 主键和外键的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-UNIQUE和PRIMARY区别"><span class="nav-number">4.</span> <span class="nav-text">4. UNIQUE和PRIMARY区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-索引分类以及使用索引的优缺点"><span class="nav-number">5.</span> <span class="nav-text">5. 索引分类以及使用索引的优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-视图的作用"><span class="nav-number">6.</span> <span class="nav-text">6. 视图的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-事务四个特性及四个隔离级别"><span class="nav-number">7.</span> <span class="nav-text">7. 事务四个特性及四个隔离级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-数据库范式"><span class="nav-number">8.</span> <span class="nav-text">8. 数据库范式</span></a></li></ol></div>
             
 
           </div>
