@@ -98,12 +98,14 @@ SELECT CURRENT_DATE, CURRENT_TIME, now();
 
 #### 创建函数示例
 
-
 ```SQL
 -- 函数示例
 CREATE FUNCTION add(INTEGER, INTEGER) RETURNS INTEGER          
     AS ' select $1 + $2; '
 LANGUAGE SQL
+RETURNS NULL ON NULL INPUT;
+
+
 
 --应用
 --创建函数
