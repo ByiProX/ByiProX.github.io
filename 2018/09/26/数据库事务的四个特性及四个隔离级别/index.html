@@ -116,16 +116,18 @@
 
 
 
-  <meta name="description" content="每天进步一点点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quentin&#39;s Blog">
-<meta property="og:url" content="http://kunxiang.wang/tags/面试/index.html">
+  <meta name="description" content="事务的四大特性（ACID） 原子性（atomicity）：一个事务必须视为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中的一部分操作，这就是事务的原子性。 一致性（consistency）：数据库总数从一个一致性的状态转换到另一个一致性的状态。 隔离性（isolation）：一个事务所做的修改在最终提交以前，对其他事务是不可见">
+<meta name="keywords" content="面试,数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库事务的四个特性及四个隔离级别">
+<meta property="og:url" content="http://kunxiang.wang/2018/09/26/数据库事务的四个特性及四个隔离级别/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="每天进步一点点">
+<meta property="og:description" content="事务的四大特性（ACID） 原子性（atomicity）：一个事务必须视为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中的一部分操作，这就是事务的原子性。 一致性（consistency）：数据库总数从一个一致性的状态转换到另一个一致性的状态。 隔离性（isolation）：一个事务所做的修改在最终提交以前，对其他事务是不可见">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-26T13:59:40.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quentin&#39;s Blog">
-<meta name="twitter:description" content="每天进步一点点">
+<meta name="twitter:title" content="数据库事务的四个特性及四个隔离级别">
+<meta name="twitter:description" content="事务的四大特性（ACID） 原子性（atomicity）：一个事务必须视为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中的一部分操作，这就是事务的原子性。 一致性（consistency）：数据库总数从一个一致性的状态转换到另一个一致性的状态。 隔离性（isolation）：一个事务所做的修改在最终提交以前，对其他事务是不可见">
 
 
 
@@ -134,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/tags/面试/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2018/09/26/数据库事务的四个特性及四个隔离级别/"/>
 
 
 
@@ -144,7 +146,7 @@
   };
 </script>
 
-  <title>标签: 面试 | Quentin's Blog</title>
+  <title>数据库事务的四个特性及四个隔离级别 | Quentin's Blog</title>
   
 
 
@@ -191,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,7 +238,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -335,252 +337,265 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>面试<small>标签</small>
-        </h2>
-      </div>
-
-      
-        
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/26/数据库事务的四个特性及四个隔离级别/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/26/数据库事务的四个特性及四个隔离级别/" itemprop="url">
-              
-                <span itemprop="name">数据库事务的四个特性及四个隔离级别</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">数据库事务的四个特性及四个隔离级别
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T21:52:11+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-26 21:52:11" itemprop="dateCreated datePublished" datetime="2018-09-26T21:52:11+08:00">2018-09-26</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/26/数据库事务的四个特性及四个隔离级别/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/09/26/数据库事务的四个特性及四个隔离级别/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/26/数据库事务的四个特性及四个隔离级别/" class="leancloud_visitors" data-flag-title="数据库事务的四个特性及四个隔离级别">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/26/PostgreSQL函数、索引和视图操作Demo/" itemprop="url">
-              
-                <span itemprop="name">PostgreSQL函数、索引和视图操作Demo</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T16:32:31+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/26/PostgreSQL数据操作和数据表约束Demo/" itemprop="url">
-              
-                <span itemprop="name">PostgreSQL数据操作和数据表约束Demo</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T13:57:21+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/26/DROP、DELETE和TRUNCATE区别/" itemprop="url">
-              
-                <span itemprop="name">DROP、DELETE和TRUNCATE区别</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T13:20:40+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/26/PostgreSQL数据查询Demo/" itemprop="url">
-              
-                <span itemprop="name">PostgreSQL数据查询Demo</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T10:58:30+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/26/PostgreSQL数据库、数据表、数类型和运算符Demo案例/" itemprop="url">
-              
-                <span itemprop="name">PostgreSQL数据库、数据表、数类型和运算符Demo案例</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T10:19:05+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/26/面试总结之数据库篇-持续更新/" itemprop="url">
-              
-                <span itemprop="name">面试总结之数据库篇(持续更新)</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T00:01:30+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h4 id="事务的四大特性（ACID）"><a href="#事务的四大特性（ACID）" class="headerlink" title="事务的四大特性（ACID）"></a>事务的四大特性（ACID）</h4><ol>
+<li>原子性（atomicity）：一个事务必须视为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中的一部分操作，这就是事务的原子性。</li>
+<li>一致性（consistency）：数据库总数从一个一致性的状态转换到另一个一致性的状态。</li>
+<li>隔离性（isolation）：一个事务所做的修改在最终提交以前，对其他事务是不可见的。</li>
+<li>持久性（durability）：一旦事务提交，则其所做的修改就会永久保存到数据库中。此时即使系统崩溃，修改的数据也不会丢失。</li>
+</ol>
+<h4 id="四个隔离级别"><a href="#四个隔离级别" class="headerlink" title="四个隔离级别"></a>四个隔离级别</h4><p>数据库事务的隔离级别有4种，由低到高分别为<code>Read uncommitted</code> 、<code>Read committed</code> 、<code>Repeatable read</code> 、<code>Serializable</code> 。而且，在事务的并发操作中可能会出现<strong>脏读</strong>,<strong>不可重复读</strong>，<strong>幻读</strong>。下面通过事例一一阐述它们的概念与联系。</p>
+<a id="more"></a>
+<h5 id="Read-uncommitted"><a href="#Read-uncommitted" class="headerlink" title="Read uncommitted"></a>Read uncommitted</h5><p>读未提交，顾名思义，就是一个事务可以读取另一个未提交事务的数据。<br><code>事例</code>：老板要给程序员发工资，程序员的工资是3.6万/月。但是发工资时老板不小心按错了数字，按成3.9万/月，该钱已经打到程序员的户口，但是事务还没有提交，就在这时，程序员去查看自己这个月的工资，发现比往常多了3千元，以为涨工资了非常高兴。但是老板及时发现了不对，马上回滚差点就提交了的事务，将数字改成3.6万再提交。<br><code>分析</code>：实际程序员这个月的工资还是3.6万，但是程序员看到的是3.9万。他看到的是老板还没提交事务时的数据。这就是脏读。<br>那怎么解决脏读呢？<code>Read committed！读提交，能解决脏读问题</code>。</p>
+<h6 id="Read-committed"><a href="#Read-committed" class="headerlink" title="Read committed"></a>Read committed</h6><p>读提交，顾名思义，就是一个事务要等另一个事务提交后才能读取数据。<br><code>事例</code>：程序员拿着信用卡去享受生活（卡里当然是只有3.6万），当他埋单时（程序员事务开启），收费系统事先检测到他的卡里有3.6万，就在这个时候！！程序员的妻子要把钱全部转出充当家用，并提交。当收费系统准备扣款时，再检测卡里的金额，发现已经没钱了（第二次检测金额当然要等待妻子转出金额事务提交完）。程序员就会很郁闷，明明卡里是有钱的…<br><code>分析</code>：这就是读提交，若有事务对数据进行更新（UPDATE）操作时，读操作事务要等待这个更新操作事务提交后才能读取数据，可以解决脏读问题。但在这个事例中，出现了一个事务范围内两个相同的查询却返回了不同数据，这就是不可重复读。<br><code>那怎么解决不可重复读问题？Repeatable read ！</code></p>
+<h5 id="Repeatable-read"><a href="#Repeatable-read" class="headerlink" title="Repeatable read"></a>Repeatable read</h5><p>重复读，就是在开始读取数据（事务开启）时，不再允许修改操作<br><code>事例</code>：程序员拿着信用卡去享受生活（卡里当然是只有3.6万），当他埋单时（事务开启，不允许其他事务的UPDATE修改操作），收费系统事先检测到他的卡里有3.6万。这个时候他的妻子不能转出金额了。接下来收费系统就可以扣款了。<br><code>分析</code>：重复读可以解决不可重复读问题。写到这里，应该明白的一点就是，<code>不可重复读对应的是修改，即UPDATE操作</code>。<code>但是可能还会有幻读问题。因为**幻读问题对应的是插入INSERT操作**，而不是UPDATE操作。</code></p>
+<p>什么时候会出现幻读？<br><code>事例</code>：程序员某一天去消费，花了2千元，然后他的妻子去查看他今天的消费记录（全表扫描FTS，妻子事务开启），看到确实是花了2千元，就在这个时候，程序员花了1万买了一部电脑，即<code>新增INSERT</code>了一条消费记录，并提交。当妻子打印程序员的消费记录清单时（妻子事务提交），发现花了1.2万元，似乎出现了幻觉，这就是幻读。<br>那怎么解决幻读问题？Serializable！</p>
+<h5 id="Serializable-序列化"><a href="#Serializable-序列化" class="headerlink" title="Serializable 序列化"></a>Serializable 序列化</h5><p>Serializable 是最高的事务隔离级别，在该级别下，事务串行化顺序执行，可以避免脏读、不可重复读与幻读。但是这种事务隔离级别效率低下，比较耗数据库性能，一般不使用。<br>值得一提的是：大多数数据库默认的事务隔离级别是Read committed，比如Sql Server ,<br>Oracle。MySQL的默认隔离级别是Repeatable read。</p>
+<hr>
+<p>本文来自 csdnxingyuntian 的CSDN 博客 ，全文地址请点击：<a href="https://blog.csdn.net/csdnxingyuntian/article/details/57081233?utm_source=copy" target="_blank" rel="noopener">https://blog.csdn.net/csdnxingyuntian/article/details/57081233?utm_source=copy</a></p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/26/PostgreSQL函数、索引和视图操作Demo/" rel="next" title="PostgreSQL函数、索引和视图操作Demo">
+                <i class="fa fa-chevron-left"></i> PostgreSQL函数、索引和视图操作Demo
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -601,8 +616,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -851,6 +875,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#事务的四大特性（ACID）"><span class="nav-number">1.</span> <span class="nav-text">事务的四大特性（ACID）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四个隔离级别"><span class="nav-number">2.</span> <span class="nav-text">四个隔离级别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Read-uncommitted"><span class="nav-number">2.1.</span> <span class="nav-text">Read uncommitted</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Read-committed"><span class="nav-number">2.1.1.</span> <span class="nav-text">Read committed</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Repeatable-read"><span class="nav-number">2.2.</span> <span class="nav-text">Repeatable read</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Serializable-序列化"><span class="nav-number">2.3.</span> <span class="nav-text">Serializable 序列化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1032,6 +1072,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -1046,6 +1090,23 @@
     <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://kunxiang.wang/2018/09/26/数据库事务的四个特性及四个隔离级别/';
+        this.page.identifier = '2018/09/26/数据库事务的四个特性及四个隔离级别/';
+        this.page.title = '数据库事务的四个特性及四个隔离级别';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
@@ -1390,43 +1451,40 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1446,9 +1504,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
@@ -1520,7 +1576,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 
