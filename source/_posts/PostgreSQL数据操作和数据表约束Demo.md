@@ -9,7 +9,7 @@ categories:
   - 数据库
 ---
 
-#### 插入数据
+#### 插入数据 INSERT
 ```SQL
 --创建student数据表
 CREATE TABLE student (
@@ -47,7 +47,7 @@ INSERT INTO student_new(id, name, birthday) SELECT id, name, birthday FROM stude
 ```
 <!-- more -->
 
-#### 更新数据
+#### 更新数据 update
 ```SQL
 --指定条件更新数据
 update student set name = '李四1' where id = 2;
@@ -60,7 +60,7 @@ update student set score = 1.1+2.3 where id = 1;
 ```
 
 
-#### 删除数据
+#### 删除数据 DELETE TRUNCATE
 ```SQL
 --删除数据
 DELETE FROM student WHERE id = 1;
@@ -71,7 +71,7 @@ TRUNCATE TABLE student_new;
 
 ```
 
-#### 主键约束
+#### 主键约束 PRIMARY KEY
 ```SQL
 --创建emp表
 CREATE TABLE emp (
@@ -100,7 +100,7 @@ CREATE TABLE emp2 (
 );
 ```
 
-#### 外键约束
+#### 外键约束 FOREIGN KEY(field) REFERENCES
 ```SQL
 --创建dept表
 CREATE TABLE dept (
@@ -126,11 +126,17 @@ INSERT INTO emp3 VALUES(1, '张三', 3000.00, 1);
 --INSERT INTO emp3 VALUES(2, '李四', 3000.00, 3); --插入数据报错，外键关联数据不存在
 --DELETE FROM dept WHERE id = 1; --删除数据报错，存在外键关联数据
 DELETE FROM dept WHERE id = 2; --不存在外键关联数据，可以正常删除数据
+```
 
---删除表
+
+#### 删除表 DROP
+```SQL
 --DROP TABLE dept; --直接删除dept表会报错，与emp3表存在关联
 DROP TABLE dept CASCADE; --强制递归删除数据
+```
 
+#### 创建非空约束 NOT NULL
+```SQL
 --创建非空约束
 CREATE TABLE emp4 (
    id INT PRIMARY KEY,           --编号
@@ -141,6 +147,10 @@ CREATE TABLE emp4 (
 INSERT INTO emp4 VALUES(1, '张三', 3000.00);
 --INSERT INTO emp4 VALUES(2, NULL, 3000.00); --插入数据报错，违法非空约束
 
+```
+
+#### 创建唯一约束 UNIQUE
+```SQL
 --创建唯一约束
 CREATE TABLE emp5 (
    id INT PRIMARY KEY,          --编号
@@ -151,7 +161,10 @@ CREATE TABLE emp5 (
 
 INSERT INTO emp5 VALUES(1, '张三', '13436652541', 3000.00);
 --INSERT INTO emp5 VALUES(2, '李四', '13436652541', 3000.00); --插入数据报错，违法唯一约束
+```
 
+#### 创建默认值约束 default
+```SQL
 --创建默认值约束
 CREATE TABLE emp6 (
    id INT PRIMARY KEY,               --编号

@@ -1,5 +1,5 @@
 ---
-title: DELETE和TRUNCATE区别
+title: DROP、DELETE和TRUNCATE区别
 date: 2018-09-26 13:20:40
 tags:
   - 面试
@@ -16,6 +16,16 @@ categories:
 | 语句分类    | DML  | DDL  |        DDL       |
 | 可以回滚事务    | 可以  | 不可以  |     不可以      |
 | 删除操作记录日志    | 记录  | 不记录  |     不记录     |
+
+- drop：drop table 表名
+删除内容和定义，并释放空间。执行drop语句，将使此表的结构一起删除。
+- truncate (清空表中的数据)：truncate table 表名
+删除内容、释放空间但不删除定义(也就是保留表的数据结构)。与drop不同的是,只是清空表数据而已。
+truncate不能删除行数据，虽然只删除数据，但是比delete彻底，它只删除表数据。
+- delete：delete from 表名 （where 列名 = 值）
+与truncate类似，delete也只删除内容、释放空间但不删除定义；但是delete即可以对行数据进行删除，也可以对整表数据进行删除。
+
+---------------------
 
 <!-- more -->
 
@@ -69,3 +79,5 @@ B. 对于innodb
 >truncate会重置auto_increment的值为1。delete后表仍然保持auto_increment。但是在做delete整个表之后重启MySQL的话，则`重启后`的auto_increment会被置为1。
 
 也就是说，innodb的表本身是无法持久保存auto_increment。delete表之后auto_increment仍然保存在内存，但是重启后就丢失了，只能从1开始。实质上`重启`后的auto_increment会从 SELECT 1+MAX(ai_col) FROM t 开始。
+
+-----------
