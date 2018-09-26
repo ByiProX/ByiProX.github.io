@@ -116,18 +116,18 @@
 
 
 
-  <meta name="description" content="Diffs DELETE TRUNCATE     执行速度 慢 快   可执行条件 可以 不可以   语句分类 DML DDL   可以回滚事务 可以 不可以   删除操作记录日志 记录 不记录">
+  <meta name="description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录">
 <meta name="keywords" content="面试,数据库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DELETE和TRUNCATE区别">
 <meta property="og:url" content="http://kunxiang.wang/2018/09/26/DELETE和TRUNCATE区别/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="Diffs DELETE TRUNCATE     执行速度 慢 快   可执行条件 可以 不可以   语句分类 DML DDL   可以回滚事务 可以 不可以   删除操作记录日志 记录 不记录">
+<meta property="og:description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-26T05:31:28.269Z">
+<meta property="og:updated_time" content="2018-09-26T06:42:28.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DELETE和TRUNCATE区别">
-<meta name="twitter:description" content="Diffs DELETE TRUNCATE     执行速度 慢 快   可执行条件 可以 不可以   语句分类 DML DDL   可以回滚事务 可以 不可以   删除操作记录日志 记录 不记录">
+<meta name="twitter:description" content="Diffs DELETE TRUNCATE Drop     执行速度 慢 较快 快   可执行条件 可以 不可以 不可以   语句分类 DML DDL DDL   可以回滚事务 可以 不可以 不可以   删除操作记录日志 记录 不记录 不记录">
 
 
 
@@ -489,36 +489,90 @@
 <th style="text-align:center">Diffs</th>
 <th style="text-align:center">DELETE</th>
 <th style="text-align:center">TRUNCATE</th>
+<th style="text-align:center">Drop</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:center">执行速度</td>
 <td style="text-align:center">慢</td>
+<td style="text-align:center">较快</td>
 <td style="text-align:center">快</td>
 </tr>
 <tr>
 <td style="text-align:center">可执行条件</td>
 <td style="text-align:center">可以</td>
 <td style="text-align:center">不可以</td>
+<td style="text-align:center">不可以</td>
 </tr>
 <tr>
 <td style="text-align:center">语句分类</td>
 <td style="text-align:center">DML</td>
+<td style="text-align:center">DDL</td>
 <td style="text-align:center">DDL</td>
 </tr>
 <tr>
 <td style="text-align:center">可以回滚事务</td>
 <td style="text-align:center">可以</td>
 <td style="text-align:center">不可以</td>
+<td style="text-align:center">不可以</td>
 </tr>
 <tr>
 <td style="text-align:center">删除操作记录日志</td>
 <td style="text-align:center">记录</td>
 <td style="text-align:center">不记录</td>
+<td style="text-align:center">不记录</td>
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
+<h4 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h4><ul>
+<li>truncate 和不带 where 子句的 delete，以及 drop 都会删除表内的数据</li>
+</ul>
+<h4 id="不同点"><a href="#不同点" class="headerlink" title="不同点:"></a>不同点:</h4><blockquote>
+<ol>
+<li><code>truncate 和 delete 只删除数据不删除表的结构(定义)</code><br>drop 语句将删除表的结构被依赖的约束(constrain)、触发器(trigger)、索引(index);依赖于该表的存储过程/函数将保留,但是变为 invalid 状态。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol>
+<li><code>delete 语句是数据库操作语言(dml)，这操作会放到rollback segement 中，事务提交之后才生效;如果有相应的 trigger，执行的时候将被触发。</code><br><code>truncate、drop 是数据库定义语言(ddl)，操作立即生效，原数据不放到 rollback segment 中，不能回滚，操作不触发 trigger。</code></li>
+</ol>
+</blockquote>
+<blockquote>
+<ol>
+<li>delete 语句不影响表所占用的 extent，高水线(high watermark)保持原位置不动<br>　　显然 drop 语句将表所占用的空间全部释放。<br>　　truncate 语句缺省情况下见空间释放到 minextents个 extent，除非使用reuse storage;truncate 会将高水线复位(回到最开始)。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol>
+<li>速度，一般来说: drop&gt; truncate &gt; delete</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol>
+<li>安全性：小心使用 drop 和 truncate，尤其没有备份的时候.否则哭都来不及</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol>
+<li>使用上: 想删除部分数据行用 delete，注意带上where子句. 回滚段要足够大.想删除表,当然用 drop;<br><code>想保留表而将所有数据删除，如果和事务无关，用truncate即可。如果和事务有关,或者想触发trigger,还是用delete。</code><br>如果是整理表内部的碎片，可以用truncate跟上reuse stroage，再重新导入/插入数据。</li>
+</ol>
+</blockquote>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Delete</span> <span class="keyword">from</span> Tablename <span class="keyword">where</span> 条件</span><br><span class="line"><span class="keyword">Truncate</span> <span class="keyword">table</span> Tablename</span><br><span class="line"><span class="keyword">Drop</span> <span class="keyword">table</span> Tablename</span><br></pre></td></tr></table></figure>
+<h4 id="Mysql的truncate和delete的区别"><a href="#Mysql的truncate和delete的区别" class="headerlink" title="Mysql的truncate和delete的区别"></a>Mysql的truncate和delete的区别</h4><p>truncate table table_name 和delete from table_name 都是删除表中所有记录。</p>
+<p>区别：</p>
+<p>truncate能够快速清空一个表。并且重置auto_increment的值。而delete只能一行一行的删除。</p>
+<p>但对于不同的类型存储引擎需要注意的地方是：</p>
+<p>A. 对于myisam</p>
+<blockquote>
+<p>truncate会重置auto_increment的值为1。而delete后表仍然保持auto_increment。</p>
+</blockquote>
+<p>B. 对于innodb</p>
+<blockquote>
+<p>truncate会重置auto_increment的值为1。delete后表仍然保持auto_increment。但是在做delete整个表之后重启MySQL的话，则<code>重启后</code>的auto_increment会被置为1。</p>
+</blockquote>
+<p>也就是说，innodb的表本身是无法持久保存auto_increment。delete表之后auto_increment仍然保存在内存，但是重启后就丢失了，只能从1开始。实质上<code>重启</code>后的auto_increment会从 SELECT 1+MAX(ai_col) FROM t 开始。</p>
 
       
     </div>
@@ -641,8 +695,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -890,6 +953,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#相同点："><span class="nav-number">1.</span> <span class="nav-text">相同点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不同点"><span class="nav-number">2.</span> <span class="nav-text">不同点:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语法"><span class="nav-number">3.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mysql的truncate和delete的区别"><span class="nav-number">4.</span> <span class="nav-text">Mysql的truncate和delete的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
