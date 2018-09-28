@@ -82,7 +82,8 @@ cat > catfile << "eof"
 tee命令实现了手动跟踪命令的输出内容，同时又将输出的内容写入文件，确保之后可以用来参考。
 例如:
 ```bash
-list | tee last.list | cut -d ' ' -f1
+last | tee last.list | cut -d ' ' -f1
+# last: View the last logged in users.
 # 该范例可以让我们将last的输出存一份到last.list文件中。
 
 ls -l / | tee -a ~/homefile | more
