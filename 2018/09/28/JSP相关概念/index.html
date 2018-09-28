@@ -116,17 +116,17 @@
 
 
 
-  <meta name="description" content="JSP一共有9个内置对象：  request：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest  response:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse  session:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.h">
+  <meta name="description" content="JSP内置对象： request：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest  response:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse  session:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.httpses">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSP内置对象">
-<meta property="og:url" content="http://kunxiang.wang/2018/09/28/JSP内置对象/index.html">
+<meta property="og:title" content="JSP相关概念">
+<meta property="og:url" content="http://kunxiang.wang/2018/09/28/JSP相关概念/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="JSP一共有9个内置对象：  request：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest  response:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse  session:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.h">
+<meta property="og:description" content="JSP内置对象： request：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest  response:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse  session:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.httpses">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-28T02:51:34.332Z">
+<meta property="og:updated_time" content="2018-09-28T04:36:34.533Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JSP内置对象">
-<meta name="twitter:description" content="JSP一共有9个内置对象：  request：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest  response:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse  session:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.h">
+<meta name="twitter:title" content="JSP相关概念">
+<meta name="twitter:description" content="JSP内置对象： request：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest  response:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse  session:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.httpses">
 
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/2018/09/28/JSP内置对象/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2018/09/28/JSP相关概念/"/>
 
 
 
@@ -145,7 +145,7 @@
   };
 </script>
 
-  <title>JSP内置对象 | Quentin's Blog</title>
+  <title>JSP相关概念 | Quentin's Blog</title>
   
 
 
@@ -358,7 +358,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/28/JSP内置对象/">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/28/JSP相关概念/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -375,7 +375,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">JSP内置对象
+          <h2 class="post-title" itemprop="name headline">JSP相关概念
               
             
           </h2>
@@ -415,10 +415,10 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/28/JSP内置对象/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/28/JSP相关概念/#comments" itemprop="discussionUrl">
                 
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/28/JSP内置对象/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/28/JSP相关概念/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -426,7 +426,7 @@
 
           
           
-             <span id="/2018/09/28/JSP内置对象/" class="leancloud_visitors" data-flag-title="JSP内置对象">
+             <span id="/2018/09/28/JSP相关概念/" class="leancloud_visitors" data-flag-title="JSP相关概念">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -457,8 +457,7 @@
       
 
       
-        <p>JSP一共有9个内置对象：</p>
-<ol>
+        <h4 id="JSP内置对象："><a href="#JSP内置对象：" class="headerlink" title="JSP内置对象："></a>JSP内置对象：</h4><ol>
 <li><p><code>request</code>：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest</p>
 </li>
 <li><p><code>response</code>:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse</p>
@@ -476,6 +475,16 @@
 <li><p><code>pagecontext</code>:表示这个JSP页面上下文，对应类型：javax.servlet.jsp.pagecontext</p>
 </li>
 <li><p><code>page</code>:表示当前JSP页面本身。</p>
+</li>
+</ol>
+<h4 id="JSP的四种作用域"><a href="#JSP的四种作用域" class="headerlink" title="JSP的四种作用域"></a>JSP的四种作用域</h4><ol>
+<li><p><code>page</code>是代表一个页面相关的对象和属性。一个页面由一个编译好的java servlet类（可以带有include指令，但不可以带有include动作）表示。这既包括servlet又包括编译成servlet的jsp页面。</p>
+</li>
+<li><p><code>request</code>是代表与web客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个web组件（由于<code>forward</code>指令和<code>include</code>动作的关系）</p>
+</li>
+<li><p><code>session</code>是代表与用于某个web客户机的一个用户体验相关的对象和属性。一个web回话也可以经常跨域多个客户机请求。</p>
+</li>
+<li><p><code>application</code>是代表与整个web应用程序相关的对象和属性。这实质上是跨域整个web应用程序，包括多个页面、请求和回话的一个全局作用域</p>
 </li>
 </ol>
 
@@ -588,8 +597,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -842,6 +860,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP内置对象："><span class="nav-number">1.</span> <span class="nav-text">JSP内置对象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP的四种作用域"><span class="nav-number">2.</span> <span class="nav-text">JSP的四种作用域</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1044,9 +1078,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://kunxiang.wang/2018/09/28/JSP内置对象/';
-        this.page.identifier = '2018/09/28/JSP内置对象/';
-        this.page.title = 'JSP内置对象';
+        this.page.url = 'http://kunxiang.wang/2018/09/28/JSP相关概念/';
+        this.page.identifier = '2018/09/28/JSP相关概念/';
+        this.page.title = 'JSP相关概念';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');

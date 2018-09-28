@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[JSP内置对象]]></title>
-    <url>%2F2018%2F09%2F28%2FJSP%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1%2F</url>
-    <content type="text"><![CDATA[JSP一共有9个内置对象： request：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest response:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse session:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.httpsession out: 负责管理对客户端的输出，对应类型：javax.serlvet.jsp.jspwriter application:表示整个应用环境的信息，对应类型：javax.servlet.servletcontext config:表示ServletConfig，对应类型：javax.servlet.servletconfig exception:表示页面中发生的异常，可以通过它获得页面异常信息，对应类型：java.lang.exception pagecontext:表示这个JSP页面上下文，对应类型：javax.servlet.jsp.pagecontext page:表示当前JSP页面本身。]]></content>
+    <title><![CDATA[JSP相关概念]]></title>
+    <url>%2F2018%2F09%2F28%2FJSP%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5%2F</url>
+    <content type="text"><![CDATA[JSP内置对象： request：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest response:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse session:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.httpsession out: 负责管理对客户端的输出，对应类型：javax.serlvet.jsp.jspwriter application:表示整个应用环境的信息，对应类型：javax.servlet.servletcontext config:表示ServletConfig，对应类型：javax.servlet.servletconfig exception:表示页面中发生的异常，可以通过它获得页面异常信息，对应类型：java.lang.exception pagecontext:表示这个JSP页面上下文，对应类型：javax.servlet.jsp.pagecontext page:表示当前JSP页面本身。 JSP的四种作用域 page是代表一个页面相关的对象和属性。一个页面由一个编译好的java servlet类（可以带有include指令，但不可以带有include动作）表示。这既包括servlet又包括编译成servlet的jsp页面。 request是代表与web客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个web组件（由于forward指令和include动作的关系） session是代表与用于某个web客户机的一个用户体验相关的对象和属性。一个web回话也可以经常跨域多个客户机请求。 application是代表与整个web应用程序相关的对象和属性。这实质上是跨域整个web应用程序，包括多个页面、请求和回话的一个全局作用域]]></content>
   </entry>
   <entry>
     <title><![CDATA[面试总结之Java Web篇(持续更新)]]></title>

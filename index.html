@@ -356,7 +356,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/28/JSP内置对象/">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/28/JSP相关概念/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -375,8 +375,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/28/JSP内置对象/" itemprop="url">
-                  JSP内置对象
+                <a class="post-title-link" href="/2018/09/28/JSP相关概念/" itemprop="url">
+                  JSP相关概念
                 </a>
               
             
@@ -417,10 +417,10 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/28/JSP内置对象/#comments" itemprop="discussionUrl">
+                <a href="/2018/09/28/JSP相关概念/#comments" itemprop="discussionUrl">
                 
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/28/JSP内置对象/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/09/28/JSP相关概念/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -428,7 +428,7 @@
 
           
           
-             <span id="/2018/09/28/JSP内置对象/" class="leancloud_visitors" data-flag-title="JSP内置对象">
+             <span id="/2018/09/28/JSP相关概念/" class="leancloud_visitors" data-flag-title="JSP相关概念">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -461,8 +461,7 @@
       
         
           
-            <p>JSP一共有9个内置对象：</p>
-<ol>
+            <h4 id="JSP内置对象："><a href="#JSP内置对象：" class="headerlink" title="JSP内置对象："></a>JSP内置对象：</h4><ol>
 <li><p><code>request</code>：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest</p>
 </li>
 <li><p><code>response</code>:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse</p>
@@ -480,6 +479,16 @@
 <li><p><code>pagecontext</code>:表示这个JSP页面上下文，对应类型：javax.servlet.jsp.pagecontext</p>
 </li>
 <li><p><code>page</code>:表示当前JSP页面本身。</p>
+</li>
+</ol>
+<h4 id="JSP的四种作用域"><a href="#JSP的四种作用域" class="headerlink" title="JSP的四种作用域"></a>JSP的四种作用域</h4><ol>
+<li><p><code>page</code>是代表一个页面相关的对象和属性。一个页面由一个编译好的java servlet类（可以带有include指令，但不可以带有include动作）表示。这既包括servlet又包括编译成servlet的jsp页面。</p>
+</li>
+<li><p><code>request</code>是代表与web客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个web组件（由于<code>forward</code>指令和<code>include</code>动作的关系）</p>
+</li>
+<li><p><code>session</code>是代表与用于某个web客户机的一个用户体验相关的对象和属性。一个web回话也可以经常跨域多个客户机请求。</p>
+</li>
+<li><p><code>application</code>是代表与整个web应用程序相关的对象和属性。这实质上是跨域整个web应用程序，包括多个页面、请求和回话的一个全局作用域</p>
 </li>
 </ol>
 
