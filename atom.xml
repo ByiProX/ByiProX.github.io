@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-09-26T14:54:27.101Z</updated>
+  <updated>2018-09-28T02:51:34.332Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSP内置对象</title>
+    <link href="http://kunxiang.wang/2018/09/28/JSP%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://kunxiang.wang/2018/09/28/JSP内置对象/</id>
+    <published>2018-09-28T02:49:49.000Z</published>
+    <updated>2018-09-28T02:51:34.332Z</updated>
+    
+    <content type="html"><![CDATA[<p>JSP一共有9个内置对象：</p><ol><li><p><code>request</code>：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest</p></li><li><p><code>response</code>:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse</p></li><li><p><code>session</code>:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.httpsession</p></li><li><p><code>out</code>: 负责管理对客户端的输出，对应类型：javax.serlvet.jsp.jspwriter</p></li><li><p><code>application</code>:表示整个应用环境的信息，对应类型：javax.servlet.servletcontext</p></li><li><p><code>config</code>:表示ServletConfig，对应类型：javax.servlet.servletconfig</p></li><li><p><code>exception</code>:表示页面中发生的异常，可以通过它获得页面异常信息，对应类型：java.lang.exception</p></li><li><p><code>pagecontext</code>:表示这个JSP页面上下文，对应类型：javax.servlet.jsp.pagecontext</p></li><li><p><code>page</code>:表示当前JSP页面本身。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;JSP一共有9个内置对象：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;request&lt;/code&gt;：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;respons
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面试总结之Java Web篇(持续更新)</title>
+    <link href="http://kunxiang.wang/2018/09/27/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BJava-Web%E7%AF%87-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
+    <id>http://kunxiang.wang/2018/09/27/面试总结之Java-Web篇-持续更新/</id>
+    <published>2018-09-27T13:16:53.000Z</published>
+    <updated>2018-09-28T02:51:37.101Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="面试" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java Web" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/Java-Web/"/>
+    
+    
+      <category term="面试" scheme="http://kunxiang.wang/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java Web" scheme="http://kunxiang.wang/tags/Java-Web/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库范式</title>
@@ -624,50 +671,6 @@
     
     
       <category term="Java" scheme="http://kunxiang.wang/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux文件名查找</title>
-    <link href="http://kunxiang.wang/2018/09/05/Linux%E6%96%87%E4%BB%B6%E5%90%8D%E6%9F%A5%E6%89%BE/"/>
-    <id>http://kunxiang.wang/2018/09/05/Linux文件名查找/</id>
-    <published>2018-09-05T11:43:59.000Z</published>
-    <updated>2018-09-05T12:57:05.845Z</updated>
-    
-    <content type="html"><![CDATA[<p>通常情况下<code>find</code>不是很常用，因为速度较慢。一般都是先使用<code>whereis</code>或者是<code>locate</code>来检查，如果真找不到，才使用<code>find</code>来查找。因为<code>whereis</code>与<code>locate</code>是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;<code>find</code>直接打查找硬盘，所以查询速度要慢。</p><a id="more"></a><h4 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h4><blockquote><p>whereis [-bmsu] 文件或者目录名</p></blockquote><p>Linux系统会将系统内的所有文件都记录在一个数据库文件里面，而当使用<code>whereis</code>或者下面的<code>locate</code>命令时，都会以此数据库文件内容为准。因此有时候还会发现使用这两个命令查找文件时，会找到已经删掉的文件。而且有可能找不到最新刚刚创建的文件。</p><h4 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h4><blockquote><p>locate [-ir] keyword</p></blockquote><p>locate使用更简单，直接在后面输入<code>文件的部分名称</code>后就能得到结果。被搜索的数据库默认是每天执行一次，该数据库的位置为<code>/var/lib/mlocate/</code>。我们可以选择手动更新数据库，直接命令行输入<code>updatedb</code> 即可。</p><h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><blockquote><p>find [path] [option] [option]</p></blockquote><p>示例1：将过去24小时内有改动的文件列出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find / -mtime 0</span><br><span class="line"></span><br><span class="line">find / -mtime 3 &lt;==表示三天前的24小时</span><br></pre></td></tr></table></figure></p><p>示例2：寻找/etc下面的文件，如果文件日期比/etc/passwd新就列出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -newer /etc/passwd</span><br></pre></td></tr></table></figure></p><p>示例3：查找/home下属于wkx的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home -user wkx</span><br></pre></td></tr></table></figure></p><p>示例4：查找系统中不属于任何人的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -nouser</span><br></pre></td></tr></table></figure></p><p>示例5：找出文件名为passwd的文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name passwd</span><br></pre></td></tr></table></figure></p><p>示例6：找出/var目录下文件类型为socket的文件名有哪些<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /var -<span class="built_in">type</span> s</span><br></pre></td></tr></table></figure></p><p>示例7：找出含有SGID或者SUID或者SBIT的属性文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find / -perm +7000</span><br><span class="line"><span class="comment"># 文件权限只要含有s或者t就列出</span></span><br></pre></td></tr></table></figure></p><ul><li>-perm  mode: 文件权限刚好等于mode的文件</li><li>-perm -mode: 文件权限<code>全部包括mode</code>的文件</li><li>-perm +mode: 文件权限<code>包含任意mode</code>的文件</li></ul><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;通常情况下&lt;code&gt;find&lt;/code&gt;不是很常用，因为速度较慢。一般都是先使用&lt;code&gt;whereis&lt;/code&gt;或者是&lt;code&gt;locate&lt;/code&gt;来检查，如果真找不到，才使用&lt;code&gt;find&lt;/code&gt;来查找。因为&lt;code&gt;whereis&lt;/code&gt;与&lt;code&gt;locate&lt;/code&gt;是利用数据库来查找数据，所以速度相当快，而且并没有实际去查询硬盘，比较节省时间;&lt;code&gt;find&lt;/code&gt;直接打查找硬盘，所以查询速度要慢。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux/Mac OS" scheme="http://kunxiang.wang/categories/Linux-Mac-OS/"/>
-    
-    
-      <category term="Linux/Mac OS" scheme="http://kunxiang.wang/tags/Linux-Mac-OS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux切割命令split</title>
-    <link href="http://kunxiang.wang/2018/09/05/Linux%E5%88%87%E5%89%B2%E5%91%BD%E4%BB%A4split/"/>
-    <id>http://kunxiang.wang/2018/09/05/Linux切割命令split/</id>
-    <published>2018-09-05T10:06:09.000Z</published>
-    <updated>2018-09-05T10:31:12.495Z</updated>
-    
-    <content type="html"><![CDATA[<p>如果文件太大，导致一些携带设备无法复制问题。利用<code>split</code>就可以了。它可以帮助我们将一个大文件依据文件大小或者行数来切割成小文件，快速而有效。</p><a id="more"></a><p>具体使用方法可以通过<code>man split</code>查看。</p><p>范例1：一部复仇者联盟的电影，大小为1.7G,现将他们分割为每一份512M。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">split -b 512m Avengers.mp4 AvengerSplit</span><br><span class="line"></span><br><span class="line">ll</span><br><span class="line">-rw-r--r--  1 Dhyana  staff   512M Sep  5 18:19 AvengerSplitaa</span><br><span class="line">-rw-r--r--  1 Dhyana  staff   512M Sep  5 18:19 AvengerSplitab</span><br><span class="line">-rw-r--r--  1 Dhyana  staff   512M Sep  5 18:19 AvengerSplitac</span><br><span class="line">-rw-r--r--  1 Dhyana  staff   171M Sep  5 18:19 AvengerSplitad</span><br></pre></td></tr></table></figure></p><p>如果需要将文件合并，使用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat AvengerSplit* &gt;&gt; AvengerBack.mp4</span><br></pre></td></tr></table></figure></p><p>即可。</p><p>范例2：使用<code>ls -al /</code>输出的信息中，每10行记录成一个文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls -al / | split -l 10 - lsroot</span><br><span class="line"></span><br><span class="line">wc -l lsroot*</span><br><span class="line">10 lsrootaa</span><br><span class="line">10 lsrootab</span><br><span class="line"> 7 lsrootac</span><br><span class="line">27 total</span><br></pre></td></tr></table></figure></p><p>重点在那个<code>-</code>。一般来讲，如果需要stdin/stdout,但是没有相应的文件，此时<code>-</code>就代表了stdin/stdout。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如果文件太大，导致一些携带设备无法复制问题。利用&lt;code&gt;split&lt;/code&gt;就可以了。它可以帮助我们将一个大文件依据文件大小或者行数来切割成小文件，快速而有效。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux/Mac OS" scheme="http://kunxiang.wang/categories/Linux-Mac-OS/"/>
-    
-    
-      <category term="Linux/Mac OS" scheme="http://kunxiang.wang/tags/Linux-Mac-OS/"/>
     
   </entry>
   
