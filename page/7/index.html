@@ -1206,13 +1206,10 @@
 
       
         
-          <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>快速排序的思路：</p>
-<ol>
-<li>先从数列中取出一个数作为基准数。</li>
-<li>分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边(假定从小到大排序)。</li>
-<li>再对左右区间重复第二步，直到各区间只有一个数</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">quicksort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="string">"""快速排序"""</span></span><br><span class="line">    <span class="keyword">if</span> len(array) &lt; <span class="number">2</span>:  <span class="comment"># 基线条件：为空或者只有一个元素的数组是有序的</span></span><br><span class="line">        <span class="keyword">return</span> array</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        pivot = array[<span class="number">0</span>]  <span class="comment"># 递归条件,基准值</span></span><br><span class="line">        less = [i <span class="keyword">for</span> i <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> i &lt;= pivot]  <span class="comment"># 所有小于基准值的元素组成的子数组</span></span><br><span class="line">        greater = [i <span class="keyword">for</span> i <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> i &gt; pivot]  <span class="comment"># 所有大于基准值的元素组成的子数组</span></span><br><span class="line">        <span class="keyword">return</span> quicksort(less) + [pivot] + quicksort(greater)</span><br><span class="line"></span><br><span class="line">print(quicksort([<span class="number">1</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">9</span>,<span class="number">3</span>]))</span><br></pre></td></tr></table></figure>
+          <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>冒泡排序原理即：从数组下标为0的位置开始，比较下标位置为0和1的数据，如果0号位置的大，则交换位置，如果1号位置大，则什么也不做，然后右移一个位置，比较1号和2号的数据，和刚才的一样，如果1号的大，则交换位置，以此类推直至最后一个位置结束，到此数组中最大的元素就被排到了最后，之后再根据之前的步骤开始排前面的数据，直至全部数据都排序完成。</p>
+<p>就是传说中的大的沉到底原则，适用于小量数据</p>
+<p>冒泡排序思路: 每一趟只能将一个数归位, 如果有n个数进行排序,只需将n-1个数归位, 也就是说要进行n-1趟操作(已经归位的数不用再比较)</p>
+<p>缺点: 冒泡排序解决了桶排序浪费空间的问题, 但是冒泡排序的效率特别低<br><img src="http://upload-images.jianshu.io/upload_images/2952111-020fcd7b86279da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="冒泡排序"></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/09/Python3-实现常见的各种排序方法/" rel="contents">
