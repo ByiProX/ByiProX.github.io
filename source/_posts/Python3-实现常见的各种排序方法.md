@@ -9,29 +9,6 @@ categories:
   - Algorithm
 ---
 
-## 快速排序
-快速排序的思路：
-1. 先从数列中取出一个数作为基准数。
-2. 分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边(假定从小到大排序)。
-3. 再对左右区间重复第二步，直到各区间只有一个数
-
-```Python
-def quicksort(array):
-    """快速排序"""
-    if len(array) < 2:  # 基线条件：为空或者只有一个元素的数组是有序的
-        return array
-    else:
-        pivot = array[0]  # 递归条件,基准值
-        less = [i for i in array[1:] if i <= pivot]  # 所有小于基准值的元素组成的子数组
-        greater = [i for i in array[1:] if i > pivot]  # 所有大于基准值的元素组成的子数组
-        return quicksort(less) + [pivot] + quicksort(greater)
-
-print(quicksort([1,2,7,4,2,9,3]))
-```
-<!-- more -->
-![快速排序](http://upload-images.jianshu.io/upload_images/2952111-d52e0c914f7272a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![20170801013540271.gif](http://upload-images.jianshu.io/upload_images/2952111-03cf1024e51c6dee.gif?imageMogr2/auto-orient/strip)
 
 ## 冒泡排序
 
@@ -44,6 +21,7 @@ print(quicksort([1,2,7,4,2,9,3]))
 缺点: 冒泡排序解决了桶排序浪费空间的问题, 但是冒泡排序的效率特别低
 ![冒泡排序](http://upload-images.jianshu.io/upload_images/2952111-020fcd7b86279da7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+<!-- more -->
 ```Python
 def bubbleSort(relist):
     """冒泡排序"""
@@ -138,6 +116,30 @@ print(mergeSort([1,5,2,6,9,3]))
 
 ```
 ![归并排序](https://upload-images.jianshu.io/upload_images/2952111-8ee3d2a2a81eab80.gif?imageMogr2/auto-orient/strip)
+
+## 快速排序
+快速排序的思路：
+1. 先从数列中取出一个数作为基准数。
+2. 分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边(假定从小到大排序)。
+3. 再对左右区间重复第二步，直到各区间只有一个数
+
+```Python
+def quicksort(array):
+    """快速排序"""
+    if len(array) < 2:  # 基线条件：为空或者只有一个元素的数组是有序的
+        return array
+    else:
+        pivot = array[0]  # 递归条件,基准值
+        less = [i for i in array[1:] if i <= pivot]  # 所有小于基准值的元素组成的子数组
+        greater = [i for i in array[1:] if i > pivot]  # 所有大于基准值的元素组成的子数组
+        return quicksort(less) + [pivot] + quicksort(greater)
+
+print(quicksort([1,2,7,4,2,9,3]))
+```
+
+![快速排序](http://upload-images.jianshu.io/upload_images/2952111-d52e0c914f7272a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![20170801013540271.gif](http://upload-images.jianshu.io/upload_images/2952111-03cf1024e51c6dee.gif?imageMogr2/auto-orient/strip)
 
 
 ## 堆排序
