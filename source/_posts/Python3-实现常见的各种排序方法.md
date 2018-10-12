@@ -203,7 +203,7 @@ if __name__ == '__main__':
 | 插入排序 | O(n^2) | O(n^2) |稳定|O(1)|
 | 希尔排序 | O      | O           |不稳定|O(1)|
 | 归并排序 | O(n*log n)| O(n*log n) |稳定|?|
-| 快速排序 | O(n^2) | O(n*log n) |不稳定|O(log2n)~O(n)|
+| 快速排序 | O(n^2) | O(n*log n) |不稳定|O(logn)~O(n)|
 | 二叉树排序 | O(n^2) | O(n*log n) |不一定|O(n)|
 | 堆排序 | O(n*log n) | O(n*log n) |不稳定|O(1)|
 
@@ -212,3 +212,4 @@ if __name__ == '__main__':
 ## 参考
 1. http://blog.csdn.net/mrlevo520/article/details/77829204
 2. http://blog.csdn.net/minxihou/article/details/51850001
+3. https://blog.csdn.net/yuzhihui_no1/article/details/44198701
