@@ -356,6 +356,186 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/10/24/Java中的-赋值运算/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/24/Java中的-赋值运算/" itemprop="url">
+                  Java中的+=赋值运算
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-24 15:22:03" itemprop="dateCreated datePublished" datetime="2018-10-24T15:22:03+08:00">2018-10-24</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/24/Java中的-赋值运算/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/24/Java中的-赋值运算/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/10/24/Java中的-赋值运算/" class="leancloud_visitors" data-flag-title="Java中的+=赋值运算">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">a += <span class="number">5</span>;</span><br><span class="line">System.out.println(a); <span class="comment">//15</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">short</span> s = <span class="number">30</span>;</span><br><span class="line">s = s + <span class="number">5</span>;<span class="comment">//编译报错</span></span><br><span class="line"><span class="comment">//Error:(23, 15) java: incompatible types: possible lossy conversion from int to short</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">short</span> s = <span class="number">30</span>;</span><br><span class="line">s += <span class="number">5</span>;<span class="comment">//等价于 s = short(s+5),该表达式自带隐式类型转换</span></span><br></pre></td></tr></table></figure>
+<p>上述代码中，变量s为short类型，<code>s+5</code>的结果为int类型，int类型赋值给short类型，编译报错。<br>错误信息为如下：<br><code>Error:(23, 15) java: incompatible types: possible lossy conversion from int to short</code></p>
+<p>关于<code>自动类型转换</code>，也称为<code>隐式类型转换</code><br>当把<code>小数据范围类型的数值或变量</code>赋值给另一个<code>大数据范围类型变量</code>时，系统可以自动完成类型转换。<br>boolean类型是不可以转换为其他数据类型。</p>
+<p><code>强制类型转换</code>，也称为<code>显示类型转换</code><br>当把<code>大范围类型的数值或变量</code>赋值给另一个<code>小范围类型变量</code>时，此时系统不能自动完成转换，需要加上强制转换符，但这样的操作可能在成数据精度的降低或溢出，使用时需要格外注意。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/29/C语言中的-if-n-1-和-if-1-n-的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2077,195 +2257,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/26/PostgreSQL数据查询Demo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByiProX">
-      <meta itemprop="description" content="每天进步一点点">
-      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/26/PostgreSQL数据查询Demo/" itemprop="url">
-                  PostgreSQL数据查询Demo
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-26 10:58:30" itemprop="dateCreated datePublished" datetime="2018-09-26T10:58:30+08:00">2018-09-26</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/26/PostgreSQL数据查询Demo/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/26/PostgreSQL数据查询Demo/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/09/26/PostgreSQL数据查询Demo/" class="leancloud_visitors" data-flag-title="PostgreSQL数据查询Demo">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="创建演示数据表结构"><a href="#创建演示数据表结构" class="headerlink" title="创建演示数据表结构"></a>创建演示数据表结构</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--创建dept表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> dept (</span><br><span class="line">  d_no <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span>,     <span class="comment">--部门编号</span></span><br><span class="line">	d_name <span class="built_in">VARCHAR</span>(<span class="number">30</span>),       <span class="comment">--部门名称</span></span><br><span class="line">	d_location <span class="built_in">VARCHAR</span>(<span class="number">300</span>)   <span class="comment">--部门所在地址</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">--dept表初始化数据</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span> (<span class="number">10</span>, <span class="string">'开发部'</span>, <span class="string">'北京市海淀区'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span> (<span class="number">20</span>, <span class="string">'测试部'</span>, <span class="string">'北京市东城区'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span> (<span class="number">30</span>, <span class="string">'销售部'</span>, <span class="string">'上海市'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span> (<span class="number">40</span>, <span class="string">'财务部'</span>, <span class="string">'广州市'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span> (<span class="number">50</span>, <span class="string">'运维部'</span>, <span class="string">'武汉市'</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> dept <span class="keyword">VALUES</span> (<span class="number">60</span>, <span class="string">'集成部'</span>, <span class="string">'南京市'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--创建employee表</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> employee (</span><br><span class="line">  e_no <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span>,             <span class="comment">--雇员编号</span></span><br><span class="line">	e_name <span class="built_in">VARCHAR</span>(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,      <span class="comment">--雇员名称</span></span><br><span class="line">	e_gender <span class="built_in">CHAR</span>(<span class="number">2</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,        <span class="comment">--性别，f：女，m：男</span></span><br><span class="line">	dept_no <span class="built_in">INT</span>,                      <span class="comment">--所在部门编号</span></span><br><span class="line">	e_job <span class="built_in">VARCHAR</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,       <span class="comment">--职位</span></span><br><span class="line">	e_salary <span class="built_in">NUMERIC</span>(<span class="number">9</span>, <span class="number">2</span>),           <span class="comment">--工资</span></span><br><span class="line">	e_hireDate <span class="built_in">DATE</span>,                  <span class="comment">--入职日期</span></span><br><span class="line">	<span class="keyword">CONSTRAINT</span> fk_emp_deptno FOREIGN <span class="keyword">KEY</span> (dept_no) <span class="keyword">REFERENCES</span> dept(d_no)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- select 语句顺序</span></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  &#123;* | &lt;字段列表&gt;&#125;       //查询结果字段内容</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">  [</span><br><span class="line">      &lt;表<span class="number">1</span>&gt;,&lt;表<span class="number">2</span>&gt;…                       //查询数据表</span><br><span class="line">      [<span class="keyword">WHERE</span> &lt;表达式&gt;]                   //<span class="keyword">where</span>查询条件表达式</span><br><span class="line">      [<span class="keyword">GROUP</span> <span class="keyword">BY</span> &lt;<span class="keyword">group</span> <span class="keyword">by</span> definition&gt;]  //<span class="keyword">group</span> <span class="keyword">by</span>数据分组</span><br><span class="line">      [<span class="keyword">HAVING</span> &lt;expression&gt; [&#123;&lt;<span class="keyword">operator</span>&gt; &lt;expression&gt;&#125;…]]            </span><br><span class="line">      [<span class="keyword">ORDER</span> <span class="keyword">BY</span> &lt;<span class="keyword">order</span> <span class="keyword">by</span> definition&gt;]  //查询结果排序</span><br><span class="line">      [<span class="keyword">LIMIT</span> [&lt;<span class="keyword">offset</span>&gt;,] &lt;<span class="keyword">row</span> <span class="keyword">count</span>&gt;]   //限制结果显示数量</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/26/PostgreSQL数据查询Demo/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2317,7 +2308,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">112</span>
+                    <span class="site-state-item-count">113</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

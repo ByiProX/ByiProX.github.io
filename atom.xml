@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-09-29T05:19:57.158Z</updated>
+  <updated>2018-10-24T07:38:47.392Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java中的+=赋值运算</title>
+    <link href="http://kunxiang.wang/2018/10/24/Java%E4%B8%AD%E7%9A%84-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97/"/>
+    <id>http://kunxiang.wang/2018/10/24/Java中的-赋值运算/</id>
+    <published>2018-10-24T07:22:03.000Z</published>
+    <updated>2018-10-24T07:38:47.392Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">a += <span class="number">5</span>;</span><br><span class="line">System.out.println(a); <span class="comment">//15</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">short</span> s = <span class="number">30</span>;</span><br><span class="line">s = s + <span class="number">5</span>;<span class="comment">//编译报错</span></span><br><span class="line"><span class="comment">//Error:(23, 15) java: incompatible types: possible lossy conversion from int to short</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">short</span> s = <span class="number">30</span>;</span><br><span class="line">s += <span class="number">5</span>;<span class="comment">//等价于 s = short(s+5),该表达式自带隐式类型转换</span></span><br></pre></td></tr></table></figure><p>上述代码中，变量s为short类型，<code>s+5</code>的结果为int类型，int类型赋值给short类型，编译报错。<br>错误信息为如下：<br><code>Error:(23, 15) java: incompatible types: possible lossy conversion from int to short</code></p><p>关于<code>自动类型转换</code>，也称为<code>隐式类型转换</code><br>当把<code>小数据范围类型的数值或变量</code>赋值给另一个<code>大数据范围类型变量</code>时，系统可以自动完成类型转换。<br>boolean类型是不可以转换为其他数据类型。</p><p><code>强制类型转换</code>，也称为<code>显示类型转换</code><br>当把<code>大范围类型的数值或变量</code>赋值给另一个<code>小范围类型变量</code>时，此时系统不能自动完成转换，需要加上强制转换符，但这样的操作可能在成数据精度的降低或溢出，使用时需要格外注意。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="http://kunxiang.wang/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://kunxiang.wang/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>C语言中的&#39;if(n==1)&#39;和&#39;if(1==n)&#39;的区别</title>
@@ -636,41 +661,6 @@
         &lt;p&gt;Java本身不支持设置默认值，需要用重载间接实现。&lt;/p&gt;
 &lt;p&gt;因为“默认参数”和“方法重载”同时支持的话有二义性的问题，Java可能为了简单就不要“默认参数”了。使用“方法重载”可以间接实现”默认参数“的效果，而且避免了代码过于hack（乱）。&lt;/p&gt;
 &lt;figure 
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="http://kunxiang.wang/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://kunxiang.wang/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java 关键字this和super</title>
-    <link href="http://kunxiang.wang/2018/09/07/Java-%E5%85%B3%E9%94%AE%E5%AD%97this%E5%92%8Csuper/"/>
-    <id>http://kunxiang.wang/2018/09/07/Java-关键字this和super/</id>
-    <published>2018-09-07T02:32:12.000Z</published>
-    <updated>2018-09-07T02:40:51.608Z</updated>
-    
-    <content type="html"><![CDATA[<p>关键字this有两个用途：</p><ol><li>引用隐式参数</li><li>调用该类其他的构造器</li></ol><p>关键字super也有两个用途：</p><ol><li>调用超类的方法</li><li>调用超类的构造器</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;关键字this有两个用途：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;引用隐式参数&lt;/li&gt;
-&lt;li&gt;调用该类其他的构造器&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;关键字super也有两个用途：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;调用超类的方法&lt;/li&gt;
-&lt;li&gt;调用超类的构造器&lt;/li&gt;
-&lt;/ol&gt;
-
       
     
     </summary>

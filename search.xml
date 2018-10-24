@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java中的+=赋值运算]]></title>
+    <url>%2F2018%2F10%2F24%2FJava%E4%B8%AD%E7%9A%84-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%2F</url>
+    <content type="text"><![CDATA[1234567891011int a = 10;a += 5;System.out.println(a); //15short s = 30;s = s + 5;//编译报错//Error:(23, 15) java: incompatible types: possible lossy conversion from int to shortshort s = 30;s += 5;//等价于 s = short(s+5),该表达式自带隐式类型转换 上述代码中，变量s为short类型，s+5的结果为int类型，int类型赋值给short类型，编译报错。错误信息为如下：Error:(23, 15) java: incompatible types: possible lossy conversion from int to short 关于自动类型转换，也称为隐式类型转换当把小数据范围类型的数值或变量赋值给另一个大数据范围类型变量时，系统可以自动完成类型转换。boolean类型是不可以转换为其他数据类型。 强制类型转换，也称为显示类型转换当把大范围类型的数值或变量赋值给另一个小范围类型变量时，此时系统不能自动完成转换，需要加上强制转换符，但这样的操作可能在成数据精度的降低或溢出，使用时需要格外注意。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[C语言中的'if(n==1)'和'if(1==n)'的区别]]></title>
     <url>%2F2018%2F09%2F29%2FC%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84-if-n-1-%E5%92%8C-if-1-n-%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
     <content type="text"><![CDATA[C语言中两种if语句判断方式。请问哪种写法更好？为什么？123int n;if (n == 1) // 第一种判断方式if (1 == n) // 第二种判断方式 第一种写法缺点 在写判断语句的时候很容易漏写一个“=” ,比如把if (n == 1) { } 写成 if (n = 1) { }。而在C中 “n = 1” 是有返回值的， 这个返回值是1， 于是原语句相当于if ( 1 ) { } ,即条件永远为真，{ } 内的代码始终能够得到执行，当这样的错误深深埋藏在代码当中，非常难以debug。 优点 主要目的是防止写成if(n = 1)而导致错误,但现在的编译器一般会给出警告信息所以现在不常用了.第1种更符合习惯,只要把相应的编译选项打开,一般不会出问题。 第二种写法缺点 反人类优点 if ( 1 == n ) { } 及时少写一个”=”, 编译器就会报错，省得在运行期调试得死去活来。 会省掉很多 debug 的时间的。]]></content>
