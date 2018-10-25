@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-10-25T01:41:50.011Z</updated>
+  <updated>2018-10-25T01:47:52.199Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://kunxiang.wang/2018/10/25/%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC/"/>
     <id>http://kunxiang.wang/2018/10/25/四种方法实现交换两个变量的值/</id>
     <published>2018-10-25T01:38:37.000Z</published>
-    <updated>2018-10-25T01:41:50.011Z</updated>
+    <updated>2018-10-25T01:47:52.199Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="方法一-借助第三变量"><a href="#方法一-借助第三变量" class="headerlink" title="方法一 借助第三变量"></a>方法一 借助第三变量</h4><h4 id="方法二-算术运算"><a href="#方法二-算术运算" class="headerlink" title="方法二 算术运算"></a>方法二 算术运算</h4><h4 id="方法三-位运算"><a href="#方法三-位运算" class="headerlink" title="方法三 位运算"></a>方法三 位运算</h4><h4 id="方法四-栈实现"><a href="#方法四-栈实现" class="headerlink" title="方法四 栈实现"></a>方法四 栈实现</h4>]]></content>
+    <content type="html"><![CDATA[<h4 id="方法一-借助第三变量"><a href="#方法一-借助第三变量" class="headerlink" title="方法一 借助第三变量"></a>方法一 借助第三变量</h4><h4 id="方法二-算术运算"><a href="#方法二-算术运算" class="headerlink" title="方法二 算术运算"></a>方法二 算术运算</h4><h4 id="方法三-位运算"><a href="#方法三-位运算" class="headerlink" title="方法三 位运算"></a>方法三 位运算</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">原理：a^b^b == a</span><br><span class="line"></span><br><span class="line">a = a ^ b</span><br><span class="line">b = a ^ b</span><br><span class="line">a = a ^ b</span><br></pre></td></tr></table></figure><h4 id="方法四-栈实现"><a href="#方法四-栈实现" class="headerlink" title="方法四 栈实现"></a>方法四 栈实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">stack</span> S</span><br><span class="line"></span><br><span class="line">S.push(x)</span><br><span class="line">S.push(y)</span><br><span class="line">x = S.pop()</span><br><span class="line">y = S.pop()</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
