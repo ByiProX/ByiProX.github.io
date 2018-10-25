@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-10-24T07:38:47.392Z</updated>
+  <updated>2018-10-25T01:41:50.011Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>四种方法实现交换两个变量的值</title>
+    <link href="http://kunxiang.wang/2018/10/25/%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC/"/>
+    <id>http://kunxiang.wang/2018/10/25/四种方法实现交换两个变量的值/</id>
+    <published>2018-10-25T01:38:37.000Z</published>
+    <updated>2018-10-25T01:41:50.011Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="方法一-借助第三变量"><a href="#方法一-借助第三变量" class="headerlink" title="方法一 借助第三变量"></a>方法一 借助第三变量</h4><h4 id="方法二-算术运算"><a href="#方法二-算术运算" class="headerlink" title="方法二 算术运算"></a>方法二 算术运算</h4><h4 id="方法三-位运算"><a href="#方法三-位运算" class="headerlink" title="方法三 位运算"></a>方法三 位运算</h4><h4 id="方法四-栈实现"><a href="#方法四-栈实现" class="headerlink" title="方法四 栈实现"></a>方法四 栈实现</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;方法一-借助第三变量&quot;&gt;&lt;a href=&quot;#方法一-借助第三变量&quot; class=&quot;headerlink&quot; title=&quot;方法一 借助第三变量&quot;&gt;&lt;/a&gt;方法一 借助第三变量&lt;/h4&gt;&lt;h4 id=&quot;方法二-算术运算&quot;&gt;&lt;a href=&quot;#方法二-算术运算&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="Funny" scheme="http://kunxiang.wang/tags/Funny/"/>
+    
+  </entry>
   
   <entry>
     <title>Java中的+=赋值运算</title>
@@ -642,33 +665,6 @@
     
     
       <category term="玩转苹果" scheme="http://kunxiang.wang/tags/%E7%8E%A9%E8%BD%AC%E8%8B%B9%E6%9E%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java 方法设置默认参数</title>
-    <link href="http://kunxiang.wang/2018/09/09/Java-%E6%96%B9%E6%B3%95%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0/"/>
-    <id>http://kunxiang.wang/2018/09/09/Java-方法设置默认参数/</id>
-    <published>2018-09-09T10:59:52.000Z</published>
-    <updated>2018-09-09T11:01:22.550Z</updated>
-    
-    <content type="html"><![CDATA[<p>Java本身不支持设置默认值，需要用重载间接实现。</p><p>因为“默认参数”和“方法重载”同时支持的话有二义性的问题，Java可能为了简单就不要“默认参数”了。使用“方法重载”可以间接实现”默认参数“的效果，而且避免了代码过于hack（乱）。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doA</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doA</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.doA(<span class="number">0</span>);<span class="comment">//这里默认传入0，可以近似与通过这个方法重载，实现了默认值</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Java本身不支持设置默认值，需要用重载间接实现。&lt;/p&gt;
-&lt;p&gt;因为“默认参数”和“方法重载”同时支持的话有二义性的问题，Java可能为了简单就不要“默认参数”了。使用“方法重载”可以间接实现”默认参数“的效果，而且避免了代码过于hack（乱）。&lt;/p&gt;
-&lt;figure 
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="http://kunxiang.wang/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://kunxiang.wang/tags/Java/"/>
     
   </entry>
   

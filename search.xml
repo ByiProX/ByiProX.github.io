@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[四种方法实现交换两个变量的值]]></title>
+    <url>%2F2018%2F10%2F25%2F%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[方法一 借助第三变量方法二 算术运算方法三 位运算方法四 栈实现]]></content>
+      <tags>
+        <tag>Funny</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java中的+=赋值运算]]></title>
     <url>%2F2018%2F10%2F24%2FJava%E4%B8%AD%E7%9A%84-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%2F</url>
     <content type="text"><![CDATA[1234567891011int a = 10;a += 5;System.out.println(a); //15short s = 30;s = s + 5;//编译报错//Error:(23, 15) java: incompatible types: possible lossy conversion from int to shortshort s = 30;s += 5;//等价于 s = short(s+5),该表达式自带隐式类型转换 上述代码中，变量s为short类型，s+5的结果为int类型，int类型赋值给short类型，编译报错。错误信息为如下：Error:(23, 15) java: incompatible types: possible lossy conversion from int to short 关于自动类型转换，也称为隐式类型转换当把小数据范围类型的数值或变量赋值给另一个大数据范围类型变量时，系统可以自动完成类型转换。boolean类型是不可以转换为其他数据类型。 强制类型转换，也称为显示类型转换当把大范围类型的数值或变量赋值给另一个小范围类型变量时，此时系统不能自动完成转换，需要加上强制转换符，但这样的操作可能在成数据精度的降低或溢出，使用时需要格外注意。]]></content>
@@ -805,8 +813,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -1262,8 +1270,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
