@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java方法的值传递机制]]></title>
+    <url>%2F2018%2F10%2F26%2FJava%E6%96%B9%E6%B3%95%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[对于基本数据类型(八种基本数据类型)来说，方法形参传递的是值的副本;对于引用数据类型，方法的形参传递的是引用的地址值的副本; 对于引用数据类型，栈堆图如下：]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[四种方法实现交换两个变量的值]]></title>
     <url>%2F2018%2F10%2F25%2F%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%2F</url>
     <content type="text"><![CDATA[方法一 借助第三变量方法二 算术运算方法三 位运算12345原理：a^b^b == aa = a ^ bb = a ^ ba = a ^ b 方法四 栈实现123456stack SS.push(x)S.push(y)x = S.pop()y = S.pop()]]></content>
@@ -813,8 +824,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Django</tag>
         <tag>Python3</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>
@@ -1270,8 +1281,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Django</tag>
         <tag>Python3</tag>
+        <tag>Django</tag>
       </tags>
   </entry>
   <entry>

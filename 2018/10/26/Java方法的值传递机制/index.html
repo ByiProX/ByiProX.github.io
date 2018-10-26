@@ -116,16 +116,20 @@
 
 
 
-  <meta name="description" content="每天进步一点点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quentin&#39;s Blog">
-<meta property="og:url" content="http://kunxiang.wang/archives/page/10/index.html">
+  <meta name="description" content="对于基本数据类型(八种基本数据类型)来说，方法形参传递的是值的副本;对于引用数据类型，方法的形参传递的是引用的地址值的副本; 对于引用数据类型，栈堆图如下：">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java方法的值传递机制">
+<meta property="og:url" content="http://kunxiang.wang/2018/10/26/Java方法的值传递机制/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="每天进步一点点">
+<meta property="og:description" content="对于基本数据类型(八种基本数据类型)来说，方法形参传递的是值的副本;对于引用数据类型，方法的形参传递的是引用的地址值的副本; 对于引用数据类型，栈堆图如下：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-24d050aa031dd985.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-26T02:57:14.510Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quentin&#39;s Blog">
-<meta name="twitter:description" content="每天进步一点点">
+<meta name="twitter:title" content="Java方法的值传递机制">
+<meta name="twitter:description" content="对于基本数据类型(八种基本数据类型)来说，方法形参传递的是值的副本;对于引用数据类型，方法的形参传递的是引用的地址值的副本; 对于引用数据类型，栈堆图如下：">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2952111-24d050aa031dd985.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -134,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/archives/page/10/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2018/10/26/Java方法的值传递机制/"/>
 
 
 
@@ -144,7 +148,7 @@
   };
 </script>
 
-  <title>归档 | Quentin's Blog</title>
+  <title>Java方法的值传递机制 | Quentin's Blog</title>
   
 
 
@@ -191,7 +195,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,7 +256,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
@@ -335,442 +339,243 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/10/26/Java方法的值传递机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h2 class="post-title" itemprop="name headline">Java方法的值传递机制
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-26 10:48:38" itemprop="dateCreated datePublished" datetime="2018-10-26T10:48:38+08:00">2018-10-26</time>
+            
+
+            
+          </span>
+
           
-        很好! 目前共计 115 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/26/Java方法的值传递机制/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/26/Java方法的值传递机制/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/10/26/Java方法的值传递机制/" class="leancloud_visitors" data-flag-title="Java方法的值传递机制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
       
+        <p>对于基本数据类型(八种基本数据类型)来说，方法形参传递的是<code>值的副本</code>;<br>对于引用数据类型，方法的形参传递的是<code>引用的地址值的副本</code>;</p>
+<p>对于引用数据类型，栈堆图如下：<br><a id="more"></a><br><img src="https://upload-images.jianshu.io/upload_images/2952111-24d050aa031dd985.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IMG_0013.PNG"></p>
 
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2018">2018</h2>
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/03/Python3-拷贝对象-深拷贝deepcopy和浅拷贝copy/" itemprop="url">
-              
-                <span itemprop="name">Python3 拷贝对象(深拷贝deepcopy和浅拷贝copy)</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-03T12:10:54+08:00"
-              content="2018-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/25/四种方法实现交换两个变量的值/" rel="next" title="四种方法实现交换两个变量的值">
+                <i class="fa fa-chevron-left"></i> 四种方法实现交换两个变量的值
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/03/Python3-作用域/" itemprop="url">
-              
-                <span itemprop="name">Python3 作用域</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-03T11:48:30+08:00"
-              content="2018-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/03/Python3-函数重载/" itemprop="url">
-              
-                <span itemprop="name">Python3 函数重载</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-03T10:54:44+08:00"
-              content="2018-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/03/Python3-子类的查看与类的对象判断/" itemprop="url">
-              
-                <span itemprop="name">Python3 子类的查看与类的对象判断</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-03T02:24:21+08:00"
-              content="2018-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/03/Python3-鸭子类型/" itemprop="url">
-              
-                <span itemprop="name">Python3 鸭子类型</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-03T01:52:21+08:00"
-              content="2018-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/03/python3-如何用一个表达式合并两个字典/" itemprop="url">
-              
-                <span itemprop="name">python3 如何用一个表达式合并两个字典</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-03T01:00:28+08:00"
-              content="2018-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/01/python3-可迭代对象、迭代器和生成器/" itemprop="url">
-              
-                <span itemprop="name">python3 可迭代对象、迭代器和生成器</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T20:17:53+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/01/if-name-main/" itemprop="url">
-              
-                <span itemprop="name">if __name__ == '__main__': ?</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T19:50:06+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/01/Python3-单下划线和双下划线/" itemprop="url">
-              
-                <span itemprop="name">Python3 中的单下划线和双下划线</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T18:01:50+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/01/Python3-自省/" itemprop="url">
-              
-                <span itemprop="name">Python3 自省</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-01T16:19:37+08:00"
-              content="2018-03-01" >
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><a class="extend next" rel="next" href="/archives/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1232,6 +1037,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -1246,6 +1055,23 @@
     <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://kunxiang.wang/2018/10/26/Java方法的值传递机制/';
+        this.page.identifier = '2018/10/26/Java方法的值传递机制/';
+        this.page.title = 'Java方法的值传递机制';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
@@ -1590,43 +1416,40 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1646,9 +1469,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
@@ -1720,7 +1541,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 
