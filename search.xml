@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[四种方法实现交换两个变量的值]]></title>
     <url>%2F2018%2F10%2F25%2F%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0%E4%BA%A4%E6%8D%A2%E4%B8%A4%E4%B8%AA%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%2F</url>
-    <content type="text"><![CDATA[方法一 借助第三变量方法二 算术运算方法三 位运算12345原理：a^b^b == aa = a ^ bb = a ^ ba = a ^ b 方法四 栈实现123456stack SS.push(x)S.push(y)x = S.pop()y = S.pop()]]></content>
+    <content type="text"><![CDATA[方法1 位运算12345a = a ^ bb = a ^ ba = a ^ b原理：a^b^b == a 方法2 栈实现123456stack SS.push(x)S.push(y)x = S.pop()y = S.pop() 方法3 借助第三变量方法4 算术运算]]></content>
       <tags>
         <tag>Funny</tag>
       </tags>
