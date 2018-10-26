@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Java方法的值传递机制]]></title>
     <url>%2F2018%2F10%2F26%2FJava%E6%96%B9%E6%B3%95%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6%2F</url>
-    <content type="text"><![CDATA[对于基本数据类型(八种基本数据类型)来说，方法形参传递的是值的副本;对于引用数据类型，方法的形参传递的是引用的地址值的副本; 对于引用数据类型，栈堆图如下：]]></content>
+    <content type="text"><![CDATA[对于基本数据类型(八种基本数据类型)来说，方法形参传递的是值的副本; 对于引用数据类型，方法的形参传递的是引用的地址值的副本; 对于引用数据类型，栈堆图如下：]]></content>
       <categories>
         <category>Java</category>
       </categories>
