@@ -54,8 +54,20 @@ public class Test {
 查看一下integer源码,如下所示。可以看到Integer的缓存空间在[-128, 127]之间。
 当传入的数值在此区间内时，之间调用缓存内的数据。反之，重新`return new Integer(i);`在堆空间返回一个新整形对象。
 
+那么我们应该如何比较两个对象的值得大小呢？
+正确的方法是使用`equals`来比较，equals方法来自于Object根对象，按照官方的建议，在构造子类对象时需要复写父类中的equals方法，来比较我们关心的数据，而不是内存地址（`==`比较的是内存地址）。现将Integer中的equals拿出来检查一下复写情况
+
+`((Integer)obj).intValue()`拆箱操作，`value == ((Integer)obj).intValue();`使用基本的数据类型进行比较。
 
 ```Java
+
+public boolean equals(Object obj) {
+    if (obj instanceof Integer) {
+        return value == ((Integer)obj).intValue(); // 拆箱操作，比较基本数据类型
+    }
+    return false;
+}
+
 public static Integer valueOf(int i) {
         if (i >= IntegerCache.low && i <= IntegerCache.high)
             return IntegerCache.cache[i + (-IntegerCache.low)];
