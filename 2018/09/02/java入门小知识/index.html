@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="Quentin&#39;s Blog">
 <meta property="og:description" content="关键字public称为访问修饰符(access modifier),这些修饰符用于控制程序的其他部分对这段代码的访问级别。 Java的命名规范为大驼峰命名。 源代码的文件名必须与公共类的名字相同，并用.java作为扩展名。 根据Java语言规范，main方法必须声明为public,java的main方法必须有一个外壳类。 在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。 构造器与类">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-03T16:26:33.272Z">
+<meta property="og:updated_time" content="2018-10-30T03:30:27.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java入门小知识">
 <meta name="twitter:description" content="关键字public称为访问修饰符(access modifier),这些修饰符用于控制程序的其他部分对这段代码的访问级别。 Java的命名规范为大驼峰命名。 源代码的文件名必须与公共类的名字相同，并用.java作为扩展名。 根据Java语言规范，main方法必须声明为public,java的main方法必须有一个外壳类。 在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。 构造器与类">
@@ -496,6 +496,8 @@
 <li>main方法不对任何对象进行操作。事实上，在启动程序时还没有任何一个对象。静态的main方法将执行并创建程序所需的对象。</li>
 <li>如果在构造器中没有显式的给域赋初始值，那么就会被自动地赋为默认值：<code>数值为0，布尔值为false，对象引用为null</code>。然而，只有缺少程序设计经验的人才会这样做。</li>
 <li>对于<code>访问修饰符public和private</code>，标记为public的部分可以被任意的类使用，标记为private的部分只能被定义它们的类使用。如果没有指定public或者private，那么这个部分(类、方法、变量)可以被同一个包中的所有方法访问。</li>
+<li>final修饰引用类型变量，表示该变量的引用的地址不能变，引用地址里的内容可以修改。</li>
+<li><code>单例设计模式</code>：保证在整个应用中某一个类有且仅有一个实例（<code>一个类在堆内存只存在一个对象</code>），即所以指向该类型实例的引用都指向同一个内存空间。</li>
 </ol>
 
       
@@ -637,7 +639,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">115</span>
+                    <span class="site-state-item-count">120</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

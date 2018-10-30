@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java中的单例模式]]></title>
+    <url>%2F2018%2F10%2F30%2FJava%E4%B8%AD%E7%9A%84%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[1. 饿汉模式123456789101112131415161718192021222324252627public class SingletonDemo &#123; public static void main(String[] args) &#123; ArrayUtil.getInstance().sort(null); &#125;&#125;class ArrayUtil &#123; //1. 在该类中，实例化一个实例 private static final ArrayUtil instance = new ArrayUtil(); //2. 私有化自身的构造器，防止外界通过构造器new对象 private ArrayUtil() &#123; &#125; //3. 对外开放一个静态公共方法，用于获取对象 public static ArrayUtil getInstance()&#123; return instance; &#125; public void sort(int[] array) &#123; //此处编写排序代码 System.out.println("I'm sorting " + array); &#125;&#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java中的代码块]]></title>
+    <url>%2F2018%2F10%2F30%2FJava%E4%B8%AD%E7%9A%84%E4%BB%A3%E7%A0%81%E5%9D%97%2F</url>
+    <content type="text"><![CDATA[什么是代码块：在类或者方法中，直接使用{}括起来的一段代码，表示一块带啊区域。 代码在块中属于局部变量，只在自己所在的花括号区域内有效。根据代码块所定义的位置不同，代码块分为三种形式 局部代码块：直接定义在方法内部的代码块。一般的，不会直接使用局部代码块，只不过会结合if、while等关键字，表示一块代码区域。 初始化代码块(构造代码块)：直接定义在类中。每次创建对象的时候都会执行初始化代码块：每次创建对象的时候都会调用构造器，在调用构造器之前，会先执行本类中的初始化代码块。PS:通过反编译，可以看到，初始化代码也作为构造器最初的语句。一般不使用这种用法，因为不够优雅美观。即使要初始化操作，一般在构造器中进行初始化即可。或者专门定义一个方法做初始化操作，方法哦构造器中进行调用。 静态代码块：使用static修饰的初始化代码块。静态代码块在主方法执行之前进行调用，而且只会执行一次。main方法是程序的入口，静态代码块由于main方法执行。静态成员随着字节码的加载也加载进JVM,此时main还没执行，因为方法需要JVM调用，先把字节码加载进JVM，然后JVM再调用main方法。一般的，我们使用静态代码块来做初始化操作，加载资源，加载配置文件等。 1234567891011121314151617181920212223242526272829303132class CodeBlockDemo&#123; &#123; System.out.println("初始化代码块"); &#125; CodeBlockDemo()&#123; System.out.println("构造器。。。"); &#125; static&#123; System.out.println("静态代码块"); &#125; public static void main(String[] args)&#123; System.out.println("进入main方法"); //创建三个匿名对象 new CodeBlockDemo(); new CodeBlockDemo(); new CodeBlockDemo(); &#125;&#125;/*执行结果如下静态代码块进入main方法初始化代码块构造器。。。初始化代码块构造器。。。初始化代码块构造器。。。*/ 一道Java面试题1234567891011121314151617181920212223242526272829303132333435363738394041424344public class App &#123; private static App d = new App(); private SuperClass t = new SubClass(); //先确定依赖，由此开始作为入口 static&#123; System.out.println(4); &#125; App()&#123; System.out.println(3); &#125; public static void main(String[] args)&#123; System.out.println("Hello"); &#125;&#125;class SuperClass&#123; SuperClass()&#123; System.out.println("构造SuperClass"); &#125;&#125;class SubClass extends SuperClass&#123; static &#123; System.out.println(1); &#125; SubClass()&#123; //super(); System.out.println(2); &#125;&#125;//执行结果1构造SuperClass234Hello 分析： 首先在执行子类subclass构造器的时候先执行隐藏的super();来执行父类的构造器，也就是构造SuperClass在2之前打印. 为什么不先打印4而是先打印子类的1？原因是class App依赖于依赖于subclass，会优先编译subclass，也就是说会优先编译被依赖的优先存在的类。所以首先把subclass加载到虚拟机，因此首先打印1.编译的时候首先确定依赖!!! 非static字段的初始化都在构造器中执行，也就是说App类反编译后如下。可以看出，打印1后,在APP构造器中实例化subclass，此时，先打印父类构造器中的构造SuperClass,然后打印子类的2。紧接着继续执行APP构造器的代码块，打印app构造器中的3。 123456789101112131415161718public class App &#123; private static App d = new App(); private SuperClass t = null; //先确定依赖，由此开始作为入口 static&#123; System.out.println(4); &#125; App()&#123; t = new SubClass(); //非static字段的初始化都在构造器中执行 System.out.println(3); &#125; public static void main(String[] args)&#123; System.out.println("Hello"); &#125;&#125; 以上依赖关系确认完毕，然后开始将App加载进虚拟机，执行由于静态代码块优先于main，静态代码块执行，打印4，最后执行main方法，打印hello.]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java编译类型和运行类型]]></title>
+    <url>%2F2018%2F10%2F29%2FJava%E7%BC%96%E8%AF%91%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E8%A1%8C%E7%B1%BB%E5%9E%8B%2F</url>
+    <content type="text"><![CDATA[12345678910111213class Animal&#123;&#125;class Dog extends Animal&#123; public void eat()&#123;&#125;&#125;----------Animal a = new Dog();a.eat()//编译报错((Dog) a).run()//编译通过 如上的简易代码，编译时会报错。编译类型：Animal a运行类型：new Dog() 编译时，编译类型会根据a.eat()查找eat方法，找不到就会报错。使用强制类型转换可以解决该问题，即((Dog) a).run()]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java之Object根类]]></title>
+    <url>%2F2018%2F10%2F29%2FJava%E4%B9%8BObject%E6%A0%B9%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[Object本身就是指对象的意思。开发时发现对象具有一些共通的行为，因此抽象出一个类：Object，来表示对象类，其他都会继承于Object类，也就是Object中的方法。 引用数据类型：类/接口/数组，引用类型又称为对象类，所谓的数组变量名称应该指代数组对象。Object类常用方法： protected void finalize():当垃圾回收器确定不存在对该对象的更多引用时，由对象回收期调用此方法。垃圾回收器在回收某一个对象之前会调用该方法，做扫尾操作。 Class getClass:返回当前对象的真实类型。 int hashCode():返回该对象的哈希值，hashCode决定了对象在哈希表中的存储位置，不同对象的hashCode是不一样的。 boolean equals(Object obj): 拿当前对象(this)和参数obj比较。在Object类中的equals方法，本身和’==’符号相同，都是比较的内存地址。官方建议：每个类都应该赋写equals方法，不要比较内存地址，而是比较我们关心的数据。 String toString():表示把一个对象转换为字符串表示。在调用打印时，其实打印的就是对象的toString方法。System.out.println(obj);等价于System.out.println(obj.toString);(决堤可以查看Java源代码)。默认情况下打印对象，打印的是对象的十六进制hashCode,但我们更关心对象中的真实存储数据。官方建议：每个类最好赋写toString方法，返回我们关心的数据。]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java之super和this]]></title>
+    <url>%2F2018%2F10%2F29%2FJava%E4%B9%8Bsuper%E5%92%8Cthis%2F</url>
+    <content type="text"><![CDATA[this: 当前的对象，哪一个对象调用this，this就代指哪一个对象。使用在某一个对象中。super: 当前对象的父类方法或构造器。使用在继承关系中。 super 当new一个子类对象的时候，会先创建一个父类对象。可以认为，在调用子类构造器之前，在子类构造器中会先调用父类的构造器，默认调用的是父类无参数的构造器。调用父类构造器后悔创建一个父类的对象。 如果父类不存在可以被子类访问的构造器，则不能存在子类，即子类不会被创建成功。 如果父类没有提供无参数的构造器，则此时子类必须显式的通过super语句去掉用父类带参数的构造器。 子类构建的所有的行为建立在第一条规则基础之上。 1234567891011121314151617181920212223242526class Animal &#123; private String name; private int age; Animal(String name, int age)&#123; this.name = name; this.age = age; System.out.println("animal constructor"); &#125; Animal(String color)&#123; System.out.println("this is a " + color +" color"); &#125; public void say()&#123; System.out.println("Animals Say sth..."); &#125;&#125;class Fish extends Animal&#123; private String color; Fish()&#123; //构造器中的第一句必须为super，如果不写，则默认调用super() super("RED"); //子类没有提供无参数的构造器，必须显示super滴啊用，否则会编译失败 System.out.println("Fish Constructor"); &#125;&#125; 一个简单的示意图如下： this存在于位置 在构造器中，表示当前创建的对象 在方法中，哪一个对象调用this所在的方法，那么此时this就表示哪一个对象。 this的使用 解决成员变量的参数（局部变量）之间的二义性，必须使用this区分 同类中实例方法互相调用时可以省略this关键字，但是不建议省略 将this作为参数传递给另外一个方法 将this作为方法的返回值（链式方法编程） 构造器函数的互相调用，this([参数])必须写在构造器内的第一行，与super类似。 this、super不能static一起使用。原因是当字节码被加载进jvm时，static成员已经存在了，但是此时对象还没有被创建，没有对象，也就没有this。 123456789101112131415161718User(String name)&#123; this.name = name;&#125;User(String name, int age)&#123; this(name); //表示在调用参数为string类型的构造器 this.age = age;&#125;//上述调用方式为多参数构造器调用少参数构造器，一般工程经验为少参数构造器调用多参数构造器//对于多余的参数，使用默认值赋值即可，如下User(String name, int age)&#123; this.name = name; this.age = age;&#125;User(String name)&#123; this(name, 0);//此处对int age赋值为0即可&#125; 是]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java方法的值传递机制]]></title>
     <url>%2F2018%2F10%2F26%2FJava%E6%96%B9%E6%B3%95%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6%2F</url>
     <content type="text"><![CDATA[对于基本数据类型(八种基本数据类型)来说，方法形参传递的是值的副本; 对于引用数据类型，方法的形参传递的是引用的地址值的副本; 对于引用数据类型，JVM中的存储图如下：]]></content>
@@ -353,7 +408,7 @@
   <entry>
     <title><![CDATA[java入门小知识]]></title>
     <url>%2F2018%2F09%2F02%2Fjava%E5%85%A5%E9%97%A8%E5%B0%8F%E7%9F%A5%E8%AF%86%2F</url>
-    <content type="text"><![CDATA[关键字public称为访问修饰符(access modifier),这些修饰符用于控制程序的其他部分对这段代码的访问级别。 Java的命名规范为大驼峰命名。 源代码的文件名必须与公共类的名字相同，并用.java作为扩展名。 根据Java语言规范，main方法必须声明为public,java的main方法必须有一个外壳类。 在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。 构造器与类同名，在构造类对象时，构造器会运行，以便将实例域初始化为所需要的状态。构造器与一般的对象方法不同，构造器总是伴随着new操作符的执行被调用，而不能对一个已经存在的对象调用构造器来达到重新设置实例域的目的。 构造器与类同名 每个类可以有一个以上的构造器 构造器可以有0个或多个参数 构造器没有返回值 构造器总是伴随着new使用 main方法不对任何对象进行操作。事实上，在启动程序时还没有任何一个对象。静态的main方法将执行并创建程序所需的对象。 如果在构造器中没有显式的给域赋初始值，那么就会被自动地赋为默认值：数值为0，布尔值为false，对象引用为null。然而，只有缺少程序设计经验的人才会这样做。 对于访问修饰符public和private，标记为public的部分可以被任意的类使用，标记为private的部分只能被定义它们的类使用。如果没有指定public或者private，那么这个部分(类、方法、变量)可以被同一个包中的所有方法访问。]]></content>
+    <content type="text"><![CDATA[关键字public称为访问修饰符(access modifier),这些修饰符用于控制程序的其他部分对这段代码的访问级别。 Java的命名规范为大驼峰命名。 源代码的文件名必须与公共类的名字相同，并用.java作为扩展名。 根据Java语言规范，main方法必须声明为public,java的main方法必须有一个外壳类。 在一个源文件中,只能有一个公有类，但可以有任意数目的非公有类。 构造器与类同名，在构造类对象时，构造器会运行，以便将实例域初始化为所需要的状态。构造器与一般的对象方法不同，构造器总是伴随着new操作符的执行被调用，而不能对一个已经存在的对象调用构造器来达到重新设置实例域的目的。 构造器与类同名 每个类可以有一个以上的构造器 构造器可以有0个或多个参数 构造器没有返回值 构造器总是伴随着new使用 main方法不对任何对象进行操作。事实上，在启动程序时还没有任何一个对象。静态的main方法将执行并创建程序所需的对象。 如果在构造器中没有显式的给域赋初始值，那么就会被自动地赋为默认值：数值为0，布尔值为false，对象引用为null。然而，只有缺少程序设计经验的人才会这样做。 对于访问修饰符public和private，标记为public的部分可以被任意的类使用，标记为private的部分只能被定义它们的类使用。如果没有指定public或者private，那么这个部分(类、方法、变量)可以被同一个包中的所有方法访问。 final修饰引用类型变量，表示该变量的引用的地址不能变，引用地址里的内容可以修改。 单例设计模式：保证在整个应用中某一个类有且仅有一个实例（一个类在堆内存只存在一个对象），即所以指向该类型实例的引用都指向同一个内存空间。]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -824,8 +879,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -1281,8 +1336,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
