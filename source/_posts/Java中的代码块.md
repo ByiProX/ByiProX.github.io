@@ -57,3 +57,81 @@ class CodeBlockDemo{
 构造器。。。
 */
 ```
+一道Java面试题
+```Java
+public class App {
+    private static App d = new App();
+    private SuperClass t = new SubClass(); //先确定依赖，由此开始作为入口
+
+    static{
+        System.out.println(4);
+    }
+
+    App(){
+        System.out.println(3);
+    }
+
+    public static void main(String[] args){
+        System.out.println("Hello");
+    }
+
+}
+
+class SuperClass{
+    SuperClass(){
+        System.out.println("构造SuperClass");
+    }
+}
+
+
+class SubClass extends SuperClass{
+    static {
+        System.out.println(1);
+    }
+
+    SubClass(){
+        //super();
+        System.out.println(2);
+    }
+}
+
+
+//执行结果
+1
+构造SuperClass
+2
+3
+4
+Hello
+
+```
+
+`分析：`
+
+1. 首先在执行子类subclass构造器的时候先执行隐藏的`super();`来执行父类的构造器，也就是构造`SuperClass`在`2`之前打印.
+2. 为什么不先打印4而是先打印子类的1？原因是class App依赖于依赖于subclass，会优先编译subclass，也就是说会优先编译被依赖的优先存在的类。所以首先把subclass加载到虚拟机，因此首先打印1.`编译的时候首先确定依赖!!!`
+
+3. 非static字段的初始化都在构造器中执行，也就是说App类反编译后如下。可以看出，打印`1`后,在APP构造器中实例化subclass，此时，先打印父类构造器中的`构造SuperClass`,然后打印子类的`2`。紧接着继续执行APP构造器的代码块，打印app构造器中的`3`。
+
+```Java
+public class App {
+    private static App d = new App();
+    private SuperClass t = null; //先确定依赖，由此开始作为入口
+
+    static{
+        System.out.println(4);
+    }
+
+    App(){
+        t = new SubClass(); //非static字段的初始化都在构造器中执行
+        System.out.println(3);
+    }
+
+    public static void main(String[] args){
+        System.out.println("Hello");
+    }
+
+}
+```
+
+4. 以上依赖关系确认完毕，然后开始将App加载进虚拟机，执行由于静态代码块优先于main，静态代码块执行，打印4，最后执行main方法，打印hello.
