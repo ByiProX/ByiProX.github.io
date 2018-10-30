@@ -17,7 +17,7 @@ public class SingletonDemo {
 
 class ArrayUtil {
     //1. 在该类中，实例化一个实例
-    private static final ArrayUtil au = new ArrayUtil();
+    private static final ArrayUtil instance = new ArrayUtil();
 
     //2. 私有化自身的构造器，防止外界通过构造器new对象
     private ArrayUtil() {
@@ -25,7 +25,7 @@ class ArrayUtil {
 
     //3. 对外开放一个静态公共方法，用于获取对象
     public static ArrayUtil getInstance(){
-        return au;
+        return instance;
     }
 
     public void sort(int[] array) {
