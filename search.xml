@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Redis之哈希数据类型的内部编码]]></title>
+    <url>%2F2018%2F11%2F01%2FRedis%E4%B9%8B%E5%93%88%E5%B8%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%86%85%E9%83%A8%E7%BC%96%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[哈希类型内部编码有两种形式： ziplist(压缩列表，感觉与python中的zip方法类似，有待验证)：当哈希类型元素个数小于hash-max-ziplist-entries配置(默认512)、同时所有值都小于hash-max-ziplist-value配置(默认64字节)，Redis会使用ziplist作为哈希的内部实现。ziplist使用更加紧凑结构实现多个元素的连续存储，所以在节省内存方面比hashtable更有优势。 hashtable(哈希表)：当哈希类型无法满足ziplist条件时，Redis会使用hashtable作为哈希的内部实现，因此此时ziplist读写效率会下降，hashtable读写的时间复杂度为O(1).]]></content>
+      <categories>
+        <category>Redis</category>
+        <category>Redis哈希数据类型</category>
+      </categories>
+      <tags>
+        <tag>Redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java包装类中的缓存设计]]></title>
+    <url>%2F2018%2F10%2F30%2FJava%E5%8C%85%E8%A3%85%E7%B1%BB%E4%B8%AD%E7%9A%84%E7%BC%93%E5%AD%98%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[包装类中的缓存设计(享元模式-FlyWeight)，本质就是缓存设计。 Byte/Short/Integer/Long:缓存[-128, 127]区间的数据；Character:缓存[0,127]区间的数据.首先来看一个有意思的面试题 1234567891011121314151617181920212223242526272829303132333435public class Test &#123; public static void main(String[] args) &#123; //case 1 Integer i1 = new Integer(123); Integer i2 = new Integer(123); System.out.println(i1 == i2); //false //case 2 Integer i3 = Integer.valueOf(123); Integer i4 = Integer.valueOf(123); System.out.println(i3 == i4); //true //case 3 Integer i5 = 123; //自动装箱操作，底层编译后代码为Integer.valueOf(123); 和case2相同 Integer i6 = 123; System.out.println(i5 == i6); // true System.out.println("&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;"); //case 4 Integer ii1 = new Integer(250); Integer ii2 = new Integer(250); System.out.println(ii1 == ii2); //false //case 5 Integer ii3 = Integer.valueOf(250); // 250不在缓存区间内，就得new新对象 Integer ii4 = Integer.valueOf(250); System.out.println(ii3 == ii4); // false // case 6 Integer ii5 = 250; Integer ii6 = 250; System.out.println(ii5 == ii6); // false &#125;&#125; 查看一下integer源码,如下所示。可以看到Integer的缓存空间在[-128, 127]之间。当传入的数值在此区间内时，之间调用缓存内的数据。反之，重新return new Integer(i);在堆空间返回一个新整形对象。 那么我们应该如何比较两个对象的值得大小呢？正确的方法是使用equals来比较，equals方法来自于Object根对象，按照官方的建议，在构造子类对象时需要复写父类中的equals方法，来比较我们关心的数据，而不是内存地址（==比较的是内存地址）。现将Integer中的equals拿出来检查一下复写情况 ((Integer)obj).intValue()拆箱操作，value == ((Integer)obj).intValue();使用基本的数据类型进行比较。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647public boolean equals(Object obj) &#123; if (obj instanceof Integer) &#123; return value == ((Integer)obj).intValue(); // 拆箱操作，比较基本数据类型 &#125; return false;&#125;public static Integer valueOf(int i) &#123; if (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high) return IntegerCache.cache[i + (-IntegerCache.low)]; return new Integer(i); &#125;private static class IntegerCache &#123; static final int low = -128; static final int high; static final Integer cache[]; static &#123; // 初始化操作 // high value may be configured by property int h = 127; String integerCacheHighPropValue = sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high"); if (integerCacheHighPropValue != null) &#123; try &#123; int i = parseInt(integerCacheHighPropValue); i = Math.max(i, 127); // Maximum array size is Integer.MAX_VALUE h = Math.min(i, Integer.MAX_VALUE - (-low) -1); &#125; catch( NumberFormatException nfe) &#123; // If the property cannot be parsed into an int, ignore it. &#125; &#125; high = h; cache = new Integer[(high - low) + 1]; int j = low; for(int k = 0; k &lt; cache.length; k++) cache[k] = new Integer(j++); // range [-128, 127] must be interned (JLS7 5.1.7) assert IntegerCache.high &gt;= 127; &#125; private IntegerCache() &#123;&#125; &#125;]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java中的单例模式]]></title>
     <url>%2F2018%2F10%2F30%2FJava%E4%B8%AD%E7%9A%84%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[1. 饿汉模式123456789101112131415161718192021222324252627public class SingletonDemo &#123; public static void main(String[] args) &#123; ArrayUtil.getInstance().sort(null); &#125;&#125;class ArrayUtil &#123; //1. 在该类中，实例化一个实例 private static final ArrayUtil instance = new ArrayUtil(); //2. 私有化自身的构造器，防止外界通过构造器new对象 private ArrayUtil() &#123; &#125; //3. 对外开放一个静态公共方法，用于获取对象 public static ArrayUtil getInstance()&#123; return instance; &#125; public void sort(int[] array) &#123; //此处编写排序代码 System.out.println("I'm sorting " + array); &#125;&#125;]]></content>
