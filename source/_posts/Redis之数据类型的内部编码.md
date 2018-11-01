@@ -23,3 +23,9 @@ categories:
 2. `linkedlist`(链表):当列表类型无法满足ziplist的条件时，Redis会使用linkedlist作为列表的内部实现。
 
 Redis3.2之后提供了quicklist内部编码，简单的说它是一个ziplist为节点的linkedlist，它结合了两者的优势，为列表类型提供了一种更为优秀的内部编码实现。
+
+#### 集合
+集合类型的内部编码也有两种：
+
+1. `intset`(整数集合)：当集合中的元素都是`整数`且`元素个数小于set-max-intset-entries配置(默认512个)`，Redis会选用intset来作为集合的内部实现，从而减小内存的使用。
+2. `hashtable`(哈希表)：当集合类型无法满足intset的条件时，Redis会使用hashtable作为集合的内部实现。
