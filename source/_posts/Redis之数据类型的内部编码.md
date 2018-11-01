@@ -15,6 +15,7 @@ categories:
 2. `hashtable`(哈希表)：当哈希类型无法满足ziplist条件时，Redis会使用hashtable作为哈希的内部实现，因此此时ziplist读写效率会下降，hashtable读写的时间复杂度为O(1).
 
 
+<!-- more -->
 #### 列表
 从Redis3.2之后开始提供了`quicklist内部编码，它是一种将ziplist和linkedlist结合的一种编码方式`。
 
