@@ -27,6 +27,13 @@ categories:
 - ⇤ 左制表符（Shift+Tab）
 - ⎋ Escape (Esc)
 
+#### iTerm中的快捷键
+小知识点，补充到这里
+
+- ⌘ + T : 新Tab窗口
+- ⌘ + D : 新建窗口，横向切屏 
+
+
 <!-- more -->
 
 #### Editing（编辑）
