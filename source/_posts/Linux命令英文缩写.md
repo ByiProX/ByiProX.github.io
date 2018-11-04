@@ -7,6 +7,7 @@ categories:
   - Linux/Mac OS
 ---
 ## 命令缩写
+- nc: NetCat(网猫(Netcat)是用来进行TCP/UDP连接的工具，最早是由Hobbit先生在1995年为UNIX所写的程序)
 - ls: list(列出目录内容)
 - cd: Change Directory（改变目录）
 - su: switch user 切换用户
