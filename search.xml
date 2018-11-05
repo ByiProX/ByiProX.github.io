@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java中的接口和抽象类]]></title>
+    <url>%2F2018%2F11%2F04%2FJava%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[相同点： 都位于继承的顶端，用于被其他实现或继承 都不能实例化 都可以定义抽象方法，其子类/实现类都必须复写这些抽象方法。 不同点： 接口没有构造方法，抽象类有构造方法。这是因为子类继承抽象类后，在实例化一个子类时，需要检查父类的是否有构造方法。 抽象类可包含骗人通方法和抽象方法，接口只能包含抽象方法（java8之前） 一个类只能继承一个直接父类（可能是抽象类），接口是多继承并且支持一个类实现多个接口（弥补了Java的单继承） 成员变量：接口里默认是public static final，抽象类默认包权限 方法：接口里默认public abstract,抽象类默认包访问权限 内部类：接口里默认public static，抽象类默认包访问权限 如果接口和实现类可以完成与其他方法实现的其他功能，尽量使用接口，面向接口编程。 设计模式：接口和抽象类集合使用的（适配器模式）]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Redis之数据类型的内部编码]]></title>
     <url>%2F2018%2F11%2F01%2FRedis%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%86%85%E9%83%A8%E7%BC%96%E7%A0%81%2F</url>
     <content type="text"><![CDATA[哈希哈希类型内部编码有两种形式： ziplist(压缩列表，感觉与python中的zip方法类似，有待验证。。。)：当哈希类型元素个数小于hash-max-ziplist-entries配置(默认512)、同时所有值都小于hash-max-ziplist-value配置(默认64字节)，Redis会使用ziplist作为哈希的内部实现。ziplist使用更加紧凑结构实现多个元素的连续存储，所以在节省内存方面比hashtable更有优势。 hashtable(哈希表)：当哈希类型无法满足ziplist条件时，Redis会使用hashtable作为哈希的内部实现，因此此时ziplist读写效率会下降，hashtable读写的时间复杂度为O(1). 列表从Redis3.2之后开始提供了quicklist内部编码，它是一种将ziplist和linkedlist结合的一种编码方式。 ziplist(压缩列表):当列表的元素个数小于list-max-ziplist-entries配置(默认512个),同时列表中每个元素值都小于list-max-ziplist-value配置(默认64字节),Redis会选用ziplist来作为列表内部的实现来减小内存使用。 linkedlist(链表):当列表类型无法满足ziplist的条件时，Redis会使用linkedlist作为列表的内部实现。 Redis3.2之后提供了quicklist内部编码，简单的说它是一个ziplist为节点的linkedlist，它结合了两者的优势，为列表类型提供了一种更为优秀的内部编码实现。 集合集合类型的内部编码也有两种： intset(整数集合)：当集合中的元素都是整数且元素个数小于set-max-intset-entries配置(默认512个)，Redis会选用intset来作为集合的内部实现，从而减小内存的使用。 hashtable(哈希表)：当集合类型无法满足intset的条件时，Redis会使用hashtable作为集合的内部实现。]]></content>
@@ -902,8 +914,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -1359,8 +1371,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
