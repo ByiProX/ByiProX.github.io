@@ -29,6 +29,8 @@ categories:
 
 <!-- more -->
 ```java
+package com.wkx.jedis;
+
 
 interface IUSB{
     void swapData();
@@ -47,15 +49,33 @@ class Printer implements IUSB{
 }
 
 class MotherBoard{
-    public static void swapData(IUSB usb){
-        usb.swapData();
+    private static IUSB[] usbs = new IUSB[6];
+    private static int num = 0;
+
+    public static void pluginIn(IUSB usb){
+
+        if (usbs.length == num) return;
+        usbs[num] = usb;
+        num ++;
+
+    }
+    public static void doWork(){
+        for (IUSB usb : usbs){
+            if(usb != null) usb.swapData();
+        }
     }
 }
 
 public class IUSBDemo {
     public static void main(String[] args){
-        MotherBoard.swapData(new Mouse());
-        MotherBoard.swapData(new Printer());
+        MotherBoard.pluginIn(new Mouse());
+        MotherBoard.pluginIn(new Mouse());
+        MotherBoard.pluginIn(new Mouse());
+        MotherBoard.pluginIn(new Printer());
+        MotherBoard.pluginIn(new Printer());
+        MotherBoard.pluginIn(new Printer());
+        MotherBoard.pluginIn(new Printer());
+        MotherBoard.doWork();
     }
 
 }
