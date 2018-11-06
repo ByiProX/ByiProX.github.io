@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java内部类]]></title>
+    <url>%2F2018%2F11%2F05%2FJava%E5%86%85%E9%83%A8%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[类中的定义成员有三种，分别是 字段 方法 内部类 内部类：定义在类结构中的另一个类 为什么要使用内部类？ 增强封装，把内部类隐藏在外部类之内，不允许其他类访问该类 内部类能提高代码的可读性和可维护性，把小型类嵌入到外部类中结构上代码会更清晰。 内部类可以直接访问外部类的成员 内部类根据使用不同的修饰符或者存在的位置不同，可以分为四种: 实例内部类 静态内部类 局部内部类 匿名内部类（仅适合于一次使用的类） 实例内部类 静态内部类 局部内部类 主要特征 内部类的实例引用特定的外部类的实例 内部类的实例不与外部类的任何实例关联 可见范围是所在的方法 可用修饰符 访问控制修饰符，abstract，final 访问控制修饰符，static，abstract，final abstract，final 可以访问外部类的哪些成员 可以直接访问外部类的所有成员 只能直接访问外部类的静态成员 可以直接访问外部类的所有成员，并且能访问所在方法的final类型的变量和参数 拥有成员类型 只能拥有实例成员 可以拥有静态成员和实例成员 只能拥有实例成员 外部类如何访问内部类的成员 必须通过内部类的实例来访问 对于静态成员，可以通过内部类的完整类名来访问 必须通过内部类的实例来访问]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java中的接口和抽象类]]></title>
     <url>%2F2018%2F11%2F04%2FJava%E4%B8%AD%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%92%8C%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
     <content type="text"><![CDATA[相同点： 都位于继承的顶端，用于被其他实现或继承 都不能实例化 都可以定义抽象方法，其子类/实现类都必须复写这些抽象方法。 不同点： 接口没有构造方法，抽象类有构造方法。这是因为子类继承抽象类后，在实例化一个子类时，需要检查父类的是否有构造方法。 抽象类可包含骗人通方法和抽象方法，接口只能包含抽象方法（java8之前） 一个类只能继承一个直接父类（可能是抽象类），接口是多继承并且支持一个类实现多个接口（弥补了Java的单继承） 成员变量：接口里默认是public static final，抽象类默认包权限 方法：接口里默认public abstract,抽象类默认包访问权限 内部类：接口里默认public static，抽象类默认包访问权限 如果接口和实现类可以完成与其他方法实现的其他功能，尽量使用接口，面向接口编程。 设计模式：接口和抽象类集合使用的（适配器模式） 面向接口编程：多态的好处：把实现类对象付给接口类型变量，屏蔽了不同实现类之间的差异，从而可以做到通用编程 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950package com.wkx.jedis;interface IUSB&#123; void swapData();&#125;class Mouse implements IUSB&#123; public void swapData()&#123; System.out.println("i am moving..."); &#125;&#125;class Printer implements IUSB&#123; public void swapData()&#123; System.out.println("i am printing, dididi..."); &#125;&#125;class MotherBoard&#123; private static IUSB[] usbs = new IUSB[6]; private static int num = 0; public static void pluginIn(IUSB usb)&#123; if (usbs.length == num) return; usbs[num] = usb; num ++; &#125; public static void doWork()&#123; for (IUSB usb : usbs)&#123; if(usb != null) usb.swapData(); &#125; &#125;&#125;public class IUSBDemo &#123; public static void main(String[] args)&#123; MotherBoard.pluginIn(new Mouse()); MotherBoard.pluginIn(new Mouse()); MotherBoard.pluginIn(new Mouse()); MotherBoard.pluginIn(new Printer()); MotherBoard.pluginIn(new Printer()); MotherBoard.pluginIn(new Printer()); MotherBoard.pluginIn(new Printer()); MotherBoard.doWork(); &#125;&#125;]]></content>

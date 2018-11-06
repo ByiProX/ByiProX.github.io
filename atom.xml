@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-11-05T04:38:52.272Z</updated>
+  <updated>2018-11-05T05:23:13.566Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java内部类</title>
+    <link href="http://kunxiang.wang/2018/11/05/Java%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+    <id>http://kunxiang.wang/2018/11/05/Java内部类/</id>
+    <published>2018-11-05T04:59:24.000Z</published>
+    <updated>2018-11-05T05:23:13.566Z</updated>
+    
+    <content type="html"><![CDATA[<p>类中的定义成员有三种，分别是</p><ol><li>字段</li><li>方法</li><li>内部类</li></ol><p>内部类：定义在类结构中的另一个类</p><p><code>为什么要使用内部类？</code></p><ol><li>增强封装，把内部类隐藏在外部类之内，不允许其他类访问该类</li><li>内部类能提高代码的可读性和可维护性，把小型类嵌入到外部类中结构上代码会更清晰。</li><li>内部类可以直接访问外部类的成员</li></ol><a id="more"></a><p>内部类根据使用不同的修饰符或者存在的位置不同，可以分为四种:</p><ol><li>实例内部类</li><li>静态内部类</li><li>局部内部类</li><li>匿名内部类（仅适合于一次使用的类）</li></ol><table><thead><tr><th></th><th>实例内部类</th><th>静态内部类</th><th>局部内部类</th></tr></thead><tbody><tr><td>主要特征</td><td>内部类的实例引用特定的外部类的实例</td><td>内部类的实例不与外部类的任何实例关联</td><td>可见范围是所在的方法</td></tr><tr><td>可用修饰符</td><td>访问控制修饰符，abstract，final</td><td>访问控制修饰符，static，abstract，final</td><td>abstract，final</td></tr><tr><td>可以访问外部类的哪些成员</td><td>可以直接访问外部类的所有成员</td><td>只能直接访问外部类的静态成员</td><td>可以直接访问外部类的所有成员，并且能访问所在方法的final类型的变量和参数</td></tr><tr><td>拥有成员类型</td><td>只能拥有实例成员</td><td>可以拥有静态成员和实例成员</td><td>只能拥有实例成员</td></tr><tr><td>外部类如何访问内部类的成员</td><td>必须通过内部类的实例来访问</td><td>对于静态成员，可以通过内部类的完整类名来访问</td><td>必须通过内部类的实例来访问</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;类中的定义成员有三种，分别是&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;字段&lt;/li&gt;
+&lt;li&gt;方法&lt;/li&gt;
+&lt;li&gt;内部类&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;内部类：定义在类结构中的另一个类&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;为什么要使用内部类？&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;增强封装，把内部类隐藏在外部类之内，不允许其他类访问该类&lt;/li&gt;
+&lt;li&gt;内部类能提高代码的可读性和可维护性，把小型类嵌入到外部类中结构上代码会更清晰。&lt;/li&gt;
+&lt;li&gt;内部类可以直接访问外部类的成员&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://kunxiang.wang/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://kunxiang.wang/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java中的接口和抽象类</title>
@@ -543,79 +577,6 @@
     <summary type="html">
     
       &lt;h4 id=&quot;插入数据-INSERT&quot;&gt;&lt;a href=&quot;#插入数据-INSERT&quot; class=&quot;headerlink&quot; title=&quot;插入数据 INSERT&quot;&gt;&lt;/a&gt;插入数据 INSERT&lt;/h4&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--创建student数据表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;TABLE&lt;/span&gt; student (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;INT&lt;/span&gt;,                   &lt;span class=&quot;comment&quot;&gt;--学生编号&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;VARCHAR&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;),         &lt;span class=&quot;comment&quot;&gt;--学生姓名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   birthday &lt;span class=&quot;built_in&quot;&gt;DATE&lt;/span&gt;,            &lt;span class=&quot;comment&quot;&gt;--出生日期&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   score &lt;span class=&quot;built_in&quot;&gt;NUMERIC&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)       &lt;span class=&quot;comment&quot;&gt;--学分&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--向表中所有字段插入数据（顺序不能乱）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; student &lt;span class=&quot;keyword&quot;&gt;VALUES&lt;/span&gt; (&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;张三&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;1990-01-01&#39;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3.85&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--向表中指定字段插入数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; student(&lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;name&lt;/span&gt;, birthday) &lt;span class=&quot;keyword&quot;&gt;VALUES&lt;/span&gt; (&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;李四&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;1990-01-02&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--向表中指定字段插入数据（打乱字段顺序）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; student(&lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;, birthday, &lt;span class=&quot;keyword&quot;&gt;name&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;VALUES&lt;/span&gt; (&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;1988-05-01&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;王五&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--使用INSERT语句批量插入多条数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; student(&lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;name&lt;/span&gt;, birthday) &lt;span class=&quot;keyword&quot;&gt;VALUES&lt;/span&gt; (&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;张三1&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;1990-02-01&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;张三2&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;1990-02-02&#39;&lt;/span&gt;), (&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;张三3&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;1990-02-03&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--创建student1数据表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;TABLE&lt;/span&gt; student_new (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;INT&lt;/span&gt;,                   &lt;span class=&quot;comment&quot;&gt;--学生编号&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;VARCHAR&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;30&lt;/span&gt;),         &lt;span class=&quot;comment&quot;&gt;--学生姓名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   birthday &lt;span class=&quot;built_in&quot;&gt;DATE&lt;/span&gt;,            &lt;span class=&quot;comment&quot;&gt;--出生日期&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   score &lt;span class=&quot;built_in&quot;&gt;NUMERIC&lt;/span&gt;(&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)       &lt;span class=&quot;comment&quot;&gt;--学分&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--将查询结果插入到表中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; student_new &lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; * &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; student;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;--将查询结果插入到表中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;INTO&lt;/span&gt; student_new(&lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;name&lt;/span&gt;, birthday) &lt;span class=&quot;keyword&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;id&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;name&lt;/span&gt;, birthday &lt;span class=&quot;keyword&quot;&gt;FROM&lt;/span&gt; student;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="面试" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="数据库" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="面试" scheme="http://kunxiang.wang/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="数据库" scheme="http://kunxiang.wang/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DROP、DELETE和TRUNCATE区别</title>
-    <link href="http://kunxiang.wang/2018/09/26/DROP%E3%80%81DELETE%E5%92%8CTRUNCATE%E5%8C%BA%E5%88%AB/"/>
-    <id>http://kunxiang.wang/2018/09/26/DROP、DELETE和TRUNCATE区别/</id>
-    <published>2018-09-26T05:20:40.000Z</published>
-    <updated>2018-09-26T08:32:50.844Z</updated>
-    
-    <content type="html"><![CDATA[<table><thead><tr><th style="text-align:center">Diffs</th><th style="text-align:center">DELETE</th><th style="text-align:center">TRUNCATE</th><th style="text-align:center">Drop</th></tr></thead><tbody><tr><td style="text-align:center">执行速度</td><td style="text-align:center">慢</td><td style="text-align:center">较快</td><td style="text-align:center">快</td></tr><tr><td style="text-align:center">可执行条件</td><td style="text-align:center">可以</td><td style="text-align:center">不可以</td><td style="text-align:center">不可以</td></tr><tr><td style="text-align:center">语句分类</td><td style="text-align:center">DML</td><td style="text-align:center">DDL</td><td style="text-align:center">DDL</td></tr><tr><td style="text-align:center">可以回滚事务</td><td style="text-align:center">可以</td><td style="text-align:center">不可以</td><td style="text-align:center">不可以</td></tr><tr><td style="text-align:center">删除操作记录日志</td><td style="text-align:center">记录</td><td style="text-align:center">不记录</td><td style="text-align:center">不记录</td></tr></tbody></table><ul><li>drop：drop table 表名<br>删除内容和定义，并释放空间。执行drop语句，将使此表的结构一起删除。</li><li>truncate (清空表中的数据)：truncate table 表名<br>删除内容、释放空间但不删除定义(也就是保留表的数据结构)。与drop不同的是,只是清空表数据而已。<br>truncate不能删除行数据，虽然只删除数据，但是比delete彻底，它只删除表数据。</li><li>delete：delete from 表名 （where 列名 = 值）<br>与truncate类似，delete也只删除内容、释放空间但不删除定义；但是delete即可以对行数据进行删除，也可以对整表数据进行删除。</li></ul><hr><a id="more"></a><h4 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h4><ul><li>truncate 和不带 where 子句的 delete，以及 drop 都会删除表内的数据</li></ul><h4 id="不同点"><a href="#不同点" class="headerlink" title="不同点:"></a>不同点:</h4><ol><li><p><code>truncate 和 delete 只删除数据不删除表的结构(定义)</code><br>drop 语句将删除表的结构被依赖的约束(constrain)、触发器(trigger)、索引(index);依赖于该表的存储过程/函数将保留,但是变为 invalid 状态。</p></li><li><p><code>delete 语句是数据库操作语言(dml)，这操作会放到rollback segement 中，事务提交之后才生效;如果有相应的 trigger，执行的时候将被触发。</code><br><code>truncate、drop 是数据库定义语言(ddl)，操作立即生效，原数据不放到 rollback segment 中，不能回滚，操作不触发 trigger。</code></p></li><li><p>delete 语句不影响表所占用的 extent，高水线(high watermark)保持原位置不动<br>　　显然 drop 语句将表所占用的空间全部释放。<br>　　truncate 语句缺省情况下见空间释放到 minextents个 extent，除非使用reuse storage;truncate 会将高水线复位(回到最开始)。</p></li><li><p>速度，一般来说: drop&gt; truncate &gt; delete</p></li><li><p>安全性：小心使用 drop 和 truncate，尤其没有备份的时候.否则哭都来不及</p></li><li><p>使用上: 想删除部分数据行用 delete，注意带上where子句. 回滚段要足够大.想删除表,当然用 drop;<br><code>想保留表而将所有数据删除，如果和事务无关，用truncate即可。如果和事务有关,或者想触发trigger,还是用delete。</code><br>如果是整理表内部的碎片，可以用truncate跟上reuse stroage，再重新导入/插入数据。</p></li></ol><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Delete</span> <span class="keyword">from</span> Tablename <span class="keyword">where</span> 条件</span><br><span class="line"><span class="keyword">Truncate</span> <span class="keyword">table</span> Tablename</span><br><span class="line"><span class="keyword">Drop</span> <span class="keyword">table</span> Tablename</span><br></pre></td></tr></table></figure><h4 id="Mysql的truncate和delete的区别"><a href="#Mysql的truncate和delete的区别" class="headerlink" title="Mysql的truncate和delete的区别"></a>Mysql的truncate和delete的区别</h4><p>truncate table table_name 和delete from table_name 都是删除表中所有记录。</p><p>区别：</p><p>truncate能够快速清空一个表。并且重置auto_increment的值。而delete只能一行一行的删除。</p><p>但对于不同的类型存储引擎需要注意的地方是：</p><p>A. 对于myisam</p><blockquote><p>truncate会重置auto_increment的值为1。而delete后表仍然保持auto_increment。</p></blockquote><p>B. 对于innodb</p><blockquote><p>truncate会重置auto_increment的值为1。delete后表仍然保持auto_increment。但是在做delete整个表之后重启MySQL的话，则<code>重启后</code>的auto_increment会被置为1。</p></blockquote><p>也就是说，innodb的表本身是无法持久保存auto_increment。delete表之后auto_increment仍然保存在内存，但是重启后就丢失了，只能从1开始。实质上<code>重启</code>后的auto_increment会从 SELECT 1+MAX(ai_col) FROM t 开始。</p><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Diffs&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;DELETE&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;TRUNCATE&lt;/th&gt;
-&lt;th style=&quot;text-align:center&quot;&gt;Drop&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;执行速度&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;慢&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;较快&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;快&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;可执行条件&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;可以&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;不可以&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;不可以&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;语句分类&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;DML&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;DDL&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;DDL&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;可以回滚事务&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;可以&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;不可以&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;不可以&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;删除操作记录日志&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;记录&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;不记录&lt;/td&gt;
-&lt;td style=&quot;text-align:center&quot;&gt;不记录&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;ul&gt;
-&lt;li&gt;drop：drop table 表名&lt;br&gt;删除内容和定义，并释放空间。执行drop语句，将使此表的结构一起删除。&lt;/li&gt;
-&lt;li&gt;truncate (清空表中的数据)：truncate table 表名&lt;br&gt;删除内容、释放空间但不删除定义(也就是保留表的数据结构)。与drop不同的是,只是清空表数据而已。&lt;br&gt;truncate不能删除行数据，虽然只删除数据，但是比delete彻底，它只删除表数据。&lt;/li&gt;
-&lt;li&gt;delete：delete from 表名 （where 列名 = 值）&lt;br&gt;与truncate类似，delete也只删除内容、释放空间但不删除定义；但是delete即可以对行数据进行删除，也可以对整表数据进行删除。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
     
     </summary>
     
