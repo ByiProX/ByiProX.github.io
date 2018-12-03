@@ -7,7 +7,7 @@ categories:
   - Python3 进阶
 ---
 
-```Python
+```python
 import time
 
 timeStamp = time.time()
