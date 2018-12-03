@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2018-11-27T07:58:02.098Z</updated>
+  <updated>2018-12-03T08:25:04.106Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python中如何生成一定格式的日期字符串</title>
+    <link href="http://kunxiang.wang/2018/12/03/Python%E4%B8%AD%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E4%B8%80%E5%AE%9A%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>http://kunxiang.wang/2018/12/03/Python中如何生成一定格式的日期字符串/</id>
+    <published>2018-12-03T08:20:56.000Z</published>
+    <updated>2018-12-03T08:25:04.106Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">timeStamp = time.time()</span><br><span class="line">timeArray = time.localtime(time.time())</span><br><span class="line">print(timeArray)</span><br><span class="line"><span class="comment"># time.struct_time(tm_year=2018, tm_mon=12, tm_mday=3, tm_hour=16, tm_min=23, tm_sec=55, tm_wday=0, tm_yday=337, tm_isdst=0)</span></span><br><span class="line"></span><br><span class="line">formatTime = time.strftime(<span class="string">"%Y%m%d-%H:%M:%S"</span>, timeArray)</span><br><span class="line">print(formatTime)</span><br><span class="line"><span class="comment"># 20181203-16:23:55</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas
+      
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://kunxiang.wang/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+    
+      <category term="Python3" scheme="http://kunxiang.wang/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>Python中append和extend效率</title>
@@ -549,38 +574,6 @@
     <summary type="html">
     
       &lt;h4 id=&quot;第一范式（1NF）&quot;&gt;&lt;a href=&quot;#第一范式（1NF）&quot; class=&quot;headerlink&quot; title=&quot;第一范式（1NF）&quot;&gt;&lt;/a&gt;第一范式（1NF）&lt;/h4&gt;&lt;p&gt;&lt;code&gt;所谓第一范式（1NF）是指在关系模型中，对域添加的一个规范要求，所有的域都应该是原子性的，即数据库表的每一列都是不可分割的原子数据项&lt;/code&gt;，而不能是集合，数组，记录等非原子数据项。即实体中的某个属性有多个值时，必须拆分为不同的属性。在符合第一范式（1NF）表中的每个域值只能是实体的一个属性或一个属性的一部分。&lt;code&gt;简而言之，第一范式就是无重复的域。&lt;/code&gt;&lt;br&gt;说明：在任何一个关系数据库中，第一范式（1NF）是对关系模式的设计基本要求，一般设计中都必须满足第一范式（1NF）。不过有些关系模型中突破了1NF的限制，这种称为非1NF的关系模型。换句话说，是否必须满足1NF的最低要求，主要依赖于所使用的关系模型。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="面试" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="数据库" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="面试" scheme="http://kunxiang.wang/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="数据库" scheme="http://kunxiang.wang/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据库事务的四个特性及四个隔离级别</title>
-    <link href="http://kunxiang.wang/2018/09/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7%E5%8F%8A%E5%9B%9B%E4%B8%AA%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/"/>
-    <id>http://kunxiang.wang/2018/09/26/数据库事务的四个特性及四个隔离级别/</id>
-    <published>2018-09-26T13:52:11.000Z</published>
-    <updated>2018-09-26T13:59:40.414Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="事务的四大特性（ACID）"><a href="#事务的四大特性（ACID）" class="headerlink" title="事务的四大特性（ACID）"></a>事务的四大特性（ACID）</h4><ol><li>原子性（atomicity）：一个事务必须视为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中的一部分操作，这就是事务的原子性。</li><li>一致性（consistency）：数据库总数从一个一致性的状态转换到另一个一致性的状态。</li><li>隔离性（isolation）：一个事务所做的修改在最终提交以前，对其他事务是不可见的。</li><li>持久性（durability）：一旦事务提交，则其所做的修改就会永久保存到数据库中。此时即使系统崩溃，修改的数据也不会丢失。</li></ol><h4 id="四个隔离级别"><a href="#四个隔离级别" class="headerlink" title="四个隔离级别"></a>四个隔离级别</h4><p>数据库事务的隔离级别有4种，由低到高分别为<code>Read uncommitted</code> 、<code>Read committed</code> 、<code>Repeatable read</code> 、<code>Serializable</code> 。而且，在事务的并发操作中可能会出现<strong>脏读</strong>,<strong>不可重复读</strong>，<strong>幻读</strong>。下面通过事例一一阐述它们的概念与联系。</p><a id="more"></a><h5 id="Read-uncommitted"><a href="#Read-uncommitted" class="headerlink" title="Read uncommitted"></a>Read uncommitted</h5><p>读未提交，顾名思义，就是一个事务可以读取另一个未提交事务的数据。<br><code>事例</code>：老板要给程序员发工资，程序员的工资是3.6万/月。但是发工资时老板不小心按错了数字，按成3.9万/月，该钱已经打到程序员的户口，但是事务还没有提交，就在这时，程序员去查看自己这个月的工资，发现比往常多了3千元，以为涨工资了非常高兴。但是老板及时发现了不对，马上回滚差点就提交了的事务，将数字改成3.6万再提交。<br><code>分析</code>：实际程序员这个月的工资还是3.6万，但是程序员看到的是3.9万。他看到的是老板还没提交事务时的数据。这就是脏读。<br>那怎么解决脏读呢？<code>Read committed！读提交，能解决脏读问题</code>。</p><h6 id="Read-committed"><a href="#Read-committed" class="headerlink" title="Read committed"></a>Read committed</h6><p>读提交，顾名思义，就是一个事务要等另一个事务提交后才能读取数据。<br><code>事例</code>：程序员拿着信用卡去享受生活（卡里当然是只有3.6万），当他埋单时（程序员事务开启），收费系统事先检测到他的卡里有3.6万，就在这个时候！！程序员的妻子要把钱全部转出充当家用，并提交。当收费系统准备扣款时，再检测卡里的金额，发现已经没钱了（第二次检测金额当然要等待妻子转出金额事务提交完）。程序员就会很郁闷，明明卡里是有钱的…<br><code>分析</code>：这就是读提交，若有事务对数据进行更新（UPDATE）操作时，读操作事务要等待这个更新操作事务提交后才能读取数据，可以解决脏读问题。但在这个事例中，出现了一个事务范围内两个相同的查询却返回了不同数据，这就是不可重复读。<br><code>那怎么解决不可重复读问题？Repeatable read ！</code></p><h5 id="Repeatable-read"><a href="#Repeatable-read" class="headerlink" title="Repeatable read"></a>Repeatable read</h5><p>重复读，就是在开始读取数据（事务开启）时，不再允许修改操作<br><code>事例</code>：程序员拿着信用卡去享受生活（卡里当然是只有3.6万），当他埋单时（事务开启，不允许其他事务的UPDATE修改操作），收费系统事先检测到他的卡里有3.6万。这个时候他的妻子不能转出金额了。接下来收费系统就可以扣款了。<br><code>分析</code>：重复读可以解决不可重复读问题。写到这里，应该明白的一点就是，<code>不可重复读对应的是修改，即UPDATE操作</code>。<code>但是可能还会有幻读问题。因为**幻读问题对应的是插入INSERT操作**，而不是UPDATE操作。</code></p><p>什么时候会出现幻读？<br><code>事例</code>：程序员某一天去消费，花了2千元，然后他的妻子去查看他今天的消费记录（全表扫描FTS，妻子事务开启），看到确实是花了2千元，就在这个时候，程序员花了1万买了一部电脑，即<code>新增INSERT</code>了一条消费记录，并提交。当妻子打印程序员的消费记录清单时（妻子事务提交），发现花了1.2万元，似乎出现了幻觉，这就是幻读。<br>那怎么解决幻读问题？Serializable！</p><h5 id="Serializable-序列化"><a href="#Serializable-序列化" class="headerlink" title="Serializable 序列化"></a>Serializable 序列化</h5><p>Serializable 是最高的事务隔离级别，在该级别下，事务串行化顺序执行，可以避免脏读、不可重复读与幻读。但是这种事务隔离级别效率低下，比较耗数据库性能，一般不使用。<br>值得一提的是：大多数数据库默认的事务隔离级别是Read committed，比如Sql Server ,<br>Oracle。MySQL的默认隔离级别是Repeatable read。</p><hr><p>本文来自 csdnxingyuntian 的CSDN 博客 ，全文地址请点击：<a href="https://blog.csdn.net/csdnxingyuntian/article/details/57081233?utm_source=copy" target="_blank" rel="noopener">https://blog.csdn.net/csdnxingyuntian/article/details/57081233?utm_source=copy</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;事务的四大特性（ACID）&quot;&gt;&lt;a href=&quot;#事务的四大特性（ACID）&quot; class=&quot;headerlink&quot; title=&quot;事务的四大特性（ACID）&quot;&gt;&lt;/a&gt;事务的四大特性（ACID）&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;原子性（atomicity）：一个事务必须视为一个不可分割的最小工作单元，整个事务中的所有操作要么全部提交成功，要么全部失败回滚，对于一个事务来说，不可能只执行其中的一部分操作，这就是事务的原子性。&lt;/li&gt;
-&lt;li&gt;一致性（consistency）：数据库总数从一个一致性的状态转换到另一个一致性的状态。&lt;/li&gt;
-&lt;li&gt;隔离性（isolation）：一个事务所做的修改在最终提交以前，对其他事务是不可见的。&lt;/li&gt;
-&lt;li&gt;持久性（durability）：一旦事务提交，则其所做的修改就会永久保存到数据库中。此时即使系统崩溃，修改的数据也不会丢失。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&quot;四个隔离级别&quot;&gt;&lt;a href=&quot;#四个隔离级别&quot; class=&quot;headerlink&quot; title=&quot;四个隔离级别&quot;&gt;&lt;/a&gt;四个隔离级别&lt;/h4&gt;&lt;p&gt;数据库事务的隔离级别有4种，由低到高分别为&lt;code&gt;Read uncommitted&lt;/code&gt; 、&lt;code&gt;Read committed&lt;/code&gt; 、&lt;code&gt;Repeatable read&lt;/code&gt; 、&lt;code&gt;Serializable&lt;/code&gt; 。而且，在事务的并发操作中可能会出现&lt;strong&gt;脏读&lt;/strong&gt;,&lt;strong&gt;不可重复读&lt;/strong&gt;，&lt;strong&gt;幻读&lt;/strong&gt;。下面通过事例一一阐述它们的概念与联系。&lt;/p&gt;
     
     </summary>
     

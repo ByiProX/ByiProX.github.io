@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python中如何生成一定格式的日期字符串]]></title>
+    <url>%2F2018%2F12%2F03%2FPython%E4%B8%AD%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E4%B8%80%E5%AE%9A%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%2F</url>
+    <content type="text"><![CDATA[12345678910import timetimeStamp = time.time()timeArray = time.localtime(time.time())print(timeArray)# time.struct_time(tm_year=2018, tm_mon=12, tm_mday=3, tm_hour=16, tm_min=23, tm_sec=55, tm_wday=0, tm_yday=337, tm_isdst=0)formatTime = time.strftime("%Y%m%d-%H:%M:%S", timeArray)print(formatTime)# 20181203-16:23:55]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python中append和extend效率]]></title>
     <url>%2F2018%2F11%2F27%2FPython%E4%B8%ADappend%E5%92%8Cextend%E6%95%88%E7%8E%87%2F</url>
     <content type="text"><![CDATA[python提供了一个名为extend的方法，该方法将一个列表中的所有元素添加到另一个列表的结尾。在作用上，调用data.extend(other)的输出结果与以下代码的输出结果相同。12for elem in other: data.append(elem) 在任何情况下，运行时间都正比于另一张列表的长度，并且之所以摊销，是因为第一张列表的底层数组需要调整打下以容纳增添的元素。 在实践中，相对于重复调用append方法，我们更倾向于选择extend方法。原因是渐进分析中隐含的常数明显更小。extend方法效率更高体现在三个方面： 首先，使用合适的python方法总会有一些优势，因为这些方法通常使用本地编译语言执行 与调用很多独立的方法相比，调用一个函数完成所有工作的开销更小。 extend提升的效率来源更新列表的最终大小能提前计算出。例如第二个数据集是非常大的，当重复调用append时，底层动态数组会有很多次调整大小的风险，如果调用一次extend方法，最多执行一次调整工作。 我们所熟悉的构造新列表的语法，在几乎所有情况下，该行为的渐进效率在创建列表的长度方面是线性的。但是不同的方法在实际效率上会有不同。 在python中经常使用一个诸如squares = [k*k for k in range(1, n+1)]的例子作为123squares = []for k in range(1, n+1) squares.append(k*k) 的一种速记，并由此引入了列表推导式。实验可以证明用列表推导式语法比不断增添数据来创建列表速度更快。 类似的，使用乘法操作初始化一个固定的列表，也是一种很常见的python风格，例如[0]*100生成一张长度为100的列表，这样做不但语法简单，而且比逐步构造这样的表效率更高]]></content>
@@ -947,8 +958,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -1404,8 +1415,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
