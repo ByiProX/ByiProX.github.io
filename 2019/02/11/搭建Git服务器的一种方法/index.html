@@ -116,18 +116,18 @@
 
 
 
-  <meta name="description" content="1. 确保自己的服务器上安装有Git和ssh2. 配置git用户新建git用户主要是为了让大家在上传代码时登录使用，一般使用：git1adduser git 配置git用户的ssh登录123cd /home/git    //进入git用户文件夹sudo mkdir .ssh    //创建 .ssh 文件夹sudo touch .ssh/authorized_keys    //创建author">
+  <meta name="description" content="1. 确保自己的服务器上安装有Git和ssh12yum install sshyum install git 2. 配置git用户新建git用户主要是为了让大家在上传代码时登录使用，一般使用：git1adduser git">
 <meta name="keywords" content="Git,Github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="搭建Git服务器的一种方法">
 <meta property="og:url" content="http://kunxiang.wang/2019/02/11/搭建Git服务器的一种方法/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="1. 确保自己的服务器上安装有Git和ssh2. 配置git用户新建git用户主要是为了让大家在上传代码时登录使用，一般使用：git1adduser git 配置git用户的ssh登录123cd /home/git    //进入git用户文件夹sudo mkdir .ssh    //创建 .ssh 文件夹sudo touch .ssh/authorized_keys    //创建author">
+<meta property="og:description" content="1. 确保自己的服务器上安装有Git和ssh12yum install sshyum install git 2. 配置git用户新建git用户主要是为了让大家在上传代码时登录使用，一般使用：git1adduser git">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-11T06:02:38.222Z">
+<meta property="og:updated_time" content="2019-02-11T06:11:23.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建Git服务器的一种方法">
-<meta name="twitter:description" content="1. 确保自己的服务器上安装有Git和ssh2. 配置git用户新建git用户主要是为了让大家在上传代码时登录使用，一般使用：git1adduser git 配置git用户的ssh登录123cd /home/git    //进入git用户文件夹sudo mkdir .ssh    //创建 .ssh 文件夹sudo touch .ssh/authorized_keys    //创建author">
+<meta name="twitter:description" content="1. 确保自己的服务器上安装有Git和ssh12yum install sshyum install git 2. 配置git用户新建git用户主要是为了让大家在上传代码时登录使用，一般使用：git1adduser git">
 
 
 
@@ -476,7 +476,9 @@
       
 
       
-        <h3 id="1-确保自己的服务器上安装有Git和ssh"><a href="#1-确保自己的服务器上安装有Git和ssh" class="headerlink" title="1. 确保自己的服务器上安装有Git和ssh"></a>1. 确保自己的服务器上安装有Git和ssh</h3><h3 id="2-配置git用户"><a href="#2-配置git用户" class="headerlink" title="2. 配置git用户"></a>2. 配置git用户</h3><h4 id="新建git用户"><a href="#新建git用户" class="headerlink" title="新建git用户"></a>新建git用户</h4><p>主要是为了让大家在上传代码时登录使用，一般使用：git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure></p>
+        <h3 id="1-确保自己的服务器上安装有Git和ssh"><a href="#1-确保自己的服务器上安装有Git和ssh" class="headerlink" title="1. 确保自己的服务器上安装有Git和ssh"></a>1. 确保自己的服务器上安装有Git和ssh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install ssh</span><br><span class="line">yum install git</span><br></pre></td></tr></table></figure>
+<h3 id="2-配置git用户"><a href="#2-配置git用户" class="headerlink" title="2. 配置git用户"></a>2. 配置git用户</h3><h4 id="新建git用户"><a href="#新建git用户" class="headerlink" title="新建git用户"></a>新建git用户</h4><p>主要是为了让大家在上传代码时登录使用，一般使用：git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h4 id="配置git用户的ssh登录"><a href="#配置git用户的ssh登录" class="headerlink" title="配置git用户的ssh登录"></a>配置git用户的ssh登录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/git    //进入git用户文件夹</span><br><span class="line">sudo mkdir .ssh    //创建 .ssh 文件夹</span><br><span class="line">sudo touch .ssh/authorized_keys    //创建authorized_keys文件，用以保存公钥</span><br></pre></td></tr></table></figure>
 <p><code>authorized_keys</code> 是公钥保存文件，<code>客户端的私钥</code>与<code>服务器的公钥</code>配对成功，则可以登录。<code>之后将需要使用这个git服务器的成员的公钥复制粘贴到这个文件中（每个占一行）</code>。</p>
 <p>客户端电脑进入 /users/用户名/.ssh 文件夹，如果已经有自己的秘钥，直接打开 <code>pub</code> 文件，复制里面的公钥信息，进入服务器，粘贴到 authorized_keys 文件中，如果没有，使用<code>ssh-keygen</code>命令生成后复制粘贴即可。</p>
