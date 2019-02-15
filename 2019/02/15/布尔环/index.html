@@ -116,16 +116,18 @@
 
 
 
-  <meta name="description" content="每天进步一点点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quentin&#39;s Blog">
-<meta property="og:url" content="http://kunxiang.wang/tags/SQL/index.html">
+  <meta name="description" content="布尔环与整数运算有很多相同属性。例如整数运算的一个属性是每个值x都有一个加法逆元(additive-inverse)-x, 使得x+(-x)=0。布尔环也有类似的属性，这里的加法运算时^,不过这时每个元素的加法逆元是它自己本身。也就是说，对于任何值a来说，a^a=0, 这里用0表示全0的位向量。 相同道理还有一个有意思的属性，即(a^b)^a=b，该属性可以用来交换两个元素的值，而不需要第三方变量">
+<meta name="keywords" content="计算机基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="布尔环">
+<meta property="og:url" content="http://kunxiang.wang/2019/02/15/布尔环/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="每天进步一点点">
+<meta property="og:description" content="布尔环与整数运算有很多相同属性。例如整数运算的一个属性是每个值x都有一个加法逆元(additive-inverse)-x, 使得x+(-x)=0。布尔环也有类似的属性，这里的加法运算时^,不过这时每个元素的加法逆元是它自己本身。也就是说，对于任何值a来说，a^a=0, 这里用0表示全0的位向量。 相同道理还有一个有意思的属性，即(a^b)^a=b，该属性可以用来交换两个元素的值，而不需要第三方变量">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-15T02:19:32.592Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quentin&#39;s Blog">
-<meta name="twitter:description" content="每天进步一点点">
+<meta name="twitter:title" content="布尔环">
+<meta name="twitter:description" content="布尔环与整数运算有很多相同属性。例如整数运算的一个属性是每个值x都有一个加法逆元(additive-inverse)-x, 使得x+(-x)=0。布尔环也有类似的属性，这里的加法运算时^,不过这时每个元素的加法逆元是它自己本身。也就是说，对于任何值a来说，a^a=0, 这里用0表示全0的位向量。 相同道理还有一个有意思的属性，即(a^b)^a=b，该属性可以用来交换两个元素的值，而不需要第三方变量">
 
 
 
@@ -134,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/tags/SQL/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2019/02/15/布尔环/"/>
 
 
 
@@ -144,7 +146,7 @@
   };
 </script>
 
-  <title>标签: SQL | Quentin's Blog</title>
+  <title>布尔环 | Quentin's Blog</title>
   
 
 
@@ -191,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -236,7 +238,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -335,84 +337,226 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>SQL<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2019/02/15/布尔环/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/08/28/SQL语法练习-一/" itemprop="url">
-              
-                <span itemprop="name">SQL语法练习(一)</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">布尔环
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-28T00:32:31+08:00"
-              content="2018-08-28" >
-          08-28
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-15 10:07:21" itemprop="dateCreated datePublished" datetime="2019-02-15T10:07:21+08:00">2019-02-15</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/15/布尔环/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/02/15/布尔环/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/15/布尔环/" class="leancloud_visitors" data-flag-title="布尔环">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>布尔环与整数运算有很多相同属性。例如整数运算的一个属性是每个值x都有一个加法逆元(additive-inverse)<code>-x</code>, 使得<code>x+(-x)=0</code>。布尔环也有类似的属性，这里的加法运算时<code>^</code>,不过这时每个元素的加法逆元是它自己本身。也就是说，对于任何值a来说，<code>a^a=0</code>, 这里用0表示全0的位向量。</p>
+<p>相同道理还有一个有意思的属性，即<code>(a^b)^a=b</code>，该属性可以用来交换两个元素的值，而不需要第三方变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a ^ b</span><br><span class="line">b = a ^ b</span><br><span class="line">a = a ^ b</span><br></pre></td></tr></table></figure>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机基础/" rel="tag"># 计算机基础</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/11/搭建Git服务器的一种方法/" rel="next" title="搭建Git服务器的一种方法">
+                <i class="fa fa-chevron-left"></i> 搭建Git服务器的一种方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -882,6 +1026,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -896,6 +1044,23 @@
     <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://kunxiang.wang/2019/02/15/布尔环/';
+        this.page.identifier = '2019/02/15/布尔环/';
+        this.page.title = '布尔环';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
@@ -1240,43 +1405,40 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1296,9 +1458,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
@@ -1370,7 +1530,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 

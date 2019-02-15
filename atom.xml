@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2019-02-11T06:11:23.884Z</updated>
+  <updated>2019-02-15T02:19:32.592Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>布尔环</title>
+    <link href="http://kunxiang.wang/2019/02/15/%E5%B8%83%E5%B0%94%E7%8E%AF/"/>
+    <id>http://kunxiang.wang/2019/02/15/布尔环/</id>
+    <published>2019-02-15T02:07:21.000Z</published>
+    <updated>2019-02-15T02:19:32.592Z</updated>
+    
+    <content type="html"><![CDATA[<p>布尔环与整数运算有很多相同属性。例如整数运算的一个属性是每个值x都有一个加法逆元(additive-inverse)<code>-x</code>, 使得<code>x+(-x)=0</code>。布尔环也有类似的属性，这里的加法运算时<code>^</code>,不过这时每个元素的加法逆元是它自己本身。也就是说，对于任何值a来说，<code>a^a=0</code>, 这里用0表示全0的位向量。</p><p>相同道理还有一个有意思的属性，即<code>(a^b)^a=b</code>，该属性可以用来交换两个元素的值，而不需要第三方变量。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a ^ b</span><br><span class="line">b = a ^ b</span><br><span class="line">a = a ^ b</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;布尔环与整数运算有很多相同属性。例如整数运算的一个属性是每个值x都有一个加法逆元(additive-inverse)&lt;code&gt;-x&lt;/code&gt;, 使得&lt;code&gt;x+(-x)=0&lt;/code&gt;。布尔环也有类似的属性，这里的加法运算时&lt;code&gt;^&lt;/code&gt;,不过这时
+      
+    
+    </summary>
+    
+    
+      <category term="计算机基础" scheme="http://kunxiang.wang/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建Git服务器的一种方法</title>
@@ -562,28 +585,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>面试总结之Java Web篇(持续更新)</title>
-    <link href="http://kunxiang.wang/2018/09/27/%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93%E4%B9%8BJava-Web%E7%AF%87-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
-    <id>http://kunxiang.wang/2018/09/27/面试总结之Java-Web篇-持续更新/</id>
-    <published>2018-09-27T13:16:53.000Z</published>
-    <updated>2018-09-28T02:51:37.101Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="面试" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="Java Web" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/Java-Web/"/>
-    
-    
-      <category term="面试" scheme="http://kunxiang.wang/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="Java Web" scheme="http://kunxiang.wang/tags/Java-Web/"/>
     
   </entry>
   
