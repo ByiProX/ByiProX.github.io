@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2019-02-15T02:19:32.592Z</updated>
+  <updated>2019-02-20T08:01:28.244Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>异常的分类</title>
+    <link href="http://kunxiang.wang/2019/02/20/%E5%BC%82%E5%B8%B8%E7%9A%84%E5%88%86%E7%B1%BB/"/>
+    <id>http://kunxiang.wang/2019/02/20/异常的分类/</id>
+    <published>2019-02-20T07:24:54.000Z</published>
+    <updated>2019-02-20T08:01:28.244Z</updated>
+    
+    <content type="html"><![CDATA[<p>异常可以分为四类：<code>中断(interrupt)、陷阱(trap)、故障(fault)、终止(abort)</code>.</p><table><thead><tr><th>类别</th><th>原因</th><th>异步/同步</th><th>返回行为</th></tr></thead><tbody><tr><td>中断</td><td>来自I/O设备的信号</td><td>异步</td><td>总是返回下一条指令</td></tr><tr><td>陷阱</td><td>有意的异常</td><td>同步</td><td>总是返回下一条指令</td></tr><tr><td>故障</td><td>潜在可恢复的错误</td><td>同步</td><td>可能返回到当前指令</td></tr><tr><td>终止</td><td>不可恢复的错误</td><td>同步</td><td>不会返回</td></tr></tbody></table><p>异步异常时由处理器外部的I/O设备中的事件产生的。同步异常是执行一条指令的直接产物。</p><a id="more"></a><h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>中断时异步发生的，来自处理器外部的I/O设备的信号结果。剩下的异常类型是同步发生的，是执行当前指令的结果，我们把这类指令叫做故障指令。</p><h2 id="陷阱"><a href="#陷阱" class="headerlink" title="陷阱"></a>陷阱</h2><p><code>陷阱</code>最重要的用途是用在用户程序和内核之间提供一个像过程一样的接口，叫做<code>系统调用</code><br>从程序员的角度看，系统调用和普通的函数调用是一样的。然而，它们的实现非常不同。普通函数运行在<code>用户模式</code>中，用户模式限制了函数可以执行的指令的类型，而且它们只能访问与调用函数相同的栈。系统调用在<code>内核模式</code>中，内核模式允许系统调用执行特权指令，并访问定义在内核中的栈。</p><h2 id="故障"><a href="#故障" class="headerlink" title="故障"></a>故障</h2><p>故障由错误引起，它可能能够被故障处理程序修正。根据故障是否能够被修复，故障处理程序要么重新执行引起故障的指令，要么终止。</p><p>一个经典的故障示例是<code>缺页异常</code>，当指令引用一个虚拟地址，而与该地址相对应的物理页面不在内存中，因此必须从磁盘中读取时，就会发生故障。一个页面就是虚拟内存中的一个连续的块（典型的是4KB），缺页处理程序从磁盘加载适当的页面，然后将控制返回给引起故障的指令。当指令再次执行是，相应的物理页面已经驻留在内存中了，指令就可以没有故障的运行完成了。</p><h2 id="终止"><a href="#终止" class="headerlink" title="终止"></a>终止</h2><p>终止是不可恢复的致命错误造成的结果，通常是一些硬件错误，比如DRAM或者SRAM位被损坏时发生的奇偶错误。终止处理程序从不将控制返回给应用程序，处理程序将控制返回给一个abort例程，该例程会终止这个应用程序。</p><hr><p>参考资料：深入理解计算机系统第三版P504</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;异常可以分为四类：&lt;code&gt;中断(interrupt)、陷阱(trap)、故障(fault)、终止(abort)&lt;/code&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类别&lt;/th&gt;
+&lt;th&gt;原因&lt;/th&gt;
+&lt;th&gt;异步/同步&lt;/th&gt;
+&lt;th&gt;返回行为&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;中断&lt;/td&gt;
+&lt;td&gt;来自I/O设备的信号&lt;/td&gt;
+&lt;td&gt;异步&lt;/td&gt;
+&lt;td&gt;总是返回下一条指令&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;陷阱&lt;/td&gt;
+&lt;td&gt;有意的异常&lt;/td&gt;
+&lt;td&gt;同步&lt;/td&gt;
+&lt;td&gt;总是返回下一条指令&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;故障&lt;/td&gt;
+&lt;td&gt;潜在可恢复的错误&lt;/td&gt;
+&lt;td&gt;同步&lt;/td&gt;
+&lt;td&gt;可能返回到当前指令&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;终止&lt;/td&gt;
+&lt;td&gt;不可恢复的错误&lt;/td&gt;
+&lt;td&gt;同步&lt;/td&gt;
+&lt;td&gt;不会返回&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;异步异常时由处理器外部的I/O设备中的事件产生的。同步异常是执行一条指令的直接产物。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://kunxiang.wang/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="http://kunxiang.wang/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>布尔环</title>
@@ -548,43 +607,6 @@
     
     
       <category term="网络" scheme="http://kunxiang.wang/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSP相关概念</title>
-    <link href="http://kunxiang.wang/2018/09/28/JSP%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/"/>
-    <id>http://kunxiang.wang/2018/09/28/JSP相关概念/</id>
-    <published>2018-09-28T02:49:49.000Z</published>
-    <updated>2018-09-28T04:38:37.566Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="JSP内置对象："><a href="#JSP内置对象：" class="headerlink" title="JSP内置对象："></a>JSP内置对象：</h4><ol><li><p><code>request</code>：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest</p></li><li><p><code>response</code>:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse</p></li><li><p><code>session</code>:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.httpsession</p></li><li><p><code>out</code>: 负责管理对客户端的输出，对应类型：javax.serlvet.jsp.jspwriter</p></li><li><p><code>application</code>:表示整个应用环境的信息，对应类型：javax.servlet.servletcontext</p></li><li><p><code>config</code>:表示ServletConfig，对应类型：javax.servlet.servletconfig</p></li><li><p><code>exception</code>:表示页面中发生的异常，可以通过它获得页面异常信息，对应类型：java.lang.exception</p></li><li><p><code>pagecontext</code>:表示这个JSP页面上下文，对应类型：javax.servlet.jsp.pagecontext</p></li><li><p><code>page</code>:表示当前JSP页面本身。</p></li></ol><a id="more"></a><h4 id="JSP的四种作用域"><a href="#JSP的四种作用域" class="headerlink" title="JSP的四种作用域"></a>JSP的四种作用域</h4><ol><li><p><code>page</code>是代表一个页面相关的对象和属性。一个页面由一个编译好的java servlet类（可以带有include指令，但不可以带有include动作）表示。这既包括servlet又包括编译成servlet的jsp页面。</p></li><li><p><code>request</code>是代表与web客户机发出的一个请求相关的对象和属性。一个请求可能跨越多个页面，涉及多个web组件（由于<code>forward</code>指令和<code>include</code>动作的关系）</p></li><li><p><code>session</code>是代表与用于某个web客户机的一个用户体验相关的对象和属性。一个web回话也可以经常跨域多个客户机请求。</p></li><li><p><code>application</code>是代表与整个web应用程序相关的对象和属性。这实质上是跨域整个web应用程序，包括多个页面、请求和回话的一个全局作用域</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;JSP内置对象：&quot;&gt;&lt;a href=&quot;#JSP内置对象：&quot; class=&quot;headerlink&quot; title=&quot;JSP内置对象：&quot;&gt;&lt;/a&gt;JSP内置对象：&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;request&lt;/code&gt;：负责得到客户端请求的信息，对应类型：javax.servlet.http.HttpServletRequest&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;response&lt;/code&gt;:负责向客户端发出响应，对应类型：javax.servlet.http.HttpServletResponse&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;session&lt;/code&gt;:负责保存同一客户端一次会话过程中的一些信息，对应类型：javax.servlet.http.httpsession&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;out&lt;/code&gt;: 负责管理对客户端的输出，对应类型：javax.serlvet.jsp.jspwriter&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;application&lt;/code&gt;:表示整个应用环境的信息，对应类型：javax.servlet.servletcontext&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;config&lt;/code&gt;:表示ServletConfig，对应类型：javax.servlet.servletconfig&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;exception&lt;/code&gt;:表示页面中发生的异常，可以通过它获得页面异常信息，对应类型：java.lang.exception&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;pagecontext&lt;/code&gt;:表示这个JSP页面上下文，对应类型：javax.servlet.jsp.pagecontext&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;page&lt;/code&gt;:表示当前JSP页面本身。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
     
   </entry>
   
