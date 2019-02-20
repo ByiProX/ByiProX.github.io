@@ -606,7 +606,7 @@
   <entry>
     <title><![CDATA[Linux根目录下目录介绍及各项缩写全称]]></title>
     <url>%2F2018%2F08%2F22%2FLinux%E6%A0%B9%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D%E5%8F%8A%E5%90%84%E9%A1%B9%E7%BC%A9%E5%86%99%E5%85%A8%E7%A7%B0%2F</url>
-    <content type="text"><![CDATA[bin （binary） : 常见linux命令、系统所有用户命令目录文件 sbin （superuser binary） : root用户命令文件 dev （device） : 设备驱动存储目录文件 proc （process）: 进程信息文件，/proc文件系统，它允许用户模式进程访问内核数据结构的内容。/proc文件系统将许多内核数据结构的内容输出为一个用户程序可以读的文本文件的层次结构。 usr （UNIX Software Resource）: 与软件安装/执行相关 var （variable）: 变量文件目录，与系统运作过程有关 etc （etcetera）: 所有程序所需要的配置文件 lib （library）: 系统默认库路径文件 mnt （mount）: 挂载目录 tmp （temporary）: 临时文件目录 opt （option）: 可选目录（可以选择安装应用程序的目录） boot : 引导程序文件 home : 家目录（用户目录） root : root根目录 media : 多媒体及挂载目录]]></content>
+    <content type="text"><![CDATA[bin （binary） : 常见linux命令、系统所有用户命令目录文件 sbin （superuser binary） : root用户命令文件 dev （device） : 设备驱动存储目录文件 sys (system) : 关于系统总线和设备的额外底层信息。 proc （process）: 进程信息文件，/proc文件系统，它允许用户模式进程访问内核数据结构的内容。/proc文件系统将许多内核数据结构的内容输出为一个用户程序可以读的文本文件的层次结构。 usr （UNIX Software Resource）: 与软件安装/执行相关 var （variable）: 变量文件目录，与系统运作过程有关 etc （etcetera）: 所有程序所需要的配置文件 lib （library）: 系统默认库路径文件 mnt （mount）: 挂载目录 tmp （temporary）: 临时文件目录 opt （option）: 可选目录（可以选择安装应用程序的目录） boot : 引导程序文件 home : 家目录（用户目录） root : root根目录 media : 多媒体及挂载目录]]></content>
       <categories>
         <category>Linux/Mac OS</category>
       </categories>
