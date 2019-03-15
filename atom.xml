@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2019-02-21T13:33:14.795Z</updated>
+  <updated>2019-03-15T08:17:11.781Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python中如何表示正负无穷大</title>
+    <link href="http://kunxiang.wang/2019/03/15/Python%E4%B8%AD%E5%A6%82%E4%BD%95%E8%A1%A8%E7%A4%BA%E6%AD%A3%E8%B4%9F%E6%97%A0%E7%A9%B7%E5%A4%A7/"/>
+    <id>http://kunxiang.wang/2019/03/15/Python中如何表示正负无穷大/</id>
+    <published>2019-03-15T08:12:43.000Z</published>
+    <updated>2019-03-15T08:17:11.781Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="cmath-inf"><a href="#cmath-inf" class="headerlink" title="cmath.inf"></a>cmath.inf</h4><p>Floating-point positive infinity. Equivalent to <code>float(&#39;inf&#39;)</code>.<br>负无穷-float(‘-inf’)</p><p>New in version 3.6.</p><h4 id="cmath-pi"><a href="#cmath-pi" class="headerlink" title="cmath.pi"></a>cmath.pi</h4><p>The mathematical constant π, as a float.</p><h4 id="cmath-e"><a href="#cmath-e" class="headerlink" title="cmath.e"></a>cmath.e</h4><p>The mathematical constant e, as a float.</p><h4 id="cmath-tau"><a href="#cmath-tau" class="headerlink" title="cmath.tau"></a>cmath.tau</h4><p>The mathematical constant τ, as a float.</p><p>New in version 3.6.</p><h4 id="cmath-infj"><a href="#cmath-infj" class="headerlink" title="cmath.infj"></a>cmath.infj</h4><p>Complex number with zero real part and positive infinity imaginary part. Equivalent to <code>complex(0.0, float(&#39;inf&#39;))</code>.</p><p>New in version 3.6.</p><h4 id="cmath-nan"><a href="#cmath-nan" class="headerlink" title="cmath.nan"></a>cmath.nan</h4><p>A floating-point “not a number” (NaN) value. Equivalent to <code>float(&#39;nan&#39;)</code>.</p><p>New in version 3.6.</p><h4 id="cmath-nanj"><a href="#cmath-nanj" class="headerlink" title="cmath.nanj"></a>cmath.nanj</h4><p>Complex number with zero real part and NaN imaginary part. Equivalent to complex(0.0, float(‘nan’)).</p><p>New in version 3.6.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;cmath-inf&quot;&gt;&lt;a href=&quot;#cmath-inf&quot; class=&quot;headerlink&quot; title=&quot;cmath.inf&quot;&gt;&lt;/a&gt;cmath.inf&lt;/h4&gt;&lt;p&gt;Floating-point positive infinity. Equivale
+      
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://kunxiang.wang/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+    
+      <category term="Python3" scheme="http://kunxiang.wang/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>进程地址空间</title>
@@ -574,30 +599,6 @@
     
     
       <category term="Java" scheme="http://kunxiang.wang/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言中的&#39;if(n==1)&#39;和&#39;if(1==n)&#39;的区别</title>
-    <link href="http://kunxiang.wang/2018/09/29/C%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84-if-n-1-%E5%92%8C-if-1-n-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://kunxiang.wang/2018/09/29/C语言中的-if-n-1-和-if-1-n-的区别/</id>
-    <published>2018-09-28T16:04:53.000Z</published>
-    <updated>2018-09-29T05:19:57.158Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>C语言中两种if语句判断方式。请问哪种写法更好？为什么？<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">if</span> (n == <span class="number">1</span>) <span class="comment">// 第一种判断方式</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">1</span> == n) <span class="comment">// 第二种判断方式</span></span><br></pre></td></tr></table></figure></p></blockquote><a id="more"></a><h4 id="第一种写法"><a href="#第一种写法" class="headerlink" title="第一种写法"></a>第一种写法</h4><h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul><li>在写判断语句的时候很容易漏写一个“=” ,比如把<br><code>if (n == 1) { } 写成 if (n = 1) { }</code>。<br>而在C中 “n = 1” 是有返回值的， 这个返回值是1， 于是原语句相当于<br>if ( 1 ) { } ,即条件永远为真，{ } 内的代码始终能够得到执行，当这样的<br>错误深深埋藏在代码当中，非常难以debug。</li></ul><h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><ul><li>主要目的是防止写成if(n = 1)而导致错误,但现在的编译器一般会给出警告信息所以现在不常用了.第1种更符合习惯,只要把相应的编译选项打开,一般不会出问题。</li></ul><h4 id="第二种写法"><a href="#第二种写法" class="headerlink" title="第二种写法"></a>第二种写法</h4><h5 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h5><ul><li>反人类<h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5></li><li><p>if ( 1 == n ) { } 及时少写一个”=”, 编译器就会报错，省得在运行期调试<br>得死去活来。</p></li><li><p>会省掉很多  debug  的时间的。</p></li></ul><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;C语言中两种if语句判断方式。请问哪种写法更好？为什么？&lt;br&gt;&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt; n;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (n == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;// 第一种判断方式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt; == n) &lt;span class=&quot;comment&quot;&gt;// 第二种判断方式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="面试" scheme="http://kunxiang.wang/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="面试" scheme="http://kunxiang.wang/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python中如何表示正负无穷大]]></title>
+    <url>%2F2019%2F03%2F15%2FPython%E4%B8%AD%E5%A6%82%E4%BD%95%E8%A1%A8%E7%A4%BA%E6%AD%A3%E8%B4%9F%E6%97%A0%E7%A9%B7%E5%A4%A7%2F</url>
+    <content type="text"><![CDATA[cmath.infFloating-point positive infinity. Equivalent to float(&#39;inf&#39;).负无穷-float(‘-inf’) New in version 3.6. cmath.piThe mathematical constant π, as a float. cmath.eThe mathematical constant e, as a float. cmath.tauThe mathematical constant τ, as a float. New in version 3.6. cmath.infjComplex number with zero real part and positive infinity imaginary part. Equivalent to complex(0.0, float(&#39;inf&#39;)). New in version 3.6. cmath.nanA floating-point “not a number” (NaN) value. Equivalent to float(&#39;nan&#39;). New in version 3.6. cmath.nanjComplex number with zero real part and NaN imaginary part. Equivalent to complex(0.0, float(‘nan’)). New in version 3.6.]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[进程地址空间]]></title>
     <url>%2F2019%2F02%2F21%2F%E8%BF%9B%E7%A8%8B%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%2F</url>
     <content type="text"><![CDATA[]]></content>
