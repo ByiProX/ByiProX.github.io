@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2019-03-15T08:17:11.781Z</updated>
+  <updated>2019-03-15T08:17:59.432Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -21,16 +21,14 @@
     <link href="http://kunxiang.wang/2019/03/15/Python%E4%B8%AD%E5%A6%82%E4%BD%95%E8%A1%A8%E7%A4%BA%E6%AD%A3%E8%B4%9F%E6%97%A0%E7%A9%B7%E5%A4%A7/"/>
     <id>http://kunxiang.wang/2019/03/15/Python中如何表示正负无穷大/</id>
     <published>2019-03-15T08:12:43.000Z</published>
-    <updated>2019-03-15T08:17:11.781Z</updated>
+    <updated>2019-03-15T08:17:59.432Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="cmath-inf"><a href="#cmath-inf" class="headerlink" title="cmath.inf"></a>cmath.inf</h4><p>Floating-point positive infinity. Equivalent to <code>float(&#39;inf&#39;)</code>.<br>负无穷-float(‘-inf’)</p><p>New in version 3.6.</p><h4 id="cmath-pi"><a href="#cmath-pi" class="headerlink" title="cmath.pi"></a>cmath.pi</h4><p>The mathematical constant π, as a float.</p><h4 id="cmath-e"><a href="#cmath-e" class="headerlink" title="cmath.e"></a>cmath.e</h4><p>The mathematical constant e, as a float.</p><h4 id="cmath-tau"><a href="#cmath-tau" class="headerlink" title="cmath.tau"></a>cmath.tau</h4><p>The mathematical constant τ, as a float.</p><p>New in version 3.6.</p><h4 id="cmath-infj"><a href="#cmath-infj" class="headerlink" title="cmath.infj"></a>cmath.infj</h4><p>Complex number with zero real part and positive infinity imaginary part. Equivalent to <code>complex(0.0, float(&#39;inf&#39;))</code>.</p><p>New in version 3.6.</p><h4 id="cmath-nan"><a href="#cmath-nan" class="headerlink" title="cmath.nan"></a>cmath.nan</h4><p>A floating-point “not a number” (NaN) value. Equivalent to <code>float(&#39;nan&#39;)</code>.</p><p>New in version 3.6.</p><h4 id="cmath-nanj"><a href="#cmath-nanj" class="headerlink" title="cmath.nanj"></a>cmath.nanj</h4><p>Complex number with zero real part and NaN imaginary part. Equivalent to complex(0.0, float(‘nan’)).</p><p>New in version 3.6.</p>]]></content>
+    <content type="html"><![CDATA[<h4 id="cmath-inf"><a href="#cmath-inf" class="headerlink" title="cmath.inf"></a>cmath.inf</h4><p>Floating-point positive infinity. Equivalent to <code>float(&#39;inf&#39;)</code>.<br>负无穷-float(‘-inf’)</p><p>New in version 3.6.</p><a id="more"></a><h4 id="cmath-pi"><a href="#cmath-pi" class="headerlink" title="cmath.pi"></a>cmath.pi</h4><p>The mathematical constant π, as a float.</p><h4 id="cmath-e"><a href="#cmath-e" class="headerlink" title="cmath.e"></a>cmath.e</h4><p>The mathematical constant e, as a float.</p><h4 id="cmath-tau"><a href="#cmath-tau" class="headerlink" title="cmath.tau"></a>cmath.tau</h4><p>The mathematical constant τ, as a float.</p><p>New in version 3.6.</p><h4 id="cmath-infj"><a href="#cmath-infj" class="headerlink" title="cmath.infj"></a>cmath.infj</h4><p>Complex number with zero real part and positive infinity imaginary part. Equivalent to <code>complex(0.0, float(&#39;inf&#39;))</code>.</p><p>New in version 3.6.</p><h4 id="cmath-nan"><a href="#cmath-nan" class="headerlink" title="cmath.nan"></a>cmath.nan</h4><p>A floating-point “not a number” (NaN) value. Equivalent to <code>float(&#39;nan&#39;)</code>.</p><p>New in version 3.6.</p><h4 id="cmath-nanj"><a href="#cmath-nanj" class="headerlink" title="cmath.nanj"></a>cmath.nanj</h4><p>Complex number with zero real part and NaN imaginary part. Equivalent to complex(0.0, float(‘nan’)).</p><p>New in version 3.6.</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h4 id=&quot;cmath-inf&quot;&gt;&lt;a href=&quot;#cmath-inf&quot; class=&quot;headerlink&quot; title=&quot;cmath.inf&quot;&gt;&lt;/a&gt;cmath.inf&lt;/h4&gt;&lt;p&gt;Floating-point positive infinity. Equivale
-      
+      &lt;h4 id=&quot;cmath-inf&quot;&gt;&lt;a href=&quot;#cmath-inf&quot; class=&quot;headerlink&quot; title=&quot;cmath.inf&quot;&gt;&lt;/a&gt;cmath.inf&lt;/h4&gt;&lt;p&gt;Floating-point positive infinity. Equivalent to &lt;code&gt;float(&amp;#39;inf&amp;#39;)&lt;/code&gt;.&lt;br&gt;负无穷-float(‘-inf’)&lt;/p&gt;
+&lt;p&gt;New in version 3.6.&lt;/p&gt;
     
     </summary>
     
