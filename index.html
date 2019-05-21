@@ -409,6 +409,24 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -460,9 +478,17 @@
 
       
         
-          
-            
-          
+          <p><code>需求</code>：正在开发一个监控系统，要求将多台日志信息实时采集出来，然后保存到Kafka中，后期对日志数据进行spark运算、大数据处理分析，日志按大小，时间切分。</p>
+<p><code>运用的技术</code>：RandomAccessFile类中seek方法可以从指定位置读取文件，可以用来实现文件实时读取，JDK文档有对RandomAccessFile的介绍。</p>
+<p><code>思想</code>：在每一次读取后，close一下就不会影响重命名操作了。因为日志是线上机器产生的，我们只需要写实时读取的方法即可，但是这里为了模拟实际情况，也把产生日志的方法出来，在测试的时候，可以手动改变日志的名称，更为方便的处理方式—–将日志mock.log直接删除即可。</p>
+<p>模拟写日志的类<br>因为日志是按大小和时间切分的，在测试的时候，直接修改日志的名称，或者删除日志。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/21/Java实时读取log日志文件示例代码/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
