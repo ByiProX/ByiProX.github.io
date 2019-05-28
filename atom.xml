@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2019-05-28T02:16:42.565Z</updated>
+  <updated>2019-05-28T05:53:09.257Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://kunxiang.wang/2019/05/28/Linux%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5/"/>
     <id>http://kunxiang.wang/2019/05/28/Linux查看端口占用情况/</id>
     <published>2019-05-28T02:11:18.000Z</published>
-    <updated>2019-05-28T02:16:42.565Z</updated>
+    <updated>2019-05-28T05:53:09.257Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="lsof"><a href="#lsof" class="headerlink" title="lsof"></a>lsof</h3><ul><li><p>lsof -i 用以显示符合条件的进程情况，lsof(list open files)是一个列出当前系统打开文件的工具。以root用户来执行lsof -i命令</p></li><li><p>lsof -i:端口号，用于查看某一端口的占用情况，比如查看22号端口使用情况，lsof -i:22</p></li></ul><p><img src="https://imgsa.baidu.com/exp/w=500/sign=7c78de6d512c11dfded1bf2353266255/500fd9f9d72a60593b8cf8942e34349b023bba9b.jpg" alt=""></p><h3 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h3><p>netstat -tunlp用于显示tcp，udp的端口和进程等相关情况</p><p><img src="https://imgsa.baidu.com/exp/w=500/sign=df8e7e19df33c895a67e987be1127397/4bed2e738bd4b31c57ab9d3581d6277f9f2ff8ad.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="lsof"><a href="#lsof" class="headerlink" title="lsof"></a>lsof</h3><ul><li><p>lsof -i 用以显示符合条件的进程情况，lsof(list open files)是一个列出当前系统打开文件的工具。以root用户来执行lsof -i命令</p></li><li><p>lsof -i:端口号，用于查看某一端口的占用情况，比如查看22号端口使用情况，lsof -i:22</p></li></ul><p><img src="https://upload-images.jianshu.io/upload_images/2952111-34cfaa89c8a414a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2019-05-28 at 13.50.08.png"></p><h3 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h3><p>netstat -tunlp用于显示tcp，udp的端口和进程等相关情况</p><p><img src="https://upload-images.jianshu.io/upload_images/2952111-79a5c99ebc5ba5c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2019-05-28 at 13.51.26.png"></p>]]></content>
     
     <summary type="html">
     
