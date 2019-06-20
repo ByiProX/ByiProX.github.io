@@ -356,6 +356,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/11/27/Python中append和extend效率/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/27/Python中append和extend效率/" itemprop="url">
+                  Python中append和extend效率
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-27 15:29:14" itemprop="dateCreated datePublished" datetime="2018-11-27T15:29:14+08:00">2018-11-27</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-进阶/" itemprop="url" rel="index"><span itemprop="name">Python3 进阶</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/27/Python中append和extend效率/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/27/Python中append和extend效率/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/27/Python中append和extend效率/" class="leancloud_visitors" data-flag-title="Python中append和extend效率">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>python提供了一个名为extend的方法，该方法将一个列表中的所有元素添加到另一个列表的结尾。在作用上，调用<code>data.extend(other)</code>的输出结果与以下代码的输出结果相同。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> elem <span class="keyword">in</span> other:</span><br><span class="line">    data.append(elem)</span><br></pre></td></tr></table></figure></p>
+<p>在任何情况下，运行时间都正比于另一张列表的长度，并且之所以<code>摊销</code>，是因为第一张列表的底层数组需要调整打下以容纳增添的元素。</p>
+<p>在实践中，相对于重复调用append方法，我们更倾向于选择extend方法。原因是渐进分析中隐含的常数明显更小。extend方法效率更高体现在三个方面：</p>
+<ol>
+<li>首先，使用合适的python方法总会有一些优势，因为这些方法通常使用本地编译语言执行</li>
+<li>与调用很多独立的方法相比，调用一个函数完成所有工作的开销更小。</li>
+<li><code>extend提升的效率来源更新列表的最终大小能提前计算出。</code>例如第二个数据集是非常大的，当重复调用append时，底层动态数组会有很多次调整大小的风险，如果调用一次extend方法，最多执行一次调整工作。</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/27/Python中append和extend效率/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/11/07/IP地址的分类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2047,197 +2235,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/10/29/Java之super和this/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByiProX">
-      <meta itemprop="description" content="每天进步一点点">
-      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/29/Java之super和this/" itemprop="url">
-                  Java之super和this
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-29 09:31:49" itemprop="dateCreated datePublished" datetime="2018-10-29T09:31:49+08:00">2018-10-29</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/10/29/Java之super和this/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/29/Java之super和this/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/10/29/Java之super和this/" class="leancloud_visitors" data-flag-title="Java之super和this">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>this: 当前的对象，哪一个对象调用this，this就代指哪一个对象。使用在某一个对象中。<br>super: 当前对象的父类方法或构造器。使用在继承关系中。</p>
-<h4 id="super"><a href="#super" class="headerlink" title="super"></a>super</h4><ol>
-<li><p><code>当new一个子类对象的时候，会先创建一个父类对象</code>。可以认为，在调用子类构造器之前，在子类构造器中会先调用父类的构造器，默认调用的是父类无参数的构造器。调用父类构造器后悔创建一个父类的对象。</p>
-</li>
-<li><p>如果父类不存在可以被子类访问的构造器，则不能存在子类，即子类不会被创建成功。</p>
-</li>
-<li><p>如果父类没有提供无参数的构造器，则此时子类必须显式的通过<code>super</code>语句去掉用父类带参数的构造器。</p>
-</li>
-<li><p>子类构建的所有的行为建立在第一条规则基础之上。</p>
-</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/10/29/Java之super和this/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2289,7 +2286,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">135</span>
+                    <span class="site-state-item-count">136</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

@@ -356,6 +356,192 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2019/06/20/服务器中的物理CPU、逻辑CPU和CPU核数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/20/服务器中的物理CPU、逻辑CPU和CPU核数/" itemprop="url">
+                  服务器中的物理CPU、逻辑CPU和CPU核数
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-20 22:18:07" itemprop="dateCreated datePublished" datetime="2019-06-20T22:18:07+08:00">2019-06-20</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/操作系统/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/20/服务器中的物理CPU、逻辑CPU和CPU核数/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/06/20/服务器中的物理CPU、逻辑CPU和CPU核数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/20/服务器中的物理CPU、逻辑CPU和CPU核数/" class="leancloud_visitors" data-flag-title="服务器中的物理CPU、逻辑CPU和CPU核数">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h2><h3 id="物理CPU"><a href="#物理CPU" class="headerlink" title="物理CPU"></a>物理CPU</h3><p>实际Server中插槽上的CPU个数<br>物理cpu数量，可以数不重复的 physical id 有几个,查看方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'physical id'</span> /proc/cpuinfo|sort|uniq|wc -l</span><br><span class="line">2</span><br><span class="line">```         </span><br><span class="line"></span><br><span class="line"><span class="comment">### CPU核数           </span></span><br><span class="line">单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。</span><br><span class="line">比如现在的i5 760,是双核心四线程的CPU、而 i5 2250 是四核心四线程的CPU 。一般来说，物理CPU个数×每颗核数就应该等于逻辑CPU的个数，如果不相等的话，则表示服务器的CPU支持超线程技术    </span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">cat /proc/cpuinfo |grep <span class="string">"cpu cores"</span>|uniq</span><br><span class="line">grep <span class="string">'cpu cores'</span> /proc/cpuinfo|uniq|awk -F <span class="string">':'</span> <span class="string">'&#123;print $2&#125;'</span></span><br><span class="line">8</span><br></pre></td></tr></table></figure></p>
+<h3 id="逻辑CPU"><a href="#逻辑CPU" class="headerlink" title="逻辑CPU"></a>逻辑CPU</h3><p>Linux用户对 /proc/cpuinfo 这个文件肯定不陌生. 它是用来存储cpu硬件信息的<br>信息内容分别列出了processor 0 – n 的规格。这里需要注意，如果你认为n就是真实的cpu数的话, 就大错特错了。</p>
+<p>一般情况，我们认为<code>一颗cpu可以有多核</code>，加上<code>intel的超线程技术(HT)</code>, 可以在逻辑上再分一倍数量的cpu core出来<br><code>逻辑CPU数量=物理cpu数量 x cpu cores 这个规格值 x 2(如果支持并开启ht)</code>。</p>
+<p><code>如果有一个以上逻辑处理器拥有相同的 core id 和 physical id，则说明系统支持超线程（HT）技术</code></p>
+<p>备注一下：Linux下top查看的CPU也是逻辑CPU个数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cpuinfo| grep <span class="string">'processor'</span> |wc -l</span><br><span class="line">32（支持超线程）</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/06/20/服务器中的物理CPU、逻辑CPU和CPU核数/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2019/05/28/Linux查看端口占用情况/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1973,194 +2159,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/11/27/Python中append和extend效率/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByiProX">
-      <meta itemprop="description" content="每天进步一点点">
-      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/27/Python中append和extend效率/" itemprop="url">
-                  Python中append和extend效率
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-27 15:29:14" itemprop="dateCreated datePublished" datetime="2018-11-27T15:29:14+08:00">2018-11-27</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-进阶/" itemprop="url" rel="index"><span itemprop="name">Python3 进阶</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/27/Python中append和extend效率/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/11/27/Python中append和extend效率/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/27/Python中append和extend效率/" class="leancloud_visitors" data-flag-title="Python中append和extend效率">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>python提供了一个名为extend的方法，该方法将一个列表中的所有元素添加到另一个列表的结尾。在作用上，调用<code>data.extend(other)</code>的输出结果与以下代码的输出结果相同。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> elem <span class="keyword">in</span> other:</span><br><span class="line">    data.append(elem)</span><br></pre></td></tr></table></figure></p>
-<p>在任何情况下，运行时间都正比于另一张列表的长度，并且之所以<code>摊销</code>，是因为第一张列表的底层数组需要调整打下以容纳增添的元素。</p>
-<p>在实践中，相对于重复调用append方法，我们更倾向于选择extend方法。原因是渐进分析中隐含的常数明显更小。extend方法效率更高体现在三个方面：</p>
-<ol>
-<li>首先，使用合适的python方法总会有一些优势，因为这些方法通常使用本地编译语言执行</li>
-<li>与调用很多独立的方法相比，调用一个函数完成所有工作的开销更小。</li>
-<li><code>extend提升的效率来源更新列表的最终大小能提前计算出。</code>例如第二个数据集是非常大的，当重复调用append时，底层动态数组会有很多次调整大小的风险，如果调用一次extend方法，最多执行一次调整工作。</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/27/Python中append和extend效率/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2212,7 +2210,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">135</span>
+                    <span class="site-state-item-count">136</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
