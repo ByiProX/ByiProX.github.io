@@ -116,20 +116,20 @@
 
 
 
-  <meta name="description" content="重要概念物理CPU实际Server中插槽上的CPU个数物理cpu数量，可以数不重复的 physical id 有几个,查看方法 123456789101112grep &apos;physical id&apos; /proc/cpuinfo|sort|uniq|wc -l2```         ### CPU核数           单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。">
+  <meta name="description" content="重要概念物理CPU实际Server中插槽上的CPU个数物理cpu数量，可以数不重复的 physical id 有几个,查看方法 123456789101112grep &quot;physical id&quot; /proc/cpuinfo|sort|uniq|wc -l2```         ### CPU核数           单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。">
 <meta name="keywords" content="操作系统">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器中的物理CPU、逻辑CPU和CPU核数">
 <meta property="og:url" content="http://kunxiang.wang/2019/06/20/服务器中的物理CPU、逻辑CPU和CPU核数/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="重要概念物理CPU实际Server中插槽上的CPU个数物理cpu数量，可以数不重复的 physical id 有几个,查看方法 123456789101112grep &apos;physical id&apos; /proc/cpuinfo|sort|uniq|wc -l2```         ### CPU核数           单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。">
+<meta property="og:description" content="重要概念物理CPU实际Server中插槽上的CPU个数物理cpu数量，可以数不重复的 physical id 有几个,查看方法 123456789101112grep &quot;physical id&quot; /proc/cpuinfo|sort|uniq|wc -l2```         ### CPU核数           单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-81c2a7654f73c645.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-70b5f8c2b58f77cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-06-23T13:18:50.895Z">
+<meta property="og:updated_time" content="2019-06-23T14:23:08.731Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器中的物理CPU、逻辑CPU和CPU核数">
-<meta name="twitter:description" content="重要概念物理CPU实际Server中插槽上的CPU个数物理cpu数量，可以数不重复的 physical id 有几个,查看方法 123456789101112grep &apos;physical id&apos; /proc/cpuinfo|sort|uniq|wc -l2```         ### CPU核数           单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。">
+<meta name="twitter:description" content="重要概念物理CPU实际Server中插槽上的CPU个数物理cpu数量，可以数不重复的 physical id 有几个,查看方法 123456789101112grep &quot;physical id&quot; /proc/cpuinfo|sort|uniq|wc -l2```         ### CPU核数           单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2952111-81c2a7654f73c645.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -480,12 +480,12 @@
 
       
         <h2 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h2><h3 id="物理CPU"><a href="#物理CPU" class="headerlink" title="物理CPU"></a>物理CPU</h3><p>实际Server中插槽上的CPU个数<br>物理cpu数量，可以数不重复的 physical id 有几个,查看方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'physical id'</span> /proc/cpuinfo|sort|uniq|wc -l</span><br><span class="line">2</span><br><span class="line">```         </span><br><span class="line"></span><br><span class="line"><span class="comment">### CPU核数           </span></span><br><span class="line">单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。</span><br><span class="line">比如现在的i5 760,是双核心四线程的CPU、而 i5 2250 是四核心四线程的CPU 。一般来说，物理CPU个数×每颗核数就应该等于逻辑CPU的个数，如果不相等的话，则表示服务器的CPU支持超线程技术    </span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">cat /proc/cpuinfo |grep <span class="string">"cpu cores"</span>|uniq</span><br><span class="line">grep <span class="string">'cpu cores'</span> /proc/cpuinfo|uniq|awk -F <span class="string">':'</span> <span class="string">'&#123;print $2&#125;'</span></span><br><span class="line">8</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">"physical id"</span> /proc/cpuinfo|sort|uniq|wc -l</span><br><span class="line">2</span><br><span class="line">```         </span><br><span class="line"></span><br><span class="line"><span class="comment">### CPU核数           </span></span><br><span class="line">单块CPU上面能处理数据的芯片组的数量，如双核、四核等 （cpu cores）。</span><br><span class="line">比如现在的i5 760,是双核心四线程的CPU、而 i5 2250 是四核心四线程的CPU 。一般来说，物理CPU个数×每颗核数就应该等于逻辑CPU的个数，如果不相等的话，则表示服务器的CPU支持超线程技术    </span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">cat /proc/cpuinfo |grep <span class="string">"cpu cores"</span>|uniq</span><br><span class="line">grep <span class="string">"cpu cores"</span> /proc/cpuinfo|uniq|awk -F <span class="string">":"</span> <span class="string">"&#123;print <span class="variable">$2</span>&#125;"</span></span><br><span class="line">8</span><br></pre></td></tr></table></figure>
 <h3 id="逻辑CPU"><a href="#逻辑CPU" class="headerlink" title="逻辑CPU"></a>逻辑CPU</h3><p>Linux用户对 /proc/cpuinfo 这个文件肯定不陌生. 它是用来存储cpu硬件信息的<br>信息内容分别列出了processor 0 – n 的规格。这里需要注意，如果你认为n就是真实的cpu数的话, 就大错特错了。</p>
 <p>一般情况，我们认为<code>一颗cpu可以有多核</code>，加上<code>intel的超线程技术(HT)</code>, 可以在逻辑上再分一倍数量的cpu core出来<br><code>逻辑CPU数量=物理cpu数量 x cpu cores 这个规格值 x 2(如果支持并开启ht)</code>。</p>
 <p><code>如果有一个以上逻辑处理器拥有相同的 core id 和 physical id，则说明系统支持超线程（HT）技术</code></p>
 <p>备注一下：Linux下top查看的CPU也是逻辑CPU个数</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cpuinfo| grep <span class="string">'processor'</span> |wc -l</span><br><span class="line">32（支持超线程）</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cpuinfo| grep <span class="string">"processor"</span> |wc -l</span><br><span class="line">32（支持超线程）</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="查看方法"><a href="#查看方法" class="headerlink" title="查看方法"></a>查看方法</h2><p>通过cat /proc/cpuinfocpu来查看相关信息。</p>
 <blockquote>
