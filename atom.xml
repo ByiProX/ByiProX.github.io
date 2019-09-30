@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2019-09-29T03:02:35.783Z</updated>
+  <updated>2019-09-30T16:18:07.788Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>神经网络的学习为何要设定损失函数？</title>
+    <link href="http://kunxiang.wang/2019/10/01/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%BA%E4%BD%95%E8%A6%81%E8%AE%BE%E5%AE%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%EF%BC%9F/"/>
+    <id>http://kunxiang.wang/2019/10/01/神经网络的学习为何要设定损失函数？/</id>
+    <published>2019-09-30T16:17:38.000Z</published>
+    <updated>2019-09-30T16:18:07.788Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://kunxiang.wang/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="http://kunxiang.wang/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="神经网络" scheme="http://kunxiang.wang/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>神经网络的激活函数为什么要使用非线性函数</title>
@@ -548,31 +568,6 @@
 &lt;li&gt;&lt;p&gt;&lt;code&gt;静态代码块：使用static修饰的初始化代码块。&lt;/code&gt;&lt;br&gt;静态代码块在主方法执行之前进行调用，而且只会执行一次。main方法是程序的入口，静态代码块由于main方法执行。静态成员随着字节码的加载也加载进JVM,此时main还没执行，因为方法需要JVM调用，先把字节码加载进JVM，然后JVM再调用main方法。&lt;code&gt;一般的，我们使用静态代码块来做初始化操作，加载资源，加载配置文件等。&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="http://kunxiang.wang/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="http://kunxiang.wang/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java编译类型和运行类型</title>
-    <link href="http://kunxiang.wang/2018/10/29/Java%E7%BC%96%E8%AF%91%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E8%A1%8C%E7%B1%BB%E5%9E%8B/"/>
-    <id>http://kunxiang.wang/2018/10/29/Java编译类型和运行类型/</id>
-    <published>2018-10-29T14:00:41.000Z</published>
-    <updated>2018-10-29T14:18:16.575Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">----------</span><br><span class="line">Animal a = <span class="keyword">new</span> Dog();</span><br><span class="line">a.eat()<span class="comment">//编译报错</span></span><br><span class="line">((Dog) a).run()<span class="comment">//编译通过</span></span><br></pre></td></tr></table></figure><p>如上的简易代码，编译时会报错。<br>编译类型：Animal a<br>运行类型：new Dog()</p><p>编译时，编译类型会根据a.eat()查找eat方法，找不到就会报错。<br>使用强制类型转换可以解决该问题，即<br>((Dog) a).run()</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=
-      
     
     </summary>
     
