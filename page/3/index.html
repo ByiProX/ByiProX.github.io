@@ -356,6 +356,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/10/30/Java中的代码块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/30/Java中的代码块/" itemprop="url">
+                  Java中的代码块
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-30 09:24:49" itemprop="dateCreated datePublished" datetime="2018-10-30T09:24:49+08:00">2018-10-30</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/30/Java中的代码块/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/10/30/Java中的代码块/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/10/30/Java中的代码块/" class="leancloud_visitors" data-flag-title="Java中的代码块">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>什么是代码块：在类或者方法中，直接使用<code>{}</code>括起来的一段代码，表示一块带啊区域。</p>
+</blockquote>
+<p>代码在块中属于局部变量，只在自己所在的花括号区域内有效。<br>根据代码块所定义的位置不同，代码块分为三种形式</p>
+<ol>
+<li><p><code>局部代码块</code>：直接定义在<code>方法内部</code>的代码块。<br>一般的，不会直接使用局部代码块，只不过会结合if、while等关键字，表示一块代码区域。</p>
+</li>
+<li><p><code>初始化代码块(构造代码块)</code>：直接定义在<code>类</code>中。<br>每次创建对象的时候都会执行初始化代码块：每次创建对象的时候都会调用构造器，在调用构造器之前，会先执行本类中的初始化代码块。<code>PS</code>:<code>通过反编译，可以看到，初始化代码也作为构造器最初的语句。</code>一般不使用这种用法，因为不够优雅美观。即使要初始化操作，一般在构造器中进行初始化即可。或者专门定义一个方法做初始化操作，方法哦构造器中进行调用。</p>
+</li>
+<li><p><code>静态代码块：使用static修饰的初始化代码块。</code><br>静态代码块在主方法执行之前进行调用，而且只会执行一次。main方法是程序的入口，静态代码块由于main方法执行。静态成员随着字节码的加载也加载进JVM,此时main还没执行，因为方法需要JVM调用，先把字节码加载进JVM，然后JVM再调用main方法。<code>一般的，我们使用静态代码块来做初始化操作，加载资源，加载配置文件等。</code></p>
+</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/30/Java中的代码块/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/10/29/Java编译类型和运行类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1984,189 +2176,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/09/27/面试总结之Java-Web篇-持续更新/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByiProX">
-      <meta itemprop="description" content="每天进步一点点">
-      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/面试总结之Java-Web篇-持续更新/" itemprop="url">
-                  面试总结之Java Web篇(持续更新)
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-27 21:16:53" itemprop="dateCreated datePublished" datetime="2018-09-27T21:16:53+08:00">2018-09-27</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/Java-Web/" itemprop="url" rel="index"><span itemprop="name">Java Web</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/27/面试总结之Java-Web篇-持续更新/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/27/面试总结之Java-Web篇-持续更新/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/09/27/面试总结之Java-Web篇-持续更新/" class="leancloud_visitors" data-flag-title="面试总结之Java Web篇(持续更新)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2218,7 +2227,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">138</span>
+                    <span class="site-state-item-count">139</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2392,7 +2401,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

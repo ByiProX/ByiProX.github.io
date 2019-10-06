@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[浅析Python中列表操作之*和*=]]></title>
+    <url>%2F2019%2F10%2F07%2F%E6%B5%85%E6%9E%90Python%E4%B8%AD%E5%88%97%E8%A1%A8%E6%93%8D%E4%BD%9C%E4%B9%8B-%E5%92%8C%2F</url>
+    <content type="text"><![CDATA[初学Python时总是会将a=n理解为a=an，稍微深入后就会知道在Python中的不同，其中调用mul ，而=调用imul 。 对于list对象也支持乘法操作，截止到Python3.7版本，上述仍然是成立的。我们知道list是由C实现的，所以真正的底层调用肯定是C的实现。观察list对象的C实现的源码我们会知道乘法操作调用list_repeat，=会调用list_inplace_repeat，下面分别看一下两者的C实现方式。初学Python时总是会将a=n理解为a=an，稍微深入后就会知道在Python中的不同，其中调用mul ，而=调用imul 。 ▍* –&gt; list_repeat123456789101112static PyObject *list_repeat(PyListObject *a, Py_ssize_t n)&#123; ... size = Py_SIZE(a) * n; if (size == 0) return PyList_New(0); np = (PyListObject *) list_new_prealloc(size); ... return (PyObject *) np;&#125;从以上可以看出，list_repeat方法需要多少空间就申请多少空间，该操作返回的一个新的列表对象。 ▍*= –&gt; list_inplace_repeat12345678910111213141516171819202122static PyObject *list_inplace_repeat(PyListObject *self, Py_ssize_t n)&#123; ... size = PyList_GET_SIZE(self); if (list_resize(self, size*n) &lt; 0) return NULL; ...&#125;static intlist_resize(PyListObject *self, Py_ssize_t newsize)&#123; if (allocated &gt;= newsize &amp;&amp; newsize &gt;= (allocated &gt;&gt; 1)) &#123; assert(self-&gt;ob_item != NULL || newsize == 0); Py_SIZE(self) = newsize; return 0; &#125; ... new_allocated = (size_t)newsize + (newsize &gt;&gt; 3) + (newsize &lt; 9 ? 3 : 6); ...&#125; list_inplace_repeat代码中通过调用list_resize来进行扩容，并告诉它这个列表需要容纳size*n个元素。从list_resize代码来看，当allocated空间足够时，不会进行扩容操作。但是新申请的空间总是比所需要的大的。如果进行pop等减小list元素数量的操作来看，实际上列表的大小也会按照相应策略进行缩减操作。 If the newsize falls lower than half the allocated size, then proceed with the realloc() to shrink the list. — From cpython ▍总结 *=会调用list_resize，可能会引起list空间扩容的情况，而且此时list对象占用空间会比实际list对象中元素占用空间大。 *会按需获取申请空间大小，不会调用list_resize方法。]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+        <tag>Python源码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[神经网络的学习为何要设定损失函数？]]></title>
     <url>%2F2019%2F10%2F01%2F%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%BA%E4%BD%95%E8%A6%81%E8%AE%BE%E5%AE%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%EF%BC%9F%2F</url>
     <content type="text"><![CDATA[这里所说的“学习”是指从训练数据中自动获取最优权重参数的过程。学习的目的就是以该损失函数为基准，找出能使它的值达到最小的权重参数。 可能会有人问：我们想获得的是能提高识别精度的参数，特意再导入一个损失函数不是有些重复劳动吗?既然我们的目标是获得使识别精度尽可能高的神经网络，那不是应该把识别精度作为指标吗? 听起来很有道理！ 对于这一疑问，我们可以根据“导数“在神经网络学习中的作用来回答。 在神经网络的学习中，寻找最优参数(权重和偏置)时， 要寻找使损失函数的值尽可能小的参数。为了找到使损失函数的值尽可能小 的地方，需要计算参数的导数(确切地讲是梯度)，然后以这个导数为指引， 逐步更新参数的值。 假设有一个神经网络，现在我们来关注这个神经网络中的某一个权重参数。此时，对该权重参数的损失函数求导，此处导数的含义可以理解为“如果稍微改变这个权重参数的值，损失函数的值会如何变化”。如果导数的值为负，通过使该权重参数向正方向改变，可以减小损失函数的值；反过来，如果导数的值为正， 则通过使该权重参数向负方向改变，可以减小损失函数的值。不过，当导数为 0 时，无论权重参数向哪个方向变化，损失函数的值都不会改变，此时该权重参数的更新会停在此处。 在进行神经网络的学习时，不能将识别精度作为指标。因为如果以识别精度为指标，则参数的导数在绝大多数地方都会变为 0，导致参数无法更新。那为什么用识别精度作为指标时，参数的导数在绝大多数地方都会变成0呢？ 为了回答这个问题，我们来思考另一个具体例子。假设某个神经网络正确识别出了 100个训练数据中的32笔，此时识别精度为 32 %。如果以识别精度为指标，即使稍微改变权重参数的值，识别精度也仍将保持在 32 %，不会出现变化。也就是说，仅仅微调参数，是无法改善识别精度的。即便识别精度有所改善，它的值也不会像 32.0123 . . . % 这样连续变化，而是变为 33 %、 34 % 这样的不连续的、离散的值。而如果把损失函数作为指标，则当前损失函数的值可以表示为 0.92543 . . . 这样的值。并且，如果稍微改变一下参数 的值，对应的损失函数也会像 0.93432 . . . 这样发生连续性的变化。 作为激活函数的阶跃函数也有同样的情况。出于相同的原因，如果使用阶跃函数作为激活函数，神经网络的学习将无法进行。原因是阶跃函数的导数在绝大多数地方(除了0以外的地方)均为0。 也就是说，如果使用了阶跃函数，那么即便将损失函数作为指标，参数的微小变化也会被阶跃函数抹杀，导致损失函数的值不会产生任何变化。 而 sigmoid 函数，不仅函数的输出(竖轴的值)是连续变化的，曲线的斜率(导数) 也是连续变化的。也就是说，sigmoid 函数的导数在任何地方都不为 0。这对神经网络的学习非常重要。得益于这个斜率不会为 0 的性质，神经网络的学习得以正确进行。 —-参考数据深度学习入门-Deep Learning from Scratch]]></content>
