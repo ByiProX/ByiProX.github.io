@@ -1,8 +1,8 @@
 rm backup_source_files.tar.gz
-tar zcvf backup_source_files.tar.gz ./source/ ./themes ./node_modules _config.yml ./public ./scaffolds ./package* ./README.md
+tar zcvf backup_source_files.tar.gz ./source/_posts/  ./README.md
 
 git add .
-git commit -m 'backup source files'
+git commit -m 'backup markdown files'
 git push origin master:Hexo-Blog-Backup
 
 echo "backup finished !"
