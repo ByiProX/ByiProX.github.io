@@ -116,18 +116,22 @@
 
 
 
-  <meta name="description" content="包装类中的缓存设计(享元模式-FlyWeight)，本质就是缓存设计。 Byte/Short/Integer/Long:缓存[-128, 127]区间的数据；Character:缓存[0,127]区间的数据.">
-<meta name="keywords" content="Java">
+  <meta name="description" content="区别 列表是动态数组，它们可变且可以重设长度(改变其内部元素的个数)。 元组是静态数组，它们不可变，且其内部数据一旦创建便无法改变。 元组缓存于Python运行时环境，这意味着我们每次使用元组时无须访问内核去 分配内存。  这些区别揭示了两者在设计哲学上的不同:元组用于描述一个不会改变的事物的多个属性，而列表可被用于保存多个互相独立对象的数据集合。">
+<meta name="keywords" content="Python3,Python源码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java包装类中的缓存设计">
-<meta property="og:url" content="http://kunxiang.wang/2018/10/30/Java包装类中的缓存设计/index.html">
+<meta property="og:title" content="浅析Python中的列表和元组">
+<meta property="og:url" content="http://kunxiang.wang/2019/10/07/浅析Python中的列表和元组/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="包装类中的缓存设计(享元模式-FlyWeight)，本质就是缓存设计。 Byte/Short/Integer/Long:缓存[-128, 127]区间的数据；Character:缓存[0,127]区间的数据.">
+<meta property="og:description" content="区别 列表是动态数组，它们可变且可以重设长度(改变其内部元素的个数)。 元组是静态数组，它们不可变，且其内部数据一旦创建便无法改变。 元组缓存于Python运行时环境，这意味着我们每次使用元组时无须访问内核去 分配内存。  这些区别揭示了两者在设计哲学上的不同:元组用于描述一个不会改变的事物的多个属性，而列表可被用于保存多个互相独立对象的数据集合。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-30T07:50:02.617Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191007131224310.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191007131407450.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191007132116239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-10-07T05:26:09.102Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java包装类中的缓存设计">
-<meta name="twitter:description" content="包装类中的缓存设计(享元模式-FlyWeight)，本质就是缓存设计。 Byte/Short/Integer/Long:缓存[-128, 127]区间的数据；Character:缓存[0,127]区间的数据.">
+<meta name="twitter:title" content="浅析Python中的列表和元组">
+<meta name="twitter:description" content="区别 列表是动态数组，它们可变且可以重设长度(改变其内部元素的个数)。 元组是静态数组，它们不可变，且其内部数据一旦创建便无法改变。 元组缓存于Python运行时环境，这意味着我们每次使用元组时无须访问内核去 分配内存。  这些区别揭示了两者在设计哲学上的不同:元组用于描述一个不会改变的事物的多个属性，而列表可被用于保存多个互相独立对象的数据集合。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191007131224310.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70">
 
 
 
@@ -136,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/2018/10/30/Java包装类中的缓存设计/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2019/10/07/浅析Python中的列表和元组/"/>
 
 
 
@@ -146,7 +150,7 @@
   };
 </script>
 
-  <title>Java包装类中的缓存设计 | Quentin's Blog</title>
+  <title>浅析Python中的列表和元组 | Quentin's Blog</title>
   
 
 
@@ -359,7 +363,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/10/30/Java包装类中的缓存设计/">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2019/10/07/浅析Python中的列表和元组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -376,7 +380,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Java包装类中的缓存设计
+          <h2 class="post-title" itemprop="name headline">浅析Python中的列表和元组
               
             
           </h2>
@@ -401,7 +405,7 @@
                 
               
 
-              <time title="创建时间：2018-10-30 15:13:26" itemprop="dateCreated datePublished" datetime="2018-10-30T15:13:26+08:00">2018-10-30</time>
+              <time title="创建时间：2019-10-07 13:25:10" itemprop="dateCreated datePublished" datetime="2019-10-07T13:25:10+08:00">2019-10-07</time>
             
 
             
@@ -419,7 +423,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-进阶/" itemprop="url" rel="index"><span itemprop="name">Python3 进阶</span></a></span>
 
                 
                 
@@ -434,10 +438,10 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/30/Java包装类中的缓存设计/#comments" itemprop="discussionUrl">
+                <a href="/2019/10/07/浅析Python中的列表和元组/#comments" itemprop="discussionUrl">
                 
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/10/30/Java包装类中的缓存设计/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/10/07/浅析Python中的列表和元组/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -445,7 +449,7 @@
 
           
           
-             <span id="/2018/10/30/Java包装类中的缓存设计/" class="leancloud_visitors" data-flag-title="Java包装类中的缓存设计">
+             <span id="/2019/10/07/浅析Python中的列表和元组/" class="leancloud_visitors" data-flag-title="浅析Python中的列表和元组">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -476,13 +480,24 @@
       
 
       
-        <p>包装类中的<code>缓存设计</code>(<a href="https://baike.baidu.com/item/%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/10541959?fr=aladdin" target="_blank" rel="noopener">享元模式-FlyWeight</a>)，本质就是缓存设计。</p>
-<p><code>Byte/Short/Integer/Long</code>:缓存[-128, 127]区间的数据；<br><code>Character</code>:缓存[0,127]区间的数据.<br><a id="more"></a><br>首先来看一个有意思的面试题</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//case 1</span></span><br><span class="line">        Integer i1 = <span class="keyword">new</span> Integer(<span class="number">123</span>);</span><br><span class="line">        Integer i2 = <span class="keyword">new</span> Integer(<span class="number">123</span>);</span><br><span class="line">        System.out.println(i1 == i2); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//case 2</span></span><br><span class="line">        Integer i3 = Integer.valueOf(<span class="number">123</span>);</span><br><span class="line">        Integer i4 = Integer.valueOf(<span class="number">123</span>);</span><br><span class="line">        System.out.println(i3 == i4); <span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//case 3</span></span><br><span class="line">        Integer i5 = <span class="number">123</span>; <span class="comment">//自动装箱操作，底层编译后代码为Integer.valueOf(123);    和case2相同</span></span><br><span class="line">        Integer i6 = <span class="number">123</span>;</span><br><span class="line">        System.out.println(i5 == i6); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//case 4</span></span><br><span class="line">        Integer ii1 = <span class="keyword">new</span> Integer(<span class="number">250</span>);</span><br><span class="line">        Integer ii2 = <span class="keyword">new</span> Integer(<span class="number">250</span>);</span><br><span class="line">        System.out.println(ii1 == ii2); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//case 5</span></span><br><span class="line">        Integer ii3 = Integer.valueOf(<span class="number">250</span>); <span class="comment">// 250不在缓存区间内，就得new新对象</span></span><br><span class="line">        Integer ii4 = Integer.valueOf(<span class="number">250</span>);</span><br><span class="line">        System.out.println(ii3 == ii4); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// case 6</span></span><br><span class="line">        Integer ii5 = <span class="number">250</span>;</span><br><span class="line">        Integer ii6 = <span class="number">250</span>;</span><br><span class="line">        System.out.println(ii5 == ii6); <span class="comment">// false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>查看一下integer源码,如下所示。可以看到Integer的缓存空间在[-128, 127]之间。<br>当传入的数值在此区间内时，之间调用缓存内的数据。反之，重新<code>return new Integer(i);</code>在堆空间返回一个新整形对象。</p>
-<p>那么我们应该如何比较两个对象的值得大小呢？<br>正确的方法是使用<code>equals</code>来比较，equals方法来自于Object根对象，按照官方的建议，在构造子类对象时需要复写父类中的equals方法，来比较我们关心的数据，而不是内存地址（<code>==</code>比较的是内存地址）。现将Integer中的equals拿出来检查一下复写情况</p>
-<p><code>((Integer)obj).intValue()</code>拆箱操作，<code>value == ((Integer)obj).intValue();</code>使用基本的数据类型进行比较。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> Integer) &#123;</span><br><span class="line">        <span class="keyword">return</span> value == ((Integer)obj).intValue(); <span class="comment">// 拆箱操作，比较基本数据类型</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">            <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">IntegerCache</span> </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> low = -<span class="number">128</span>;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> high;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> Integer cache[];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">static</span> &#123; <span class="comment">// 初始化操作</span></span><br><span class="line">            <span class="comment">// high value may be configured by property</span></span><br><span class="line">            <span class="keyword">int</span> h = <span class="number">127</span>;</span><br><span class="line">            String integerCacheHighPropValue =</span><br><span class="line">                sun.misc.VM.getSavedProperty(<span class="string">"java.lang.Integer.IntegerCache.high"</span>);</span><br><span class="line">            <span class="keyword">if</span> (integerCacheHighPropValue != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> i = parseInt(integerCacheHighPropValue);</span><br><span class="line">                    i = Math.max(i, <span class="number">127</span>);</span><br><span class="line">                    <span class="comment">// Maximum array size is Integer.MAX_VALUE</span></span><br><span class="line">                    h = Math.min(i, Integer.MAX_VALUE - (-low) -<span class="number">1</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span>( NumberFormatException nfe) &#123;</span><br><span class="line">                    <span class="comment">// If the property cannot be parsed into an int, ignore it.</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            high = h;</span><br><span class="line"></span><br><span class="line">            cache = <span class="keyword">new</span> Integer[(high - low) + <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">int</span> j = low;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; cache.length; k++)</span><br><span class="line">                cache[k] = <span class="keyword">new</span> Integer(j++);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// range [-128, 127] must be interned (JLS7 5.1.7)</span></span><br><span class="line">            <span class="keyword">assert</span> IntegerCache.high &gt;= <span class="number">127</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">IntegerCache</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><ol>
+<li>列表是<code>动态数组</code>，它们可变且可以重设长度(改变其内部元素的个数)。</li>
+<li>元组是<code>静态数组</code>，它们不可变，且其内部数据一旦创建便无法改变。</li>
+<li>元组缓存于Python运行时环境，这意味着我们每次使用元组时无须访问内核去 分配内存。</li>
+</ol>
+<p>这些区别揭示了两者在设计哲学上的不同:元组用于描述一个不会改变的事物的多个属性，而列表可被用于保存多个互相独立对象的数据集合。</p>
+<a id="more"></a>
+<h4 id="动态数组–列表"><a href="#动态数组–列表" class="headerlink" title="动态数组–列表"></a>动态数组–列表</h4><p>列表可以改变大小及内容不同，列表的可变性的代价在于存储它们需要额外的内存以及使用它们需要额外的计算。我们在<a href="https://mp.weixin.qq.com/s?__biz=MzU5OTUwMTA4NA==&amp;mid=2247483804&amp;idx=1&amp;sn=4cef9561e71e5c6a621529be757a5b2f&amp;chksm=feb2b1efc9c538f9ddcb91175fedd6468cfbc5e2b613b3d8a48077a8ea0194b41a7ff8e20e9d&amp;token=475883438&amp;lang=zh_CN#rd" target="_blank" rel="noopener">浅析Python中列表操作之*和*=</a>中一起研究了cpython的list对象的源码，看到了list对象的动态分配数组的大体过程(调用resize函数)，而且在动态调整数组大小时使用如下的分配公式:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new_allocated = (<span class="keyword">size_t</span>)newsize + (newsize &gt;&gt; <span class="number">3</span>) + (newsize &lt; <span class="number">9</span> ? <span class="number">3</span> : <span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+<p>下图是一个列表多次添加元素时分配空间的变化示意图：</p>
+<p><img src="https://img-blog.csdnimg.cn/20191007131224310.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h4 id="静态数组–元组"><a href="#静态数组–元组" class="headerlink" title="静态数组–元组"></a>静态数组–元组</h4><p>元组的不可改变性使其成为了一个非常轻量级的数据结构。这意味着存储元组不需要很多的内存开销，而且对元组的操作也非常直观。一旦元组被创建，它的内容无法被修改或它的大小也无法被改变。虽然它们不支持改变大小，但是我们可以将两个元组合并成一个新元组。这一操作类似列表的resize操作，但我们不需要为新生成的元组分配任何<code>额外</code>的空间。任意两个元组相加或者元组乘以一个整数进行repeat始终返回一个新分配的元组。其中两个元组相加调用cpython中的tupleconcat方法，而乘法操作调用的是tuplerepeat方法。上述两个方法的实现如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> PyObject *</span><br><span class="line">tupleconcat(PyTupleObject *a, PyObject *bb)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    size = Py_SIZE(a) + Py_SIZE(b);</span><br><span class="line">    np = tuple_alloc(size);</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> (PyObject *)np;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> PyObject *</span><br><span class="line">tuplerepeat(PyTupleObject *a, Py_ssize_t n)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    size = Py_SIZE(a) * n;</span><br><span class="line">    np = tuple_alloc(size);</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (PyObject *) np;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>元组的静态特性的另一个好处体现在一些会在Python后台发生的事:资源缓存。Python是一门垃圾收集语言，这意味着当一个变量不再被使用时，Python会将该变量使用的内存释放回操作系统，以供其他程序(或变量)使用。<code>然而，从源码中可以看到，对于长度为1~20的元组，即使它们不再被使用，它们的空间也不会立刻被还给系统，而是留待未来使用</code>。这意味着当未来需要一个同样大小的新元组时，我们不再需要向操作系统申请一块内存来存放数据，因为我们已经有了预留的内存。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191007131407450.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>我们可以验证资源缓存这一点，可以看到初始化一个列表消耗的时间是初始化一个元组消耗时间的6倍！可以想象一下，某些场景中在一个循环中频繁创建列表，耗时还是非常可观的，此时可以考虑使用元组来提高执行效率。<br><img src="https://img-blog.csdnimg.cn/20191007132116239.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<hr>
 
       
     </div>
@@ -503,7 +518,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Python3/" rel="tag"># Python3</a>
+          
+            <a href="/tags/Python源码/" rel="tag"># Python源码</a>
           
         </div>
       
@@ -536,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/30/Java中的单例模式/" rel="next" title="Java中的单例模式">
-                <i class="fa fa-chevron-left"></i> Java中的单例模式
+              <a href="/2019/10/07/浅析Python中列表操作之-和/" rel="next" title="浅析Python中列表操作之*和*=">
+                <i class="fa fa-chevron-left"></i> 浅析Python中列表操作之*和*=
               </a>
             
           </div>
@@ -545,10 +562,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/01/Redis之数据类型的内部编码/" rel="prev" title="Redis之数据类型的内部编码">
-                Redis之数据类型的内部编码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -603,8 +616,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -879,6 +901,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#动态数组–列表"><span class="nav-number">2.</span> <span class="nav-text">动态数组–列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态数组–元组"><span class="nav-number">3.</span> <span class="nav-text">静态数组–元组</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1081,9 +1119,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://kunxiang.wang/2018/10/30/Java包装类中的缓存设计/';
-        this.page.identifier = '2018/10/30/Java包装类中的缓存设计/';
-        this.page.title = 'Java包装类中的缓存设计';
+        this.page.url = 'http://kunxiang.wang/2019/10/07/浅析Python中的列表和元组/';
+        this.page.identifier = '2019/10/07/浅析Python中的列表和元组/';
+        this.page.title = '浅析Python中的列表和元组';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');
