@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[神经网络中为什么不能将权重初始值设置为一样的值]]></title>
+    <url>%2F2019%2F11%2F04%2F%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B8%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%B0%86%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%80%BC%E8%AE%BE%E7%BD%AE%E4%B8%BA%E4%B8%80%E6%A0%B7%E7%9A%84%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[先说结论，如果权重初始值设为0的话，将无法正确进行学习。 这是因为在误差反向传播法中，所有的权重值都会进行相同的更新。比如，在2层神经网络中，假设第1层和第2层的权重为0。这样一来，正向传播时，因为输入层的权重为0，所以第2层的神经元全部会被传递相同的值。第2层的神经元中全部输入相同的值，这意味着反向传播时第2层的权重全部都会进行相同的更新。因此，权重被更新为相同的值，并拥有了对称的值(重复的值)。这使得神经网络拥有许多不同的权重的意义丧失了。为了防止“权重均一化” (严格地讲，是为了瓦解权重的对称结构)，必须随机生成初始值。 实际上，考虑一个全连接的神经网络，同一层中的任意神经元是同构的，对于相同的输入他们会有同样的输出，此时如果将参数全部初始化为相同的值，那么无论前向传播还是反向传播，参数的取值还是完全相同，学习将无法打破这种对称性，最终同一网络层中的各个参数仍然是相同的。 综上，必须随机的初始化神经网络参数的值，以打破这种对称性。]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+        <tag>神经网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Git分支管理策略及简单操作]]></title>
     <url>%2F2019%2F10%2F10%2FGit%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5%E5%8F%8A%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[前几天整理了一下之前项目的开发代码，当时使用了Git来进行代码管理。虽然本人熟悉常用的Git操作，但是对分支的管理经验非常欠缺。拿这个项目来说，在项目中有不下20个分支，每个分支间的继承关系相当之混乱，非常不利于代码的安全管理。因此，通过在网络上的学习，总结了一下关于Git分支管理的策略方法，供后续回顾学习。 当然必须承认，代码分支管理策略有很多种，不局限于以下介绍。但是下面介绍的这个分支管理策略非常具有工程借鉴意义，几乎适用于所有开发场景。 分支 命名 说明 主分支 master 主分支，所有提供给用户使用的正式版本，都在这个主分支上发布 开发分支 develop 开发分支，永远是功能最新最全的分支 功能分支 feature-* 新功能分支，某个功能点正在开发阶段 发布版本 release-* 发布定期要上线的功能 修复分支 hotfix-* 修复线上代码的 bug 1. 主分支master首先，代码库应该有且仅有一个主分支。所有提供给用户使用的正式版本，都在这个主分支上发布。Git主分支的名字，默认叫做master。它是自动建立的，版本库初始化以后，默认就是在主分支在进行开发。团队成员从主分支(master)获得的都是处于可发布状态的代码。 2. 开发分支develop日常开发应该在另一条分支上完成。我们把开发用的分支，叫做develop分支。开发分支(develop)应该总能够获得最新开发进展的代码。如果想正式对外发布，就在master分支上，对develop分支进行merge。下面介绍常用的几个命令： 12345678# 在master分支上创建develop分支git checkout -b develop master# 切换到master分支git checkout master# 对develop分支合并到当前master分支git merge --no-ff develop 3. 临时分支除了常设分支以外，还有一些临时性分支，用于应对一些特定目的的版本开发。临时性分支主要有三种： 功能（feature）分支 预发布（release）分支 修补bug（bugfix）分支 这三种分支都属于临时性需要，使用完以后，最好删除，使得代码库的常设分支始终只有master和develop。 功能分支feature分支是为了开发某种特定功能，从develop分支上面分出来的。开发完成后，要再并入develop。功能分支的名字，可以采用feature-xxx的形式命名。123456789# 从develop创建一个功能分支git checkout -b feature-x develop# 开发完成后，将功能分支合并到develop分支：git checkout developgit merge --no-ff feature-x# 删除feature分支git branch -d feature-x 预发布分支release分支是指发布正式版本之前（即合并到master分支之前），我们可能需要有一个预发布的版本进行测试而创建的分支。12345678910111213141516# 创建一个预发布分支git checkout -b release-x develop# 确认没有问题后，合并到master分支git checkout mastergit merge --no-ff release-x# 对合并生成的新节点，做一个标签git tag -a 1.2# 再合并到develop分支git checkout developgit merge --no-ff release-x# 最后，删除预发布分支git branch -d release-x bug修补分支软件正式发布以后，难免会出现bug。这时就需要创建一个分支，进行bug修补。 修补bug分支是从Master分支上面分出来的。修补结束以后，再合并进master和develop分支。它的命名，可以采用hotfix-x的形式。 1234567891011121314# 创建一个修补bug分支git checkout -b hotfix-x master# 修补结束后，合并到master分支git checkout mastergit merge --no-ff hotfix-xgit tag -a 0.1# 再合并到develop分支git checkout developgit merge --no-ff hotfix-x# 删除"修补bug分支"git branch -d hotfix-x 总结上面许多指令使用的–no-ff的意思是no-fast-farward的缩写，使用该命令可以保持更多的版本演进的细节。如果不使用该参数，默认使用了fast-farword进行merge。两者的区别如下图所示： 最后分享一下整体的分支管理策略图示: 参考： A successful Git branching model—from Vincent Driessen]]></content>
@@ -1591,8 +1603,8 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>Git</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
