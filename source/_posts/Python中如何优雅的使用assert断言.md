@@ -56,7 +56,7 @@ read_file函数在被调用执行后，依然需要满足一定条件，比如fi
 
 ```python
 def read_file(file_path):
-    assert is_instance(file_path, str)
+    assert isinstance(file_path, str)
     if not check_exist(file_path):
         raise FileNotFoundError()
     if not has_privilege(file_path):
