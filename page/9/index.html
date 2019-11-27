@@ -356,6 +356,190 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/03/29/Python3-for-else-陷阱/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/29/Python3-for-else-陷阱/" itemprop="url">
+                  Python3 for ... else ...陷阱
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-29 17:49:49" itemprop="dateCreated datePublished" datetime="2018-03-29T17:49:49+08:00">2018-03-29</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-进阶/" itemprop="url" rel="index"><span itemprop="name">Python3 进阶</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/29/Python3-for-else-陷阱/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/29/Python3-for-else-陷阱/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/29/Python3-for-else-陷阱/" class="leancloud_visitors" data-flag-title="Python3 for ... else ...陷阱">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>假设有如下代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">if</span> i == <span class="number">5</span>:</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'found it! i = %s'</span> % i</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'not found it ...'</span></span><br></pre></td></tr></table></figure></p>
+<p>我们期望的结果是，当找到5时打印出：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">found it! i = <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<p>实际上打印出来的结果为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">found it! i = <span class="number">5</span></span><br><span class="line"><span class="keyword">not</span> found it ...</span><br></pre></td></tr></table></figure></p>
+<p>显然这不是我们期望的结果。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/29/Python3-for-else-陷阱/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/03/29/What-is-the-difference-between-“-is-None-”-and-“-None-”-Reprint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1995,188 +2179,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2018/03/17/Python3-基于顺序表技术实现栈类/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ByiProX">
-      <meta itemprop="description" content="每天进步一点点">
-      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quentin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/17/Python3-基于顺序表技术实现栈类/" itemprop="url">
-                  Python3 基于顺序表技术实现栈类
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-17 14:40:55" itemprop="dateCreated datePublished" datetime="2018-03-17T14:40:55+08:00">2018-03-17</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Data-Structures/" itemprop="url" rel="index"><span itemprop="name">Data Structures</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/17/Python3-基于顺序表技术实现栈类/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/17/Python3-基于顺序表技术实现栈类/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/03/17/Python3-基于顺序表技术实现栈类/" class="leancloud_visitors" data-flag-title="Python3 基于顺序表技术实现栈类">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="定义异常类"><a href="#定义异常类" class="headerlink" title="定义异常类"></a>定义异常类</h2><p>实现栈结构之前，先考虑为操作失败的处理定义一个异常类。在这里通过继承已有的异常类定义自己的异常类。由于栈操作(如空栈弹出)时不满足需要可以看做参数值错误，采用下面的定义<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StackUnderflow</span><span class="params">(ValueError)</span>:</span>  <span class="comment"># 栈下溢，空栈访问</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
-<p>上面把异常<code>StackUnderflow</code>定义为<code>ValueError</code>子类，只简单定义了一个类名，类体部分只有一个<code>pass</code>语句，未定义任何新属性，因为不准备提供<code>ValueError</code>之外的新功能，只是想与其他<code>ValueError</code>异常有所区分，程序出错时能产生不同的错误信息。必要时可以定义专门的异常处理操作。自定义异常与python内置异常类似，同样通过<code>except</code>进行捕捉和处理，但只能通过<code>raise</code>语句引发。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/17/Python3-基于顺序表技术实现栈类/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2228,7 +2230,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">144</span>
+                    <span class="site-state-item-count">145</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2325,7 +2327,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
