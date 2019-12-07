@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2019-11-27T08:45:59.105Z</updated>
+  <updated>2019-12-07T15:24:26.564Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简述Python中变量作用域的规则</title>
+    <link href="http://kunxiang.wang/2019/12/07/%E7%AE%80%E8%BF%B0Python%E4%B8%AD%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E8%A7%84%E5%88%99/"/>
+    <id>http://kunxiang.wang/2019/12/07/简述Python中变量作用域的规则/</id>
+    <published>2019-12-07T15:22:52.000Z</published>
+    <updated>2019-12-07T15:24:26.564Z</updated>
+    
+    <content type="html"><![CDATA[<p>介绍这一题目的目的是引出python中较为高级的话题—闭包和装饰器。</p><p>在下面的例子中，定义并测试一个函数，它读取两个变量的值:一个是局部变量a，是函数的参数； 另一个是变量b，这个函数没有定义它。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(a)</span>:</span></span><br><span class="line"><span class="meta">... </span>    print(a)</span><br><span class="line"><span class="meta">... </span>    print(b)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f1(<span class="number">1</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">3</span>, <span class="keyword">in</span> f1</span><br><span class="line">NameError: name <span class="string">'b'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br></pre></td></tr></table></figure><p>出现此结果完全在意料范围内，因为我们压根从来没有定义过变量b。如果我们在调用函数f1前定义变量b，那么不会存在问题，因为此处的b是<code>全局变量</code>。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f1(<span class="number">1</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure><p>下面来一个较为特殊的例子<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(a)</span>:</span></span><br><span class="line"><span class="meta">... </span>    print(a)</span><br><span class="line"><span class="meta">... </span>    print(b)</span><br><span class="line"><span class="meta">... </span>    b=<span class="number">3</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f2(<span class="number">1</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">3</span>, <span class="keyword">in</span> f2</span><br><span class="line">UnboundLocalError: local variable <span class="string">'b'</span> referenced before assignment</span><br></pre></td></tr></table></figure></p><p>可以看到在赋值之前，第二个print失败了，<code>提示局部变量b在赋值前被引用了</code>。</p><p>实际上，Python 编译函数的定义体时，它判断 b 是局部变量，因为在函数中给它赋值了。生成的字节码证实了这种判断（后面会讨论），Python 会尝试从本地环境获取 b。后面调用f2(1)时，f2的定义体会获取并打印局部变量 a 的值，但是尝试获取局部变量 b 的值时，发现 b 没有绑定值。</p><p>这是Python的设计选择：Python不要求声明变量类型，但是默认在函数定义体中赋值的变量是局部变量。如果在函数中赋值时想让解释器把 b 当成全局变量，要使用 <code>global</code> 声明：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">f3</span><span class="params">(a)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">global</span> b</span><br><span class="line"><span class="meta">... </span>    print(a)</span><br><span class="line"><span class="meta">... </span>    print(b)</span><br><span class="line"><span class="meta">... </span>    b=<span class="number">3</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f3(<span class="number">1</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f3(<span class="number">1</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=<span class="number">30</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line"><span class="number">30</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f3(<span class="number">1</span>)</span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">30</span></span><br></pre></td></tr></table></figure></p><p>接下来，我们看一下f1和f2的字节码：<br><img src="https://upload-images.jianshu.io/upload_images/2952111-8e292da51753cfef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2019-12-07 at 17.10.03.png"></p><p>对于f1函数的反汇编：</p><ol><li>LOAD_GLOBAL加载全局名称 print。</li><li>LOAD_FAST加载本地名称 a。</li><li>LOAD_GLOBAL加载全局名称 b。</li></ol><p>对于f2函数的反汇编：</p><ol><li>LOAD_FAST加载本地名称 b。这表明，编译器把 b 视作<code>局部变量</code>，即使在后面才为 b 赋值。</li></ol><p>对于函数f3的反汇编如下图所示，可以看到变量b为全局变量。<br><img src="https://upload-images.jianshu.io/upload_images/2952111-9f820de0acd3270c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Screen Shot 2019-12-07 at 17.30.33.png"></p><p>至此，我们可以基本了解python函数中变量作用域的问题，这将为后面介绍的闭包和装饰器的学习打下基础。</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;介绍这一题目的目的是引出python中较为高级的话题—闭包和装饰器。&lt;/p&gt;
+&lt;p&gt;在下面的例子中，定义并测试一个函数，它读取两个变量的值:一个是局部变量a，是函数的参数； 另一个是变量b，这个函数没有定义它。&lt;/p&gt;
+&lt;figure class=&quot;highlight py
+      
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://kunxiang.wang/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python3 闭包" scheme="http://kunxiang.wang/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E9%97%AD%E5%8C%85/"/>
+    
+    
+      <category term="Python3" scheme="http://kunxiang.wang/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>用Emoji解释编程语言中的map、filter、reduce</title>
@@ -553,35 +582,6 @@
       
         &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas
       
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://kunxiang.wang/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-    
-      <category term="Python3" scheme="http://kunxiang.wang/tags/Python3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python中append和extend效率</title>
-    <link href="http://kunxiang.wang/2018/11/27/Python%E4%B8%ADappend%E5%92%8Cextend%E6%95%88%E7%8E%87/"/>
-    <id>http://kunxiang.wang/2018/11/27/Python中append和extend效率/</id>
-    <published>2018-11-27T07:29:14.000Z</published>
-    <updated>2018-11-27T07:58:02.098Z</updated>
-    
-    <content type="html"><![CDATA[<p>python提供了一个名为extend的方法，该方法将一个列表中的所有元素添加到另一个列表的结尾。在作用上，调用<code>data.extend(other)</code>的输出结果与以下代码的输出结果相同。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> elem <span class="keyword">in</span> other:</span><br><span class="line">    data.append(elem)</span><br></pre></td></tr></table></figure></p><p>在任何情况下，运行时间都正比于另一张列表的长度，并且之所以<code>摊销</code>，是因为第一张列表的底层数组需要调整打下以容纳增添的元素。</p><p>在实践中，相对于重复调用append方法，我们更倾向于选择extend方法。原因是渐进分析中隐含的常数明显更小。extend方法效率更高体现在三个方面：</p><ol><li>首先，使用合适的python方法总会有一些优势，因为这些方法通常使用本地编译语言执行</li><li>与调用很多独立的方法相比，调用一个函数完成所有工作的开销更小。</li><li><code>extend提升的效率来源更新列表的最终大小能提前计算出。</code>例如第二个数据集是非常大的，当重复调用append时，底层动态数组会有很多次调整大小的风险，如果调用一次extend方法，最多执行一次调整工作。</li></ol><a id="more"></a><p>我们所熟悉的构造新列表的语法，在几乎所有情况下，该行为的渐进效率在创建列表的长度方面是线性的。但是不同的方法在<br>实际效率上会有不同。</p><p>在python中经常使用一个诸如<code>squares = [k*k for k in range(1, n+1)]</code>的例子作为<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">squares = []</span><br><span class="line"><span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, n+<span class="number">1</span>)</span><br><span class="line">    squares.append(k*k)</span><br></pre></td></tr></table></figure></p><p>的一种速记，并由此引入了列表推导式。实验可以证明用列表推导式语法比不断增添数据来创建列表速度更快。</p><p>类似的，使用乘法操作初始化一个固定的列表，也是一种很常见的python风格，例如<code>[0]*100</code>生成一张长度为100的列表，这样做不但语法简单，而且比逐步构造这样的表效率更高</p><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;python提供了一个名为extend的方法，该方法将一个列表中的所有元素添加到另一个列表的结尾。在作用上，调用&lt;code&gt;data.extend(other)&lt;/code&gt;的输出结果与以下代码的输出结果相同。&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; elem &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; other:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    data.append(elem)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;在任何情况下，运行时间都正比于另一张列表的长度，并且之所以&lt;code&gt;摊销&lt;/code&gt;，是因为第一张列表的底层数组需要调整打下以容纳增添的元素。&lt;/p&gt;
-&lt;p&gt;在实践中，相对于重复调用append方法，我们更倾向于选择extend方法。原因是渐进分析中隐含的常数明显更小。extend方法效率更高体现在三个方面：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;首先，使用合适的python方法总会有一些优势，因为这些方法通常使用本地编译语言执行&lt;/li&gt;
-&lt;li&gt;与调用很多独立的方法相比，调用一个函数完成所有工作的开销更小。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;extend提升的效率来源更新列表的最终大小能提前计算出。&lt;/code&gt;例如第二个数据集是非常大的，当重复调用append时，底层动态数组会有很多次调整大小的风险，如果调用一次extend方法，最多执行一次调整工作。&lt;/li&gt;
-&lt;/ol&gt;
     
     </summary>
     
