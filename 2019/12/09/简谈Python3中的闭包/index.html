@@ -116,16 +116,20 @@
 
 
 
-  <meta name="description" content="每天进步一点点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Quentin&#39;s Blog">
-<meta property="og:url" content="http://kunxiang.wang/archives/page/4/index.html">
+  <meta name="description" content="欢迎关注微信公众号：CodeWorks问题或建议，请公众号留言，欢迎非抬杠式讨论  闭包是指延伸了作用域的函数，其中包含函数定义体中引用、但是不在定义体中定义的非全局变量。闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。 当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,创建一个闭包必须满足以下几点:  必须有">
+<meta name="keywords" content="Python3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简谈Python3中的闭包">
+<meta property="og:url" content="http://kunxiang.wang/2019/12/09/简谈Python3中的闭包/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="每天进步一点点">
+<meta property="og:description" content="欢迎关注微信公众号：CodeWorks问题或建议，请公众号留言，欢迎非抬杠式讨论  闭包是指延伸了作用域的函数，其中包含函数定义体中引用、但是不在定义体中定义的非全局变量。闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。 当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,创建一个闭包必须满足以下几点:  必须有">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2952111-3249d24d6da9aa8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-12-09T15:11:36.019Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Quentin&#39;s Blog">
-<meta name="twitter:description" content="每天进步一点点">
+<meta name="twitter:title" content="简谈Python3中的闭包">
+<meta name="twitter:description" content="欢迎关注微信公众号：CodeWorks问题或建议，请公众号留言，欢迎非抬杠式讨论  闭包是指延伸了作用域的函数，其中包含函数定义体中引用、但是不在定义体中定义的非全局变量。闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。 当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,创建一个闭包必须满足以下几点:  必须有">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2952111-3249d24d6da9aa8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -134,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/archives/page/4/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2019/12/09/简谈Python3中的闭包/"/>
 
 
 
@@ -144,7 +148,7 @@
   };
 </script>
 
-  <title>归档 | Quentin's Blog</title>
+  <title>简谈Python3中的闭包 | Quentin's Blog</title>
   
 
 
@@ -191,7 +195,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -252,7 +256,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
   </li>
@@ -335,442 +339,276 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2019/12/09/简谈Python3中的闭包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ByiProX">
+      <meta itemprop="description" content="每天进步一点点">
+      <meta itemprop="image" content="/uploads/selfieblackwhite.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quentin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
-         
+          <h2 class="post-title" itemprop="name headline">简谈Python3中的闭包
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-09 23:10:14" itemprop="dateCreated datePublished" datetime="2019-12-09T23:10:14+08:00">2019-12-09</time>
+            
+
+            
+          </span>
+
           
-        非常好! 目前共计 147 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-进阶/" itemprop="url" rel="index"><span itemprop="name">Python3 进阶</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python3-进阶/Python3-闭包/" itemprop="url" rel="index"><span itemprop="name">Python3 闭包</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/09/简谈Python3中的闭包/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/12/09/简谈Python3中的闭包/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/12/09/简谈Python3中的闭包/" class="leancloud_visitors" data-flag-title="简谈Python3中的闭包">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
       
+        <blockquote>
+<p>欢迎关注微信公众号：CodeWorks<br>问题或建议，请公众号留言，欢迎<code>非抬杠式</code>讨论</p>
+</blockquote>
+<p>闭包是指<strong>延伸了作用域</strong>的函数，其中包含函数定义体中引用、但是不在定义体中定义的<code>非全局变量</code>。<br>闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。</p>
+<p>当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,<code>创建一个闭包必须满足以下几点</code>:</p>
+<ol>
+<li>必须有一个内嵌函数</li>
+<li>内嵌函数必须引用外部函数中的变量</li>
+<li>外部函数的返回值必须是内嵌函数</li>
+</ol>
+<p>闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。</p>
+<a id="more"></a>
+<p>闭包的概念难以掌握，下面通过示例进行理解。</p>
+<p>假设我们要实现一个计算<strong><code>移动平均</code></strong>功能的代码，如何实现呢？</p>
+<p>初学者可能会用<code>类</code>来实现，如示例1:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Averager</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.series = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, new_value)</span>:</span></span><br><span class="line">        self.series.append(new_value)</span><br><span class="line">        total = sum(self.series)</span><br><span class="line">        <span class="keyword">return</span> total/len(self.series)</span><br></pre></td></tr></table></figure></p>
+<p>Average的实例是可调用对象：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg = Averager()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">10</span>)</span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">11</span>)</span><br><span class="line"><span class="number">10.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">12</span>)</span><br><span class="line"><span class="number">11.0</span></span><br></pre></td></tr></table></figure></p>
+<p>下面使用<code>函数式</code>实现，如示例2:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_averager</span><span class="params">()</span>:</span></span><br><span class="line">    series = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">averager</span><span class="params">(new_value)</span>:</span></span><br><span class="line">        series.append(new_value)</span><br><span class="line">        total = sum(series)</span><br><span class="line">        <span class="keyword">return</span> total/len(series)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> averager</span><br></pre></td></tr></table></figure></p>
+<p>调用make_averager时，返回一个averager函数对象。每次调用averager时，该对象会把参数添加到series中，然后计算当前平均值，如下所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg = make_averager()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">10</span>)</span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">11</span>)</span><br><span class="line"><span class="number">10.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">12</span>)</span><br><span class="line"><span class="number">11.0</span></span><br></pre></td></tr></table></figure></p>
+<p>以上两个示例有共通之处：调用Averager()或make_averager()得到一个可调用对象avg，该对象会更新历史值，然后计算当前均值。示例1中，avg是Averager的实例；实例2中是内部函数averager。不管怎样，我们都只需要调用avg(n)，把n放入系列值series中，然后重新计算均值。</p>
+<p>Averager()类的实例avg在哪里存储历史值很明显，<code>但是第二个示例中的avg函数在哪里寻找series呢</code>？</p>
+<p>注意，series是make_averager函数的局部变量，因为那个函数的定义体中初始化了<code>series = []</code>。可是，调用avg(10)时，make_averager函数已经返回了，而他的本地作用域也一去不复返了。</p>
+<p>在averager函数中，series是<code>自由变量</code>，指未在本地作用域中绑定的变量，图形化展示如下：<br><img src="https://upload-images.jianshu.io/upload_images/2952111-3249d24d6da9aa8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="闭包"></p>
+<p><strong>averager的闭包延伸到那个函数的作用域之外，包含对自由变量series的绑定</strong></p>
+<p>我们可以审查返回的averager对象，发现Python在<code>__code__</code>属性（表示编译后的函数定义体）中保存局部变量和自由变量的名称，如下所示</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 审查make_averager创建的函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_varnames</span><br><span class="line">(<span class="string">'new_value'</span>, <span class="string">'total'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_freevars</span><br><span class="line">(<span class="string">'series'</span>,)</span><br></pre></td></tr></table></figure>
+<p>series绑定在返回的avg函数的<code>__closure__</code>属性中。<code>avg.__closure__</code>中各个元素对应于<code>avg.__code__.co_freevars</code>中的一个名称。这些元素是cell对象，有个<code>cell_content</code>属性，保存着真正的值。这些属性的值如示例所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_freevars</span><br><span class="line">(<span class="string">'series'</span>,)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__closure__</span><br><span class="line">(&lt;cell at <span class="number">0x108b89828</span>: list object at <span class="number">0x108ae96c8</span>&gt;,)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__closure__[<span class="number">0</span>].cell_contents</span><br><span class="line">[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]</span><br></pre></td></tr></table></figure></p>
+<p>综上，<code>闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定</code>。</p>
+<p>稍微有点编程经验的人会看到，我们实现的计算移动平均值得方法实际上有很大的改进空间，在后面的介绍中会进行改进。</p>
 
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python3/" rel="tag"># Python3</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
-        
+
         
 
         
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2018">2018</h2>
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/29/Java之Object根类/" itemprop="url">
-              
-                <span itemprop="name">Java之Object根类</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-29T11:48:41+08:00"
-              content="2018-10-29" >
-          10-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/07/简述Python中变量作用域的规则/" rel="next" title="简述Python中变量作用域的规则">
+                <i class="fa fa-chevron-left"></i> 简述Python中变量作用域的规则
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/29/Java之super和this/" itemprop="url">
-              
-                <span itemprop="name">Java之super和this</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-29T09:31:49+08:00"
-              content="2018-10-29" >
-          10-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/26/Java方法的值传递机制/" itemprop="url">
-              
-                <span itemprop="name">Java方法的值传递机制</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-26T10:48:38+08:00"
-              content="2018-10-26" >
-          10-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/25/四种方法实现交换两个变量的值/" itemprop="url">
-              
-                <span itemprop="name">四种方法实现交换两个变量的值</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-25T09:38:37+08:00"
-              content="2018-10-25" >
-          10-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/10/24/Java中的-赋值运算/" itemprop="url">
-              
-                <span itemprop="name">Java中的+=赋值运算</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-24T15:22:03+08:00"
-              content="2018-10-24" >
-          10-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/29/C语言中的-if-n-1-和-if-1-n-的区别/" itemprop="url">
-              
-                <span itemprop="name">C语言中的'if(n==1)'和'if(1==n)'的区别</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-29T00:04:53+08:00"
-              content="2018-09-29" >
-          09-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/28/如何理解http是无连接，无状态的？/" itemprop="url">
-              
-                <span itemprop="name">如何理解http是无连接，无状态的？</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-28T16:46:24+08:00"
-              content="2018-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/28/JSP相关概念/" itemprop="url">
-              
-                <span itemprop="name">JSP相关概念</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-28T10:49:49+08:00"
-              content="2018-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/27/面试总结之Java-Web篇-持续更新/" itemprop="url">
-              
-                <span itemprop="name">面试总结之Java Web篇(持续更新)</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-27T21:16:53+08:00"
-              content="2018-09-27" >
-          09-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/26/数据库范式/" itemprop="url">
-              
-                <span itemprop="name">数据库范式</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-26T22:44:54+08:00"
-              content="2018-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1250,6 +1088,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -1264,6 +1106,23 @@
     <script id="dsq-count-scr" src="https://ByiProX.disqus.com/count.js" async></script>
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'http://kunxiang.wang/2019/12/09/简谈Python3中的闭包/';
+        this.page.identifier = '2019/12/09/简谈Python3中的闭包/';
+        this.page.title = '简谈Python3中的闭包';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://ByiProX.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        loadComments();
+      
+    </script>
   
 
 
@@ -1608,43 +1467,40 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1664,9 +1520,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
@@ -1738,7 +1592,7 @@
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script type="text/javascript">
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 

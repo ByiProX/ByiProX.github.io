@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kunxiang.wang/"/>
-  <updated>2019-12-07T15:24:26.564Z</updated>
+  <updated>2019-12-09T15:11:36.019Z</updated>
   <id>http://kunxiang.wang/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>简谈Python3中的闭包</title>
+    <link href="http://kunxiang.wang/2019/12/09/%E7%AE%80%E8%B0%88Python3%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85/"/>
+    <id>http://kunxiang.wang/2019/12/09/简谈Python3中的闭包/</id>
+    <published>2019-12-09T15:10:14.000Z</published>
+    <updated>2019-12-09T15:11:36.019Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>欢迎关注微信公众号：CodeWorks<br>问题或建议，请公众号留言，欢迎<code>非抬杠式</code>讨论</p></blockquote><p>闭包是指<strong>延伸了作用域</strong>的函数，其中包含函数定义体中引用、但是不在定义体中定义的<code>非全局变量</code>。<br>闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。</p><p>当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,<code>创建一个闭包必须满足以下几点</code>:</p><ol><li>必须有一个内嵌函数</li><li>内嵌函数必须引用外部函数中的变量</li><li>外部函数的返回值必须是内嵌函数</li></ol><p>闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。</p><a id="more"></a><p>闭包的概念难以掌握，下面通过示例进行理解。</p><p>假设我们要实现一个计算<strong><code>移动平均</code></strong>功能的代码，如何实现呢？</p><p>初学者可能会用<code>类</code>来实现，如示例1:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Averager</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.series = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, new_value)</span>:</span></span><br><span class="line">        self.series.append(new_value)</span><br><span class="line">        total = sum(self.series)</span><br><span class="line">        <span class="keyword">return</span> total/len(self.series)</span><br></pre></td></tr></table></figure></p><p>Average的实例是可调用对象：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg = Averager()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">10</span>)</span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">11</span>)</span><br><span class="line"><span class="number">10.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">12</span>)</span><br><span class="line"><span class="number">11.0</span></span><br></pre></td></tr></table></figure></p><p>下面使用<code>函数式</code>实现，如示例2:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例2</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_averager</span><span class="params">()</span>:</span></span><br><span class="line">    series = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">averager</span><span class="params">(new_value)</span>:</span></span><br><span class="line">        series.append(new_value)</span><br><span class="line">        total = sum(series)</span><br><span class="line">        <span class="keyword">return</span> total/len(series)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> averager</span><br></pre></td></tr></table></figure></p><p>调用make_averager时，返回一个averager函数对象。每次调用averager时，该对象会把参数添加到series中，然后计算当前平均值，如下所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg = make_averager()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">10</span>)</span><br><span class="line"><span class="number">10.0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">11</span>)</span><br><span class="line"><span class="number">10.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg(<span class="number">12</span>)</span><br><span class="line"><span class="number">11.0</span></span><br></pre></td></tr></table></figure></p><p>以上两个示例有共通之处：调用Averager()或make_averager()得到一个可调用对象avg，该对象会更新历史值，然后计算当前均值。示例1中，avg是Averager的实例；实例2中是内部函数averager。不管怎样，我们都只需要调用avg(n)，把n放入系列值series中，然后重新计算均值。</p><p>Averager()类的实例avg在哪里存储历史值很明显，<code>但是第二个示例中的avg函数在哪里寻找series呢</code>？</p><p>注意，series是make_averager函数的局部变量，因为那个函数的定义体中初始化了<code>series = []</code>。可是，调用avg(10)时，make_averager函数已经返回了，而他的本地作用域也一去不复返了。</p><p>在averager函数中，series是<code>自由变量</code>，指未在本地作用域中绑定的变量，图形化展示如下：<br><img src="https://upload-images.jianshu.io/upload_images/2952111-3249d24d6da9aa8b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="闭包"></p><p><strong>averager的闭包延伸到那个函数的作用域之外，包含对自由变量series的绑定</strong></p><p>我们可以审查返回的averager对象，发现Python在<code>__code__</code>属性（表示编译后的函数定义体）中保存局部变量和自由变量的名称，如下所示</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 审查make_averager创建的函数</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_varnames</span><br><span class="line">(<span class="string">'new_value'</span>, <span class="string">'total'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_freevars</span><br><span class="line">(<span class="string">'series'</span>,)</span><br></pre></td></tr></table></figure><p>series绑定在返回的avg函数的<code>__closure__</code>属性中。<code>avg.__closure__</code>中各个元素对应于<code>avg.__code__.co_freevars</code>中的一个名称。这些元素是cell对象，有个<code>cell_content</code>属性，保存着真正的值。这些属性的值如示例所示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__code__.co_freevars</span><br><span class="line">(<span class="string">'series'</span>,)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__closure__</span><br><span class="line">(&lt;cell at <span class="number">0x108b89828</span>: list object at <span class="number">0x108ae96c8</span>&gt;,)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>avg.__closure__[<span class="number">0</span>].cell_contents</span><br><span class="line">[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]</span><br></pre></td></tr></table></figure></p><p>综上，<code>闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定</code>。</p><p>稍微有点编程经验的人会看到，我们实现的计算移动平均值得方法实际上有很大的改进空间，在后面的介绍中会进行改进。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;欢迎关注微信公众号：CodeWorks&lt;br&gt;问题或建议，请公众号留言，欢迎&lt;code&gt;非抬杠式&lt;/code&gt;讨论&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;闭包是指&lt;strong&gt;延伸了作用域&lt;/strong&gt;的函数，其中包含函数定义体中引用、但是不在定义体中定义的&lt;code&gt;非全局变量&lt;/code&gt;。&lt;br&gt;闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。&lt;/p&gt;
+&lt;p&gt;当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,&lt;code&gt;创建一个闭包必须满足以下几点&lt;/code&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;必须有一个内嵌函数&lt;/li&gt;
+&lt;li&gt;内嵌函数必须引用外部函数中的变量&lt;/li&gt;
+&lt;li&gt;外部函数的返回值必须是内嵌函数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Python3 进阶" scheme="http://kunxiang.wang/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Python3 闭包" scheme="http://kunxiang.wang/categories/Python3-%E8%BF%9B%E9%98%B6/Python3-%E9%97%AD%E5%8C%85/"/>
+    
+    
+      <category term="Python3" scheme="http://kunxiang.wang/tags/Python3/"/>
+    
+  </entry>
   
   <entry>
     <title>简述Python中变量作用域的规则</title>
@@ -564,31 +598,6 @@
       <category term="Git" scheme="http://kunxiang.wang/tags/Git/"/>
     
       <category term="Github" scheme="http://kunxiang.wang/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python中如何生成一定格式的日期字符串</title>
-    <link href="http://kunxiang.wang/2018/12/03/Python%E4%B8%AD%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E4%B8%80%E5%AE%9A%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    <id>http://kunxiang.wang/2018/12/03/Python中如何生成一定格式的日期字符串/</id>
-    <published>2018-12-03T08:20:56.000Z</published>
-    <updated>2018-12-03T08:28:40.358Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">timeStamp = time.time()</span><br><span class="line">timeArray = time.localtime(time.time())</span><br><span class="line">print(timeArray)</span><br><span class="line"><span class="comment"># time.struct_time(tm_year=2018, tm_mon=12, tm_mday=3, tm_hour=16, tm_min=23, tm_sec=55, tm_wday=0, tm_yday=337, tm_isdst=0)</span></span><br><span class="line"></span><br><span class="line">formatTime = time.strftime(<span class="string">"%Y%m%d-%H:%M:%S"</span>, timeArray)</span><br><span class="line">print(formatTime)</span><br><span class="line"><span class="comment"># 20181203-16:23:55</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas
-      
-    
-    </summary>
-    
-      <category term="Python3 进阶" scheme="http://kunxiang.wang/categories/Python3-%E8%BF%9B%E9%98%B6/"/>
-    
-    
-      <category term="Python3" scheme="http://kunxiang.wang/tags/Python3/"/>
     
   </entry>
   

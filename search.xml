@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[简谈Python3中的闭包]]></title>
+    <url>%2F2019%2F12%2F09%2F%E7%AE%80%E8%B0%88Python3%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85%2F</url>
+    <content type="text"><![CDATA[欢迎关注微信公众号：CodeWorks问题或建议，请公众号留言，欢迎非抬杠式讨论 闭包是指延伸了作用域的函数，其中包含函数定义体中引用、但是不在定义体中定义的非全局变量。闭包(closure)是函数式编程的重要的语法结构。闭包也是一种组织代码的结构，它同样提高了代码的可重复使用性。 当一个内嵌函数引用其外部作用域的变量,我们就会得到一个闭包. 总结一下,创建一个闭包必须满足以下几点: 必须有一个内嵌函数 内嵌函数必须引用外部函数中的变量 外部函数的返回值必须是内嵌函数 闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。 闭包的概念难以掌握，下面通过示例进行理解。 假设我们要实现一个计算移动平均功能的代码，如何实现呢？ 初学者可能会用类来实现，如示例1:123456789# 示例1class Averager(object): def __init__(self): self.series = [] def __call__(self, new_value): self.series.append(new_value) total = sum(self.series) return total/len(self.series) Average的实例是可调用对象：1234567&gt;&gt;&gt; avg = Averager()&gt;&gt;&gt; avg(10)10.0&gt;&gt;&gt; avg(11)10.5&gt;&gt;&gt; avg(12)11.0 下面使用函数式实现，如示例2:12345678910# 示例2def make_averager(): series = [] def averager(new_value): series.append(new_value) total = sum(series) return total/len(series) return averager 调用make_averager时，返回一个averager函数对象。每次调用averager时，该对象会把参数添加到series中，然后计算当前平均值，如下所示：1234567&gt;&gt;&gt; avg = make_averager()&gt;&gt;&gt; avg(10)10.0&gt;&gt;&gt; avg(11)10.5&gt;&gt;&gt; avg(12)11.0 以上两个示例有共通之处：调用Averager()或make_averager()得到一个可调用对象avg，该对象会更新历史值，然后计算当前均值。示例1中，avg是Averager的实例；实例2中是内部函数averager。不管怎样，我们都只需要调用avg(n)，把n放入系列值series中，然后重新计算均值。 Averager()类的实例avg在哪里存储历史值很明显，但是第二个示例中的avg函数在哪里寻找series呢？ 注意，series是make_averager函数的局部变量，因为那个函数的定义体中初始化了series = []。可是，调用avg(10)时，make_averager函数已经返回了，而他的本地作用域也一去不复返了。 在averager函数中，series是自由变量，指未在本地作用域中绑定的变量，图形化展示如下： averager的闭包延伸到那个函数的作用域之外，包含对自由变量series的绑定 我们可以审查返回的averager对象，发现Python在__code__属性（表示编译后的函数定义体）中保存局部变量和自由变量的名称，如下所示 12345# 审查make_averager创建的函数&gt;&gt;&gt; avg.__code__.co_varnames('new_value', 'total')&gt;&gt;&gt; avg.__code__.co_freevars('series',) series绑定在返回的avg函数的__closure__属性中。avg.__closure__中各个元素对应于avg.__code__.co_freevars中的一个名称。这些元素是cell对象，有个cell_content属性，保存着真正的值。这些属性的值如示例所示：123456&gt;&gt;&gt; avg.__code__.co_freevars('series',)&gt;&gt;&gt; avg.__closure__(&lt;cell at 0x108b89828: list object at 0x108ae96c8&gt;,)&gt;&gt;&gt; avg.__closure__[0].cell_contents[10,11,12] 综上，闭包是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时虽然定义作用域不可用了，但仍能使用那些绑定。 稍微有点编程经验的人会看到，我们实现的计算移动平均值得方法实际上有很大的改进空间，在后面的介绍中会进行改进。]]></content>
+      <categories>
+        <category>Python3 进阶</category>
+        <category>Python3 闭包</category>
+      </categories>
+      <tags>
+        <tag>Python3</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[简述Python中变量作用域的规则]]></title>
     <url>%2F2019%2F12%2F07%2F%E7%AE%80%E8%BF%B0Python%E4%B8%AD%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E8%A7%84%E5%88%99%2F</url>
     <content type="text"><![CDATA[介绍这一题目的目的是引出python中较为高级的话题—闭包和装饰器。 在下面的例子中，定义并测试一个函数，它读取两个变量的值:一个是局部变量a，是函数的参数； 另一个是变量b，这个函数没有定义它。 12345678910&gt;&gt;&gt; def f1(a):... print(a)... print(b)...&gt;&gt;&gt; f1(1)1Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt; File "&lt;stdin&gt;", line 3, in f1NameError: name 'b' is not defined 出现此结果完全在意料范围内，因为我们压根从来没有定义过变量b。如果我们在调用函数f1前定义变量b，那么不会存在问题，因为此处的b是全局变量。 1234&gt;&gt;&gt; b=2&gt;&gt;&gt; f1(1)12 下面来一个较为特殊的例子123456789101112&gt;&gt;&gt; b=2&gt;&gt;&gt; def f2(a):... print(a)... print(b)... b=3...&gt;&gt;&gt; f2(1)1Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt; File "&lt;stdin&gt;", line 3, in f2UnboundLocalError: local variable 'b' referenced before assignment 可以看到在赋值之前，第二个print失败了，提示局部变量b在赋值前被引用了。 实际上，Python 编译函数的定义体时，它判断 b 是局部变量，因为在函数中给它赋值了。生成的字节码证实了这种判断（后面会讨论），Python 会尝试从本地环境获取 b。后面调用f2(1)时，f2的定义体会获取并打印局部变量 a 的值，但是尝试获取局部变量 b 的值时，发现 b 没有绑定值。 这是Python的设计选择：Python不要求声明变量类型，但是默认在函数定义体中赋值的变量是局部变量。如果在函数中赋值时想让解释器把 b 当成全局变量，要使用 global 声明：123456789101112131415161718192021&gt;&gt;&gt; b=2&gt;&gt;&gt; def f3(a):... global b... print(a)... print(b)... b=3...&gt;&gt;&gt; f3(1)12&gt;&gt;&gt; b3&gt;&gt;&gt; f3(1)13&gt;&gt;&gt; b=30&gt;&gt;&gt; b30&gt;&gt;&gt; f3(1)130 接下来，我们看一下f1和f2的字节码： 对于f1函数的反汇编： LOAD_GLOBAL加载全局名称 print。 LOAD_FAST加载本地名称 a。 LOAD_GLOBAL加载全局名称 b。 对于f2函数的反汇编： LOAD_FAST加载本地名称 b。这表明，编译器把 b 视作局部变量，即使在后面才为 b 赋值。 对于函数f3的反汇编如下图所示，可以看到变量b为全局变量。 至此，我们可以基本了解python函数中变量作用域的问题，这将为后面介绍的闭包和装饰器的学习打下基础。]]></content>
@@ -1166,8 +1178,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
@@ -1623,8 +1635,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Django</tag>
+        <tag>Python3</tag>
       </tags>
   </entry>
   <entry>
