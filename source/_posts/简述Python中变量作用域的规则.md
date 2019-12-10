@@ -77,6 +77,37 @@ UnboundLocalError: local variable 'b' referenced before assignment
 ```
 
 接下来，我们看一下f1和f2的字节码：
+```Python
+>>> dis(f1)
+  2           0 LOAD_GLOBAL      0 (print)  >>> 1
+              2 LOAD_FAST        0 (a)      >>> 2
+              4 CALL_FUNCTION    1
+              6 POP_TOP
+
+  3           8 LOAD_GLOBAL      0 (print)
+             10 LOAD_GLOBAL      1 (b)      >>> 3
+             12 CALL_FUNCTION    1
+             14 POP_TOP
+             16 LOAD_CONST       0 (None)
+             18 RETURN_VALUE
+>>> dis(f2)
+  2           0 LOAD_GLOBAL      0 (print)
+              2 LOAD_FAST        0 (a)
+              4 CALL_FUNCTION    1
+              6 POP_TOP
+
+  3           8 LOAD_GLOBAL      0 (print)
+             10 LOAD_FAST        1 (b)      >>> 4
+             12 CALL_FUNCTION    1
+             14 POP_TOP
+
+  4          16 LOAD_CONST       1 (3)
+             18 STORE_FAST       1 (b)
+             20 LOAD_CONST       0 (None)
+             22 RETURN_VALUE
+```
+
+
 ![Screen Shot 2019-12-07 at 17.10.03.png](https://upload-images.jianshu.io/upload_images/2952111-8e292da51753cfef.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 对于f1函数的反汇编：
@@ -88,6 +119,26 @@ UnboundLocalError: local variable 'b' referenced before assignment
 4.  LOAD_FAST加载本地名称 b。这表明，编译器把 b 视作`局部变量`，即使在后面才为 b 赋值。
 
 对于函数f3的反汇编如下图所示，可以看到变量b为全局变量。
+
+```Python
+>>> dis(f3)
+  3          0 LOAD_GLOBAL      0 (print)
+             2 LOAD_FAST        0 (a)
+             4 CALL_FUNCTION    1
+             6 POP_TOP
+
+  4          8 LOAD_GLOBAL      0 (print)
+            10 LOAD_GLOBAL      1 (b)  >>> ***
+            12 CALL_FUNCTION    1
+            14 POP_TOP
+
+  5         16 LOAD_CONST       1 (3)
+            18 STORE_GLOBAL     1 (b)
+            20 LOAD_CONST       0 (None)
+            22 RETURN_VALUE
+
+```
+
 ![Screen Shot 2019-12-07 at 17.30.33.png](https://upload-images.jianshu.io/upload_images/2952111-9f820de0acd3270c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
