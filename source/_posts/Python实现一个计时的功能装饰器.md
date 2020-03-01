@@ -46,7 +46,7 @@ if __name__ == "__main__":
     print(fib.__name__)  # 输出 clocked
     print(fib.__doc__)  # 输出 this is inner clocked function
 ```
-
+<!-- more -->
 1. 定义了一个内部函数clocked，它接受任意定位参数以及关键字参数。
 2. 这行代码可用，是因为clocked的闭包中包含了自由变量func。
 3. 返回内部的函数，取代被装饰的函数。
