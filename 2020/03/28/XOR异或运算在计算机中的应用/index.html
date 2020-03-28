@@ -116,20 +116,17 @@
 
 
 
-  <meta name="description" content="这里所说的“学习”是指从训练数据中自动获取最优权重参数的过程。学习的目的就是以该损失函数为基准，找出能使它的值达到最小的权重参数。 可能会有人问：我们想获得的是能提高识别精度的参数，特意再导入一个损失函数不是有些重复劳动吗?既然我们的目标是获得使识别精度尽可能高的神经网络，那不是应该把识别精度作为指标吗?">
-<meta name="keywords" content="机器学习,神经网络">
+  <meta name="description" content="1. 什么是异或运算异或，英文为exclusive OR，缩写成xor。异或（xor）是一个数学运算符。它应用于逻辑运算。异或的数学符号为“⊕”，计算机符号为“xor”。如果a、b两个值不相同，则异或结果为1。如果a、b两个值相同，异或结果为0。 异或也叫半加运算，其运算法则相当于不带进位的二进制加法：二进制下用1表示真，0表示假，则异或的运算法则为：0⊕0=0，1⊕0=1，0⊕1=1，1⊕1=0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="神经网络的学习为何要设定损失函数？">
-<meta property="og:url" content="http://kunxiang.wang/2019/10/01/神经网络的学习为何要设定损失函数？/index.html">
+<meta property="og:title" content="XOR异或运算在计算机中的应用">
+<meta property="og:url" content="http://kunxiang.wang/2020/03/28/XOR异或运算在计算机中的应用/index.html">
 <meta property="og:site_name" content="Quentin&#39;s Blog">
-<meta property="og:description" content="这里所说的“学习”是指从训练数据中自动获取最优权重参数的过程。学习的目的就是以该损失函数为基准，找出能使它的值达到最小的权重参数。 可能会有人问：我们想获得的是能提高识别精度的参数，特意再导入一个损失函数不是有些重复劳动吗?既然我们的目标是获得使识别精度尽可能高的神经网络，那不是应该把识别精度作为指标吗?">
+<meta property="og:description" content="1. 什么是异或运算异或，英文为exclusive OR，缩写成xor。异或（xor）是一个数学运算符。它应用于逻辑运算。异或的数学符号为“⊕”，计算机符号为“xor”。如果a、b两个值不相同，则异或结果为1。如果a、b两个值相同，异或结果为0。 异或也叫半加运算，其运算法则相当于不带进位的二进制加法：二进制下用1表示真，0表示假，则异或的运算法则为：0⊕0=0，1⊕0=1，0⊕1=1，1⊕1=0">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191001001019693.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-09-30T16:47:28.497Z">
+<meta property="og:updated_time" content="2020-03-28T09:10:11.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="神经网络的学习为何要设定损失函数？">
-<meta name="twitter:description" content="这里所说的“学习”是指从训练数据中自动获取最优权重参数的过程。学习的目的就是以该损失函数为基准，找出能使它的值达到最小的权重参数。 可能会有人问：我们想获得的是能提高识别精度的参数，特意再导入一个损失函数不是有些重复劳动吗?既然我们的目标是获得使识别精度尽可能高的神经网络，那不是应该把识别精度作为指标吗?">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191001001019693.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="XOR异或运算在计算机中的应用">
+<meta name="twitter:description" content="1. 什么是异或运算异或，英文为exclusive OR，缩写成xor。异或（xor）是一个数学运算符。它应用于逻辑运算。异或的数学符号为“⊕”，计算机符号为“xor”。如果a、b两个值不相同，则异或结果为1。如果a、b两个值相同，异或结果为0。 异或也叫半加运算，其运算法则相当于不带进位的二进制加法：二进制下用1表示真，0表示假，则异或的运算法则为：0⊕0=0，1⊕0=1，0⊕1=1，1⊕1=0">
 
 
 
@@ -138,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="http://kunxiang.wang/2019/10/01/神经网络的学习为何要设定损失函数？/"/>
+  <link rel="canonical" href="http://kunxiang.wang/2020/03/28/XOR异或运算在计算机中的应用/"/>
 
 
 
@@ -148,7 +145,7 @@
   };
 </script>
 
-  <title>神经网络的学习为何要设定损失函数？ | Quentin's Blog</title>
+  <title>XOR异或运算在计算机中的应用 | Quentin's Blog</title>
   
 
 
@@ -361,7 +358,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2019/10/01/神经网络的学习为何要设定损失函数？/">
+    <link itemprop="mainEntityOfPage" href="http://kunxiang.wang/2020/03/28/XOR异或运算在计算机中的应用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ByiProX">
@@ -378,7 +375,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">神经网络的学习为何要设定损失函数？
+          <h2 class="post-title" itemprop="name headline">XOR异或运算在计算机中的应用
               
             
           </h2>
@@ -403,30 +400,12 @@
                 
               
 
-              <time title="创建时间：2019-10-01 00:17:38" itemprop="dateCreated datePublished" datetime="2019-10-01T00:17:38+08:00">2019-10-01</time>
+              <time title="创建时间：2020-03-28 16:41:38" itemprop="dateCreated datePublished" datetime="2020-03-28T16:41:38+08:00">2020-03-28</time>
             
 
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -436,10 +415,10 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/01/神经网络的学习为何要设定损失函数？/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/28/XOR异或运算在计算机中的应用/#comments" itemprop="discussionUrl">
                 
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2019/10/01/神经网络的学习为何要设定损失函数？/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/28/XOR异或运算在计算机中的应用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -447,7 +426,7 @@
 
           
           
-             <span id="/2019/10/01/神经网络的学习为何要设定损失函数？/" class="leancloud_visitors" data-flag-title="神经网络的学习为何要设定损失函数？">
+             <span id="/2020/03/28/XOR异或运算在计算机中的应用/" class="leancloud_visitors" data-flag-title="XOR异或运算在计算机中的应用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -478,17 +457,30 @@
       
 
       
-        <p>这里所说的“学习”是指从训练数据中<strong>自动</strong>获取最优权重参数的过程。学习的目的就是以该损失函数为基准，找出能使它的值达到最小的权重参数。</p>
-<p>可能会有人问：我们想获得的是能提高识别精度的参数，特意再导入一个损失函数不是有些重复劳动吗?既然我们的目标是获得使识别精度尽可能高的神经网络，那不是应该把识别精度作为指标吗?</p>
-<a id="more"></a>
-<p>听起来很有道理！</p>
-<p>对于这一疑问，我们可以根据<strong>“导数“</strong>在神经网络学习中的作用来回答。 在神经网络的学习中，寻找最优参数(权重和偏置)时， 要寻找使损失函数的值尽可能小的参数。为了找到使损失函数的值尽可能小 的地方，需要计算参数的导数(确切地讲是梯度)，然后以这个导数为指引， 逐步更新参数的值。</p>
-<p>假设有一个神经网络，现在我们来关注这个神经网络中的某一个权重参数。此时，对该权重参数的损失函数求导，此处导数的含义可以理解为“如果稍微改变这个权重参数的值，损失函数的值会如何变化”。<strong>如果导数的值为负，通过使该权重参数向正方向改变，可以减小损失函数的值；反过来，如果导数的值为正， 则通过使该权重参数向负方向改变，可以减小损失函数的值</strong>。不过，当导数为 0 时，无论权重参数向哪个方向变化，损失函数的值都不会改变，此时该权重参数的更新会停在此处。</p>
-<p><strong>在进行神经网络的学习时，不能将识别精度作为指标。因为如果以识别精度为指标，则参数的导数在绝大多数地方都会变为 0，导致参数无法更新。</strong>那为什么用识别精度作为指标时，参数的导数在绝大多数地方都会变成0呢？</p>
-<p>为了回答这个问题，我们来思考另一个具体例子。假设某个神经网络正确识别出了 100个训练数据中的32笔，此时识别精度为 32 %。如果以识别精度为指标，即使稍微改变权重参数的值，识别精度也仍将保持在 32 %，不会出现变化。也就是说，仅仅微调参数，是无法改善识别精度的。即便识别精度有所改善，它的值也不会像 32.0123 . . . % 这样连续变化，而是变为 33 %、 34 % 这样的<strong>不连续的、离散的值</strong>。而如果把损失函数作为指标，则当前损失函数的值可以表示为 0.92543 . . . 这样的值。并且，如果稍微改变一下参数 的值，对应的损失函数也会像 0.93432 . . . 这样发生连续性的变化。</p>
-<p>作为激活函数的阶跃函数也有同样的情况。出于相同的原因，如果使用阶跃函数作为激活函数，神经网络的学习将无法进行。原因是阶跃函数的导数在绝大多数地方(除了0以外的地方)均为0。 也就是说，如果使用了阶跃函数，那么即便将损失函数作为指标，参数的微小变化也会被阶跃函数<strong>抹杀</strong>，导致损失函数的值不会产生任何变化。</p>
-<p>而 sigmoid 函数，不仅函数的输出(竖轴的值)是连续变化的，曲线的斜率(导数) 也是连续变化的。也就是说，sigmoid 函数的导数在任何地方都不为 0。这对神经网络的学习非常重要。得益于这个斜率不会为 0 的性质，神经网络的学习得以正确进行。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191001001019693.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0MTUyMjQ0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">—-<br>参考数据<br>深度学习入门-Deep Learning from Scratch</p>
+        <h3 id="1-什么是异或运算"><a href="#1-什么是异或运算" class="headerlink" title="1. 什么是异或运算"></a>1. 什么是异或运算</h3><p>异或，英文为<strong>exclusive OR</strong>，缩写成xor。<br>异或（xor）是一个数学运算符。它应用于逻辑运算。异或的数学符号为“⊕”，计算机符号为“xor”。如果a、b两个值不相同，则异或结果为1。如果a、b两个值相同，异或结果为0。</p>
+<p>异或也叫<strong>半加运算</strong>，其运算法则相当于不带进位的二进制加法：二进制下用1表示真，0表示假，则异或的运算法则为：<strong>0⊕0=0，1⊕0=1，0⊕1=1，1⊕1=0</strong>（同为0，异为1），这些法则与加法是相同的，只是<strong>不带进位</strong>，所以异或常被认作不进位加法。<br><a id="more"></a></p>
+<p>真值表如下：<br>|A|B|A XOR B|<br>| — | — | — |<br>|0|0|0|<br>|0|1|1|<br>|1|1|0|<br>|1|0|0|</p>
+<h3 id="2-异或运算的特性"><a href="#2-异或运算的特性" class="headerlink" title="2. 异或运算的特性"></a>2. 异或运算的特性</h3><ul>
+<li>交换律：<strong>A⊕B = B⊕A</strong></li>
+<li>结合律：<strong>A⊕(B⊕C) = (A⊕B)⊕C</strong></li>
+<li>恒等律：<strong>X⊕0 = X</strong></li>
+<li>归零律：<strong>X⊕X = 0</strong></li>
+<li>自反律：<strong>A⊕B⊕B = A⊕(B⊕B) = A⊕0 = A</strong></li>
+</ul>
+<h3 id="3-XOR在计算机中的应用"><a href="#3-XOR在计算机中的应用" class="headerlink" title="3. XOR在计算机中的应用"></a>3. XOR在计算机中的应用</h3><h5 id="3-1-快速比较两值是否想等"><a href="#3-1-快速比较两值是否想等" class="headerlink" title="3.1. 快速比较两值是否想等"></a>3.1. 快速比较两值是否想等</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r = a xor b</span><br><span class="line"><span class="keyword">if</span> r==<span class="number">0</span> </span><br><span class="line">    print(“a == b”)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    print(“a != <span class="string">b")</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-2-检验一个数字中1的个数的奇偶（奇偶校验）"><a href="#3-2-检验一个数字中1的个数的奇偶（奇偶校验）" class="headerlink" title="3.2. 检验一个数字中1的个数的奇偶（奇偶校验）"></a>3.2. 检验一个数字中1的个数的奇偶（奇偶校验）</h5><blockquote>
+<p>求10100001中1的个数<br>1 ^ 0 ^ 1 ^ 0 ^ 0 ^ 0 ^ 0 ^ 1 = 1<br>按位进行异或运算得到的结果等于1，结果为奇数，得到的结果为0，结果为偶数</p>
+</blockquote>
+<h5 id="3-3-不使用中间变量，交换两个变量的值"><a href="#3-3-不使用中间变量，交换两个变量的值" class="headerlink" title="3.3. 不使用中间变量，交换两个变量的值"></a>3.3. 不使用中间变量，交换两个变量的值</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = a ^ b;</span><br><span class="line">b = a ^ b; //a ^ b ^ b = a ^ <span class="number">0</span> = a;</span><br><span class="line">a = a ^ b;</span><br></pre></td></tr></table></figure>
+<h5 id="3-4-面试题：一个整型数组里除了一个数字之外，其他的数字都出现了两次，找出这个数字"><a href="#3-4-面试题：一个整型数组里除了一个数字之外，其他的数字都出现了两次，找出这个数字" class="headerlink" title="3.4. 面试题：一个整型数组里除了一个数字之外，其他的数字都出现了两次，找出这个数字"></a>3.4. 面试题：一个整型数组里除了一个数字之外，其他的数字都出现了两次，找出这个数字</h5><p>利用异或运算的归零律：X⊕X = 0 和恒等律：X⊕0 = X</p>
+<blockquote>
+<p>对于数组{a, a, b, b, c, c, d}，找出只出现了一次的数字d<br>a^a^b^b^c^c^d<br>= 0^0^0^d<br>= 0^d<br>= d<br>时间复杂度为O(N), 空间复杂度为O(1)</p>
+</blockquote>
+<h5 id="3-5-密码学中对称加密解密"><a href="#3-5-密码学中对称加密解密" class="headerlink" title="3.5. 密码学中对称加密解密"></a>3.5. 密码学中对称加密解密</h5><p>利用异或运算的自反律: A⊕B⊕B = A⊕(B⊕B) = A⊕0 = A</p>
+<blockquote>
+<p>message XOR key // cipherText<br>cipherText XOR key // message<br>明文 XOR 密钥 –&gt; 密文<br>密文 XOR 密钥 –&gt; 明文</p>
+</blockquote>
+<p>以上特性很好地对应了加密和解密的过程。所以目前很多加密算法都利用了异或算法的这个特性来做最后的密文打乱的工作。</p>
 
       
     </div>
@@ -506,14 +498,6 @@
     
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
-          
-            <a href="/tags/神经网络/" rel="tag"># 神经网络</a>
-          
-        </div>
       
 
       
@@ -544,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/29/神经网络的激活函数为什么要使用非线性函数/" rel="next" title="神经网络的激活函数为什么要使用非线性函数">
-                <i class="fa fa-chevron-left"></i> 神经网络的激活函数为什么要使用非线性函数
+              <a href="/2020/03/01/Python实现一个计时功能的装饰器/" rel="next" title="Python实现一个计时功能的装饰器">
+                <i class="fa fa-chevron-left"></i> Python实现一个计时功能的装饰器
               </a>
             
           </div>
@@ -553,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/07/浅析Python中列表操作之-和/" rel="prev" title="浅析Python中列表操作之*和*=">
-                浅析Python中列表操作之*和*= <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -611,8 +591,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -889,6 +878,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是异或运算"><span class="nav-number">1.</span> <span class="nav-text">1. 什么是异或运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-异或运算的特性"><span class="nav-number">2.</span> <span class="nav-text">2. 异或运算的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-XOR在计算机中的应用"><span class="nav-number">3.</span> <span class="nav-text">3. XOR在计算机中的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-快速比较两值是否想等"><span class="nav-number">3.0.1.</span> <span class="nav-text">3.1. 快速比较两值是否想等</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-检验一个数字中1的个数的奇偶（奇偶校验）"><span class="nav-number">3.0.2.</span> <span class="nav-text">3.2. 检验一个数字中1的个数的奇偶（奇偶校验）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-不使用中间变量，交换两个变量的值"><span class="nav-number">3.0.3.</span> <span class="nav-text">3.3. 不使用中间变量，交换两个变量的值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-面试题：一个整型数组里除了一个数字之外，其他的数字都出现了两次，找出这个数字"><span class="nav-number">3.0.4.</span> <span class="nav-text">3.4. 面试题：一个整型数组里除了一个数字之外，其他的数字都出现了两次，找出这个数字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-5-密码学中对称加密解密"><span class="nav-number">3.0.5.</span> <span class="nav-text">3.5. 密码学中对称加密解密</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1096,9 +1101,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://kunxiang.wang/2019/10/01/神经网络的学习为何要设定损失函数？/';
-        this.page.identifier = '2019/10/01/神经网络的学习为何要设定损失函数？/';
-        this.page.title = '神经网络的学习为何要设定损失函数？';
+        this.page.url = 'http://kunxiang.wang/2020/03/28/XOR异或运算在计算机中的应用/';
+        this.page.identifier = '2020/03/28/XOR异或运算在计算机中的应用/';
+        this.page.title = 'XOR异或运算在计算机中的应用';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');
