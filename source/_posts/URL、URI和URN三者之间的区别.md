@@ -56,7 +56,7 @@ bitpoetry.io/posts/hello.html#intro
 ```
 
 
-至少要记住一件事：URI可以被分为URL、URN或两者的组合。如果你一直使用URI这个术语，绝对不会出错错。
+至少要记住一件事：URI可以被分为URL、URN或两者的组合。如果你一直使用URI这个术语，绝对不会出错。
 
 
 
